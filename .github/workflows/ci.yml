@@ -1,0 +1,42 @@
+name: Dockerize
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: [push, pull_request]
+
+env:
+  TEST_ENV: test
+
+jobs:
+  dev:
+    # Job name is Build Docker Image
+    name: Notify on Slack
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      # Checkout latest push
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.15.3"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org"
+          # scope: "@walletinc"
+
+      - name: Send message to Slack
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > .gitdiff-names || touch .gitdiff-names
+          git log --pretty=%B --ancestry-path ${{ github.event.before }}..${{ github.sha }} > .gitdiff-commits || touch .gitdiff-commits
+          python3 scripts/slack.py .gitdiff-names .gitdiff-commits ${{ secrets.SLACK_WEBHOOK_URL }} ${{ github.actor }} ${{ github.repository }} ${{ github.run_id }} $GITHUB_REF
+          # curl -X POST -H 'Content-type: application/json' --data '{"blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": "New push by: ${{ github.actor }} to `${{ github.repository }}` :confetti_ball:"}}]}' ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Send failure message to Slack
+        if: ${{ failure() }}
+        run: |
+          python3 scripts/failure.py ${{ secrets.SLACK_WEBHOOK_URL }} ${{ github.actor }} ${{ github.repository }} $GITHUB_REF ${{ secrets.SQUADCAST_API_ENDPOINT }}
