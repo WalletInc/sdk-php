@@ -1,0 +1,29 @@
+# # AdvertisementCreditBroadcast
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**phone_number_id** | **string** |  |
+**payment_object_prefix** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**payment_object_id** | **string** |  |
+**message_template** | **string** |  |
+**media_urls** | **string[]** |  |
+**employee_id** | **string** |  |
+**broadcast_scheduled_at** | **\DateTime** |  |
+**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**merchant_id** | **string** |  |
+**created_at** | **\DateTime** |  |
+**updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
+**broadcast_status** | [**AnyOfStringStringStringStringString**](AnyOfStringStringStringStringString.md) |  |
+**broadcast_queued_at** | **\DateTime** |  |
+**broadcast_started_at** | **\DateTime** |  |
+**broadcast_completed_at** | **\DateTime** |  |
+**list_type** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**list_id** | **string** |  |
+**opt_in_list** | [**\OpenAPI\Client\Model\WTOptInList**](WTOptInList.md) |  | [optional]
+**imported_list** | [**\OpenAPI\Client\Model\WTImportedList**](WTImportedList.md) |  | [optional]
+**advertisement_credit** | [**\OpenAPI\Client\Model\AdvertisementCredit**](AdvertisementCredit.md) |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
