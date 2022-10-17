@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **updated_at** | **\DateTime** |  |
 **body** | **string** |  |
 **phone_number_id** | **string** |  |
-**payment_object_broadcast_id** | [**AnyOfStringString**](AnyOfStringString.md) |  | [optional]
 **media_urls** | **string[]** |  |
+**payment_object_broadcast_id** | [**AnyOfStringString**](AnyOfStringString.md) |  | [optional]
 **body_template** | **string** |  |
 **status_callback** | **string** |  |
 **is_sent** | **bool** |  |

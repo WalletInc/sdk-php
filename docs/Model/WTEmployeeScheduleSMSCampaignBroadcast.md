@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **phone_number_id** | **string** |  |
 **message_template** | **string** |  |
 **send_qr_code** | **bool** |  |
-**media_url** | **string** |  | [optional]
+**media_urls** | **string[]** |  | [optional]
 **broadcast_scheduled_at** | **\DateTime** |  |
 **locale** | **string** |  |
 **timezone** | **string** |  |

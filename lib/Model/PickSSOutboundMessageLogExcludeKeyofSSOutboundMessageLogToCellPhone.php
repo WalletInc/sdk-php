@@ -70,8 +70,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         'updated_at' => '\DateTime',
         'body' => 'string',
         'phone_number_id' => 'string',
-        'payment_object_broadcast_id' => 'string',
         'media_urls' => 'string[]',
+        'payment_object_broadcast_id' => 'string',
         'body_template' => 'string',
         'status_callback' => 'string',
         'is_sent' => 'bool',
@@ -101,8 +101,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         'updated_at' => 'date-time',
         'body' => null,
         'phone_number_id' => null,
-        'payment_object_broadcast_id' => null,
         'media_urls' => null,
+        'payment_object_broadcast_id' => null,
         'body_template' => null,
         'status_callback' => null,
         'is_sent' => null,
@@ -151,8 +151,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         'updated_at' => 'updatedAt',
         'body' => 'body',
         'phone_number_id' => 'phoneNumberID',
-        'payment_object_broadcast_id' => 'paymentObjectBroadcastID',
         'media_urls' => 'mediaURLs',
+        'payment_object_broadcast_id' => 'paymentObjectBroadcastID',
         'body_template' => 'bodyTemplate',
         'status_callback' => 'statusCallback',
         'is_sent' => 'isSent',
@@ -180,8 +180,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         'updated_at' => 'setUpdatedAt',
         'body' => 'setBody',
         'phone_number_id' => 'setPhoneNumberId',
-        'payment_object_broadcast_id' => 'setPaymentObjectBroadcastId',
         'media_urls' => 'setMediaUrls',
+        'payment_object_broadcast_id' => 'setPaymentObjectBroadcastId',
         'body_template' => 'setBodyTemplate',
         'status_callback' => 'setStatusCallback',
         'is_sent' => 'setIsSent',
@@ -209,8 +209,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         'updated_at' => 'getUpdatedAt',
         'body' => 'getBody',
         'phone_number_id' => 'getPhoneNumberId',
-        'payment_object_broadcast_id' => 'getPaymentObjectBroadcastId',
         'media_urls' => 'getMediaUrls',
+        'payment_object_broadcast_id' => 'getPaymentObjectBroadcastId',
         'body_template' => 'getBodyTemplate',
         'status_callback' => 'getStatusCallback',
         'is_sent' => 'getIsSent',
@@ -289,8 +289,8 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['body'] = $data['body'] ?? null;
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
-        $this->container['payment_object_broadcast_id'] = $data['payment_object_broadcast_id'] ?? null;
         $this->container['media_urls'] = $data['media_urls'] ?? null;
+        $this->container['payment_object_broadcast_id'] = $data['payment_object_broadcast_id'] ?? null;
         $this->container['body_template'] = $data['body_template'] ?? null;
         $this->container['status_callback'] = $data['status_callback'] ?? null;
         $this->container['is_sent'] = $data['is_sent'] ?? null;
@@ -383,13 +383,13 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
             $invalidProperties[] = "invalid value for 'phone_number_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
+        if ($this->container['media_urls'] === null) {
+            $invalidProperties[] = "'media_urls' can't be null";
+        }
         if (!is_null($this->container['payment_object_broadcast_id']) && (mb_strlen($this->container['payment_object_broadcast_id']) > 10)) {
             $invalidProperties[] = "invalid value for 'payment_object_broadcast_id', the character length must be smaller than or equal to 10.";
         }
 
-        if ($this->container['media_urls'] === null) {
-            $invalidProperties[] = "'media_urls' can't be null";
-        }
         if ($this->container['body_template'] === null) {
             $invalidProperties[] = "'body_template' can't be null";
         }
@@ -683,6 +683,30 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
     }
 
     /**
+     * Gets media_urls
+     *
+     * @return string[]
+     */
+    public function getMediaUrls()
+    {
+        return $this->container['media_urls'];
+    }
+
+    /**
+     * Sets media_urls
+     *
+     * @param string[] $media_urls media_urls
+     *
+     * @return self
+     */
+    public function setMediaUrls($media_urls)
+    {
+        $this->container['media_urls'] = $media_urls;
+
+        return $this;
+    }
+
+    /**
      * Gets payment_object_broadcast_id
      *
      * @return string|null
@@ -706,30 +730,6 @@ class PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhone implem
         }
 
         $this->container['payment_object_broadcast_id'] = $payment_object_broadcast_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets media_urls
-     *
-     * @return string[]
-     */
-    public function getMediaUrls()
-    {
-        return $this->container['media_urls'];
-    }
-
-    /**
-     * Sets media_urls
-     *
-     * @param string[] $media_urls media_urls
-     *
-     * @return self
-     */
-    public function setMediaUrls($media_urls)
-    {
-        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

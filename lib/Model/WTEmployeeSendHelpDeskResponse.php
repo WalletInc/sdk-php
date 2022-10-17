@@ -62,7 +62,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'help_desk_request_id' => 'string',
         'message' => 'string',
-        'media_url' => 'string'
+        'media_urls' => 'string[]'
     ];
 
     /**
@@ -75,7 +75,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'help_desk_request_id' => null,
         'message' => null,
-        'media_url' => null
+        'media_urls' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'help_desk_request_id' => 'helpDeskRequestID',
         'message' => 'message',
-        'media_url' => 'mediaURL'
+        'media_urls' => 'mediaURLs'
     ];
 
     /**
@@ -118,7 +118,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'help_desk_request_id' => 'setHelpDeskRequestId',
         'message' => 'setMessage',
-        'media_url' => 'setMediaUrl'
+        'media_urls' => 'setMediaUrls'
     ];
 
     /**
@@ -129,7 +129,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'help_desk_request_id' => 'getHelpDeskRequestId',
         'message' => 'getMessage',
-        'media_url' => 'getMediaUrl'
+        'media_urls' => 'getMediaUrls'
     ];
 
     /**
@@ -191,7 +191,7 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     {
         $this->container['help_desk_request_id'] = $data['help_desk_request_id'] ?? null;
         $this->container['message'] = $data['message'] ?? null;
-        $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
     }
 
     /**
@@ -304,25 +304,25 @@ class WTEmployeeSendHelpDeskResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets media_url
+     * Gets media_urls
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMediaUrl()
+    public function getMediaUrls()
     {
-        return $this->container['media_url'];
+        return $this->container['media_urls'];
     }
 
     /**
-     * Sets media_url
+     * Sets media_urls
      *
-     * @param string|null $media_url media_url
+     * @param string[]|null $media_urls media_urls
      *
      * @return self
      */
-    public function setMediaUrl($media_url)
+    public function setMediaUrls($media_urls)
     {
-        $this->container['media_url'] = $media_url;
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

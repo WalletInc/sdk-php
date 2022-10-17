@@ -62,7 +62,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'phone_number_id' => 'string',
         'message_template' => 'string',
-        'media_url' => 'string',
+        'media_urls' => 'string[]',
         'broadcast_scheduled_at' => '\DateTime',
         'list_type' => 'string',
         'list_id' => 'string'
@@ -78,7 +78,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'phone_number_id' => null,
         'message_template' => null,
-        'media_url' => null,
+        'media_urls' => null,
         'broadcast_scheduled_at' => 'date-time',
         'list_type' => null,
         'list_id' => null
@@ -113,7 +113,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'phone_number_id' => 'phoneNumberID',
         'message_template' => 'messageTemplate',
-        'media_url' => 'mediaURL',
+        'media_urls' => 'mediaURLs',
         'broadcast_scheduled_at' => 'broadcastScheduledAt',
         'list_type' => 'listType',
         'list_id' => 'listID'
@@ -127,7 +127,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'phone_number_id' => 'setPhoneNumberId',
         'message_template' => 'setMessageTemplate',
-        'media_url' => 'setMediaUrl',
+        'media_urls' => 'setMediaUrls',
         'broadcast_scheduled_at' => 'setBroadcastScheduledAt',
         'list_type' => 'setListType',
         'list_id' => 'setListId'
@@ -141,7 +141,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'phone_number_id' => 'getPhoneNumberId',
         'message_template' => 'getMessageTemplate',
-        'media_url' => 'getMediaUrl',
+        'media_urls' => 'getMediaUrls',
         'broadcast_scheduled_at' => 'getBroadcastScheduledAt',
         'list_type' => 'getListType',
         'list_id' => 'getListId'
@@ -206,7 +206,7 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
         $this->container['message_template'] = $data['message_template'] ?? null;
-        $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
         $this->container['broadcast_scheduled_at'] = $data['broadcast_scheduled_at'] ?? null;
         $this->container['list_type'] = $data['list_type'] ?? null;
         $this->container['list_id'] = $data['list_id'] ?? null;
@@ -334,25 +334,25 @@ class WTEmployeeScheduleSimpleSMS implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets media_url
+     * Gets media_urls
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMediaUrl()
+    public function getMediaUrls()
     {
-        return $this->container['media_url'];
+        return $this->container['media_urls'];
     }
 
     /**
-     * Sets media_url
+     * Sets media_urls
      *
-     * @param string|null $media_url media_url
+     * @param string[]|null $media_urls media_urls
      *
      * @return self
      */
-    public function setMediaUrl($media_url)
+    public function setMediaUrls($media_urls)
     {
-        $this->container['media_url'] = $media_url;
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

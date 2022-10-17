@@ -63,7 +63,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         'phone_number_id' => 'string',
         'message_template' => 'string',
         'send_qr_code' => 'bool',
-        'media_url' => 'string',
+        'media_urls' => 'string[]',
         'broadcast_scheduled_at' => '\DateTime',
         'locale' => 'string',
         'timezone' => 'string'
@@ -80,7 +80,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         'phone_number_id' => null,
         'message_template' => null,
         'send_qr_code' => null,
-        'media_url' => null,
+        'media_urls' => null,
         'broadcast_scheduled_at' => 'date-time',
         'locale' => null,
         'timezone' => null
@@ -116,7 +116,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         'phone_number_id' => 'phoneNumberID',
         'message_template' => 'messageTemplate',
         'send_qr_code' => 'sendQRCode',
-        'media_url' => 'mediaURL',
+        'media_urls' => 'mediaURLs',
         'broadcast_scheduled_at' => 'broadcastScheduledAt',
         'locale' => 'locale',
         'timezone' => 'timezone'
@@ -131,7 +131,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         'phone_number_id' => 'setPhoneNumberId',
         'message_template' => 'setMessageTemplate',
         'send_qr_code' => 'setSendQrCode',
-        'media_url' => 'setMediaUrl',
+        'media_urls' => 'setMediaUrls',
         'broadcast_scheduled_at' => 'setBroadcastScheduledAt',
         'locale' => 'setLocale',
         'timezone' => 'setTimezone'
@@ -146,7 +146,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         'phone_number_id' => 'getPhoneNumberId',
         'message_template' => 'getMessageTemplate',
         'send_qr_code' => 'getSendQrCode',
-        'media_url' => 'getMediaUrl',
+        'media_urls' => 'getMediaUrls',
         'broadcast_scheduled_at' => 'getBroadcastScheduledAt',
         'locale' => 'getLocale',
         'timezone' => 'getTimezone'
@@ -212,7 +212,7 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
         $this->container['message_template'] = $data['message_template'] ?? null;
         $this->container['send_qr_code'] = $data['send_qr_code'] ?? null;
-        $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
         $this->container['broadcast_scheduled_at'] = $data['broadcast_scheduled_at'] ?? null;
         $this->container['locale'] = $data['locale'] ?? null;
         $this->container['timezone'] = $data['timezone'] ?? null;
@@ -355,25 +355,25 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets media_url
+     * Gets media_urls
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMediaUrl()
+    public function getMediaUrls()
     {
-        return $this->container['media_url'];
+        return $this->container['media_urls'];
     }
 
     /**
-     * Sets media_url
+     * Sets media_urls
      *
-     * @param string|null $media_url media_url
+     * @param string[]|null $media_urls media_urls
      *
      * @return self
      */
-    public function setMediaUrl($media_url)
+    public function setMediaUrls($media_urls)
     {
-        $this->container['media_url'] = $media_url;
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

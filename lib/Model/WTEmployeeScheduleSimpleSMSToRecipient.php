@@ -62,7 +62,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     protected static $openAPITypes = [
         'phone_number_id' => 'string',
         'message_template' => 'string',
-        'media_url' => 'string',
+        'media_urls' => 'string[]',
         'broadcast_scheduled_at' => '\DateTime',
         'to_cell_phone' => 'string'
     ];
@@ -77,7 +77,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     protected static $openAPIFormats = [
         'phone_number_id' => null,
         'message_template' => null,
-        'media_url' => null,
+        'media_urls' => null,
         'broadcast_scheduled_at' => 'date-time',
         'to_cell_phone' => null
     ];
@@ -111,7 +111,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     protected static $attributeMap = [
         'phone_number_id' => 'phoneNumberID',
         'message_template' => 'messageTemplate',
-        'media_url' => 'mediaURL',
+        'media_urls' => 'mediaURLs',
         'broadcast_scheduled_at' => 'broadcastScheduledAt',
         'to_cell_phone' => 'toCellPhone'
     ];
@@ -124,7 +124,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     protected static $setters = [
         'phone_number_id' => 'setPhoneNumberId',
         'message_template' => 'setMessageTemplate',
-        'media_url' => 'setMediaUrl',
+        'media_urls' => 'setMediaUrls',
         'broadcast_scheduled_at' => 'setBroadcastScheduledAt',
         'to_cell_phone' => 'setToCellPhone'
     ];
@@ -137,7 +137,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     protected static $getters = [
         'phone_number_id' => 'getPhoneNumberId',
         'message_template' => 'getMessageTemplate',
-        'media_url' => 'getMediaUrl',
+        'media_urls' => 'getMediaUrls',
         'broadcast_scheduled_at' => 'getBroadcastScheduledAt',
         'to_cell_phone' => 'getToCellPhone'
     ];
@@ -201,7 +201,7 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     {
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
         $this->container['message_template'] = $data['message_template'] ?? null;
-        $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
         $this->container['broadcast_scheduled_at'] = $data['broadcast_scheduled_at'] ?? null;
         $this->container['to_cell_phone'] = $data['to_cell_phone'] ?? null;
     }
@@ -317,25 +317,25 @@ class WTEmployeeScheduleSimpleSMSToRecipient implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets media_url
+     * Gets media_urls
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMediaUrl()
+    public function getMediaUrls()
     {
-        return $this->container['media_url'];
+        return $this->container['media_urls'];
     }
 
     /**
-     * Sets media_url
+     * Sets media_urls
      *
-     * @param string|null $media_url media_url
+     * @param string[]|null $media_urls media_urls
      *
      * @return self
      */
-    public function setMediaUrl($media_url)
+    public function setMediaUrls($media_urls)
     {
-        $this->container['media_url'] = $media_url;
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }
