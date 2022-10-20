@@ -1,6 +1,6 @@
 <?php
 /**
- * WTOptInListCreationParams
+ * PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTOptInListCreationParams Class Doc Comment
+ * PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs Class Doc Comment
  *
  * @category Class
+ * @description From T, pick a set of properties whose keys are in the union K
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTOptInListCreationParams';
+    protected static $openAPIModelName = 'Pick_SSOptInListCreateParams.Exclude_keyofSSOptInListCreateParams.employeeID-or-optInConfirmedMediaURLs-or-optOutConfirmedMediaURLs__';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,9 +71,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         'opt_out_confirmed_response' => 'string',
         'opt_in_confirmed_customer_receives' => 'string',
         'opt_out_confirmed_customer_receives' => 'string',
-        'is_over21_required' => 'bool',
-        'opt_in_confirmed_media_urls' => 'string[]',
-        'opt_out_confirmed_media_urls' => 'string[]'
+        'is_over21_required' => 'bool'
     ];
 
     /**
@@ -93,9 +92,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         'opt_out_confirmed_response' => null,
         'opt_in_confirmed_customer_receives' => null,
         'opt_out_confirmed_customer_receives' => null,
-        'is_over21_required' => null,
-        'opt_in_confirmed_media_urls' => null,
-        'opt_out_confirmed_media_urls' => null
+        'is_over21_required' => null
     ];
 
     /**
@@ -135,9 +132,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         'opt_out_confirmed_response' => 'optOutConfirmedResponse',
         'opt_in_confirmed_customer_receives' => 'optInConfirmedCustomerReceives',
         'opt_out_confirmed_customer_receives' => 'optOutConfirmedCustomerReceives',
-        'is_over21_required' => 'isOver21Required',
-        'opt_in_confirmed_media_urls' => 'optInConfirmedMediaURLs',
-        'opt_out_confirmed_media_urls' => 'optOutConfirmedMediaURLs'
+        'is_over21_required' => 'isOver21Required'
     ];
 
     /**
@@ -156,9 +151,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         'opt_out_confirmed_response' => 'setOptOutConfirmedResponse',
         'opt_in_confirmed_customer_receives' => 'setOptInConfirmedCustomerReceives',
         'opt_out_confirmed_customer_receives' => 'setOptOutConfirmedCustomerReceives',
-        'is_over21_required' => 'setIsOver21Required',
-        'opt_in_confirmed_media_urls' => 'setOptInConfirmedMediaUrls',
-        'opt_out_confirmed_media_urls' => 'setOptOutConfirmedMediaUrls'
+        'is_over21_required' => 'setIsOver21Required'
     ];
 
     /**
@@ -177,9 +170,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         'opt_out_confirmed_response' => 'getOptOutConfirmedResponse',
         'opt_in_confirmed_customer_receives' => 'getOptInConfirmedCustomerReceives',
         'opt_out_confirmed_customer_receives' => 'getOptOutConfirmedCustomerReceives',
-        'is_over21_required' => 'getIsOver21Required',
-        'opt_in_confirmed_media_urls' => 'getOptInConfirmedMediaUrls',
-        'opt_out_confirmed_media_urls' => 'getOptOutConfirmedMediaUrls'
+        'is_over21_required' => 'getIsOver21Required'
     ];
 
     /**
@@ -250,8 +241,6 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['opt_in_confirmed_customer_receives'] = $data['opt_in_confirmed_customer_receives'] ?? null;
         $this->container['opt_out_confirmed_customer_receives'] = $data['opt_out_confirmed_customer_receives'] ?? null;
         $this->container['is_over21_required'] = $data['is_over21_required'] ?? null;
-        $this->container['opt_in_confirmed_media_urls'] = $data['opt_in_confirmed_media_urls'] ?? null;
-        $this->container['opt_out_confirmed_media_urls'] = $data['opt_out_confirmed_media_urls'] ?? null;
     }
 
     /**
@@ -392,7 +381,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     {
 
         if ((mb_strlen($list_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $list_name when calling WTOptInListCreationParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $list_name when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be bigger than or equal to 1.');
         }
 
         $this->container['list_name'] = $list_name;
@@ -420,13 +409,13 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setPhoneNumberId($phone_number_id)
     {
         if ((mb_strlen($phone_number_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling WTOptInListCreationParams., must be smaller than or equal to 10.');
+            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be smaller than or equal to 10.');
         }
         if ((mb_strlen($phone_number_id) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling WTOptInListCreationParams., must be bigger than or equal to 10.');
+            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be bigger than or equal to 10.');
         }
         if ((!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id))) {
-            throw new \InvalidArgumentException("invalid value for $phone_number_id when calling WTOptInListCreationParams., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+            throw new \InvalidArgumentException("invalid value for $phone_number_id when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
 
         $this->container['phone_number_id'] = $phone_number_id;
@@ -455,7 +444,7 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     {
 
         if (($estimated_messages_per_month < 0)) {
-            throw new \InvalidArgumentException('invalid value for $estimated_messages_per_month when calling WTOptInListCreationParams., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $estimated_messages_per_month when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be bigger than or equal to 0.');
         }
 
         $this->container['estimated_messages_per_month'] = $estimated_messages_per_month;
@@ -483,10 +472,10 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setOptInKeyword($opt_in_keyword)
     {
         if ((mb_strlen($opt_in_keyword) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $opt_in_keyword when calling WTOptInListCreationParams., must be smaller than or equal to 30.');
+            throw new \InvalidArgumentException('invalid length for $opt_in_keyword when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be smaller than or equal to 30.');
         }
         if ((mb_strlen($opt_in_keyword) < 4)) {
-            throw new \InvalidArgumentException('invalid length for $opt_in_keyword when calling WTOptInListCreationParams., must be bigger than or equal to 4.');
+            throw new \InvalidArgumentException('invalid length for $opt_in_keyword when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be bigger than or equal to 4.');
         }
 
         $this->container['opt_in_keyword'] = $opt_in_keyword;
@@ -514,10 +503,10 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setOptOutKeyword($opt_out_keyword)
     {
         if ((mb_strlen($opt_out_keyword) > 34)) {
-            throw new \InvalidArgumentException('invalid length for $opt_out_keyword when calling WTOptInListCreationParams., must be smaller than or equal to 34.');
+            throw new \InvalidArgumentException('invalid length for $opt_out_keyword when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be smaller than or equal to 34.');
         }
         if ((mb_strlen($opt_out_keyword) < 4)) {
-            throw new \InvalidArgumentException('invalid length for $opt_out_keyword when calling WTOptInListCreationParams., must be bigger than or equal to 4.');
+            throw new \InvalidArgumentException('invalid length for $opt_out_keyword when calling PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs., must be bigger than or equal to 4.');
         }
 
         $this->container['opt_out_keyword'] = $opt_out_keyword;
@@ -641,54 +630,6 @@ class WTOptInListCreationParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setIsOver21Required($is_over21_required)
     {
         $this->container['is_over21_required'] = $is_over21_required;
-
-        return $this;
-    }
-
-    /**
-     * Gets opt_in_confirmed_media_urls
-     *
-     * @return string[]|null
-     */
-    public function getOptInConfirmedMediaUrls()
-    {
-        return $this->container['opt_in_confirmed_media_urls'];
-    }
-
-    /**
-     * Sets opt_in_confirmed_media_urls
-     *
-     * @param string[]|null $opt_in_confirmed_media_urls opt_in_confirmed_media_urls
-     *
-     * @return self
-     */
-    public function setOptInConfirmedMediaUrls($opt_in_confirmed_media_urls)
-    {
-        $this->container['opt_in_confirmed_media_urls'] = $opt_in_confirmed_media_urls;
-
-        return $this;
-    }
-
-    /**
-     * Gets opt_out_confirmed_media_urls
-     *
-     * @return string[]|null
-     */
-    public function getOptOutConfirmedMediaUrls()
-    {
-        return $this->container['opt_out_confirmed_media_urls'];
-    }
-
-    /**
-     * Sets opt_out_confirmed_media_urls
-     *
-     * @param string[]|null $opt_out_confirmed_media_urls opt_out_confirmed_media_urls
-     *
-     * @return self
-     */
-    public function setOptOutConfirmedMediaUrls($opt_out_confirmed_media_urls)
-    {
-        $this->container['opt_out_confirmed_media_urls'] = $opt_out_confirmed_media_urls;
 
         return $this;
     }

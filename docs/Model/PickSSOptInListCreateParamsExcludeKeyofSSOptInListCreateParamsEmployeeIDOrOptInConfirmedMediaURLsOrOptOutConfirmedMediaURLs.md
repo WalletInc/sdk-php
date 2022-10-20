@@ -1,4 +1,4 @@
-# # WTOptInListCreationParams
+# # PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs
 
 ## Properties
 
@@ -15,7 +15,5 @@ Name | Type | Description | Notes
 **opt_in_confirmed_customer_receives** | **string** |  |
 **opt_out_confirmed_customer_receives** | **string** |  |
 **is_over21_required** | **bool** |  |
-**opt_in_confirmed_media_urls** | **string[]** |  | [optional]
-**opt_out_confirmed_media_urls** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
