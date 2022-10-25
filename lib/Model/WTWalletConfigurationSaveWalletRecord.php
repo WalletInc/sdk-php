@@ -93,6 +93,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_settings' => 'bool',
         'is_chat_room' => 'bool',
         'google_analytics_id' => 'string',
+        'facebook_pixel_id' => 'string',
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => 'string',
         'vanity_page_wallet_prefix' => 'string'
@@ -139,6 +140,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_settings' => null,
         'is_chat_room' => null,
         'google_analytics_id' => null,
+        'facebook_pixel_id' => null,
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => null,
         'vanity_page_wallet_prefix' => null
@@ -204,6 +206,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_settings' => 'isSettings',
         'is_chat_room' => 'isChatRoom',
         'google_analytics_id' => 'googleAnalyticsID',
+        'facebook_pixel_id' => 'facebookPixelID',
         'public_chat_room_channel_id' => 'publicChatRoomChannelID',
         'vanity_handle' => 'vanityHandle',
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix'
@@ -248,6 +251,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_settings' => 'setIsSettings',
         'is_chat_room' => 'setIsChatRoom',
         'google_analytics_id' => 'setGoogleAnalyticsId',
+        'facebook_pixel_id' => 'setFacebookPixelId',
         'public_chat_room_channel_id' => 'setPublicChatRoomChannelId',
         'vanity_handle' => 'setVanityHandle',
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix'
@@ -292,6 +296,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_settings' => 'getIsSettings',
         'is_chat_room' => 'getIsChatRoom',
         'google_analytics_id' => 'getGoogleAnalyticsId',
+        'facebook_pixel_id' => 'getFacebookPixelId',
         'public_chat_room_channel_id' => 'getPublicChatRoomChannelId',
         'vanity_handle' => 'getVanityHandle',
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix'
@@ -387,6 +392,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['is_settings'] = $data['is_settings'] ?? null;
         $this->container['is_chat_room'] = $data['is_chat_room'] ?? null;
         $this->container['google_analytics_id'] = $data['google_analytics_id'] ?? null;
+        $this->container['facebook_pixel_id'] = $data['facebook_pixel_id'] ?? null;
         $this->container['public_chat_room_channel_id'] = $data['public_chat_room_channel_id'] ?? null;
         $this->container['vanity_handle'] = $data['vanity_handle'] ?? null;
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
@@ -1297,6 +1303,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setGoogleAnalyticsId($google_analytics_id)
     {
         $this->container['google_analytics_id'] = $google_analytics_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets facebook_pixel_id
+     *
+     * @return string|null
+     */
+    public function getFacebookPixelId()
+    {
+        return $this->container['facebook_pixel_id'];
+    }
+
+    /**
+     * Sets facebook_pixel_id
+     *
+     * @param string|null $facebook_pixel_id facebook_pixel_id
+     *
+     * @return self
+     */
+    public function setFacebookPixelId($facebook_pixel_id)
+    {
+        $this->container['facebook_pixel_id'] = $facebook_pixel_id;
 
         return $this;
     }

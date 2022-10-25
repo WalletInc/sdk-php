@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **is_settings** | **bool** |  |
 **is_chat_room** | **bool** |  |
 **google_analytics_id** | **string** |  | [optional]
+**facebook_pixel_id** | **string** |  | [optional]
 **public_chat_room_channel_id** | **double** |  | [optional]
 **vanity_handle** | **string** |  | [optional]
 **vanity_page_wallet_prefix** | **string** |  | [optional]
