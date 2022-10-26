@@ -422,6 +422,7 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**fetchPaymentObjectBroadcasts**](docs/Api/SMSApi.md#fetchpaymentobjectbroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
 *SMSApi* | [**fetchSMSAgreement**](docs/Api/SMSApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
 *SMSApi* | [**importImportedListRecipients**](docs/Api/SMSApi.md#importimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
+*SMSApi* | [**importImportedListRecipientsFromMembershipTier**](docs/Api/SMSApi.md#importimportedlistrecipientsfrommembershiptier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 *SMSApi* | [**importOptInListSubscribers**](docs/Api/SMSApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
 *SMSApi* | [**restorePhoneNumber**](docs/Api/SMSApi.md#restorephonenumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
 *SMSApi* | [**restoreRecipient**](docs/Api/SMSApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
@@ -593,6 +594,7 @@ Class | Method | HTTP request | Description
 - [PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier](docs/Model/PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier.md)
 - [PickPaginationRequestWithSortOptionsExcludeKeyofPaginationRequestWithSortOptionsSortKey](docs/Model/PickPaginationRequestWithSortOptionsExcludeKeyofPaginationRequestWithSortOptionsSortKey.md)
 - [PickPaginationRequestWithoutSortOptionsExcludeKeyofPaginationRequestWithoutSortOptionsIsArchiveIncluded](docs/Model/PickPaginationRequestWithoutSortOptionsExcludeKeyofPaginationRequestWithoutSortOptionsIsArchiveIncluded.md)
+- [PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeID](docs/Model/PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeID.md)
 - [PickSSImportedListUpdateParamsExcludeKeyofSSImportedListUpdateParamsId](docs/Model/PickSSImportedListUpdateParamsExcludeKeyofSSImportedListUpdateParamsId.md)
 - [PickSSMobileNumberUpdateParamsExcludeKeyofSSMobileNumberUpdateParamsId](docs/Model/PickSSMobileNumberUpdateParamsExcludeKeyofSSMobileNumberUpdateParamsId.md)
 - [PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs](docs/Model/PickSSOptInListCreateParamsExcludeKeyofSSOptInListCreateParamsEmployeeIDOrOptInConfirmedMediaURLsOrOptOutConfirmedMediaURLs.md)
@@ -695,6 +697,7 @@ Class | Method | HTTP request | Description
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
 - [WTImageGridUpdateParams](docs/Model/WTImageGridUpdateParams.md)
 - [WTImportedList](docs/Model/WTImportedList.md)
+- [WTImportedListRecipientFromMembershipTierImport](docs/Model/WTImportedListRecipientFromMembershipTierImport.md)
 - [WTInfoGenesisLookupRequestErrors](docs/Model/WTInfoGenesisLookupRequestErrors.md)
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)

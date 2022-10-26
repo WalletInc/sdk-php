@@ -9862,6 +9862,335 @@ class SMSApi
     }
 
     /**
+     * Operation importImportedListRecipientsFromMembershipTier
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import wt_imported_list_recipient_from_membership_tier_import (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     */
+    public function importImportedListRecipientsFromMembershipTier($wt_imported_list_recipient_from_membership_tier_import)
+    {
+        list($response) = $this->importImportedListRecipientsFromMembershipTierWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import);
+        return $response;
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierWithHttpInfo
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function importImportedListRecipientsFromMembershipTierWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import)
+    {
+        $request = $this->importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierAsync
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function importImportedListRecipientsFromMembershipTierAsync($wt_imported_list_recipient_from_membership_tier_import)
+    {
+        return $this->importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import)
+    {
+        $returnType = 'string';
+        $request = $this->importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'importImportedListRecipientsFromMembershipTier'
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import)
+    {
+        // verify the required parameter 'wt_imported_list_recipient_from_membership_tier_import' is set
+        if ($wt_imported_list_recipient_from_membership_tier_import === null || (is_array($wt_imported_list_recipient_from_membership_tier_import) && count($wt_imported_list_recipient_from_membership_tier_import) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $wt_imported_list_recipient_from_membership_tier_import when calling importImportedListRecipientsFromMembershipTier'
+            );
+        }
+
+        $resourcePath = '/v2/sms/importedList/recipients/import-from-tier';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($wt_imported_list_recipient_from_membership_tier_import)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wt_imported_list_recipient_from_membership_tier_import));
+            } else {
+                $httpBody = $wt_imported_list_recipient_from_membership_tier_import;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation importOptInListSubscribers
      *
      * Import opt in list subscribers

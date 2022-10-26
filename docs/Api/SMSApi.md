@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**fetchPaymentObjectBroadcasts()**](SMSApi.md#fetchPaymentObjectBroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
 [**fetchSMSAgreement()**](SMSApi.md#fetchSMSAgreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
 [**importImportedListRecipients()**](SMSApi.md#importImportedListRecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
+[**importImportedListRecipientsFromMembershipTier()**](SMSApi.md#importImportedListRecipientsFromMembershipTier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 [**importOptInListSubscribers()**](SMSApi.md#importOptInListSubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
 [**restorePhoneNumber()**](SMSApi.md#restorePhoneNumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number
 [**restoreRecipient()**](SMSApi.md#restoreRecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
@@ -1555,6 +1556,60 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imported_list_id** | **string**|  |
  **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `importImportedListRecipientsFromMembershipTier()`
+
+```php
+importImportedListRecipientsFromMembershipTier($wt_imported_list_recipient_from_membership_tier_import): string
+```
+
+Import imported list recipients from a given membership tier
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_imported_list_recipient_from_membership_tier_import = new \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport(); // \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport
+
+try {
+    $result = $apiInstance->importImportedListRecipientsFromMembershipTier($wt_imported_list_recipient_from_membership_tier_import);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSApi->importImportedListRecipientsFromMembershipTier: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_imported_list_recipient_from_membership_tier_import** | [**\OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport**](../Model/WTImportedListRecipientFromMembershipTierImport.md)|  |
 
 ### Return type
 

@@ -320,6 +320,10 @@ class PhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['message_footer'] === null) {
             $invalidProperties[] = "'message_footer' can't be null";
         }
+        if ((mb_strlen($this->container['message_footer']) < 1)) {
+            $invalidProperties[] = "invalid value for 'message_footer', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['help_response'] === null) {
             $invalidProperties[] = "'help_response' can't be null";
         }
@@ -329,6 +333,10 @@ class PhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['company_name'] === null) {
             $invalidProperties[] = "'company_name' can't be null";
         }
+        if ((mb_strlen($this->container['company_name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'company_name', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['privacy_policy_url'] === null) {
             $invalidProperties[] = "'privacy_policy_url' can't be null";
         }
@@ -437,6 +445,11 @@ class PhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMessageFooter($message_footer)
     {
+
+        if ((mb_strlen($message_footer) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $message_footer when calling PhoneNumber., must be bigger than or equal to 1.');
+        }
+
         $this->container['message_footer'] = $message_footer;
 
         return $this;
@@ -509,6 +522,11 @@ class PhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCompanyName($company_name)
     {
+
+        if ((mb_strlen($company_name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $company_name when calling PhoneNumber., must be bigger than or equal to 1.');
+        }
+
         $this->container['company_name'] = $company_name;
 
         return $this;
