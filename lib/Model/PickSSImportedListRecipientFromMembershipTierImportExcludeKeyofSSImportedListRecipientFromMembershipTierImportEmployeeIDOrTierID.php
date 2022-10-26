@@ -1,6 +1,6 @@
 <?php
 /**
- * WTImportedListRecipientFromMembershipTierImport
+ * PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTImportedListRecipientFromMembershipTierImport Class Doc Comment
+ * PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID Class Doc Comment
  *
  * @category Class
+ * @description From T, pick a set of properties whose keys are in the union K
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class WTImportedListRecipientFromMembershipTierImport implements ModelInterface, ArrayAccess, \JsonSerializable
+class PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTImportedListRecipientFromMembershipTierImport';
+    protected static $openAPIModelName = 'Pick_SSImportedListRecipientFromMembershipTierImport.Exclude_keyofSSImportedListRecipientFromMembershipTierImport.employeeID-or-tierID__';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,8 +62,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
       */
     protected static $openAPITypes = [
         'list_name' => 'string',
-        'phone_number_id' => 'string',
-        'tier_id' => 'string'
+        'phone_number_id' => 'string'
     ];
 
     /**
@@ -74,8 +74,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
       */
     protected static $openAPIFormats = [
         'list_name' => null,
-        'phone_number_id' => null,
-        'tier_id' => null
+        'phone_number_id' => null
     ];
 
     /**
@@ -106,8 +105,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
      */
     protected static $attributeMap = [
         'list_name' => 'listName',
-        'phone_number_id' => 'phoneNumberID',
-        'tier_id' => 'tierID'
+        'phone_number_id' => 'phoneNumberID'
     ];
 
     /**
@@ -117,8 +115,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
      */
     protected static $setters = [
         'list_name' => 'setListName',
-        'phone_number_id' => 'setPhoneNumberId',
-        'tier_id' => 'setTierId'
+        'phone_number_id' => 'setPhoneNumberId'
     ];
 
     /**
@@ -128,8 +125,7 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
      */
     protected static $getters = [
         'list_name' => 'getListName',
-        'phone_number_id' => 'getPhoneNumberId',
-        'tier_id' => 'getTierId'
+        'phone_number_id' => 'getPhoneNumberId'
     ];
 
     /**
@@ -191,7 +187,6 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
     {
         $this->container['list_name'] = $data['list_name'] ?? null;
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
-        $this->container['tier_id'] = $data['tier_id'] ?? null;
     }
 
     /**
@@ -221,9 +216,6 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
             $invalidProperties[] = "invalid value for 'phone_number_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['tier_id'] === null) {
-            $invalidProperties[] = "'tier_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -283,40 +275,16 @@ class WTImportedListRecipientFromMembershipTierImport implements ModelInterface,
     public function setPhoneNumberId($phone_number_id)
     {
         if ((mb_strlen($phone_number_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling WTImportedListRecipientFromMembershipTierImport., must be smaller than or equal to 10.');
+            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID., must be smaller than or equal to 10.');
         }
         if ((mb_strlen($phone_number_id) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling WTImportedListRecipientFromMembershipTierImport., must be bigger than or equal to 10.');
+            throw new \InvalidArgumentException('invalid length for $phone_number_id when calling PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID., must be bigger than or equal to 10.');
         }
         if ((!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id))) {
-            throw new \InvalidArgumentException("invalid value for $phone_number_id when calling WTImportedListRecipientFromMembershipTierImport., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+            throw new \InvalidArgumentException("invalid value for $phone_number_id when calling PickSSImportedListRecipientFromMembershipTierImportExcludeKeyofSSImportedListRecipientFromMembershipTierImportEmployeeIDOrTierID., must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
 
         $this->container['phone_number_id'] = $phone_number_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets tier_id
-     *
-     * @return string
-     */
-    public function getTierId()
-    {
-        return $this->container['tier_id'];
-    }
-
-    /**
-     * Sets tier_id
-     *
-     * @param string $tier_id tier_id
-     *
-     * @return self
-     */
-    public function setTierId($tier_id)
-    {
-        $this->container['tier_id'] = $tier_id;
 
         return $this;
     }
