@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**fetchBlockedTCPAEntries()**](SMSApi.md#fetchBlockedTCPAEntries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
 [**fetchImportedListRecipients()**](SMSApi.md#fetchImportedListRecipients) | **GET** /v2/sms/importedList/recipients/{listID} | Fetch imported list recipients
 [**fetchImportedListRecipientsByPage()**](SMSApi.md#fetchImportedListRecipientsByPage) | **GET** /v2/sms/importedList/recipients/page/{listID} | Fetch imported list recipients by page
+[**fetchOptInListSources()**](SMSApi.md#fetchOptInListSources) | **GET** /v2/sms/optInListSources/all | Fetch all opt in list sources
 [**fetchOptInListSubscribers()**](SMSApi.md#fetchOptInListSubscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Fetch opt in list subscribers
 [**fetchOptInListSubscribersByPage()**](SMSApi.md#fetchOptInListSubscribersByPage) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Fetch opt in list subscribers by page
 [**fetchOptInListsAssociatedWithPhoneNumber()**](SMSApi.md#fetchOptInListsAssociatedWithPhoneNumber) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Fetch opt in lists
@@ -985,6 +986,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchOptInListSources()`
+
+```php
+fetchOptInListSources($is_archive_included): mixed
+```
+
+Fetch all opt in list sources
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$is_archive_included = True; // bool
+
+try {
+    $result = $apiInstance->fetchOptInListSources($is_archive_included);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSApi->fetchOptInListSources: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_archive_included** | **bool**|  | [optional]
+
+### Return type
+
+**mixed**
 
 ### Authorization
 
