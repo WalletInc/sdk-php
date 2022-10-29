@@ -26,7 +26,7 @@ Method | HTTP request | Description
 [**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Fetch merchant information
 [**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Fetch all messages
 [**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-[**fetchOptInListSources()**](EmployeesApi.md#fetchOptInListSources) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
+[**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 [**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 [**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
 [**importClubMembers()**](EmployeesApi.md#importClubMembers) | **POST** /v2/employee/import/members | Import club members
@@ -1228,10 +1228,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchOptInListSources()`
+## `fetchOptInListSourcesCreatedByEmployee()`
 
 ```php
-fetchOptInListSources(): \OpenAPI\Client\Model\OptInListSource[]
+fetchOptInListSourcesCreatedByEmployee(): \OpenAPI\Client\Model\OptInListSource[]
 ```
 
 Fetch all opt in list sources
@@ -1251,10 +1251,10 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
 );
 
 try {
-    $result = $apiInstance->fetchOptInListSources();
+    $result = $apiInstance->fetchOptInListSourcesCreatedByEmployee();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EmployeesApi->fetchOptInListSources: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EmployeesApi->fetchOptInListSourcesCreatedByEmployee: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

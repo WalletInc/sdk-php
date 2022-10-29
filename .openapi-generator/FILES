@@ -263,6 +263,7 @@ docs/Model/WTInfoGenesisLookupRequestErrors.md
 docs/Model/WTInfoGenesisRecordFilterParameters.md
 docs/Model/WTInfoGenesisRoutingIDs.md
 docs/Model/WTInfoGenesisUniquePostingIDs.md
+docs/Model/WTLinkBook.md
 docs/Model/WTLinkBookCreateParams.md
 docs/Model/WTLinkBookSectionCreateParams.md
 docs/Model/WTLinkBookSectionUpdateParams.md
@@ -588,6 +589,7 @@ lib/Model/WTInfoGenesisLookupRequestErrors.php
 lib/Model/WTInfoGenesisRecordFilterParameters.php
 lib/Model/WTInfoGenesisRoutingIDs.php
 lib/Model/WTInfoGenesisUniquePostingIDs.php
+lib/Model/WTLinkBook.php
 lib/Model/WTLinkBookCreateParams.php
 lib/Model/WTLinkBookSectionCreateParams.php
 lib/Model/WTLinkBookSectionUpdateParams.php
@@ -650,3 +652,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/WTLinkBookTest.php

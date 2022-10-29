@@ -233,7 +233,7 @@ Class | Method | HTTP request | Description
 *EmployeesApi* | [**fetchMerchant**](docs/Api/EmployeesApi.md#fetchmerchant) | **GET** /v2/employee/merchant | Fetch merchant information
 *EmployeesApi* | [**fetchMessages**](docs/Api/EmployeesApi.md#fetchmessages) | **GET** /v2/employee/messages/all | Fetch all messages
 *EmployeesApi* | [**fetchOptInListSource**](docs/Api/EmployeesApi.md#fetchoptinlistsource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-*EmployeesApi* | [**fetchOptInListSources**](docs/Api/EmployeesApi.md#fetchoptinlistsources) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
+*EmployeesApi* | [**fetchOptInListSourcesCreatedByEmployee**](docs/Api/EmployeesApi.md#fetchoptinlistsourcescreatedbyemployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 *EmployeesApi* | [**fetchPeerActivity**](docs/Api/EmployeesApi.md#fetchpeeractivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 *EmployeesApi* | [**fetchPeersPermissions**](docs/Api/EmployeesApi.md#fetchpeerspermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
 *EmployeesApi* | [**importClubMembers**](docs/Api/EmployeesApi.md#importclubmembers) | **POST** /v2/employee/import/members | Import club members
@@ -308,6 +308,7 @@ Class | Method | HTTP request | Description
 *LinkBookApi* | [**archiveLinkBook**](docs/Api/LinkBookApi.md#archivelinkbook) | **DELETE** /v2/linkBook/{id} | Archive link
 *LinkBookApi* | [**createLinkBook**](docs/Api/LinkBookApi.md#createlinkbook) | **POST** /v2/linkBook | Create link
 *LinkBookApi* | [**fetchAllLinkBook**](docs/Api/LinkBookApi.md#fetchalllinkbook) | **GET** /v2/linkBook/all | Fetch all links
+*LinkBookApi* | [**fetchLinkBookById**](docs/Api/LinkBookApi.md#fetchlinkbookbyid) | **GET** /v2/linkBook/{id} | Fetch link book by id
 *LinkBookApi* | [**restoreLinkBook**](docs/Api/LinkBookApi.md#restorelinkbook) | **PATCH** /v2/linkBook/{id} | Restore link
 *LinkBookApi* | [**updateLinkBook**](docs/Api/LinkBookApi.md#updatelinkbook) | **PUT** /v2/linkBook/{id} | Update link
 *LinkBookSectionApi* | [**archiveLinkBookSection**](docs/Api/LinkBookSectionApi.md#archivelinkbooksection) | **DELETE** /v2/linkBookSection/{id} | Archive link book section
@@ -412,6 +413,7 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**fetchBlockedTCPAEntries**](docs/Api/SMSApi.md#fetchblockedtcpaentries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
 *SMSApi* | [**fetchImportedListRecipients**](docs/Api/SMSApi.md#fetchimportedlistrecipients) | **GET** /v2/sms/importedList/recipients/{listID} | Fetch imported list recipients
 *SMSApi* | [**fetchImportedListRecipientsByPage**](docs/Api/SMSApi.md#fetchimportedlistrecipientsbypage) | **GET** /v2/sms/importedList/recipients/page/{listID} | Fetch imported list recipients by page
+*SMSApi* | [**fetchOptInListSources**](docs/Api/SMSApi.md#fetchoptinlistsources) | **GET** /v2/sms/optInListSources/all | Fetch all opt in list sources
 *SMSApi* | [**fetchOptInListSubscribers**](docs/Api/SMSApi.md#fetchoptinlistsubscribers) | **GET** /v2/sms/optInList/subscribers/{listID} | Fetch opt in list subscribers
 *SMSApi* | [**fetchOptInListSubscribersByPage**](docs/Api/SMSApi.md#fetchoptinlistsubscribersbypage) | **GET** /v2/sms/optInList/subscribers/page/{listID} | Fetch opt in list subscribers by page
 *SMSApi* | [**fetchOptInListsAssociatedWithPhoneNumber**](docs/Api/SMSApi.md#fetchoptinlistsassociatedwithphonenumber) | **GET** /v2/sms/phoneNumber/lists/{phoneNumberID} | Fetch opt in lists
@@ -702,6 +704,7 @@ Class | Method | HTTP request | Description
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)
 - [WTInfoGenesisUniquePostingIDs](docs/Model/WTInfoGenesisUniquePostingIDs.md)
+- [WTLinkBook](docs/Model/WTLinkBook.md)
 - [WTLinkBookCreateParams](docs/Model/WTLinkBookCreateParams.md)
 - [WTLinkBookSectionCreateParams](docs/Model/WTLinkBookSectionCreateParams.md)
 - [WTLinkBookSectionUpdateParams](docs/Model/WTLinkBookSectionUpdateParams.md)
