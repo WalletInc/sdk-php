@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `createPublicChatRoom()`
 
 ```php
-createPublicChatRoom(): mixed
+createPublicChatRoom(): string
 ```
 
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**mixed**
+**string**
 
 ### Authorization
 
