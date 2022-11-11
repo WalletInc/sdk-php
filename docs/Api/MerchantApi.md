@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone_number_id** | **string**|  |
  **locale** | **string**|  |
- **payment_object_broadcast_id** | **string**|  |
+ **payment_object_broadcast_id** | **string**|  | [optional]
 
 ### Return type
 

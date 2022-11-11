@@ -1492,13 +1492,13 @@ class MerchantApi
      *
      * @param  string $phone_number_id phone_number_id (required)
      * @param  string $locale locale (required)
-     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (required)
+     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function exportOutboundMessages($phone_number_id, $locale, $payment_object_broadcast_id)
+    public function exportOutboundMessages($phone_number_id, $locale, $payment_object_broadcast_id = null)
     {
         list($response) = $this->exportOutboundMessagesWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id);
         return $response;
@@ -1511,13 +1511,13 @@ class MerchantApi
      *
      * @param  string $phone_number_id (required)
      * @param  string $locale (required)
-     * @param  string $payment_object_broadcast_id (required)
+     * @param  string $payment_object_broadcast_id (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportOutboundMessagesWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id)
+    public function exportOutboundMessagesWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id = null)
     {
         $request = $this->exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id);
 
@@ -1666,12 +1666,12 @@ class MerchantApi
      *
      * @param  string $phone_number_id (required)
      * @param  string $locale (required)
-     * @param  string $payment_object_broadcast_id (required)
+     * @param  string $payment_object_broadcast_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOutboundMessagesAsync($phone_number_id, $locale, $payment_object_broadcast_id)
+    public function exportOutboundMessagesAsync($phone_number_id, $locale, $payment_object_broadcast_id = null)
     {
         return $this->exportOutboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id)
             ->then(
@@ -1688,12 +1688,12 @@ class MerchantApi
      *
      * @param  string $phone_number_id (required)
      * @param  string $locale (required)
-     * @param  string $payment_object_broadcast_id (required)
+     * @param  string $payment_object_broadcast_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOutboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id)
+    public function exportOutboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id = null)
     {
         $returnType = 'string';
         $request = $this->exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id);
@@ -1736,12 +1736,12 @@ class MerchantApi
      *
      * @param  string $phone_number_id (required)
      * @param  string $locale (required)
-     * @param  string $payment_object_broadcast_id (required)
+     * @param  string $payment_object_broadcast_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id)
+    public function exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id = null)
     {
         // verify the required parameter 'phone_number_id' is set
         if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
@@ -1765,19 +1765,13 @@ class MerchantApi
                 'Missing the required parameter $locale when calling exportOutboundMessages'
             );
         }
-        // verify the required parameter 'payment_object_broadcast_id' is set
-        if ($payment_object_broadcast_id === null || (is_array($payment_object_broadcast_id) && count($payment_object_broadcast_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $payment_object_broadcast_id when calling exportOutboundMessages'
-            );
-        }
-        if (strlen($payment_object_broadcast_id) > 10) {
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) > 10) {
             throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling MerchantApi.exportOutboundMessages, must be smaller than or equal to 10.');
         }
-        if (strlen($payment_object_broadcast_id) < 10) {
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) < 10) {
             throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling MerchantApi.exportOutboundMessages, must be bigger than or equal to 10.');
         }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
+        if ($payment_object_broadcast_id !== null && !preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
             throw new \InvalidArgumentException("invalid value for \"payment_object_broadcast_id\" when calling MerchantApi.exportOutboundMessages, must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
 
