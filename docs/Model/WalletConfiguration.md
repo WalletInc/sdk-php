@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **left_menu_section_color** | **string** |  |
 **left_menu_arrow_color** | **string** |  |
 **company_logo_url** | **string** |  |
+**header_image_url** | **string** |  |
 **welcome_message** | **string** |  |
 **is_apple_enabled** | **bool** |  |
 **is_google_enabled** | **bool** |  |
