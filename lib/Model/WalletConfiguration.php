@@ -458,12 +458,6 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['company_logo_url'] === null) {
             $invalidProperties[] = "'company_logo_url' can't be null";
         }
-        if ($this->container['header_image_url'] === null) {
-            $invalidProperties[] = "'header_image_url' can't be null";
-        }
-        if ($this->container['header_custom_icon'] === null) {
-            $invalidProperties[] = "'header_custom_icon' can't be null";
-        }
         if ($this->container['welcome_message'] === null) {
             $invalidProperties[] = "'welcome_message' can't be null";
         }
@@ -716,7 +710,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets header_image_url
      *
-     * @return string
+     * @return string|null
      */
     public function getHeaderImageUrl()
     {
@@ -726,7 +720,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets header_image_url
      *
-     * @param string $header_image_url header_image_url
+     * @param string|null $header_image_url header_image_url
      *
      * @return self
      */
@@ -740,7 +734,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets header_custom_icon
      *
-     * @return string
+     * @return string|null
      */
     public function getHeaderCustomIcon()
     {
@@ -750,7 +744,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets header_custom_icon
      *
-     * @param string $header_custom_icon header_custom_icon
+     * @param string|null $header_custom_icon header_custom_icon
      *
      * @return self
      */
