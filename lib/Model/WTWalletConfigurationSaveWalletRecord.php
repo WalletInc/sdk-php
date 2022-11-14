@@ -66,6 +66,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'left_menu_arrow_color' => 'string',
         'company_logo_url' => 'string',
         'header_image_url' => 'string',
+        'header_custom_icon' => 'string',
         'welcome_message' => 'string',
         'is_apple_enabled' => 'bool',
         'is_google_enabled' => 'bool',
@@ -114,6 +115,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'left_menu_arrow_color' => null,
         'company_logo_url' => null,
         'header_image_url' => null,
+        'header_custom_icon' => null,
         'welcome_message' => null,
         'is_apple_enabled' => null,
         'is_google_enabled' => null,
@@ -181,6 +183,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'left_menu_arrow_color' => 'leftMenuArrowColor',
         'company_logo_url' => 'companyLogoURL',
         'header_image_url' => 'headerImageURL',
+        'header_custom_icon' => 'headerCustomIcon',
         'welcome_message' => 'welcomeMessage',
         'is_apple_enabled' => 'isAppleEnabled',
         'is_google_enabled' => 'isGoogleEnabled',
@@ -227,6 +230,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'left_menu_arrow_color' => 'setLeftMenuArrowColor',
         'company_logo_url' => 'setCompanyLogoUrl',
         'header_image_url' => 'setHeaderImageUrl',
+        'header_custom_icon' => 'setHeaderCustomIcon',
         'welcome_message' => 'setWelcomeMessage',
         'is_apple_enabled' => 'setIsAppleEnabled',
         'is_google_enabled' => 'setIsGoogleEnabled',
@@ -273,6 +277,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'left_menu_arrow_color' => 'getLeftMenuArrowColor',
         'company_logo_url' => 'getCompanyLogoUrl',
         'header_image_url' => 'getHeaderImageUrl',
+        'header_custom_icon' => 'getHeaderCustomIcon',
         'welcome_message' => 'getWelcomeMessage',
         'is_apple_enabled' => 'getIsAppleEnabled',
         'is_google_enabled' => 'getIsGoogleEnabled',
@@ -370,6 +375,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['left_menu_arrow_color'] = $data['left_menu_arrow_color'] ?? null;
         $this->container['company_logo_url'] = $data['company_logo_url'] ?? null;
         $this->container['header_image_url'] = $data['header_image_url'] ?? null;
+        $this->container['header_custom_icon'] = $data['header_custom_icon'] ?? null;
         $this->container['welcome_message'] = $data['welcome_message'] ?? null;
         $this->container['is_apple_enabled'] = $data['is_apple_enabled'] ?? null;
         $this->container['is_google_enabled'] = $data['is_google_enabled'] ?? null;
@@ -430,6 +436,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         }
         if ($this->container['header_image_url'] === null) {
             $invalidProperties[] = "'header_image_url' can't be null";
+        }
+        if ($this->container['header_custom_icon'] === null) {
+            $invalidProperties[] = "'header_custom_icon' can't be null";
         }
         if ($this->container['welcome_message'] === null) {
             $invalidProperties[] = "'welcome_message' can't be null";
@@ -664,6 +673,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setHeaderImageUrl($header_image_url)
     {
         $this->container['header_image_url'] = $header_image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets header_custom_icon
+     *
+     * @return string
+     */
+    public function getHeaderCustomIcon()
+    {
+        return $this->container['header_custom_icon'];
+    }
+
+    /**
+     * Sets header_custom_icon
+     *
+     * @param string $header_custom_icon header_custom_icon
+     *
+     * @return self
+     */
+    public function setHeaderCustomIcon($header_custom_icon)
+    {
+        $this->container['header_custom_icon'] = $header_custom_icon;
 
         return $this;
     }
