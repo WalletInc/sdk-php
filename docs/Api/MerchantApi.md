@@ -255,7 +255,7 @@ No authorization required
 ## `exportOutboundMessages()`
 
 ```php
-exportOutboundMessages($phone_number_id, $locale): string
+exportOutboundMessages($phone_number_id, $locale, $payment_object_broadcast_id): string
 ```
 
 Export outbound messages
@@ -275,9 +275,10 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
 );
 $phone_number_id = 'phone_number_id_example'; // string
 $locale = 'locale_example'; // string
+$payment_object_broadcast_id = 'payment_object_broadcast_id_example'; // string
 
 try {
-    $result = $apiInstance->exportOutboundMessages($phone_number_id, $locale);
+    $result = $apiInstance->exportOutboundMessages($phone_number_id, $locale, $payment_object_broadcast_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->exportOutboundMessages: ', $e->getMessage(), PHP_EOL;
@@ -290,6 +291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone_number_id** | **string**|  |
  **locale** | **string**|  |
+ **payment_object_broadcast_id** | **string**|  | [optional]
 
 ### Return type
 
