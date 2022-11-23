@@ -119,7 +119,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation archiveStaticVoucherCampaign
      *
-     * Update static voucher campaign
+     * Archive static voucher campaign
      *
      * @param  mixed $campaign_id campaign_id (required)
      *
@@ -136,7 +136,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation archiveStaticVoucherCampaignWithHttpInfo
      *
-     * Update static voucher campaign
+     * Archive static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *
@@ -289,7 +289,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation archiveStaticVoucherCampaignAsync
      *
-     * Update static voucher campaign
+     * Archive static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *
@@ -309,7 +309,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation archiveStaticVoucherCampaignAsyncWithHttpInfo
      *
-     * Update static voucher campaign
+     * Archive static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *
@@ -6212,7 +6212,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation restoreStaticVoucherCampaign
      *
-     * Update static voucher campaign
+     * Restore static voucher campaign
      *
      * @param  mixed $campaign_id campaign_id (required)
      *
@@ -6229,7 +6229,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation restoreStaticVoucherCampaignWithHttpInfo
      *
-     * Update static voucher campaign
+     * Restore static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *
@@ -6382,7 +6382,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation restoreStaticVoucherCampaignAsync
      *
-     * Update static voucher campaign
+     * Restore static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *
@@ -6402,7 +6402,7 @@ class StaticVoucherCampaignsApi
     /**
      * Operation restoreStaticVoucherCampaignAsyncWithHttpInfo
      *
-     * Update static voucher campaign
+     * Restore static voucher campaign
      *
      * @param  mixed $campaign_id (required)
      *

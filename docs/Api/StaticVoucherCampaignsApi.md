@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
+[**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign
 [**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
 [**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
 [**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers
 [**previewMessages()**](StaticVoucherCampaignsApi.md#previewMessages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
 [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page
-[**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
+[**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign
 [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher
 
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 archiveStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
 ```
 
-Update static voucher campaign
+Archive static voucher campaign
 
 ### Example
 
@@ -1021,7 +1021,7 @@ No authorization required
 restoreStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
 ```
 
-Update static voucher campaign
+Restore static voucher campaign
 
 ### Example
 
