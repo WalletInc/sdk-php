@@ -62,10 +62,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'id' => 'string',
         'employee_id' => 'string',
-        'is_active' => 'bool',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'phone_number_id' => 'string',
         'media_urls' => 'string[]',
         'opt_in_list' => '\OpenAPI\Client\Model\WTOptInList',
@@ -91,10 +91,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'id' => null,
         'employee_id' => null,
-        'is_active' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'phone_number_id' => null,
         'media_urls' => null,
         'opt_in_list' => null,
@@ -139,10 +139,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'id' => 'id',
         'employee_id' => 'employeeID',
-        'is_active' => 'isActive',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'phone_number_id' => 'phoneNumberID',
         'media_urls' => 'mediaURLs',
         'opt_in_list' => 'OptInList',
@@ -166,10 +166,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'id' => 'setId',
         'employee_id' => 'setEmployeeId',
-        'is_active' => 'setIsActive',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'phone_number_id' => 'setPhoneNumberId',
         'media_urls' => 'setMediaUrls',
         'opt_in_list' => 'setOptInList',
@@ -193,10 +193,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'id' => 'getId',
         'employee_id' => 'getEmployeeId',
-        'is_active' => 'getIsActive',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'phone_number_id' => 'getPhoneNumberId',
         'media_urls' => 'getMediaUrls',
         'opt_in_list' => 'getOptInList',
@@ -271,10 +271,10 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
         $this->container['media_urls'] = $data['media_urls'] ?? null;
         $this->container['opt_in_list'] = $data['opt_in_list'] ?? null;
@@ -325,9 +325,6 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'employee_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['merchant_id'] === null) {
             $invalidProperties[] = "'merchant_id' can't be null";
         }
@@ -348,6 +345,9 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['phone_number_id'] === null) {
             $invalidProperties[] = "'phone_number_id' can't be null";
@@ -495,30 +495,6 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
      * Gets merchant_id
      *
      * @return string
@@ -596,6 +572,30 @@ class StaticVoucherCampaignBroadcast implements ModelInterface, ArrayAccess, \Js
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **valid_only_at_pos_register_ids** | **string[]** |  | [optional]
 **payment_design_id** | **string** |  |
 **employee_id** | **string** |  |
-**is_active** | **bool** |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **starting_value** | **int** |  |
 **max_budget** | **int** |  |
 **temporal_decrease_amount** | **int** |  |

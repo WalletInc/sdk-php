@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **employee_id** | **string** |  |
-**is_active** | **bool** |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **phone_number_id** | **string** |  |
 **media_urls** | **string[]** |  |
 **opt_in_list** | [**\OpenAPI\Client\Model\WTOptInList**](WTOptInList.md) |  | [optional]

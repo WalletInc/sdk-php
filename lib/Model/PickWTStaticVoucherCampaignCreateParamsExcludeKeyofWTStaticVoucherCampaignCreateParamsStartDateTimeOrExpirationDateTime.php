@@ -70,7 +70,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'string[]',
         'payment_design_id' => 'string',
         'employee_id' => 'string',
-        'is_active' => 'bool',
         'campaign_group_id' => 'string',
         'bucket' => 'string',
         'created_by_source_id' => 'int',
@@ -94,7 +93,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
         'employee_id' => null,
-        'is_active' => null,
         'campaign_group_id' => null,
         'bucket' => null,
         'created_by_source_id' => 'int32',
@@ -137,7 +135,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
         'employee_id' => 'employeeID',
-        'is_active' => 'isActive',
         'campaign_group_id' => 'campaignGroupID',
         'bucket' => 'bucket',
         'created_by_source_id' => 'createdBySourceID',
@@ -159,7 +156,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
         'employee_id' => 'setEmployeeId',
-        'is_active' => 'setIsActive',
         'campaign_group_id' => 'setCampaignGroupId',
         'bucket' => 'setBucket',
         'created_by_source_id' => 'setCreatedBySourceId',
@@ -181,7 +177,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
         'employee_id' => 'getEmployeeId',
-        'is_active' => 'getIsActive',
         'campaign_group_id' => 'getCampaignGroupId',
         'bucket' => 'getBucket',
         'created_by_source_id' => 'getCreatedBySourceId',
@@ -254,7 +249,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         $this->container['valid_only_at_pos_register_ids'] = $data['valid_only_at_pos_register_ids'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['campaign_group_id'] = $data['campaign_group_id'] ?? null;
         $this->container['bucket'] = $data['bucket'] ?? null;
         $this->container['created_by_source_id'] = $data['created_by_source_id'] ?? null;
@@ -316,9 +310,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
             $invalidProperties[] = "invalid value for 'employee_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if (!is_null($this->container['campaign_group_id']) && (mb_strlen($this->container['campaign_group_id']) > 10)) {
             $invalidProperties[] = "invalid value for 'campaign_group_id', the character length must be smaller than or equal to 10.";
         }
@@ -586,30 +577,6 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         }
 
         $this->container['employee_id'] = $employee_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
 
         return $this;
     }

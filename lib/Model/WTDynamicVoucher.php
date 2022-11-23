@@ -69,10 +69,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'valid_only_at_pos_register_ids' => 'string[]',
         'payment_design_id' => 'string',
         'employee_id' => 'string',
-        'is_active' => 'bool',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'starting_value' => 'int',
         'max_budget' => 'int',
         'temporal_decrease_amount' => 'int',
@@ -112,10 +112,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
         'employee_id' => null,
-        'is_active' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'starting_value' => 'int32',
         'max_budget' => 'int32',
         'temporal_decrease_amount' => 'int32',
@@ -174,10 +174,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
         'employee_id' => 'employeeID',
-        'is_active' => 'isActive',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'starting_value' => 'startingValue',
         'max_budget' => 'maxBudget',
         'temporal_decrease_amount' => 'temporalDecreaseAmount',
@@ -215,10 +215,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
         'employee_id' => 'setEmployeeId',
-        'is_active' => 'setIsActive',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'starting_value' => 'setStartingValue',
         'max_budget' => 'setMaxBudget',
         'temporal_decrease_amount' => 'setTemporalDecreaseAmount',
@@ -256,10 +256,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
         'employee_id' => 'getEmployeeId',
-        'is_active' => 'getIsActive',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'starting_value' => 'getStartingValue',
         'max_budget' => 'getMaxBudget',
         'temporal_decrease_amount' => 'getTemporalDecreaseAmount',
@@ -348,10 +348,10 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['valid_only_at_pos_register_ids'] = $data['valid_only_at_pos_register_ids'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['starting_value'] = $data['starting_value'] ?? null;
         $this->container['max_budget'] = $data['max_budget'] ?? null;
         $this->container['temporal_decrease_amount'] = $data['temporal_decrease_amount'] ?? null;
@@ -440,9 +440,6 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'employee_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['merchant_id'] === null) {
             $invalidProperties[] = "'merchant_id' can't be null";
         }
@@ -463,6 +460,9 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['starting_value'] === null) {
             $invalidProperties[] = "'starting_value' can't be null";
@@ -806,30 +806,6 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
      * Gets merchant_id
      *
      * @return string
@@ -907,6 +883,30 @@ class WTDynamicVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

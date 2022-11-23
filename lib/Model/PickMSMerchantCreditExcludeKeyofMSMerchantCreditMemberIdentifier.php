@@ -62,10 +62,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'is_active' => 'bool',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'mobile_number' => 'string',
         'credit_amount' => 'int'
     ];
@@ -79,10 +79,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'is_active' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'mobile_number' => null,
         'credit_amount' => 'int32'
     ];
@@ -115,10 +115,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'is_active' => 'isActive',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'mobile_number' => 'mobileNumber',
         'credit_amount' => 'creditAmount'
     ];
@@ -130,10 +130,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
      */
     protected static $setters = [
         'id' => 'setId',
-        'is_active' => 'setIsActive',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'mobile_number' => 'setMobileNumber',
         'credit_amount' => 'setCreditAmount'
     ];
@@ -145,10 +145,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
      */
     protected static $getters = [
         'id' => 'getId',
-        'is_active' => 'getIsActive',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'mobile_number' => 'getMobileNumber',
         'credit_amount' => 'getCreditAmount'
     ];
@@ -211,10 +211,10 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['mobile_number'] = $data['mobile_number'] ?? null;
         $this->container['credit_amount'] = $data['credit_amount'] ?? null;
     }
@@ -243,9 +243,6 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
             $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['merchant_id'] === null) {
             $invalidProperties[] = "'merchant_id' can't be null";
         }
@@ -266,6 +263,9 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['mobile_number'] === null) {
             $invalidProperties[] = "'mobile_number' can't be null";
@@ -326,30 +326,6 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active Denotes if this resource is active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
 
         return $this;
     }
@@ -432,6 +408,30 @@ class PickMSMerchantCreditExcludeKeyofMSMerchantCreditMemberIdentifier implement
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active Denotes if this resource is active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

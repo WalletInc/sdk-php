@@ -62,11 +62,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'employee_id' => 'string',
-        'is_active' => 'bool',
         'status' => 'string',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'body' => 'string',
         'phone_number_id' => 'string',
         'media_urls' => 'string[]',
@@ -94,11 +94,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'employee_id' => null,
-        'is_active' => null,
         'status' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'body' => null,
         'phone_number_id' => null,
         'media_urls' => null,
@@ -145,11 +145,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'employee_id' => 'employeeID',
-        'is_active' => 'isActive',
         'status' => 'status',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'body' => 'body',
         'phone_number_id' => 'phoneNumberID',
         'media_urls' => 'mediaURLs',
@@ -175,11 +175,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'employee_id' => 'setEmployeeId',
-        'is_active' => 'setIsActive',
         'status' => 'setStatus',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'body' => 'setBody',
         'phone_number_id' => 'setPhoneNumberId',
         'media_urls' => 'setMediaUrls',
@@ -205,11 +205,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'employee_id' => 'getEmployeeId',
-        'is_active' => 'getIsActive',
         'status' => 'getStatus',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'body' => 'getBody',
         'phone_number_id' => 'getPhoneNumberId',
         'media_urls' => 'getMediaUrls',
@@ -286,11 +286,11 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['employee_id'] = $data['employee_id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['body'] = $data['body'] ?? null;
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
         $this->container['media_urls'] = $data['media_urls'] ?? null;
@@ -343,9 +343,6 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'employee_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -369,6 +366,9 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['body'] === null) {
             $invalidProperties[] = "'body' can't be null";
@@ -503,30 +503,6 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return string
@@ -628,6 +604,30 @@ class OutboundSMS implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

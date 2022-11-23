@@ -68,11 +68,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'string',
         'valid_only_at_pos_register_ids' => 'string[]',
         'payment_design_id' => 'string',
-        'is_active' => 'bool',
         'start_date_time' => '\DateTime',
         'expiration_date_time' => '\DateTime',
         'member_id' => 'string',
         'offer_amount_cents' => 'int',
+        'is_active' => 'bool',
         'cell_phone' => 'string'
     ];
 
@@ -91,11 +91,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => null,
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
-        'is_active' => null,
         'start_date_time' => 'date-time',
         'expiration_date_time' => 'date-time',
         'member_id' => null,
         'offer_amount_cents' => 'int32',
+        'is_active' => null,
         'cell_phone' => null
     ];
 
@@ -133,11 +133,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'merchantsReferenceID',
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
-        'is_active' => 'isActive',
         'start_date_time' => 'startDateTime',
         'expiration_date_time' => 'expirationDateTime',
         'member_id' => 'memberID',
         'offer_amount_cents' => 'offerAmountCents',
+        'is_active' => 'isActive',
         'cell_phone' => 'cellPhone'
     ];
 
@@ -154,11 +154,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'setMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
-        'is_active' => 'setIsActive',
         'start_date_time' => 'setStartDateTime',
         'expiration_date_time' => 'setExpirationDateTime',
         'member_id' => 'setMemberId',
         'offer_amount_cents' => 'setOfferAmountCents',
+        'is_active' => 'setIsActive',
         'cell_phone' => 'setCellPhone'
     ];
 
@@ -175,11 +175,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'getMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
-        'is_active' => 'getIsActive',
         'start_date_time' => 'getStartDateTime',
         'expiration_date_time' => 'getExpirationDateTime',
         'member_id' => 'getMemberId',
         'offer_amount_cents' => 'getOfferAmountCents',
+        'is_active' => 'getIsActive',
         'cell_phone' => 'getCellPhone'
     ];
 
@@ -247,11 +247,11 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         $this->container['merchants_reference_id'] = $data['merchants_reference_id'] ?? null;
         $this->container['valid_only_at_pos_register_ids'] = $data['valid_only_at_pos_register_ids'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['start_date_time'] = $data['start_date_time'] ?? null;
         $this->container['expiration_date_time'] = $data['expiration_date_time'] ?? null;
         $this->container['member_id'] = $data['member_id'] ?? null;
         $this->container['offer_amount_cents'] = $data['offer_amount_cents'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['cell_phone'] = $data['cell_phone'] ?? null;
     }
 
@@ -292,9 +292,6 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['start_date_time'] === null) {
             $invalidProperties[] = "'start_date_time' can't be null";
         }
@@ -312,6 +309,9 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             $invalidProperties[] = "invalid value for 'offer_amount_cents', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -511,30 +511,6 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
     }
 
     /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
      * Gets start_date_time
      *
      * @return \DateTime
@@ -636,6 +612,30 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         }
 
         $this->container['offer_amount_cents'] = $offer_amount_cents;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
-**is_active** | **bool** |  |
 **campaign_id** | **string** |  |
 **member_id** | **string** |  | [optional]
 **cell_phone_number** | **string** |  | [optional]
@@ -26,5 +25,6 @@ Name | Type | Description | Notes
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

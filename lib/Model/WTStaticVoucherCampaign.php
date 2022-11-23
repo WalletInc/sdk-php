@@ -72,7 +72,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'string',
         'reinvestment_sum' => 'int',
         'number_of_vouchers_in_file' => 'int',
-        'is_active' => 'bool',
         'campaign_group_id' => 'string',
         'bucket' => 'string',
         'created_by_source_id' => 'int',
@@ -80,6 +79,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'voucher_type' => 'double',
         'reinvestment_sum_decimal' => 'string',
         'reinvestment_sum_string' => 'string',
@@ -107,7 +107,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => null,
         'reinvestment_sum' => 'int32',
         'number_of_vouchers_in_file' => 'int32',
-        'is_active' => null,
         'campaign_group_id' => null,
         'bucket' => null,
         'created_by_source_id' => 'int32',
@@ -115,6 +114,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'voucher_type' => 'double',
         'reinvestment_sum_decimal' => null,
         'reinvestment_sum_string' => null,
@@ -161,7 +161,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'employeeID',
         'reinvestment_sum' => 'reinvestmentSum',
         'number_of_vouchers_in_file' => 'numberOfVouchersInFile',
-        'is_active' => 'isActive',
         'campaign_group_id' => 'campaignGroupID',
         'bucket' => 'bucket',
         'created_by_source_id' => 'createdBySourceID',
@@ -169,6 +168,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'voucher_type' => 'voucherType',
         'reinvestment_sum_decimal' => 'reinvestmentSum_decimal',
         'reinvestment_sum_string' => 'reinvestmentSum_string',
@@ -194,7 +194,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'setEmployeeId',
         'reinvestment_sum' => 'setReinvestmentSum',
         'number_of_vouchers_in_file' => 'setNumberOfVouchersInFile',
-        'is_active' => 'setIsActive',
         'campaign_group_id' => 'setCampaignGroupId',
         'bucket' => 'setBucket',
         'created_by_source_id' => 'setCreatedBySourceId',
@@ -202,6 +201,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'voucher_type' => 'setVoucherType',
         'reinvestment_sum_decimal' => 'setReinvestmentSumDecimal',
         'reinvestment_sum_string' => 'setReinvestmentSumString',
@@ -227,7 +227,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'getEmployeeId',
         'reinvestment_sum' => 'getReinvestmentSum',
         'number_of_vouchers_in_file' => 'getNumberOfVouchersInFile',
-        'is_active' => 'getIsActive',
         'campaign_group_id' => 'getCampaignGroupId',
         'bucket' => 'getBucket',
         'created_by_source_id' => 'getCreatedBySourceId',
@@ -235,6 +234,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'voucher_type' => 'getVoucherType',
         'reinvestment_sum_decimal' => 'getReinvestmentSumDecimal',
         'reinvestment_sum_string' => 'getReinvestmentSumString',
@@ -311,7 +311,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['employee_id'] = $data['employee_id'] ?? null;
         $this->container['reinvestment_sum'] = $data['reinvestment_sum'] ?? null;
         $this->container['number_of_vouchers_in_file'] = $data['number_of_vouchers_in_file'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['campaign_group_id'] = $data['campaign_group_id'] ?? null;
         $this->container['bucket'] = $data['bucket'] ?? null;
         $this->container['created_by_source_id'] = $data['created_by_source_id'] ?? null;
@@ -319,6 +318,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['voucher_type'] = $data['voucher_type'] ?? null;
         $this->container['reinvestment_sum_decimal'] = $data['reinvestment_sum_decimal'] ?? null;
         $this->container['reinvestment_sum_string'] = $data['reinvestment_sum_string'] ?? null;
@@ -406,9 +406,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'number_of_vouchers_in_file', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if (!is_null($this->container['campaign_group_id']) && (mb_strlen($this->container['campaign_group_id']) > 10)) {
             $invalidProperties[] = "invalid value for 'campaign_group_id', the character length must be smaller than or equal to 10.";
         }
@@ -444,6 +441,9 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['voucher_type'] === null) {
             $invalidProperties[] = "'voucher_type' can't be null";
@@ -806,30 +806,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
      * Gets campaign_group_id
      *
      * @return string|null
@@ -1013,6 +989,30 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

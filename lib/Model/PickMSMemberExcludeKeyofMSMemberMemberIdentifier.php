@@ -62,10 +62,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'is_active' => 'bool',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'first_name' => 'string',
         'last_name' => 'string',
         'membership_tier_id' => 'string',
@@ -82,10 +82,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'is_active' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'first_name' => null,
         'last_name' => null,
         'membership_tier_id' => null,
@@ -121,10 +121,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'is_active' => 'isActive',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'first_name' => 'firstName',
         'last_name' => 'lastName',
         'membership_tier_id' => 'membershipTierID',
@@ -139,10 +139,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
      */
     protected static $setters = [
         'id' => 'setId',
-        'is_active' => 'setIsActive',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'membership_tier_id' => 'setMembershipTierId',
@@ -157,10 +157,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
      */
     protected static $getters = [
         'id' => 'getId',
-        'is_active' => 'getIsActive',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'membership_tier_id' => 'getMembershipTierId',
@@ -226,10 +226,10 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['first_name'] = $data['first_name'] ?? null;
         $this->container['last_name'] = $data['last_name'] ?? null;
         $this->container['membership_tier_id'] = $data['membership_tier_id'] ?? null;
@@ -261,9 +261,6 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
             $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['merchant_id'] === null) {
             $invalidProperties[] = "'merchant_id' can't be null";
         }
@@ -284,6 +281,9 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['membership_tier_id'] === null) {
             $invalidProperties[] = "'membership_tier_id' can't be null";
@@ -355,30 +355,6 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active Denotes if this resource is active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
 
         return $this;
     }
@@ -461,6 +437,30 @@ class PickMSMemberExcludeKeyofMSMemberMemberIdentifier implements ModelInterface
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active Denotes if this resource is active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

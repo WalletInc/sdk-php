@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **employee_id** | **string** |  |
-**is_active** | **bool** |  |
 **status** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **body** | **string** |  |
 **phone_number_id** | **string** |  |
 **media_urls** | **string[]** |  |

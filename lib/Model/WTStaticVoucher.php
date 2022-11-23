@@ -61,7 +61,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'is_active' => 'bool',
         'campaign_id' => 'string',
         'member_id' => 'string',
         'cell_phone_number' => 'string',
@@ -82,6 +81,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'authorized_amount_decimal' => 'string',
         'authorized_amount_string' => 'string',
         'offer_amount_cents_decimal' => 'string',
@@ -103,7 +103,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'is_active' => null,
         'campaign_id' => null,
         'member_id' => null,
         'cell_phone_number' => null,
@@ -124,6 +123,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'authorized_amount_decimal' => null,
         'authorized_amount_string' => null,
         'offer_amount_cents_decimal' => null,
@@ -164,7 +164,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'is_active' => 'isActive',
         'campaign_id' => 'campaignID',
         'member_id' => 'memberID',
         'cell_phone_number' => 'cellPhoneNumber',
@@ -185,6 +184,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'authorized_amount_decimal' => 'authorizedAmount_decimal',
         'authorized_amount_string' => 'authorizedAmount_string',
         'offer_amount_cents_decimal' => 'offerAmountCents_decimal',
@@ -204,7 +204,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'is_active' => 'setIsActive',
         'campaign_id' => 'setCampaignId',
         'member_id' => 'setMemberId',
         'cell_phone_number' => 'setCellPhoneNumber',
@@ -225,6 +224,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'authorized_amount_decimal' => 'setAuthorizedAmountDecimal',
         'authorized_amount_string' => 'setAuthorizedAmountString',
         'offer_amount_cents_decimal' => 'setOfferAmountCentsDecimal',
@@ -244,7 +244,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'is_active' => 'getIsActive',
         'campaign_id' => 'getCampaignId',
         'member_id' => 'getMemberId',
         'cell_phone_number' => 'getCellPhoneNumber',
@@ -265,6 +264,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'authorized_amount_decimal' => 'getAuthorizedAmountDecimal',
         'authorized_amount_string' => 'getAuthorizedAmountString',
         'offer_amount_cents_decimal' => 'getOfferAmountCentsDecimal',
@@ -335,7 +335,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['campaign_id'] = $data['campaign_id'] ?? null;
         $this->container['member_id'] = $data['member_id'] ?? null;
         $this->container['cell_phone_number'] = $data['cell_phone_number'] ?? null;
@@ -356,6 +355,7 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['authorized_amount_decimal'] = $data['authorized_amount_decimal'] ?? null;
         $this->container['authorized_amount_string'] = $data['authorized_amount_string'] ?? null;
         $this->container['offer_amount_cents_decimal'] = $data['offer_amount_cents_decimal'] ?? null;
@@ -388,9 +388,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'id', the character length must be bigger than or equal to 10.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['campaign_id'] === null) {
             $invalidProperties[] = "'campaign_id' can't be null";
         }
@@ -490,6 +487,9 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
         }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
+        }
         if ($this->container['authorized_amount_decimal'] === null) {
             $invalidProperties[] = "'authorized_amount_decimal' can't be null";
         }
@@ -550,30 +550,6 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
 
         return $this;
     }
@@ -1104,6 +1080,30 @@ class WTStaticVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

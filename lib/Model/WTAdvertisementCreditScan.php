@@ -61,7 +61,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'is_active' => 'bool',
         'transaction_type' => 'string',
         'register_id' => 'string',
         'redeemed_source' => 'string',
@@ -76,6 +75,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'is_active' => 'bool',
         'advertisement_credit_id' => 'string',
         'redeemed_amount_decimal' => 'string',
         'redeemed_amount_string' => 'string',
@@ -94,7 +94,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'is_active' => null,
         'transaction_type' => null,
         'register_id' => null,
         'redeemed_source' => null,
@@ -109,6 +108,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'is_active' => null,
         'advertisement_credit_id' => null,
         'redeemed_amount_decimal' => null,
         'redeemed_amount_string' => null,
@@ -146,7 +146,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'is_active' => 'isActive',
         'transaction_type' => 'transactionType',
         'register_id' => 'registerID',
         'redeemed_source' => 'redeemedSource',
@@ -161,6 +160,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'is_active' => 'isActive',
         'advertisement_credit_id' => 'advertisementCreditID',
         'redeemed_amount_decimal' => 'redeemedAmount_decimal',
         'redeemed_amount_string' => 'redeemedAmount_string',
@@ -177,7 +177,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'id' => 'setId',
-        'is_active' => 'setIsActive',
         'transaction_type' => 'setTransactionType',
         'register_id' => 'setRegisterId',
         'redeemed_source' => 'setRedeemedSource',
@@ -192,6 +191,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'is_active' => 'setIsActive',
         'advertisement_credit_id' => 'setAdvertisementCreditId',
         'redeemed_amount_decimal' => 'setRedeemedAmountDecimal',
         'redeemed_amount_string' => 'setRedeemedAmountString',
@@ -208,7 +208,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'id' => 'getId',
-        'is_active' => 'getIsActive',
         'transaction_type' => 'getTransactionType',
         'register_id' => 'getRegisterId',
         'redeemed_source' => 'getRedeemedSource',
@@ -223,6 +222,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'is_active' => 'getIsActive',
         'advertisement_credit_id' => 'getAdvertisementCreditId',
         'redeemed_amount_decimal' => 'getRedeemedAmountDecimal',
         'redeemed_amount_string' => 'getRedeemedAmountString',
@@ -290,7 +290,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['transaction_type'] = $data['transaction_type'] ?? null;
         $this->container['register_id'] = $data['register_id'] ?? null;
         $this->container['redeemed_source'] = $data['redeemed_source'] ?? null;
@@ -305,6 +304,7 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['advertisement_credit_id'] = $data['advertisement_credit_id'] ?? null;
         $this->container['redeemed_amount_decimal'] = $data['redeemed_amount_decimal'] ?? null;
         $this->container['redeemed_amount_string'] = $data['redeemed_amount_string'] ?? null;
@@ -334,9 +334,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'id', the character length must be bigger than or equal to 10.";
         }
 
-        if ($this->container['is_active'] === null) {
-            $invalidProperties[] = "'is_active' can't be null";
-        }
         if ($this->container['transaction_type'] === null) {
             $invalidProperties[] = "'transaction_type' can't be null";
         }
@@ -402,6 +399,9 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['is_active'] === null) {
+            $invalidProperties[] = "'is_active' can't be null";
         }
         if ($this->container['advertisement_credit_id'] === null) {
             $invalidProperties[] = "'advertisement_credit_id' can't be null";
@@ -478,30 +478,6 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_active
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->container['is_active'];
-    }
-
-    /**
-     * Sets is_active
-     *
-     * @param bool $is_active is_active
-     *
-     * @return self
-     */
-    public function setIsActive($is_active)
-    {
-        $this->container['is_active'] = $is_active;
 
         return $this;
     }
@@ -863,6 +839,30 @@ class WTAdvertisementCreditScan implements ModelInterface, ArrayAccess, \JsonSer
     public function setUpdatedAt($updated_at)
     {
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     *
+     * @param bool $is_active is_active
+     *
+     * @return self
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

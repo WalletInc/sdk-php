@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **string** |  | [optional]
 **valid_only_at_pos_register_ids** | **string[]** |  | [optional]
 **payment_design_id** | **string** |  |
-**is_active** | **bool** |  |
 **start_date_time** | **\DateTime** |  |
 **expiration_date_time** | **\DateTime** |  |
 **member_id** | **string** |  | [optional]
 **offer_amount_cents** | **int** |  |
+**is_active** | **bool** |  |
 **cell_phone** | **string** |  | [optional]
 **voucher_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 
