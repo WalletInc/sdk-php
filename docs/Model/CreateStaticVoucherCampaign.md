@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **string** |  | [optional]
 **valid_only_at_pos_register_ids** | **string[]** |  | [optional]
 **payment_design_id** | **string** |  |
-**is_active** | **bool** |  |
 **bucket** | **string** |  | [optional]
 **file_name** | **string** |  | [optional]
 **source_id** | **int** |  |
