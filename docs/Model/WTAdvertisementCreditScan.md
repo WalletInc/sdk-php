@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
-**is_active** | **bool** |  |
 **transaction_type** | [**AnyOfStringStringString**](AnyOfStringStringString.md) | The type of the transaction - only redemption at the moment |
 **register_id** | [**AnyOfStringDouble**](AnyOfStringDouble.md) | The ID of the register where the transaction occurred |
 **redeemed_source** | **string** |  |
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **advertisement_credit_id** | **string** |  |
 **redeemed_amount_decimal** | **string** |  |
 **redeemed_amount_string** | **string** |  |

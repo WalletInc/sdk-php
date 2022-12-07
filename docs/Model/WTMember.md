@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
-**is_active** | **bool** | Denotes if this resource is active |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** | The timestamp of when this resource was created |
 **updated_at** | **\DateTime** | The timestamp of when this resource was updated |
+**is_active** | **bool** | Denotes if this resource is active |
 **first_name** | **string** | An optional first name of the member | [optional]
 **last_name** | **string** | An optional last name of the member | [optional]
 **membership_tier_id** | **string** |  |

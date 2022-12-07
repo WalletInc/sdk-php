@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **employee_id** | **string** |  |
 **reinvestment_sum** | **int** |  |
 **number_of_vouchers_in_file** | **int** |  |
-**is_active** | **bool** |  |
 **campaign_group_id** | **string** |  | [optional]
 **bucket** | **string** |  | [optional]
 **created_by_source_id** | **int** |  |
@@ -24,6 +23,7 @@ Name | Type | Description | Notes
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **voucher_type** | **double** |  |
 **reinvestment_sum_decimal** | **string** |  |
 **reinvestment_sum_string** | **string** |  |

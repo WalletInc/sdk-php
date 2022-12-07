@@ -16,6 +16,5 @@ Name | Type | Description | Notes
 **employee_id** | **string** |  |
 **reinvestment_sum** | **int** |  |
 **number_of_vouchers_in_file** | **int** |  |
-**is_active** | **bool** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

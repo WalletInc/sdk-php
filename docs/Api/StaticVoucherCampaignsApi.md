@@ -4,6 +4,7 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign
 [**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
 [**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
 [**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign
@@ -21,9 +22,64 @@ Method | HTTP request | Description
 [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers
 [**previewMessages()**](StaticVoucherCampaignsApi.md#previewMessages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
 [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page
+[**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign
 [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
 [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher
 
+
+## `archiveStaticVoucherCampaign()`
+
+```php
+archiveStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
+```
+
+Archive static voucher campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$campaign_id = NULL; // mixed
+
+try {
+    $result = $apiInstance->archiveStaticVoucherCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StaticVoucherCampaignsApi->archiveStaticVoucherCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | [**mixed**](../Model/.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\StaticVoucherCampaign**](../Model/StaticVoucherCampaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `countVouchersLoaded()`
 
@@ -244,7 +300,7 @@ No authorization required
 ## `createStaticVoucherCampaignWithVoucher()`
 
 ```php
-createStaticVoucherCampaignWithVoucher($create_static_voucher_campaign_with_voucher): \OpenAPI\Client\Model\WTStaticVoucherCampaign
+createStaticVoucherCampaignWithVoucher($body): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
 Create static voucher campaign with voucher
@@ -262,10 +318,10 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$create_static_voucher_campaign_with_voucher = new \OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher(); // \OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher
+$body = new \OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive(); // \OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
 
 try {
-    $result = $apiInstance->createStaticVoucherCampaignWithVoucher($create_static_voucher_campaign_with_voucher);
+    $result = $apiInstance->createStaticVoucherCampaignWithVoucher($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StaticVoucherCampaignsApi->createStaticVoucherCampaignWithVoucher: ', $e->getMessage(), PHP_EOL;
@@ -276,7 +332,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign_with_voucher** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher**](../Model/CreateStaticVoucherCampaignWithVoucher.md)|  |
+ **body** | **\OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**|  |
 
 ### Return type
 
@@ -953,6 +1009,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `restoreStaticVoucherCampaign()`
+
+```php
+restoreStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
+```
+
+Restore static voucher campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$campaign_id = NULL; // mixed
+
+try {
+    $result = $apiInstance->restoreStaticVoucherCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StaticVoucherCampaignsApi->restoreStaticVoucherCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | [**mixed**](../Model/.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\StaticVoucherCampaign**](../Model/StaticVoucherCampaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

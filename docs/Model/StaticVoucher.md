@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
-**is_active** | **bool** |  |
 **campaign_id** | **string** |  |
 **member_id** | **string** |  | [optional]
 **cell_phone_number** | **string** |  | [optional]
@@ -26,6 +25,7 @@ Name | Type | Description | Notes
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
+**is_active** | **bool** |  |
 **authorized_amount_decimal** | **string** |  |
 **authorized_amount_string** | **string** |  |
 **offer_amount_cents_decimal** | **string** |  |
