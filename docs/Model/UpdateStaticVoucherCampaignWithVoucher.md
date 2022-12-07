@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **expiration_date_time** | **\DateTime** |  |
 **member_id** | **string** |  | [optional]
 **offer_amount_cents** | **int** |  |
-**is_active** | **bool** |  |
 **cell_phone** | **string** |  | [optional]
 **voucher_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 

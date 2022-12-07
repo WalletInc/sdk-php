@@ -4,14 +4,70 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archiveDynamicVoucherCampaign()**](DynamicVouchersApi.md#archiveDynamicVoucherCampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign
 [**createDynamicVoucher()**](DynamicVouchersApi.md#createDynamicVoucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher
 [**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers
 [**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher
 [**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions
 [**fetchReachStatsOfAllDynamicVouchers()**](DynamicVouchersApi.md#fetchReachStatsOfAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
 [**fetchReachStatsOfIndividualDynamicVoucher()**](DynamicVouchersApi.md#fetchReachStatsOfIndividualDynamicVoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
+[**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign
 [**saveDynamicVoucher()**](DynamicVouchersApi.md#saveDynamicVoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher
 
+
+## `archiveDynamicVoucherCampaign()`
+
+```php
+archiveDynamicVoucherCampaign($campaign_id): \OpenAPI\Client\Model\DynamicVoucher
+```
+
+Archive dynamic voucher campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$campaign_id = NULL; // mixed
+
+try {
+    $result = $apiInstance->archiveDynamicVoucherCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DynamicVouchersApi->archiveDynamicVoucherCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | [**mixed**](../Model/.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DynamicVoucher**](../Model/DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `createDynamicVoucher()`
 
@@ -329,6 +385,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ReachPerformanceStats**](../Model/ReachPerformanceStats.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `restoreDynamicVoucherCampaign()`
+
+```php
+restoreDynamicVoucherCampaign($campaign_id): \OpenAPI\Client\Model\DynamicVoucher
+```
+
+Restore dynamic voucher campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$campaign_id = NULL; // mixed
+
+try {
+    $result = $apiInstance->restoreDynamicVoucherCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DynamicVouchersApi->restoreDynamicVoucherCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | [**mixed**](../Model/.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DynamicVoucher**](../Model/DynamicVoucher.md)
 
 ### Authorization
 

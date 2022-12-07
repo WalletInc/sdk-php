@@ -4,16 +4,128 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**buyAddOn()**](BillingApi.md#buyAddOn) | **POST** /v2/billing/products/addOns/{productID} | Fetch add-on products, or 1-time purchase products (non-subscription products)
+[**buySpecialOffer()**](BillingApi.md#buySpecialOffer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 [**cancelPlan()**](BillingApi.md#cancelPlan) | **DELETE** /v2/billing/plan | Cancel billing plan and revert to default
 [**changePlan()**](BillingApi.md#changePlan) | **PUT** /v2/billing/plan | Change billing plan
+[**fetchAddOns()**](BillingApi.md#fetchAddOns) | **GET** /v2/billing/products/addOns | Fetch add-on products, or 1-time purchase products (non-subscription products)
 [**fetchIndustry()**](BillingApi.md#fetchIndustry) | **GET** /v2/billing/industry | Fetch merchant&#39;s industry
 [**fetchInvoices()**](BillingApi.md#fetchInvoices) | **GET** /v2/billing/invoices/all | Fetch all invoices
+[**fetchSpecialOffers()**](BillingApi.md#fetchSpecialOffers) | **GET** /v2/billing/products/specialOffers | Fetch special offer products
 [**fetchSubscription()**](BillingApi.md#fetchSubscription) | **GET** /v2/billing/subscription | Fetch subscription
 [**fetchUsageSummary()**](BillingApi.md#fetchUsageSummary) | **GET** /v2/billing/summary | Fetch usage summary
 [**savePaymentMethod()**](BillingApi.md#savePaymentMethod) | **PUT** /v2/billing/paymentMethod | Save payment method
 [**upcomingInvoices()**](BillingApi.md#upcomingInvoices) | **GET** /v2/billing/invoices/upcoming | Fetch upcoming invoices
 [**verifyPaymentMethod()**](BillingApi.md#verifyPaymentMethod) | **GET** /v2/billing/paymentMethod | Verify payment method
 
+
+## `buyAddOn()`
+
+```php
+buyAddOn($product_id): mixed
+```
+
+Fetch add-on products, or 1-time purchase products (non-subscription products)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$product_id = 'product_id_example'; // string
+
+try {
+    $result = $apiInstance->buyAddOn($product_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingApi->buyAddOn: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **string**|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `buySpecialOffer()`
+
+```php
+buySpecialOffer($product_id): mixed
+```
+
+Buy special offer
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$product_id = 'product_id_example'; // string
+
+try {
+    $result = $apiInstance->buySpecialOffer($product_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingApi->buySpecialOffer: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **string**|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `cancelPlan()`
 
@@ -120,6 +232,57 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fetchAddOns()`
+
+```php
+fetchAddOns(): mixed[]
+```
+
+Fetch add-on products, or 1-time purchase products (non-subscription products)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchAddOns();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingApi->fetchAddOns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**mixed[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `fetchIndustry()`
 
 ```php
@@ -208,6 +371,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 **mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchSpecialOffers()`
+
+```php
+fetchSpecialOffers(): mixed[]
+```
+
+Fetch special offer products
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchSpecialOffers();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingApi->fetchSpecialOffers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**mixed[]**
 
 ### Authorization
 

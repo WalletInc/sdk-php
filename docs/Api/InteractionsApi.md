@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**fetchWalletPaymentObjectWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectWithToken) | **POST** /wallet/paymentObject/token | Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item
+[**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
 
 
 ## `createAdvertisementCreditScan()`
@@ -611,6 +612,62 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `requestMerchantURLRedirect()`
+
+```php
+requestMerchantURLRedirect($item_id, $browser_details): mixed
+```
+
+Identify item
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$item_id = 'item_id_example'; // string
+$browser_details = new \OpenAPI\Client\Model\BrowserDetails(); // \OpenAPI\Client\Model\BrowserDetails
+
+try {
+    $result = $apiInstance->requestMerchantURLRedirect($item_id, $browser_details);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->requestMerchantURLRedirect: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **item_id** | **string**|  |
+ **browser_details** | [**\OpenAPI\Client\Model\BrowserDetails**](../Model/BrowserDetails.md)|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

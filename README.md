@@ -149,10 +149,14 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetchWalletPageViewByID**](docs/Api/AnalyticsApi.md#fetchwalletpageviewbyid) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
 *AppleWalletSubscribersApi* | [**fetchAppleWalletSubscriberActivity**](docs/Api/AppleWalletSubscribersApi.md#fetchapplewalletsubscriberactivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity
 *AppleWalletSubscribersApi* | [**fetchAppleWalletSubscribers**](docs/Api/AppleWalletSubscribersApi.md#fetchapplewalletsubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Fetch all subscribers
+*BillingApi* | [**buyAddOn**](docs/Api/BillingApi.md#buyaddon) | **POST** /v2/billing/products/addOns/{productID} | Fetch add-on products, or 1-time purchase products (non-subscription products)
+*BillingApi* | [**buySpecialOffer**](docs/Api/BillingApi.md#buyspecialoffer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer
 *BillingApi* | [**cancelPlan**](docs/Api/BillingApi.md#cancelplan) | **DELETE** /v2/billing/plan | Cancel billing plan and revert to default
 *BillingApi* | [**changePlan**](docs/Api/BillingApi.md#changeplan) | **PUT** /v2/billing/plan | Change billing plan
+*BillingApi* | [**fetchAddOns**](docs/Api/BillingApi.md#fetchaddons) | **GET** /v2/billing/products/addOns | Fetch add-on products, or 1-time purchase products (non-subscription products)
 *BillingApi* | [**fetchIndustry**](docs/Api/BillingApi.md#fetchindustry) | **GET** /v2/billing/industry | Fetch merchant&#39;s industry
 *BillingApi* | [**fetchInvoices**](docs/Api/BillingApi.md#fetchinvoices) | **GET** /v2/billing/invoices/all | Fetch all invoices
+*BillingApi* | [**fetchSpecialOffers**](docs/Api/BillingApi.md#fetchspecialoffers) | **GET** /v2/billing/products/specialOffers | Fetch special offer products
 *BillingApi* | [**fetchSubscription**](docs/Api/BillingApi.md#fetchsubscription) | **GET** /v2/billing/subscription | Fetch subscription
 *BillingApi* | [**fetchUsageSummary**](docs/Api/BillingApi.md#fetchusagesummary) | **GET** /v2/billing/summary | Fetch usage summary
 *BillingApi* | [**savePaymentMethod**](docs/Api/BillingApi.md#savepaymentmethod) | **PUT** /v2/billing/paymentMethod | Save payment method
@@ -198,12 +202,14 @@ Class | Method | HTTP request | Description
 *DashboardApi* | [**fetchDashboardRefundsCount**](docs/Api/DashboardApi.md#fetchdashboardrefundscount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
 *DashboardApi* | [**fetchDashboardWalletPageViewsCount**](docs/Api/DashboardApi.md#fetchdashboardwalletpageviewscount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
 *DashboardApi* | [**fetchDashboardWidgetsCatalog**](docs/Api/DashboardApi.md#fetchdashboardwidgetscatalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog
+*DynamicVouchersApi* | [**archiveDynamicVoucherCampaign**](docs/Api/DynamicVouchersApi.md#archivedynamicvouchercampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign
 *DynamicVouchersApi* | [**createDynamicVoucher**](docs/Api/DynamicVouchersApi.md#createdynamicvoucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher
 *DynamicVouchersApi* | [**fetchAllDynamicVouchers**](docs/Api/DynamicVouchersApi.md#fetchalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers
 *DynamicVouchersApi* | [**fetchDynamicVoucherById**](docs/Api/DynamicVouchersApi.md#fetchdynamicvoucherbyid) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher
 *DynamicVouchersApi* | [**fetchDynamicVoucherRedemptions**](docs/Api/DynamicVouchersApi.md#fetchdynamicvoucherredemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions
 *DynamicVouchersApi* | [**fetchReachStatsOfAllDynamicVouchers**](docs/Api/DynamicVouchersApi.md#fetchreachstatsofalldynamicvouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
 *DynamicVouchersApi* | [**fetchReachStatsOfIndividualDynamicVoucher**](docs/Api/DynamicVouchersApi.md#fetchreachstatsofindividualdynamicvoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
+*DynamicVouchersApi* | [**restoreDynamicVoucherCampaign**](docs/Api/DynamicVouchersApi.md#restoredynamicvouchercampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign
 *DynamicVouchersApi* | [**saveDynamicVoucher**](docs/Api/DynamicVouchersApi.md#savedynamicvoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher
 *EmployeeAPIKeysApi* | [**archiveEmployeeAPIKeys**](docs/Api/EmployeeAPIKeysApi.md#archiveemployeeapikeys) | **DELETE** /v2/employee/apiKeys/{id} | Archive employee API Key
 *EmployeeAPIKeysApi* | [**createEmployeeAPIKeys**](docs/Api/EmployeeAPIKeysApi.md#createemployeeapikeys) | **POST** /v2/employee/apiKeys | Create employee API Key
@@ -305,6 +311,7 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**fetchWalletPaymentObjectWithToken**](docs/Api/InteractionsApi.md#fetchwalletpaymentobjectwithtoken) | **POST** /wallet/paymentObject/token | Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 *InteractionsApi* | [**findByVanityHandle**](docs/Api/InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 *InteractionsApi* | [**identifyItem**](docs/Api/InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item
+*InteractionsApi* | [**requestMerchantURLRedirect**](docs/Api/InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
 *LinkBookApi* | [**archiveLinkBook**](docs/Api/LinkBookApi.md#archivelinkbook) | **DELETE** /v2/linkBook/{id} | Archive link
 *LinkBookApi* | [**createLinkBook**](docs/Api/LinkBookApi.md#createlinkbook) | **POST** /v2/linkBook | Create link
 *LinkBookApi* | [**fetchAllLinkBook**](docs/Api/LinkBookApi.md#fetchalllinkbook) | **GET** /v2/linkBook/all | Fetch all links
@@ -504,6 +511,7 @@ Class | Method | HTTP request | Description
 - [ApplicableTerminalsAnyOf6](docs/Model/ApplicableTerminalsAnyOf6.md)
 - [AuthError](docs/Model/AuthError.md)
 - [AvailablePhoneNumbersRequest](docs/Model/AvailablePhoneNumbersRequest.md)
+- [BrowserDetails](docs/Model/BrowserDetails.md)
 - [ClickFunnelAmount](docs/Model/ClickFunnelAmount.md)
 - [ClickFunnelContact](docs/Model/ClickFunnelContact.md)
 - [ClickFunnelContactProfile](docs/Model/ClickFunnelContactProfile.md)
@@ -513,7 +521,6 @@ Class | Method | HTTP request | Description
 - [ClickFunnelPurchase](docs/Model/ClickFunnelPurchase.md)
 - [ClickFunnelRegistration](docs/Model/ClickFunnelRegistration.md)
 - [CreateStaticVoucherCampaign](docs/Model/CreateStaticVoucherCampaign.md)
-- [CreateStaticVoucherCampaignWithVoucher](docs/Model/CreateStaticVoucherCampaignWithVoucher.md)
 - [CreateStaticVoucherCampaignWithVoucherWithCSV](docs/Model/CreateStaticVoucherCampaignWithVoucherWithCSV.md)
 - [DashboardWidget](docs/Model/DashboardWidget.md)
 - [Document](docs/Model/Document.md)
@@ -589,6 +596,7 @@ Class | Method | HTTP request | Description
 - [PaymentPrefixes](docs/Model/PaymentPrefixes.md)
 - [Performance](docs/Model/Performance.md)
 - [PhoneNumber](docs/Model/PhoneNumber.md)
+- [PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive](docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md)
 - [PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID](docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID.md)
 - [PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID](docs/Model/PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID.md)
 - [PickMSEmployeeAPIKeyUpdateParamsExcludeKeyofMSEmployeeAPIKeyUpdateParamsId](docs/Model/PickMSEmployeeAPIKeyUpdateParamsExcludeKeyofMSEmployeeAPIKeyUpdateParamsId.md)
@@ -794,5 +802,5 @@ development@wallet.inc
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.1.524`
+- API version: `2.1.527`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

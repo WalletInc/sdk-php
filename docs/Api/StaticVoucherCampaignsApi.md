@@ -300,7 +300,7 @@ No authorization required
 ## `createStaticVoucherCampaignWithVoucher()`
 
 ```php
-createStaticVoucherCampaignWithVoucher($create_static_voucher_campaign_with_voucher): \OpenAPI\Client\Model\WTStaticVoucherCampaign
+createStaticVoucherCampaignWithVoucher($body): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
 Create static voucher campaign with voucher
@@ -318,10 +318,10 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$create_static_voucher_campaign_with_voucher = new \OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher(); // \OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher
+$body = new \OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive(); // \OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive
 
 try {
-    $result = $apiInstance->createStaticVoucherCampaignWithVoucher($create_static_voucher_campaign_with_voucher);
+    $result = $apiInstance->createStaticVoucherCampaignWithVoucher($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StaticVoucherCampaignsApi->createStaticVoucherCampaignWithVoucher: ', $e->getMessage(), PHP_EOL;
@@ -332,7 +332,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign_with_voucher** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucher**](../Model/CreateStaticVoucherCampaignWithVoucher.md)|  |
+ **body** | **\OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**|  |
 
 ### Return type
 

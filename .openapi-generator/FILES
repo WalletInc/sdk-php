@@ -61,6 +61,7 @@ docs/Model/ApplicableTerminalsAnyOf5.md
 docs/Model/ApplicableTerminalsAnyOf6.md
 docs/Model/AuthError.md
 docs/Model/AvailablePhoneNumbersRequest.md
+docs/Model/BrowserDetails.md
 docs/Model/ClickFunnelAmount.md
 docs/Model/ClickFunnelContact.md
 docs/Model/ClickFunnelContactProfile.md
@@ -70,7 +71,6 @@ docs/Model/ClickFunnelProduct.md
 docs/Model/ClickFunnelPurchase.md
 docs/Model/ClickFunnelRegistration.md
 docs/Model/CreateStaticVoucherCampaign.md
-docs/Model/CreateStaticVoucherCampaignWithVoucher.md
 docs/Model/CreateStaticVoucherCampaignWithVoucherWithCSV.md
 docs/Model/DashboardWidget.md
 docs/Model/Document.md
@@ -146,6 +146,7 @@ docs/Model/PaymentDesign.md
 docs/Model/PaymentPrefixes.md
 docs/Model/Performance.md
 docs/Model/PhoneNumber.md
+docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md
 docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID.md
 docs/Model/PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID.md
 docs/Model/PickMSEmployeeAPIKeyUpdateParamsExcludeKeyofMSEmployeeAPIKeyUpdateParamsId.md
@@ -386,6 +387,7 @@ lib/Model/ApplicableTerminalsAnyOf5.php
 lib/Model/ApplicableTerminalsAnyOf6.php
 lib/Model/AuthError.php
 lib/Model/AvailablePhoneNumbersRequest.php
+lib/Model/BrowserDetails.php
 lib/Model/ClickFunnelAmount.php
 lib/Model/ClickFunnelContact.php
 lib/Model/ClickFunnelContactProfile.php
@@ -395,7 +397,6 @@ lib/Model/ClickFunnelProduct.php
 lib/Model/ClickFunnelPurchase.php
 lib/Model/ClickFunnelRegistration.php
 lib/Model/CreateStaticVoucherCampaign.php
-lib/Model/CreateStaticVoucherCampaignWithVoucher.php
 lib/Model/CreateStaticVoucherCampaignWithVoucherWithCSV.php
 lib/Model/DashboardWidget.php
 lib/Model/Document.php
@@ -472,6 +473,7 @@ lib/Model/PaymentDesign.php
 lib/Model/PaymentPrefixes.php
 lib/Model/Performance.php
 lib/Model/PhoneNumber.php
+lib/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.php
 lib/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID.php
 lib/Model/PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID.php
 lib/Model/PickMSEmployeeAPIKeyUpdateParamsExcludeKeyofMSEmployeeAPIKeyUpdateParamsId.php
@@ -652,3 +654,5 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/BrowserDetailsTest.php
+test/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActiveTest.php
