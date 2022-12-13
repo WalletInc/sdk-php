@@ -11216,14 +11216,16 @@ class AnalyticsApi
      *
      * Fetch distinct wallet sessions
      *
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchAnalyticsDistinctWalletSessions()
+    public function fetchAnalyticsDistinctWalletSessions($start_date = null, $end_date = null)
     {
-        list($response) = $this->fetchAnalyticsDistinctWalletSessionsWithHttpInfo();
+        list($response) = $this->fetchAnalyticsDistinctWalletSessionsWithHttpInfo($start_date, $end_date);
         return $response;
     }
 
@@ -11232,14 +11234,16 @@ class AnalyticsApi
      *
      * Fetch distinct wallet sessions
      *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchAnalyticsDistinctWalletSessionsWithHttpInfo()
+    public function fetchAnalyticsDistinctWalletSessionsWithHttpInfo($start_date = null, $end_date = null)
     {
-        $request = $this->fetchAnalyticsDistinctWalletSessionsRequest();
+        $request = $this->fetchAnalyticsDistinctWalletSessionsRequest($start_date, $end_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11384,13 +11388,15 @@ class AnalyticsApi
      *
      * Fetch distinct wallet sessions
      *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAnalyticsDistinctWalletSessionsAsync()
+    public function fetchAnalyticsDistinctWalletSessionsAsync($start_date = null, $end_date = null)
     {
-        return $this->fetchAnalyticsDistinctWalletSessionsAsyncWithHttpInfo()
+        return $this->fetchAnalyticsDistinctWalletSessionsAsyncWithHttpInfo($start_date, $end_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11403,14 +11409,16 @@ class AnalyticsApi
      *
      * Fetch distinct wallet sessions
      *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAnalyticsDistinctWalletSessionsAsyncWithHttpInfo()
+    public function fetchAnalyticsDistinctWalletSessionsAsyncWithHttpInfo($start_date = null, $end_date = null)
     {
         $returnType = 'mixed';
-        $request = $this->fetchAnalyticsDistinctWalletSessionsRequest();
+        $request = $this->fetchAnalyticsDistinctWalletSessionsRequest($start_date, $end_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11448,11 +11456,13 @@ class AnalyticsApi
     /**
      * Create request for operation 'fetchAnalyticsDistinctWalletSessions'
      *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchAnalyticsDistinctWalletSessionsRequest()
+    public function fetchAnalyticsDistinctWalletSessionsRequest($start_date = null, $end_date = null)
     {
 
         $resourcePath = '/v2/analytics/walletPageViews/sessions/distinct';
@@ -11462,6 +11472,28 @@ class AnalyticsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_date !== null) {
+            if('form' === 'form' && is_array($start_date)) {
+                foreach($start_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['startDate'] = $start_date;
+            }
+        }
+        // query params
+        if ($end_date !== null) {
+            if('form' === 'form' && is_array($end_date)) {
+                foreach($end_date as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['endDate'] = $end_date;
+            }
+        }
 
 
 

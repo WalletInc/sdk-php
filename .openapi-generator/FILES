@@ -654,5 +654,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/BrowserDetailsTest.php
-test/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActiveTest.php
