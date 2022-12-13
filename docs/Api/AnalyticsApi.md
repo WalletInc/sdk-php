@@ -1795,7 +1795,7 @@ No authorization required
 ## `fetchAnalyticsDistinctWalletSessions()`
 
 ```php
-fetchAnalyticsDistinctWalletSessions(): mixed
+fetchAnalyticsDistinctWalletSessions($start_date, $end_date): mixed
 ```
 
 Fetch distinct wallet sessions
@@ -1813,9 +1813,11 @@ $apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
 try {
-    $result = $apiInstance->fetchAnalyticsDistinctWalletSessions();
+    $result = $apiInstance->fetchAnalyticsDistinctWalletSessions($start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AnalyticsApi->fetchAnalyticsDistinctWalletSessions: ', $e->getMessage(), PHP_EOL;
@@ -1824,7 +1826,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
 
 ### Return type
 
