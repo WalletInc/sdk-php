@@ -301,7 +301,6 @@ docs/Model/WTSMSAcquirePhoneNumber.md
 docs/Model/WTSMSCreateAgreement.md
 docs/Model/WTSMSImportOptInListSubscribers.md
 docs/Model/WTSMSImportedListCreate.md
-docs/Model/WTSMSLimits.md
 docs/Model/WTSMSOptInListSourceCreate.md
 docs/Model/WTSMSUpdatePhoneNumberConfig.md
 docs/Model/WTSettingsSetPassword.md
@@ -628,7 +627,6 @@ lib/Model/WTSMSAcquirePhoneNumber.php
 lib/Model/WTSMSCreateAgreement.php
 lib/Model/WTSMSImportOptInListSubscribers.php
 lib/Model/WTSMSImportedListCreate.php
-lib/Model/WTSMSLimits.php
 lib/Model/WTSMSOptInListSourceCreate.php
 lib/Model/WTSMSUpdatePhoneNumberConfig.php
 lib/Model/WTSettingsSetPassword.php

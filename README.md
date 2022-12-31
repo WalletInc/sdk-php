@@ -751,7 +751,6 @@ Class | Method | HTTP request | Description
 - [WTSMSCreateAgreement](docs/Model/WTSMSCreateAgreement.md)
 - [WTSMSImportOptInListSubscribers](docs/Model/WTSMSImportOptInListSubscribers.md)
 - [WTSMSImportedListCreate](docs/Model/WTSMSImportedListCreate.md)
-- [WTSMSLimits](docs/Model/WTSMSLimits.md)
 - [WTSMSOptInListSourceCreate](docs/Model/WTSMSOptInListSourceCreate.md)
 - [WTSMSUpdatePhoneNumberConfig](docs/Model/WTSMSUpdatePhoneNumberConfig.md)
 - [WTSettingsSetPassword](docs/Model/WTSettingsSetPassword.md)
