@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **company_name** | **string** |  |
-**privacy_policy_url** | **string** |  |
-**terms_of_service_url** | **string** |  |
+**privacy_policy_url** | **string** |  | [optional]
+**terms_of_service_url** | **string** |  | [optional]
 **message_footer** | **string** |  |
 **stop_response** | **string** |  |
 **help_response** | **string** |  |

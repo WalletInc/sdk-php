@@ -1850,7 +1850,7 @@ No authorization required
 ## `retrieveSentAndMaxCountOfMessages()`
 
 ```php
-retrieveSentAndMaxCountOfMessages(): \OpenAPI\Client\Model\WTSMSLimits
+retrieveSentAndMaxCountOfMessages(): mixed
 ```
 
 Retrieve the number of messages sent by the merchant within the current billing cycle
@@ -1883,7 +1883,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\WTSMSLimits**](../Model/WTSMSLimits.md)
+**mixed**
 
 ### Authorization
 
