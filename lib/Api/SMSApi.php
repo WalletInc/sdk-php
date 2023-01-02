@@ -11566,7 +11566,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTSMSLimits|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function retrieveSentAndMaxCountOfMessages()
     {
@@ -11582,7 +11582,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTSMSLimits|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function retrieveSentAndMaxCountOfMessagesWithHttpInfo()
     {
@@ -11625,14 +11625,14 @@ class SMSApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WTSMSLimits' === '\SplFileObject') {
+                    if ('mixed' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTSMSLimits', []),
+                        ObjectSerializer::deserialize($content, 'mixed', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -11674,7 +11674,7 @@ class SMSApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTSMSLimits';
+            $returnType = 'mixed';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11692,7 +11692,7 @@ class SMSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTSMSLimits',
+                        'mixed',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11756,7 +11756,7 @@ class SMSApi
      */
     public function retrieveSentAndMaxCountOfMessagesAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\WTSMSLimits';
+        $returnType = 'mixed';
         $request = $this->retrieveSentAndMaxCountOfMessagesRequest();
 
         return $this->client

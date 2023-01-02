@@ -260,12 +260,6 @@ class WTSMSUpdatePhoneNumberConfig implements ModelInterface, ArrayAccess, \Json
         if ($this->container['company_name'] === null) {
             $invalidProperties[] = "'company_name' can't be null";
         }
-        if ($this->container['privacy_policy_url'] === null) {
-            $invalidProperties[] = "'privacy_policy_url' can't be null";
-        }
-        if ($this->container['terms_of_service_url'] === null) {
-            $invalidProperties[] = "'terms_of_service_url' can't be null";
-        }
         if ($this->container['message_footer'] === null) {
             $invalidProperties[] = "'message_footer' can't be null";
         }
@@ -323,7 +317,7 @@ class WTSMSUpdatePhoneNumberConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets privacy_policy_url
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivacyPolicyUrl()
     {
@@ -333,7 +327,7 @@ class WTSMSUpdatePhoneNumberConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets privacy_policy_url
      *
-     * @param string $privacy_policy_url privacy_policy_url
+     * @param string|null $privacy_policy_url privacy_policy_url
      *
      * @return self
      */
@@ -347,7 +341,7 @@ class WTSMSUpdatePhoneNumberConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets terms_of_service_url
      *
-     * @return string
+     * @return string|null
      */
     public function getTermsOfServiceUrl()
     {
@@ -357,7 +351,7 @@ class WTSMSUpdatePhoneNumberConfig implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets terms_of_service_url
      *
-     * @param string $terms_of_service_url terms_of_service_url
+     * @param string|null $terms_of_service_url terms_of_service_url
      *
      * @return self
      */
