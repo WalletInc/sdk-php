@@ -96,7 +96,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'contact_profile' => '\OpenAPI\Client\Model\ClickFunnelContactProfile',
         'time_zone' => 'string',
         'company_name' => 'string',
-        'company_industry' => 'string'
+        'company_industry' => 'string',
+        'additional_info' => 'mixed'
     ];
 
     /**
@@ -143,7 +144,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'contact_profile' => null,
         'time_zone' => null,
         'company_name' => null,
-        'company_industry' => null
+        'company_industry' => null,
+        'additional_info' => null
     ];
 
     /**
@@ -209,7 +211,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'contact_profile' => 'contact_profile',
         'time_zone' => 'time_zone',
         'company_name' => 'company_name',
-        'company_industry' => 'company_industry'
+        'company_industry' => 'company_industry',
+        'additional_info' => 'additional_info'
     ];
 
     /**
@@ -254,7 +257,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'contact_profile' => 'setContactProfile',
         'time_zone' => 'setTimeZone',
         'company_name' => 'setCompanyName',
-        'company_industry' => 'setCompanyIndustry'
+        'company_industry' => 'setCompanyIndustry',
+        'additional_info' => 'setAdditionalInfo'
     ];
 
     /**
@@ -299,7 +303,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'contact_profile' => 'getContactProfile',
         'time_zone' => 'getTimeZone',
         'company_name' => 'getCompanyName',
-        'company_industry' => 'getCompanyIndustry'
+        'company_industry' => 'getCompanyIndustry',
+        'additional_info' => 'getAdditionalInfo'
     ];
 
     /**
@@ -396,6 +401,7 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->container['time_zone'] = $data['time_zone'] ?? null;
         $this->container['company_name'] = $data['company_name'] ?? null;
         $this->container['company_industry'] = $data['company_industry'] ?? null;
+        $this->container['additional_info'] = $data['additional_info'] ?? null;
     }
 
     /**
@@ -1393,6 +1399,30 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCompanyIndustry($company_industry)
     {
         $this->container['company_industry'] = $company_industry;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_info
+     *
+     * @return mixed|null
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->container['additional_info'];
+    }
+
+    /**
+     * Sets additional_info
+     *
+     * @param mixed|null $additional_info additional_info
+     *
+     * @return self
+     */
+    public function setAdditionalInfo($additional_info)
+    {
+        $this->container['additional_info'] = $additional_info;
 
         return $this;
     }
