@@ -41,5 +41,6 @@ Name | Type | Description | Notes
 **time_zone** | **string** |  | [optional]
 **company_name** | **string** |  |
 **company_industry** | **string** |  |
+**additional_info** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
