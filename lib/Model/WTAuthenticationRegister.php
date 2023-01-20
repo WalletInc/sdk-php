@@ -293,12 +293,6 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
-        if ($this->container['hear_about_us'] === null) {
-            $invalidProperties[] = "'hear_about_us' can't be null";
-        }
-        if ($this->container['hear_about_us_details'] === null) {
-            $invalidProperties[] = "'hear_about_us_details' can't be null";
-        }
         if ($this->container['company_name'] === null) {
             $invalidProperties[] = "'company_name' can't be null";
         }
@@ -440,7 +434,7 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets hear_about_us
      *
-     * @return string
+     * @return string|null
      */
     public function getHearAboutUs()
     {
@@ -450,7 +444,7 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets hear_about_us
      *
-     * @param string $hear_about_us hear_about_us
+     * @param string|null $hear_about_us hear_about_us
      *
      * @return self
      */
@@ -464,7 +458,7 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets hear_about_us_details
      *
-     * @return string
+     * @return string|null
      */
     public function getHearAboutUsDetails()
     {
@@ -474,7 +468,7 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets hear_about_us_details
      *
-     * @param string $hear_about_us_details hear_about_us_details
+     * @param string|null $hear_about_us_details hear_about_us_details
      *
      * @return self
      */

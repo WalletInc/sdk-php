@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **last_name** | **string** |  |
 **email** | **string** |  |
 **password** | **string** |  |
-**hear_about_us** | **string** |  |
-**hear_about_us_details** | **string** |  |
+**hear_about_us** | **string** |  | [optional]
+**hear_about_us_details** | **string** |  | [optional]
 **company_name** | **string** |  |
 **merchant_type** | **string** |  |
 **street_address1** | **string** |  |
