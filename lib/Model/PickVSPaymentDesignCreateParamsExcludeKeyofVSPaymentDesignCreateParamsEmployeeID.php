@@ -1,6 +1,6 @@
 <?php
 /**
- * WTPaymentDesignCreateParams
+ * PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTPaymentDesignCreateParams Class Doc Comment
+ * PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID Class Doc Comment
  *
  * @category Class
+ * @description From T, pick a set of properties whose keys are in the union K
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTPaymentDesignCreateParams';
+    protected static $openAPIModelName = 'Pick_VSPaymentDesignCreateParams.Exclude_keyofVSPaymentDesignCreateParams.employeeID__';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -376,7 +377,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((!preg_match("/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/", $border_color))) {
-            throw new \InvalidArgumentException("invalid value for $border_color when calling WTPaymentDesignCreateParams., must conform to the pattern /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.");
+            throw new \InvalidArgumentException("invalid value for $border_color when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must conform to the pattern /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.");
         }
 
         $this->container['border_color'] = $border_color;
@@ -429,7 +430,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($border_size) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $border_size when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $border_size when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['border_size'] = $border_size;
@@ -458,10 +459,10 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if (($border_radius > 20)) {
-            throw new \InvalidArgumentException('invalid value for $border_radius when calling WTPaymentDesignCreateParams., must be smaller than or equal to 20.');
+            throw new \InvalidArgumentException('invalid value for $border_radius when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be smaller than or equal to 20.');
         }
         if (($border_radius < 0)) {
-            throw new \InvalidArgumentException('invalid value for $border_radius when calling WTPaymentDesignCreateParams., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $border_radius when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 0.');
         }
 
         $this->container['border_radius'] = $border_radius;
@@ -490,7 +491,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((!preg_match("/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/", $font_color))) {
-            throw new \InvalidArgumentException("invalid value for $font_color when calling WTPaymentDesignCreateParams., must conform to the pattern /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.");
+            throw new \InvalidArgumentException("invalid value for $font_color when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must conform to the pattern /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.");
         }
 
         $this->container['font_color'] = $font_color;
@@ -519,7 +520,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($font_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $font_type when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $font_type when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['font_type'] = $font_type;
@@ -548,7 +549,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($abbreviation) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $abbreviation when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $abbreviation when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['abbreviation'] = $abbreviation;
@@ -577,7 +578,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($acronym) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $acronym when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $acronym when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['acronym'] = $acronym;
@@ -606,7 +607,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($icon) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $icon when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $icon when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['icon'] = $icon;
@@ -635,7 +636,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($design_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $design_name when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $design_name when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['design_name'] = $design_name;
@@ -664,7 +665,7 @@ class WTPaymentDesignCreateParams implements ModelInterface, ArrayAccess, \JsonS
     {
 
         if ((mb_strlen($display_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $display_name when calling WTPaymentDesignCreateParams., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $display_name when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID., must be bigger than or equal to 1.');
         }
 
         $this->container['display_name'] = $display_name;
