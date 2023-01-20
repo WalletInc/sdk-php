@@ -71,10 +71,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'icon' => 'string',
         'design_name' => 'string',
         'display_name' => 'string',
-        'background_image' => 'string',
-        'background_image_ext' => 'string',
-        'company_logo' => 'string',
-        'company_logo_ext' => 'string'
+        'background_image_url' => 'string',
+        'company_logo_url' => 'string'
     ];
 
     /**
@@ -96,10 +94,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'icon' => null,
         'design_name' => null,
         'display_name' => null,
-        'background_image' => null,
-        'background_image_ext' => null,
-        'company_logo' => null,
-        'company_logo_ext' => null
+        'background_image_url' => null,
+        'company_logo_url' => null
     ];
 
     /**
@@ -140,10 +136,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'icon' => 'icon',
         'design_name' => 'designName',
         'display_name' => 'displayName',
-        'background_image' => 'backgroundImage',
-        'background_image_ext' => 'backgroundImageExt',
-        'company_logo' => 'companyLogo',
-        'company_logo_ext' => 'companyLogoExt'
+        'background_image_url' => 'backgroundImageURL',
+        'company_logo_url' => 'companyLogoURL'
     ];
 
     /**
@@ -163,10 +157,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'icon' => 'setIcon',
         'design_name' => 'setDesignName',
         'display_name' => 'setDisplayName',
-        'background_image' => 'setBackgroundImage',
-        'background_image_ext' => 'setBackgroundImageExt',
-        'company_logo' => 'setCompanyLogo',
-        'company_logo_ext' => 'setCompanyLogoExt'
+        'background_image_url' => 'setBackgroundImageUrl',
+        'company_logo_url' => 'setCompanyLogoUrl'
     ];
 
     /**
@@ -186,10 +178,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'icon' => 'getIcon',
         'design_name' => 'getDesignName',
         'display_name' => 'getDisplayName',
-        'background_image' => 'getBackgroundImage',
-        'background_image_ext' => 'getBackgroundImageExt',
-        'company_logo' => 'getCompanyLogo',
-        'company_logo_ext' => 'getCompanyLogoExt'
+        'background_image_url' => 'getBackgroundImageUrl',
+        'company_logo_url' => 'getCompanyLogoUrl'
     ];
 
     /**
@@ -260,10 +250,8 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         $this->container['icon'] = $data['icon'] ?? null;
         $this->container['design_name'] = $data['design_name'] ?? null;
         $this->container['display_name'] = $data['display_name'] ?? null;
-        $this->container['background_image'] = $data['background_image'] ?? null;
-        $this->container['background_image_ext'] = $data['background_image_ext'] ?? null;
-        $this->container['company_logo'] = $data['company_logo'] ?? null;
-        $this->container['company_logo_ext'] = $data['company_logo_ext'] ?? null;
+        $this->container['background_image_url'] = $data['background_image_url'] ?? null;
+        $this->container['company_logo_url'] = $data['company_logo_url'] ?? null;
     }
 
     /**
@@ -685,97 +673,49 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets background_image
+     * Gets background_image_url
      *
      * @return string|null
      */
-    public function getBackgroundImage()
+    public function getBackgroundImageUrl()
     {
-        return $this->container['background_image'];
+        return $this->container['background_image_url'];
     }
 
     /**
-     * Sets background_image
+     * Sets background_image_url
      *
-     * @param string|null $background_image background_image
+     * @param string|null $background_image_url background_image_url
      *
      * @return self
      */
-    public function setBackgroundImage($background_image)
+    public function setBackgroundImageUrl($background_image_url)
     {
-        $this->container['background_image'] = $background_image;
+        $this->container['background_image_url'] = $background_image_url;
 
         return $this;
     }
 
     /**
-     * Gets background_image_ext
+     * Gets company_logo_url
      *
      * @return string|null
      */
-    public function getBackgroundImageExt()
+    public function getCompanyLogoUrl()
     {
-        return $this->container['background_image_ext'];
+        return $this->container['company_logo_url'];
     }
 
     /**
-     * Sets background_image_ext
+     * Sets company_logo_url
      *
-     * @param string|null $background_image_ext background_image_ext
+     * @param string|null $company_logo_url company_logo_url
      *
      * @return self
      */
-    public function setBackgroundImageExt($background_image_ext)
+    public function setCompanyLogoUrl($company_logo_url)
     {
-        $this->container['background_image_ext'] = $background_image_ext;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_logo
-     *
-     * @return string|null
-     */
-    public function getCompanyLogo()
-    {
-        return $this->container['company_logo'];
-    }
-
-    /**
-     * Sets company_logo
-     *
-     * @param string|null $company_logo company_logo
-     *
-     * @return self
-     */
-    public function setCompanyLogo($company_logo)
-    {
-        $this->container['company_logo'] = $company_logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_logo_ext
-     *
-     * @return string|null
-     */
-    public function getCompanyLogoExt()
-    {
-        return $this->container['company_logo_ext'];
-    }
-
-    /**
-     * Sets company_logo_ext
-     *
-     * @param string|null $company_logo_ext company_logo_ext
-     *
-     * @return self
-     */
-    public function setCompanyLogoExt($company_logo_ext)
-    {
-        $this->container['company_logo_ext'] = $company_logo_ext;
+        $this->container['company_logo_url'] = $company_logo_url;
 
         return $this;
     }
