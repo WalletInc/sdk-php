@@ -1409,7 +1409,7 @@ No authorization required
 ## `fetchOutboundSMSByPage()`
 
 ```php
-fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num): \OpenAPI\Client\Model\InlineResponse2006
+fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status): \OpenAPI\Client\Model\InlineResponse2006
 ```
 
 Fetch outbound SMSes by page
@@ -1432,9 +1432,10 @@ $to_phone_number = 'to_phone_number_example'; // string
 $payment_object_broadcast_id = 'payment_object_broadcast_id_example'; // string
 $page_size = 3.4; // double
 $page_num = 3.4; // double
+$status = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\SSOutboundStatuses(); // \OpenAPI\Client\Model\SSOutboundStatuses
 
 try {
-    $result = $apiInstance->fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num);
+    $result = $apiInstance->fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSApi->fetchOutboundSMSByPage: ', $e->getMessage(), PHP_EOL;
@@ -1450,6 +1451,7 @@ Name | Type | Description  | Notes
  **payment_object_broadcast_id** | **string**|  | [optional]
  **page_size** | **double**|  | [optional]
  **page_num** | **double**|  | [optional]
+ **status** | [**\OpenAPI\Client\Model\SSOutboundStatuses**](../Model/.md)|  | [optional]
 
 ### Return type
 

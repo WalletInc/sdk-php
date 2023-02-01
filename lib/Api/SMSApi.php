@@ -8773,14 +8773,15 @@ class SMSApi
      * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
      * @param  double $page_size page_size (optional)
      * @param  double $page_num page_num (optional)
+     * @param  \OpenAPI\Client\Model\SSOutboundStatuses $status status (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchOutboundSMSByPage($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null)
+    public function fetchOutboundSMSByPage($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
-        list($response) = $this->fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num);
+        list($response) = $this->fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
         return $response;
     }
 
@@ -8794,14 +8795,15 @@ class SMSApi
      * @param  string $payment_object_broadcast_id (optional)
      * @param  double $page_size (optional)
      * @param  double $page_num (optional)
+     * @param  \OpenAPI\Client\Model\SSOutboundStatuses $status (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null)
+    public function fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
-        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num);
+        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8951,13 +8953,14 @@ class SMSApi
      * @param  string $payment_object_broadcast_id (optional)
      * @param  double $page_size (optional)
      * @param  double $page_num (optional)
+     * @param  \OpenAPI\Client\Model\SSOutboundStatuses $status (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchOutboundSMSByPageAsync($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null)
+    public function fetchOutboundSMSByPageAsync($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
-        return $this->fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num)
+        return $this->fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8975,14 +8978,15 @@ class SMSApi
      * @param  string $payment_object_broadcast_id (optional)
      * @param  double $page_size (optional)
      * @param  double $page_num (optional)
+     * @param  \OpenAPI\Client\Model\SSOutboundStatuses $status (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null)
+    public function fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
         $returnType = '\OpenAPI\Client\Model\InlineResponse2006';
-        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num);
+        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9025,11 +9029,12 @@ class SMSApi
      * @param  string $payment_object_broadcast_id (optional)
      * @param  double $page_size (optional)
      * @param  double $page_num (optional)
+     * @param  \OpenAPI\Client\Model\SSOutboundStatuses $status (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null)
+    public function fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
         // verify the required parameter 'phone_number_id' is set
         if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
@@ -9107,6 +9112,17 @@ class SMSApi
             }
             else {
                 $queryParams['pageNum'] = $page_num;
+            }
+        }
+        // query params
+        if ($status !== null) {
+            if('form' === 'form' && is_array($status)) {
+                foreach($status as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['status'] = $status;
             }
         }
 
