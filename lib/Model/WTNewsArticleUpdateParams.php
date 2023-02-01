@@ -64,7 +64,8 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'body' => 'string',
         'url' => 'string',
         'order_number' => 'int',
-        'media_url' => 'string'
+        'media_url' => 'string',
+        'published_date' => '\DateTime'
     ];
 
     /**
@@ -79,7 +80,8 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'body' => null,
         'url' => null,
         'order_number' => 'int32',
-        'media_url' => null
+        'media_url' => null,
+        'published_date' => 'date-time'
     ];
 
     /**
@@ -113,7 +115,8 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'body' => 'body',
         'url' => 'url',
         'order_number' => 'orderNumber',
-        'media_url' => 'mediaURL'
+        'media_url' => 'mediaURL',
+        'published_date' => 'publishedDate'
     ];
 
     /**
@@ -126,7 +129,8 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'body' => 'setBody',
         'url' => 'setUrl',
         'order_number' => 'setOrderNumber',
-        'media_url' => 'setMediaUrl'
+        'media_url' => 'setMediaUrl',
+        'published_date' => 'setPublishedDate'
     ];
 
     /**
@@ -139,7 +143,8 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         'body' => 'getBody',
         'url' => 'getUrl',
         'order_number' => 'getOrderNumber',
-        'media_url' => 'getMediaUrl'
+        'media_url' => 'getMediaUrl',
+        'published_date' => 'getPublishedDate'
     ];
 
     /**
@@ -204,6 +209,7 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['url'] = $data['url'] ?? null;
         $this->container['order_number'] = $data['order_number'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['published_date'] = $data['published_date'] ?? null;
     }
 
     /**
@@ -385,6 +391,30 @@ class WTNewsArticleUpdateParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets published_date
+     *
+     * @return \DateTime|null
+     */
+    public function getPublishedDate()
+    {
+        return $this->container['published_date'];
+    }
+
+    /**
+     * Sets published_date
+     *
+     * @param \DateTime|null $published_date published_date
+     *
+     * @return self
+     */
+    public function setPublishedDate($published_date)
+    {
+        $this->container['published_date'] = $published_date;
 
         return $this;
     }

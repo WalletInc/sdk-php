@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **body** | **string** |  |
 **url** | **string** |  |
 **media_url** | **string** |  | [optional]
+**published_date** | **\DateTime** |  | [optional]
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

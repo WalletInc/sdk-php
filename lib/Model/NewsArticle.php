@@ -65,6 +65,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         'body' => 'string',
         'url' => 'string',
         'media_url' => 'string',
+        'published_date' => '\DateTime',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -85,6 +86,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         'body' => null,
         'url' => null,
         'media_url' => null,
+        'published_date' => 'date-time',
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -124,6 +126,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         'body' => 'body',
         'url' => 'url',
         'media_url' => 'mediaURL',
+        'published_date' => 'publishedDate',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -142,6 +145,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         'body' => 'setBody',
         'url' => 'setUrl',
         'media_url' => 'setMediaUrl',
+        'published_date' => 'setPublishedDate',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -160,6 +164,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         'body' => 'getBody',
         'url' => 'getUrl',
         'media_url' => 'getMediaUrl',
+        'published_date' => 'getPublishedDate',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -229,6 +234,7 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['body'] = $data['body'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['published_date'] = $data['published_date'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -442,6 +448,30 @@ class NewsArticle implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets published_date
+     *
+     * @return \DateTime|null
+     */
+    public function getPublishedDate()
+    {
+        return $this->container['published_date'];
+    }
+
+    /**
+     * Sets published_date
+     *
+     * @param \DateTime|null $published_date published_date
+     *
+     * @return self
+     */
+    public function setPublishedDate($published_date)
+    {
+        $this->container['published_date'] = $published_date;
 
         return $this;
     }
