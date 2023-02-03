@@ -65,7 +65,8 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         'order_number' => 'int',
         'body' => 'string',
         'url' => 'string',
-        'media_url' => 'string'
+        'media_url' => 'string',
+        'published_date' => '\DateTime'
     ];
 
     /**
@@ -80,7 +81,8 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         'order_number' => 'int32',
         'body' => null,
         'url' => null,
-        'media_url' => null
+        'media_url' => null,
+        'published_date' => 'date-time'
     ];
 
     /**
@@ -114,7 +116,8 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         'order_number' => 'orderNumber',
         'body' => 'body',
         'url' => 'url',
-        'media_url' => 'mediaURL'
+        'media_url' => 'mediaURL',
+        'published_date' => 'publishedDate'
     ];
 
     /**
@@ -127,7 +130,8 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         'order_number' => 'setOrderNumber',
         'body' => 'setBody',
         'url' => 'setUrl',
-        'media_url' => 'setMediaUrl'
+        'media_url' => 'setMediaUrl',
+        'published_date' => 'setPublishedDate'
     ];
 
     /**
@@ -140,7 +144,8 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         'order_number' => 'getOrderNumber',
         'body' => 'getBody',
         'url' => 'getUrl',
-        'media_url' => 'getMediaUrl'
+        'media_url' => 'getMediaUrl',
+        'published_date' => 'getPublishedDate'
     ];
 
     /**
@@ -205,6 +210,7 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
         $this->container['body'] = $data['body'] ?? null;
         $this->container['url'] = $data['url'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['published_date'] = $data['published_date'] ?? null;
     }
 
     /**
@@ -386,6 +392,30 @@ class PickWTNewsArticleUpdateParamsExcludeKeyofWTNewsArticleUpdateParamsId imple
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets published_date
+     *
+     * @return \DateTime|null
+     */
+    public function getPublishedDate()
+    {
+        return $this->container['published_date'];
+    }
+
+    /**
+     * Sets published_date
+     *
+     * @param \DateTime|null $published_date published_date
+     *
+     * @return self
+     */
+    public function setPublishedDate($published_date)
+    {
+        $this->container['published_date'] = $published_date;
 
         return $this;
     }
