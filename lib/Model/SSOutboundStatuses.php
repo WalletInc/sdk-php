@@ -1,6 +1,6 @@
 <?php
 /**
- * WTNewsArticleCreateParams
+ * SSOutboundStatuses
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTNewsArticleCreateParams Class Doc Comment
+ * SSOutboundStatuses Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class SSOutboundStatuses implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTNewsArticleCreateParams';
+    protected static $openAPIModelName = 'SSOutboundStatuses';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,12 +60,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'order_number' => 'int',
-        'body' => 'string',
-        'url' => 'string',
-        'media_url' => 'string',
-        'published_date' => '\DateTime'
+        
     ];
 
     /**
@@ -76,12 +71,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'order_number' => 'int32',
-        'body' => null,
-        'url' => null,
-        'media_url' => null,
-        'published_date' => 'date-time'
+        
     ];
 
     /**
@@ -111,12 +101,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'order_number' => 'orderNumber',
-        'body' => 'body',
-        'url' => 'url',
-        'media_url' => 'mediaURL',
-        'published_date' => 'publishedDate'
+        
     ];
 
     /**
@@ -125,12 +110,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'order_number' => 'setOrderNumber',
-        'body' => 'setBody',
-        'url' => 'setUrl',
-        'media_url' => 'setMediaUrl',
-        'published_date' => 'setPublishedDate'
+        
     ];
 
     /**
@@ -139,12 +119,7 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'order_number' => 'getOrderNumber',
-        'body' => 'getBody',
-        'url' => 'getUrl',
-        'media_url' => 'getMediaUrl',
-        'published_date' => 'getPublishedDate'
+        
     ];
 
     /**
@@ -204,12 +179,6 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['order_number'] = $data['order_number'] ?? null;
-        $this->container['body'] = $data['body'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
-        $this->container['media_url'] = $data['media_url'] ?? null;
-        $this->container['published_date'] = $data['published_date'] ?? null;
     }
 
     /**
@@ -221,30 +190,6 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['order_number'] === null) {
-            $invalidProperties[] = "'order_number' can't be null";
-        }
-        if (($this->container['order_number'] < 1)) {
-            $invalidProperties[] = "invalid value for 'order_number', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['body'] === null) {
-            $invalidProperties[] = "'body' can't be null";
-        }
-        if ((mb_strlen($this->container['body']) < 1)) {
-            $invalidProperties[] = "invalid value for 'body', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -259,165 +204,6 @@ class WTNewsArticleCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-
-        if ((mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling WTNewsArticleCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_number
-     *
-     * @return int
-     */
-    public function getOrderNumber()
-    {
-        return $this->container['order_number'];
-    }
-
-    /**
-     * Sets order_number
-     *
-     * @param int $order_number order_number
-     *
-     * @return self
-     */
-    public function setOrderNumber($order_number)
-    {
-
-        if (($order_number < 1)) {
-            throw new \InvalidArgumentException('invalid value for $order_number when calling WTNewsArticleCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['order_number'] = $order_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets body
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     *
-     * @param string $body body
-     *
-     * @return self
-     */
-    public function setBody($body)
-    {
-
-        if ((mb_strlen($body) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $body when calling WTNewsArticleCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['body'] = $body;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets media_url
-     *
-     * @return string|null
-     */
-    public function getMediaUrl()
-    {
-        return $this->container['media_url'];
-    }
-
-    /**
-     * Sets media_url
-     *
-     * @param string|null $media_url media_url
-     *
-     * @return self
-     */
-    public function setMediaUrl($media_url)
-    {
-        $this->container['media_url'] = $media_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets published_date
-     *
-     * @return \DateTime|null
-     */
-    public function getPublishedDate()
-    {
-        return $this->container['published_date'];
-    }
-
-    /**
-     * Sets published_date
-     *
-     * @param \DateTime|null $published_date published_date
-     *
-     * @return self
-     */
-    public function setPublishedDate($published_date)
-    {
-        $this->container['published_date'] = $published_date;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
