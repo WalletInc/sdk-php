@@ -73,6 +73,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'industry' => 'string',
+        'industry_name' => 'string',
         'info_genesis_property_id' => 'string',
         'is_frozen' => 'bool',
         'billing_contact_employee_id' => 'string',
@@ -103,6 +104,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'industry' => null,
+        'industry_name' => null,
         'info_genesis_property_id' => null,
         'is_frozen' => null,
         'billing_contact_employee_id' => null,
@@ -152,6 +154,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
         'industry' => 'industry',
+        'industry_name' => 'industryName',
         'info_genesis_property_id' => 'infoGenesisPropertyID',
         'is_frozen' => 'isFrozen',
         'billing_contact_employee_id' => 'billingContactEmployeeID',
@@ -180,6 +183,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'industry' => 'setIndustry',
+        'industry_name' => 'setIndustryName',
         'info_genesis_property_id' => 'setInfoGenesisPropertyId',
         'is_frozen' => 'setIsFrozen',
         'billing_contact_employee_id' => 'setBillingContactEmployeeId',
@@ -208,6 +212,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'industry' => 'getIndustry',
+        'industry_name' => 'getIndustryName',
         'info_genesis_property_id' => 'getInfoGenesisPropertyId',
         'is_frozen' => 'getIsFrozen',
         'billing_contact_employee_id' => 'getBillingContactEmployeeId',
@@ -287,6 +292,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['industry'] = $data['industry'] ?? null;
+        $this->container['industry_name'] = $data['industry_name'] ?? null;
         $this->container['info_genesis_property_id'] = $data['info_genesis_property_id'] ?? null;
         $this->container['is_frozen'] = $data['is_frozen'] ?? null;
         $this->container['billing_contact_employee_id'] = $data['billing_contact_employee_id'] ?? null;
@@ -355,6 +361,9 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['industry'] === null) {
             $invalidProperties[] = "'industry' can't be null";
+        }
+        if ($this->container['industry_name'] === null) {
+            $invalidProperties[] = "'industry_name' can't be null";
         }
         if ($this->container['info_genesis_property_id'] === null) {
             $invalidProperties[] = "'info_genesis_property_id' can't be null";
@@ -710,6 +719,30 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIndustry($industry)
     {
         $this->container['industry'] = $industry;
+
+        return $this;
+    }
+
+    /**
+     * Gets industry_name
+     *
+     * @return string
+     */
+    public function getIndustryName()
+    {
+        return $this->container['industry_name'];
+    }
+
+    /**
+     * Sets industry_name
+     *
+     * @param string $industry_name industry_name
+     *
+     * @return self
+     */
+    public function setIndustryName($industry_name)
+    {
+        $this->container['industry_name'] = $industry_name;
 
         return $this;
     }

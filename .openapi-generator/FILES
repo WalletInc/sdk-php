@@ -666,10 +666,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/SSOutboundStatusesAnyOf1Test.php
-test/Model/SSOutboundStatusesAnyOf2Test.php
-test/Model/SSOutboundStatusesAnyOf3Test.php
-test/Model/SSOutboundStatusesAnyOf4Test.php
-test/Model/SSOutboundStatusesAnyOf5Test.php
-test/Model/SSOutboundStatusesAnyOfTest.php
-test/Model/SSOutboundStatusesTest.php
