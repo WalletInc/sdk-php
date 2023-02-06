@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **industry** | **string** |  |
+**industry_name** | **string** |  |
 **info_genesis_property_id** | **string** |  |
 **is_frozen** | **bool** |  |
 **billing_contact_employee_id** | **string** |  |
