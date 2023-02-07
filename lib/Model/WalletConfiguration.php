@@ -99,6 +99,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => 'string',
         'vanity_page_wallet_prefix' => 'string',
+        'merchant_credit_payment_design_id' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -152,6 +153,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => null,
         'vanity_page_wallet_prefix' => null,
+        'merchant_credit_payment_design_id' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -224,6 +226,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'public_chat_room_channel_id' => 'publicChatRoomChannelID',
         'vanity_handle' => 'vanityHandle',
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -275,6 +278,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'public_chat_room_channel_id' => 'setPublicChatRoomChannelId',
         'vanity_handle' => 'setVanityHandle',
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -326,6 +330,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'public_chat_room_channel_id' => 'getPublicChatRoomChannelId',
         'vanity_handle' => 'getVanityHandle',
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -428,6 +433,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['public_chat_room_channel_id'] = $data['public_chat_room_channel_id'] ?? null;
         $this->container['vanity_handle'] = $data['vanity_handle'] ?? null;
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
+        $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -1519,6 +1525,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setVanityPageWalletPrefix($vanity_page_wallet_prefix)
     {
         $this->container['vanity_page_wallet_prefix'] = $vanity_page_wallet_prefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_credit_payment_design_id
+     *
+     * @return string|null
+     */
+    public function getMerchantCreditPaymentDesignId()
+    {
+        return $this->container['merchant_credit_payment_design_id'];
+    }
+
+    /**
+     * Sets merchant_credit_payment_design_id
+     *
+     * @param string|null $merchant_credit_payment_design_id merchant_credit_payment_design_id
+     *
+     * @return self
+     */
+    public function setMerchantCreditPaymentDesignId($merchant_credit_payment_design_id)
+    {
+        $this->container['merchant_credit_payment_design_id'] = $merchant_credit_payment_design_id;
 
         return $this;
     }

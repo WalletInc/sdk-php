@@ -98,7 +98,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'facebook_pixel_id' => 'string',
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => 'string',
-        'vanity_page_wallet_prefix' => 'string'
+        'vanity_page_wallet_prefix' => 'string',
+        'merchant_credit_payment_design_id' => 'string'
     ];
 
     /**
@@ -147,7 +148,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'facebook_pixel_id' => null,
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => null,
-        'vanity_page_wallet_prefix' => null
+        'vanity_page_wallet_prefix' => null,
+        'merchant_credit_payment_design_id' => null
     ];
 
     /**
@@ -215,7 +217,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'facebook_pixel_id' => 'facebookPixelID',
         'public_chat_room_channel_id' => 'publicChatRoomChannelID',
         'vanity_handle' => 'vanityHandle',
-        'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix'
+        'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID'
     ];
 
     /**
@@ -262,7 +265,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'facebook_pixel_id' => 'setFacebookPixelId',
         'public_chat_room_channel_id' => 'setPublicChatRoomChannelId',
         'vanity_handle' => 'setVanityHandle',
-        'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix'
+        'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId'
     ];
 
     /**
@@ -309,7 +313,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'facebook_pixel_id' => 'getFacebookPixelId',
         'public_chat_room_channel_id' => 'getPublicChatRoomChannelId',
         'vanity_handle' => 'getVanityHandle',
-        'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix'
+        'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
+        'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId'
     ];
 
     /**
@@ -408,6 +413,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['public_chat_room_channel_id'] = $data['public_chat_room_channel_id'] ?? null;
         $this->container['vanity_handle'] = $data['vanity_handle'] ?? null;
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
+        $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
     }
 
     /**
@@ -1459,6 +1465,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setVanityPageWalletPrefix($vanity_page_wallet_prefix)
     {
         $this->container['vanity_page_wallet_prefix'] = $vanity_page_wallet_prefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_credit_payment_design_id
+     *
+     * @return string|null
+     */
+    public function getMerchantCreditPaymentDesignId()
+    {
+        return $this->container['merchant_credit_payment_design_id'];
+    }
+
+    /**
+     * Sets merchant_credit_payment_design_id
+     *
+     * @param string|null $merchant_credit_payment_design_id merchant_credit_payment_design_id
+     *
+     * @return self
+     */
+    public function setMerchantCreditPaymentDesignId($merchant_credit_payment_design_id)
+    {
+        $this->container['merchant_credit_payment_design_id'] = $merchant_credit_payment_design_id;
 
         return $this;
     }
