@@ -76,7 +76,8 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         'email_verified' => 'string',
         'profile_picture_url' => 'string',
         'merchant_id' => 'string',
-        'session_token' => 'string'
+        'session_token' => 'string',
+        'failed_login_attempts' => 'double'
     ];
 
     /**
@@ -103,7 +104,8 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         'email_verified' => null,
         'profile_picture_url' => null,
         'merchant_id' => null,
-        'session_token' => null
+        'session_token' => null,
+        'failed_login_attempts' => 'double'
     ];
 
     /**
@@ -149,7 +151,8 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         'email_verified' => 'emailVerified',
         'profile_picture_url' => 'profilePictureURL',
         'merchant_id' => 'merchantID',
-        'session_token' => 'sessionToken'
+        'session_token' => 'sessionToken',
+        'failed_login_attempts' => 'failedLoginAttempts'
     ];
 
     /**
@@ -174,7 +177,8 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         'email_verified' => 'setEmailVerified',
         'profile_picture_url' => 'setProfilePictureUrl',
         'merchant_id' => 'setMerchantId',
-        'session_token' => 'setSessionToken'
+        'session_token' => 'setSessionToken',
+        'failed_login_attempts' => 'setFailedLoginAttempts'
     ];
 
     /**
@@ -199,7 +203,8 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         'email_verified' => 'getEmailVerified',
         'profile_picture_url' => 'getProfilePictureUrl',
         'merchant_id' => 'getMerchantId',
-        'session_token' => 'getSessionToken'
+        'session_token' => 'getSessionToken',
+        'failed_login_attempts' => 'getFailedLoginAttempts'
     ];
 
     /**
@@ -276,6 +281,7 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['profile_picture_url'] = $data['profile_picture_url'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['session_token'] = $data['session_token'] ?? null;
+        $this->container['failed_login_attempts'] = $data['failed_login_attempts'] ?? null;
     }
 
     /**
@@ -855,6 +861,30 @@ class WTEmployee implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSessionToken($session_token)
     {
         $this->container['session_token'] = $session_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets failed_login_attempts
+     *
+     * @return double|null
+     */
+    public function getFailedLoginAttempts()
+    {
+        return $this->container['failed_login_attempts'];
+    }
+
+    /**
+     * Sets failed_login_attempts
+     *
+     * @param double|null $failed_login_attempts failed_login_attempts
+     *
+     * @return self
+     */
+    public function setFailedLoginAttempts($failed_login_attempts)
+    {
+        $this->container['failed_login_attempts'] = $failed_login_attempts;
 
         return $this;
     }
