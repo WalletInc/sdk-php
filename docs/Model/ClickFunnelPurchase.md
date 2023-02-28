@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **stripe_customer_token** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
-**subscription_id** | **string** |  |
+**subscription_id** | **string** |  | [optional]
 **charge_id** | **mixed** |  | [optional]
 **ctransreceipt** | **mixed** |  | [optional]
 **status** | **string** |  |
