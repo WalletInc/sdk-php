@@ -356,9 +356,6 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
         }
-        if ($this->container['subscription_id'] === null) {
-            $invalidProperties[] = "'subscription_id' can't be null";
-        }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -587,7 +584,7 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets subscription_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionId()
     {
@@ -597,7 +594,7 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets subscription_id
      *
-     * @param string $subscription_id subscription_id
+     * @param string|null $subscription_id subscription_id
      *
      * @return self
      */
