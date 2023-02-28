@@ -68,7 +68,7 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
         'stripe_customer_token' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
-        'subscription_id' => 'string',
+        'subscription_id' => 'mixed',
         'charge_id' => 'mixed',
         'ctransreceipt' => 'mixed',
         'status' => 'string',
@@ -584,7 +584,7 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets subscription_id
      *
-     * @return string|null
+     * @return mixed|null
      */
     public function getSubscriptionId()
     {
@@ -594,7 +594,7 @@ class ClickFunnelPurchase implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets subscription_id
      *
-     * @param string|null $subscription_id subscription_id
+     * @param mixed|null $subscription_id subscription_id
      *
      * @return self
      */
