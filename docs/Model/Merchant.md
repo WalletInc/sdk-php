@@ -25,5 +25,6 @@ Name | Type | Description | Notes
 **is_payment_method_provided** | **bool** |  |
 **plan_nickname** | **string** |  |
 **max_sms_count** | **double** |  |
+**is_sms_agreement** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
