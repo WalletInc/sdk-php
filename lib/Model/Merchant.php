@@ -80,7 +80,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_customer_id' => 'string',
         'is_payment_method_provided' => 'bool',
         'plan_nickname' => 'string',
-        'max_sms_count' => 'double'
+        'max_sms_count' => 'double',
+        'is_sms_agreement' => 'bool'
     ];
 
     /**
@@ -111,7 +112,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_customer_id' => null,
         'is_payment_method_provided' => null,
         'plan_nickname' => null,
-        'max_sms_count' => 'double'
+        'max_sms_count' => 'double',
+        'is_sms_agreement' => null
     ];
 
     /**
@@ -161,7 +163,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_customer_id' => 'stripeCustomerID',
         'is_payment_method_provided' => 'isPaymentMethodProvided',
         'plan_nickname' => 'planNickname',
-        'max_sms_count' => 'maxSMSCount'
+        'max_sms_count' => 'maxSMSCount',
+        'is_sms_agreement' => 'isSmsAgreement'
     ];
 
     /**
@@ -190,7 +193,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_customer_id' => 'setStripeCustomerId',
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
         'plan_nickname' => 'setPlanNickname',
-        'max_sms_count' => 'setMaxSmsCount'
+        'max_sms_count' => 'setMaxSmsCount',
+        'is_sms_agreement' => 'setIsSmsAgreement'
     ];
 
     /**
@@ -219,7 +223,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_customer_id' => 'getStripeCustomerId',
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
         'plan_nickname' => 'getPlanNickname',
-        'max_sms_count' => 'getMaxSmsCount'
+        'max_sms_count' => 'getMaxSmsCount',
+        'is_sms_agreement' => 'getIsSmsAgreement'
     ];
 
     /**
@@ -300,6 +305,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['is_payment_method_provided'] = $data['is_payment_method_provided'] ?? null;
         $this->container['plan_nickname'] = $data['plan_nickname'] ?? null;
         $this->container['max_sms_count'] = $data['max_sms_count'] ?? null;
+        $this->container['is_sms_agreement'] = $data['is_sms_agreement'] ?? null;
     }
 
     /**
@@ -911,6 +917,30 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMaxSmsCount($max_sms_count)
     {
         $this->container['max_sms_count'] = $max_sms_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_sms_agreement
+     *
+     * @return bool|null
+     */
+    public function getIsSmsAgreement()
+    {
+        return $this->container['is_sms_agreement'];
+    }
+
+    /**
+     * Sets is_sms_agreement
+     *
+     * @param bool|null $is_sms_agreement is_sms_agreement
+     *
+     * @return self
+     */
+    public function setIsSmsAgreement($is_sms_agreement)
+    {
+        $this->container['is_sms_agreement'] = $is_sms_agreement;
 
         return $this;
     }
