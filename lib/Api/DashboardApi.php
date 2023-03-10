@@ -5819,14 +5819,15 @@ class DashboardApi
      *
      * @param  \DateTime $start_date_time start_date_time (required)
      * @param  \DateTime $end_date_time end_date_time (required)
+     * @param  string $wallet_object_prefix wallet_object_prefix (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time)
+    public function fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time, $wallet_object_prefix = null)
     {
-        list($response) = $this->fetchDashboardWalletPageViewsCountWithHttpInfo($start_date_time, $end_date_time);
+        list($response) = $this->fetchDashboardWalletPageViewsCountWithHttpInfo($start_date_time, $end_date_time, $wallet_object_prefix);
         return $response;
     }
 
@@ -5837,14 +5838,15 @@ class DashboardApi
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
+     * @param  string $wallet_object_prefix (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchDashboardWalletPageViewsCountWithHttpInfo($start_date_time, $end_date_time)
+    public function fetchDashboardWalletPageViewsCountWithHttpInfo($start_date_time, $end_date_time, $wallet_object_prefix = null)
     {
-        $request = $this->fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time);
+        $request = $this->fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time, $wallet_object_prefix);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5991,13 +5993,14 @@ class DashboardApi
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
+     * @param  string $wallet_object_prefix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchDashboardWalletPageViewsCountAsync($start_date_time, $end_date_time)
+    public function fetchDashboardWalletPageViewsCountAsync($start_date_time, $end_date_time, $wallet_object_prefix = null)
     {
-        return $this->fetchDashboardWalletPageViewsCountAsyncWithHttpInfo($start_date_time, $end_date_time)
+        return $this->fetchDashboardWalletPageViewsCountAsyncWithHttpInfo($start_date_time, $end_date_time, $wallet_object_prefix)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6012,14 +6015,15 @@ class DashboardApi
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
+     * @param  string $wallet_object_prefix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchDashboardWalletPageViewsCountAsyncWithHttpInfo($start_date_time, $end_date_time)
+    public function fetchDashboardWalletPageViewsCountAsyncWithHttpInfo($start_date_time, $end_date_time, $wallet_object_prefix = null)
     {
         $returnType = '\OpenAPI\Client\Model\WTCountResult';
-        $request = $this->fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time);
+        $request = $this->fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time, $wallet_object_prefix);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6059,11 +6063,12 @@ class DashboardApi
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
+     * @param  string $wallet_object_prefix (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time)
+    public function fetchDashboardWalletPageViewsCountRequest($start_date_time, $end_date_time, $wallet_object_prefix = null)
     {
         // verify the required parameter 'start_date_time' is set
         if ($start_date_time === null || (is_array($start_date_time) && count($start_date_time) === 0)) {
@@ -6105,6 +6110,17 @@ class DashboardApi
             }
             else {
                 $queryParams['endDateTime'] = $end_date_time;
+            }
+        }
+        // query params
+        if ($wallet_object_prefix !== null) {
+            if('form' === 'form' && is_array($wallet_object_prefix)) {
+                foreach($wallet_object_prefix as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['walletObjectPrefix'] = $wallet_object_prefix;
             }
         }
 

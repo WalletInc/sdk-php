@@ -923,7 +923,7 @@ No authorization required
 ## `fetchDashboardWalletPageViewsCount()`
 
 ```php
-fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time): \OpenAPI\Client\Model\WTCountResult
+fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time, $wallet_object_prefix): \OpenAPI\Client\Model\WTCountResult
 ```
 
 Count Wallet page views
@@ -943,9 +943,10 @@ $apiInstance = new OpenAPI\Client\Api\DashboardApi(
 );
 $start_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $end_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$wallet_object_prefix = 'wallet_object_prefix_example'; // string
 
 try {
-    $result = $apiInstance->fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time);
+    $result = $apiInstance->fetchDashboardWalletPageViewsCount($start_date_time, $end_date_time, $wallet_object_prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DashboardApi->fetchDashboardWalletPageViewsCount: ', $e->getMessage(), PHP_EOL;
@@ -958,6 +959,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_date_time** | **\DateTime**|  |
  **end_date_time** | **\DateTime**|  |
+ **wallet_object_prefix** | **string**|  | [optional]
 
 ### Return type
 
