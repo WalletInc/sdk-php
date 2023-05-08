@@ -4,6 +4,16 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**countAllSubscribers()**](AnalyticsApi.md#countAllSubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
+[**countAuthenticatedSessions()**](AnalyticsApi.md#countAuthenticatedSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
+[**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign
+[**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date
+[**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
+[**countNewSessions()**](AnalyticsApi.md#countNewSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
+[**countOptInListSubscribersPartitionedByDate()**](AnalyticsApi.md#countOptInListSubscribersPartitionedByDate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
+[**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
+[**countTotalSessions()**](AnalyticsApi.md#countTotalSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
+[**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
 [**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
@@ -62,6 +72,8 @@ Method | HTTP request | Description
 [**fetchAnalyticsSentOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date
 [**fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number
 [**fetchAnalyticsStaticVoucherWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsStaticVoucherWalletPageViews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views
+[**fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date
+[**fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date
 [**fetchAnalyticsTCPAStopCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByDate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
 [**fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
 [**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits
@@ -72,7 +84,589 @@ Method | HTTP request | Description
 [**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+[**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
+[**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
+
+## `countAllSubscribers()`
+
+```php
+countAllSubscribers($is_subscribed, $is_pending_age21_verification, $is_archive_included, $start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
+```
+
+Count opt in list subscribers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$is_subscribed = True; // bool
+$is_pending_age21_verification = True; // bool
+$is_archive_included = True; // bool
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countAllSubscribers($is_subscribed, $is_pending_age21_verification, $is_archive_included, $start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countAllSubscribers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **is_subscribed** | **bool**|  | [optional]
+ **is_pending_age21_verification** | **bool**|  | [optional]
+ **is_archive_included** | **bool**|  | [optional]
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCountResult**](../Model/WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countAuthenticatedSessions()`
+
+```php
+countAuthenticatedSessions($start_date, $end_date): mixed
+```
+
+Count authenticated sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countAuthenticatedSessions($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countAuthenticatedSessions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countDistinctRedemptions()`
+
+```php
+countDistinctRedemptions($start_date, $end_date, $transaction_type, $segment_type): mixed
+```
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$transaction_type = 'transaction_type_example'; // string
+$segment_type = 'segment_type_example'; // string
+
+try {
+    $result = $apiInstance->countDistinctRedemptions($start_date, $end_date, $transaction_type, $segment_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countDistinctRedemptions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+ **transaction_type** | **string**|  | [optional]
+ **segment_type** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countHelpDeskRequests()`
+
+```php
+countHelpDeskRequests($start_date, $end_date, $locale, $timezone, $is_resolved): mixed
+```
+
+Count help desk requests by date
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$locale = 'locale_example'; // string
+$timezone = 'timezone_example'; // string
+$is_resolved = True; // bool
+
+try {
+    $result = $apiInstance->countHelpDeskRequests($start_date, $end_date, $locale, $timezone, $is_resolved);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countHelpDeskRequests: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+ **locale** | **string**|  |
+ **timezone** | **string**|  |
+ **is_resolved** | **bool**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countInboundMessages()`
+
+```php
+countInboundMessages($start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
+```
+
+Count opt in list subscribers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countInboundMessages($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countInboundMessages: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCountResult**](../Model/WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countNewSessions()`
+
+```php
+countNewSessions($start_date, $end_date): mixed
+```
+
+Count new sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countNewSessions($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countNewSessions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countOptInListSubscribersPartitionedByDate()`
+
+```php
+countOptInListSubscribersPartitionedByDate($start_date, $end_date): mixed
+```
+
+Count opt in list subscribers by date
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countOptInListSubscribersPartitionedByDate($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countOptInListSubscribersPartitionedByDate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countOutboundMessages()`
+
+```php
+countOutboundMessages($start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
+```
+
+Count opt in list subscribers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countOutboundMessages($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countOutboundMessages: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCountResult**](../Model/WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countTotalSessions()`
+
+```php
+countTotalSessions($start_date, $end_date): mixed
+```
+
+Count total sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countTotalSessions($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countTotalSessions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countTransactions()`
+
+```php
+countTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
+```
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$transaction_type = 'transaction_type_example'; // string
+$segment_type = 'segment_type_example'; // string
+
+try {
+    $result = $apiInstance->countTransactions($start_date, $end_date, $transaction_type, $segment_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->countTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+ **transaction_type** | **string**|  | [optional]
+ **segment_type** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `countVerifiedWalletPageViews()`
 
@@ -3408,6 +4002,118 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate()`
+
+```php
+fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate($start_date, $end_date): mixed
+```
+
+Count created TCPA Filter entries by date
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate()`
+
+```php
+fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate($start_date, $end_date): mixed
+```
+
+Count deleted TCPA Filter entries by date
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `fetchAnalyticsTCPAStopCountPartitionedByDate()`
 
 ```php
@@ -3978,6 +4684,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\WalletPageView**](../Model/WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sumRevenue()`
+
+```php
+sumRevenue($start_date, $end_date, $transaction_type, $segment_type): mixed
+```
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$transaction_type = 'transaction_type_example'; // string
+$segment_type = 'segment_type_example'; // string
+
+try {
+    $result = $apiInstance->sumRevenue($start_date, $end_date, $transaction_type, $segment_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->sumRevenue: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+ **transaction_type** | **string**|  | [optional]
+ **segment_type** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sumTransactions()`
+
+```php
+sumTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
+```
+
+Fetch refund amount of campaigns by Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$transaction_type = 'transaction_type_example'; // string
+$segment_type = 'segment_type_example'; // string
+
+try {
+    $result = $apiInstance->sumTransactions($start_date, $end_date, $transaction_type, $segment_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->sumTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  |
+ **end_date** | **\DateTime**|  |
+ **transaction_type** | **string**|  | [optional]
+ **segment_type** | **string**|  | [optional]
+
+### Return type
+
+**mixed**
 
 ### Authorization
 

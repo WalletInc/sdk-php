@@ -28,8 +28,8 @@ Method | HTTP request | Description
 [**fetchStaticVoucherCampaignBroadcasts()**](MerchantApi.md#fetchStaticVoucherCampaignBroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts
 [**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters
 [**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration
-[**updateBillingContact()**](MerchantApi.md#updateBillingContact) | **PUT** /v2/merchant/billing/contact | Update billing contact
 [**updateMerchant()**](MerchantApi.md#updateMerchant) | **PUT** /v2/merchant | Update merchant details
+[**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
 [**updatePosIntegration()**](MerchantApi.md#updatePosIntegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
 
 
@@ -1335,60 +1335,6 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateBillingContact()`
-
-```php
-updateBillingContact($wt_merchant_update_billing_contact): mixed
-```
-
-Update billing contact
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\MerchantApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wt_merchant_update_billing_contact = new \OpenAPI\Client\Model\WTMerchantUpdateBillingContact(); // \OpenAPI\Client\Model\WTMerchantUpdateBillingContact
-
-try {
-    $result = $apiInstance->updateBillingContact($wt_merchant_update_billing_contact);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantApi->updateBillingContact: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_update_billing_contact** | [**\OpenAPI\Client\Model\WTMerchantUpdateBillingContact**](../Model/WTMerchantUpdateBillingContact.md)|  |
-
-### Return type
-
-**mixed**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `updateMerchant()`
 
 ```php
@@ -1425,6 +1371,60 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wt_merchant_update** | [**\OpenAPI\Client\Model\WTMerchantUpdate**](../Model/WTMerchantUpdate.md)|  |
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updatePointsOfContact()`
+
+```php
+updatePointsOfContact($wt_merchant_update_points_of_contact): mixed
+```
+
+Update billing contact
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\MerchantApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_merchant_update_points_of_contact = new \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact(); // \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact
+
+try {
+    $result = $apiInstance->updatePointsOfContact($wt_merchant_update_points_of_contact);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MerchantApi->updatePointsOfContact: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_merchant_update_points_of_contact** | [**\OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact**](../Model/WTMerchantUpdatePointsOfContact.md)|  |
 
 ### Return type
 
