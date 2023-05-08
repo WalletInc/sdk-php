@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**caller_name** | **string** |  | [optional]
+**caller_type** | **string** |  | [optional]
 **opt_in_list_id** | **string** |  |
 **opt_in_source_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **is_subscribed** | **bool** |  |

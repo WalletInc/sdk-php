@@ -32,6 +32,8 @@ Name | Type | Description | Notes
 **watson_contexts** | **string** |  | [optional]
 **num_media** | **int** |  |
 **api_version** | **string** |  |
+**is_opt_in** | **bool** |  | [optional]
+**is_help_desk_request** | **bool** |  | [optional]
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

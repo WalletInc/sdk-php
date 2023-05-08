@@ -5,7 +5,6 @@ All URIs are relative to https://api.wall.et.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPeerToRoles()**](EmployeesApi.md#addPeerToRoles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles
-[**createAlert()**](EmployeesApi.md#createAlert) | **POST** /v2/employee/alert | Create employee alert
 [**createDocument()**](EmployeesApi.md#createDocument) | **POST** /v2/employee/document | Create document
 [**createEmployeePeer()**](EmployeesApi.md#createEmployeePeer) | **POST** /v2/employee/peer | Create employee peer
 [**createFile()**](EmployeesApi.md#createFile) | **POST** /v2/employee/file/create | Create file
@@ -23,12 +22,13 @@ Method | HTTP request | Description
 [**fetchEmployeeStaticVoucherCampaignGroups()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaignGroups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups
 [**fetchEmployeeStaticVoucherCampaigns()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns
 [**fetchMediaFiles()**](EmployeesApi.md#fetchMediaFiles) | **GET** /v2/employee/mediaFiles/all | Fetch all media files
-[**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Fetch merchant information
+[**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Create employee alert
 [**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Fetch all messages
 [**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
 [**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
 [**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
 [**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
+[**fetchProfileInfo()**](EmployeesApi.md#fetchProfileInfo) | **GET** /v2/employee | Retrieve employee&#39;s webpages
 [**importClubMembers()**](EmployeesApi.md#importClubMembers) | **POST** /v2/employee/import/members | Import club members
 [**importMerchantCredits()**](EmployeesApi.md#importMerchantCredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
 [**loadWebpagesOfEmployee()**](EmployeesApi.md#loadWebpagesOfEmployee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages
@@ -48,6 +48,7 @@ Method | HTTP request | Description
 [**setMessagesRead()**](EmployeesApi.md#setMessagesRead) | **PATCH** /v2/employee/messages | Mark messages as read
 [**setProfilePicture()**](EmployeesApi.md#setProfilePicture) | **PUT** /v2/employee/profile/picture | Set profile picture
 [**updateClubMembers()**](EmployeesApi.md#updateClubMembers) | **PUT** /v2/employee/update/members | Update club members
+[**updateEmailNotificationPreference()**](EmployeesApi.md#updateEmailNotificationPreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
 [**updateEmployeePeer()**](EmployeesApi.md#updateEmployeePeer) | **PUT** /v2/employee/peer/{userID} | Update peer
 
 
@@ -93,60 +94,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `createAlert()`
-
-```php
-createAlert($wt_employee_create_alert): \OpenAPI\Client\Model\Alert
-```
-
-Create employee alert
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wt_employee_create_alert = new \OpenAPI\Client\Model\WTEmployeeCreateAlert(); // \OpenAPI\Client\Model\WTEmployeeCreateAlert
-
-try {
-    $result = $apiInstance->createAlert($wt_employee_create_alert);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EmployeesApi->createAlert: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_alert** | [**\OpenAPI\Client\Model\WTEmployeeCreateAlert**](../Model/WTEmployeeCreateAlert.md)|  |
-
-### Return type
-
-[**\OpenAPI\Client\Model\Alert**](../Model/Alert.md)
 
 ### Authorization
 
@@ -1078,7 +1025,7 @@ No authorization required
 fetchMerchant(): mixed
 ```
 
-Fetch merchant information
+Create employee alert
 
 ### Example
 
@@ -1373,6 +1320,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 **mixed[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchProfileInfo()`
+
+```php
+fetchProfileInfo(): \OpenAPI\Client\Model\Employee
+```
+
+Retrieve employee's webpages
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchProfileInfo();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployeesApi->fetchProfileInfo: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\Employee**](../Model/Employee.md)
 
 ### Authorization
 
@@ -2397,6 +2395,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 **string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateEmailNotificationPreference()`
+
+```php
+updateEmailNotificationPreference($inline_object): \OpenAPI\Client\Model\Employee
+```
+
+Changes the employee's email notification preference to enabled or disabled
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$inline_object = new \OpenAPI\Client\Model\InlineObject(); // \OpenAPI\Client\Model\InlineObject
+
+try {
+    $result = $apiInstance->updateEmailNotificationPreference($inline_object);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployeesApi->updateEmailNotificationPreference: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object** | [**\OpenAPI\Client\Model\InlineObject**](../Model/InlineObject.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Employee**](../Model/Employee.md)
 
 ### Authorization
 
