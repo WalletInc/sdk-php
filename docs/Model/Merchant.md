@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **info_genesis_property_id** | **string** |  |
 **is_frozen** | **bool** |  |
 **billing_contact_employee_id** | **string** |  |
+**marketing_contact_employee_id** | **string** |  |
+**technical_contact_employee_id** | **string** |  |
+**customer_service_contact_employee_id** | **string** |  |
 **stripe_customer_id** | **string** |  |
 **is_payment_method_provided** | **bool** |  |
 **plan_nickname** | **string** |  |
