@@ -676,15 +676,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/PromotionCodesApiTest.php
-test/Api/QuickLinksApiTest.php
-test/Api/QuickLinksSectionApiTest.php
-test/Api/VirtualBusinessCardApiTest.php
-test/Model/EmployeeAlertTest.php
-test/Model/InlineObject1Test.php
-test/Model/InlineObjectTest.php
-test/Model/PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountTest.php
-test/Model/VirtualBusinessCardTest.php
-test/Model/WTMerchantUpdatePointsOfContactTest.php
-test/Model/WTVirtualBusinessCardCreateParamsTest.php
-test/Model/WTVirtualBusinessCardUpdateParamsTest.php
