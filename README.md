@@ -409,6 +409,12 @@ Class | Method | HTTP request | Description
 *PromotionCodesApi* | [**fetchAllPromoCodes**](docs/Api/PromotionCodesApi.md#fetchallpromocodes) | **GET** /v2/promoCodes/all | Fetch all promo codes
 *PromotionCodesApi* | [**restorePromoCode**](docs/Api/PromotionCodesApi.md#restorepromocode) | **PATCH** /v2/promoCodes/{id} | Restore promo code
 *PromotionCodesApi* | [**updatePromoCode**](docs/Api/PromotionCodesApi.md#updatepromocode) | **PUT** /v2/promoCodes/{id} | Update promo code
+*QRCodeDesignsApi* | [**archiveQRCodeDesign**](docs/Api/QRCodeDesignsApi.md#archiveqrcodedesign) | **DELETE** /v2/qrcodedesign/{id} | Archive QR Code Design
+*QRCodeDesignsApi* | [**createQRCodeDesign**](docs/Api/QRCodeDesignsApi.md#createqrcodedesign) | **POST** /v2/qrcodedesign | Create QR Code design
+*QRCodeDesignsApi* | [**fetchAllQRCodeDesigns**](docs/Api/QRCodeDesignsApi.md#fetchallqrcodedesigns) | **GET** /v2/qrcodedesign/all | Fetch all active QR Code Designs
+*QRCodeDesignsApi* | [**fetchQRCodeDesignById**](docs/Api/QRCodeDesignsApi.md#fetchqrcodedesignbyid) | **GET** /v2/qrcodedesign/{id} | Fetch QR Code Design
+*QRCodeDesignsApi* | [**restoreQRCodeDesign**](docs/Api/QRCodeDesignsApi.md#restoreqrcodedesign) | **PATCH** /v2/qrcodedesign/{id} | Restore payment design
+*QRCodeDesignsApi* | [**updateQRCodeDesign**](docs/Api/QRCodeDesignsApi.md#updateqrcodedesign) | **PUT** /v2/qrcodedesign/{id} | Update QR Code Design
 *QuickLinksApi* | [**archiveLinkBook**](docs/Api/QuickLinksApi.md#archivelinkbook) | **DELETE** /v2/linkBook/{id} | Archive link
 *QuickLinksApi* | [**createLinkBook**](docs/Api/QuickLinksApi.md#createlinkbook) | **POST** /v2/linkBook | Create link
 *QuickLinksApi* | [**fetchAllLinkBook**](docs/Api/QuickLinksApi.md#fetchalllinkbook) | **GET** /v2/linkBook/all | Fetch all links
@@ -662,6 +668,7 @@ Class | Method | HTTP request | Description
 - [PresignedPostFields](docs/Model/PresignedPostFields.md)
 - [Product](docs/Model/Product.md)
 - [PromoCode](docs/Model/PromoCode.md)
+- [QRCodeDesign](docs/Model/QRCodeDesign.md)
 - [ReachPerformanceStats](docs/Model/ReachPerformanceStats.md)
 - [Request](docs/Model/Request.md)
 - [Response](docs/Model/Response.md)
@@ -779,6 +786,9 @@ Class | Method | HTTP request | Description
 - [WTPosMachineUpdateParams](docs/Model/WTPosMachineUpdateParams.md)
 - [WTPromoCodeCreateParams](docs/Model/WTPromoCodeCreateParams.md)
 - [WTPromoCodeUpdateParams](docs/Model/WTPromoCodeUpdateParams.md)
+- [WTQRCodeDesign](docs/Model/WTQRCodeDesign.md)
+- [WTQRCodeDesignCreateParams](docs/Model/WTQRCodeDesignCreateParams.md)
+- [WTQRCodeDesignUpdateParams](docs/Model/WTQRCodeDesignUpdateParams.md)
 - [WTRole](docs/Model/WTRole.md)
 - [WTSMSAcquirePhoneNumber](docs/Model/WTSMSAcquirePhoneNumber.md)
 - [WTSMSCreateAgreement](docs/Model/WTSMSCreateAgreement.md)
