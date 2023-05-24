@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **url** | **string** |  |
 **media_url** | **string** |  |
 **sequence_number** | **int** |  |
+**is_pinned** | **bool** |  | [optional]
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

@@ -29,5 +29,6 @@ Name | Type | Description | Notes
 **plan_nickname** | **string** |  |
 **max_sms_count** | **double** |  |
 **is_sms_agreement** | **bool** |  | [optional]
+**is_white_labeled** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
