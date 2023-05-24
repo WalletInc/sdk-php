@@ -31,6 +31,7 @@ docs/Api/NewsApi.md
 docs/Api/PaymentDesignsApi.md
 docs/Api/PerformancesApi.md
 docs/Api/PromotionCodesApi.md
+docs/Api/QRCodeDesignsApi.md
 docs/Api/QuickLinksApi.md
 docs/Api/QuickLinksSectionApi.md
 docs/Api/SMSApi.md
@@ -189,6 +190,7 @@ docs/Model/PresignedPost.md
 docs/Model/PresignedPostFields.md
 docs/Model/Product.md
 docs/Model/PromoCode.md
+docs/Model/QRCodeDesign.md
 docs/Model/ReachPerformanceStats.md
 docs/Model/Request.md
 docs/Model/Response.md
@@ -306,6 +308,9 @@ docs/Model/WTPosMachineCreateParams.md
 docs/Model/WTPosMachineUpdateParams.md
 docs/Model/WTPromoCodeCreateParams.md
 docs/Model/WTPromoCodeUpdateParams.md
+docs/Model/WTQRCodeDesign.md
+docs/Model/WTQRCodeDesignCreateParams.md
+docs/Model/WTQRCodeDesignUpdateParams.md
 docs/Model/WTRole.md
 docs/Model/WTSMSAcquirePhoneNumber.md
 docs/Model/WTSMSCreateAgreement.md
@@ -365,6 +370,7 @@ lib/Api/NewsApi.php
 lib/Api/PaymentDesignsApi.php
 lib/Api/PerformancesApi.php
 lib/Api/PromotionCodesApi.php
+lib/Api/QRCodeDesignsApi.php
 lib/Api/QuickLinksApi.php
 lib/Api/QuickLinksSectionApi.php
 lib/Api/SMSApi.php
@@ -527,6 +533,7 @@ lib/Model/PresignedPost.php
 lib/Model/PresignedPostFields.php
 lib/Model/Product.php
 lib/Model/PromoCode.php
+lib/Model/QRCodeDesign.php
 lib/Model/ReachPerformanceStats.php
 lib/Model/Request.php
 lib/Model/Response.php
@@ -644,6 +651,9 @@ lib/Model/WTPosMachineCreateParams.php
 lib/Model/WTPosMachineUpdateParams.php
 lib/Model/WTPromoCodeCreateParams.php
 lib/Model/WTPromoCodeUpdateParams.php
+lib/Model/WTQRCodeDesign.php
+lib/Model/WTQRCodeDesignCreateParams.php
+lib/Model/WTQRCodeDesignUpdateParams.php
 lib/Model/WTRole.php
 lib/Model/WTSMSAcquirePhoneNumber.php
 lib/Model/WTSMSCreateAgreement.php
@@ -676,3 +686,8 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/QRCodeDesignsApiTest.php
+test/Model/QRCodeDesignTest.php
+test/Model/WTQRCodeDesignCreateParamsTest.php
+test/Model/WTQRCodeDesignTest.php
+test/Model/WTQRCodeDesignUpdateParamsTest.php
