@@ -686,8 +686,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/QRCodeDesignsApiTest.php
-test/Model/QRCodeDesignTest.php
-test/Model/WTQRCodeDesignCreateParamsTest.php
-test/Model/WTQRCodeDesignTest.php
-test/Model/WTQRCodeDesignUpdateParamsTest.php
