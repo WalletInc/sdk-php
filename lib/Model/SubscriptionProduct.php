@@ -68,7 +68,8 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'pages' => '\OpenAPI\Client\Model\PortalPage[]',
         'icon_name' => 'string',
         'description' => 'string',
-        'is_hourly' => 'bool'
+        'is_hourly' => 'bool',
+        'release_status' => 'string'
     ];
 
     /**
@@ -87,7 +88,8 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'pages' => null,
         'icon_name' => null,
         'description' => null,
-        'is_hourly' => null
+        'is_hourly' => null,
+        'release_status' => null
     ];
 
     /**
@@ -125,7 +127,8 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'pages' => 'pages',
         'icon_name' => 'iconName',
         'description' => 'description',
-        'is_hourly' => 'isHourly'
+        'is_hourly' => 'isHourly',
+        'release_status' => 'releaseStatus'
     ];
 
     /**
@@ -142,7 +145,8 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'pages' => 'setPages',
         'icon_name' => 'setIconName',
         'description' => 'setDescription',
-        'is_hourly' => 'setIsHourly'
+        'is_hourly' => 'setIsHourly',
+        'release_status' => 'setReleaseStatus'
     ];
 
     /**
@@ -159,7 +163,8 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'pages' => 'getPages',
         'icon_name' => 'getIconName',
         'description' => 'getDescription',
-        'is_hourly' => 'getIsHourly'
+        'is_hourly' => 'getIsHourly',
+        'release_status' => 'getReleaseStatus'
     ];
 
     /**
@@ -228,6 +233,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['icon_name'] = $data['icon_name'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
         $this->container['is_hourly'] = $data['is_hourly'] ?? null;
+        $this->container['release_status'] = $data['release_status'] ?? null;
     }
 
     /**
@@ -490,6 +496,30 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIsHourly($is_hourly)
     {
         $this->container['is_hourly'] = $is_hourly;
+
+        return $this;
+    }
+
+    /**
+     * Gets release_status
+     *
+     * @return string|null
+     */
+    public function getReleaseStatus()
+    {
+        return $this->container['release_status'];
+    }
+
+    /**
+     * Sets release_status
+     *
+     * @param string|null $release_status release_status
+     *
+     * @return self
+     */
+    public function setReleaseStatus($release_status)
+    {
+        $this->container['release_status'] = $release_status;
 
         return $this;
     }
