@@ -781,15 +781,17 @@ class EmailSubscriberApi
      *
      * Fetch all email subscribers
      *
+     * @param  \DateTime $start_date_time start_date_time (optional)
+     * @param  \DateTime $end_date_time end_date_time (optional)
      * @param  bool $is_archive_included is_archive_included (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchAllEmailSubscribers($is_archive_included = null)
+    public function fetchAllEmailSubscribers($start_date_time = null, $end_date_time = null, $is_archive_included = null)
     {
-        list($response) = $this->fetchAllEmailSubscribersWithHttpInfo($is_archive_included);
+        list($response) = $this->fetchAllEmailSubscribersWithHttpInfo($start_date_time, $end_date_time, $is_archive_included);
         return $response;
     }
 
@@ -798,15 +800,17 @@ class EmailSubscriberApi
      *
      * Fetch all email subscribers
      *
+     * @param  \DateTime $start_date_time (optional)
+     * @param  \DateTime $end_date_time (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchAllEmailSubscribersWithHttpInfo($is_archive_included = null)
+    public function fetchAllEmailSubscribersWithHttpInfo($start_date_time = null, $end_date_time = null, $is_archive_included = null)
     {
-        $request = $this->fetchAllEmailSubscribersRequest($is_archive_included);
+        $request = $this->fetchAllEmailSubscribersRequest($start_date_time, $end_date_time, $is_archive_included);
 
         try {
             $options = $this->createHttpClientOption();
@@ -951,14 +955,16 @@ class EmailSubscriberApi
      *
      * Fetch all email subscribers
      *
+     * @param  \DateTime $start_date_time (optional)
+     * @param  \DateTime $end_date_time (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAllEmailSubscribersAsync($is_archive_included = null)
+    public function fetchAllEmailSubscribersAsync($start_date_time = null, $end_date_time = null, $is_archive_included = null)
     {
-        return $this->fetchAllEmailSubscribersAsyncWithHttpInfo($is_archive_included)
+        return $this->fetchAllEmailSubscribersAsyncWithHttpInfo($start_date_time, $end_date_time, $is_archive_included)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,15 +977,17 @@ class EmailSubscriberApi
      *
      * Fetch all email subscribers
      *
+     * @param  \DateTime $start_date_time (optional)
+     * @param  \DateTime $end_date_time (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAllEmailSubscribersAsyncWithHttpInfo($is_archive_included = null)
+    public function fetchAllEmailSubscribersAsyncWithHttpInfo($start_date_time = null, $end_date_time = null, $is_archive_included = null)
     {
         $returnType = 'mixed';
-        $request = $this->fetchAllEmailSubscribersRequest($is_archive_included);
+        $request = $this->fetchAllEmailSubscribersRequest($start_date_time, $end_date_time, $is_archive_included);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1017,12 +1025,14 @@ class EmailSubscriberApi
     /**
      * Create request for operation 'fetchAllEmailSubscribers'
      *
+     * @param  \DateTime $start_date_time (optional)
+     * @param  \DateTime $end_date_time (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchAllEmailSubscribersRequest($is_archive_included = null)
+    public function fetchAllEmailSubscribersRequest($start_date_time = null, $end_date_time = null, $is_archive_included = null)
     {
 
         $resourcePath = '/v2/emailSubscriber/all';
@@ -1032,6 +1042,28 @@ class EmailSubscriberApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($start_date_time !== null) {
+            if('form' === 'form' && is_array($start_date_time)) {
+                foreach($start_date_time as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['startDateTime'] = $start_date_time;
+            }
+        }
+        // query params
+        if ($end_date_time !== null) {
+            if('form' === 'form' && is_array($end_date_time)) {
+                foreach($end_date_time as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['endDateTime'] = $end_date_time;
+            }
+        }
         // query params
         if ($is_archive_included !== null) {
             if('form' === 'form' && is_array($is_archive_included)) {

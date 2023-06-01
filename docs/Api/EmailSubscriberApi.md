@@ -122,7 +122,7 @@ No authorization required
 ## `fetchAllEmailSubscribers()`
 
 ```php
-fetchAllEmailSubscribers($is_archive_included): mixed
+fetchAllEmailSubscribers($start_date_time, $end_date_time, $is_archive_included): mixed
 ```
 
 Fetch all email subscribers
@@ -140,10 +140,12 @@ $apiInstance = new OpenAPI\Client\Api\EmailSubscriberApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$start_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $is_archive_included = True; // bool
 
 try {
-    $result = $apiInstance->fetchAllEmailSubscribers($is_archive_included);
+    $result = $apiInstance->fetchAllEmailSubscribers($start_date_time, $end_date_time, $is_archive_included);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailSubscriberApi->fetchAllEmailSubscribers: ', $e->getMessage(), PHP_EOL;
@@ -154,6 +156,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start_date_time** | **\DateTime**|  | [optional]
+ **end_date_time** | **\DateTime**|  | [optional]
  **is_archive_included** | **bool**|  | [optional]
 
 ### Return type
