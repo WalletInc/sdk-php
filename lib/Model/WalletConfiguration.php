@@ -94,6 +94,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_profile' => 'bool',
         'is_settings' => 'bool',
         'is_chat_room' => 'bool',
+        'is_sms_opt_in' => 'bool',
+        'sms_opt_in_source_id' => 'string',
+        'is_email_subscriber' => 'bool',
         'google_analytics_id' => 'string',
         'facebook_pixel_id' => 'string',
         'public_chat_room_channel_id' => 'double',
@@ -148,6 +151,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_profile' => null,
         'is_settings' => null,
         'is_chat_room' => null,
+        'is_sms_opt_in' => null,
+        'sms_opt_in_source_id' => null,
+        'is_email_subscriber' => null,
         'google_analytics_id' => null,
         'facebook_pixel_id' => null,
         'public_chat_room_channel_id' => 'double',
@@ -221,6 +227,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_profile' => 'isProfile',
         'is_settings' => 'isSettings',
         'is_chat_room' => 'isChatRoom',
+        'is_sms_opt_in' => 'isSmsOptIn',
+        'sms_opt_in_source_id' => 'smsOptInSourceID',
+        'is_email_subscriber' => 'isEmailSubscriber',
         'google_analytics_id' => 'googleAnalyticsID',
         'facebook_pixel_id' => 'facebookPixelID',
         'public_chat_room_channel_id' => 'publicChatRoomChannelID',
@@ -273,6 +282,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_profile' => 'setIsProfile',
         'is_settings' => 'setIsSettings',
         'is_chat_room' => 'setIsChatRoom',
+        'is_sms_opt_in' => 'setIsSmsOptIn',
+        'sms_opt_in_source_id' => 'setSmsOptInSourceId',
+        'is_email_subscriber' => 'setIsEmailSubscriber',
         'google_analytics_id' => 'setGoogleAnalyticsId',
         'facebook_pixel_id' => 'setFacebookPixelId',
         'public_chat_room_channel_id' => 'setPublicChatRoomChannelId',
@@ -325,6 +337,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_profile' => 'getIsProfile',
         'is_settings' => 'getIsSettings',
         'is_chat_room' => 'getIsChatRoom',
+        'is_sms_opt_in' => 'getIsSmsOptIn',
+        'sms_opt_in_source_id' => 'getSmsOptInSourceId',
+        'is_email_subscriber' => 'getIsEmailSubscriber',
         'google_analytics_id' => 'getGoogleAnalyticsId',
         'facebook_pixel_id' => 'getFacebookPixelId',
         'public_chat_room_channel_id' => 'getPublicChatRoomChannelId',
@@ -428,6 +443,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['is_profile'] = $data['is_profile'] ?? null;
         $this->container['is_settings'] = $data['is_settings'] ?? null;
         $this->container['is_chat_room'] = $data['is_chat_room'] ?? null;
+        $this->container['is_sms_opt_in'] = $data['is_sms_opt_in'] ?? null;
+        $this->container['sms_opt_in_source_id'] = $data['sms_opt_in_source_id'] ?? null;
+        $this->container['is_email_subscriber'] = $data['is_email_subscriber'] ?? null;
         $this->container['google_analytics_id'] = $data['google_analytics_id'] ?? null;
         $this->container['facebook_pixel_id'] = $data['facebook_pixel_id'] ?? null;
         $this->container['public_chat_room_channel_id'] = $data['public_chat_room_channel_id'] ?? null;
@@ -541,6 +559,24 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['is_chat_room'] === null) {
             $invalidProperties[] = "'is_chat_room' can't be null";
+        }
+        if ($this->container['is_sms_opt_in'] === null) {
+            $invalidProperties[] = "'is_sms_opt_in' can't be null";
+        }
+        if (!is_null($this->container['sms_opt_in_source_id']) && (mb_strlen($this->container['sms_opt_in_source_id']) > 10)) {
+            $invalidProperties[] = "invalid value for 'sms_opt_in_source_id', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['sms_opt_in_source_id']) && (mb_strlen($this->container['sms_opt_in_source_id']) < 10)) {
+            $invalidProperties[] = "invalid value for 'sms_opt_in_source_id', the character length must be bigger than or equal to 10.";
+        }
+
+        if (!is_null($this->container['sms_opt_in_source_id']) && !preg_match("/^[a-zA-Z0-9]+$/", $this->container['sms_opt_in_source_id'])) {
+            $invalidProperties[] = "invalid value for 'sms_opt_in_source_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
+        if ($this->container['is_email_subscriber'] === null) {
+            $invalidProperties[] = "'is_email_subscriber' can't be null";
         }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
@@ -1405,6 +1441,88 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIsChatRoom($is_chat_room)
     {
         $this->container['is_chat_room'] = $is_chat_room;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_sms_opt_in
+     *
+     * @return bool
+     */
+    public function getIsSmsOptIn()
+    {
+        return $this->container['is_sms_opt_in'];
+    }
+
+    /**
+     * Sets is_sms_opt_in
+     *
+     * @param bool $is_sms_opt_in is_sms_opt_in
+     *
+     * @return self
+     */
+    public function setIsSmsOptIn($is_sms_opt_in)
+    {
+        $this->container['is_sms_opt_in'] = $is_sms_opt_in;
+
+        return $this;
+    }
+
+    /**
+     * Gets sms_opt_in_source_id
+     *
+     * @return string|null
+     */
+    public function getSmsOptInSourceId()
+    {
+        return $this->container['sms_opt_in_source_id'];
+    }
+
+    /**
+     * Sets sms_opt_in_source_id
+     *
+     * @param string|null $sms_opt_in_source_id sms_opt_in_source_id
+     *
+     * @return self
+     */
+    public function setSmsOptInSourceId($sms_opt_in_source_id)
+    {
+        if (!is_null($sms_opt_in_source_id) && (mb_strlen($sms_opt_in_source_id) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $sms_opt_in_source_id when calling WalletConfiguration., must be smaller than or equal to 10.');
+        }
+        if (!is_null($sms_opt_in_source_id) && (mb_strlen($sms_opt_in_source_id) < 10)) {
+            throw new \InvalidArgumentException('invalid length for $sms_opt_in_source_id when calling WalletConfiguration., must be bigger than or equal to 10.');
+        }
+        if (!is_null($sms_opt_in_source_id) && (!preg_match("/^[a-zA-Z0-9]+$/", $sms_opt_in_source_id))) {
+            throw new \InvalidArgumentException("invalid value for $sms_opt_in_source_id when calling WalletConfiguration., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        $this->container['sms_opt_in_source_id'] = $sms_opt_in_source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_email_subscriber
+     *
+     * @return bool
+     */
+    public function getIsEmailSubscriber()
+    {
+        return $this->container['is_email_subscriber'];
+    }
+
+    /**
+     * Sets is_email_subscriber
+     *
+     * @param bool $is_email_subscriber is_email_subscriber
+     *
+     * @return self
+     */
+    public function setIsEmailSubscriber($is_email_subscriber)
+    {
+        $this->container['is_email_subscriber'] = $is_email_subscriber;
 
         return $this;
     }

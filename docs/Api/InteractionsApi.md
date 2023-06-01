@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
+[**subscribeEmail()**](InteractionsApi.md#subscribeEmail) | **POST** /wallet/subscribeEmail | Create email subscriber
 
 
 ## `createAdvertisementCreditScan()`
@@ -715,6 +716,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 **mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `subscribeEmail()`
+
+```php
+subscribeEmail($wt_email_subscriber_create_params_wallet_ui): \OpenAPI\Client\Model\EmailSubscriber
+```
+
+Create email subscriber
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_email_subscriber_create_params_wallet_ui = new \OpenAPI\Client\Model\WTEmailSubscriberCreateParamsWalletUI(); // \OpenAPI\Client\Model\WTEmailSubscriberCreateParamsWalletUI
+
+try {
+    $result = $apiInstance->subscribeEmail($wt_email_subscriber_create_params_wallet_ui);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->subscribeEmail: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wt_email_subscriber_create_params_wallet_ui** | [**\OpenAPI\Client\Model\WTEmailSubscriberCreateParamsWalletUI**](../Model/WTEmailSubscriberCreateParamsWalletUI.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\EmailSubscriber**](../Model/EmailSubscriber.md)
 
 ### Authorization
 

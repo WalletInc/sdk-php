@@ -13,6 +13,7 @@ docs/Api/CountriesApi.md
 docs/Api/CustomerApi.md
 docs/Api/DashboardApi.md
 docs/Api/DynamicVouchersApi.md
+docs/Api/EmailSubscriberApi.md
 docs/Api/EmployeeAPIKeysApi.md
 docs/Api/EmployeeAccessApi.md
 docs/Api/EmployeesApi.md
@@ -78,6 +79,7 @@ docs/Model/Document.md
 docs/Model/DuplicateRowFound.md
 docs/Model/DynamicVoucher.md
 docs/Model/DynamicVoucherBroadcast.md
+docs/Model/EmailSubscriber.md
 docs/Model/Employee.md
 docs/Model/EmployeeAPIKey.md
 docs/Model/EmployeeActivityLog.md
@@ -176,6 +178,7 @@ docs/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequ
 docs/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md
 docs/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md
 docs/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md
+docs/Model/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsId.md
 docs/Model/PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail.md
 docs/Model/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.md
 docs/Model/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md
@@ -248,6 +251,9 @@ docs/Model/WTDynamicVoucherCreateParams.md
 docs/Model/WTDynamicVoucherRedemption.md
 docs/Model/WTDynamicVoucherSummary.md
 docs/Model/WTDynamicVoucherUpdateParams.md
+docs/Model/WTEmailSubscriberCreateParams.md
+docs/Model/WTEmailSubscriberCreateParamsWalletUI.md
+docs/Model/WTEmailSubscriberUpdateParams.md
 docs/Model/WTEmployee.md
 docs/Model/WTEmployeeAPIKey.md
 docs/Model/WTEmployeeAPIKeyCreateParams.md
@@ -352,6 +358,7 @@ lib/Api/CountriesApi.php
 lib/Api/CustomerApi.php
 lib/Api/DashboardApi.php
 lib/Api/DynamicVouchersApi.php
+lib/Api/EmailSubscriberApi.php
 lib/Api/EmployeeAPIKeysApi.php
 lib/Api/EmployeeAccessApi.php
 lib/Api/EmployeesApi.php
@@ -420,6 +427,7 @@ lib/Model/Document.php
 lib/Model/DuplicateRowFound.php
 lib/Model/DynamicVoucher.php
 lib/Model/DynamicVoucherBroadcast.php
+lib/Model/EmailSubscriber.php
 lib/Model/Employee.php
 lib/Model/EmployeeAPIKey.php
 lib/Model/EmployeeActivityLog.php
@@ -519,6 +527,7 @@ lib/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFreque
 lib/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.php
 lib/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.php
 lib/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.php
+lib/Model/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsId.php
 lib/Model/PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail.php
 lib/Model/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.php
 lib/Model/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.php
@@ -591,6 +600,9 @@ lib/Model/WTDynamicVoucherCreateParams.php
 lib/Model/WTDynamicVoucherRedemption.php
 lib/Model/WTDynamicVoucherSummary.php
 lib/Model/WTDynamicVoucherUpdateParams.php
+lib/Model/WTEmailSubscriberCreateParams.php
+lib/Model/WTEmailSubscriberCreateParamsWalletUI.php
+lib/Model/WTEmailSubscriberUpdateParams.php
 lib/Model/WTEmployee.php
 lib/Model/WTEmployeeAPIKey.php
 lib/Model/WTEmployeeAPIKeyCreateParams.php
@@ -686,3 +698,9 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/EmailSubscriberApiTest.php
+test/Model/EmailSubscriberTest.php
+test/Model/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsIdTest.php
+test/Model/WTEmailSubscriberCreateParamsTest.php
+test/Model/WTEmailSubscriberCreateParamsWalletUITest.php
+test/Model/WTEmailSubscriberUpdateParamsTest.php

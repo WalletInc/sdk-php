@@ -89,6 +89,8 @@ class PortalPage
 
     const COMMUNICATIONS_SMS_VOUCHER_CAMPAIGNS = 'communications-sms-voucher-campaigns';
 
+    const EMAIL_SUBSCRIBERS = 'email-subscribers';
+
     const MEMBERSHIPS_CLUB_MEMBERS = 'memberships-club-members';
 
     const MEMBERSHIPS_TIERS = 'memberships-tiers';
@@ -183,6 +185,7 @@ class PortalPage
             self::COMMUNICATIONS_SMS_SOURCES,
             self::COMMUNICATIONS_SMS_SUBSCRIBERS,
             self::COMMUNICATIONS_SMS_VOUCHER_CAMPAIGNS,
+            self::EMAIL_SUBSCRIBERS,
             self::MEMBERSHIPS_CLUB_MEMBERS,
             self::MEMBERSHIPS_TIERS,
             self::MERCHANT_PROFILE,
