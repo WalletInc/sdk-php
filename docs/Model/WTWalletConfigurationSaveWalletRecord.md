@@ -38,6 +38,9 @@ Name | Type | Description | Notes
 **is_profile** | **bool** |  |
 **is_settings** | **bool** |  |
 **is_chat_room** | **bool** |  |
+**is_sms_opt_in** | **bool** |  |
+**sms_opt_in_source_id** | **string** |  | [optional]
+**is_email_subscriber** | **bool** |  |
 **google_analytics_id** | **string** |  | [optional]
 **facebook_pixel_id** | **string** |  | [optional]
 **public_chat_room_channel_id** | **double** |  | [optional]
