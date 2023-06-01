@@ -698,9 +698,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/EmailSubscriberApiTest.php
-test/Model/EmailSubscriberTest.php
-test/Model/PickWTEmailSubscriberUpdateParamsExcludeKeyofWTEmailSubscriberUpdateParamsIdTest.php
-test/Model/WTEmailSubscriberCreateParamsTest.php
-test/Model/WTEmailSubscriberCreateParamsWalletUITest.php
-test/Model/WTEmailSubscriberUpdateParamsTest.php
