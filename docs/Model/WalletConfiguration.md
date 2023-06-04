@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **string** |  |
 **header_button_color** | **string** |  |
-**left_menu_section_color** | **string** |  |
-**left_menu_arrow_color** | **string** |  |
+**left_menu_header_background_color** | **string** |  |
+**left_menu_header_font_color** | **string** |  |
+**left_menu_section_background_color** | **string** |  |
+**left_menu_section_font_color** | **string** |  |
 **company_logo_url** | **string** |  |
 **header_image_url** | **string** |  | [optional]
 **header_custom_icon** | **string** |  | [optional]
