@@ -155,6 +155,8 @@ class PortalPage
 
     const VIRTUAL_BUSINESS_CARDS = 'virtual-business-cards';
 
+    const QRCODE_DESIGNS = 'qrcode-designs';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -217,7 +219,8 @@ class PortalPage
             self::LIVE_CHAT,
             self::PROMO_CODES,
             self::NEWS,
-            self::VIRTUAL_BUSINESS_CARDS
+            self::VIRTUAL_BUSINESS_CARDS,
+            self::QRCODE_DESIGNS
         ];
     }
 }

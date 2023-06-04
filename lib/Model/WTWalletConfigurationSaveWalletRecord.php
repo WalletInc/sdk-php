@@ -62,8 +62,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'header_background_color' => 'string',
         'header_button_color' => 'string',
-        'left_menu_section_color' => 'string',
-        'left_menu_arrow_color' => 'string',
+        'left_menu_header_background_color' => 'string',
+        'left_menu_header_font_color' => 'string',
+        'left_menu_section_background_color' => 'string',
+        'left_menu_section_font_color' => 'string',
         'company_logo_url' => 'string',
         'header_image_url' => 'string',
         'header_custom_icon' => 'string',
@@ -115,8 +117,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'header_background_color' => null,
         'header_button_color' => null,
-        'left_menu_section_color' => null,
-        'left_menu_arrow_color' => null,
+        'left_menu_header_background_color' => null,
+        'left_menu_header_font_color' => null,
+        'left_menu_section_background_color' => null,
+        'left_menu_section_font_color' => null,
         'company_logo_url' => null,
         'header_image_url' => null,
         'header_custom_icon' => null,
@@ -187,8 +191,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'header_background_color' => 'headerBackgroundColor',
         'header_button_color' => 'headerButtonColor',
-        'left_menu_section_color' => 'leftMenuSectionColor',
-        'left_menu_arrow_color' => 'leftMenuArrowColor',
+        'left_menu_header_background_color' => 'leftMenuHeaderBackgroundColor',
+        'left_menu_header_font_color' => 'leftMenuHeaderFontColor',
+        'left_menu_section_background_color' => 'leftMenuSectionBackgroundColor',
+        'left_menu_section_font_color' => 'leftMenuSectionFontColor',
         'company_logo_url' => 'companyLogoURL',
         'header_image_url' => 'headerImageURL',
         'header_custom_icon' => 'headerCustomIcon',
@@ -238,8 +244,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     protected static $setters = [
         'header_background_color' => 'setHeaderBackgroundColor',
         'header_button_color' => 'setHeaderButtonColor',
-        'left_menu_section_color' => 'setLeftMenuSectionColor',
-        'left_menu_arrow_color' => 'setLeftMenuArrowColor',
+        'left_menu_header_background_color' => 'setLeftMenuHeaderBackgroundColor',
+        'left_menu_header_font_color' => 'setLeftMenuHeaderFontColor',
+        'left_menu_section_background_color' => 'setLeftMenuSectionBackgroundColor',
+        'left_menu_section_font_color' => 'setLeftMenuSectionFontColor',
         'company_logo_url' => 'setCompanyLogoUrl',
         'header_image_url' => 'setHeaderImageUrl',
         'header_custom_icon' => 'setHeaderCustomIcon',
@@ -289,8 +297,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     protected static $getters = [
         'header_background_color' => 'getHeaderBackgroundColor',
         'header_button_color' => 'getHeaderButtonColor',
-        'left_menu_section_color' => 'getLeftMenuSectionColor',
-        'left_menu_arrow_color' => 'getLeftMenuArrowColor',
+        'left_menu_header_background_color' => 'getLeftMenuHeaderBackgroundColor',
+        'left_menu_header_font_color' => 'getLeftMenuHeaderFontColor',
+        'left_menu_section_background_color' => 'getLeftMenuSectionBackgroundColor',
+        'left_menu_section_font_color' => 'getLeftMenuSectionFontColor',
         'company_logo_url' => 'getCompanyLogoUrl',
         'header_image_url' => 'getHeaderImageUrl',
         'header_custom_icon' => 'getHeaderCustomIcon',
@@ -391,8 +401,10 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     {
         $this->container['header_background_color'] = $data['header_background_color'] ?? null;
         $this->container['header_button_color'] = $data['header_button_color'] ?? null;
-        $this->container['left_menu_section_color'] = $data['left_menu_section_color'] ?? null;
-        $this->container['left_menu_arrow_color'] = $data['left_menu_arrow_color'] ?? null;
+        $this->container['left_menu_header_background_color'] = $data['left_menu_header_background_color'] ?? null;
+        $this->container['left_menu_header_font_color'] = $data['left_menu_header_font_color'] ?? null;
+        $this->container['left_menu_section_background_color'] = $data['left_menu_section_background_color'] ?? null;
+        $this->container['left_menu_section_font_color'] = $data['left_menu_section_font_color'] ?? null;
         $this->container['company_logo_url'] = $data['company_logo_url'] ?? null;
         $this->container['header_image_url'] = $data['header_image_url'] ?? null;
         $this->container['header_custom_icon'] = $data['header_custom_icon'] ?? null;
@@ -449,11 +461,17 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         if ($this->container['header_button_color'] === null) {
             $invalidProperties[] = "'header_button_color' can't be null";
         }
-        if ($this->container['left_menu_section_color'] === null) {
-            $invalidProperties[] = "'left_menu_section_color' can't be null";
+        if ($this->container['left_menu_header_background_color'] === null) {
+            $invalidProperties[] = "'left_menu_header_background_color' can't be null";
         }
-        if ($this->container['left_menu_arrow_color'] === null) {
-            $invalidProperties[] = "'left_menu_arrow_color' can't be null";
+        if ($this->container['left_menu_header_font_color'] === null) {
+            $invalidProperties[] = "'left_menu_header_font_color' can't be null";
+        }
+        if ($this->container['left_menu_section_background_color'] === null) {
+            $invalidProperties[] = "'left_menu_section_background_color' can't be null";
+        }
+        if ($this->container['left_menu_section_font_color'] === null) {
+            $invalidProperties[] = "'left_menu_section_font_color' can't be null";
         }
         if ($this->container['company_logo_url'] === null) {
             $invalidProperties[] = "'company_logo_url' can't be null";
@@ -618,49 +636,97 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets left_menu_section_color
+     * Gets left_menu_header_background_color
      *
      * @return string
      */
-    public function getLeftMenuSectionColor()
+    public function getLeftMenuHeaderBackgroundColor()
     {
-        return $this->container['left_menu_section_color'];
+        return $this->container['left_menu_header_background_color'];
     }
 
     /**
-     * Sets left_menu_section_color
+     * Sets left_menu_header_background_color
      *
-     * @param string $left_menu_section_color left_menu_section_color
+     * @param string $left_menu_header_background_color left_menu_header_background_color
      *
      * @return self
      */
-    public function setLeftMenuSectionColor($left_menu_section_color)
+    public function setLeftMenuHeaderBackgroundColor($left_menu_header_background_color)
     {
-        $this->container['left_menu_section_color'] = $left_menu_section_color;
+        $this->container['left_menu_header_background_color'] = $left_menu_header_background_color;
 
         return $this;
     }
 
     /**
-     * Gets left_menu_arrow_color
+     * Gets left_menu_header_font_color
      *
      * @return string
      */
-    public function getLeftMenuArrowColor()
+    public function getLeftMenuHeaderFontColor()
     {
-        return $this->container['left_menu_arrow_color'];
+        return $this->container['left_menu_header_font_color'];
     }
 
     /**
-     * Sets left_menu_arrow_color
+     * Sets left_menu_header_font_color
      *
-     * @param string $left_menu_arrow_color left_menu_arrow_color
+     * @param string $left_menu_header_font_color left_menu_header_font_color
      *
      * @return self
      */
-    public function setLeftMenuArrowColor($left_menu_arrow_color)
+    public function setLeftMenuHeaderFontColor($left_menu_header_font_color)
     {
-        $this->container['left_menu_arrow_color'] = $left_menu_arrow_color;
+        $this->container['left_menu_header_font_color'] = $left_menu_header_font_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets left_menu_section_background_color
+     *
+     * @return string
+     */
+    public function getLeftMenuSectionBackgroundColor()
+    {
+        return $this->container['left_menu_section_background_color'];
+    }
+
+    /**
+     * Sets left_menu_section_background_color
+     *
+     * @param string $left_menu_section_background_color left_menu_section_background_color
+     *
+     * @return self
+     */
+    public function setLeftMenuSectionBackgroundColor($left_menu_section_background_color)
+    {
+        $this->container['left_menu_section_background_color'] = $left_menu_section_background_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets left_menu_section_font_color
+     *
+     * @return string
+     */
+    public function getLeftMenuSectionFontColor()
+    {
+        return $this->container['left_menu_section_font_color'];
+    }
+
+    /**
+     * Sets left_menu_section_font_color
+     *
+     * @param string $left_menu_section_font_color left_menu_section_font_color
+     *
+     * @return self
+     */
+    public function setLeftMenuSectionFontColor($left_menu_section_font_color)
+    {
+        $this->container['left_menu_section_font_color'] = $left_menu_section_font_color;
 
         return $this;
     }
