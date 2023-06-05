@@ -105,6 +105,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_handle' => 'string',
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
+        'custom_domain' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -164,6 +165,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_handle' => null,
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
+        'custom_domain' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -242,6 +244,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_handle' => 'vanityHandle',
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
+        'custom_domain' => 'customDomain',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -299,6 +302,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_handle' => 'setVanityHandle',
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
+        'custom_domain' => 'setCustomDomain',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -356,6 +360,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_handle' => 'getVanityHandle',
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
+        'custom_domain' => 'getCustomDomain',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -464,6 +469,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['vanity_handle'] = $data['vanity_handle'] ?? null;
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
+        $this->container['custom_domain'] = $data['custom_domain'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -1733,6 +1739,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setMerchantCreditPaymentDesignId($merchant_credit_payment_design_id)
     {
         $this->container['merchant_credit_payment_design_id'] = $merchant_credit_payment_design_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_domain
+     *
+     * @return string|null
+     */
+    public function getCustomDomain()
+    {
+        return $this->container['custom_domain'];
+    }
+
+    /**
+     * Sets custom_domain
+     *
+     * @param string|null $custom_domain custom_domain
+     *
+     * @return self
+     */
+    public function setCustomDomain($custom_domain)
+    {
+        $this->container['custom_domain'] = $custom_domain;
 
         return $this;
     }

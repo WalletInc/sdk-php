@@ -104,7 +104,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => 'string',
         'vanity_page_wallet_prefix' => 'string',
-        'merchant_credit_payment_design_id' => 'string'
+        'merchant_credit_payment_design_id' => 'string',
+        'custom_domain' => 'string'
     ];
 
     /**
@@ -159,7 +160,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'public_chat_room_channel_id' => 'double',
         'vanity_handle' => null,
         'vanity_page_wallet_prefix' => null,
-        'merchant_credit_payment_design_id' => null
+        'merchant_credit_payment_design_id' => null,
+        'custom_domain' => null
     ];
 
     /**
@@ -233,7 +235,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'public_chat_room_channel_id' => 'publicChatRoomChannelID',
         'vanity_handle' => 'vanityHandle',
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
-        'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID'
+        'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
+        'custom_domain' => 'customDomain'
     ];
 
     /**
@@ -286,7 +289,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'public_chat_room_channel_id' => 'setPublicChatRoomChannelId',
         'vanity_handle' => 'setVanityHandle',
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
-        'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId'
+        'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
+        'custom_domain' => 'setCustomDomain'
     ];
 
     /**
@@ -339,7 +343,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'public_chat_room_channel_id' => 'getPublicChatRoomChannelId',
         'vanity_handle' => 'getVanityHandle',
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
-        'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId'
+        'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
+        'custom_domain' => 'getCustomDomain'
     ];
 
     /**
@@ -444,6 +449,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['vanity_handle'] = $data['vanity_handle'] ?? null;
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
+        $this->container['custom_domain'] = $data['custom_domain'] ?? null;
     }
 
     /**
@@ -1673,6 +1679,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setMerchantCreditPaymentDesignId($merchant_credit_payment_design_id)
     {
         $this->container['merchant_credit_payment_design_id'] = $merchant_credit_payment_design_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_domain
+     *
+     * @return string|null
+     */
+    public function getCustomDomain()
+    {
+        return $this->container['custom_domain'];
+    }
+
+    /**
+     * Sets custom_domain
+     *
+     * @param string|null $custom_domain custom_domain
+     *
+     * @return self
+     */
+    public function setCustomDomain($custom_domain)
+    {
+        $this->container['custom_domain'] = $custom_domain;
 
         return $this;
     }
