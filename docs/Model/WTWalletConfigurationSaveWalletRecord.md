@@ -33,6 +33,10 @@ Name | Type | Description | Notes
 **is_messages** | **bool** |  |
 **is_call** | **bool** |  |
 **is_representatives** | **bool** |  |
+**is_products** | **bool** |  |
+**is_services** | **bool** |  |
+**is_room_rates** | **bool** |  |
+**is_amenities** | **bool** |  |
 **is_map_directions** | **bool** |  |
 **is_link_book** | **bool** |  |
 **is_image_grid** | **bool** |  |

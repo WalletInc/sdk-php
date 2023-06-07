@@ -157,6 +157,14 @@ class PortalPage
 
     const QRCODE_DESIGNS = 'qrcode-designs';
 
+    const PRODUCTS = 'products';
+
+    const SERVICES = 'services';
+
+    const ROOM_RATES = 'room-rates';
+
+    const AMENITIES = 'amenities';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -220,7 +228,11 @@ class PortalPage
             self::PROMO_CODES,
             self::NEWS,
             self::VIRTUAL_BUSINESS_CARDS,
-            self::QRCODE_DESIGNS
+            self::QRCODE_DESIGNS,
+            self::PRODUCTS,
+            self::SERVICES,
+            self::ROOM_RATES,
+            self::AMENITIES
         ];
     }
 }
