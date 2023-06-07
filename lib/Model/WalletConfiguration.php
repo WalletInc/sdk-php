@@ -89,6 +89,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_messages' => 'bool',
         'is_call' => 'bool',
         'is_representatives' => 'bool',
+        'is_products' => 'bool',
+        'is_services' => 'bool',
+        'is_room_rates' => 'bool',
+        'is_amenities' => 'bool',
         'is_map_directions' => 'bool',
         'is_link_book' => 'bool',
         'is_image_grid' => 'bool',
@@ -149,6 +153,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_messages' => null,
         'is_call' => null,
         'is_representatives' => null,
+        'is_products' => null,
+        'is_services' => null,
+        'is_room_rates' => null,
+        'is_amenities' => null,
         'is_map_directions' => null,
         'is_link_book' => null,
         'is_image_grid' => null,
@@ -228,6 +236,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_messages' => 'isMessages',
         'is_call' => 'isCall',
         'is_representatives' => 'isRepresentatives',
+        'is_products' => 'isProducts',
+        'is_services' => 'isServices',
+        'is_room_rates' => 'isRoomRates',
+        'is_amenities' => 'isAmenities',
         'is_map_directions' => 'isMapDirections',
         'is_link_book' => 'isLinkBook',
         'is_image_grid' => 'isImageGrid',
@@ -286,6 +298,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_messages' => 'setIsMessages',
         'is_call' => 'setIsCall',
         'is_representatives' => 'setIsRepresentatives',
+        'is_products' => 'setIsProducts',
+        'is_services' => 'setIsServices',
+        'is_room_rates' => 'setIsRoomRates',
+        'is_amenities' => 'setIsAmenities',
         'is_map_directions' => 'setIsMapDirections',
         'is_link_book' => 'setIsLinkBook',
         'is_image_grid' => 'setIsImageGrid',
@@ -344,6 +360,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_messages' => 'getIsMessages',
         'is_call' => 'getIsCall',
         'is_representatives' => 'getIsRepresentatives',
+        'is_products' => 'getIsProducts',
+        'is_services' => 'getIsServices',
+        'is_room_rates' => 'getIsRoomRates',
+        'is_amenities' => 'getIsAmenities',
         'is_map_directions' => 'getIsMapDirections',
         'is_link_book' => 'getIsLinkBook',
         'is_image_grid' => 'getIsImageGrid',
@@ -453,6 +473,10 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['is_messages'] = $data['is_messages'] ?? null;
         $this->container['is_call'] = $data['is_call'] ?? null;
         $this->container['is_representatives'] = $data['is_representatives'] ?? null;
+        $this->container['is_products'] = $data['is_products'] ?? null;
+        $this->container['is_services'] = $data['is_services'] ?? null;
+        $this->container['is_room_rates'] = $data['is_room_rates'] ?? null;
+        $this->container['is_amenities'] = $data['is_amenities'] ?? null;
         $this->container['is_map_directions'] = $data['is_map_directions'] ?? null;
         $this->container['is_link_book'] = $data['is_link_book'] ?? null;
         $this->container['is_image_grid'] = $data['is_image_grid'] ?? null;
@@ -562,6 +586,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['is_representatives'] === null) {
             $invalidProperties[] = "'is_representatives' can't be null";
+        }
+        if ($this->container['is_products'] === null) {
+            $invalidProperties[] = "'is_products' can't be null";
+        }
+        if ($this->container['is_services'] === null) {
+            $invalidProperties[] = "'is_services' can't be null";
+        }
+        if ($this->container['is_room_rates'] === null) {
+            $invalidProperties[] = "'is_room_rates' can't be null";
+        }
+        if ($this->container['is_amenities'] === null) {
+            $invalidProperties[] = "'is_amenities' can't be null";
         }
         if ($this->container['is_map_directions'] === null) {
             $invalidProperties[] = "'is_map_directions' can't be null";
@@ -1345,6 +1381,102 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIsRepresentatives($is_representatives)
     {
         $this->container['is_representatives'] = $is_representatives;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_products
+     *
+     * @return bool
+     */
+    public function getIsProducts()
+    {
+        return $this->container['is_products'];
+    }
+
+    /**
+     * Sets is_products
+     *
+     * @param bool $is_products is_products
+     *
+     * @return self
+     */
+    public function setIsProducts($is_products)
+    {
+        $this->container['is_products'] = $is_products;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_services
+     *
+     * @return bool
+     */
+    public function getIsServices()
+    {
+        return $this->container['is_services'];
+    }
+
+    /**
+     * Sets is_services
+     *
+     * @param bool $is_services is_services
+     *
+     * @return self
+     */
+    public function setIsServices($is_services)
+    {
+        $this->container['is_services'] = $is_services;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_room_rates
+     *
+     * @return bool
+     */
+    public function getIsRoomRates()
+    {
+        return $this->container['is_room_rates'];
+    }
+
+    /**
+     * Sets is_room_rates
+     *
+     * @param bool $is_room_rates is_room_rates
+     *
+     * @return self
+     */
+    public function setIsRoomRates($is_room_rates)
+    {
+        $this->container['is_room_rates'] = $is_room_rates;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_amenities
+     *
+     * @return bool
+     */
+    public function getIsAmenities()
+    {
+        return $this->container['is_amenities'];
+    }
+
+    /**
+     * Sets is_amenities
+     *
+     * @param bool $is_amenities is_amenities
+     *
+     * @return self
+     */
+    public function setIsAmenities($is_amenities)
+    {
+        $this->container['is_amenities'] = $is_amenities;
 
         return $this;
     }
