@@ -165,6 +165,12 @@ class PortalPage
 
     const AMENITIES = 'amenities';
 
+    const DINING = 'dining';
+
+    const GAMING = 'gaming';
+
+    const LOUNGES = 'lounges';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -232,7 +238,10 @@ class PortalPage
             self::PRODUCTS,
             self::SERVICES,
             self::ROOM_RATES,
-            self::AMENITIES
+            self::AMENITIES,
+            self::DINING,
+            self::GAMING,
+            self::LOUNGES
         ];
     }
 }
