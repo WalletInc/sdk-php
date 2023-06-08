@@ -62,9 +62,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'title' => 'string',
         'description' => 'string',
-        'display_value' => 'string',
+        'displayed_price' => 'string',
         'order_number' => 'int',
-        'media_url' => 'string'
+        'media_url' => 'string',
+        'additional_info_url' => 'string'
     ];
 
     /**
@@ -77,9 +78,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPIFormats = [
         'title' => null,
         'description' => null,
-        'display_value' => null,
+        'displayed_price' => null,
         'order_number' => 'int32',
-        'media_url' => null
+        'media_url' => null,
+        'additional_info_url' => null
     ];
 
     /**
@@ -111,9 +113,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $attributeMap = [
         'title' => 'title',
         'description' => 'description',
-        'display_value' => 'displayValue',
+        'displayed_price' => 'displayedPrice',
         'order_number' => 'orderNumber',
-        'media_url' => 'mediaURL'
+        'media_url' => 'mediaURL',
+        'additional_info_url' => 'additionalInfoURL'
     ];
 
     /**
@@ -124,9 +127,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'title' => 'setTitle',
         'description' => 'setDescription',
-        'display_value' => 'setDisplayValue',
+        'displayed_price' => 'setDisplayedPrice',
         'order_number' => 'setOrderNumber',
-        'media_url' => 'setMediaUrl'
+        'media_url' => 'setMediaUrl',
+        'additional_info_url' => 'setAdditionalInfoUrl'
     ];
 
     /**
@@ -137,9 +141,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'title' => 'getTitle',
         'description' => 'getDescription',
-        'display_value' => 'getDisplayValue',
+        'displayed_price' => 'getDisplayedPrice',
         'order_number' => 'getOrderNumber',
-        'media_url' => 'getMediaUrl'
+        'media_url' => 'getMediaUrl',
+        'additional_info_url' => 'getAdditionalInfoUrl'
     ];
 
     /**
@@ -201,9 +206,10 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->container['title'] = $data['title'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
-        $this->container['display_value'] = $data['display_value'] ?? null;
+        $this->container['displayed_price'] = $data['displayed_price'] ?? null;
         $this->container['order_number'] = $data['order_number'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['additional_info_url'] = $data['additional_info_url'] ?? null;
     }
 
     /**
@@ -227,13 +233,6 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if ((mb_strlen($this->container['description']) < 1)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['display_value'] === null) {
-            $invalidProperties[] = "'display_value' can't be null";
-        }
-        if ((mb_strlen($this->container['display_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'display_value', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['order_number'] === null) {
@@ -317,30 +316,25 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets display_value
+     * Gets displayed_price
      *
-     * @return string
+     * @return string|null
      */
-    public function getDisplayValue()
+    public function getDisplayedPrice()
     {
-        return $this->container['display_value'];
+        return $this->container['displayed_price'];
     }
 
     /**
-     * Sets display_value
+     * Sets displayed_price
      *
-     * @param string $display_value display_value
+     * @param string|null $displayed_price displayed_price
      *
      * @return self
      */
-    public function setDisplayValue($display_value)
+    public function setDisplayedPrice($displayed_price)
     {
-
-        if ((mb_strlen($display_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $display_value when calling WTServiceUpdateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['display_value'] = $display_value;
+        $this->container['displayed_price'] = $displayed_price;
 
         return $this;
     }
@@ -394,6 +388,30 @@ class WTServiceUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_info_url
+     *
+     * @return string|null
+     */
+    public function getAdditionalInfoUrl()
+    {
+        return $this->container['additional_info_url'];
+    }
+
+    /**
+     * Sets additional_info_url
+     *
+     * @param string|null $additional_info_url additional_info_url
+     *
+     * @return self
+     */
+    public function setAdditionalInfoUrl($additional_info_url)
+    {
+        $this->container['additional_info_url'] = $additional_info_url;
 
         return $this;
     }
