@@ -235,10 +235,6 @@ class WTAmenityUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['displayed_price']) && (mb_strlen($this->container['displayed_price']) < 1)) {
-            $invalidProperties[] = "invalid value for 'displayed_price', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['order_number'] === null) {
             $invalidProperties[] = "'order_number' can't be null";
         }
@@ -338,11 +334,6 @@ class WTAmenityUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setDisplayedPrice($displayed_price)
     {
-
-        if (!is_null($displayed_price) && (mb_strlen($displayed_price) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $displayed_price when calling WTAmenityUpdateParams., must be bigger than or equal to 1.');
-        }
-
         $this->container['displayed_price'] = $displayed_price;
 
         return $this;
