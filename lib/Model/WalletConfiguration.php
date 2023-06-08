@@ -93,6 +93,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_services' => 'bool',
         'is_room_rates' => 'bool',
         'is_amenities' => 'bool',
+        'is_gaming' => 'bool',
+        'is_dining' => 'bool',
+        'is_lounges' => 'bool',
         'is_map_directions' => 'bool',
         'is_link_book' => 'bool',
         'is_image_grid' => 'bool',
@@ -157,6 +160,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_services' => null,
         'is_room_rates' => null,
         'is_amenities' => null,
+        'is_gaming' => null,
+        'is_dining' => null,
+        'is_lounges' => null,
         'is_map_directions' => null,
         'is_link_book' => null,
         'is_image_grid' => null,
@@ -240,6 +246,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_services' => 'isServices',
         'is_room_rates' => 'isRoomRates',
         'is_amenities' => 'isAmenities',
+        'is_gaming' => 'isGaming',
+        'is_dining' => 'isDining',
+        'is_lounges' => 'isLounges',
         'is_map_directions' => 'isMapDirections',
         'is_link_book' => 'isLinkBook',
         'is_image_grid' => 'isImageGrid',
@@ -302,6 +311,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_services' => 'setIsServices',
         'is_room_rates' => 'setIsRoomRates',
         'is_amenities' => 'setIsAmenities',
+        'is_gaming' => 'setIsGaming',
+        'is_dining' => 'setIsDining',
+        'is_lounges' => 'setIsLounges',
         'is_map_directions' => 'setIsMapDirections',
         'is_link_book' => 'setIsLinkBook',
         'is_image_grid' => 'setIsImageGrid',
@@ -364,6 +376,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_services' => 'getIsServices',
         'is_room_rates' => 'getIsRoomRates',
         'is_amenities' => 'getIsAmenities',
+        'is_gaming' => 'getIsGaming',
+        'is_dining' => 'getIsDining',
+        'is_lounges' => 'getIsLounges',
         'is_map_directions' => 'getIsMapDirections',
         'is_link_book' => 'getIsLinkBook',
         'is_image_grid' => 'getIsImageGrid',
@@ -477,6 +492,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['is_services'] = $data['is_services'] ?? null;
         $this->container['is_room_rates'] = $data['is_room_rates'] ?? null;
         $this->container['is_amenities'] = $data['is_amenities'] ?? null;
+        $this->container['is_gaming'] = $data['is_gaming'] ?? null;
+        $this->container['is_dining'] = $data['is_dining'] ?? null;
+        $this->container['is_lounges'] = $data['is_lounges'] ?? null;
         $this->container['is_map_directions'] = $data['is_map_directions'] ?? null;
         $this->container['is_link_book'] = $data['is_link_book'] ?? null;
         $this->container['is_image_grid'] = $data['is_image_grid'] ?? null;
@@ -598,6 +616,15 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['is_amenities'] === null) {
             $invalidProperties[] = "'is_amenities' can't be null";
+        }
+        if ($this->container['is_gaming'] === null) {
+            $invalidProperties[] = "'is_gaming' can't be null";
+        }
+        if ($this->container['is_dining'] === null) {
+            $invalidProperties[] = "'is_dining' can't be null";
+        }
+        if ($this->container['is_lounges'] === null) {
+            $invalidProperties[] = "'is_lounges' can't be null";
         }
         if ($this->container['is_map_directions'] === null) {
             $invalidProperties[] = "'is_map_directions' can't be null";
@@ -1477,6 +1504,78 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIsAmenities($is_amenities)
     {
         $this->container['is_amenities'] = $is_amenities;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_gaming
+     *
+     * @return bool
+     */
+    public function getIsGaming()
+    {
+        return $this->container['is_gaming'];
+    }
+
+    /**
+     * Sets is_gaming
+     *
+     * @param bool $is_gaming is_gaming
+     *
+     * @return self
+     */
+    public function setIsGaming($is_gaming)
+    {
+        $this->container['is_gaming'] = $is_gaming;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_dining
+     *
+     * @return bool
+     */
+    public function getIsDining()
+    {
+        return $this->container['is_dining'];
+    }
+
+    /**
+     * Sets is_dining
+     *
+     * @param bool $is_dining is_dining
+     *
+     * @return self
+     */
+    public function setIsDining($is_dining)
+    {
+        $this->container['is_dining'] = $is_dining;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_lounges
+     *
+     * @return bool
+     */
+    public function getIsLounges()
+    {
+        return $this->container['is_lounges'];
+    }
+
+    /**
+     * Sets is_lounges
+     *
+     * @param bool $is_lounges is_lounges
+     *
+     * @return self
+     */
+    public function setIsLounges($is_lounges)
+    {
+        $this->container['is_lounges'] = $is_lounges;
 
         return $this;
     }
