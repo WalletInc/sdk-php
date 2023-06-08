@@ -37,6 +37,9 @@ Name | Type | Description | Notes
 **is_services** | **bool** |  |
 **is_room_rates** | **bool** |  |
 **is_amenities** | **bool** |  |
+**is_gaming** | **bool** |  |
+**is_dining** | **bool** |  |
+**is_lounges** | **bool** |  |
 **is_map_directions** | **bool** |  |
 **is_link_book** | **bool** |  |
 **is_image_grid** | **bool** |  |
