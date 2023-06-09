@@ -752,15 +752,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/DiningApiTest.php
-test/Api/GamingApiTest.php
-test/Api/LoungeApiTest.php
-test/Model/DiningTest.php
-test/Model/GamingTest.php
-test/Model/LoungeTest.php
-test/Model/WTDiningCreateParamsTest.php
-test/Model/WTDiningUpdateParamsTest.php
-test/Model/WTGamingCreateParamsTest.php
-test/Model/WTGamingUpdateParamsTest.php
-test/Model/WTLoungeCreateParamsTest.php
-test/Model/WTLoungeUpdateParamsTest.php
