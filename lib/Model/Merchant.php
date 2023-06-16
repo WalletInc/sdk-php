@@ -365,9 +365,6 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['zip'] === null) {
             $invalidProperties[] = "'zip' can't be null";
         }
-        if ($this->container['currency_abbreviation'] === null) {
-            $invalidProperties[] = "'currency_abbreviation' can't be null";
-        }
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -635,7 +632,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets currency_abbreviation
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrencyAbbreviation()
     {
@@ -645,7 +642,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency_abbreviation
      *
-     * @param string $currency_abbreviation currency_abbreviation
+     * @param string|null $currency_abbreviation currency_abbreviation
      *
      * @return self
      */
