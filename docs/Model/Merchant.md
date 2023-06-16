@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **country** | **string** |  |
 **phone_number** | **string** |  |
 **zip** | **string** |  |
-**currency_abbreviation** | **string** |  |
+**currency_abbreviation** | **string** |  | [optional]
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
