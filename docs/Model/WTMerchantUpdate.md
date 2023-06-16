@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **country** | **string** |  |
 **phone_number** | **string** |  |
 **zip** | **string** |  |
-**currency_abbreviation** | **string** |  |
+**currency_abbreviation** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
