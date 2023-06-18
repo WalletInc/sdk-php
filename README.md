@@ -304,6 +304,7 @@ Class | Method | HTTP request | Description
 *ImageGridApi* | [**restoreImageGrid**](docs/Api/ImageGridApi.md#restoreimagegrid) | **PATCH** /v2/imageGrid/{id} | Restore image
 *ImageGridApi* | [**updateImageGrid**](docs/Api/ImageGridApi.md#updateimagegrid) | **PUT** /v2/imageGrid/{id} | Update image
 *IndustriesApi* | [**fetchAllIndustries**](docs/Api/IndustriesApi.md#fetchallindustries) | **GET** /system/industries/all | Fetch all industries
+*IndustriesApi* | [**fetchDomainsByIndustry**](docs/Api/IndustriesApi.md#fetchdomainsbyindustry) | **GET** /system/industries/domains | Fetch all industries
 *InfoGenesisReportsApi* | [**countAdCreditsRedemptions**](docs/Api/InfoGenesisReportsApi.md#countadcreditsredemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
 *InfoGenesisReportsApi* | [**countAdCreditsRefunds**](docs/Api/InfoGenesisReportsApi.md#countadcreditsrefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
 *InfoGenesisReportsApi* | [**countDynamicVoucherRedemptions**](docs/Api/InfoGenesisReportsApi.md#countdynamicvoucherredemptions) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/redemptions | Count dynamic voucher redemptions
@@ -622,6 +623,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
 - [InlineResponse20010](docs/Model/InlineResponse20010.md)
+- [InlineResponse20011](docs/Model/InlineResponse20011.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
 - [InlineResponse2004](docs/Model/InlineResponse2004.md)

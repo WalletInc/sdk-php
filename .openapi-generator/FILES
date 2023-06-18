@@ -111,6 +111,7 @@ docs/Model/InlineObject1.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse20010.md
+docs/Model/InlineResponse20011.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse2004.md
@@ -486,6 +487,7 @@ lib/Model/InlineObject1.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse20010.php
+lib/Model/InlineResponse20011.php
 lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse2004.php
@@ -752,3 +754,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineResponse20011Test.php
