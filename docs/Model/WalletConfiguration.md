@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **is_map_directions** | **bool** |  |
 **is_link_book** | **bool** |  |
 **is_image_grid** | **bool** |  |
+**is_videos** | **bool** |  |
 **is_transaction_history** | **bool** |  |
 **is_profile** | **bool** |  |
 **is_settings** | **bool** |  |

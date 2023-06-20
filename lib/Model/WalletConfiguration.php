@@ -99,6 +99,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_map_directions' => 'bool',
         'is_link_book' => 'bool',
         'is_image_grid' => 'bool',
+        'is_videos' => 'bool',
         'is_transaction_history' => 'bool',
         'is_profile' => 'bool',
         'is_settings' => 'bool',
@@ -166,6 +167,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_map_directions' => null,
         'is_link_book' => null,
         'is_image_grid' => null,
+        'is_videos' => null,
         'is_transaction_history' => null,
         'is_profile' => null,
         'is_settings' => null,
@@ -252,6 +254,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_map_directions' => 'isMapDirections',
         'is_link_book' => 'isLinkBook',
         'is_image_grid' => 'isImageGrid',
+        'is_videos' => 'isVideos',
         'is_transaction_history' => 'isTransactionHistory',
         'is_profile' => 'isProfile',
         'is_settings' => 'isSettings',
@@ -317,6 +320,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_map_directions' => 'setIsMapDirections',
         'is_link_book' => 'setIsLinkBook',
         'is_image_grid' => 'setIsImageGrid',
+        'is_videos' => 'setIsVideos',
         'is_transaction_history' => 'setIsTransactionHistory',
         'is_profile' => 'setIsProfile',
         'is_settings' => 'setIsSettings',
@@ -382,6 +386,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_map_directions' => 'getIsMapDirections',
         'is_link_book' => 'getIsLinkBook',
         'is_image_grid' => 'getIsImageGrid',
+        'is_videos' => 'getIsVideos',
         'is_transaction_history' => 'getIsTransactionHistory',
         'is_profile' => 'getIsProfile',
         'is_settings' => 'getIsSettings',
@@ -498,6 +503,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['is_map_directions'] = $data['is_map_directions'] ?? null;
         $this->container['is_link_book'] = $data['is_link_book'] ?? null;
         $this->container['is_image_grid'] = $data['is_image_grid'] ?? null;
+        $this->container['is_videos'] = $data['is_videos'] ?? null;
         $this->container['is_transaction_history'] = $data['is_transaction_history'] ?? null;
         $this->container['is_profile'] = $data['is_profile'] ?? null;
         $this->container['is_settings'] = $data['is_settings'] ?? null;
@@ -634,6 +640,9 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['is_image_grid'] === null) {
             $invalidProperties[] = "'is_image_grid' can't be null";
+        }
+        if ($this->container['is_videos'] === null) {
+            $invalidProperties[] = "'is_videos' can't be null";
         }
         if ($this->container['is_transaction_history'] === null) {
             $invalidProperties[] = "'is_transaction_history' can't be null";
@@ -1648,6 +1657,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setIsImageGrid($is_image_grid)
     {
         $this->container['is_image_grid'] = $is_image_grid;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_videos
+     *
+     * @return bool
+     */
+    public function getIsVideos()
+    {
+        return $this->container['is_videos'];
+    }
+
+    /**
+     * Sets is_videos
+     *
+     * @param bool $is_videos is_videos
+     *
+     * @return self
+     */
+    public function setIsVideos($is_videos)
+    {
+        $this->container['is_videos'] = $is_videos;
 
         return $this;
     }
