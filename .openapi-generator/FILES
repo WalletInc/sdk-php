@@ -762,7 +762,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/VideosApiTest.php
-test/Model/VideoTest.php
-test/Model/WTVideoCreateParamsTest.php
-test/Model/WTVideoUpdateParamsTest.php
