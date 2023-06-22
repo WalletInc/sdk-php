@@ -74,7 +74,8 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         'department' => 'string',
         'merchant_name' => 'string',
         'merchant_currency_abbreviation' => 'string',
-        'merchant_industry' => 'string'
+        'merchant_industry' => 'string',
+        'custom_domain' => 'string'
     ];
 
     /**
@@ -99,7 +100,8 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         'department' => null,
         'merchant_name' => null,
         'merchant_currency_abbreviation' => null,
-        'merchant_industry' => null
+        'merchant_industry' => null,
+        'custom_domain' => null
     ];
 
     /**
@@ -143,7 +145,8 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         'department' => 'department',
         'merchant_name' => 'merchantName',
         'merchant_currency_abbreviation' => 'merchantCurrencyAbbreviation',
-        'merchant_industry' => 'merchantIndustry'
+        'merchant_industry' => 'merchantIndustry',
+        'custom_domain' => 'customDomain'
     ];
 
     /**
@@ -166,7 +169,8 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         'department' => 'setDepartment',
         'merchant_name' => 'setMerchantName',
         'merchant_currency_abbreviation' => 'setMerchantCurrencyAbbreviation',
-        'merchant_industry' => 'setMerchantIndustry'
+        'merchant_industry' => 'setMerchantIndustry',
+        'custom_domain' => 'setCustomDomain'
     ];
 
     /**
@@ -189,7 +193,8 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         'department' => 'getDepartment',
         'merchant_name' => 'getMerchantName',
         'merchant_currency_abbreviation' => 'getMerchantCurrencyAbbreviation',
-        'merchant_industry' => 'getMerchantIndustry'
+        'merchant_industry' => 'getMerchantIndustry',
+        'custom_domain' => 'getCustomDomain'
     ];
 
     /**
@@ -264,6 +269,7 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
         $this->container['merchant_name'] = $data['merchant_name'] ?? null;
         $this->container['merchant_currency_abbreviation'] = $data['merchant_currency_abbreviation'] ?? null;
         $this->container['merchant_industry'] = $data['merchant_industry'] ?? null;
+        $this->container['custom_domain'] = $data['custom_domain'] ?? null;
     }
 
     /**
@@ -688,6 +694,30 @@ class WTAuthenticationLoginResponse implements ModelInterface, ArrayAccess, \Jso
     public function setMerchantIndustry($merchant_industry)
     {
         $this->container['merchant_industry'] = $merchant_industry;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_domain
+     *
+     * @return string|null
+     */
+    public function getCustomDomain()
+    {
+        return $this->container['custom_domain'];
+    }
+
+    /**
+     * Sets custom_domain
+     *
+     * @param string|null $custom_domain custom_domain
+     *
+     * @return self
+     */
+    public function setCustomDomain($custom_domain)
+    {
+        $this->container['custom_domain'] = $custom_domain;
 
         return $this;
     }

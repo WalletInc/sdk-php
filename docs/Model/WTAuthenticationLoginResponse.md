@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **merchant_name** | **string** |  |
 **merchant_currency_abbreviation** | **string** |  | [optional]
 **merchant_industry** | **string** |  |
+**custom_domain** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

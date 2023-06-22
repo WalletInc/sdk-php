@@ -51,6 +51,7 @@ docs/Api/StaticVouchersApi.md
 docs/Api/SystemApi.md
 docs/Api/TransactionLedgerApi.md
 docs/Api/UtilitiesApi.md
+docs/Api/VideosApi.md
 docs/Api/VirtualBusinessCardApi.md
 docs/Api/WebTerminalApi.md
 docs/Api/WixTerminalApi.md
@@ -111,6 +112,7 @@ docs/Model/InlineObject1.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse20010.md
+docs/Model/InlineResponse20011.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse2004.md
@@ -240,6 +242,7 @@ docs/Model/UpdateStaticVoucherCampaignWithVoucher.md
 docs/Model/VSCampaignGeneratedMessage.md
 docs/Model/VSCampaignGeneratedMessagePagination.md
 docs/Model/VSDynamicVoucherStatus.md
+docs/Model/Video.md
 docs/Model/VirtualBusinessCard.md
 docs/Model/WTAdvertisementCredit.md
 docs/Model/WTAdvertisementCreditCreateParams.md
@@ -363,6 +366,8 @@ docs/Model/WTSystemRoleCreate.md
 docs/Model/WTTCPAOpt.md
 docs/Model/WTTwilioRequestAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCode.md
+docs/Model/WTVideoCreateParams.md
+docs/Model/WTVideoUpdateParams.md
 docs/Model/WTVirtualBusinessCardCreateParams.md
 docs/Model/WTVirtualBusinessCardUpdateParams.md
 docs/Model/WTWalletConfigurationSaveWalletRecord.md
@@ -423,6 +428,7 @@ lib/Api/StaticVouchersApi.php
 lib/Api/SystemApi.php
 lib/Api/TransactionLedgerApi.php
 lib/Api/UtilitiesApi.php
+lib/Api/VideosApi.php
 lib/Api/VirtualBusinessCardApi.php
 lib/Api/WebTerminalApi.php
 lib/Api/WixTerminalApi.php
@@ -486,6 +492,7 @@ lib/Model/InlineObject1.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse20010.php
+lib/Model/InlineResponse20011.php
 lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse2004.php
@@ -616,6 +623,7 @@ lib/Model/UpdateStaticVoucherCampaignWithVoucher.php
 lib/Model/VSCampaignGeneratedMessage.php
 lib/Model/VSCampaignGeneratedMessagePagination.php
 lib/Model/VSDynamicVoucherStatus.php
+lib/Model/Video.php
 lib/Model/VirtualBusinessCard.php
 lib/Model/WTAdvertisementCredit.php
 lib/Model/WTAdvertisementCreditCreateParams.php
@@ -739,6 +747,8 @@ lib/Model/WTSystemRoleCreate.php
 lib/Model/WTTCPAOpt.php
 lib/Model/WTTwilioRequestAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCode.php
+lib/Model/WTVideoCreateParams.php
+lib/Model/WTVideoUpdateParams.php
 lib/Model/WTVirtualBusinessCardCreateParams.php
 lib/Model/WTVirtualBusinessCardUpdateParams.php
 lib/Model/WTWalletConfigurationSaveWalletRecord.php
@@ -752,3 +762,8 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/VideosApiTest.php
+test/Model/InlineResponse20011Test.php
+test/Model/VideoTest.php
+test/Model/WTVideoCreateParamsTest.php
+test/Model/WTVideoUpdateParamsTest.php

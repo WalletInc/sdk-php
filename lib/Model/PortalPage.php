@@ -147,6 +147,8 @@ class PortalPage
 
     const IMAGE_GRID = 'image-grid';
 
+    const VIDEOS = 'videos';
+
     const LIVE_CHAT = 'live-chat';
 
     const PROMO_CODES = 'promo-codes';
@@ -230,6 +232,7 @@ class PortalPage
             self::PERFORMANCES,
             self::LINK_BOOK,
             self::IMAGE_GRID,
+            self::VIDEOS,
             self::LIVE_CHAT,
             self::PROMO_CODES,
             self::NEWS,
