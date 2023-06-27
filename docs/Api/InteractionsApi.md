@@ -619,7 +619,7 @@ No authorization required
 ## `identifyItem()`
 
 ```php
-identifyItem($item_id, $is_refresh, $phone_verification_token): mixed
+identifyItem($item_id, $is_refresh, $phone_verification_token, $referrer): mixed
 ```
 
 Identify item
@@ -640,9 +640,10 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
 $item_id = 'item_id_example'; // string
 $is_refresh = True; // bool
 $phone_verification_token = 'phone_verification_token_example'; // string
+$referrer = 'referrer_example'; // string
 
 try {
-    $result = $apiInstance->identifyItem($item_id, $is_refresh, $phone_verification_token);
+    $result = $apiInstance->identifyItem($item_id, $is_refresh, $phone_verification_token, $referrer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InteractionsApi->identifyItem: ', $e->getMessage(), PHP_EOL;
@@ -656,6 +657,7 @@ Name | Type | Description  | Notes
  **item_id** | **string**|  |
  **is_refresh** | **bool**|  | [optional]
  **phone_verification_token** | **string**|  | [optional]
+ **referrer** | **string**|  | [optional]
 
 ### Return type
 
