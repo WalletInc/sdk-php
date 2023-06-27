@@ -84,6 +84,7 @@ Method | HTTP request | Description
 [**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+[**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
 [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
@@ -4684,6 +4685,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\WalletPageView**](../Model/WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `referringSitesSummary()`
+
+```php
+referringSitesSummary($start_date, $end_date): mixed
+```
+
+Count new sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->referringSitesSummary($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->referringSitesSummary: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+**mixed**
 
 ### Authorization
 
