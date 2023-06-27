@@ -63,7 +63,8 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         'phone_verification_token' => 'string',
         'merchant_id' => 'string',
         'page_type' => 'string',
-        'is_refresh' => 'bool'
+        'is_refresh' => 'bool',
+        'referrer' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         'phone_verification_token' => null,
         'merchant_id' => null,
         'page_type' => null,
-        'is_refresh' => null
+        'is_refresh' => null,
+        'referrer' => null
     ];
 
     /**
@@ -110,7 +112,8 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         'phone_verification_token' => 'phoneVerificationToken',
         'merchant_id' => 'merchantID',
         'page_type' => 'pageType',
-        'is_refresh' => 'isRefresh'
+        'is_refresh' => 'isRefresh',
+        'referrer' => 'referrer'
     ];
 
     /**
@@ -122,7 +125,8 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         'phone_verification_token' => 'setPhoneVerificationToken',
         'merchant_id' => 'setMerchantId',
         'page_type' => 'setPageType',
-        'is_refresh' => 'setIsRefresh'
+        'is_refresh' => 'setIsRefresh',
+        'referrer' => 'setReferrer'
     ];
 
     /**
@@ -134,7 +138,8 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         'phone_verification_token' => 'getPhoneVerificationToken',
         'merchant_id' => 'getMerchantId',
         'page_type' => 'getPageType',
-        'is_refresh' => 'getIsRefresh'
+        'is_refresh' => 'getIsRefresh',
+        'referrer' => 'getReferrer'
     ];
 
     /**
@@ -198,6 +203,7 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['page_type'] = $data['page_type'] ?? null;
         $this->container['is_refresh'] = $data['is_refresh'] ?? null;
+        $this->container['referrer'] = $data['referrer'] ?? null;
     }
 
     /**
@@ -347,6 +353,30 @@ class WTFetchWalletPaymentObjectWithToken implements ModelInterface, ArrayAccess
     public function setIsRefresh($is_refresh)
     {
         $this->container['is_refresh'] = $is_refresh;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrer
+     *
+     * @return string|null
+     */
+    public function getReferrer()
+    {
+        return $this->container['referrer'];
+    }
+
+    /**
+     * Sets referrer
+     *
+     * @param string|null $referrer referrer
+     *
+     * @return self
+     */
+    public function setReferrer($referrer)
+    {
+        $this->container['referrer'] = $referrer;
 
         return $this;
     }
