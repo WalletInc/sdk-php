@@ -3579,14 +3579,15 @@ class InteractionsApi
      * @param  string $item_id item_id (required)
      * @param  bool $is_refresh is_refresh (optional)
      * @param  string $phone_verification_token phone_verification_token (optional)
+     * @param  string $referrer referrer (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function identifyItem($item_id, $is_refresh = null, $phone_verification_token = null)
+    public function identifyItem($item_id, $is_refresh = null, $phone_verification_token = null, $referrer = null)
     {
-        list($response) = $this->identifyItemWithHttpInfo($item_id, $is_refresh, $phone_verification_token);
+        list($response) = $this->identifyItemWithHttpInfo($item_id, $is_refresh, $phone_verification_token, $referrer);
         return $response;
     }
 
@@ -3598,14 +3599,15 @@ class InteractionsApi
      * @param  string $item_id (required)
      * @param  bool $is_refresh (optional)
      * @param  string $phone_verification_token (optional)
+     * @param  string $referrer (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function identifyItemWithHttpInfo($item_id, $is_refresh = null, $phone_verification_token = null)
+    public function identifyItemWithHttpInfo($item_id, $is_refresh = null, $phone_verification_token = null, $referrer = null)
     {
-        $request = $this->identifyItemRequest($item_id, $is_refresh, $phone_verification_token);
+        $request = $this->identifyItemRequest($item_id, $is_refresh, $phone_verification_token, $referrer);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3733,13 +3735,14 @@ class InteractionsApi
      * @param  string $item_id (required)
      * @param  bool $is_refresh (optional)
      * @param  string $phone_verification_token (optional)
+     * @param  string $referrer (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function identifyItemAsync($item_id, $is_refresh = null, $phone_verification_token = null)
+    public function identifyItemAsync($item_id, $is_refresh = null, $phone_verification_token = null, $referrer = null)
     {
-        return $this->identifyItemAsyncWithHttpInfo($item_id, $is_refresh, $phone_verification_token)
+        return $this->identifyItemAsyncWithHttpInfo($item_id, $is_refresh, $phone_verification_token, $referrer)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3755,14 +3758,15 @@ class InteractionsApi
      * @param  string $item_id (required)
      * @param  bool $is_refresh (optional)
      * @param  string $phone_verification_token (optional)
+     * @param  string $referrer (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function identifyItemAsyncWithHttpInfo($item_id, $is_refresh = null, $phone_verification_token = null)
+    public function identifyItemAsyncWithHttpInfo($item_id, $is_refresh = null, $phone_verification_token = null, $referrer = null)
     {
         $returnType = 'mixed';
-        $request = $this->identifyItemRequest($item_id, $is_refresh, $phone_verification_token);
+        $request = $this->identifyItemRequest($item_id, $is_refresh, $phone_verification_token, $referrer);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3803,11 +3807,12 @@ class InteractionsApi
      * @param  string $item_id (required)
      * @param  bool $is_refresh (optional)
      * @param  string $phone_verification_token (optional)
+     * @param  string $referrer (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function identifyItemRequest($item_id, $is_refresh = null, $phone_verification_token = null)
+    public function identifyItemRequest($item_id, $is_refresh = null, $phone_verification_token = null, $referrer = null)
     {
         // verify the required parameter 'item_id' is set
         if ($item_id === null || (is_array($item_id) && count($item_id) === 0)) {
@@ -3843,6 +3848,17 @@ class InteractionsApi
             }
             else {
                 $queryParams['phoneVerificationToken'] = $phone_verification_token;
+            }
+        }
+        // query params
+        if ($referrer !== null) {
+            if('form' === 'form' && is_array($referrer)) {
+                foreach($referrer as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['referrer'] = $referrer;
             }
         }
 
