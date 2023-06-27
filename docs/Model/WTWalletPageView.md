@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **device_model** | **string** |  |
 **device_type** | **string** |  |
 **phone_verification_token** | **string** |  |
+**referring_domain** | **string** |  | [optional]
 **referrer** | **string** |  | [optional]
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **status** | **string** |  |

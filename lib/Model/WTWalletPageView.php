@@ -78,6 +78,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'device_model' => 'string',
         'device_type' => 'string',
         'phone_verification_token' => 'string',
+        'referring_domain' => 'string',
         'referrer' => 'string',
         'id' => 'string',
         'status' => 'string',
@@ -126,6 +127,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'device_model' => null,
         'device_type' => null,
         'phone_verification_token' => null,
+        'referring_domain' => null,
         'referrer' => null,
         'id' => null,
         'status' => null,
@@ -193,6 +195,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'device_model' => 'deviceModel',
         'device_type' => 'deviceType',
         'phone_verification_token' => 'phoneVerificationToken',
+        'referring_domain' => 'referringDomain',
         'referrer' => 'referrer',
         'id' => 'id',
         'status' => 'status',
@@ -239,6 +242,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'device_model' => 'setDeviceModel',
         'device_type' => 'setDeviceType',
         'phone_verification_token' => 'setPhoneVerificationToken',
+        'referring_domain' => 'setReferringDomain',
         'referrer' => 'setReferrer',
         'id' => 'setId',
         'status' => 'setStatus',
@@ -285,6 +289,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'device_model' => 'getDeviceModel',
         'device_type' => 'getDeviceType',
         'phone_verification_token' => 'getPhoneVerificationToken',
+        'referring_domain' => 'getReferringDomain',
         'referrer' => 'getReferrer',
         'id' => 'getId',
         'status' => 'getStatus',
@@ -382,6 +387,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['device_model'] = $data['device_model'] ?? null;
         $this->container['device_type'] = $data['device_type'] ?? null;
         $this->container['phone_verification_token'] = $data['phone_verification_token'] ?? null;
+        $this->container['referring_domain'] = $data['referring_domain'] ?? null;
         $this->container['referrer'] = $data['referrer'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
@@ -987,6 +993,30 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhoneVerificationToken($phone_verification_token)
     {
         $this->container['phone_verification_token'] = $phone_verification_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets referring_domain
+     *
+     * @return string|null
+     */
+    public function getReferringDomain()
+    {
+        return $this->container['referring_domain'];
+    }
+
+    /**
+     * Sets referring_domain
+     *
+     * @param string|null $referring_domain referring_domain
+     *
+     * @return self
+     */
+    public function setReferringDomain($referring_domain)
+    {
+        $this->container['referring_domain'] = $referring_domain;
 
         return $this;
     }
