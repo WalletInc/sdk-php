@@ -63,7 +63,8 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ip' => 'string',
         'phone_verification_token' => 'string',
         'session_id' => 'string',
-        'navigator_agent' => 'string'
+        'navigator_agent' => 'string',
+        'referrer' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ip' => null,
         'phone_verification_token' => null,
         'session_id' => null,
-        'navigator_agent' => null
+        'navigator_agent' => null,
+        'referrer' => null
     ];
 
     /**
@@ -110,7 +112,8 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ip' => 'ip',
         'phone_verification_token' => 'phoneVerificationToken',
         'session_id' => 'sessionID',
-        'navigator_agent' => 'navigatorAgent'
+        'navigator_agent' => 'navigatorAgent',
+        'referrer' => 'referrer'
     ];
 
     /**
@@ -122,7 +125,8 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ip' => 'setIp',
         'phone_verification_token' => 'setPhoneVerificationToken',
         'session_id' => 'setSessionId',
-        'navigator_agent' => 'setNavigatorAgent'
+        'navigator_agent' => 'setNavigatorAgent',
+        'referrer' => 'setReferrer'
     ];
 
     /**
@@ -134,7 +138,8 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ip' => 'getIp',
         'phone_verification_token' => 'getPhoneVerificationToken',
         'session_id' => 'getSessionId',
-        'navigator_agent' => 'getNavigatorAgent'
+        'navigator_agent' => 'getNavigatorAgent',
+        'referrer' => 'getReferrer'
     ];
 
     /**
@@ -198,6 +203,7 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['phone_verification_token'] = $data['phone_verification_token'] ?? null;
         $this->container['session_id'] = $data['session_id'] ?? null;
         $this->container['navigator_agent'] = $data['navigator_agent'] ?? null;
+        $this->container['referrer'] = $data['referrer'] ?? null;
     }
 
     /**
@@ -319,6 +325,30 @@ class BrowserDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNavigatorAgent($navigator_agent)
     {
         $this->container['navigator_agent'] = $navigator_agent;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrer
+     *
+     * @return string|null
+     */
+    public function getReferrer()
+    {
+        return $this->container['referrer'];
+    }
+
+    /**
+     * Sets referrer
+     *
+     * @param string|null $referrer referrer
+     *
+     * @return self
+     */
+    public function setReferrer($referrer)
+    {
+        $this->container['referrer'] = $referrer;
 
         return $this;
     }
