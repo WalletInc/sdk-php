@@ -164,6 +164,7 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**fetchAnalyticsTotalPointsRefunded**](docs/Api/AnalyticsApi.md#fetchanalyticstotalpointsrefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 *AnalyticsApi* | [**fetchAnalyticsWalletSessionActivity**](docs/Api/AnalyticsApi.md#fetchanalyticswalletsessionactivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 *AnalyticsApi* | [**fetchWalletPageViewByID**](docs/Api/AnalyticsApi.md#fetchwalletpageviewbyid) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
+*AnalyticsApi* | [**referringSitesSummary**](docs/Api/AnalyticsApi.md#referringsitessummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
 *AnalyticsApi* | [**sumRevenue**](docs/Api/AnalyticsApi.md#sumrevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 *AnalyticsApi* | [**sumTransactions**](docs/Api/AnalyticsApi.md#sumtransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 *AppleWalletSubscribersApi* | [**fetchAppleWalletSubscriberActivity**](docs/Api/AppleWalletSubscribersApi.md#fetchapplewalletsubscriberactivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity
