@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
+[**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count new sessions
 [**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 [**fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 [**fetchAnalyticsAdCreditsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByValueType) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
@@ -767,6 +768,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\WTWalletObjectPrefixCounts[]**](../Model/WTWalletObjectPrefixCounts.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `exitLinkSummary()`
+
+```php
+exitLinkSummary($start_date, $end_date): mixed
+```
+
+Count new sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->exitLinkSummary($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AnalyticsApi->exitLinkSummary: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **\DateTime**|  | [optional]
+ **end_date** | **\DateTime**|  | [optional]
+
+### Return type
+
+**mixed**
 
 ### Authorization
 
