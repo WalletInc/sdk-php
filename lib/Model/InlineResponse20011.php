@@ -60,9 +60,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'store' => 'mixed[]',
-        'beauty' => 'mixed[]',
-        'casino' => 'mixed[]'
+        'entertainment' => 'mixed[]',
+        'grocery' => 'mixed[]',
+        'service' => 'mixed[]',
+        'casino' => 'mixed[]',
+        'hospitality' => 'mixed[]',
+        'food' => 'mixed[]',
+        'retail' => 'mixed[]'
     ];
 
     /**
@@ -73,9 +77,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'store' => null,
-        'beauty' => null,
-        'casino' => null
+        'entertainment' => null,
+        'grocery' => null,
+        'service' => null,
+        'casino' => null,
+        'hospitality' => null,
+        'food' => null,
+        'retail' => null
     ];
 
     /**
@@ -105,9 +113,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'store' => 'store',
-        'beauty' => 'beauty',
-        'casino' => 'casino'
+        'entertainment' => 'entertainment',
+        'grocery' => 'grocery',
+        'service' => 'service',
+        'casino' => 'casino',
+        'hospitality' => 'hospitality',
+        'food' => 'food',
+        'retail' => 'retail'
     ];
 
     /**
@@ -116,9 +128,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'store' => 'setStore',
-        'beauty' => 'setBeauty',
-        'casino' => 'setCasino'
+        'entertainment' => 'setEntertainment',
+        'grocery' => 'setGrocery',
+        'service' => 'setService',
+        'casino' => 'setCasino',
+        'hospitality' => 'setHospitality',
+        'food' => 'setFood',
+        'retail' => 'setRetail'
     ];
 
     /**
@@ -127,9 +143,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'store' => 'getStore',
-        'beauty' => 'getBeauty',
-        'casino' => 'getCasino'
+        'entertainment' => 'getEntertainment',
+        'grocery' => 'getGrocery',
+        'service' => 'getService',
+        'casino' => 'getCasino',
+        'hospitality' => 'getHospitality',
+        'food' => 'getFood',
+        'retail' => 'getRetail'
     ];
 
     /**
@@ -189,9 +209,13 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['store'] = $data['store'] ?? null;
-        $this->container['beauty'] = $data['beauty'] ?? null;
+        $this->container['entertainment'] = $data['entertainment'] ?? null;
+        $this->container['grocery'] = $data['grocery'] ?? null;
+        $this->container['service'] = $data['service'] ?? null;
         $this->container['casino'] = $data['casino'] ?? null;
+        $this->container['hospitality'] = $data['hospitality'] ?? null;
+        $this->container['food'] = $data['food'] ?? null;
+        $this->container['retail'] = $data['retail'] ?? null;
     }
 
     /**
@@ -203,14 +227,26 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['store'] === null) {
-            $invalidProperties[] = "'store' can't be null";
+        if ($this->container['entertainment'] === null) {
+            $invalidProperties[] = "'entertainment' can't be null";
         }
-        if ($this->container['beauty'] === null) {
-            $invalidProperties[] = "'beauty' can't be null";
+        if ($this->container['grocery'] === null) {
+            $invalidProperties[] = "'grocery' can't be null";
+        }
+        if ($this->container['service'] === null) {
+            $invalidProperties[] = "'service' can't be null";
         }
         if ($this->container['casino'] === null) {
             $invalidProperties[] = "'casino' can't be null";
+        }
+        if ($this->container['hospitality'] === null) {
+            $invalidProperties[] = "'hospitality' can't be null";
+        }
+        if ($this->container['food'] === null) {
+            $invalidProperties[] = "'food' can't be null";
+        }
+        if ($this->container['retail'] === null) {
+            $invalidProperties[] = "'retail' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,49 +264,73 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets store
+     * Gets entertainment
      *
      * @return mixed[]
      */
-    public function getStore()
+    public function getEntertainment()
     {
-        return $this->container['store'];
+        return $this->container['entertainment'];
     }
 
     /**
-     * Sets store
+     * Sets entertainment
      *
-     * @param mixed[] $store store
+     * @param mixed[] $entertainment entertainment
      *
      * @return self
      */
-    public function setStore($store)
+    public function setEntertainment($entertainment)
     {
-        $this->container['store'] = $store;
+        $this->container['entertainment'] = $entertainment;
 
         return $this;
     }
 
     /**
-     * Gets beauty
+     * Gets grocery
      *
      * @return mixed[]
      */
-    public function getBeauty()
+    public function getGrocery()
     {
-        return $this->container['beauty'];
+        return $this->container['grocery'];
     }
 
     /**
-     * Sets beauty
+     * Sets grocery
      *
-     * @param mixed[] $beauty beauty
+     * @param mixed[] $grocery grocery
      *
      * @return self
      */
-    public function setBeauty($beauty)
+    public function setGrocery($grocery)
     {
-        $this->container['beauty'] = $beauty;
+        $this->container['grocery'] = $grocery;
+
+        return $this;
+    }
+
+    /**
+     * Gets service
+     *
+     * @return mixed[]
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param mixed[] $service service
+     *
+     * @return self
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
 
         return $this;
     }
@@ -295,6 +355,78 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCasino($casino)
     {
         $this->container['casino'] = $casino;
+
+        return $this;
+    }
+
+    /**
+     * Gets hospitality
+     *
+     * @return mixed[]
+     */
+    public function getHospitality()
+    {
+        return $this->container['hospitality'];
+    }
+
+    /**
+     * Sets hospitality
+     *
+     * @param mixed[] $hospitality hospitality
+     *
+     * @return self
+     */
+    public function setHospitality($hospitality)
+    {
+        $this->container['hospitality'] = $hospitality;
+
+        return $this;
+    }
+
+    /**
+     * Gets food
+     *
+     * @return mixed[]
+     */
+    public function getFood()
+    {
+        return $this->container['food'];
+    }
+
+    /**
+     * Sets food
+     *
+     * @param mixed[] $food food
+     *
+     * @return self
+     */
+    public function setFood($food)
+    {
+        $this->container['food'] = $food;
+
+        return $this;
+    }
+
+    /**
+     * Gets retail
+     *
+     * @return mixed[]
+     */
+    public function getRetail()
+    {
+        return $this->container['retail'];
+    }
+
+    /**
+     * Sets retail
+     *
+     * @param mixed[] $retail retail
+     *
+     * @return self
+     */
+    public function setRetail($retail)
+    {
+        $this->container['retail'] = $retail;
 
         return $this;
     }
