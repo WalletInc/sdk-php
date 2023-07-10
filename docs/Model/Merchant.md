@@ -30,5 +30,6 @@ Name | Type | Description | Notes
 **max_sms_count** | **double** |  |
 **is_sms_agreement** | **bool** |  | [optional]
 **is_white_labeled** | **bool** |  | [optional]
+**is_featured** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
