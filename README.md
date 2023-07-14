@@ -307,6 +307,7 @@ Class | Method | HTTP request | Description
 *ImageGridApi* | [**updateImageGrid**](docs/Api/ImageGridApi.md#updateimagegrid) | **PUT** /v2/imageGrid/{id} | Update image
 *IndustriesApi* | [**fetchAllIndustries**](docs/Api/IndustriesApi.md#fetchallindustries) | **GET** /system/industries/all | Fetch all industries
 *IndustriesApi* | [**fetchDomainsByIndustry**](docs/Api/IndustriesApi.md#fetchdomainsbyindustry) | **GET** /system/industries/domains | Fetch all industries
+*IndustriesApi* | [**fetchIndustriesIDs**](docs/Api/IndustriesApi.md#fetchindustriesids) | **GET** /system/industries/trimmed | Fetch all industries
 *InfoGenesisReportsApi* | [**countAdCreditsRedemptions**](docs/Api/InfoGenesisReportsApi.md#countadcreditsredemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
 *InfoGenesisReportsApi* | [**countAdCreditsRefunds**](docs/Api/InfoGenesisReportsApi.md#countadcreditsrefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
 *InfoGenesisReportsApi* | [**countDynamicVoucherRedemptions**](docs/Api/InfoGenesisReportsApi.md#countdynamicvoucherredemptions) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/redemptions | Count dynamic voucher redemptions

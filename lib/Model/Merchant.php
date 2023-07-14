@@ -85,7 +85,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'plan_nickname' => 'string',
         'max_sms_count' => 'double',
         'is_sms_agreement' => 'bool',
-        'is_white_labeled' => 'bool'
+        'is_white_labeled' => 'bool',
+        'is_featured' => 'bool'
     ];
 
     /**
@@ -121,7 +122,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'plan_nickname' => null,
         'max_sms_count' => 'double',
         'is_sms_agreement' => null,
-        'is_white_labeled' => null
+        'is_white_labeled' => null,
+        'is_featured' => null
     ];
 
     /**
@@ -176,7 +178,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'plan_nickname' => 'planNickname',
         'max_sms_count' => 'maxSMSCount',
         'is_sms_agreement' => 'isSmsAgreement',
-        'is_white_labeled' => 'isWhiteLabeled'
+        'is_white_labeled' => 'isWhiteLabeled',
+        'is_featured' => 'isFeatured'
     ];
 
     /**
@@ -210,7 +213,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'plan_nickname' => 'setPlanNickname',
         'max_sms_count' => 'setMaxSmsCount',
         'is_sms_agreement' => 'setIsSmsAgreement',
-        'is_white_labeled' => 'setIsWhiteLabeled'
+        'is_white_labeled' => 'setIsWhiteLabeled',
+        'is_featured' => 'setIsFeatured'
     ];
 
     /**
@@ -244,7 +248,8 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'plan_nickname' => 'getPlanNickname',
         'max_sms_count' => 'getMaxSmsCount',
         'is_sms_agreement' => 'getIsSmsAgreement',
-        'is_white_labeled' => 'getIsWhiteLabeled'
+        'is_white_labeled' => 'getIsWhiteLabeled',
+        'is_featured' => 'getIsFeatured'
     ];
 
     /**
@@ -330,6 +335,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['max_sms_count'] = $data['max_sms_count'] ?? null;
         $this->container['is_sms_agreement'] = $data['is_sms_agreement'] ?? null;
         $this->container['is_white_labeled'] = $data['is_white_labeled'] ?? null;
+        $this->container['is_featured'] = $data['is_featured'] ?? null;
     }
 
     /**
@@ -1067,6 +1073,30 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsWhiteLabeled($is_white_labeled)
     {
         $this->container['is_white_labeled'] = $is_white_labeled;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_featured
+     *
+     * @return bool|null
+     */
+    public function getIsFeatured()
+    {
+        return $this->container['is_featured'];
+    }
+
+    /**
+     * Sets is_featured
+     *
+     * @param bool|null $is_featured is_featured
+     *
+     * @return self
+     */
+    public function setIsFeatured($is_featured)
+    {
+        $this->container['is_featured'] = $is_featured;
 
         return $this;
     }
