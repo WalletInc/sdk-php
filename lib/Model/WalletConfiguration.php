@@ -114,6 +114,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
         'custom_domain' => 'string',
+        'custom_app_icon_url' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -182,6 +183,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
         'custom_domain' => null,
+        'custom_app_icon_url' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -269,6 +271,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
         'custom_domain' => 'customDomain',
+        'custom_app_icon_url' => 'customAppIconURL',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -335,6 +338,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
         'custom_domain' => 'setCustomDomain',
+        'custom_app_icon_url' => 'setCustomAppIconUrl',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -401,6 +405,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
         'custom_domain' => 'getCustomDomain',
+        'custom_app_icon_url' => 'getCustomAppIconUrl',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -518,6 +523,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['custom_domain'] = $data['custom_domain'] ?? null;
+        $this->container['custom_app_icon_url'] = $data['custom_app_icon_url'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -2027,6 +2033,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCustomDomain($custom_domain)
     {
         $this->container['custom_domain'] = $custom_domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_app_icon_url
+     *
+     * @return string|null
+     */
+    public function getCustomAppIconUrl()
+    {
+        return $this->container['custom_app_icon_url'];
+    }
+
+    /**
+     * Sets custom_app_icon_url
+     *
+     * @param string|null $custom_app_icon_url custom_app_icon_url
+     *
+     * @return self
+     */
+    public function setCustomAppIconUrl($custom_app_icon_url)
+    {
+        $this->container['custom_app_icon_url'] = $custom_app_icon_url;
 
         return $this;
     }
