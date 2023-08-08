@@ -58,5 +58,6 @@ Name | Type | Description | Notes
 **vanity_page_wallet_prefix** | **string** |  | [optional]
 **merchant_credit_payment_design_id** | **string** |  | [optional]
 **custom_domain** | **string** |  | [optional]
+**custom_app_icon_url** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

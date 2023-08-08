@@ -113,7 +113,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_handle' => 'string',
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
-        'custom_domain' => 'string'
+        'custom_domain' => 'string',
+        'custom_app_icon_url' => 'string'
     ];
 
     /**
@@ -177,7 +178,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_handle' => null,
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
-        'custom_domain' => null
+        'custom_domain' => null,
+        'custom_app_icon_url' => null
     ];
 
     /**
@@ -260,7 +262,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_handle' => 'vanityHandle',
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
-        'custom_domain' => 'customDomain'
+        'custom_domain' => 'customDomain',
+        'custom_app_icon_url' => 'customAppIconURL'
     ];
 
     /**
@@ -322,7 +325,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_handle' => 'setVanityHandle',
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
-        'custom_domain' => 'setCustomDomain'
+        'custom_domain' => 'setCustomDomain',
+        'custom_app_icon_url' => 'setCustomAppIconUrl'
     ];
 
     /**
@@ -384,7 +388,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_handle' => 'getVanityHandle',
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
-        'custom_domain' => 'getCustomDomain'
+        'custom_domain' => 'getCustomDomain',
+        'custom_app_icon_url' => 'getCustomAppIconUrl'
     ];
 
     /**
@@ -498,6 +503,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['custom_domain'] = $data['custom_domain'] ?? null;
+        $this->container['custom_app_icon_url'] = $data['custom_app_icon_url'] ?? null;
     }
 
     /**
@@ -1967,6 +1973,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setCustomDomain($custom_domain)
     {
         $this->container['custom_domain'] = $custom_domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_app_icon_url
+     *
+     * @return string|null
+     */
+    public function getCustomAppIconUrl()
+    {
+        return $this->container['custom_app_icon_url'];
+    }
+
+    /**
+     * Sets custom_app_icon_url
+     *
+     * @param string|null $custom_app_icon_url custom_app_icon_url
+     *
+     * @return self
+     */
+    public function setCustomAppIconUrl($custom_app_icon_url)
+    {
+        $this->container['custom_app_icon_url'] = $custom_app_icon_url;
 
         return $this;
     }
