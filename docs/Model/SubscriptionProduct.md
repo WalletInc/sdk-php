@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **title** | **string** |  |
 **title_full** | **string** |  |
 **category** | **string** |  |
+**volume** | **double** |  | [optional]
 **features** | [**\OpenAPI\Client\Model\SubscriptionFeature[]**](SubscriptionFeature.md) |  |
 **pages** | [**\OpenAPI\Client\Model\PortalPage[]**](PortalPage.md) |  |
 **icon_name** | **string** |  |
