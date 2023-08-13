@@ -114,7 +114,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
         'custom_domain' => 'string',
-        'custom_app_icon_url' => 'string'
+        'mobile_app_icon_url' => 'string'
     ];
 
     /**
@@ -179,7 +179,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
         'custom_domain' => null,
-        'custom_app_icon_url' => null
+        'mobile_app_icon_url' => null
     ];
 
     /**
@@ -263,7 +263,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
         'custom_domain' => 'customDomain',
-        'custom_app_icon_url' => 'customAppIconURL'
+        'mobile_app_icon_url' => 'mobileAppIconURL'
     ];
 
     /**
@@ -326,7 +326,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
         'custom_domain' => 'setCustomDomain',
-        'custom_app_icon_url' => 'setCustomAppIconUrl'
+        'mobile_app_icon_url' => 'setMobileAppIconUrl'
     ];
 
     /**
@@ -389,7 +389,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
         'custom_domain' => 'getCustomDomain',
-        'custom_app_icon_url' => 'getCustomAppIconUrl'
+        'mobile_app_icon_url' => 'getMobileAppIconUrl'
     ];
 
     /**
@@ -503,7 +503,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['custom_domain'] = $data['custom_domain'] ?? null;
-        $this->container['custom_app_icon_url'] = $data['custom_app_icon_url'] ?? null;
+        $this->container['mobile_app_icon_url'] = $data['mobile_app_icon_url'] ?? null;
     }
 
     /**
@@ -1978,25 +1978,25 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets custom_app_icon_url
+     * Gets mobile_app_icon_url
      *
      * @return string|null
      */
-    public function getCustomAppIconUrl()
+    public function getMobileAppIconUrl()
     {
-        return $this->container['custom_app_icon_url'];
+        return $this->container['mobile_app_icon_url'];
     }
 
     /**
-     * Sets custom_app_icon_url
+     * Sets mobile_app_icon_url
      *
-     * @param string|null $custom_app_icon_url custom_app_icon_url
+     * @param string|null $mobile_app_icon_url mobile_app_icon_url
      *
      * @return self
      */
-    public function setCustomAppIconUrl($custom_app_icon_url)
+    public function setMobileAppIconUrl($mobile_app_icon_url)
     {
-        $this->container['custom_app_icon_url'] = $custom_app_icon_url;
+        $this->container['mobile_app_icon_url'] = $mobile_app_icon_url;
 
         return $this;
     }
