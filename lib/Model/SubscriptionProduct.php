@@ -64,6 +64,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'string',
         'title_full' => 'string',
         'category' => 'string',
+        'volume' => 'double',
         'features' => '\OpenAPI\Client\Model\SubscriptionFeature[]',
         'pages' => '\OpenAPI\Client\Model\PortalPage[]',
         'icon_name' => 'string',
@@ -84,6 +85,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => null,
         'title_full' => null,
         'category' => null,
+        'volume' => 'double',
         'features' => null,
         'pages' => null,
         'icon_name' => null,
@@ -123,6 +125,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'title',
         'title_full' => 'titleFull',
         'category' => 'category',
+        'volume' => 'volume',
         'features' => 'features',
         'pages' => 'pages',
         'icon_name' => 'iconName',
@@ -141,6 +144,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'setTitle',
         'title_full' => 'setTitleFull',
         'category' => 'setCategory',
+        'volume' => 'setVolume',
         'features' => 'setFeatures',
         'pages' => 'setPages',
         'icon_name' => 'setIconName',
@@ -159,6 +163,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'getTitle',
         'title_full' => 'getTitleFull',
         'category' => 'getCategory',
+        'volume' => 'getVolume',
         'features' => 'getFeatures',
         'pages' => 'getPages',
         'icon_name' => 'getIconName',
@@ -228,6 +233,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['title'] = $data['title'] ?? null;
         $this->container['title_full'] = $data['title_full'] ?? null;
         $this->container['category'] = $data['category'] ?? null;
+        $this->container['volume'] = $data['volume'] ?? null;
         $this->container['features'] = $data['features'] ?? null;
         $this->container['pages'] = $data['pages'] ?? null;
         $this->container['icon_name'] = $data['icon_name'] ?? null;
@@ -376,6 +382,30 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCategory($category)
     {
         $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets volume
+     *
+     * @return double|null
+     */
+    public function getVolume()
+    {
+        return $this->container['volume'];
+    }
+
+    /**
+     * Sets volume
+     *
+     * @param double|null $volume volume
+     *
+     * @return self
+     */
+    public function setVolume($volume)
+    {
+        $this->container['volume'] = $volume;
 
         return $this;
     }
