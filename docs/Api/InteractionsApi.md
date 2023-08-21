@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Fetch member information
 [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher
 [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
-[**fetchWalletPaymentObjectWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectWithToken) | **POST** /wallet/paymentObject/token | Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+[**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle
 [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item
 [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
@@ -457,7 +457,7 @@ No authorization required
 ## `fetchWalletPageWithToken()`
 
 ```php
-fetchWalletPageWithToken($wt_fetch_wallet_payment_object_with_token): mixed
+fetchWalletPageWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
 Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
@@ -475,10 +475,10 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wt_fetch_wallet_payment_object_with_token = new \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken(); // \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken
+$wt_fetch_wallet_payment_objects_with_token = new \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken(); // \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken
 
 try {
-    $result = $apiInstance->fetchWalletPageWithToken($wt_fetch_wallet_payment_object_with_token);
+    $result = $apiInstance->fetchWalletPageWithToken($wt_fetch_wallet_payment_objects_with_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InteractionsApi->fetchWalletPageWithToken: ', $e->getMessage(), PHP_EOL;
@@ -489,7 +489,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_fetch_wallet_payment_object_with_token** | [**\OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken**](../Model/WTFetchWalletPaymentObjectWithToken.md)|  |
+ **wt_fetch_wallet_payment_objects_with_token** | [**\OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken**](../Model/WTFetchWalletPaymentObjectsWithToken.md)|  |
 
 ### Return type
 
@@ -508,13 +508,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchWalletPaymentObjectWithToken()`
+## `fetchWalletPaymentObjectsWithToken()`
 
 ```php
-fetchWalletPaymentObjectWithToken($wt_fetch_wallet_payment_object_with_token): mixed
+fetchWalletPaymentObjectsWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
-Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
 ### Example
 
@@ -529,13 +529,13 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wt_fetch_wallet_payment_object_with_token = new \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken(); // \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken
+$wt_fetch_wallet_payment_objects_with_token = new \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken(); // \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken
 
 try {
-    $result = $apiInstance->fetchWalletPaymentObjectWithToken($wt_fetch_wallet_payment_object_with_token);
+    $result = $apiInstance->fetchWalletPaymentObjectsWithToken($wt_fetch_wallet_payment_objects_with_token);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InteractionsApi->fetchWalletPaymentObjectWithToken: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InteractionsApi->fetchWalletPaymentObjectsWithToken: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -543,7 +543,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wt_fetch_wallet_payment_object_with_token** | [**\OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken**](../Model/WTFetchWalletPaymentObjectWithToken.md)|  |
+ **wt_fetch_wallet_payment_objects_with_token** | [**\OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken**](../Model/WTFetchWalletPaymentObjectsWithToken.md)|  |
 
 ### Return type
 

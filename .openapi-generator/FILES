@@ -308,7 +308,7 @@ docs/Model/WTEmployeeScheduleSimpleSMSToRecipient.md
 docs/Model/WTEmployeeSendHelpDeskResponse.md
 docs/Model/WTEmployeeUpdate.md
 docs/Model/WTEmployeeUpdateRecords.md
-docs/Model/WTFetchWalletPaymentObjectWithToken.md
+docs/Model/WTFetchWalletPaymentObjectsWithToken.md
 docs/Model/WTGamingCreateParams.md
 docs/Model/WTGamingUpdateParams.md
 docs/Model/WTImageGridCreateParams.md
@@ -706,7 +706,7 @@ lib/Model/WTEmployeeScheduleSimpleSMSToRecipient.php
 lib/Model/WTEmployeeSendHelpDeskResponse.php
 lib/Model/WTEmployeeUpdate.php
 lib/Model/WTEmployeeUpdateRecords.php
-lib/Model/WTFetchWalletPaymentObjectWithToken.php
+lib/Model/WTFetchWalletPaymentObjectsWithToken.php
 lib/Model/WTGamingCreateParams.php
 lib/Model/WTGamingUpdateParams.php
 lib/Model/WTImageGridCreateParams.php
@@ -796,3 +796,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/WTFetchWalletPaymentObjectsWithTokenTest.php
