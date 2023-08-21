@@ -139,6 +139,8 @@ class PortalPage
 
     const VOUCHERS_STATIC_SINGLE_CAMPAIGN = 'vouchers-static-single-campaign';
 
+    const TICKETS = 'tickets';
+
     const DIGITAL_WALLET_CONFIGURATION = 'digital-wallet-configuration';
 
     const PERFORMANCES = 'performances';
@@ -228,6 +230,7 @@ class PortalPage
             self::VOUCHERS_DYNAMIC,
             self::VOUCHERS_STATIC_SINGLE,
             self::VOUCHERS_STATIC_SINGLE_CAMPAIGN,
+            self::TICKETS,
             self::DIGITAL_WALLET_CONFIGURATION,
             self::PERFORMANCES,
             self::LINK_BOOK,

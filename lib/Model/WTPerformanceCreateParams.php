@@ -67,7 +67,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'url' => 'string',
         'order_number' => 'int',
         'is_sold_out' => 'bool',
-        'media_url' => 'string'
+        'media_url' => 'string',
+        'payment_design_id' => 'string'
     ];
 
     /**
@@ -85,7 +86,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'url' => null,
         'order_number' => 'int32',
         'is_sold_out' => null,
-        'media_url' => null
+        'media_url' => null,
+        'payment_design_id' => null
     ];
 
     /**
@@ -122,7 +124,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'url' => 'url',
         'order_number' => 'orderNumber',
         'is_sold_out' => 'isSoldOut',
-        'media_url' => 'mediaURL'
+        'media_url' => 'mediaURL',
+        'payment_design_id' => 'paymentDesignID'
     ];
 
     /**
@@ -138,7 +141,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'url' => 'setUrl',
         'order_number' => 'setOrderNumber',
         'is_sold_out' => 'setIsSoldOut',
-        'media_url' => 'setMediaUrl'
+        'media_url' => 'setMediaUrl',
+        'payment_design_id' => 'setPaymentDesignId'
     ];
 
     /**
@@ -154,7 +158,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'url' => 'getUrl',
         'order_number' => 'getOrderNumber',
         'is_sold_out' => 'getIsSoldOut',
-        'media_url' => 'getMediaUrl'
+        'media_url' => 'getMediaUrl',
+        'payment_design_id' => 'getPaymentDesignId'
     ];
 
     /**
@@ -222,6 +227,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['order_number'] = $data['order_number'] ?? null;
         $this->container['is_sold_out'] = $data['is_sold_out'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
     }
 
     /**
@@ -266,6 +272,18 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['is_sold_out'] === null) {
             $invalidProperties[] = "'is_sold_out' can't be null";
         }
+        if (!is_null($this->container['payment_design_id']) && (mb_strlen($this->container['payment_design_id']) > 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['payment_design_id']) && (mb_strlen($this->container['payment_design_id']) < 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
+        }
+
+        if (!is_null($this->container['payment_design_id']) && !preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -486,6 +504,40 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_design_id
+     *
+     * @return string|null
+     */
+    public function getPaymentDesignId()
+    {
+        return $this->container['payment_design_id'];
+    }
+
+    /**
+     * Sets payment_design_id
+     *
+     * @param string|null $payment_design_id payment_design_id
+     *
+     * @return self
+     */
+    public function setPaymentDesignId($payment_design_id)
+    {
+        if (!is_null($payment_design_id) && (mb_strlen($payment_design_id) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling WTPerformanceCreateParams., must be smaller than or equal to 10.');
+        }
+        if (!is_null($payment_design_id) && (mb_strlen($payment_design_id) < 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling WTPerformanceCreateParams., must be bigger than or equal to 10.');
+        }
+        if (!is_null($payment_design_id) && (!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
+            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling WTPerformanceCreateParams., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        $this->container['payment_design_id'] = $payment_design_id;
 
         return $this;
     }

@@ -68,6 +68,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_number' => 'int',
         'is_sold_out' => 'bool',
         'media_url' => 'string',
+        'payment_design_id' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -91,6 +92,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_number' => 'int32',
         'is_sold_out' => null,
         'media_url' => null,
+        'payment_design_id' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -133,6 +135,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_number' => 'orderNumber',
         'is_sold_out' => 'isSoldOut',
         'media_url' => 'mediaURL',
+        'payment_design_id' => 'paymentDesignID',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -154,6 +157,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_number' => 'setOrderNumber',
         'is_sold_out' => 'setIsSoldOut',
         'media_url' => 'setMediaUrl',
+        'payment_design_id' => 'setPaymentDesignId',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -175,6 +179,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_number' => 'getOrderNumber',
         'is_sold_out' => 'getIsSoldOut',
         'media_url' => 'getMediaUrl',
+        'payment_design_id' => 'getPaymentDesignId',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -247,6 +252,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['order_number'] = $data['order_number'] ?? null;
         $this->container['is_sold_out'] = $data['is_sold_out'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
+        $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -296,6 +302,18 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['is_sold_out'] === null) {
             $invalidProperties[] = "'is_sold_out' can't be null";
         }
+        if (!is_null($this->container['payment_design_id']) && (mb_strlen($this->container['payment_design_id']) > 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['payment_design_id']) && (mb_strlen($this->container['payment_design_id']) < 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
+        }
+
+        if (!is_null($this->container['payment_design_id']) && !preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -543,6 +561,40 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMediaUrl($media_url)
     {
         $this->container['media_url'] = $media_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_design_id
+     *
+     * @return string|null
+     */
+    public function getPaymentDesignId()
+    {
+        return $this->container['payment_design_id'];
+    }
+
+    /**
+     * Sets payment_design_id
+     *
+     * @param string|null $payment_design_id payment_design_id
+     *
+     * @return self
+     */
+    public function setPaymentDesignId($payment_design_id)
+    {
+        if (!is_null($payment_design_id) && (mb_strlen($payment_design_id) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling Performance., must be smaller than or equal to 10.');
+        }
+        if (!is_null($payment_design_id) && (mb_strlen($payment_design_id) < 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling Performance., must be bigger than or equal to 10.');
+        }
+        if (!is_null($payment_design_id) && (!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
+            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling Performance., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        $this->container['payment_design_id'] = $payment_design_id;
 
         return $this;
     }
