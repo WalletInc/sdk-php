@@ -2647,15 +2647,15 @@ class InteractionsApi
      *
      * Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchWalletPageWithToken($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPageWithToken($wt_fetch_wallet_payment_objects_with_token)
     {
-        list($response) = $this->fetchWalletPageWithTokenWithHttpInfo($wt_fetch_wallet_payment_object_with_token);
+        list($response) = $this->fetchWalletPageWithTokenWithHttpInfo($wt_fetch_wallet_payment_objects_with_token);
         return $response;
     }
 
@@ -2664,15 +2664,15 @@ class InteractionsApi
      *
      * Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchWalletPageWithTokenWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPageWithTokenWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
     {
-        $request = $this->fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_object_with_token);
+        $request = $this->fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_objects_with_token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2797,14 +2797,14 @@ class InteractionsApi
      *
      * Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchWalletPageWithTokenAsync($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPageWithTokenAsync($wt_fetch_wallet_payment_objects_with_token)
     {
-        return $this->fetchWalletPageWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+        return $this->fetchWalletPageWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2817,15 +2817,15 @@ class InteractionsApi
      *
      * Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchWalletPageWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPageWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
     {
         $returnType = 'mixed';
-        $request = $this->fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_object_with_token);
+        $request = $this->fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_objects_with_token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2863,17 +2863,17 @@ class InteractionsApi
     /**
      * Create request for operation 'fetchWalletPageWithToken'
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPageWithTokenRequest($wt_fetch_wallet_payment_objects_with_token)
     {
-        // verify the required parameter 'wt_fetch_wallet_payment_object_with_token' is set
-        if ($wt_fetch_wallet_payment_object_with_token === null || (is_array($wt_fetch_wallet_payment_object_with_token) && count($wt_fetch_wallet_payment_object_with_token) === 0)) {
+        // verify the required parameter 'wt_fetch_wallet_payment_objects_with_token' is set
+        if ($wt_fetch_wallet_payment_objects_with_token === null || (is_array($wt_fetch_wallet_payment_objects_with_token) && count($wt_fetch_wallet_payment_objects_with_token) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_fetch_wallet_payment_object_with_token when calling fetchWalletPageWithToken'
+                'Missing the required parameter $wt_fetch_wallet_payment_objects_with_token when calling fetchWalletPageWithToken'
             );
         }
 
@@ -2900,11 +2900,11 @@ class InteractionsApi
         }
 
         // for model (json/xml)
-        if (isset($wt_fetch_wallet_payment_object_with_token)) {
+        if (isset($wt_fetch_wallet_payment_objects_with_token)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wt_fetch_wallet_payment_object_with_token));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wt_fetch_wallet_payment_objects_with_token));
             } else {
-                $httpBody = $wt_fetch_wallet_payment_object_with_token;
+                $httpBody = $wt_fetch_wallet_payment_objects_with_token;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2952,36 +2952,36 @@ class InteractionsApi
     }
 
     /**
-     * Operation fetchWalletPaymentObjectWithToken
+     * Operation fetchWalletPaymentObjectsWithToken
      *
-     * Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+     * Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchWalletPaymentObjectWithToken($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPaymentObjectsWithToken($wt_fetch_wallet_payment_objects_with_token)
     {
-        list($response) = $this->fetchWalletPaymentObjectWithTokenWithHttpInfo($wt_fetch_wallet_payment_object_with_token);
+        list($response) = $this->fetchWalletPaymentObjectsWithTokenWithHttpInfo($wt_fetch_wallet_payment_objects_with_token);
         return $response;
     }
 
     /**
-     * Operation fetchWalletPaymentObjectWithTokenWithHttpInfo
+     * Operation fetchWalletPaymentObjectsWithTokenWithHttpInfo
      *
-     * Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+     * Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchWalletPaymentObjectWithTokenWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPaymentObjectsWithTokenWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
     {
-        $request = $this->fetchWalletPaymentObjectWithTokenRequest($wt_fetch_wallet_payment_object_with_token);
+        $request = $this->fetchWalletPaymentObjectsWithTokenRequest($wt_fetch_wallet_payment_objects_with_token);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3102,18 +3102,18 @@ class InteractionsApi
     }
 
     /**
-     * Operation fetchWalletPaymentObjectWithTokenAsync
+     * Operation fetchWalletPaymentObjectsWithTokenAsync
      *
-     * Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+     * Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchWalletPaymentObjectWithTokenAsync($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPaymentObjectsWithTokenAsync($wt_fetch_wallet_payment_objects_with_token)
     {
-        return $this->fetchWalletPaymentObjectWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+        return $this->fetchWalletPaymentObjectsWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3122,19 +3122,19 @@ class InteractionsApi
     }
 
     /**
-     * Operation fetchWalletPaymentObjectWithTokenAsyncWithHttpInfo
+     * Operation fetchWalletPaymentObjectsWithTokenAsyncWithHttpInfo
      *
-     * Fetch payment object with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+     * Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchWalletPaymentObjectWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPaymentObjectsWithTokenAsyncWithHttpInfo($wt_fetch_wallet_payment_objects_with_token)
     {
         $returnType = 'mixed';
-        $request = $this->fetchWalletPaymentObjectWithTokenRequest($wt_fetch_wallet_payment_object_with_token);
+        $request = $this->fetchWalletPaymentObjectsWithTokenRequest($wt_fetch_wallet_payment_objects_with_token);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3170,19 +3170,19 @@ class InteractionsApi
     }
 
     /**
-     * Create request for operation 'fetchWalletPaymentObjectWithToken'
+     * Create request for operation 'fetchWalletPaymentObjectsWithToken'
      *
-     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectWithToken $wt_fetch_wallet_payment_object_with_token (required)
+     * @param  \OpenAPI\Client\Model\WTFetchWalletPaymentObjectsWithToken $wt_fetch_wallet_payment_objects_with_token (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchWalletPaymentObjectWithTokenRequest($wt_fetch_wallet_payment_object_with_token)
+    public function fetchWalletPaymentObjectsWithTokenRequest($wt_fetch_wallet_payment_objects_with_token)
     {
-        // verify the required parameter 'wt_fetch_wallet_payment_object_with_token' is set
-        if ($wt_fetch_wallet_payment_object_with_token === null || (is_array($wt_fetch_wallet_payment_object_with_token) && count($wt_fetch_wallet_payment_object_with_token) === 0)) {
+        // verify the required parameter 'wt_fetch_wallet_payment_objects_with_token' is set
+        if ($wt_fetch_wallet_payment_objects_with_token === null || (is_array($wt_fetch_wallet_payment_objects_with_token) && count($wt_fetch_wallet_payment_objects_with_token) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_fetch_wallet_payment_object_with_token when calling fetchWalletPaymentObjectWithToken'
+                'Missing the required parameter $wt_fetch_wallet_payment_objects_with_token when calling fetchWalletPaymentObjectsWithToken'
             );
         }
 
@@ -3209,11 +3209,11 @@ class InteractionsApi
         }
 
         // for model (json/xml)
-        if (isset($wt_fetch_wallet_payment_object_with_token)) {
+        if (isset($wt_fetch_wallet_payment_objects_with_token)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wt_fetch_wallet_payment_object_with_token));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wt_fetch_wallet_payment_objects_with_token));
             } else {
-                $httpBody = $wt_fetch_wallet_payment_object_with_token;
+                $httpBody = $wt_fetch_wallet_payment_objects_with_token;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
