@@ -4,6 +4,7 @@ All URIs are relative to https://api.wall.et.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**claimTicket()**](InteractionsApi.md#claimTicket) | **PUT** /wallet/ticket/claim/{id} | Update ticket
 [**createAdvertisementCreditScan()**](InteractionsApi.md#createAdvertisementCreditScan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan
 [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
@@ -19,6 +20,62 @@ Method | HTTP request | Description
 [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Identify item
 [**subscribeEmail()**](InteractionsApi.md#subscribeEmail) | **POST** /wallet/subscribeEmail | Create email subscriber
 
+
+## `claimTicket()`
+
+```php
+claimTicket($id, $inline_object2): \OpenAPI\Client\Model\Ticket
+```
+
+Update ticket
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = NULL; // mixed
+$inline_object2 = new \OpenAPI\Client\Model\InlineObject2(); // \OpenAPI\Client\Model\InlineObject2
+
+try {
+    $result = $apiInstance->claimTicket($id, $inline_object2);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->claimTicket: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**mixed**](../Model/.md)|  |
+ **inline_object2** | [**\OpenAPI\Client\Model\InlineObject2**](../Model/InlineObject2.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Ticket**](../Model/Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `createAdvertisementCreditScan()`
 
@@ -239,7 +296,7 @@ No authorization required
 ## `fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()`
 
 ```php
-fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID($voucher_id): \OpenAPI\Client\Model\InlineResponse2009[]
+fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID($voucher_id): \OpenAPI\Client\Model\InlineResponse20010[]
 ```
 
 Fetch a customer's static vouchers on the basis of a given voucher ID
@@ -275,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2009[]**](../Model/InlineResponse2009.md)
+[**\OpenAPI\Client\Model\InlineResponse20010[]**](../Model/InlineResponse20010.md)
 
 ### Authorization
 

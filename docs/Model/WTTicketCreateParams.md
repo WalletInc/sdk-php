@@ -1,0 +1,13 @@
+# # WTTicketCreateParams
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**recipient_phone_number** | **string** |  |
+**recipient_email_address** | **string** |  | [optional]
+**recipient_member_id** | **string** |  | [optional]
+**is_comp** | **bool** |  | [optional]
+**performance_id** | **string** |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

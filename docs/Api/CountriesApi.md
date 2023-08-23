@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `fetchAllCountries()`
 
 ```php
-fetchAllCountries(): \OpenAPI\Client\Model\InlineResponse20010[]
+fetchAllCountries(): \OpenAPI\Client\Model\InlineResponse20011[]
 ```
 
 Fetch all countries
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse20010[]**](../Model/InlineResponse20010.md)
+[**\OpenAPI\Client\Model\InlineResponse20011[]**](../Model/InlineResponse20011.md)
 
 ### Authorization
 

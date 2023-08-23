@@ -60,10 +60,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currency_abbreviation' => 'string',
-        'phone_code' => 'string',
-        'iso2' => 'string',
-        'name' => 'string'
+        'payment_design' => '\OpenAPI\Client\Model\PaymentDesign',
+        'value_type' => 'string',
+        'voucher_type' => 'double',
+        'expiration_date' => '\DateTime',
+        'start_date' => '\DateTime',
+        'title' => 'string',
+        'is_redeemed' => 'bool',
+        'display_value' => 'string',
+        'offer_amount_cents_decimal' => 'string',
+        'offer_amount_cents' => 'double',
+        'member_id' => 'string',
+        'cell_phone_number' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -74,10 +83,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'currency_abbreviation' => null,
-        'phone_code' => null,
-        'iso2' => null,
-        'name' => null
+        'payment_design' => null,
+        'value_type' => null,
+        'voucher_type' => 'double',
+        'expiration_date' => 'date-time',
+        'start_date' => 'date-time',
+        'title' => null,
+        'is_redeemed' => null,
+        'display_value' => null,
+        'offer_amount_cents_decimal' => null,
+        'offer_amount_cents' => 'double',
+        'member_id' => null,
+        'cell_phone_number' => null,
+        'id' => null
     ];
 
     /**
@@ -107,10 +125,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'currency_abbreviation' => 'currency_abbreviation',
-        'phone_code' => 'phone_code',
-        'iso2' => 'iso2',
-        'name' => 'name'
+        'payment_design' => 'PaymentDesign',
+        'value_type' => 'ValueType',
+        'voucher_type' => 'VoucherType',
+        'expiration_date' => 'ExpirationDate',
+        'start_date' => 'StartDate',
+        'title' => 'Title',
+        'is_redeemed' => 'IsRedeemed',
+        'display_value' => 'DisplayValue',
+        'offer_amount_cents_decimal' => 'OfferAmountCents_decimal',
+        'offer_amount_cents' => 'OfferAmountCents',
+        'member_id' => 'MemberID',
+        'cell_phone_number' => 'CellPhoneNumber',
+        'id' => 'id'
     ];
 
     /**
@@ -119,10 +146,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'currency_abbreviation' => 'setCurrencyAbbreviation',
-        'phone_code' => 'setPhoneCode',
-        'iso2' => 'setIso2',
-        'name' => 'setName'
+        'payment_design' => 'setPaymentDesign',
+        'value_type' => 'setValueType',
+        'voucher_type' => 'setVoucherType',
+        'expiration_date' => 'setExpirationDate',
+        'start_date' => 'setStartDate',
+        'title' => 'setTitle',
+        'is_redeemed' => 'setIsRedeemed',
+        'display_value' => 'setDisplayValue',
+        'offer_amount_cents_decimal' => 'setOfferAmountCentsDecimal',
+        'offer_amount_cents' => 'setOfferAmountCents',
+        'member_id' => 'setMemberId',
+        'cell_phone_number' => 'setCellPhoneNumber',
+        'id' => 'setId'
     ];
 
     /**
@@ -131,10 +167,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'currency_abbreviation' => 'getCurrencyAbbreviation',
-        'phone_code' => 'getPhoneCode',
-        'iso2' => 'getIso2',
-        'name' => 'getName'
+        'payment_design' => 'getPaymentDesign',
+        'value_type' => 'getValueType',
+        'voucher_type' => 'getVoucherType',
+        'expiration_date' => 'getExpirationDate',
+        'start_date' => 'getStartDate',
+        'title' => 'getTitle',
+        'is_redeemed' => 'getIsRedeemed',
+        'display_value' => 'getDisplayValue',
+        'offer_amount_cents_decimal' => 'getOfferAmountCentsDecimal',
+        'offer_amount_cents' => 'getOfferAmountCents',
+        'member_id' => 'getMemberId',
+        'cell_phone_number' => 'getCellPhoneNumber',
+        'id' => 'getId'
     ];
 
     /**
@@ -194,10 +239,19 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['currency_abbreviation'] = $data['currency_abbreviation'] ?? null;
-        $this->container['phone_code'] = $data['phone_code'] ?? null;
-        $this->container['iso2'] = $data['iso2'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['payment_design'] = $data['payment_design'] ?? null;
+        $this->container['value_type'] = $data['value_type'] ?? null;
+        $this->container['voucher_type'] = $data['voucher_type'] ?? null;
+        $this->container['expiration_date'] = $data['expiration_date'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['is_redeemed'] = $data['is_redeemed'] ?? null;
+        $this->container['display_value'] = $data['display_value'] ?? null;
+        $this->container['offer_amount_cents_decimal'] = $data['offer_amount_cents_decimal'] ?? null;
+        $this->container['offer_amount_cents'] = $data['offer_amount_cents'] ?? null;
+        $this->container['member_id'] = $data['member_id'] ?? null;
+        $this->container['cell_phone_number'] = $data['cell_phone_number'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
     }
 
     /**
@@ -209,17 +263,44 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['currency_abbreviation'] === null) {
-            $invalidProperties[] = "'currency_abbreviation' can't be null";
+        if ($this->container['payment_design'] === null) {
+            $invalidProperties[] = "'payment_design' can't be null";
         }
-        if ($this->container['phone_code'] === null) {
-            $invalidProperties[] = "'phone_code' can't be null";
+        if ($this->container['value_type'] === null) {
+            $invalidProperties[] = "'value_type' can't be null";
         }
-        if ($this->container['iso2'] === null) {
-            $invalidProperties[] = "'iso2' can't be null";
+        if ($this->container['voucher_type'] === null) {
+            $invalidProperties[] = "'voucher_type' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['expiration_date'] === null) {
+            $invalidProperties[] = "'expiration_date' can't be null";
+        }
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['is_redeemed'] === null) {
+            $invalidProperties[] = "'is_redeemed' can't be null";
+        }
+        if ($this->container['display_value'] === null) {
+            $invalidProperties[] = "'display_value' can't be null";
+        }
+        if ($this->container['offer_amount_cents_decimal'] === null) {
+            $invalidProperties[] = "'offer_amount_cents_decimal' can't be null";
+        }
+        if ($this->container['offer_amount_cents'] === null) {
+            $invalidProperties[] = "'offer_amount_cents' can't be null";
+        }
+        if ($this->container['member_id'] === null) {
+            $invalidProperties[] = "'member_id' can't be null";
+        }
+        if ($this->container['cell_phone_number'] === null) {
+            $invalidProperties[] = "'cell_phone_number' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         return $invalidProperties;
     }
@@ -237,97 +318,313 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets currency_abbreviation
+     * Gets payment_design
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\PaymentDesign
      */
-    public function getCurrencyAbbreviation()
+    public function getPaymentDesign()
     {
-        return $this->container['currency_abbreviation'];
+        return $this->container['payment_design'];
     }
 
     /**
-     * Sets currency_abbreviation
+     * Sets payment_design
      *
-     * @param string $currency_abbreviation currency_abbreviation
+     * @param \OpenAPI\Client\Model\PaymentDesign $payment_design payment_design
      *
      * @return self
      */
-    public function setCurrencyAbbreviation($currency_abbreviation)
+    public function setPaymentDesign($payment_design)
     {
-        $this->container['currency_abbreviation'] = $currency_abbreviation;
+        $this->container['payment_design'] = $payment_design;
 
         return $this;
     }
 
     /**
-     * Gets phone_code
+     * Gets value_type
      *
      * @return string
      */
-    public function getPhoneCode()
+    public function getValueType()
     {
-        return $this->container['phone_code'];
+        return $this->container['value_type'];
     }
 
     /**
-     * Sets phone_code
+     * Sets value_type
      *
-     * @param string $phone_code phone_code
+     * @param string $value_type value_type
      *
      * @return self
      */
-    public function setPhoneCode($phone_code)
+    public function setValueType($value_type)
     {
-        $this->container['phone_code'] = $phone_code;
+        $this->container['value_type'] = $value_type;
 
         return $this;
     }
 
     /**
-     * Gets iso2
+     * Gets voucher_type
      *
-     * @return string
+     * @return double
      */
-    public function getIso2()
+    public function getVoucherType()
     {
-        return $this->container['iso2'];
+        return $this->container['voucher_type'];
     }
 
     /**
-     * Sets iso2
+     * Sets voucher_type
      *
-     * @param string $iso2 iso2
+     * @param double $voucher_type voucher_type
      *
      * @return self
      */
-    public function setIso2($iso2)
+    public function setVoucherType($voucher_type)
     {
-        $this->container['iso2'] = $iso2;
+        $this->container['voucher_type'] = $voucher_type;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets expiration_date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getName()
+    public function getExpirationDate()
     {
-        return $this->container['name'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets name
+     * Sets expiration_date
      *
-     * @param string $name name
+     * @param \DateTime $expiration_date expiration_date
      *
      * @return self
      */
-    public function setName($name)
+    public function setExpirationDate($expiration_date)
     {
-        $this->container['name'] = $name;
+        $this->container['expiration_date'] = $expiration_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param \DateTime $start_date start_date
+     *
+     * @return self
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_redeemed
+     *
+     * @return bool
+     */
+    public function getIsRedeemed()
+    {
+        return $this->container['is_redeemed'];
+    }
+
+    /**
+     * Sets is_redeemed
+     *
+     * @param bool $is_redeemed is_redeemed
+     *
+     * @return self
+     */
+    public function setIsRedeemed($is_redeemed)
+    {
+        $this->container['is_redeemed'] = $is_redeemed;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_value
+     *
+     * @return string
+     */
+    public function getDisplayValue()
+    {
+        return $this->container['display_value'];
+    }
+
+    /**
+     * Sets display_value
+     *
+     * @param string $display_value display_value
+     *
+     * @return self
+     */
+    public function setDisplayValue($display_value)
+    {
+        $this->container['display_value'] = $display_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_amount_cents_decimal
+     *
+     * @return string
+     */
+    public function getOfferAmountCentsDecimal()
+    {
+        return $this->container['offer_amount_cents_decimal'];
+    }
+
+    /**
+     * Sets offer_amount_cents_decimal
+     *
+     * @param string $offer_amount_cents_decimal offer_amount_cents_decimal
+     *
+     * @return self
+     */
+    public function setOfferAmountCentsDecimal($offer_amount_cents_decimal)
+    {
+        $this->container['offer_amount_cents_decimal'] = $offer_amount_cents_decimal;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_amount_cents
+     *
+     * @return double
+     */
+    public function getOfferAmountCents()
+    {
+        return $this->container['offer_amount_cents'];
+    }
+
+    /**
+     * Sets offer_amount_cents
+     *
+     * @param double $offer_amount_cents offer_amount_cents
+     *
+     * @return self
+     */
+    public function setOfferAmountCents($offer_amount_cents)
+    {
+        $this->container['offer_amount_cents'] = $offer_amount_cents;
+
+        return $this;
+    }
+
+    /**
+     * Gets member_id
+     *
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->container['member_id'];
+    }
+
+    /**
+     * Sets member_id
+     *
+     * @param string $member_id member_id
+     *
+     * @return self
+     */
+    public function setMemberId($member_id)
+    {
+        $this->container['member_id'] = $member_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cell_phone_number
+     *
+     * @return string
+     */
+    public function getCellPhoneNumber()
+    {
+        return $this->container['cell_phone_number'];
+    }
+
+    /**
+     * Sets cell_phone_number
+     *
+     * @param string $cell_phone_number cell_phone_number
+     *
+     * @return self
+     */
+    public function setCellPhoneNumber($cell_phone_number)
+    {
+        $this->container['cell_phone_number'] = $cell_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

@@ -1,11 +1,12 @@
-# # InlineResponse2008
+# # WTTicketUpdateParams
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **double** |  |
-**length** | **double** |  |
-**results** | [**\OpenAPI\Client\Model\OptInListSubscriber[]**](OptInListSubscriber.md) |  |
+**recipient_phone_number** | **string** |  |
+**recipient_email_address** | **string** |  | [optional]
+**recipient_member_id** | **string** |  | [optional]
+**is_comp** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

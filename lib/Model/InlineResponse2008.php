@@ -62,7 +62,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'total' => 'double',
         'length' => 'double',
-        'results' => '\OpenAPI\Client\Model\ImportedListRecipient[]'
+        'results' => '\OpenAPI\Client\Model\OptInListSubscriber[]'
     ];
 
     /**
@@ -278,7 +278,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\ImportedListRecipient[]
+     * @return \OpenAPI\Client\Model\OptInListSubscriber[]
      */
     public function getResults()
     {
@@ -288,7 +288,7 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\ImportedListRecipient[] $results results
+     * @param \OpenAPI\Client\Model\OptInListSubscriber[] $results results
      *
      * @return self
      */

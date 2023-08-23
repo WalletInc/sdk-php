@@ -396,7 +396,7 @@ class IndustriesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse20011|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse20012|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchDomainsByIndustry()
     {
@@ -412,7 +412,7 @@ class IndustriesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse20011|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse20012|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchDomainsByIndustryWithHttpInfo()
     {
@@ -455,14 +455,14 @@ class IndustriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse20011' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse20012' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20011', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20012', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -480,7 +480,7 @@ class IndustriesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse20011';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse20012';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -498,7 +498,7 @@ class IndustriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse20011',
+                        '\OpenAPI\Client\Model\InlineResponse20012',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -546,7 +546,7 @@ class IndustriesApi
      */
     public function fetchDomainsByIndustryAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse20011';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse20012';
         $request = $this->fetchDomainsByIndustryRequest();
 
         return $this->client
