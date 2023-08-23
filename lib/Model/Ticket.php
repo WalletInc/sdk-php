@@ -275,9 +275,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['recipient_phone_number'] === null) {
-            $invalidProperties[] = "'recipient_phone_number' can't be null";
-        }
         if ($this->container['performance_id'] === null) {
             $invalidProperties[] = "'performance_id' can't be null";
         }
@@ -326,7 +323,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets recipient_phone_number
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipientPhoneNumber()
     {
@@ -336,7 +333,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets recipient_phone_number
      *
-     * @param string $recipient_phone_number recipient_phone_number
+     * @param string|null $recipient_phone_number recipient_phone_number
      *
      * @return self
      */

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipient_phone_number** | **string** |  |
+**recipient_phone_number** | **string** |  | [optional]
 **recipient_email_address** | **string** |  | [optional]
 **recipient_member_id** | **string** |  | [optional]
 **is_comp** | **bool** |  | [optional]
