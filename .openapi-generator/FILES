@@ -111,6 +111,7 @@ docs/Model/InboundSMS.md
 docs/Model/InlineObject.md
 docs/Model/InlineObject1.md
 docs/Model/InlineObject2.md
+docs/Model/InlineObject3.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse20010.md
@@ -515,6 +516,7 @@ lib/Model/InboundSMS.php
 lib/Model/InlineObject.php
 lib/Model/InlineObject1.php
 lib/Model/InlineObject2.php
+lib/Model/InlineObject3.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse20010.php
@@ -810,3 +812,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineObject3Test.php
