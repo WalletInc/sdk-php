@@ -60,9 +60,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entries' => '\OpenAPI\Client\Model\LedgerEntry[]',
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'data' => '\OpenAPI\Client\Model\WTTicket[]',
+        'total_rows' => 'double'
     ];
 
     /**
@@ -73,9 +72,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entries' => null,
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'data' => null,
+        'total_rows' => 'double'
     ];
 
     /**
@@ -105,9 +103,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entries' => 'entries',
-        'page_count' => 'pageCount',
-        'total_records' => 'totalRecords'
+        'data' => 'data',
+        'total_rows' => 'totalRows'
     ];
 
     /**
@@ -116,9 +113,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entries' => 'setEntries',
-        'page_count' => 'setPageCount',
-        'total_records' => 'setTotalRecords'
+        'data' => 'setData',
+        'total_rows' => 'setTotalRows'
     ];
 
     /**
@@ -127,9 +123,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entries' => 'getEntries',
-        'page_count' => 'getPageCount',
-        'total_records' => 'getTotalRecords'
+        'data' => 'getData',
+        'total_rows' => 'getTotalRows'
     ];
 
     /**
@@ -189,9 +184,8 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['entries'] = $data['entries'] ?? null;
-        $this->container['page_count'] = $data['page_count'] ?? null;
-        $this->container['total_records'] = $data['total_records'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['total_rows'] = $data['total_rows'] ?? null;
     }
 
     /**
@@ -203,14 +197,11 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['entries'] === null) {
-            $invalidProperties[] = "'entries' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
-        if ($this->container['page_count'] === null) {
-            $invalidProperties[] = "'page_count' can't be null";
-        }
-        if ($this->container['total_records'] === null) {
-            $invalidProperties[] = "'total_records' can't be null";
+        if ($this->container['total_rows'] === null) {
+            $invalidProperties[] = "'total_rows' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +219,49 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entries
+     * Gets data
      *
-     * @return \OpenAPI\Client\Model\LedgerEntry[]
+     * @return \OpenAPI\Client\Model\WTTicket[]
      */
-    public function getEntries()
+    public function getData()
     {
-        return $this->container['entries'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets entries
+     * Sets data
      *
-     * @param \OpenAPI\Client\Model\LedgerEntry[] $entries entries
+     * @param \OpenAPI\Client\Model\WTTicket[] $data data
      *
      * @return self
      */
-    public function setEntries($entries)
+    public function setData($data)
     {
-        $this->container['entries'] = $entries;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets page_count
+     * Gets total_rows
      *
      * @return double
      */
-    public function getPageCount()
+    public function getTotalRows()
     {
-        return $this->container['page_count'];
+        return $this->container['total_rows'];
     }
 
     /**
-     * Sets page_count
+     * Sets total_rows
      *
-     * @param double $page_count page_count
+     * @param double $total_rows total_rows
      *
      * @return self
      */
-    public function setPageCount($page_count)
+    public function setTotalRows($total_rows)
     {
-        $this->container['page_count'] = $page_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_records
-     *
-     * @return double
-     */
-    public function getTotalRecords()
-    {
-        return $this->container['total_records'];
-    }
-
-    /**
-     * Sets total_records
-     *
-     * @param double $total_records total_records
-     *
-     * @return self
-     */
-    public function setTotalRecords($total_records)
-    {
-        $this->container['total_records'] = $total_records;
+        $this->container['total_rows'] = $total_rows;
 
         return $this;
     }

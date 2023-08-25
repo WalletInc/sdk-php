@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006
+ * InlineObject3
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineResponse2006 Class Doc Comment
+ * InlineObject3 Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_6';
+    protected static $openAPIModelName = 'inline_object_3';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entries' => '\OpenAPI\Client\Model\LedgerEntry[]',
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'phone_verification_token' => 'string',
+        'merchant_id' => 'string'
     ];
 
     /**
@@ -73,9 +72,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entries' => null,
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'phone_verification_token' => null,
+        'merchant_id' => null
     ];
 
     /**
@@ -105,9 +103,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entries' => 'entries',
-        'page_count' => 'pageCount',
-        'total_records' => 'totalRecords'
+        'phone_verification_token' => 'phoneVerificationToken',
+        'merchant_id' => 'merchantID'
     ];
 
     /**
@@ -116,9 +113,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entries' => 'setEntries',
-        'page_count' => 'setPageCount',
-        'total_records' => 'setTotalRecords'
+        'phone_verification_token' => 'setPhoneVerificationToken',
+        'merchant_id' => 'setMerchantId'
     ];
 
     /**
@@ -127,9 +123,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entries' => 'getEntries',
-        'page_count' => 'getPageCount',
-        'total_records' => 'getTotalRecords'
+        'phone_verification_token' => 'getPhoneVerificationToken',
+        'merchant_id' => 'getMerchantId'
     ];
 
     /**
@@ -189,9 +184,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['entries'] = $data['entries'] ?? null;
-        $this->container['page_count'] = $data['page_count'] ?? null;
-        $this->container['total_records'] = $data['total_records'] ?? null;
+        $this->container['phone_verification_token'] = $data['phone_verification_token'] ?? null;
+        $this->container['merchant_id'] = $data['merchant_id'] ?? null;
     }
 
     /**
@@ -203,14 +197,11 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['entries'] === null) {
-            $invalidProperties[] = "'entries' can't be null";
+        if ($this->container['phone_verification_token'] === null) {
+            $invalidProperties[] = "'phone_verification_token' can't be null";
         }
-        if ($this->container['page_count'] === null) {
-            $invalidProperties[] = "'page_count' can't be null";
-        }
-        if ($this->container['total_records'] === null) {
-            $invalidProperties[] = "'total_records' can't be null";
+        if ($this->container['merchant_id'] === null) {
+            $invalidProperties[] = "'merchant_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +219,49 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entries
+     * Gets phone_verification_token
      *
-     * @return \OpenAPI\Client\Model\LedgerEntry[]
+     * @return string
      */
-    public function getEntries()
+    public function getPhoneVerificationToken()
     {
-        return $this->container['entries'];
+        return $this->container['phone_verification_token'];
     }
 
     /**
-     * Sets entries
+     * Sets phone_verification_token
      *
-     * @param \OpenAPI\Client\Model\LedgerEntry[] $entries entries
+     * @param string $phone_verification_token phone_verification_token
      *
      * @return self
      */
-    public function setEntries($entries)
+    public function setPhoneVerificationToken($phone_verification_token)
     {
-        $this->container['entries'] = $entries;
+        $this->container['phone_verification_token'] = $phone_verification_token;
 
         return $this;
     }
 
     /**
-     * Gets page_count
+     * Gets merchant_id
      *
-     * @return double
+     * @return string
      */
-    public function getPageCount()
+    public function getMerchantId()
     {
-        return $this->container['page_count'];
+        return $this->container['merchant_id'];
     }
 
     /**
-     * Sets page_count
+     * Sets merchant_id
      *
-     * @param double $page_count page_count
+     * @param string $merchant_id merchant_id
      *
      * @return self
      */
-    public function setPageCount($page_count)
+    public function setMerchantId($merchant_id)
     {
-        $this->container['page_count'] = $page_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_records
-     *
-     * @return double
-     */
-    public function getTotalRecords()
-    {
-        return $this->container['total_records'];
-    }
-
-    /**
-     * Sets total_records
-     *
-     * @param double $total_records total_records
-     *
-     * @return self
-     */
-    public function setTotalRecords($total_records)
-    {
-        $this->container['total_records'] = $total_records;
+        $this->container['merchant_id'] = $merchant_id;
 
         return $this;
     }

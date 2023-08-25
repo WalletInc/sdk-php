@@ -62,7 +62,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'total' => 'double',
         'length' => 'double',
-        'results' => '\OpenAPI\Client\Model\OptInListSubscriber[]'
+        'results' => '\OpenAPI\Client\Model\OutboundSMS[]'
     ];
 
     /**
@@ -278,7 +278,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\OptInListSubscriber[]
+     * @return \OpenAPI\Client\Model\OutboundSMS[]
      */
     public function getResults()
     {
@@ -288,7 +288,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\OptInListSubscriber[] $results results
+     * @param \OpenAPI\Client\Model\OutboundSMS[] $results results
      *
      * @return self
      */

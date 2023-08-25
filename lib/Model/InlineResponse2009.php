@@ -60,19 +60,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_design' => '\OpenAPI\Client\Model\PaymentDesign',
-        'value_type' => 'string',
-        'voucher_type' => 'double',
-        'expiration_date' => '\DateTime',
-        'start_date' => '\DateTime',
-        'title' => 'string',
-        'is_redeemed' => 'bool',
-        'display_value' => 'string',
-        'offer_amount_cents_decimal' => 'string',
-        'offer_amount_cents' => 'double',
-        'member_id' => 'string',
-        'cell_phone_number' => 'string',
-        'id' => 'string'
+        'total' => 'double',
+        'length' => 'double',
+        'results' => '\OpenAPI\Client\Model\ImportedListRecipient[]'
     ];
 
     /**
@@ -83,19 +73,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'payment_design' => null,
-        'value_type' => null,
-        'voucher_type' => 'double',
-        'expiration_date' => 'date-time',
-        'start_date' => 'date-time',
-        'title' => null,
-        'is_redeemed' => null,
-        'display_value' => null,
-        'offer_amount_cents_decimal' => null,
-        'offer_amount_cents' => 'double',
-        'member_id' => null,
-        'cell_phone_number' => null,
-        'id' => null
+        'total' => 'double',
+        'length' => 'double',
+        'results' => null
     ];
 
     /**
@@ -125,19 +105,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_design' => 'PaymentDesign',
-        'value_type' => 'ValueType',
-        'voucher_type' => 'VoucherType',
-        'expiration_date' => 'ExpirationDate',
-        'start_date' => 'StartDate',
-        'title' => 'Title',
-        'is_redeemed' => 'IsRedeemed',
-        'display_value' => 'DisplayValue',
-        'offer_amount_cents_decimal' => 'OfferAmountCents_decimal',
-        'offer_amount_cents' => 'OfferAmountCents',
-        'member_id' => 'MemberID',
-        'cell_phone_number' => 'CellPhoneNumber',
-        'id' => 'id'
+        'total' => 'total',
+        'length' => 'length',
+        'results' => 'results'
     ];
 
     /**
@@ -146,19 +116,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'payment_design' => 'setPaymentDesign',
-        'value_type' => 'setValueType',
-        'voucher_type' => 'setVoucherType',
-        'expiration_date' => 'setExpirationDate',
-        'start_date' => 'setStartDate',
-        'title' => 'setTitle',
-        'is_redeemed' => 'setIsRedeemed',
-        'display_value' => 'setDisplayValue',
-        'offer_amount_cents_decimal' => 'setOfferAmountCentsDecimal',
-        'offer_amount_cents' => 'setOfferAmountCents',
-        'member_id' => 'setMemberId',
-        'cell_phone_number' => 'setCellPhoneNumber',
-        'id' => 'setId'
+        'total' => 'setTotal',
+        'length' => 'setLength',
+        'results' => 'setResults'
     ];
 
     /**
@@ -167,19 +127,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'payment_design' => 'getPaymentDesign',
-        'value_type' => 'getValueType',
-        'voucher_type' => 'getVoucherType',
-        'expiration_date' => 'getExpirationDate',
-        'start_date' => 'getStartDate',
-        'title' => 'getTitle',
-        'is_redeemed' => 'getIsRedeemed',
-        'display_value' => 'getDisplayValue',
-        'offer_amount_cents_decimal' => 'getOfferAmountCentsDecimal',
-        'offer_amount_cents' => 'getOfferAmountCents',
-        'member_id' => 'getMemberId',
-        'cell_phone_number' => 'getCellPhoneNumber',
-        'id' => 'getId'
+        'total' => 'getTotal',
+        'length' => 'getLength',
+        'results' => 'getResults'
     ];
 
     /**
@@ -239,19 +189,9 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_design'] = $data['payment_design'] ?? null;
-        $this->container['value_type'] = $data['value_type'] ?? null;
-        $this->container['voucher_type'] = $data['voucher_type'] ?? null;
-        $this->container['expiration_date'] = $data['expiration_date'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['is_redeemed'] = $data['is_redeemed'] ?? null;
-        $this->container['display_value'] = $data['display_value'] ?? null;
-        $this->container['offer_amount_cents_decimal'] = $data['offer_amount_cents_decimal'] ?? null;
-        $this->container['offer_amount_cents'] = $data['offer_amount_cents'] ?? null;
-        $this->container['member_id'] = $data['member_id'] ?? null;
-        $this->container['cell_phone_number'] = $data['cell_phone_number'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['length'] = $data['length'] ?? null;
+        $this->container['results'] = $data['results'] ?? null;
     }
 
     /**
@@ -263,44 +203,14 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['payment_design'] === null) {
-            $invalidProperties[] = "'payment_design' can't be null";
+        if ($this->container['total'] === null) {
+            $invalidProperties[] = "'total' can't be null";
         }
-        if ($this->container['value_type'] === null) {
-            $invalidProperties[] = "'value_type' can't be null";
+        if ($this->container['length'] === null) {
+            $invalidProperties[] = "'length' can't be null";
         }
-        if ($this->container['voucher_type'] === null) {
-            $invalidProperties[] = "'voucher_type' can't be null";
-        }
-        if ($this->container['expiration_date'] === null) {
-            $invalidProperties[] = "'expiration_date' can't be null";
-        }
-        if ($this->container['start_date'] === null) {
-            $invalidProperties[] = "'start_date' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['is_redeemed'] === null) {
-            $invalidProperties[] = "'is_redeemed' can't be null";
-        }
-        if ($this->container['display_value'] === null) {
-            $invalidProperties[] = "'display_value' can't be null";
-        }
-        if ($this->container['offer_amount_cents_decimal'] === null) {
-            $invalidProperties[] = "'offer_amount_cents_decimal' can't be null";
-        }
-        if ($this->container['offer_amount_cents'] === null) {
-            $invalidProperties[] = "'offer_amount_cents' can't be null";
-        }
-        if ($this->container['member_id'] === null) {
-            $invalidProperties[] = "'member_id' can't be null";
-        }
-        if ($this->container['cell_phone_number'] === null) {
-            $invalidProperties[] = "'cell_phone_number' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['results'] === null) {
+            $invalidProperties[] = "'results' can't be null";
         }
         return $invalidProperties;
     }
@@ -318,313 +228,73 @@ class InlineResponse2009 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets payment_design
-     *
-     * @return \OpenAPI\Client\Model\PaymentDesign
-     */
-    public function getPaymentDesign()
-    {
-        return $this->container['payment_design'];
-    }
-
-    /**
-     * Sets payment_design
-     *
-     * @param \OpenAPI\Client\Model\PaymentDesign $payment_design payment_design
-     *
-     * @return self
-     */
-    public function setPaymentDesign($payment_design)
-    {
-        $this->container['payment_design'] = $payment_design;
-
-        return $this;
-    }
-
-    /**
-     * Gets value_type
-     *
-     * @return string
-     */
-    public function getValueType()
-    {
-        return $this->container['value_type'];
-    }
-
-    /**
-     * Sets value_type
-     *
-     * @param string $value_type value_type
-     *
-     * @return self
-     */
-    public function setValueType($value_type)
-    {
-        $this->container['value_type'] = $value_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucher_type
+     * Gets total
      *
      * @return double
      */
-    public function getVoucherType()
+    public function getTotal()
     {
-        return $this->container['voucher_type'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets voucher_type
+     * Sets total
      *
-     * @param double $voucher_type voucher_type
+     * @param double $total total
      *
      * @return self
      */
-    public function setVoucherType($voucher_type)
+    public function setTotal($total)
     {
-        $this->container['voucher_type'] = $voucher_type;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
-     *
-     * @return \DateTime
-     */
-    public function getExpirationDate()
-    {
-        return $this->container['expiration_date'];
-    }
-
-    /**
-     * Sets expiration_date
-     *
-     * @param \DateTime $expiration_date expiration_date
-     *
-     * @return self
-     */
-    public function setExpirationDate($expiration_date)
-    {
-        $this->container['expiration_date'] = $expiration_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_date
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->container['start_date'];
-    }
-
-    /**
-     * Sets start_date
-     *
-     * @param \DateTime $start_date start_date
-     *
-     * @return self
-     */
-    public function setStartDate($start_date)
-    {
-        $this->container['start_date'] = $start_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_redeemed
-     *
-     * @return bool
-     */
-    public function getIsRedeemed()
-    {
-        return $this->container['is_redeemed'];
-    }
-
-    /**
-     * Sets is_redeemed
-     *
-     * @param bool $is_redeemed is_redeemed
-     *
-     * @return self
-     */
-    public function setIsRedeemed($is_redeemed)
-    {
-        $this->container['is_redeemed'] = $is_redeemed;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_value
-     *
-     * @return string
-     */
-    public function getDisplayValue()
-    {
-        return $this->container['display_value'];
-    }
-
-    /**
-     * Sets display_value
-     *
-     * @param string $display_value display_value
-     *
-     * @return self
-     */
-    public function setDisplayValue($display_value)
-    {
-        $this->container['display_value'] = $display_value;
-
-        return $this;
-    }
-
-    /**
-     * Gets offer_amount_cents_decimal
-     *
-     * @return string
-     */
-    public function getOfferAmountCentsDecimal()
-    {
-        return $this->container['offer_amount_cents_decimal'];
-    }
-
-    /**
-     * Sets offer_amount_cents_decimal
-     *
-     * @param string $offer_amount_cents_decimal offer_amount_cents_decimal
-     *
-     * @return self
-     */
-    public function setOfferAmountCentsDecimal($offer_amount_cents_decimal)
-    {
-        $this->container['offer_amount_cents_decimal'] = $offer_amount_cents_decimal;
-
-        return $this;
-    }
-
-    /**
-     * Gets offer_amount_cents
+     * Gets length
      *
      * @return double
      */
-    public function getOfferAmountCents()
+    public function getLength()
     {
-        return $this->container['offer_amount_cents'];
+        return $this->container['length'];
     }
 
     /**
-     * Sets offer_amount_cents
+     * Sets length
      *
-     * @param double $offer_amount_cents offer_amount_cents
+     * @param double $length length
      *
      * @return self
      */
-    public function setOfferAmountCents($offer_amount_cents)
+    public function setLength($length)
     {
-        $this->container['offer_amount_cents'] = $offer_amount_cents;
+        $this->container['length'] = $length;
 
         return $this;
     }
 
     /**
-     * Gets member_id
+     * Gets results
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\ImportedListRecipient[]
      */
-    public function getMemberId()
+    public function getResults()
     {
-        return $this->container['member_id'];
+        return $this->container['results'];
     }
 
     /**
-     * Sets member_id
+     * Sets results
      *
-     * @param string $member_id member_id
+     * @param \OpenAPI\Client\Model\ImportedListRecipient[] $results results
      *
      * @return self
      */
-    public function setMemberId($member_id)
+    public function setResults($results)
     {
-        $this->container['member_id'] = $member_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cell_phone_number
-     *
-     * @return string
-     */
-    public function getCellPhoneNumber()
-    {
-        return $this->container['cell_phone_number'];
-    }
-
-    /**
-     * Sets cell_phone_number
-     *
-     * @param string $cell_phone_number cell_phone_number
-     *
-     * @return self
-     */
-    public function setCellPhoneNumber($cell_phone_number)
-    {
-        $this->container['cell_phone_number'] = $cell_phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
+        $this->container['results'] = $results;
 
         return $this;
     }

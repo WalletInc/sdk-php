@@ -60,13 +60,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entertainment' => 'mixed[]',
-        'grocery' => 'mixed[]',
-        'service' => 'mixed[]',
-        'casino' => 'mixed[]',
-        'hospitality' => 'mixed[]',
-        'food' => 'mixed[]',
-        'retail' => 'mixed[]'
+        'currency_abbreviation' => 'string',
+        'phone_code' => 'string',
+        'iso2' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -77,13 +74,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entertainment' => null,
-        'grocery' => null,
-        'service' => null,
-        'casino' => null,
-        'hospitality' => null,
-        'food' => null,
-        'retail' => null
+        'currency_abbreviation' => null,
+        'phone_code' => null,
+        'iso2' => null,
+        'name' => null
     ];
 
     /**
@@ -113,13 +107,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'entertainment' => 'entertainment',
-        'grocery' => 'grocery',
-        'service' => 'service',
-        'casino' => 'casino',
-        'hospitality' => 'hospitality',
-        'food' => 'food',
-        'retail' => 'retail'
+        'currency_abbreviation' => 'currency_abbreviation',
+        'phone_code' => 'phone_code',
+        'iso2' => 'iso2',
+        'name' => 'name'
     ];
 
     /**
@@ -128,13 +119,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'entertainment' => 'setEntertainment',
-        'grocery' => 'setGrocery',
-        'service' => 'setService',
-        'casino' => 'setCasino',
-        'hospitality' => 'setHospitality',
-        'food' => 'setFood',
-        'retail' => 'setRetail'
+        'currency_abbreviation' => 'setCurrencyAbbreviation',
+        'phone_code' => 'setPhoneCode',
+        'iso2' => 'setIso2',
+        'name' => 'setName'
     ];
 
     /**
@@ -143,13 +131,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'entertainment' => 'getEntertainment',
-        'grocery' => 'getGrocery',
-        'service' => 'getService',
-        'casino' => 'getCasino',
-        'hospitality' => 'getHospitality',
-        'food' => 'getFood',
-        'retail' => 'getRetail'
+        'currency_abbreviation' => 'getCurrencyAbbreviation',
+        'phone_code' => 'getPhoneCode',
+        'iso2' => 'getIso2',
+        'name' => 'getName'
     ];
 
     /**
@@ -209,13 +194,10 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['entertainment'] = $data['entertainment'] ?? null;
-        $this->container['grocery'] = $data['grocery'] ?? null;
-        $this->container['service'] = $data['service'] ?? null;
-        $this->container['casino'] = $data['casino'] ?? null;
-        $this->container['hospitality'] = $data['hospitality'] ?? null;
-        $this->container['food'] = $data['food'] ?? null;
-        $this->container['retail'] = $data['retail'] ?? null;
+        $this->container['currency_abbreviation'] = $data['currency_abbreviation'] ?? null;
+        $this->container['phone_code'] = $data['phone_code'] ?? null;
+        $this->container['iso2'] = $data['iso2'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
     }
 
     /**
@@ -227,26 +209,17 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['entertainment'] === null) {
-            $invalidProperties[] = "'entertainment' can't be null";
+        if ($this->container['currency_abbreviation'] === null) {
+            $invalidProperties[] = "'currency_abbreviation' can't be null";
         }
-        if ($this->container['grocery'] === null) {
-            $invalidProperties[] = "'grocery' can't be null";
+        if ($this->container['phone_code'] === null) {
+            $invalidProperties[] = "'phone_code' can't be null";
         }
-        if ($this->container['service'] === null) {
-            $invalidProperties[] = "'service' can't be null";
+        if ($this->container['iso2'] === null) {
+            $invalidProperties[] = "'iso2' can't be null";
         }
-        if ($this->container['casino'] === null) {
-            $invalidProperties[] = "'casino' can't be null";
-        }
-        if ($this->container['hospitality'] === null) {
-            $invalidProperties[] = "'hospitality' can't be null";
-        }
-        if ($this->container['food'] === null) {
-            $invalidProperties[] = "'food' can't be null";
-        }
-        if ($this->container['retail'] === null) {
-            $invalidProperties[] = "'retail' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
         return $invalidProperties;
     }
@@ -264,169 +237,97 @@ class InlineResponse20011 implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets entertainment
+     * Gets currency_abbreviation
      *
-     * @return mixed[]
+     * @return string
      */
-    public function getEntertainment()
+    public function getCurrencyAbbreviation()
     {
-        return $this->container['entertainment'];
+        return $this->container['currency_abbreviation'];
     }
 
     /**
-     * Sets entertainment
+     * Sets currency_abbreviation
      *
-     * @param mixed[] $entertainment entertainment
+     * @param string $currency_abbreviation currency_abbreviation
      *
      * @return self
      */
-    public function setEntertainment($entertainment)
+    public function setCurrencyAbbreviation($currency_abbreviation)
     {
-        $this->container['entertainment'] = $entertainment;
+        $this->container['currency_abbreviation'] = $currency_abbreviation;
 
         return $this;
     }
 
     /**
-     * Gets grocery
+     * Gets phone_code
      *
-     * @return mixed[]
+     * @return string
      */
-    public function getGrocery()
+    public function getPhoneCode()
     {
-        return $this->container['grocery'];
+        return $this->container['phone_code'];
     }
 
     /**
-     * Sets grocery
+     * Sets phone_code
      *
-     * @param mixed[] $grocery grocery
+     * @param string $phone_code phone_code
      *
      * @return self
      */
-    public function setGrocery($grocery)
+    public function setPhoneCode($phone_code)
     {
-        $this->container['grocery'] = $grocery;
+        $this->container['phone_code'] = $phone_code;
 
         return $this;
     }
 
     /**
-     * Gets service
+     * Gets iso2
      *
-     * @return mixed[]
+     * @return string
      */
-    public function getService()
+    public function getIso2()
     {
-        return $this->container['service'];
+        return $this->container['iso2'];
     }
 
     /**
-     * Sets service
+     * Sets iso2
      *
-     * @param mixed[] $service service
+     * @param string $iso2 iso2
      *
      * @return self
      */
-    public function setService($service)
+    public function setIso2($iso2)
     {
-        $this->container['service'] = $service;
+        $this->container['iso2'] = $iso2;
 
         return $this;
     }
 
     /**
-     * Gets casino
+     * Gets name
      *
-     * @return mixed[]
+     * @return string
      */
-    public function getCasino()
+    public function getName()
     {
-        return $this->container['casino'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets casino
+     * Sets name
      *
-     * @param mixed[] $casino casino
+     * @param string $name name
      *
      * @return self
      */
-    public function setCasino($casino)
+    public function setName($name)
     {
-        $this->container['casino'] = $casino;
-
-        return $this;
-    }
-
-    /**
-     * Gets hospitality
-     *
-     * @return mixed[]
-     */
-    public function getHospitality()
-    {
-        return $this->container['hospitality'];
-    }
-
-    /**
-     * Sets hospitality
-     *
-     * @param mixed[] $hospitality hospitality
-     *
-     * @return self
-     */
-    public function setHospitality($hospitality)
-    {
-        $this->container['hospitality'] = $hospitality;
-
-        return $this;
-    }
-
-    /**
-     * Gets food
-     *
-     * @return mixed[]
-     */
-    public function getFood()
-    {
-        return $this->container['food'];
-    }
-
-    /**
-     * Sets food
-     *
-     * @param mixed[] $food food
-     *
-     * @return self
-     */
-    public function setFood($food)
-    {
-        $this->container['food'] = $food;
-
-        return $this;
-    }
-
-    /**
-     * Gets retail
-     *
-     * @return mixed[]
-     */
-    public function getRetail()
-    {
-        return $this->container['retail'];
-    }
-
-    /**
-     * Sets retail
-     *
-     * @param mixed[] $retail retail
-     *
-     * @return self
-     */
-    public function setRetail($retail)
-    {
-        $this->container['retail'] = $retail;
+        $this->container['name'] = $name;
 
         return $this;
     }

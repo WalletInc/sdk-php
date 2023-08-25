@@ -124,7 +124,7 @@ class CountriesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse20010[]|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse20011[]|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchAllCountries()
     {
@@ -140,7 +140,7 @@ class CountriesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse20010[]|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse20011[]|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchAllCountriesWithHttpInfo()
     {
@@ -183,14 +183,14 @@ class CountriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse20010[]' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse20011[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20010[]', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse20011[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -208,7 +208,7 @@ class CountriesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse20010[]';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse20011[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -226,7 +226,7 @@ class CountriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse20010[]',
+                        '\OpenAPI\Client\Model\InlineResponse20011[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class CountriesApi
      */
     public function fetchAllCountriesAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse20010[]';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse20011[]';
         $request = $this->fetchAllCountriesRequest();
 
         return $this->client

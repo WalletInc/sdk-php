@@ -63,7 +63,7 @@ No authorization required
 ## `fetchDomainsByIndustry()`
 
 ```php
-fetchDomainsByIndustry(): \OpenAPI\Client\Model\InlineResponse20011
+fetchDomainsByIndustry(): \OpenAPI\Client\Model\InlineResponse20012
 ```
 
 Fetch all industries
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\OpenAPI\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 
