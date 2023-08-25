@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006
+ * InlineResponse20012
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineResponse2006 Class Doc Comment
+ * InlineResponse20012 Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse20012 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_6';
+    protected static $openAPIModelName = 'inline_response_200_12';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entries' => '\OpenAPI\Client\Model\LedgerEntry[]',
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'entertainment' => 'mixed[]',
+        'grocery' => 'mixed[]',
+        'service' => 'mixed[]',
+        'casino' => 'mixed[]',
+        'hospitality' => 'mixed[]',
+        'food' => 'mixed[]',
+        'retail' => 'mixed[]'
     ];
 
     /**
@@ -73,9 +77,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entries' => null,
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'entertainment' => null,
+        'grocery' => null,
+        'service' => null,
+        'casino' => null,
+        'hospitality' => null,
+        'food' => null,
+        'retail' => null
     ];
 
     /**
@@ -105,9 +113,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entries' => 'entries',
-        'page_count' => 'pageCount',
-        'total_records' => 'totalRecords'
+        'entertainment' => 'entertainment',
+        'grocery' => 'grocery',
+        'service' => 'service',
+        'casino' => 'casino',
+        'hospitality' => 'hospitality',
+        'food' => 'food',
+        'retail' => 'retail'
     ];
 
     /**
@@ -116,9 +128,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entries' => 'setEntries',
-        'page_count' => 'setPageCount',
-        'total_records' => 'setTotalRecords'
+        'entertainment' => 'setEntertainment',
+        'grocery' => 'setGrocery',
+        'service' => 'setService',
+        'casino' => 'setCasino',
+        'hospitality' => 'setHospitality',
+        'food' => 'setFood',
+        'retail' => 'setRetail'
     ];
 
     /**
@@ -127,9 +143,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entries' => 'getEntries',
-        'page_count' => 'getPageCount',
-        'total_records' => 'getTotalRecords'
+        'entertainment' => 'getEntertainment',
+        'grocery' => 'getGrocery',
+        'service' => 'getService',
+        'casino' => 'getCasino',
+        'hospitality' => 'getHospitality',
+        'food' => 'getFood',
+        'retail' => 'getRetail'
     ];
 
     /**
@@ -189,9 +209,13 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['entries'] = $data['entries'] ?? null;
-        $this->container['page_count'] = $data['page_count'] ?? null;
-        $this->container['total_records'] = $data['total_records'] ?? null;
+        $this->container['entertainment'] = $data['entertainment'] ?? null;
+        $this->container['grocery'] = $data['grocery'] ?? null;
+        $this->container['service'] = $data['service'] ?? null;
+        $this->container['casino'] = $data['casino'] ?? null;
+        $this->container['hospitality'] = $data['hospitality'] ?? null;
+        $this->container['food'] = $data['food'] ?? null;
+        $this->container['retail'] = $data['retail'] ?? null;
     }
 
     /**
@@ -203,14 +227,26 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['entries'] === null) {
-            $invalidProperties[] = "'entries' can't be null";
+        if ($this->container['entertainment'] === null) {
+            $invalidProperties[] = "'entertainment' can't be null";
         }
-        if ($this->container['page_count'] === null) {
-            $invalidProperties[] = "'page_count' can't be null";
+        if ($this->container['grocery'] === null) {
+            $invalidProperties[] = "'grocery' can't be null";
         }
-        if ($this->container['total_records'] === null) {
-            $invalidProperties[] = "'total_records' can't be null";
+        if ($this->container['service'] === null) {
+            $invalidProperties[] = "'service' can't be null";
+        }
+        if ($this->container['casino'] === null) {
+            $invalidProperties[] = "'casino' can't be null";
+        }
+        if ($this->container['hospitality'] === null) {
+            $invalidProperties[] = "'hospitality' can't be null";
+        }
+        if ($this->container['food'] === null) {
+            $invalidProperties[] = "'food' can't be null";
+        }
+        if ($this->container['retail'] === null) {
+            $invalidProperties[] = "'retail' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +264,169 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entries
+     * Gets entertainment
      *
-     * @return \OpenAPI\Client\Model\LedgerEntry[]
+     * @return mixed[]
      */
-    public function getEntries()
+    public function getEntertainment()
     {
-        return $this->container['entries'];
+        return $this->container['entertainment'];
     }
 
     /**
-     * Sets entries
+     * Sets entertainment
      *
-     * @param \OpenAPI\Client\Model\LedgerEntry[] $entries entries
+     * @param mixed[] $entertainment entertainment
      *
      * @return self
      */
-    public function setEntries($entries)
+    public function setEntertainment($entertainment)
     {
-        $this->container['entries'] = $entries;
+        $this->container['entertainment'] = $entertainment;
 
         return $this;
     }
 
     /**
-     * Gets page_count
+     * Gets grocery
      *
-     * @return double
+     * @return mixed[]
      */
-    public function getPageCount()
+    public function getGrocery()
     {
-        return $this->container['page_count'];
+        return $this->container['grocery'];
     }
 
     /**
-     * Sets page_count
+     * Sets grocery
      *
-     * @param double $page_count page_count
+     * @param mixed[] $grocery grocery
      *
      * @return self
      */
-    public function setPageCount($page_count)
+    public function setGrocery($grocery)
     {
-        $this->container['page_count'] = $page_count;
+        $this->container['grocery'] = $grocery;
 
         return $this;
     }
 
     /**
-     * Gets total_records
+     * Gets service
      *
-     * @return double
+     * @return mixed[]
      */
-    public function getTotalRecords()
+    public function getService()
     {
-        return $this->container['total_records'];
+        return $this->container['service'];
     }
 
     /**
-     * Sets total_records
+     * Sets service
      *
-     * @param double $total_records total_records
+     * @param mixed[] $service service
      *
      * @return self
      */
-    public function setTotalRecords($total_records)
+    public function setService($service)
     {
-        $this->container['total_records'] = $total_records;
+        $this->container['service'] = $service;
+
+        return $this;
+    }
+
+    /**
+     * Gets casino
+     *
+     * @return mixed[]
+     */
+    public function getCasino()
+    {
+        return $this->container['casino'];
+    }
+
+    /**
+     * Sets casino
+     *
+     * @param mixed[] $casino casino
+     *
+     * @return self
+     */
+    public function setCasino($casino)
+    {
+        $this->container['casino'] = $casino;
+
+        return $this;
+    }
+
+    /**
+     * Gets hospitality
+     *
+     * @return mixed[]
+     */
+    public function getHospitality()
+    {
+        return $this->container['hospitality'];
+    }
+
+    /**
+     * Sets hospitality
+     *
+     * @param mixed[] $hospitality hospitality
+     *
+     * @return self
+     */
+    public function setHospitality($hospitality)
+    {
+        $this->container['hospitality'] = $hospitality;
+
+        return $this;
+    }
+
+    /**
+     * Gets food
+     *
+     * @return mixed[]
+     */
+    public function getFood()
+    {
+        return $this->container['food'];
+    }
+
+    /**
+     * Sets food
+     *
+     * @param mixed[] $food food
+     *
+     * @return self
+     */
+    public function setFood($food)
+    {
+        $this->container['food'] = $food;
+
+        return $this;
+    }
+
+    /**
+     * Gets retail
+     *
+     * @return mixed[]
+     */
+    public function getRetail()
+    {
+        return $this->container['retail'];
+    }
+
+    /**
+     * Sets retail
+     *
+     * @param mixed[] $retail retail
+     *
+     * @return self
+     */
+    public function setRetail($retail)
+    {
+        $this->container['retail'] = $retail;
 
         return $this;
     }

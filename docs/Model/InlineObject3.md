@@ -1,11 +1,10 @@
-# # InlineResponse2008
+# # InlineObject3
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **double** |  |
-**length** | **double** |  |
-**results** | [**\OpenAPI\Client\Model\OptInListSubscriber[]**](OptInListSubscriber.md) |  |
+**phone_verification_token** | **string** |  |
+**merchant_id** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

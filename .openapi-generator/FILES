@@ -49,6 +49,7 @@ docs/Api/StaticVoucherCampaignGroupsApi.md
 docs/Api/StaticVoucherCampaignsApi.md
 docs/Api/StaticVouchersApi.md
 docs/Api/SystemApi.md
+docs/Api/TicketApi.md
 docs/Api/TransactionLedgerApi.md
 docs/Api/UtilitiesApi.md
 docs/Api/VideosApi.md
@@ -109,10 +110,13 @@ docs/Model/ImportedListRecipient.md
 docs/Model/InboundSMS.md
 docs/Model/InlineObject.md
 docs/Model/InlineObject1.md
+docs/Model/InlineObject2.md
+docs/Model/InlineObject3.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse20010.md
 docs/Model/InlineResponse20011.md
+docs/Model/InlineResponse20012.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse2004.md
@@ -253,6 +257,7 @@ docs/Model/SubscriptionFeature.md
 docs/Model/SubscriptionPlan.md
 docs/Model/SubscriptionProduct.md
 docs/Model/Tcpa.md
+docs/Model/Ticket.md
 docs/Model/UpdateStaticVoucherCampaignWithVoucher.md
 docs/Model/VSCampaignGeneratedMessage.md
 docs/Model/VSCampaignGeneratedMessagePagination.md
@@ -381,6 +386,9 @@ docs/Model/WTStaticVoucherUpdateParams.md
 docs/Model/WTSystemApprovePhoneNumber.md
 docs/Model/WTSystemRoleCreate.md
 docs/Model/WTTCPAOpt.md
+docs/Model/WTTicket.md
+docs/Model/WTTicketCreateParams.md
+docs/Model/WTTicketUpdateParams.md
 docs/Model/WTTwilioRequestAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCode.md
 docs/Model/WTVideoCreateParams.md
@@ -443,6 +451,7 @@ lib/Api/StaticVoucherCampaignGroupsApi.php
 lib/Api/StaticVoucherCampaignsApi.php
 lib/Api/StaticVouchersApi.php
 lib/Api/SystemApi.php
+lib/Api/TicketApi.php
 lib/Api/TransactionLedgerApi.php
 lib/Api/UtilitiesApi.php
 lib/Api/VideosApi.php
@@ -506,10 +515,13 @@ lib/Model/ImportedListRecipient.php
 lib/Model/InboundSMS.php
 lib/Model/InlineObject.php
 lib/Model/InlineObject1.php
+lib/Model/InlineObject2.php
+lib/Model/InlineObject3.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse20010.php
 lib/Model/InlineResponse20011.php
+lib/Model/InlineResponse20012.php
 lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse2004.php
@@ -651,6 +663,7 @@ lib/Model/SubscriptionFeature.php
 lib/Model/SubscriptionPlan.php
 lib/Model/SubscriptionProduct.php
 lib/Model/Tcpa.php
+lib/Model/Ticket.php
 lib/Model/UpdateStaticVoucherCampaignWithVoucher.php
 lib/Model/VSCampaignGeneratedMessage.php
 lib/Model/VSCampaignGeneratedMessagePagination.php
@@ -779,6 +792,9 @@ lib/Model/WTStaticVoucherUpdateParams.php
 lib/Model/WTSystemApprovePhoneNumber.php
 lib/Model/WTSystemRoleCreate.php
 lib/Model/WTTCPAOpt.php
+lib/Model/WTTicket.php
+lib/Model/WTTicketCreateParams.php
+lib/Model/WTTicketUpdateParams.php
 lib/Model/WTTwilioRequestAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCode.php
 lib/Model/WTVideoCreateParams.php
@@ -796,3 +812,11 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/TicketApiTest.php
+test/Model/InlineObject2Test.php
+test/Model/InlineObject3Test.php
+test/Model/InlineResponse20012Test.php
+test/Model/TicketTest.php
+test/Model/WTTicketCreateParamsTest.php
+test/Model/WTTicketTest.php
+test/Model/WTTicketUpdateParamsTest.php

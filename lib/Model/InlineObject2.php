@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006
+ * InlineObject2
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineResponse2006 Class Doc Comment
+ * InlineObject2 Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_6';
+    protected static $openAPIModelName = 'inline_object_2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entries' => '\OpenAPI\Client\Model\LedgerEntry[]',
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'claimed_by_phone_number' => 'string'
     ];
 
     /**
@@ -73,9 +71,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entries' => null,
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'claimed_by_phone_number' => null
     ];
 
     /**
@@ -105,9 +101,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entries' => 'entries',
-        'page_count' => 'pageCount',
-        'total_records' => 'totalRecords'
+        'claimed_by_phone_number' => 'claimedByPhoneNumber'
     ];
 
     /**
@@ -116,9 +110,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entries' => 'setEntries',
-        'page_count' => 'setPageCount',
-        'total_records' => 'setTotalRecords'
+        'claimed_by_phone_number' => 'setClaimedByPhoneNumber'
     ];
 
     /**
@@ -127,9 +119,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entries' => 'getEntries',
-        'page_count' => 'getPageCount',
-        'total_records' => 'getTotalRecords'
+        'claimed_by_phone_number' => 'getClaimedByPhoneNumber'
     ];
 
     /**
@@ -189,9 +179,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['entries'] = $data['entries'] ?? null;
-        $this->container['page_count'] = $data['page_count'] ?? null;
-        $this->container['total_records'] = $data['total_records'] ?? null;
+        $this->container['claimed_by_phone_number'] = $data['claimed_by_phone_number'] ?? null;
     }
 
     /**
@@ -203,14 +191,8 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['entries'] === null) {
-            $invalidProperties[] = "'entries' can't be null";
-        }
-        if ($this->container['page_count'] === null) {
-            $invalidProperties[] = "'page_count' can't be null";
-        }
-        if ($this->container['total_records'] === null) {
-            $invalidProperties[] = "'total_records' can't be null";
+        if ($this->container['claimed_by_phone_number'] === null) {
+            $invalidProperties[] = "'claimed_by_phone_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +210,25 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entries
+     * Gets claimed_by_phone_number
      *
-     * @return \OpenAPI\Client\Model\LedgerEntry[]
+     * @return string
      */
-    public function getEntries()
+    public function getClaimedByPhoneNumber()
     {
-        return $this->container['entries'];
+        return $this->container['claimed_by_phone_number'];
     }
 
     /**
-     * Sets entries
+     * Sets claimed_by_phone_number
      *
-     * @param \OpenAPI\Client\Model\LedgerEntry[] $entries entries
+     * @param string $claimed_by_phone_number claimed_by_phone_number
      *
      * @return self
      */
-    public function setEntries($entries)
+    public function setClaimedByPhoneNumber($claimed_by_phone_number)
     {
-        $this->container['entries'] = $entries;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_count
-     *
-     * @return double
-     */
-    public function getPageCount()
-    {
-        return $this->container['page_count'];
-    }
-
-    /**
-     * Sets page_count
-     *
-     * @param double $page_count page_count
-     *
-     * @return self
-     */
-    public function setPageCount($page_count)
-    {
-        $this->container['page_count'] = $page_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_records
-     *
-     * @return double
-     */
-    public function getTotalRecords()
-    {
-        return $this->container['total_records'];
-    }
-
-    /**
-     * Sets total_records
-     *
-     * @param double $total_records total_records
-     *
-     * @return self
-     */
-    public function setTotalRecords($total_records)
-    {
-        $this->container['total_records'] = $total_records;
+        $this->container['claimed_by_phone_number'] = $claimed_by_phone_number;
 
         return $this;
     }
