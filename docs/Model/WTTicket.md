@@ -15,9 +15,13 @@ Name | Type | Description | Notes
 **is_active** | **bool** |  |
 **merchant_id** | **string** |  |
 **is_claimed** | **bool** |  | [optional]
-**is_redeemed** | **bool** |  | [optional]
 **date_time_claimed** | **\DateTime** |  | [optional]
-**date_time_redeemed** | **\DateTime** |  | [optional]
 **claimed_by_phone_number** | **string** |  | [optional]
+**redeemed_source** | **string** |  | [optional]
+**redeemed_transaction_id** | **string** |  | [optional]
+**transaction_type** | **string** |  | [optional]
+**register_id** | **string** |  | [optional]
+**is_redeemed** | **bool** |  | [optional]
+**date_time_redeemed** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
