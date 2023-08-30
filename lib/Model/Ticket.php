@@ -71,10 +71,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_active' => 'bool',
         'merchant_id' => 'string',
         'is_claimed' => 'bool',
-        'is_redeemed' => 'bool',
         'date_time_claimed' => '\DateTime',
-        'date_time_redeemed' => '\DateTime',
-        'claimed_by_phone_number' => 'string'
+        'claimed_by_phone_number' => 'string',
+        'redeemed_source' => 'string',
+        'redeemed_transaction_id' => 'string',
+        'transaction_type' => 'string',
+        'register_id' => 'string',
+        'is_redeemed' => 'bool',
+        'date_time_redeemed' => '\DateTime'
     ];
 
     /**
@@ -96,10 +100,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_active' => null,
         'merchant_id' => null,
         'is_claimed' => null,
-        'is_redeemed' => null,
         'date_time_claimed' => 'date-time',
-        'date_time_redeemed' => 'date-time',
-        'claimed_by_phone_number' => null
+        'claimed_by_phone_number' => null,
+        'redeemed_source' => null,
+        'redeemed_transaction_id' => null,
+        'transaction_type' => null,
+        'register_id' => null,
+        'is_redeemed' => null,
+        'date_time_redeemed' => 'date-time'
     ];
 
     /**
@@ -140,10 +148,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_active' => 'isActive',
         'merchant_id' => 'merchantID',
         'is_claimed' => 'isClaimed',
-        'is_redeemed' => 'isRedeemed',
         'date_time_claimed' => 'dateTimeClaimed',
-        'date_time_redeemed' => 'dateTimeRedeemed',
-        'claimed_by_phone_number' => 'claimedByPhoneNumber'
+        'claimed_by_phone_number' => 'claimedByPhoneNumber',
+        'redeemed_source' => 'redeemedSource',
+        'redeemed_transaction_id' => 'redeemedTransactionID',
+        'transaction_type' => 'transactionType',
+        'register_id' => 'registerID',
+        'is_redeemed' => 'isRedeemed',
+        'date_time_redeemed' => 'dateTimeRedeemed'
     ];
 
     /**
@@ -163,10 +175,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_active' => 'setIsActive',
         'merchant_id' => 'setMerchantId',
         'is_claimed' => 'setIsClaimed',
-        'is_redeemed' => 'setIsRedeemed',
         'date_time_claimed' => 'setDateTimeClaimed',
-        'date_time_redeemed' => 'setDateTimeRedeemed',
-        'claimed_by_phone_number' => 'setClaimedByPhoneNumber'
+        'claimed_by_phone_number' => 'setClaimedByPhoneNumber',
+        'redeemed_source' => 'setRedeemedSource',
+        'redeemed_transaction_id' => 'setRedeemedTransactionId',
+        'transaction_type' => 'setTransactionType',
+        'register_id' => 'setRegisterId',
+        'is_redeemed' => 'setIsRedeemed',
+        'date_time_redeemed' => 'setDateTimeRedeemed'
     ];
 
     /**
@@ -186,10 +202,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_active' => 'getIsActive',
         'merchant_id' => 'getMerchantId',
         'is_claimed' => 'getIsClaimed',
-        'is_redeemed' => 'getIsRedeemed',
         'date_time_claimed' => 'getDateTimeClaimed',
-        'date_time_redeemed' => 'getDateTimeRedeemed',
-        'claimed_by_phone_number' => 'getClaimedByPhoneNumber'
+        'claimed_by_phone_number' => 'getClaimedByPhoneNumber',
+        'redeemed_source' => 'getRedeemedSource',
+        'redeemed_transaction_id' => 'getRedeemedTransactionId',
+        'transaction_type' => 'getTransactionType',
+        'register_id' => 'getRegisterId',
+        'is_redeemed' => 'getIsRedeemed',
+        'date_time_redeemed' => 'getDateTimeRedeemed'
     ];
 
     /**
@@ -260,10 +280,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['is_active'] = $data['is_active'] ?? null;
         $this->container['merchant_id'] = $data['merchant_id'] ?? null;
         $this->container['is_claimed'] = $data['is_claimed'] ?? null;
-        $this->container['is_redeemed'] = $data['is_redeemed'] ?? null;
         $this->container['date_time_claimed'] = $data['date_time_claimed'] ?? null;
-        $this->container['date_time_redeemed'] = $data['date_time_redeemed'] ?? null;
         $this->container['claimed_by_phone_number'] = $data['claimed_by_phone_number'] ?? null;
+        $this->container['redeemed_source'] = $data['redeemed_source'] ?? null;
+        $this->container['redeemed_transaction_id'] = $data['redeemed_transaction_id'] ?? null;
+        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
+        $this->container['register_id'] = $data['register_id'] ?? null;
+        $this->container['is_redeemed'] = $data['is_redeemed'] ?? null;
+        $this->container['date_time_redeemed'] = $data['date_time_redeemed'] ?? null;
     }
 
     /**
@@ -595,30 +619,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_redeemed
-     *
-     * @return bool|null
-     */
-    public function getIsRedeemed()
-    {
-        return $this->container['is_redeemed'];
-    }
-
-    /**
-     * Sets is_redeemed
-     *
-     * @param bool|null $is_redeemed is_redeemed
-     *
-     * @return self
-     */
-    public function setIsRedeemed($is_redeemed)
-    {
-        $this->container['is_redeemed'] = $is_redeemed;
-
-        return $this;
-    }
-
-    /**
      * Gets date_time_claimed
      *
      * @return \DateTime|null
@@ -643,30 +643,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets date_time_redeemed
-     *
-     * @return \DateTime|null
-     */
-    public function getDateTimeRedeemed()
-    {
-        return $this->container['date_time_redeemed'];
-    }
-
-    /**
-     * Sets date_time_redeemed
-     *
-     * @param \DateTime|null $date_time_redeemed date_time_redeemed
-     *
-     * @return self
-     */
-    public function setDateTimeRedeemed($date_time_redeemed)
-    {
-        $this->container['date_time_redeemed'] = $date_time_redeemed;
-
-        return $this;
-    }
-
-    /**
      * Gets claimed_by_phone_number
      *
      * @return string|null
@@ -686,6 +662,150 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setClaimedByPhoneNumber($claimed_by_phone_number)
     {
         $this->container['claimed_by_phone_number'] = $claimed_by_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemed_source
+     *
+     * @return string|null
+     */
+    public function getRedeemedSource()
+    {
+        return $this->container['redeemed_source'];
+    }
+
+    /**
+     * Sets redeemed_source
+     *
+     * @param string|null $redeemed_source redeemed_source
+     *
+     * @return self
+     */
+    public function setRedeemedSource($redeemed_source)
+    {
+        $this->container['redeemed_source'] = $redeemed_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemed_transaction_id
+     *
+     * @return string|null
+     */
+    public function getRedeemedTransactionId()
+    {
+        return $this->container['redeemed_transaction_id'];
+    }
+
+    /**
+     * Sets redeemed_transaction_id
+     *
+     * @param string|null $redeemed_transaction_id redeemed_transaction_id
+     *
+     * @return self
+     */
+    public function setRedeemedTransactionId($redeemed_transaction_id)
+    {
+        $this->container['redeemed_transaction_id'] = $redeemed_transaction_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_type
+     *
+     * @return string|null
+     */
+    public function getTransactionType()
+    {
+        return $this->container['transaction_type'];
+    }
+
+    /**
+     * Sets transaction_type
+     *
+     * @param string|null $transaction_type transaction_type
+     *
+     * @return self
+     */
+    public function setTransactionType($transaction_type)
+    {
+        $this->container['transaction_type'] = $transaction_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets register_id
+     *
+     * @return string|null
+     */
+    public function getRegisterId()
+    {
+        return $this->container['register_id'];
+    }
+
+    /**
+     * Sets register_id
+     *
+     * @param string|null $register_id register_id
+     *
+     * @return self
+     */
+    public function setRegisterId($register_id)
+    {
+        $this->container['register_id'] = $register_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_redeemed
+     *
+     * @return bool|null
+     */
+    public function getIsRedeemed()
+    {
+        return $this->container['is_redeemed'];
+    }
+
+    /**
+     * Sets is_redeemed
+     *
+     * @param bool|null $is_redeemed is_redeemed
+     *
+     * @return self
+     */
+    public function setIsRedeemed($is_redeemed)
+    {
+        $this->container['is_redeemed'] = $is_redeemed;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_time_redeemed
+     *
+     * @return \DateTime|null
+     */
+    public function getDateTimeRedeemed()
+    {
+        return $this->container['date_time_redeemed'];
+    }
+
+    /**
+     * Sets date_time_redeemed
+     *
+     * @param \DateTime|null $date_time_redeemed date_time_redeemed
+     *
+     * @return self
+     */
+    public function setDateTimeRedeemed($date_time_redeemed)
+    {
+        $this->container['date_time_redeemed'] = $date_time_redeemed;
 
         return $this;
     }

@@ -557,7 +557,7 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**saveRole**](docs/Api/SystemApi.md#saverole) | **PUT** /v2/system/roles/{roleID} | Update role
 *TicketApi* | [**archiveTicket**](docs/Api/TicketApi.md#archiveticket) | **DELETE** /v2/ticket/{id} | Archive ticket
 *TicketApi* | [**createTicket**](docs/Api/TicketApi.md#createticket) | **POST** /v2/ticket | Create ticket
-*TicketApi* | [**fetchTicket**](docs/Api/TicketApi.md#fetchticket) | **GET** /v2/ticket/{id} | Fetch static voucher
+*TicketApi* | [**fetchTicket**](docs/Api/TicketApi.md#fetchticket) | **GET** /v2/ticket/{id} | Fetch ticket
 *TicketApi* | [**restoreTicket**](docs/Api/TicketApi.md#restoreticket) | **PATCH** /v2/ticket/{id} | Restore ticket
 *TicketApi* | [**updateTicket**](docs/Api/TicketApi.md#updateticket) | **PUT** /v2/ticket/{id} | Update ticket
 *TransactionLedgerApi* | [**fetchAllLedgerTransactions**](docs/Api/TransactionLedgerApi.md#fetchallledgertransactions) | **GET** /v2/pos/ledger/transactions/all | Fetch ledger transactions by page

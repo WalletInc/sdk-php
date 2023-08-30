@@ -779,7 +779,7 @@ class TicketApi
     /**
      * Operation fetchTicket
      *
-     * Fetch static voucher
+     * Fetch ticket
      *
      * @param  mixed $id id (required)
      *
@@ -796,7 +796,7 @@ class TicketApi
     /**
      * Operation fetchTicketWithHttpInfo
      *
-     * Fetch static voucher
+     * Fetch ticket
      *
      * @param  mixed $id (required)
      *
@@ -969,7 +969,7 @@ class TicketApi
     /**
      * Operation fetchTicketAsync
      *
-     * Fetch static voucher
+     * Fetch ticket
      *
      * @param  mixed $id (required)
      *
@@ -989,7 +989,7 @@ class TicketApi
     /**
      * Operation fetchTicketAsyncWithHttpInfo
      *
-     * Fetch static voucher
+     * Fetch ticket
      *
      * @param  mixed $id (required)
      *

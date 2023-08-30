@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**archiveTicket()**](TicketApi.md#archiveTicket) | **DELETE** /v2/ticket/{id} | Archive ticket
 [**createTicket()**](TicketApi.md#createTicket) | **POST** /v2/ticket | Create ticket
-[**fetchTicket()**](TicketApi.md#fetchTicket) | **GET** /v2/ticket/{id} | Fetch static voucher
+[**fetchTicket()**](TicketApi.md#fetchTicket) | **GET** /v2/ticket/{id} | Fetch ticket
 [**restoreTicket()**](TicketApi.md#restoreTicket) | **PATCH** /v2/ticket/{id} | Restore ticket
 [**updateTicket()**](TicketApi.md#updateTicket) | **PUT** /v2/ticket/{id} | Update ticket
 
@@ -125,7 +125,7 @@ No authorization required
 fetchTicket($id): \OpenAPI\Client\Model\WTTicket
 ```
 
-Fetch static voucher
+Fetch ticket
 
 ### Example
 
