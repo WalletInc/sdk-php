@@ -1,11 +1,10 @@
-# # InlineObject1
+# # InlineObject4
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ticket_expiration_date_time** | **\DateTime** |  |
-**max_comp_tickets** | **double** |  |
-**payment_design_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**phone_verification_token** | **string** |  |
+**merchant_id** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

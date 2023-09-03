@@ -65,7 +65,7 @@ No authorization required
 ## `saveMerchantCreditPaymentDesign()`
 
 ```php
-saveMerchantCreditPaymentDesign($inline_object1): mixed
+saveMerchantCreditPaymentDesign($inline_object2): mixed
 ```
 
 Update wallet record
@@ -83,10 +83,10 @@ $apiInstance = new OpenAPI\Client\Api\ConfigurationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$inline_object1 = new \OpenAPI\Client\Model\InlineObject1(); // \OpenAPI\Client\Model\InlineObject1
+$inline_object2 = new \OpenAPI\Client\Model\InlineObject2(); // \OpenAPI\Client\Model\InlineObject2
 
 try {
-    $result = $apiInstance->saveMerchantCreditPaymentDesign($inline_object1);
+    $result = $apiInstance->saveMerchantCreditPaymentDesign($inline_object2);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfigurationApi->saveMerchantCreditPaymentDesign: ', $e->getMessage(), PHP_EOL;
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object1** | [**\OpenAPI\Client\Model\InlineObject1**](../Model/InlineObject1.md)|  |
+ **inline_object2** | [**\OpenAPI\Client\Model\InlineObject2**](../Model/InlineObject2.md)|  |
 
 ### Return type
 

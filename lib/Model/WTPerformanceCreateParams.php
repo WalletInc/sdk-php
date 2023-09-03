@@ -68,7 +68,9 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'order_number' => 'int',
         'is_sold_out' => 'bool',
         'media_url' => 'string',
-        'payment_design_id' => 'string'
+        'payment_design_id' => 'string',
+        'max_comp_tickets' => 'double',
+        'ticket_expiration_date_time' => '\DateTime'
     ];
 
     /**
@@ -87,7 +89,9 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'order_number' => 'int32',
         'is_sold_out' => null,
         'media_url' => null,
-        'payment_design_id' => null
+        'payment_design_id' => null,
+        'max_comp_tickets' => 'double',
+        'ticket_expiration_date_time' => 'date-time'
     ];
 
     /**
@@ -125,7 +129,9 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'order_number' => 'orderNumber',
         'is_sold_out' => 'isSoldOut',
         'media_url' => 'mediaURL',
-        'payment_design_id' => 'paymentDesignID'
+        'payment_design_id' => 'paymentDesignID',
+        'max_comp_tickets' => 'maxCompTickets',
+        'ticket_expiration_date_time' => 'ticketExpirationDateTime'
     ];
 
     /**
@@ -142,7 +148,9 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'order_number' => 'setOrderNumber',
         'is_sold_out' => 'setIsSoldOut',
         'media_url' => 'setMediaUrl',
-        'payment_design_id' => 'setPaymentDesignId'
+        'payment_design_id' => 'setPaymentDesignId',
+        'max_comp_tickets' => 'setMaxCompTickets',
+        'ticket_expiration_date_time' => 'setTicketExpirationDateTime'
     ];
 
     /**
@@ -159,7 +167,9 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'order_number' => 'getOrderNumber',
         'is_sold_out' => 'getIsSoldOut',
         'media_url' => 'getMediaUrl',
-        'payment_design_id' => 'getPaymentDesignId'
+        'payment_design_id' => 'getPaymentDesignId',
+        'max_comp_tickets' => 'getMaxCompTickets',
+        'ticket_expiration_date_time' => 'getTicketExpirationDateTime'
     ];
 
     /**
@@ -228,6 +238,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['is_sold_out'] = $data['is_sold_out'] ?? null;
         $this->container['media_url'] = $data['media_url'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
+        $this->container['max_comp_tickets'] = $data['max_comp_tickets'] ?? null;
+        $this->container['ticket_expiration_date_time'] = $data['ticket_expiration_date_time'] ?? null;
     }
 
     /**
@@ -538,6 +550,54 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         }
 
         $this->container['payment_design_id'] = $payment_design_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_comp_tickets
+     *
+     * @return double|null
+     */
+    public function getMaxCompTickets()
+    {
+        return $this->container['max_comp_tickets'];
+    }
+
+    /**
+     * Sets max_comp_tickets
+     *
+     * @param double|null $max_comp_tickets max_comp_tickets
+     *
+     * @return self
+     */
+    public function setMaxCompTickets($max_comp_tickets)
+    {
+        $this->container['max_comp_tickets'] = $max_comp_tickets;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticket_expiration_date_time
+     *
+     * @return \DateTime|null
+     */
+    public function getTicketExpirationDateTime()
+    {
+        return $this->container['ticket_expiration_date_time'];
+    }
+
+    /**
+     * Sets ticket_expiration_date_time
+     *
+     * @param \DateTime|null $ticket_expiration_date_time ticket_expiration_date_time
+     *
+     * @return self
+     */
+    public function setTicketExpirationDateTime($ticket_expiration_date_time)
+    {
+        $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
 
         return $this;
     }
