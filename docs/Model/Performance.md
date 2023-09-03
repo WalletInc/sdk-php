@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **is_sold_out** | **bool** | Denotes if the event has been sold out |
 **media_url** | **string** |  | [optional]
 **payment_design_id** | **string** |  | [optional]
+**max_comp_tickets** | **double** |  | [optional]
+**ticket_expiration_date_time** | **\DateTime** |  | [optional]
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

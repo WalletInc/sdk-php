@@ -425,15 +425,15 @@ class ConfigurationApi
      *
      * Update wallet record
      *
-     * @param  \OpenAPI\Client\Model\InlineObject1 $inline_object1 inline_object1 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject2 $inline_object2 inline_object2 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function saveMerchantCreditPaymentDesign($inline_object1)
+    public function saveMerchantCreditPaymentDesign($inline_object2)
     {
-        list($response) = $this->saveMerchantCreditPaymentDesignWithHttpInfo($inline_object1);
+        list($response) = $this->saveMerchantCreditPaymentDesignWithHttpInfo($inline_object2);
         return $response;
     }
 
@@ -442,15 +442,15 @@ class ConfigurationApi
      *
      * Update wallet record
      *
-     * @param  \OpenAPI\Client\Model\InlineObject1 $inline_object1 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject2 $inline_object2 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveMerchantCreditPaymentDesignWithHttpInfo($inline_object1)
+    public function saveMerchantCreditPaymentDesignWithHttpInfo($inline_object2)
     {
-        $request = $this->saveMerchantCreditPaymentDesignRequest($inline_object1);
+        $request = $this->saveMerchantCreditPaymentDesignRequest($inline_object2);
 
         try {
             $options = $this->createHttpClientOption();
@@ -595,14 +595,14 @@ class ConfigurationApi
      *
      * Update wallet record
      *
-     * @param  \OpenAPI\Client\Model\InlineObject1 $inline_object1 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject2 $inline_object2 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMerchantCreditPaymentDesignAsync($inline_object1)
+    public function saveMerchantCreditPaymentDesignAsync($inline_object2)
     {
-        return $this->saveMerchantCreditPaymentDesignAsyncWithHttpInfo($inline_object1)
+        return $this->saveMerchantCreditPaymentDesignAsyncWithHttpInfo($inline_object2)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -615,15 +615,15 @@ class ConfigurationApi
      *
      * Update wallet record
      *
-     * @param  \OpenAPI\Client\Model\InlineObject1 $inline_object1 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject2 $inline_object2 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMerchantCreditPaymentDesignAsyncWithHttpInfo($inline_object1)
+    public function saveMerchantCreditPaymentDesignAsyncWithHttpInfo($inline_object2)
     {
         $returnType = 'mixed';
-        $request = $this->saveMerchantCreditPaymentDesignRequest($inline_object1);
+        $request = $this->saveMerchantCreditPaymentDesignRequest($inline_object2);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -661,17 +661,17 @@ class ConfigurationApi
     /**
      * Create request for operation 'saveMerchantCreditPaymentDesign'
      *
-     * @param  \OpenAPI\Client\Model\InlineObject1 $inline_object1 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject2 $inline_object2 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveMerchantCreditPaymentDesignRequest($inline_object1)
+    public function saveMerchantCreditPaymentDesignRequest($inline_object2)
     {
-        // verify the required parameter 'inline_object1' is set
-        if ($inline_object1 === null || (is_array($inline_object1) && count($inline_object1) === 0)) {
+        // verify the required parameter 'inline_object2' is set
+        if ($inline_object2 === null || (is_array($inline_object2) && count($inline_object2) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inline_object1 when calling saveMerchantCreditPaymentDesign'
+                'Missing the required parameter $inline_object2 when calling saveMerchantCreditPaymentDesign'
             );
         }
 
@@ -698,11 +698,11 @@ class ConfigurationApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object1)) {
+        if (isset($inline_object2)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object1));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object2));
             } else {
-                $httpBody = $inline_object1;
+                $httpBody = $inline_object2;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

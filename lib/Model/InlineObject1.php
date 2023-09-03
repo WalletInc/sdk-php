@@ -60,6 +60,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'ticket_expiration_date_time' => '\DateTime',
+        'max_comp_tickets' => 'double',
         'payment_design_id' => 'string'
     ];
 
@@ -71,6 +73,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'ticket_expiration_date_time' => 'date-time',
+        'max_comp_tickets' => 'double',
         'payment_design_id' => null
     ];
 
@@ -101,6 +105,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'ticket_expiration_date_time' => 'ticketExpirationDateTime',
+        'max_comp_tickets' => 'maxCompTickets',
         'payment_design_id' => 'paymentDesignID'
     ];
 
@@ -110,6 +116,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'ticket_expiration_date_time' => 'setTicketExpirationDateTime',
+        'max_comp_tickets' => 'setMaxCompTickets',
         'payment_design_id' => 'setPaymentDesignId'
     ];
 
@@ -119,6 +127,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'ticket_expiration_date_time' => 'getTicketExpirationDateTime',
+        'max_comp_tickets' => 'getMaxCompTickets',
         'payment_design_id' => 'getPaymentDesignId'
     ];
 
@@ -179,6 +189,8 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['ticket_expiration_date_time'] = $data['ticket_expiration_date_time'] ?? null;
+        $this->container['max_comp_tickets'] = $data['max_comp_tickets'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
     }
 
@@ -191,21 +203,15 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['ticket_expiration_date_time'] === null) {
+            $invalidProperties[] = "'ticket_expiration_date_time' can't be null";
+        }
+        if ($this->container['max_comp_tickets'] === null) {
+            $invalidProperties[] = "'max_comp_tickets' can't be null";
+        }
         if ($this->container['payment_design_id'] === null) {
             $invalidProperties[] = "'payment_design_id' can't be null";
         }
-        if ((mb_strlen($this->container['payment_design_id']) > 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
-        }
-
-        if ((mb_strlen($this->container['payment_design_id']) < 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
-        }
-
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -220,6 +226,54 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ticket_expiration_date_time
+     *
+     * @return \DateTime
+     */
+    public function getTicketExpirationDateTime()
+    {
+        return $this->container['ticket_expiration_date_time'];
+    }
+
+    /**
+     * Sets ticket_expiration_date_time
+     *
+     * @param \DateTime $ticket_expiration_date_time ticket_expiration_date_time
+     *
+     * @return self
+     */
+    public function setTicketExpirationDateTime($ticket_expiration_date_time)
+    {
+        $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_comp_tickets
+     *
+     * @return double
+     */
+    public function getMaxCompTickets()
+    {
+        return $this->container['max_comp_tickets'];
+    }
+
+    /**
+     * Sets max_comp_tickets
+     *
+     * @param double $max_comp_tickets max_comp_tickets
+     *
+     * @return self
+     */
+    public function setMaxCompTickets($max_comp_tickets)
+    {
+        $this->container['max_comp_tickets'] = $max_comp_tickets;
+
+        return $this;
+    }
 
     /**
      * Gets payment_design_id
@@ -240,16 +294,6 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPaymentDesignId($payment_design_id)
     {
-        if ((mb_strlen($payment_design_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject1., must be smaller than or equal to 10.');
-        }
-        if ((mb_strlen($payment_design_id) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject1., must be bigger than or equal to 10.');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
-            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling InlineObject1., must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-
         $this->container['payment_design_id'] = $payment_design_id;
 
         return $this;
