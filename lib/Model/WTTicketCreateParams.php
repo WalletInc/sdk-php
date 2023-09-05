@@ -64,6 +64,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         'recipient_email_address' => 'string',
         'recipient_member_id' => 'string',
         'is_comp' => 'bool',
+        'quantity' => 'double',
         'performance_id' => 'string'
     ];
 
@@ -79,6 +80,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         'recipient_email_address' => null,
         'recipient_member_id' => null,
         'is_comp' => null,
+        'quantity' => 'double',
         'performance_id' => null
     ];
 
@@ -113,6 +115,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         'recipient_email_address' => 'recipientEmailAddress',
         'recipient_member_id' => 'recipientMemberID',
         'is_comp' => 'isComp',
+        'quantity' => 'quantity',
         'performance_id' => 'performanceID'
     ];
 
@@ -126,6 +129,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         'recipient_email_address' => 'setRecipientEmailAddress',
         'recipient_member_id' => 'setRecipientMemberId',
         'is_comp' => 'setIsComp',
+        'quantity' => 'setQuantity',
         'performance_id' => 'setPerformanceId'
     ];
 
@@ -139,6 +143,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         'recipient_email_address' => 'getRecipientEmailAddress',
         'recipient_member_id' => 'getRecipientMemberId',
         'is_comp' => 'getIsComp',
+        'quantity' => 'getQuantity',
         'performance_id' => 'getPerformanceId'
     ];
 
@@ -203,6 +208,7 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['recipient_email_address'] = $data['recipient_email_address'] ?? null;
         $this->container['recipient_member_id'] = $data['recipient_member_id'] ?? null;
         $this->container['is_comp'] = $data['is_comp'] ?? null;
+        $this->container['quantity'] = $data['quantity'] ?? null;
         $this->container['performance_id'] = $data['performance_id'] ?? null;
     }
 
@@ -214,6 +220,10 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
+            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
+        }
 
         if ($this->container['performance_id'] === null) {
             $invalidProperties[] = "'performance_id' can't be null";
@@ -325,6 +335,35 @@ class WTTicketCreateParams implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setIsComp($is_comp)
     {
         $this->container['is_comp'] = $is_comp;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return double|null
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param double|null $quantity The number of tickets allocated to the recipient.
+     *
+     * @return self
+     */
+    public function setQuantity($quantity)
+    {
+
+        if (!is_null($quantity) && ($quantity < 1)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling WTTicketCreateParams., must be bigger than or equal to 1.');
+        }
+
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
