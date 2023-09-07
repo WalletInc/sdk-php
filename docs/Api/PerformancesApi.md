@@ -400,7 +400,7 @@ No authorization required
 ## `fetchPerformanceTicketsPage()`
 
 ```php
-fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2005
+fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2005
 ```
 
 Fetch tickets by page
@@ -421,10 +421,12 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
 $performance_id = NULL; // mixed
 $page_num = 3.4; // double
 $page_size = 3.4; // double
+$filter_comps = True; // bool
+$filter_claimed = True; // bool
 $is_archive_included = True; // bool
 
 try {
-    $result = $apiInstance->fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $is_archive_included);
+    $result = $apiInstance->fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PerformancesApi->fetchPerformanceTicketsPage: ', $e->getMessage(), PHP_EOL;
@@ -438,6 +440,8 @@ Name | Type | Description  | Notes
  **performance_id** | [**mixed**](../Model/.md)|  |
  **page_num** | **double**|  |
  **page_size** | **double**|  |
+ **filter_comps** | **bool**|  | [optional]
+ **filter_claimed** | **bool**|  | [optional]
  **is_archive_included** | **bool**|  | [optional]
 
 ### Return type
