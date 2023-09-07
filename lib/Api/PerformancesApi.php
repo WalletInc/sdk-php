@@ -2452,15 +2452,17 @@ class PerformancesApi
      * @param  mixed $performance_id performance_id (required)
      * @param  double $page_num page_num (required)
      * @param  double $page_size page_size (required)
+     * @param  bool $filter_comps filter_comps (optional)
+     * @param  bool $filter_claimed filter_claimed (optional)
      * @param  bool $is_archive_included is_archive_included (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $is_archive_included = null)
+    public function fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
-        list($response) = $this->fetchPerformanceTicketsPageWithHttpInfo($performance_id, $page_num, $page_size, $is_archive_included);
+        list($response) = $this->fetchPerformanceTicketsPageWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
         return $response;
     }
 
@@ -2472,15 +2474,17 @@ class PerformancesApi
      * @param  mixed $performance_id (required)
      * @param  double $page_num (required)
      * @param  double $page_size (required)
+     * @param  bool $filter_comps (optional)
+     * @param  bool $filter_claimed (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchPerformanceTicketsPageWithHttpInfo($performance_id, $page_num, $page_size, $is_archive_included = null)
+    public function fetchPerformanceTicketsPageWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
-        $request = $this->fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $is_archive_included);
+        $request = $this->fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2628,14 +2632,16 @@ class PerformancesApi
      * @param  mixed $performance_id (required)
      * @param  double $page_num (required)
      * @param  double $page_size (required)
+     * @param  bool $filter_comps (optional)
+     * @param  bool $filter_claimed (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchPerformanceTicketsPageAsync($performance_id, $page_num, $page_size, $is_archive_included = null)
+    public function fetchPerformanceTicketsPageAsync($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
-        return $this->fetchPerformanceTicketsPageAsyncWithHttpInfo($performance_id, $page_num, $page_size, $is_archive_included)
+        return $this->fetchPerformanceTicketsPageAsyncWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2651,15 +2657,17 @@ class PerformancesApi
      * @param  mixed $performance_id (required)
      * @param  double $page_num (required)
      * @param  double $page_size (required)
+     * @param  bool $filter_comps (optional)
+     * @param  bool $filter_claimed (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchPerformanceTicketsPageAsyncWithHttpInfo($performance_id, $page_num, $page_size, $is_archive_included = null)
+    public function fetchPerformanceTicketsPageAsyncWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
         $returnType = '\OpenAPI\Client\Model\InlineResponse2005';
-        $request = $this->fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $is_archive_included);
+        $request = $this->fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2700,12 +2708,14 @@ class PerformancesApi
      * @param  mixed $performance_id (required)
      * @param  double $page_num (required)
      * @param  double $page_size (required)
+     * @param  bool $filter_comps (optional)
+     * @param  bool $filter_claimed (optional)
      * @param  bool $is_archive_included (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $is_archive_included = null)
+    public function fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
         // verify the required parameter 'performance_id' is set
         if ($performance_id === null || (is_array($performance_id) && count($performance_id) === 0)) {
@@ -2753,6 +2763,28 @@ class PerformancesApi
             }
             else {
                 $queryParams['pageSize'] = $page_size;
+            }
+        }
+        // query params
+        if ($filter_comps !== null) {
+            if('form' === 'form' && is_array($filter_comps)) {
+                foreach($filter_comps as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['filterComps'] = $filter_comps;
+            }
+        }
+        // query params
+        if ($filter_claimed !== null) {
+            if('form' === 'form' && is_array($filter_claimed)) {
+                foreach($filter_claimed as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['filterClaimed'] = $filter_claimed;
             }
         }
         // query params
