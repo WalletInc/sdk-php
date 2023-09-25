@@ -50,18 +50,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AdvertisementCreditsApi(
+$apiInstance = new OpenAPI\Client\Api\A2PApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$wta2_p_application_create_params = new \OpenAPI\Client\Model\WTA2PApplicationCreateParams(); // \OpenAPI\Client\Model\WTA2PApplicationCreateParams
 
 try {
-    $result = $apiInstance->archiveAdvertisementCredit($id);
+    $result = $apiInstance->createA2PApplication($wta2_p_application_create_params);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdvertisementCreditsApi->archiveAdvertisementCredit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling A2PApi->createA2PApplication: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -72,6 +72,10 @@ All URIs are relative to *https://api.wall.et*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*A2PApi* | [**createA2PApplication**](docs/Api/A2PApi.md#createa2papplication) | **POST** /v2/a2p/application | Create A2P Application
+*A2PApi* | [**createA2PRegistration**](docs/Api/A2PApi.md#createa2pregistration) | **POST** /v2/a2p/registration | Create A2P Registration
+*A2PApi* | [**fetchA2PApplication**](docs/Api/A2PApi.md#fetcha2papplication) | **GET** /v2/a2p/application | Fetch A2P Application
+*A2PApi* | [**fetchA2PRegistration**](docs/Api/A2PApi.md#fetcha2pregistration) | **GET** /v2/a2p/registration | Fetch A2P Registration
 *AdvertisementCreditsApi* | [**archiveAdvertisementCredit**](docs/Api/AdvertisementCreditsApi.md#archiveadvertisementcredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit
 *AdvertisementCreditsApi* | [**createAdvertisementCredit**](docs/Api/AdvertisementCreditsApi.md#createadvertisementcredit) | **POST** /v2/payment/advertisementCredit | Create ad credit
 *AdvertisementCreditsApi* | [**fetchAdvertisementCreditById**](docs/Api/AdvertisementCreditsApi.md#fetchadvertisementcreditbyid) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit
@@ -555,6 +559,7 @@ Class | Method | HTTP request | Description
 *SystemApi* | [**fetchAuditLogOfRoles**](docs/Api/SystemApi.md#fetchauditlogofroles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log
 *SystemApi* | [**fetchEmployeesWithRole**](docs/Api/SystemApi.md#fetchemployeeswithrole) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role
 *SystemApi* | [**fetchWebpagesForRole**](docs/Api/SystemApi.md#fetchwebpagesforrole) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
+*SystemApi* | [**getPaymentPrefixes**](docs/Api/SystemApi.md#getpaymentprefixes) | **GET** /v2/system/prefixes | Get payment prefixes
 *SystemApi* | [**loadRole**](docs/Api/SystemApi.md#loadrole) | **GET** /v2/system/roles/{roleID} | Fetch role
 *SystemApi* | [**saveRole**](docs/Api/SystemApi.md#saverole) | **PUT** /v2/system/roles/{roleID} | Update role
 *TicketApi* | [**archiveTicket**](docs/Api/TicketApi.md#archiveticket) | **DELETE** /v2/ticket/{id} | Archive ticket
@@ -563,7 +568,6 @@ Class | Method | HTTP request | Description
 *TicketApi* | [**restoreTicket**](docs/Api/TicketApi.md#restoreticket) | **PATCH** /v2/ticket/{id} | Restore ticket
 *TicketApi* | [**updateTicket**](docs/Api/TicketApi.md#updateticket) | **PUT** /v2/ticket/{id} | Update ticket
 *TransactionLedgerApi* | [**fetchAllLedgerTransactions**](docs/Api/TransactionLedgerApi.md#fetchallledgertransactions) | **GET** /v2/pos/ledger/transactions/all | Fetch ledger transactions by page
-*UtilitiesApi* | [**getPaymentPrefixes**](docs/Api/UtilitiesApi.md#getpaymentprefixes) | **GET** /v2/payment/prefixes | Get payment prefixes
 *VideosApi* | [**archiveVideo**](docs/Api/VideosApi.md#archivevideo) | **DELETE** /v2/video/{id} | Archive video
 *VideosApi* | [**createVideo**](docs/Api/VideosApi.md#createvideo) | **POST** /v2/video | Create video
 *VideosApi* | [**fetchAllVideo**](docs/Api/VideosApi.md#fetchallvideo) | **GET** /v2/video/all | Fetch all video
@@ -605,6 +609,11 @@ Class | Method | HTTP request | Description
 - [AuthError](docs/Model/AuthError.md)
 - [AvailablePhoneNumbersRequest](docs/Model/AvailablePhoneNumbersRequest.md)
 - [BrowserDetails](docs/Model/BrowserDetails.md)
+- [BusinessClassification](docs/Model/BusinessClassification.md)
+- [BusinessIndustry](docs/Model/BusinessIndustry.md)
+- [BusinessRegionsOfOperation](docs/Model/BusinessRegionsOfOperation.md)
+- [BusinessRegistrationIdentifier](docs/Model/BusinessRegistrationIdentifier.md)
+- [BusinessType](docs/Model/BusinessType.md)
 - [ClickFunnelAmount](docs/Model/ClickFunnelAmount.md)
 - [ClickFunnelContact](docs/Model/ClickFunnelContact.md)
 - [ClickFunnelContactProfile](docs/Model/ClickFunnelContactProfile.md)
@@ -658,6 +667,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse2008](docs/Model/InlineResponse2008.md)
 - [InlineResponse2009](docs/Model/InlineResponse2009.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
+- [JobPosition](docs/Model/JobPosition.md)
 - [LedgerEntry](docs/Model/LedgerEntry.md)
 - [LinkBook](docs/Model/LinkBook.md)
 - [LinkBookSection](docs/Model/LinkBookSection.md)
@@ -712,7 +722,6 @@ Class | Method | HTTP request | Description
 - [PaginationRequestWithIDAndWithoutSortOptions](docs/Model/PaginationRequestWithIDAndWithoutSortOptions.md)
 - [PaginationRequestWithSortOptions](docs/Model/PaginationRequestWithSortOptions.md)
 - [PaymentDesign](docs/Model/PaymentDesign.md)
-- [PaymentPrefixes](docs/Model/PaymentPrefixes.md)
 - [Performance](docs/Model/Performance.md)
 - [PhoneNumber](docs/Model/PhoneNumber.md)
 - [PhoneNumberCapabilities](docs/Model/PhoneNumberCapabilities.md)
@@ -796,6 +805,7 @@ Class | Method | HTTP request | Description
 - [VSDynamicVoucherStatus](docs/Model/VSDynamicVoucherStatus.md)
 - [Video](docs/Model/Video.md)
 - [VirtualBusinessCard](docs/Model/VirtualBusinessCard.md)
+- [WTA2PApplicationCreateParams](docs/Model/WTA2PApplicationCreateParams.md)
 - [WTAdvertisementCredit](docs/Model/WTAdvertisementCredit.md)
 - [WTAdvertisementCreditCreateParams](docs/Model/WTAdvertisementCreditCreateParams.md)
 - [WTAdvertisementCreditScan](docs/Model/WTAdvertisementCreditScan.md)

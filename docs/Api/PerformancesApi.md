@@ -74,7 +74,7 @@ No authorization required
 ## `countClaimedComps()`
 
 ```php
-countClaimedComps($id): \OpenAPI\Client\Model\InlineResponse2002
+countClaimedComps($id): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Count number claimed
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ No authorization required
 ## `countRedeemedComps()`
 
 ```php
-countRedeemedComps($id): \OpenAPI\Client\Model\InlineResponse2002
+countRedeemedComps($id): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Count number redeemed
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -400,7 +400,7 @@ No authorization required
 ## `fetchPerformanceTicketsPage()`
 
 ```php
-fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2005
+fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2004
 ```
 
 Fetch tickets by page
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\OpenAPI\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

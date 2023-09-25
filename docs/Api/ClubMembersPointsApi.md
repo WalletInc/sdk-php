@@ -343,7 +343,7 @@ No authorization required
 ## `fetchMembersCount()`
 
 ```php
-fetchMembersCount(): \OpenAPI\Client\Model\InlineResponse2002
+fetchMembersCount(): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Count active members
@@ -376,7 +376,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

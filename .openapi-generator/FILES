@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 composer.json
+docs/Api/A2PApi.md
 docs/Api/AdvertisementCreditsApi.md
 docs/Api/AmenitiesApi.md
 docs/Api/AnalyticsApi.md
@@ -51,7 +52,6 @@ docs/Api/StaticVouchersApi.md
 docs/Api/SystemApi.md
 docs/Api/TicketApi.md
 docs/Api/TransactionLedgerApi.md
-docs/Api/UtilitiesApi.md
 docs/Api/VideosApi.md
 docs/Api/VirtualBusinessCardApi.md
 docs/Api/WebTerminalApi.md
@@ -74,6 +74,11 @@ docs/Model/ApplicableTerminalsAnyOf6.md
 docs/Model/AuthError.md
 docs/Model/AvailablePhoneNumbersRequest.md
 docs/Model/BrowserDetails.md
+docs/Model/BusinessClassification.md
+docs/Model/BusinessIndustry.md
+docs/Model/BusinessRegionsOfOperation.md
+docs/Model/BusinessRegistrationIdentifier.md
+docs/Model/BusinessType.md
 docs/Model/ClickFunnelAmount.md
 docs/Model/ClickFunnelContact.md
 docs/Model/ClickFunnelContactProfile.md
@@ -127,6 +132,7 @@ docs/Model/InlineResponse2007.md
 docs/Model/InlineResponse2008.md
 docs/Model/InlineResponse2009.md
 docs/Model/InternalServerError.md
+docs/Model/JobPosition.md
 docs/Model/LedgerEntry.md
 docs/Model/LinkBook.md
 docs/Model/LinkBookSection.md
@@ -181,7 +187,6 @@ docs/Model/PaginatedWTMerchantCredits.md
 docs/Model/PaginationRequestWithIDAndWithoutSortOptions.md
 docs/Model/PaginationRequestWithSortOptions.md
 docs/Model/PaymentDesign.md
-docs/Model/PaymentPrefixes.md
 docs/Model/Performance.md
 docs/Model/PhoneNumber.md
 docs/Model/PhoneNumberCapabilities.md
@@ -265,6 +270,7 @@ docs/Model/VSCampaignGeneratedMessagePagination.md
 docs/Model/VSDynamicVoucherStatus.md
 docs/Model/Video.md
 docs/Model/VirtualBusinessCard.md
+docs/Model/WTA2PApplicationCreateParams.md
 docs/Model/WTAdvertisementCredit.md
 docs/Model/WTAdvertisementCreditCreateParams.md
 docs/Model/WTAdvertisementCreditScan.md
@@ -406,6 +412,7 @@ docs/Model/WalletConfiguration.md
 docs/Model/WalletPageView.md
 docs/Model/Webpage.md
 git_push.sh
+lib/Api/A2PApi.php
 lib/Api/AdvertisementCreditsApi.php
 lib/Api/AmenitiesApi.php
 lib/Api/AnalyticsApi.php
@@ -454,7 +461,6 @@ lib/Api/StaticVouchersApi.php
 lib/Api/SystemApi.php
 lib/Api/TicketApi.php
 lib/Api/TransactionLedgerApi.php
-lib/Api/UtilitiesApi.php
 lib/Api/VideosApi.php
 lib/Api/VirtualBusinessCardApi.php
 lib/Api/WebTerminalApi.php
@@ -480,6 +486,11 @@ lib/Model/ApplicableTerminalsAnyOf6.php
 lib/Model/AuthError.php
 lib/Model/AvailablePhoneNumbersRequest.php
 lib/Model/BrowserDetails.php
+lib/Model/BusinessClassification.php
+lib/Model/BusinessIndustry.php
+lib/Model/BusinessRegionsOfOperation.php
+lib/Model/BusinessRegistrationIdentifier.php
+lib/Model/BusinessType.php
 lib/Model/ClickFunnelAmount.php
 lib/Model/ClickFunnelContact.php
 lib/Model/ClickFunnelContactProfile.php
@@ -533,6 +544,7 @@ lib/Model/InlineResponse2007.php
 lib/Model/InlineResponse2008.php
 lib/Model/InlineResponse2009.php
 lib/Model/InternalServerError.php
+lib/Model/JobPosition.php
 lib/Model/LedgerEntry.php
 lib/Model/LinkBook.php
 lib/Model/LinkBookSection.php
@@ -588,7 +600,6 @@ lib/Model/PaginatedWTMerchantCredits.php
 lib/Model/PaginationRequestWithIDAndWithoutSortOptions.php
 lib/Model/PaginationRequestWithSortOptions.php
 lib/Model/PaymentDesign.php
-lib/Model/PaymentPrefixes.php
 lib/Model/Performance.php
 lib/Model/PhoneNumber.php
 lib/Model/PhoneNumberCapabilities.php
@@ -672,6 +683,7 @@ lib/Model/VSCampaignGeneratedMessagePagination.php
 lib/Model/VSDynamicVoucherStatus.php
 lib/Model/Video.php
 lib/Model/VirtualBusinessCard.php
+lib/Model/WTA2PApplicationCreateParams.php
 lib/Model/WTAdvertisementCredit.php
 lib/Model/WTAdvertisementCreditCreateParams.php
 lib/Model/WTAdvertisementCreditScan.php
@@ -814,3 +826,11 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/A2PApiTest.php
+test/Model/BusinessClassificationTest.php
+test/Model/BusinessIndustryTest.php
+test/Model/BusinessRegionsOfOperationTest.php
+test/Model/BusinessRegistrationIdentifierTest.php
+test/Model/BusinessTypeTest.php
+test/Model/JobPositionTest.php
+test/Model/WTA2PApplicationCreateParamsTest.php

@@ -456,7 +456,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function countClaimedComps($id)
     {
@@ -473,7 +473,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function countClaimedCompsWithHttpInfo($id)
     {
@@ -516,14 +516,14 @@ class PerformancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -565,7 +565,7 @@ class PerformancesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -583,7 +583,7 @@ class PerformancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2002',
+                        '\OpenAPI\Client\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -649,7 +649,7 @@ class PerformancesApi
      */
     public function countClaimedCompsAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
         $request = $this->countClaimedCompsRequest($id);
 
         return $this->client
@@ -787,7 +787,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function countRedeemedComps($id)
     {
@@ -804,7 +804,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function countRedeemedCompsWithHttpInfo($id)
     {
@@ -847,14 +847,14 @@ class PerformancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -896,7 +896,7 @@ class PerformancesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -914,7 +914,7 @@ class PerformancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2002',
+                        '\OpenAPI\Client\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -980,7 +980,7 @@ class PerformancesApi
      */
     public function countRedeemedCompsAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
         $request = $this->countRedeemedCompsRequest($id);
 
         return $this->client
@@ -2458,7 +2458,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2004|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
@@ -2480,7 +2480,7 @@ class PerformancesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2004|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchPerformanceTicketsPageWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
@@ -2523,14 +2523,14 @@ class PerformancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2005' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2004' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2005', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2004', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2572,7 +2572,7 @@ class PerformancesApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2005';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2004';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2590,7 +2590,7 @@ class PerformancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2005',
+                        '\OpenAPI\Client\Model\InlineResponse2004',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2666,7 +2666,7 @@ class PerformancesApi
      */
     public function fetchPerformanceTicketsPageAsyncWithHttpInfo($performance_id, $page_num, $page_size, $filter_comps = null, $filter_claimed = null, $is_archive_included = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2005';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2004';
         $request = $this->fetchPerformanceTicketsPageRequest($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
 
         return $this->client

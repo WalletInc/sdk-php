@@ -60,7 +60,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\OpenAPI\Client\Model\WTStaticVoucher[]',
+        'data' => '\OpenAPI\Client\Model\WTTicket[]',
         'total_rows' => 'double'
     ];
 
@@ -221,7 +221,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\WTStaticVoucher[]
+     * @return \OpenAPI\Client\Model\WTTicket[]
      */
     public function getData()
     {
@@ -231,7 +231,7 @@ class InlineResponse2004 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\WTStaticVoucher[] $data data
+     * @param \OpenAPI\Client\Model\WTTicket[] $data data
      *
      * @return self
      */

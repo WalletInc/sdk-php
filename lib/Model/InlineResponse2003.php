@@ -60,9 +60,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'double',
-        'length' => 'double',
-        'results' => '\OpenAPI\Client\Model\InboundSMS[]'
+        'count' => 'double'
     ];
 
     /**
@@ -73,9 +71,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => 'double',
-        'length' => 'double',
-        'results' => null
+        'count' => 'double'
     ];
 
     /**
@@ -105,9 +101,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'length' => 'length',
-        'results' => 'results'
+        'count' => 'count'
     ];
 
     /**
@@ -116,9 +110,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'length' => 'setLength',
-        'results' => 'setResults'
+        'count' => 'setCount'
     ];
 
     /**
@@ -127,9 +119,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'length' => 'getLength',
-        'results' => 'getResults'
+        'count' => 'getCount'
     ];
 
     /**
@@ -189,9 +179,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['length'] = $data['length'] ?? null;
-        $this->container['results'] = $data['results'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
     }
 
     /**
@@ -203,14 +191,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
-        }
-        if ($this->container['length'] === null) {
-            $invalidProperties[] = "'length' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
+        if ($this->container['count'] === null) {
+            $invalidProperties[] = "'count' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +210,25 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets total
+     * Gets count
      *
      * @return double
      */
-    public function getTotal()
+    public function getCount()
     {
-        return $this->container['total'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets total
+     * Sets count
      *
-     * @param double $total total
+     * @param double $count count
      *
      * @return self
      */
-    public function setTotal($total)
+    public function setCount($count)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets length
-     *
-     * @return double
-     */
-    public function getLength()
-    {
-        return $this->container['length'];
-    }
-
-    /**
-     * Sets length
-     *
-     * @param double $length length
-     *
-     * @return self
-     */
-    public function setLength($length)
-    {
-        $this->container['length'] = $length;
-
-        return $this;
-    }
-
-    /**
-     * Gets results
-     *
-     * @return \OpenAPI\Client\Model\InboundSMS[]
-     */
-    public function getResults()
-    {
-        return $this->container['results'];
-    }
-
-    /**
-     * Sets results
-     *
-     * @param \OpenAPI\Client\Model\InboundSMS[] $results results
-     *
-     * @return self
-     */
-    public function setResults($results)
-    {
-        $this->container['results'] = $results;
+        $this->container['count'] = $count;
 
         return $this;
     }

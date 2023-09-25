@@ -456,7 +456,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function countVouchersLoaded($campaign_id)
     {
@@ -473,7 +473,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function countVouchersLoadedWithHttpInfo($campaign_id)
     {
@@ -516,14 +516,14 @@ class StaticVoucherCampaignsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -565,7 +565,7 @@ class StaticVoucherCampaignsApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -583,7 +583,7 @@ class StaticVoucherCampaignsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2002',
+                        '\OpenAPI\Client\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -649,7 +649,7 @@ class StaticVoucherCampaignsApi
      */
     public function countVouchersLoadedAsyncWithHttpInfo($campaign_id)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
         $request = $this->countVouchersLoadedRequest($campaign_id);
 
         return $this->client
@@ -787,7 +787,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function countVouchersRedeemed($campaign_id)
     {
@@ -804,7 +804,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2002|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2003|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function countVouchersRedeemedWithHttpInfo($campaign_id)
     {
@@ -847,14 +847,14 @@ class StaticVoucherCampaignsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -896,7 +896,7 @@ class StaticVoucherCampaignsApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -914,7 +914,7 @@ class StaticVoucherCampaignsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2002',
+                        '\OpenAPI\Client\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -980,7 +980,7 @@ class StaticVoucherCampaignsApi
      */
     public function countVouchersRedeemedAsyncWithHttpInfo($campaign_id)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2003';
         $request = $this->countVouchersRedeemedRequest($campaign_id);
 
         return $this->client
@@ -4482,7 +4482,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2004|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2008|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize)
     {
@@ -4501,7 +4501,7 @@ class StaticVoucherCampaignsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2004|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2008|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchStaticVouchersPageWithHttpInfo($campaign_id, $pagenum, $pagesize)
     {
@@ -4544,14 +4544,14 @@ class StaticVoucherCampaignsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2004' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2008' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2004', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2008', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4593,7 +4593,7 @@ class StaticVoucherCampaignsApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2004';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2008';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4611,7 +4611,7 @@ class StaticVoucherCampaignsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2004',
+                        '\OpenAPI\Client\Model\InlineResponse2008',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4681,7 +4681,7 @@ class StaticVoucherCampaignsApi
      */
     public function fetchStaticVouchersPageAsyncWithHttpInfo($campaign_id, $pagenum, $pagesize)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2004';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2008';
         $request = $this->fetchStaticVouchersPageRequest($campaign_id, $pagenum, $pagesize);
 
         return $this->client

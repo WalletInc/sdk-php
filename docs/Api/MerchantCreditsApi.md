@@ -181,7 +181,7 @@ No authorization required
 ## `fetchMerchantCreditCount()`
 
 ```php
-fetchMerchantCreditCount(): \OpenAPI\Client\Model\InlineResponse2002
+fetchMerchantCreditCount(): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Fetch all active merchant credits
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
