@@ -60,8 +60,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'phone_verification_token' => 'string',
-        'merchant_id' => 'string'
+        'claimed_by_phone_number' => 'string'
     ];
 
     /**
@@ -72,8 +71,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'phone_verification_token' => null,
-        'merchant_id' => null
+        'claimed_by_phone_number' => null
     ];
 
     /**
@@ -103,8 +101,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone_verification_token' => 'phoneVerificationToken',
-        'merchant_id' => 'merchantID'
+        'claimed_by_phone_number' => 'claimedByPhoneNumber'
     ];
 
     /**
@@ -113,8 +110,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'phone_verification_token' => 'setPhoneVerificationToken',
-        'merchant_id' => 'setMerchantId'
+        'claimed_by_phone_number' => 'setClaimedByPhoneNumber'
     ];
 
     /**
@@ -123,8 +119,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'phone_verification_token' => 'getPhoneVerificationToken',
-        'merchant_id' => 'getMerchantId'
+        'claimed_by_phone_number' => 'getClaimedByPhoneNumber'
     ];
 
     /**
@@ -184,8 +179,7 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['phone_verification_token'] = $data['phone_verification_token'] ?? null;
-        $this->container['merchant_id'] = $data['merchant_id'] ?? null;
+        $this->container['claimed_by_phone_number'] = $data['claimed_by_phone_number'] ?? null;
     }
 
     /**
@@ -197,11 +191,8 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['phone_verification_token'] === null) {
-            $invalidProperties[] = "'phone_verification_token' can't be null";
-        }
-        if ($this->container['merchant_id'] === null) {
-            $invalidProperties[] = "'merchant_id' can't be null";
+        if ($this->container['claimed_by_phone_number'] === null) {
+            $invalidProperties[] = "'claimed_by_phone_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -219,49 +210,25 @@ class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets phone_verification_token
+     * Gets claimed_by_phone_number
      *
      * @return string
      */
-    public function getPhoneVerificationToken()
+    public function getClaimedByPhoneNumber()
     {
-        return $this->container['phone_verification_token'];
+        return $this->container['claimed_by_phone_number'];
     }
 
     /**
-     * Sets phone_verification_token
+     * Sets claimed_by_phone_number
      *
-     * @param string $phone_verification_token phone_verification_token
+     * @param string $claimed_by_phone_number claimed_by_phone_number
      *
      * @return self
      */
-    public function setPhoneVerificationToken($phone_verification_token)
+    public function setClaimedByPhoneNumber($claimed_by_phone_number)
     {
-        $this->container['phone_verification_token'] = $phone_verification_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchant_id
-     *
-     * @return string
-     */
-    public function getMerchantId()
-    {
-        return $this->container['merchant_id'];
-    }
-
-    /**
-     * Sets merchant_id
-     *
-     * @param string $merchant_id merchant_id
-     *
-     * @return self
-     */
-    public function setMerchantId($merchant_id)
-    {
-        $this->container['merchant_id'] = $merchant_id;
+        $this->container['claimed_by_phone_number'] = $claimed_by_phone_number;
 
         return $this;
     }

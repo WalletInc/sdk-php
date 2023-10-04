@@ -25,7 +25,7 @@ Method | HTTP request | Description
 ## `claimTicket()`
 
 ```php
-claimTicket($id, $inline_object3): \OpenAPI\Client\Model\Ticket
+claimTicket($id, $inline_object4): \OpenAPI\Client\Model\Ticket
 ```
 
 Update ticket
@@ -44,10 +44,10 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     new GuzzleHttp\Client()
 );
 $id = NULL; // mixed
-$inline_object3 = new \OpenAPI\Client\Model\InlineObject3(); // \OpenAPI\Client\Model\InlineObject3
+$inline_object4 = new \OpenAPI\Client\Model\InlineObject4(); // \OpenAPI\Client\Model\InlineObject4
 
 try {
-    $result = $apiInstance->claimTicket($id, $inline_object3);
+    $result = $apiInstance->claimTicket($id, $inline_object4);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InteractionsApi->claimTicket: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**mixed**](../Model/.md)|  |
- **inline_object3** | [**\OpenAPI\Client\Model\InlineObject3**](../Model/InlineObject3.md)|  |
+ **inline_object4** | [**\OpenAPI\Client\Model\InlineObject4**](../Model/InlineObject4.md)|  |
 
 ### Return type
 
@@ -351,7 +351,7 @@ No authorization required
 ## `fetchCustomerTicketsWithToken()`
 
 ```php
-fetchCustomerTicketsWithToken($inline_object4): \OpenAPI\Client\Model\Ticket[]
+fetchCustomerTicketsWithToken($inline_object5): \OpenAPI\Client\Model\Ticket[]
 ```
 
 Update ticket
@@ -369,10 +369,10 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$inline_object4 = new \OpenAPI\Client\Model\InlineObject4(); // \OpenAPI\Client\Model\InlineObject4
+$inline_object5 = new \OpenAPI\Client\Model\InlineObject5(); // \OpenAPI\Client\Model\InlineObject5
 
 try {
-    $result = $apiInstance->fetchCustomerTicketsWithToken($inline_object4);
+    $result = $apiInstance->fetchCustomerTicketsWithToken($inline_object5);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InteractionsApi->fetchCustomerTicketsWithToken: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object4** | [**\OpenAPI\Client\Model\InlineObject4**](../Model/InlineObject4.md)|  |
+ **inline_object5** | [**\OpenAPI\Client\Model\InlineObject5**](../Model/InlineObject5.md)|  |
 
 ### Return type
 

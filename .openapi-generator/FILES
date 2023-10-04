@@ -118,6 +118,7 @@ docs/Model/InlineObject1.md
 docs/Model/InlineObject2.md
 docs/Model/InlineObject3.md
 docs/Model/InlineObject4.md
+docs/Model/InlineObject5.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse20010.md
@@ -530,6 +531,7 @@ lib/Model/InlineObject1.php
 lib/Model/InlineObject2.php
 lib/Model/InlineObject3.php
 lib/Model/InlineObject4.php
+lib/Model/InlineObject5.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse20010.php
@@ -826,11 +828,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/A2PApiTest.php
-test/Model/BusinessClassificationTest.php
-test/Model/BusinessIndustryTest.php
-test/Model/BusinessRegionsOfOperationTest.php
-test/Model/BusinessRegistrationIdentifierTest.php
-test/Model/BusinessTypeTest.php
-test/Model/JobPositionTest.php
-test/Model/WTA2PApplicationCreateParamsTest.php
+test/Model/InlineObject5Test.php

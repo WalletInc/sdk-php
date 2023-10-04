@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject3
+ * InlineObject5
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * InlineObject3 Class Doc Comment
+ * InlineObject5 Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,7 +43,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject5 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_3';
+    protected static $openAPIModelName = 'inline_object_5';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_design_id' => 'string'
+        'phone_verification_token' => 'string',
+        'merchant_id' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'payment_design_id' => null
+        'phone_verification_token' => null,
+        'merchant_id' => null
     ];
 
     /**
@@ -101,7 +103,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_design_id' => 'paymentDesignID'
+        'phone_verification_token' => 'phoneVerificationToken',
+        'merchant_id' => 'merchantID'
     ];
 
     /**
@@ -110,7 +113,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'payment_design_id' => 'setPaymentDesignId'
+        'phone_verification_token' => 'setPhoneVerificationToken',
+        'merchant_id' => 'setMerchantId'
     ];
 
     /**
@@ -119,7 +123,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'payment_design_id' => 'getPaymentDesignId'
+        'phone_verification_token' => 'getPhoneVerificationToken',
+        'merchant_id' => 'getMerchantId'
     ];
 
     /**
@@ -179,7 +184,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
+        $this->container['phone_verification_token'] = $data['phone_verification_token'] ?? null;
+        $this->container['merchant_id'] = $data['merchant_id'] ?? null;
     }
 
     /**
@@ -191,21 +197,12 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['payment_design_id'] === null) {
-            $invalidProperties[] = "'payment_design_id' can't be null";
+        if ($this->container['phone_verification_token'] === null) {
+            $invalidProperties[] = "'phone_verification_token' can't be null";
         }
-        if ((mb_strlen($this->container['payment_design_id']) > 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
+        if ($this->container['merchant_id'] === null) {
+            $invalidProperties[] = "'merchant_id' can't be null";
         }
-
-        if ((mb_strlen($this->container['payment_design_id']) < 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
-        }
-
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -222,35 +219,49 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets payment_design_id
+     * Gets phone_verification_token
      *
      * @return string
      */
-    public function getPaymentDesignId()
+    public function getPhoneVerificationToken()
     {
-        return $this->container['payment_design_id'];
+        return $this->container['phone_verification_token'];
     }
 
     /**
-     * Sets payment_design_id
+     * Sets phone_verification_token
      *
-     * @param string $payment_design_id payment_design_id
+     * @param string $phone_verification_token phone_verification_token
      *
      * @return self
      */
-    public function setPaymentDesignId($payment_design_id)
+    public function setPhoneVerificationToken($phone_verification_token)
     {
-        if ((mb_strlen($payment_design_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject3., must be smaller than or equal to 10.');
-        }
-        if ((mb_strlen($payment_design_id) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject3., must be bigger than or equal to 10.');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
-            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling InlineObject3., must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
+        $this->container['phone_verification_token'] = $phone_verification_token;
 
-        $this->container['payment_design_id'] = $payment_design_id;
+        return $this;
+    }
+
+    /**
+     * Gets merchant_id
+     *
+     * @return string
+     */
+    public function getMerchantId()
+    {
+        return $this->container['merchant_id'];
+    }
+
+    /**
+     * Sets merchant_id
+     *
+     * @param string $merchant_id merchant_id
+     *
+     * @return self
+     */
+    public function setMerchantId($merchant_id)
+    {
+        $this->container['merchant_id'] = $merchant_id;
 
         return $this;
     }
