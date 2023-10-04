@@ -84,7 +84,7 @@ No authorization required
 ## `countVouchersLoaded()`
 
 ```php
-countVouchersLoaded($campaign_id): \OpenAPI\Client\Model\InlineResponse2002
+countVouchersLoaded($campaign_id): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Count loaded vouchers
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 ## `countVouchersRedeemed()`
 
 ```php
-countVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\InlineResponse2002
+countVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\InlineResponse2003
 ```
 
 Count redeemed vouchers
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -740,7 +740,7 @@ No authorization required
 ## `fetchStaticVouchersPage()`
 
 ```php
-fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\InlineResponse2004
+fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\InlineResponse2008
 ```
 
 Fetch static vouchers by page
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\OpenAPI\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 

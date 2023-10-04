@@ -60,8 +60,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\OpenAPI\Client\Model\WTTicket[]',
-        'total_rows' => 'double'
+        'total' => 'double',
+        'length' => 'double',
+        'results' => '\OpenAPI\Client\Model\OutboundSMS[]'
     ];
 
     /**
@@ -72,8 +73,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'total_rows' => 'double'
+        'total' => 'double',
+        'length' => 'double',
+        'results' => null
     ];
 
     /**
@@ -103,8 +105,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'total_rows' => 'totalRows'
+        'total' => 'total',
+        'length' => 'length',
+        'results' => 'results'
     ];
 
     /**
@@ -113,8 +116,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'total_rows' => 'setTotalRows'
+        'total' => 'setTotal',
+        'length' => 'setLength',
+        'results' => 'setResults'
     ];
 
     /**
@@ -123,8 +127,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'total_rows' => 'getTotalRows'
+        'total' => 'getTotal',
+        'length' => 'getLength',
+        'results' => 'getResults'
     ];
 
     /**
@@ -184,8 +189,9 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['total_rows'] = $data['total_rows'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['length'] = $data['length'] ?? null;
+        $this->container['results'] = $data['results'] ?? null;
     }
 
     /**
@@ -197,11 +203,14 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        if ($this->container['total'] === null) {
+            $invalidProperties[] = "'total' can't be null";
         }
-        if ($this->container['total_rows'] === null) {
-            $invalidProperties[] = "'total_rows' can't be null";
+        if ($this->container['length'] === null) {
+            $invalidProperties[] = "'length' can't be null";
+        }
+        if ($this->container['results'] === null) {
+            $invalidProperties[] = "'results' can't be null";
         }
         return $invalidProperties;
     }
@@ -219,49 +228,73 @@ class InlineResponse2005 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets data
+     * Gets total
      *
-     * @return \OpenAPI\Client\Model\WTTicket[]
+     * @return double
      */
-    public function getData()
+    public function getTotal()
     {
-        return $this->container['data'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets data
+     * Sets total
      *
-     * @param \OpenAPI\Client\Model\WTTicket[] $data data
+     * @param double $total total
      *
      * @return self
      */
-    public function setData($data)
+    public function setTotal($total)
     {
-        $this->container['data'] = $data;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets total_rows
+     * Gets length
      *
      * @return double
      */
-    public function getTotalRows()
+    public function getLength()
     {
-        return $this->container['total_rows'];
+        return $this->container['length'];
     }
 
     /**
-     * Sets total_rows
+     * Sets length
      *
-     * @param double $total_rows total_rows
+     * @param double $length length
      *
      * @return self
      */
-    public function setTotalRows($total_rows)
+    public function setLength($length)
     {
-        $this->container['total_rows'] = $total_rows;
+        $this->container['length'] = $length;
+
+        return $this;
+    }
+
+    /**
+     * Gets results
+     *
+     * @return \OpenAPI\Client\Model\OutboundSMS[]
+     */
+    public function getResults()
+    {
+        return $this->container['results'];
+    }
+
+    /**
+     * Sets results
+     *
+     * @param \OpenAPI\Client\Model\OutboundSMS[] $results results
+     *
+     * @return self
+     */
+    public function setResults($results)
+    {
+        $this->container['results'] = $results;
 
         return $this;
     }

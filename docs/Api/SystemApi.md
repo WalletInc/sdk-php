@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log
 [**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role
 [**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
+[**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes
 [**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Fetch role
 [**saveRole()**](SystemApi.md#saveRole) | **PUT** /v2/system/roles/{roleID} | Update role
 
@@ -271,6 +272,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\Webpage[]**](../Model/Webpage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPaymentPrefixes()`
+
+```php
+getPaymentPrefixes(): mixed[]
+```
+
+Get payment prefixes
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SystemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->getPaymentPrefixes();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SystemApi->getPaymentPrefixes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**mixed[]**
 
 ### Authorization
 

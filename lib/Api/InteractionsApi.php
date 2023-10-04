@@ -122,15 +122,15 @@ class InteractionsApi
      * Update ticket
      *
      * @param  mixed $id id (required)
-     * @param  \OpenAPI\Client\Model\InlineObject3 $inline_object3 inline_object3 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 inline_object4 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Ticket|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function claimTicket($id, $inline_object3)
+    public function claimTicket($id, $inline_object4)
     {
-        list($response) = $this->claimTicketWithHttpInfo($id, $inline_object3);
+        list($response) = $this->claimTicketWithHttpInfo($id, $inline_object4);
         return $response;
     }
 
@@ -140,15 +140,15 @@ class InteractionsApi
      * Update ticket
      *
      * @param  mixed $id (required)
-     * @param  \OpenAPI\Client\Model\InlineObject3 $inline_object3 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Ticket|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function claimTicketWithHttpInfo($id, $inline_object3)
+    public function claimTicketWithHttpInfo($id, $inline_object4)
     {
-        $request = $this->claimTicketRequest($id, $inline_object3);
+        $request = $this->claimTicketRequest($id, $inline_object4);
 
         try {
             $options = $this->createHttpClientOption();
@@ -274,14 +274,14 @@ class InteractionsApi
      * Update ticket
      *
      * @param  mixed $id (required)
-     * @param  \OpenAPI\Client\Model\InlineObject3 $inline_object3 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function claimTicketAsync($id, $inline_object3)
+    public function claimTicketAsync($id, $inline_object4)
     {
-        return $this->claimTicketAsyncWithHttpInfo($id, $inline_object3)
+        return $this->claimTicketAsyncWithHttpInfo($id, $inline_object4)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -295,15 +295,15 @@ class InteractionsApi
      * Update ticket
      *
      * @param  mixed $id (required)
-     * @param  \OpenAPI\Client\Model\InlineObject3 $inline_object3 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function claimTicketAsyncWithHttpInfo($id, $inline_object3)
+    public function claimTicketAsyncWithHttpInfo($id, $inline_object4)
     {
         $returnType = '\OpenAPI\Client\Model\Ticket';
-        $request = $this->claimTicketRequest($id, $inline_object3);
+        $request = $this->claimTicketRequest($id, $inline_object4);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -342,12 +342,12 @@ class InteractionsApi
      * Create request for operation 'claimTicket'
      *
      * @param  mixed $id (required)
-     * @param  \OpenAPI\Client\Model\InlineObject3 $inline_object3 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function claimTicketRequest($id, $inline_object3)
+    public function claimTicketRequest($id, $inline_object4)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -355,10 +355,10 @@ class InteractionsApi
                 'Missing the required parameter $id when calling claimTicket'
             );
         }
-        // verify the required parameter 'inline_object3' is set
-        if ($inline_object3 === null || (is_array($inline_object3) && count($inline_object3) === 0)) {
+        // verify the required parameter 'inline_object4' is set
+        if ($inline_object4 === null || (is_array($inline_object4) && count($inline_object4) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inline_object3 when calling claimTicket'
+                'Missing the required parameter $inline_object4 when calling claimTicket'
             );
         }
 
@@ -393,11 +393,11 @@ class InteractionsApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object3)) {
+        if (isset($inline_object4)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object3));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object4));
             } else {
-                $httpBody = $inline_object3;
+                $httpBody = $inline_object4;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2007,15 +2007,15 @@ class InteractionsApi
      *
      * Update ticket
      *
-     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 inline_object4 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject5 $inline_object5 inline_object5 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Ticket[]|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchCustomerTicketsWithToken($inline_object4)
+    public function fetchCustomerTicketsWithToken($inline_object5)
     {
-        list($response) = $this->fetchCustomerTicketsWithTokenWithHttpInfo($inline_object4);
+        list($response) = $this->fetchCustomerTicketsWithTokenWithHttpInfo($inline_object5);
         return $response;
     }
 
@@ -2024,15 +2024,15 @@ class InteractionsApi
      *
      * Update ticket
      *
-     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject5 $inline_object5 (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Ticket[]|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchCustomerTicketsWithTokenWithHttpInfo($inline_object4)
+    public function fetchCustomerTicketsWithTokenWithHttpInfo($inline_object5)
     {
-        $request = $this->fetchCustomerTicketsWithTokenRequest($inline_object4);
+        $request = $this->fetchCustomerTicketsWithTokenRequest($inline_object5);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2157,14 +2157,14 @@ class InteractionsApi
      *
      * Update ticket
      *
-     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject5 $inline_object5 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchCustomerTicketsWithTokenAsync($inline_object4)
+    public function fetchCustomerTicketsWithTokenAsync($inline_object5)
     {
-        return $this->fetchCustomerTicketsWithTokenAsyncWithHttpInfo($inline_object4)
+        return $this->fetchCustomerTicketsWithTokenAsyncWithHttpInfo($inline_object5)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2177,15 +2177,15 @@ class InteractionsApi
      *
      * Update ticket
      *
-     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject5 $inline_object5 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchCustomerTicketsWithTokenAsyncWithHttpInfo($inline_object4)
+    public function fetchCustomerTicketsWithTokenAsyncWithHttpInfo($inline_object5)
     {
         $returnType = '\OpenAPI\Client\Model\Ticket[]';
-        $request = $this->fetchCustomerTicketsWithTokenRequest($inline_object4);
+        $request = $this->fetchCustomerTicketsWithTokenRequest($inline_object5);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2223,17 +2223,17 @@ class InteractionsApi
     /**
      * Create request for operation 'fetchCustomerTicketsWithToken'
      *
-     * @param  \OpenAPI\Client\Model\InlineObject4 $inline_object4 (required)
+     * @param  \OpenAPI\Client\Model\InlineObject5 $inline_object5 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchCustomerTicketsWithTokenRequest($inline_object4)
+    public function fetchCustomerTicketsWithTokenRequest($inline_object5)
     {
-        // verify the required parameter 'inline_object4' is set
-        if ($inline_object4 === null || (is_array($inline_object4) && count($inline_object4) === 0)) {
+        // verify the required parameter 'inline_object5' is set
+        if ($inline_object5 === null || (is_array($inline_object5) && count($inline_object5) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inline_object4 when calling fetchCustomerTicketsWithToken'
+                'Missing the required parameter $inline_object5 when calling fetchCustomerTicketsWithToken'
             );
         }
 
@@ -2260,11 +2260,11 @@ class InteractionsApi
         }
 
         // for model (json/xml)
-        if (isset($inline_object4)) {
+        if (isset($inline_object5)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object4));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object5));
             } else {
-                $httpBody = $inline_object4;
+                $httpBody = $inline_object5;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

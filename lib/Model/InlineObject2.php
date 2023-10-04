@@ -60,7 +60,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_design_id' => 'string'
+        'tickets' => '\OpenAPI\Client\Model\WTTicketUpdateParams[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'payment_design_id' => null
+        'tickets' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_design_id' => 'paymentDesignID'
+        'tickets' => 'tickets'
     ];
 
     /**
@@ -110,7 +110,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'payment_design_id' => 'setPaymentDesignId'
+        'tickets' => 'setTickets'
     ];
 
     /**
@@ -119,7 +119,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'payment_design_id' => 'getPaymentDesignId'
+        'tickets' => 'getTickets'
     ];
 
     /**
@@ -179,7 +179,7 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
+        $this->container['tickets'] = $data['tickets'] ?? null;
     }
 
     /**
@@ -191,21 +191,9 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['payment_design_id'] === null) {
-            $invalidProperties[] = "'payment_design_id' can't be null";
+        if ($this->container['tickets'] === null) {
+            $invalidProperties[] = "'tickets' can't be null";
         }
-        if ((mb_strlen($this->container['payment_design_id']) > 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
-        }
-
-        if ((mb_strlen($this->container['payment_design_id']) < 10)) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
-        }
-
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
-            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -222,35 +210,25 @@ class InlineObject2 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets payment_design_id
+     * Gets tickets
      *
-     * @return string
+     * @return \OpenAPI\Client\Model\WTTicketUpdateParams[]
      */
-    public function getPaymentDesignId()
+    public function getTickets()
     {
-        return $this->container['payment_design_id'];
+        return $this->container['tickets'];
     }
 
     /**
-     * Sets payment_design_id
+     * Sets tickets
      *
-     * @param string $payment_design_id payment_design_id
+     * @param \OpenAPI\Client\Model\WTTicketUpdateParams[] $tickets tickets
      *
      * @return self
      */
-    public function setPaymentDesignId($payment_design_id)
+    public function setTickets($tickets)
     {
-        if ((mb_strlen($payment_design_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject2., must be smaller than or equal to 10.');
-        }
-        if ((mb_strlen($payment_design_id) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject2., must be bigger than or equal to 10.');
-        }
-        if ((!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
-            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling InlineObject2., must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-
-        $this->container['payment_design_id'] = $payment_design_id;
+        $this->container['tickets'] = $tickets;
 
         return $this;
     }

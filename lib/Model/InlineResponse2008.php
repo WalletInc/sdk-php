@@ -60,9 +60,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'double',
-        'length' => 'double',
-        'results' => '\OpenAPI\Client\Model\OptInListSubscriber[]'
+        'data' => '\OpenAPI\Client\Model\WTStaticVoucher[]',
+        'total_rows' => 'double'
     ];
 
     /**
@@ -73,9 +72,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => 'double',
-        'length' => 'double',
-        'results' => null
+        'data' => null,
+        'total_rows' => 'double'
     ];
 
     /**
@@ -105,9 +103,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'length' => 'length',
-        'results' => 'results'
+        'data' => 'data',
+        'total_rows' => 'totalRows'
     ];
 
     /**
@@ -116,9 +113,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'length' => 'setLength',
-        'results' => 'setResults'
+        'data' => 'setData',
+        'total_rows' => 'setTotalRows'
     ];
 
     /**
@@ -127,9 +123,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'length' => 'getLength',
-        'results' => 'getResults'
+        'data' => 'getData',
+        'total_rows' => 'getTotalRows'
     ];
 
     /**
@@ -189,9 +184,8 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['length'] = $data['length'] ?? null;
-        $this->container['results'] = $data['results'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['total_rows'] = $data['total_rows'] ?? null;
     }
 
     /**
@@ -203,14 +197,11 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['total'] === null) {
-            $invalidProperties[] = "'total' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
-        if ($this->container['length'] === null) {
-            $invalidProperties[] = "'length' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalidProperties[] = "'results' can't be null";
+        if ($this->container['total_rows'] === null) {
+            $invalidProperties[] = "'total_rows' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +219,49 @@ class InlineResponse2008 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets total
+     * Gets data
      *
-     * @return double
+     * @return \OpenAPI\Client\Model\WTStaticVoucher[]
      */
-    public function getTotal()
+    public function getData()
     {
-        return $this->container['total'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets total
+     * Sets data
      *
-     * @param double $total total
+     * @param \OpenAPI\Client\Model\WTStaticVoucher[] $data data
      *
      * @return self
      */
-    public function setTotal($total)
+    public function setData($data)
     {
-        $this->container['total'] = $total;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets length
+     * Gets total_rows
      *
      * @return double
      */
-    public function getLength()
+    public function getTotalRows()
     {
-        return $this->container['length'];
+        return $this->container['total_rows'];
     }
 
     /**
-     * Sets length
+     * Sets total_rows
      *
-     * @param double $length length
+     * @param double $total_rows total_rows
      *
      * @return self
      */
-    public function setLength($length)
+    public function setTotalRows($total_rows)
     {
-        $this->container['length'] = $length;
-
-        return $this;
-    }
-
-    /**
-     * Gets results
-     *
-     * @return \OpenAPI\Client\Model\OptInListSubscriber[]
-     */
-    public function getResults()
-    {
-        return $this->container['results'];
-    }
-
-    /**
-     * Sets results
-     *
-     * @param \OpenAPI\Client\Model\OptInListSubscriber[] $results results
-     *
-     * @return self
-     */
-    public function setResults($results)
-    {
-        $this->container['results'] = $results;
+        $this->container['total_rows'] = $total_rows;
 
         return $this;
     }
