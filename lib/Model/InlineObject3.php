@@ -60,7 +60,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'claimed_by_phone_number' => 'string'
+        'payment_design_id' => 'string'
     ];
 
     /**
@@ -71,7 +71,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'claimed_by_phone_number' => null
+        'payment_design_id' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'claimed_by_phone_number' => 'claimedByPhoneNumber'
+        'payment_design_id' => 'paymentDesignID'
     ];
 
     /**
@@ -110,7 +110,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'claimed_by_phone_number' => 'setClaimedByPhoneNumber'
+        'payment_design_id' => 'setPaymentDesignId'
     ];
 
     /**
@@ -119,7 +119,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'claimed_by_phone_number' => 'getClaimedByPhoneNumber'
+        'payment_design_id' => 'getPaymentDesignId'
     ];
 
     /**
@@ -179,7 +179,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['claimed_by_phone_number'] = $data['claimed_by_phone_number'] ?? null;
+        $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
     }
 
     /**
@@ -191,9 +191,21 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['claimed_by_phone_number'] === null) {
-            $invalidProperties[] = "'claimed_by_phone_number' can't be null";
+        if ($this->container['payment_design_id'] === null) {
+            $invalidProperties[] = "'payment_design_id' can't be null";
         }
+        if ((mb_strlen($this->container['payment_design_id']) > 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be smaller than or equal to 10.";
+        }
+
+        if ((mb_strlen($this->container['payment_design_id']) < 10)) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', the character length must be bigger than or equal to 10.";
+        }
+
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['payment_design_id'])) {
+            $invalidProperties[] = "invalid value for 'payment_design_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -210,25 +222,35 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets claimed_by_phone_number
+     * Gets payment_design_id
      *
      * @return string
      */
-    public function getClaimedByPhoneNumber()
+    public function getPaymentDesignId()
     {
-        return $this->container['claimed_by_phone_number'];
+        return $this->container['payment_design_id'];
     }
 
     /**
-     * Sets claimed_by_phone_number
+     * Sets payment_design_id
      *
-     * @param string $claimed_by_phone_number claimed_by_phone_number
+     * @param string $payment_design_id payment_design_id
      *
      * @return self
      */
-    public function setClaimedByPhoneNumber($claimed_by_phone_number)
+    public function setPaymentDesignId($payment_design_id)
     {
-        $this->container['claimed_by_phone_number'] = $claimed_by_phone_number;
+        if ((mb_strlen($payment_design_id) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject3., must be smaller than or equal to 10.');
+        }
+        if ((mb_strlen($payment_design_id) < 10)) {
+            throw new \InvalidArgumentException('invalid length for $payment_design_id when calling InlineObject3., must be bigger than or equal to 10.');
+        }
+        if ((!preg_match("/^[a-zA-Z0-9]+$/", $payment_design_id))) {
+            throw new \InvalidArgumentException("invalid value for $payment_design_id when calling InlineObject3., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        $this->container['payment_design_id'] = $payment_design_id;
 
         return $this;
     }

@@ -60,9 +60,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entries' => '\OpenAPI\Client\Model\LedgerEntry[]',
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'total' => 'double',
+        'length' => 'double',
+        'results' => '\OpenAPI\Client\Model\OptInListSubscriber[]'
     ];
 
     /**
@@ -73,9 +73,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entries' => null,
-        'page_count' => 'double',
-        'total_records' => 'double'
+        'total' => 'double',
+        'length' => 'double',
+        'results' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entries' => 'entries',
-        'page_count' => 'pageCount',
-        'total_records' => 'totalRecords'
+        'total' => 'total',
+        'length' => 'length',
+        'results' => 'results'
     ];
 
     /**
@@ -116,9 +116,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entries' => 'setEntries',
-        'page_count' => 'setPageCount',
-        'total_records' => 'setTotalRecords'
+        'total' => 'setTotal',
+        'length' => 'setLength',
+        'results' => 'setResults'
     ];
 
     /**
@@ -127,9 +127,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entries' => 'getEntries',
-        'page_count' => 'getPageCount',
-        'total_records' => 'getTotalRecords'
+        'total' => 'getTotal',
+        'length' => 'getLength',
+        'results' => 'getResults'
     ];
 
     /**
@@ -189,9 +189,9 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['entries'] = $data['entries'] ?? null;
-        $this->container['page_count'] = $data['page_count'] ?? null;
-        $this->container['total_records'] = $data['total_records'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['length'] = $data['length'] ?? null;
+        $this->container['results'] = $data['results'] ?? null;
     }
 
     /**
@@ -203,14 +203,14 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['entries'] === null) {
-            $invalidProperties[] = "'entries' can't be null";
+        if ($this->container['total'] === null) {
+            $invalidProperties[] = "'total' can't be null";
         }
-        if ($this->container['page_count'] === null) {
-            $invalidProperties[] = "'page_count' can't be null";
+        if ($this->container['length'] === null) {
+            $invalidProperties[] = "'length' can't be null";
         }
-        if ($this->container['total_records'] === null) {
-            $invalidProperties[] = "'total_records' can't be null";
+        if ($this->container['results'] === null) {
+            $invalidProperties[] = "'results' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,73 +228,73 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entries
+     * Gets total
      *
-     * @return \OpenAPI\Client\Model\LedgerEntry[]
+     * @return double
      */
-    public function getEntries()
+    public function getTotal()
     {
-        return $this->container['entries'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets entries
+     * Sets total
      *
-     * @param \OpenAPI\Client\Model\LedgerEntry[] $entries entries
+     * @param double $total total
      *
      * @return self
      */
-    public function setEntries($entries)
+    public function setTotal($total)
     {
-        $this->container['entries'] = $entries;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets page_count
+     * Gets length
      *
      * @return double
      */
-    public function getPageCount()
+    public function getLength()
     {
-        return $this->container['page_count'];
+        return $this->container['length'];
     }
 
     /**
-     * Sets page_count
+     * Sets length
      *
-     * @param double $page_count page_count
+     * @param double $length length
      *
      * @return self
      */
-    public function setPageCount($page_count)
+    public function setLength($length)
     {
-        $this->container['page_count'] = $page_count;
+        $this->container['length'] = $length;
 
         return $this;
     }
 
     /**
-     * Gets total_records
+     * Gets results
      *
-     * @return double
+     * @return \OpenAPI\Client\Model\OptInListSubscriber[]
      */
-    public function getTotalRecords()
+    public function getResults()
     {
-        return $this->container['total_records'];
+        return $this->container['results'];
     }
 
     /**
-     * Sets total_records
+     * Sets results
      *
-     * @param double $total_records total_records
+     * @param \OpenAPI\Client\Model\OptInListSubscriber[] $results results
      *
      * @return self
      */
-    public function setTotalRecords($total_records)
+    public function setResults($results)
     {
-        $this->container['total_records'] = $total_records;
+        $this->container['results'] = $results;
 
         return $this;
     }

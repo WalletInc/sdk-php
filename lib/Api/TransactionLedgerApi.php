@@ -129,7 +129,7 @@ class TransactionLedgerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2009|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchAllLedgerTransactions($start_date_time, $end_date_time, $page_num, $page_size, $register_type = null)
     {
@@ -150,7 +150,7 @@ class TransactionLedgerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2009|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchAllLedgerTransactionsWithHttpInfo($start_date_time, $end_date_time, $page_num, $page_size, $register_type = null)
     {
@@ -193,14 +193,14 @@ class TransactionLedgerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2006' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2009' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2006', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2009', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -242,7 +242,7 @@ class TransactionLedgerApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2006';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2009';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -260,7 +260,7 @@ class TransactionLedgerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2006',
+                        '\OpenAPI\Client\Model\InlineResponse2009',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -334,7 +334,7 @@ class TransactionLedgerApi
      */
     public function fetchAllLedgerTransactionsAsyncWithHttpInfo($start_date_time, $end_date_time, $page_num, $page_size, $register_type = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2006';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2009';
         $request = $this->fetchAllLedgerTransactionsRequest($start_date_time, $end_date_time, $page_num, $page_size, $register_type);
 
         return $this->client

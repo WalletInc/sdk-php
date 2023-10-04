@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payment_design_id** | **string** |  |
+**tickets** | [**\OpenAPI\Client\Model\WTTicketUpdateParams[]**](WTTicketUpdateParams.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

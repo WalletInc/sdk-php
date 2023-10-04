@@ -743,7 +743,7 @@ No authorization required
 ## `fetchInboundSMSByPage()`
 
 ```php
-fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num): \OpenAPI\Client\Model\InlineResponse2003
+fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num): \OpenAPI\Client\Model\InlineResponse2002
 ```
 
 Fetch inbound SMSes by page
@@ -785,7 +785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

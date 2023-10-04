@@ -5778,7 +5778,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2009|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchImportedListRecipientsByPage($list_id, $page_size = null, $page_num = null, $is_archive_included = null)
     {
@@ -5798,7 +5798,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2009|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchImportedListRecipientsByPageWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_archive_included = null)
     {
@@ -5841,14 +5841,14 @@ class SMSApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2009' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2007' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2009', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2007', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5890,7 +5890,7 @@ class SMSApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2009';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5908,7 +5908,7 @@ class SMSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2009',
+                        '\OpenAPI\Client\Model\InlineResponse2007',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5980,7 +5980,7 @@ class SMSApi
      */
     public function fetchImportedListRecipientsByPageAsyncWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_archive_included = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2009';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
         $request = $this->fetchImportedListRecipientsByPageRequest($list_id, $page_size, $page_num, $is_archive_included);
 
         return $this->client
@@ -6886,7 +6886,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2008|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchOptInListSubscribersByPage($list_id, $page_size = null, $page_num = null, $is_subscribed = null, $is_pending_age21_verification = null, $is_archive_included = null)
     {
@@ -6908,7 +6908,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2008|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2006|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchOptInListSubscribersByPageWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_subscribed = null, $is_pending_age21_verification = null, $is_archive_included = null)
     {
@@ -6951,14 +6951,14 @@ class SMSApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2008' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2006' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2008', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2006', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -7000,7 +7000,7 @@ class SMSApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2008';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2006';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7018,7 +7018,7 @@ class SMSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2008',
+                        '\OpenAPI\Client\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7094,7 +7094,7 @@ class SMSApi
      */
     public function fetchOptInListSubscribersByPageAsyncWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_subscribed = null, $is_pending_age21_verification = null, $is_archive_included = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2008';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2006';
         $request = $this->fetchOptInListSubscribersByPageRequest($list_id, $page_size, $page_num, $is_subscribed, $is_pending_age21_verification, $is_archive_included);
 
         return $this->client
@@ -8777,7 +8777,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
     public function fetchOutboundSMSByPage($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
@@ -8799,7 +8799,7 @@ class SMSApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2007|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\InlineResponse2005|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
@@ -8842,14 +8842,14 @@ class SMSApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2007' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\InlineResponse2005' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2007', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2005', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -8891,7 +8891,7 @@ class SMSApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
+            $returnType = '\OpenAPI\Client\Model\InlineResponse2005';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8909,7 +8909,7 @@ class SMSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2007',
+                        '\OpenAPI\Client\Model\InlineResponse2005',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8985,7 +8985,7 @@ class SMSApi
      */
     public function fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2007';
+        $returnType = '\OpenAPI\Client\Model\InlineResponse2005';
         $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
 
         return $this->client

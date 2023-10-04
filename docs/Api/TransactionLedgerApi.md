@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `fetchAllLedgerTransactions()`
 
 ```php
-fetchAllLedgerTransactions($start_date_time, $end_date_time, $page_num, $page_size, $register_type): \OpenAPI\Client\Model\InlineResponse2006
+fetchAllLedgerTransactions($start_date_time, $end_date_time, $page_num, $page_size, $register_type): \OpenAPI\Client\Model\InlineResponse2009
 ```
 
 Fetch ledger transactions by page
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\OpenAPI\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 

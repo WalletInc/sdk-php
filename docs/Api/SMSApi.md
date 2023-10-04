@@ -943,7 +943,7 @@ No authorization required
 ## `fetchImportedListRecipientsByPage()`
 
 ```php
-fetchImportedListRecipientsByPage($list_id, $page_size, $page_num, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2009
+fetchImportedListRecipientsByPage($list_id, $page_size, $page_num, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2007
 ```
 
 Fetch imported list recipients by page
@@ -985,7 +985,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\OpenAPI\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -1117,7 +1117,7 @@ No authorization required
 ## `fetchOptInListSubscribersByPage()`
 
 ```php
-fetchOptInListSubscribersByPage($list_id, $page_size, $page_num, $is_subscribed, $is_pending_age21_verification, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2008
+fetchOptInListSubscribersByPage($list_id, $page_size, $page_num, $is_subscribed, $is_pending_age21_verification, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2006
 ```
 
 Fetch opt in list subscribers by page
@@ -1163,7 +1163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\OpenAPI\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -1409,7 +1409,7 @@ No authorization required
 ## `fetchOutboundSMSByPage()`
 
 ```php
-fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status): \OpenAPI\Client\Model\InlineResponse2007
+fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status): \OpenAPI\Client\Model\InlineResponse2005
 ```
 
 Fetch outbound SMSes by page
@@ -1455,7 +1455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\OpenAPI\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
