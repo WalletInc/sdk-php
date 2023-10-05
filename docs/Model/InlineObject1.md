@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**redemption_instructions** | **string** |  | [optional]
 **ticket_expiration_date_time** | **\DateTime** |  |
 **max_comp_tickets** | **double** |  |
 **payment_design_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
