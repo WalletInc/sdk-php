@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **payment_design_id** | **string** |  | [optional]
 **max_comp_tickets** | **double** |  | [optional]
 **ticket_expiration_date_time** | **\DateTime** |  | [optional]
+**redemption_instructions** | **string** |  | [optional]
 **id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

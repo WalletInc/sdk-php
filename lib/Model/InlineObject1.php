@@ -60,6 +60,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'redemption_instructions' => 'string',
         'ticket_expiration_date_time' => '\DateTime',
         'max_comp_tickets' => 'double',
         'payment_design_id' => 'string'
@@ -73,6 +74,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'redemption_instructions' => null,
         'ticket_expiration_date_time' => 'date-time',
         'max_comp_tickets' => 'double',
         'payment_design_id' => null
@@ -105,6 +107,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'redemption_instructions' => 'redemptionInstructions',
         'ticket_expiration_date_time' => 'ticketExpirationDateTime',
         'max_comp_tickets' => 'maxCompTickets',
         'payment_design_id' => 'paymentDesignID'
@@ -116,6 +119,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'redemption_instructions' => 'setRedemptionInstructions',
         'ticket_expiration_date_time' => 'setTicketExpirationDateTime',
         'max_comp_tickets' => 'setMaxCompTickets',
         'payment_design_id' => 'setPaymentDesignId'
@@ -127,6 +131,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'redemption_instructions' => 'getRedemptionInstructions',
         'ticket_expiration_date_time' => 'getTicketExpirationDateTime',
         'max_comp_tickets' => 'getMaxCompTickets',
         'payment_design_id' => 'getPaymentDesignId'
@@ -189,6 +194,7 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['redemption_instructions'] = $data['redemption_instructions'] ?? null;
         $this->container['ticket_expiration_date_time'] = $data['ticket_expiration_date_time'] ?? null;
         $this->container['max_comp_tickets'] = $data['max_comp_tickets'] ?? null;
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
@@ -226,6 +232,30 @@ class InlineObject1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets redemption_instructions
+     *
+     * @return string|null
+     */
+    public function getRedemptionInstructions()
+    {
+        return $this->container['redemption_instructions'];
+    }
+
+    /**
+     * Sets redemption_instructions
+     *
+     * @param string|null $redemption_instructions redemption_instructions
+     *
+     * @return self
+     */
+    public function setRedemptionInstructions($redemption_instructions)
+    {
+        $this->container['redemption_instructions'] = $redemption_instructions;
+
+        return $this;
+    }
 
     /**
      * Gets ticket_expiration_date_time
