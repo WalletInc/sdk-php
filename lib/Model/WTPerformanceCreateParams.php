@@ -70,7 +70,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'media_url' => 'string',
         'payment_design_id' => 'string',
         'max_comp_tickets' => 'double',
-        'ticket_expiration_date_time' => '\DateTime'
+        'ticket_expiration_date_time' => '\DateTime',
+        'redemption_instructions' => 'string'
     ];
 
     /**
@@ -91,7 +92,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'media_url' => null,
         'payment_design_id' => null,
         'max_comp_tickets' => 'double',
-        'ticket_expiration_date_time' => 'date-time'
+        'ticket_expiration_date_time' => 'date-time',
+        'redemption_instructions' => null
     ];
 
     /**
@@ -131,7 +133,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'media_url' => 'mediaURL',
         'payment_design_id' => 'paymentDesignID',
         'max_comp_tickets' => 'maxCompTickets',
-        'ticket_expiration_date_time' => 'ticketExpirationDateTime'
+        'ticket_expiration_date_time' => 'ticketExpirationDateTime',
+        'redemption_instructions' => 'redemptionInstructions'
     ];
 
     /**
@@ -150,7 +153,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'media_url' => 'setMediaUrl',
         'payment_design_id' => 'setPaymentDesignId',
         'max_comp_tickets' => 'setMaxCompTickets',
-        'ticket_expiration_date_time' => 'setTicketExpirationDateTime'
+        'ticket_expiration_date_time' => 'setTicketExpirationDateTime',
+        'redemption_instructions' => 'setRedemptionInstructions'
     ];
 
     /**
@@ -169,7 +173,8 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'media_url' => 'getMediaUrl',
         'payment_design_id' => 'getPaymentDesignId',
         'max_comp_tickets' => 'getMaxCompTickets',
-        'ticket_expiration_date_time' => 'getTicketExpirationDateTime'
+        'ticket_expiration_date_time' => 'getTicketExpirationDateTime',
+        'redemption_instructions' => 'getRedemptionInstructions'
     ];
 
     /**
@@ -240,6 +245,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
         $this->container['max_comp_tickets'] = $data['max_comp_tickets'] ?? null;
         $this->container['ticket_expiration_date_time'] = $data['ticket_expiration_date_time'] ?? null;
+        $this->container['redemption_instructions'] = $data['redemption_instructions'] ?? null;
     }
 
     /**
@@ -598,6 +604,30 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     public function setTicketExpirationDateTime($ticket_expiration_date_time)
     {
         $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemption_instructions
+     *
+     * @return string|null
+     */
+    public function getRedemptionInstructions()
+    {
+        return $this->container['redemption_instructions'];
+    }
+
+    /**
+     * Sets redemption_instructions
+     *
+     * @param string|null $redemption_instructions redemption_instructions
+     *
+     * @return self
+     */
+    public function setRedemptionInstructions($redemption_instructions)
+    {
+        $this->container['redemption_instructions'] = $redemption_instructions;
 
         return $this;
     }

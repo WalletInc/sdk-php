@@ -71,6 +71,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_design_id' => 'string',
         'max_comp_tickets' => 'double',
         'ticket_expiration_date_time' => '\DateTime',
+        'redemption_instructions' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
@@ -97,6 +98,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_design_id' => null,
         'max_comp_tickets' => 'double',
         'ticket_expiration_date_time' => 'date-time',
+        'redemption_instructions' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -142,6 +144,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_design_id' => 'paymentDesignID',
         'max_comp_tickets' => 'maxCompTickets',
         'ticket_expiration_date_time' => 'ticketExpirationDateTime',
+        'redemption_instructions' => 'redemptionInstructions',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -166,6 +169,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_design_id' => 'setPaymentDesignId',
         'max_comp_tickets' => 'setMaxCompTickets',
         'ticket_expiration_date_time' => 'setTicketExpirationDateTime',
+        'redemption_instructions' => 'setRedemptionInstructions',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -190,6 +194,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_design_id' => 'getPaymentDesignId',
         'max_comp_tickets' => 'getMaxCompTickets',
         'ticket_expiration_date_time' => 'getTicketExpirationDateTime',
+        'redemption_instructions' => 'getRedemptionInstructions',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -265,6 +270,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['payment_design_id'] = $data['payment_design_id'] ?? null;
         $this->container['max_comp_tickets'] = $data['max_comp_tickets'] ?? null;
         $this->container['ticket_expiration_date_time'] = $data['ticket_expiration_date_time'] ?? null;
+        $this->container['redemption_instructions'] = $data['redemption_instructions'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -655,6 +661,30 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTicketExpirationDateTime($ticket_expiration_date_time)
     {
         $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemption_instructions
+     *
+     * @return string|null
+     */
+    public function getRedemptionInstructions()
+    {
+        return $this->container['redemption_instructions'];
+    }
+
+    /**
+     * Sets redemption_instructions
+     *
+     * @param string|null $redemption_instructions redemption_instructions
+     *
+     * @return self
+     */
+    public function setRedemptionInstructions($redemption_instructions)
+    {
+        $this->container['redemption_instructions'] = $redemption_instructions;
 
         return $this;
     }

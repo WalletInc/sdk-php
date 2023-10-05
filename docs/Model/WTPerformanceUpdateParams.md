@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **payment_design_id** | **string** |  | [optional]
 **max_comp_tickets** | **double** |  | [optional]
 **ticket_expiration_date_time** | **\DateTime** |  | [optional]
+**redemption_instructions** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

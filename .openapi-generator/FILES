@@ -828,12 +828,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/A2PApiTest.php
-test/Model/BusinessClassificationTest.php
-test/Model/BusinessIndustryTest.php
-test/Model/BusinessRegionsOfOperationTest.php
-test/Model/BusinessRegistrationIdentifierTest.php
-test/Model/BusinessTypeTest.php
-test/Model/InlineObject5Test.php
-test/Model/JobPositionTest.php
-test/Model/WTA2PApplicationCreateParamsTest.php
