@@ -832,8 +832,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/A2PApplicationSubmissionTest.php
-test/Model/BusinessStockExchangesTest.php
-test/Model/ProfileStatusesTest.php
-test/Model/TrustBundleStatusesTest.php
-test/Model/WTA2PApplicationUpdateParamsTest.php
