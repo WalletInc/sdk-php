@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**countClaimedComps()**](PerformancesApi.md#countClaimedComps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
 [**countRedeemedComps()**](PerformancesApi.md#countRedeemedComps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 [**createPerformance()**](PerformancesApi.md#createPerformance) | **POST** /v2/performances | Create performance
+[**exportTickets()**](PerformancesApi.md#exportTickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
 [**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Fetch all performances
 [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Fetch a single performance
@@ -228,6 +229,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `exportTickets()`
+
+```php
+exportTickets($id): \OpenAPI\Client\Model\Ticket[]
+```
+
+Update performance
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\PerformancesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = NULL; // mixed
+
+try {
+    $result = $apiInstance->exportTickets($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PerformancesApi->exportTickets: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**mixed**](../Model/.md)|  |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Ticket[]**](../Model/Ticket.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

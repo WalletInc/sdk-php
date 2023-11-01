@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**createOptInList()**](SMSApi.md#createOptInList) | **POST** /v2/sms/optInList | Create opt in list
 [**createOptInListSource()**](SMSApi.md#createOptInListSource) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
 [**createRecipientInImportedList()**](SMSApi.md#createRecipientInImportedList) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
-[**createSMSAgreement()**](SMSApi.md#createSMSAgreement) | **POST** /v2/sms/agreement/create | Accept SMS agreement
 [**exportImportedListRecipients()**](SMSApi.md#exportImportedListRecipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
 [**exportOptInListSubscribers()**](SMSApi.md#exportOptInListSubscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
 [**fetchBlockedTCPAEntries()**](SMSApi.md#fetchBlockedTCPAEntries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
@@ -30,7 +29,7 @@ Method | HTTP request | Description
 [**fetchOutboundSMS()**](SMSApi.md#fetchOutboundSMS) | **GET** /v2/sms/outbound/{phoneNumberID} | Fetch outbound SMS
 [**fetchOutboundSMSByPage()**](SMSApi.md#fetchOutboundSMSByPage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Fetch outbound SMSes by page
 [**fetchPaymentObjectBroadcasts()**](SMSApi.md#fetchPaymentObjectBroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
-[**fetchSMSAgreement()**](SMSApi.md#fetchSMSAgreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
+[**fetchSMSAgreement()**](SMSApi.md#fetchSMSAgreement) | **GET** /v2/sms/agreement | Accept SMS agreement (DEPRECATED)
 [**importImportedListRecipients()**](SMSApi.md#importImportedListRecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
 [**importImportedListRecipientsFromMembershipTier()**](SMSApi.md#importImportedListRecipientsFromMembershipTier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 [**importOptInListSubscribers()**](SMSApi.md#importOptInListSubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
@@ -656,60 +655,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\OpenAPI\Client\Model\ImportedListRecipient**](../Model/ImportedListRecipient.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `createSMSAgreement()`
-
-```php
-createSMSAgreement($wtsms_create_agreement): \OpenAPI\Client\Model\Agreement
-```
-
-Accept SMS agreement
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\SMSApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wtsms_create_agreement = new \OpenAPI\Client\Model\WTSMSCreateAgreement(); // \OpenAPI\Client\Model\WTSMSCreateAgreement
-
-try {
-    $result = $apiInstance->createSMSAgreement($wtsms_create_agreement);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SMSApi->createSMSAgreement: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wtsms_create_agreement** | [**\OpenAPI\Client\Model\WTSMSCreateAgreement**](../Model/WTSMSCreateAgreement.md)|  |
-
-### Return type
-
-[**\OpenAPI\Client\Model\Agreement**](../Model/Agreement.md)
 
 ### Authorization
 
@@ -1530,7 +1475,7 @@ No authorization required
 fetchSMSAgreement(): mixed
 ```
 
-Fetch SMS agreement
+Accept SMS agreement (DEPRECATED)
 
 ### Example
 
