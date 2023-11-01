@@ -117,36 +117,36 @@ class A2PApi
     }
 
     /**
-     * Operation createA2PApplication
+     * Operation beginA2PApplication
      *
      * Create A2P Application
      *
-     * @param  \OpenAPI\Client\Model\WTA2PApplicationCreateParams $wta2_p_application_create_params wta2_p_application_create_params (required)
+     * @param  \OpenAPI\Client\Model\A2PApplicationSubmission $a2_p_application_submission a2_p_application_submission (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     * @return bool|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function createA2PApplication($wta2_p_application_create_params)
+    public function beginA2PApplication($a2_p_application_submission)
     {
-        list($response) = $this->createA2PApplicationWithHttpInfo($wta2_p_application_create_params);
+        list($response) = $this->beginA2PApplicationWithHttpInfo($a2_p_application_submission);
         return $response;
     }
 
     /**
-     * Operation createA2PApplicationWithHttpInfo
+     * Operation beginA2PApplicationWithHttpInfo
      *
      * Create A2P Application
      *
-     * @param  \OpenAPI\Client\Model\WTA2PApplicationCreateParams $wta2_p_application_create_params (required)
+     * @param  \OpenAPI\Client\Model\A2PApplicationSubmission $a2_p_application_submission (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of bool|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createA2PApplicationWithHttpInfo($wta2_p_application_create_params)
+    public function beginA2PApplicationWithHttpInfo($a2_p_application_submission)
     {
-        $request = $this->createA2PApplicationRequest($wta2_p_application_create_params);
+        $request = $this->beginA2PApplicationRequest($a2_p_application_submission);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,14 +185,14 @@ class A2PApi
 
             switch($statusCode) {
                 case 200:
-                    if ('mixed' === '\SplFileObject') {
+                    if ('bool' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        ObjectSerializer::deserialize($content, 'bool', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -234,7 +234,7 @@ class A2PApi
                     ];
             }
 
-            $returnType = 'mixed';
+            $returnType = 'bool';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -252,7 +252,7 @@ class A2PApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'mixed',
+                        'bool',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -287,18 +287,18 @@ class A2PApi
     }
 
     /**
-     * Operation createA2PApplicationAsync
+     * Operation beginA2PApplicationAsync
      *
      * Create A2P Application
      *
-     * @param  \OpenAPI\Client\Model\WTA2PApplicationCreateParams $wta2_p_application_create_params (required)
+     * @param  \OpenAPI\Client\Model\A2PApplicationSubmission $a2_p_application_submission (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createA2PApplicationAsync($wta2_p_application_create_params)
+    public function beginA2PApplicationAsync($a2_p_application_submission)
     {
-        return $this->createA2PApplicationAsyncWithHttpInfo($wta2_p_application_create_params)
+        return $this->beginA2PApplicationAsyncWithHttpInfo($a2_p_application_submission)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -307,19 +307,19 @@ class A2PApi
     }
 
     /**
-     * Operation createA2PApplicationAsyncWithHttpInfo
+     * Operation beginA2PApplicationAsyncWithHttpInfo
      *
      * Create A2P Application
      *
-     * @param  \OpenAPI\Client\Model\WTA2PApplicationCreateParams $wta2_p_application_create_params (required)
+     * @param  \OpenAPI\Client\Model\A2PApplicationSubmission $a2_p_application_submission (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createA2PApplicationAsyncWithHttpInfo($wta2_p_application_create_params)
+    public function beginA2PApplicationAsyncWithHttpInfo($a2_p_application_submission)
     {
-        $returnType = 'mixed';
-        $request = $this->createA2PApplicationRequest($wta2_p_application_create_params);
+        $returnType = 'bool';
+        $request = $this->beginA2PApplicationRequest($a2_p_application_submission);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -355,19 +355,19 @@ class A2PApi
     }
 
     /**
-     * Create request for operation 'createA2PApplication'
+     * Create request for operation 'beginA2PApplication'
      *
-     * @param  \OpenAPI\Client\Model\WTA2PApplicationCreateParams $wta2_p_application_create_params (required)
+     * @param  \OpenAPI\Client\Model\A2PApplicationSubmission $a2_p_application_submission (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createA2PApplicationRequest($wta2_p_application_create_params)
+    public function beginA2PApplicationRequest($a2_p_application_submission)
     {
-        // verify the required parameter 'wta2_p_application_create_params' is set
-        if ($wta2_p_application_create_params === null || (is_array($wta2_p_application_create_params) && count($wta2_p_application_create_params) === 0)) {
+        // verify the required parameter 'a2_p_application_submission' is set
+        if ($a2_p_application_submission === null || (is_array($a2_p_application_submission) && count($a2_p_application_submission) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wta2_p_application_create_params when calling createA2PApplication'
+                'Missing the required parameter $a2_p_application_submission when calling beginA2PApplication'
             );
         }
 
@@ -394,325 +394,13 @@ class A2PApi
         }
 
         // for model (json/xml)
-        if (isset($wta2_p_application_create_params)) {
+        if (isset($a2_p_application_submission)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wta2_p_application_create_params));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($a2_p_application_submission));
             } else {
-                $httpBody = $wta2_p_application_create_params;
+                $httpBody = $a2_p_application_submission;
             }
         } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation createA2PRegistration
-     *
-     * Create A2P Registration
-     *
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
-     */
-    public function createA2PRegistration()
-    {
-        list($response) = $this->createA2PRegistrationWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation createA2PRegistrationWithHttpInfo
-     *
-     * Create A2P Registration
-     *
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createA2PRegistrationWithHttpInfo()
-    {
-        $request = $this->createA2PRegistrationRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createA2PRegistrationAsync
-     *
-     * Create A2P Registration
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createA2PRegistrationAsync()
-    {
-        return $this->createA2PRegistrationAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createA2PRegistrationAsyncWithHttpInfo
-     *
-     * Create A2P Registration
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createA2PRegistrationAsyncWithHttpInfo()
-    {
-        $returnType = 'mixed';
-        $request = $this->createA2PRegistrationRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createA2PRegistration'
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function createA2PRegistrationRequest()
-    {
-
-        $resourcePath = '/v2/a2p/registration';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1375,6 +1063,364 @@ class A2PApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateA2PApplication
+     *
+     * Update A2P Application
+     *
+     * @param  string $application_id application_id (required)
+     * @param  \OpenAPI\Client\Model\WTA2PApplicationUpdateParams $wta2_p_application_update_params wta2_p_application_update_params (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return bool|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     */
+    public function updateA2PApplication($application_id, $wta2_p_application_update_params)
+    {
+        list($response) = $this->updateA2PApplicationWithHttpInfo($application_id, $wta2_p_application_update_params);
+        return $response;
+    }
+
+    /**
+     * Operation updateA2PApplicationWithHttpInfo
+     *
+     * Update A2P Application
+     *
+     * @param  string $application_id (required)
+     * @param  \OpenAPI\Client\Model\WTA2PApplicationUpdateParams $wta2_p_application_update_params (required)
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of bool|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateA2PApplicationWithHttpInfo($application_id, $wta2_p_application_update_params)
+    {
+        $request = $this->updateA2PApplicationRequest($application_id, $wta2_p_application_update_params);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('bool' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'bool', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'bool';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'bool',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateA2PApplicationAsync
+     *
+     * Update A2P Application
+     *
+     * @param  string $application_id (required)
+     * @param  \OpenAPI\Client\Model\WTA2PApplicationUpdateParams $wta2_p_application_update_params (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateA2PApplicationAsync($application_id, $wta2_p_application_update_params)
+    {
+        return $this->updateA2PApplicationAsyncWithHttpInfo($application_id, $wta2_p_application_update_params)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateA2PApplicationAsyncWithHttpInfo
+     *
+     * Update A2P Application
+     *
+     * @param  string $application_id (required)
+     * @param  \OpenAPI\Client\Model\WTA2PApplicationUpdateParams $wta2_p_application_update_params (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateA2PApplicationAsyncWithHttpInfo($application_id, $wta2_p_application_update_params)
+    {
+        $returnType = 'bool';
+        $request = $this->updateA2PApplicationRequest($application_id, $wta2_p_application_update_params);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateA2PApplication'
+     *
+     * @param  string $application_id (required)
+     * @param  \OpenAPI\Client\Model\WTA2PApplicationUpdateParams $wta2_p_application_update_params (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateA2PApplicationRequest($application_id, $wta2_p_application_update_params)
+    {
+        // verify the required parameter 'application_id' is set
+        if ($application_id === null || (is_array($application_id) && count($application_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $application_id when calling updateA2PApplication'
+            );
+        }
+        if (strlen($application_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$application_id" when calling A2PApi.updateA2PApplication, must be smaller than or equal to 10.');
+        }
+        if (strlen($application_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$application_id" when calling A2PApi.updateA2PApplication, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $application_id)) {
+            throw new \InvalidArgumentException("invalid value for \"application_id\" when calling A2PApi.updateA2PApplication, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        // verify the required parameter 'wta2_p_application_update_params' is set
+        if ($wta2_p_application_update_params === null || (is_array($wta2_p_application_update_params) && count($wta2_p_application_update_params) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $wta2_p_application_update_params when calling updateA2PApplication'
+            );
+        }
+
+        $resourcePath = '/v2/a2p/application/{applicationID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($application_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'applicationID' . '}',
+                ObjectSerializer::toPathValue($application_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($wta2_p_application_update_params)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($wta2_p_application_update_params));
+            } else {
+                $httpBody = $wta2_p_application_update_params;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

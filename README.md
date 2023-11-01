@@ -55,13 +55,13 @@ $apiInstance = new OpenAPI\Client\Api\A2PApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wta2_p_application_create_params = new \OpenAPI\Client\Model\WTA2PApplicationCreateParams(); // \OpenAPI\Client\Model\WTA2PApplicationCreateParams
+$a2_p_application_submission = new \OpenAPI\Client\Model\A2PApplicationSubmission(); // \OpenAPI\Client\Model\A2PApplicationSubmission
 
 try {
-    $result = $apiInstance->createA2PApplication($wta2_p_application_create_params);
+    $result = $apiInstance->beginA2PApplication($a2_p_application_submission);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling A2PApi->createA2PApplication: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling A2PApi->beginA2PApplication: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -72,10 +72,10 @@ All URIs are relative to *https://api.wall.et*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*A2PApi* | [**createA2PApplication**](docs/Api/A2PApi.md#createa2papplication) | **POST** /v2/a2p/application | Create A2P Application
-*A2PApi* | [**createA2PRegistration**](docs/Api/A2PApi.md#createa2pregistration) | **POST** /v2/a2p/registration | Create A2P Registration
+*A2PApi* | [**beginA2PApplication**](docs/Api/A2PApi.md#begina2papplication) | **POST** /v2/a2p/application | Create A2P Application
 *A2PApi* | [**fetchA2PApplication**](docs/Api/A2PApi.md#fetcha2papplication) | **GET** /v2/a2p/application | Fetch A2P Application
 *A2PApi* | [**fetchA2PRegistration**](docs/Api/A2PApi.md#fetcha2pregistration) | **GET** /v2/a2p/registration | Fetch A2P Registration
+*A2PApi* | [**updateA2PApplication**](docs/Api/A2PApi.md#updatea2papplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application
 *AdvertisementCreditsApi* | [**archiveAdvertisementCredit**](docs/Api/AdvertisementCreditsApi.md#archiveadvertisementcredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit
 *AdvertisementCreditsApi* | [**createAdvertisementCredit**](docs/Api/AdvertisementCreditsApi.md#createadvertisementcredit) | **POST** /v2/payment/advertisementCredit | Create ad credit
 *AdvertisementCreditsApi* | [**fetchAdvertisementCreditById**](docs/Api/AdvertisementCreditsApi.md#fetchadvertisementcreditbyid) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit
@@ -439,6 +439,7 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**countClaimedComps**](docs/Api/PerformancesApi.md#countclaimedcomps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
 *PerformancesApi* | [**countRedeemedComps**](docs/Api/PerformancesApi.md#countredeemedcomps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
 *PerformancesApi* | [**createPerformance**](docs/Api/PerformancesApi.md#createperformance) | **POST** /v2/performances | Create performance
+*PerformancesApi* | [**exportTickets**](docs/Api/PerformancesApi.md#exporttickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
 *PerformancesApi* | [**fetchAllPerformanceTickets**](docs/Api/PerformancesApi.md#fetchallperformancetickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
 *PerformancesApi* | [**fetchAllPerformances**](docs/Api/PerformancesApi.md#fetchallperformances) | **GET** /v2/performances/all | Fetch all performances
 *PerformancesApi* | [**fetchPerformance**](docs/Api/PerformancesApi.md#fetchperformance) | **GET** /v2/performances/{id} | Fetch a single performance
@@ -490,7 +491,6 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**createOptInList**](docs/Api/SMSApi.md#createoptinlist) | **POST** /v2/sms/optInList | Create opt in list
 *SMSApi* | [**createOptInListSource**](docs/Api/SMSApi.md#createoptinlistsource) | **POST** /v2/sms/optInListSource | Send SMS to opt in list
 *SMSApi* | [**createRecipientInImportedList**](docs/Api/SMSApi.md#createrecipientinimportedlist) | **POST** /v2/sms/importedList/recipients/create | Add new recipient in an imported list
-*SMSApi* | [**createSMSAgreement**](docs/Api/SMSApi.md#createsmsagreement) | **POST** /v2/sms/agreement/create | Accept SMS agreement
 *SMSApi* | [**exportImportedListRecipients**](docs/Api/SMSApi.md#exportimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/export/{importedListID} | Export imported list recipients
 *SMSApi* | [**exportOptInListSubscribers**](docs/Api/SMSApi.md#exportoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/export/{listID} | Export opt in list subscribers
 *SMSApi* | [**fetchBlockedTCPAEntries**](docs/Api/SMSApi.md#fetchblockedtcpaentries) | **GET** /v2/sms/phoneNumber/blocked/{phoneNumberID} | Fetch blocked TCPA entries
@@ -505,7 +505,7 @@ Class | Method | HTTP request | Description
 *SMSApi* | [**fetchOutboundSMS**](docs/Api/SMSApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Fetch outbound SMS
 *SMSApi* | [**fetchOutboundSMSByPage**](docs/Api/SMSApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Fetch outbound SMSes by page
 *SMSApi* | [**fetchPaymentObjectBroadcasts**](docs/Api/SMSApi.md#fetchpaymentobjectbroadcasts) | **GET** /v2/sms/paymentObjectBroadcasts/{phoneNumberID} | Fetch payment object broadcasts
-*SMSApi* | [**fetchSMSAgreement**](docs/Api/SMSApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Fetch SMS agreement
+*SMSApi* | [**fetchSMSAgreement**](docs/Api/SMSApi.md#fetchsmsagreement) | **GET** /v2/sms/agreement | Accept SMS agreement (DEPRECATED)
 *SMSApi* | [**importImportedListRecipients**](docs/Api/SMSApi.md#importimportedlistrecipients) | **POST** /v2/sms/importedList/recipients/import/{importedListID} | Import imported list recipients
 *SMSApi* | [**importImportedListRecipientsFromMembershipTier**](docs/Api/SMSApi.md#importimportedlistrecipientsfrommembershiptier) | **POST** /v2/sms/importedList/recipients/import-from-tier | Import imported list recipients from a given membership tier
 *SMSApi* | [**importOptInListSubscribers**](docs/Api/SMSApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
@@ -593,10 +593,10 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [A2PApplicationSubmission](docs/Model/A2PApplicationSubmission.md)
 - [AdvertisementCredit](docs/Model/AdvertisementCredit.md)
 - [AdvertisementCreditBroadcast](docs/Model/AdvertisementCreditBroadcast.md)
 - [AdvertisementCreditScan](docs/Model/AdvertisementCreditScan.md)
-- [Agreement](docs/Model/Agreement.md)
 - [Amenity](docs/Model/Amenity.md)
 - [Announcement](docs/Model/Announcement.md)
 - [ApplicableTerminals](docs/Model/ApplicableTerminals.md)
@@ -614,6 +614,7 @@ Class | Method | HTTP request | Description
 - [BusinessIndustry](docs/Model/BusinessIndustry.md)
 - [BusinessRegionsOfOperation](docs/Model/BusinessRegionsOfOperation.md)
 - [BusinessRegistrationIdentifier](docs/Model/BusinessRegistrationIdentifier.md)
+- [BusinessStockExchanges](docs/Model/BusinessStockExchanges.md)
 - [BusinessType](docs/Model/BusinessType.md)
 - [ClickFunnelAmount](docs/Model/ClickFunnelAmount.md)
 - [ClickFunnelContact](docs/Model/ClickFunnelContact.md)
@@ -767,6 +768,7 @@ Class | Method | HTTP request | Description
 - [PresignedPost](docs/Model/PresignedPost.md)
 - [PresignedPostFields](docs/Model/PresignedPostFields.md)
 - [Product](docs/Model/Product.md)
+- [ProfileStatuses](docs/Model/ProfileStatuses.md)
 - [PromoCode](docs/Model/PromoCode.md)
 - [QRCodeDesign](docs/Model/QRCodeDesign.md)
 - [ReachPerformanceStats](docs/Model/ReachPerformanceStats.md)
@@ -801,13 +803,14 @@ Class | Method | HTTP request | Description
 - [SubscriptionProduct](docs/Model/SubscriptionProduct.md)
 - [Tcpa](docs/Model/Tcpa.md)
 - [Ticket](docs/Model/Ticket.md)
+- [TrustBundleStatuses](docs/Model/TrustBundleStatuses.md)
 - [UpdateStaticVoucherCampaignWithVoucher](docs/Model/UpdateStaticVoucherCampaignWithVoucher.md)
 - [VSCampaignGeneratedMessage](docs/Model/VSCampaignGeneratedMessage.md)
 - [VSCampaignGeneratedMessagePagination](docs/Model/VSCampaignGeneratedMessagePagination.md)
 - [VSDynamicVoucherStatus](docs/Model/VSDynamicVoucherStatus.md)
 - [Video](docs/Model/Video.md)
 - [VirtualBusinessCard](docs/Model/VirtualBusinessCard.md)
-- [WTA2PApplicationCreateParams](docs/Model/WTA2PApplicationCreateParams.md)
+- [WTA2PApplicationUpdateParams](docs/Model/WTA2PApplicationUpdateParams.md)
 - [WTAdvertisementCredit](docs/Model/WTAdvertisementCredit.md)
 - [WTAdvertisementCreditCreateParams](docs/Model/WTAdvertisementCreditCreateParams.md)
 - [WTAdvertisementCreditScan](docs/Model/WTAdvertisementCreditScan.md)
@@ -913,7 +916,6 @@ Class | Method | HTTP request | Description
 - [WTRoomRateCreateParams](docs/Model/WTRoomRateCreateParams.md)
 - [WTRoomRateUpdateParams](docs/Model/WTRoomRateUpdateParams.md)
 - [WTSMSAcquirePhoneNumber](docs/Model/WTSMSAcquirePhoneNumber.md)
-- [WTSMSCreateAgreement](docs/Model/WTSMSCreateAgreement.md)
 - [WTSMSImportOptInListSubscribers](docs/Model/WTSMSImportOptInListSubscribers.md)
 - [WTSMSImportedListCreate](docs/Model/WTSMSImportedListCreate.md)
 - [WTSMSOptInListSourceCreate](docs/Model/WTSMSOptInListSourceCreate.md)
