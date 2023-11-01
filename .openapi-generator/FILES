@@ -57,10 +57,10 @@ docs/Api/VirtualBusinessCardApi.md
 docs/Api/WebTerminalApi.md
 docs/Api/WixTerminalApi.md
 docs/Api/WooCommerceTerminalApi.md
+docs/Model/A2PApplicationSubmission.md
 docs/Model/AdvertisementCredit.md
 docs/Model/AdvertisementCreditBroadcast.md
 docs/Model/AdvertisementCreditScan.md
-docs/Model/Agreement.md
 docs/Model/Amenity.md
 docs/Model/Announcement.md
 docs/Model/ApplicableTerminals.md
@@ -78,6 +78,7 @@ docs/Model/BusinessClassification.md
 docs/Model/BusinessIndustry.md
 docs/Model/BusinessRegionsOfOperation.md
 docs/Model/BusinessRegistrationIdentifier.md
+docs/Model/BusinessStockExchanges.md
 docs/Model/BusinessType.md
 docs/Model/ClickFunnelAmount.md
 docs/Model/ClickFunnelContact.md
@@ -231,6 +232,7 @@ docs/Model/PortalPage.md
 docs/Model/PresignedPost.md
 docs/Model/PresignedPostFields.md
 docs/Model/Product.md
+docs/Model/ProfileStatuses.md
 docs/Model/PromoCode.md
 docs/Model/QRCodeDesign.md
 docs/Model/ReachPerformanceStats.md
@@ -265,13 +267,14 @@ docs/Model/SubscriptionPlan.md
 docs/Model/SubscriptionProduct.md
 docs/Model/Tcpa.md
 docs/Model/Ticket.md
+docs/Model/TrustBundleStatuses.md
 docs/Model/UpdateStaticVoucherCampaignWithVoucher.md
 docs/Model/VSCampaignGeneratedMessage.md
 docs/Model/VSCampaignGeneratedMessagePagination.md
 docs/Model/VSDynamicVoucherStatus.md
 docs/Model/Video.md
 docs/Model/VirtualBusinessCard.md
-docs/Model/WTA2PApplicationCreateParams.md
+docs/Model/WTA2PApplicationUpdateParams.md
 docs/Model/WTAdvertisementCredit.md
 docs/Model/WTAdvertisementCreditCreateParams.md
 docs/Model/WTAdvertisementCreditScan.md
@@ -377,7 +380,6 @@ docs/Model/WTRole.md
 docs/Model/WTRoomRateCreateParams.md
 docs/Model/WTRoomRateUpdateParams.md
 docs/Model/WTSMSAcquirePhoneNumber.md
-docs/Model/WTSMSCreateAgreement.md
 docs/Model/WTSMSImportOptInListSubscribers.md
 docs/Model/WTSMSImportedListCreate.md
 docs/Model/WTSMSOptInListSourceCreate.md
@@ -470,10 +472,10 @@ lib/Api/WooCommerceTerminalApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/A2PApplicationSubmission.php
 lib/Model/AdvertisementCredit.php
 lib/Model/AdvertisementCreditBroadcast.php
 lib/Model/AdvertisementCreditScan.php
-lib/Model/Agreement.php
 lib/Model/Amenity.php
 lib/Model/Announcement.php
 lib/Model/ApplicableTerminals.php
@@ -491,6 +493,7 @@ lib/Model/BusinessClassification.php
 lib/Model/BusinessIndustry.php
 lib/Model/BusinessRegionsOfOperation.php
 lib/Model/BusinessRegistrationIdentifier.php
+lib/Model/BusinessStockExchanges.php
 lib/Model/BusinessType.php
 lib/Model/ClickFunnelAmount.php
 lib/Model/ClickFunnelContact.php
@@ -645,6 +648,7 @@ lib/Model/PortalPage.php
 lib/Model/PresignedPost.php
 lib/Model/PresignedPostFields.php
 lib/Model/Product.php
+lib/Model/ProfileStatuses.php
 lib/Model/PromoCode.php
 lib/Model/QRCodeDesign.php
 lib/Model/ReachPerformanceStats.php
@@ -679,13 +683,14 @@ lib/Model/SubscriptionPlan.php
 lib/Model/SubscriptionProduct.php
 lib/Model/Tcpa.php
 lib/Model/Ticket.php
+lib/Model/TrustBundleStatuses.php
 lib/Model/UpdateStaticVoucherCampaignWithVoucher.php
 lib/Model/VSCampaignGeneratedMessage.php
 lib/Model/VSCampaignGeneratedMessagePagination.php
 lib/Model/VSDynamicVoucherStatus.php
 lib/Model/Video.php
 lib/Model/VirtualBusinessCard.php
-lib/Model/WTA2PApplicationCreateParams.php
+lib/Model/WTA2PApplicationUpdateParams.php
 lib/Model/WTAdvertisementCredit.php
 lib/Model/WTAdvertisementCreditCreateParams.php
 lib/Model/WTAdvertisementCreditScan.php
@@ -791,7 +796,6 @@ lib/Model/WTRole.php
 lib/Model/WTRoomRateCreateParams.php
 lib/Model/WTRoomRateUpdateParams.php
 lib/Model/WTSMSAcquirePhoneNumber.php
-lib/Model/WTSMSCreateAgreement.php
 lib/Model/WTSMSImportOptInListSubscribers.php
 lib/Model/WTSMSImportedListCreate.php
 lib/Model/WTSMSOptInListSourceCreate.php
@@ -828,3 +832,8 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/A2PApplicationSubmissionTest.php
+test/Model/BusinessStockExchangesTest.php
+test/Model/ProfileStatusesTest.php
+test/Model/TrustBundleStatusesTest.php
+test/Model/WTA2PApplicationUpdateParamsTest.php
