@@ -114,7 +114,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
         'custom_domain' => 'string',
-        'mobile_app_icon_url' => 'string'
+        'mobile_app_icon_url' => 'string',
+        'is_age_gate' => 'bool',
+        'age_gate_minimum' => 'double'
     ];
 
     /**
@@ -179,7 +181,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
         'custom_domain' => null,
-        'mobile_app_icon_url' => null
+        'mobile_app_icon_url' => null,
+        'is_age_gate' => null,
+        'age_gate_minimum' => 'double'
     ];
 
     /**
@@ -263,7 +267,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
         'custom_domain' => 'customDomain',
-        'mobile_app_icon_url' => 'mobileAppIconURL'
+        'mobile_app_icon_url' => 'mobileAppIconURL',
+        'is_age_gate' => 'isAgeGate',
+        'age_gate_minimum' => 'ageGateMinimum'
     ];
 
     /**
@@ -326,7 +332,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
         'custom_domain' => 'setCustomDomain',
-        'mobile_app_icon_url' => 'setMobileAppIconUrl'
+        'mobile_app_icon_url' => 'setMobileAppIconUrl',
+        'is_age_gate' => 'setIsAgeGate',
+        'age_gate_minimum' => 'setAgeGateMinimum'
     ];
 
     /**
@@ -389,7 +397,9 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
         'custom_domain' => 'getCustomDomain',
-        'mobile_app_icon_url' => 'getMobileAppIconUrl'
+        'mobile_app_icon_url' => 'getMobileAppIconUrl',
+        'is_age_gate' => 'getIsAgeGate',
+        'age_gate_minimum' => 'getAgeGateMinimum'
     ];
 
     /**
@@ -504,6 +514,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['custom_domain'] = $data['custom_domain'] ?? null;
         $this->container['mobile_app_icon_url'] = $data['mobile_app_icon_url'] ?? null;
+        $this->container['is_age_gate'] = $data['is_age_gate'] ?? null;
+        $this->container['age_gate_minimum'] = $data['age_gate_minimum'] ?? null;
     }
 
     /**
@@ -1997,6 +2009,54 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setMobileAppIconUrl($mobile_app_icon_url)
     {
         $this->container['mobile_app_icon_url'] = $mobile_app_icon_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_age_gate
+     *
+     * @return bool|null
+     */
+    public function getIsAgeGate()
+    {
+        return $this->container['is_age_gate'];
+    }
+
+    /**
+     * Sets is_age_gate
+     *
+     * @param bool|null $is_age_gate is_age_gate
+     *
+     * @return self
+     */
+    public function setIsAgeGate($is_age_gate)
+    {
+        $this->container['is_age_gate'] = $is_age_gate;
+
+        return $this;
+    }
+
+    /**
+     * Gets age_gate_minimum
+     *
+     * @return double|null
+     */
+    public function getAgeGateMinimum()
+    {
+        return $this->container['age_gate_minimum'];
+    }
+
+    /**
+     * Sets age_gate_minimum
+     *
+     * @param double|null $age_gate_minimum age_gate_minimum
+     *
+     * @return self
+     */
+    public function setAgeGateMinimum($age_gate_minimum)
+    {
+        $this->container['age_gate_minimum'] = $age_gate_minimum;
 
         return $this;
     }
