@@ -59,6 +59,8 @@ Name | Type | Description | Notes
 **merchant_credit_payment_design_id** | **string** |  | [optional]
 **custom_domain** | **string** |  | [optional]
 **mobile_app_icon_url** | **string** |  | [optional]
+**is_age_gate** | **bool** |  | [optional]
+**age_gate_minimum** | **double** |  | [optional]
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
