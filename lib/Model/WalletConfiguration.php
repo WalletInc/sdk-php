@@ -114,6 +114,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'string',
         'merchant_credit_payment_design_id' => 'string',
         'custom_domain' => 'string',
+        'is_claimed' => 'bool',
         'mobile_app_icon_url' => 'string',
         'is_age_gate' => 'bool',
         'age_gate_minimum' => 'double',
@@ -185,6 +186,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => null,
         'merchant_credit_payment_design_id' => null,
         'custom_domain' => null,
+        'is_claimed' => null,
         'mobile_app_icon_url' => null,
         'is_age_gate' => null,
         'age_gate_minimum' => 'double',
@@ -275,6 +277,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'vanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'merchantCreditPaymentDesignID',
         'custom_domain' => 'customDomain',
+        'is_claimed' => 'isClaimed',
         'mobile_app_icon_url' => 'mobileAppIconURL',
         'is_age_gate' => 'isAgeGate',
         'age_gate_minimum' => 'ageGateMinimum',
@@ -344,6 +347,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'setVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'setMerchantCreditPaymentDesignId',
         'custom_domain' => 'setCustomDomain',
+        'is_claimed' => 'setIsClaimed',
         'mobile_app_icon_url' => 'setMobileAppIconUrl',
         'is_age_gate' => 'setIsAgeGate',
         'age_gate_minimum' => 'setAgeGateMinimum',
@@ -413,6 +417,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'vanity_page_wallet_prefix' => 'getVanityPageWalletPrefix',
         'merchant_credit_payment_design_id' => 'getMerchantCreditPaymentDesignId',
         'custom_domain' => 'getCustomDomain',
+        'is_claimed' => 'getIsClaimed',
         'mobile_app_icon_url' => 'getMobileAppIconUrl',
         'is_age_gate' => 'getIsAgeGate',
         'age_gate_minimum' => 'getAgeGateMinimum',
@@ -533,6 +538,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['vanity_page_wallet_prefix'] = $data['vanity_page_wallet_prefix'] ?? null;
         $this->container['merchant_credit_payment_design_id'] = $data['merchant_credit_payment_design_id'] ?? null;
         $this->container['custom_domain'] = $data['custom_domain'] ?? null;
+        $this->container['is_claimed'] = $data['is_claimed'] ?? null;
         $this->container['mobile_app_icon_url'] = $data['mobile_app_icon_url'] ?? null;
         $this->container['is_age_gate'] = $data['is_age_gate'] ?? null;
         $this->container['age_gate_minimum'] = $data['age_gate_minimum'] ?? null;
@@ -2045,6 +2051,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCustomDomain($custom_domain)
     {
         $this->container['custom_domain'] = $custom_domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_claimed
+     *
+     * @return bool|null
+     */
+    public function getIsClaimed()
+    {
+        return $this->container['is_claimed'];
+    }
+
+    /**
+     * Sets is_claimed
+     *
+     * @param bool|null $is_claimed is_claimed
+     *
+     * @return self
+     */
+    public function setIsClaimed($is_claimed)
+    {
+        $this->container['is_claimed'] = $is_claimed;
 
         return $this;
     }
