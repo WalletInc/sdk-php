@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
 [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
 [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
-[**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count new sessions
+[**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
 [**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
 [**fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
 [**fetchAnalyticsAdCreditsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByValueType) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
@@ -85,7 +85,7 @@ Method | HTTP request | Description
 [**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
 [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
 [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
-[**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count new sessions
+[**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
 [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
 [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
 
@@ -788,7 +788,7 @@ No authorization required
 exitLinkSummary($start_date, $end_date): mixed
 ```
 
-Count new sessions
+Count exit clicks
 
 ### Example
 
@@ -4762,7 +4762,7 @@ No authorization required
 referringSitesSummary($start_date, $end_date): mixed
 ```
 
-Count new sessions
+Count referring sites
 
 ### Example
 

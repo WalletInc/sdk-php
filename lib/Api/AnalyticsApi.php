@@ -4491,7 +4491,7 @@ class AnalyticsApi
     /**
      * Operation exitLinkSummary
      *
-     * Count new sessions
+     * Count exit clicks
      *
      * @param  \DateTime $start_date start_date (optional)
      * @param  \DateTime $end_date end_date (optional)
@@ -4509,7 +4509,7 @@ class AnalyticsApi
     /**
      * Operation exitLinkSummaryWithHttpInfo
      *
-     * Count new sessions
+     * Count exit clicks
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -4663,7 +4663,7 @@ class AnalyticsApi
     /**
      * Operation exitLinkSummaryAsync
      *
-     * Count new sessions
+     * Count exit clicks
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -4684,7 +4684,7 @@ class AnalyticsApi
     /**
      * Operation exitLinkSummaryAsyncWithHttpInfo
      *
-     * Count new sessions
+     * Count exit clicks
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -30226,7 +30226,7 @@ class AnalyticsApi
     /**
      * Operation referringSitesSummary
      *
-     * Count new sessions
+     * Count referring sites
      *
      * @param  \DateTime $start_date start_date (optional)
      * @param  \DateTime $end_date end_date (optional)
@@ -30244,7 +30244,7 @@ class AnalyticsApi
     /**
      * Operation referringSitesSummaryWithHttpInfo
      *
-     * Count new sessions
+     * Count referring sites
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -30398,7 +30398,7 @@ class AnalyticsApi
     /**
      * Operation referringSitesSummaryAsync
      *
-     * Count new sessions
+     * Count referring sites
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -30419,7 +30419,7 @@ class AnalyticsApi
     /**
      * Operation referringSitesSummaryAsyncWithHttpInfo
      *
-     * Count new sessions
+     * Count referring sites
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
