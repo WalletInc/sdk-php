@@ -53,6 +53,8 @@ class BusinessType
 
     const CORPORATION = 'Corporation';
 
+    const SOLE_PROPRIETORSHIP = 'Sole Proprietorship';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -64,7 +66,8 @@ class BusinessType
             self::LIMITED_LIABILITY_CORPORATION,
             self::CO_OPERATIVE,
             self::NON_PROFIT_CORPORATION,
-            self::CORPORATION
+            self::CORPORATION,
+            self::SOLE_PROPRIETORSHIP
         ];
     }
 }
