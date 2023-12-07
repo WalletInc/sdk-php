@@ -124,6 +124,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_twitter_url' => 'string',
         'social_linked_in_url' => 'string',
         'primary_phone_number' => 'string',
+        'primary_whats_app' => 'string',
         'primary_email_address' => 'string'
     ];
 
@@ -199,6 +200,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_twitter_url' => null,
         'social_linked_in_url' => null,
         'primary_phone_number' => null,
+        'primary_whats_app' => null,
         'primary_email_address' => null
     ];
 
@@ -293,6 +295,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_twitter_url' => 'socialTwitterURL',
         'social_linked_in_url' => 'socialLinkedInURL',
         'primary_phone_number' => 'primaryPhoneNumber',
+        'primary_whats_app' => 'primaryWhatsApp',
         'primary_email_address' => 'primaryEmailAddress'
     ];
 
@@ -366,6 +369,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_twitter_url' => 'setSocialTwitterUrl',
         'social_linked_in_url' => 'setSocialLinkedInUrl',
         'primary_phone_number' => 'setPrimaryPhoneNumber',
+        'primary_whats_app' => 'setPrimaryWhatsApp',
         'primary_email_address' => 'setPrimaryEmailAddress'
     ];
 
@@ -439,6 +443,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_twitter_url' => 'getSocialTwitterUrl',
         'social_linked_in_url' => 'getSocialLinkedInUrl',
         'primary_phone_number' => 'getPrimaryPhoneNumber',
+        'primary_whats_app' => 'getPrimaryWhatsApp',
         'primary_email_address' => 'getPrimaryEmailAddress'
     ];
 
@@ -563,6 +568,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['social_twitter_url'] = $data['social_twitter_url'] ?? null;
         $this->container['social_linked_in_url'] = $data['social_linked_in_url'] ?? null;
         $this->container['primary_phone_number'] = $data['primary_phone_number'] ?? null;
+        $this->container['primary_whats_app'] = $data['primary_whats_app'] ?? null;
         $this->container['primary_email_address'] = $data['primary_email_address'] ?? null;
     }
 
@@ -2273,6 +2279,30 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setPrimaryPhoneNumber($primary_phone_number)
     {
         $this->container['primary_phone_number'] = $primary_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_whats_app
+     *
+     * @return string|null
+     */
+    public function getPrimaryWhatsApp()
+    {
+        return $this->container['primary_whats_app'];
+    }
+
+    /**
+     * Sets primary_whats_app
+     *
+     * @param string|null $primary_whats_app primary_whats_app
+     *
+     * @return self
+     */
+    public function setPrimaryWhatsApp($primary_whats_app)
+    {
+        $this->container['primary_whats_app'] = $primary_whats_app;
 
         return $this;
     }
