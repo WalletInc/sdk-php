@@ -124,6 +124,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'social_twitter_url' => 'string',
         'social_linked_in_url' => 'string',
         'primary_phone_number' => 'string',
+        'primary_whats_app' => 'string',
         'primary_email_address' => 'string',
         'id' => 'string',
         'created_at' => '\DateTime',
@@ -203,6 +204,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'social_twitter_url' => null,
         'social_linked_in_url' => null,
         'primary_phone_number' => null,
+        'primary_whats_app' => null,
         'primary_email_address' => null,
         'id' => null,
         'created_at' => 'date-time',
@@ -301,6 +303,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'social_twitter_url' => 'socialTwitterURL',
         'social_linked_in_url' => 'socialLinkedInURL',
         'primary_phone_number' => 'primaryPhoneNumber',
+        'primary_whats_app' => 'primaryWhatsApp',
         'primary_email_address' => 'primaryEmailAddress',
         'id' => 'id',
         'created_at' => 'createdAt',
@@ -378,6 +381,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'social_twitter_url' => 'setSocialTwitterUrl',
         'social_linked_in_url' => 'setSocialLinkedInUrl',
         'primary_phone_number' => 'setPrimaryPhoneNumber',
+        'primary_whats_app' => 'setPrimaryWhatsApp',
         'primary_email_address' => 'setPrimaryEmailAddress',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
@@ -455,6 +459,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'social_twitter_url' => 'getSocialTwitterUrl',
         'social_linked_in_url' => 'getSocialLinkedInUrl',
         'primary_phone_number' => 'getPrimaryPhoneNumber',
+        'primary_whats_app' => 'getPrimaryWhatsApp',
         'primary_email_address' => 'getPrimaryEmailAddress',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
@@ -583,6 +588,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->container['social_twitter_url'] = $data['social_twitter_url'] ?? null;
         $this->container['social_linked_in_url'] = $data['social_linked_in_url'] ?? null;
         $this->container['primary_phone_number'] = $data['primary_phone_number'] ?? null;
+        $this->container['primary_whats_app'] = $data['primary_whats_app'] ?? null;
         $this->container['primary_email_address'] = $data['primary_email_address'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
@@ -2333,6 +2339,30 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPrimaryPhoneNumber($primary_phone_number)
     {
         $this->container['primary_phone_number'] = $primary_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_whats_app
+     *
+     * @return string|null
+     */
+    public function getPrimaryWhatsApp()
+    {
+        return $this->container['primary_whats_app'];
+    }
+
+    /**
+     * Sets primary_whats_app
+     *
+     * @param string|null $primary_whats_app primary_whats_app
+     *
+     * @return self
+     */
+    public function setPrimaryWhatsApp($primary_whats_app)
+    {
+        $this->container['primary_whats_app'] = $primary_whats_app;
 
         return $this;
     }
