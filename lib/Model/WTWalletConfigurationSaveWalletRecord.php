@@ -117,7 +117,14 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_claimed' => 'bool',
         'mobile_app_icon_url' => 'string',
         'is_age_gate' => 'bool',
-        'age_gate_minimum' => 'double'
+        'age_gate_minimum' => 'double',
+        'social_instagram_url' => 'string',
+        'social_facebook_url' => 'string',
+        'social_you_tube_url' => 'string',
+        'social_twitter_url' => 'string',
+        'social_linked_in_url' => 'string',
+        'primary_phone_number' => 'string',
+        'primary_email_address' => 'string'
     ];
 
     /**
@@ -185,7 +192,14 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_claimed' => null,
         'mobile_app_icon_url' => null,
         'is_age_gate' => null,
-        'age_gate_minimum' => 'double'
+        'age_gate_minimum' => 'double',
+        'social_instagram_url' => null,
+        'social_facebook_url' => null,
+        'social_you_tube_url' => null,
+        'social_twitter_url' => null,
+        'social_linked_in_url' => null,
+        'primary_phone_number' => null,
+        'primary_email_address' => null
     ];
 
     /**
@@ -272,7 +286,14 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_claimed' => 'isClaimed',
         'mobile_app_icon_url' => 'mobileAppIconURL',
         'is_age_gate' => 'isAgeGate',
-        'age_gate_minimum' => 'ageGateMinimum'
+        'age_gate_minimum' => 'ageGateMinimum',
+        'social_instagram_url' => 'socialInstagramURL',
+        'social_facebook_url' => 'socialFacebookURL',
+        'social_you_tube_url' => 'socialYouTubeURL',
+        'social_twitter_url' => 'socialTwitterURL',
+        'social_linked_in_url' => 'socialLinkedInURL',
+        'primary_phone_number' => 'primaryPhoneNumber',
+        'primary_email_address' => 'primaryEmailAddress'
     ];
 
     /**
@@ -338,7 +359,14 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_claimed' => 'setIsClaimed',
         'mobile_app_icon_url' => 'setMobileAppIconUrl',
         'is_age_gate' => 'setIsAgeGate',
-        'age_gate_minimum' => 'setAgeGateMinimum'
+        'age_gate_minimum' => 'setAgeGateMinimum',
+        'social_instagram_url' => 'setSocialInstagramUrl',
+        'social_facebook_url' => 'setSocialFacebookUrl',
+        'social_you_tube_url' => 'setSocialYouTubeUrl',
+        'social_twitter_url' => 'setSocialTwitterUrl',
+        'social_linked_in_url' => 'setSocialLinkedInUrl',
+        'primary_phone_number' => 'setPrimaryPhoneNumber',
+        'primary_email_address' => 'setPrimaryEmailAddress'
     ];
 
     /**
@@ -404,7 +432,14 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'is_claimed' => 'getIsClaimed',
         'mobile_app_icon_url' => 'getMobileAppIconUrl',
         'is_age_gate' => 'getIsAgeGate',
-        'age_gate_minimum' => 'getAgeGateMinimum'
+        'age_gate_minimum' => 'getAgeGateMinimum',
+        'social_instagram_url' => 'getSocialInstagramUrl',
+        'social_facebook_url' => 'getSocialFacebookUrl',
+        'social_you_tube_url' => 'getSocialYouTubeUrl',
+        'social_twitter_url' => 'getSocialTwitterUrl',
+        'social_linked_in_url' => 'getSocialLinkedInUrl',
+        'primary_phone_number' => 'getPrimaryPhoneNumber',
+        'primary_email_address' => 'getPrimaryEmailAddress'
     ];
 
     /**
@@ -522,6 +557,13 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->container['mobile_app_icon_url'] = $data['mobile_app_icon_url'] ?? null;
         $this->container['is_age_gate'] = $data['is_age_gate'] ?? null;
         $this->container['age_gate_minimum'] = $data['age_gate_minimum'] ?? null;
+        $this->container['social_instagram_url'] = $data['social_instagram_url'] ?? null;
+        $this->container['social_facebook_url'] = $data['social_facebook_url'] ?? null;
+        $this->container['social_you_tube_url'] = $data['social_you_tube_url'] ?? null;
+        $this->container['social_twitter_url'] = $data['social_twitter_url'] ?? null;
+        $this->container['social_linked_in_url'] = $data['social_linked_in_url'] ?? null;
+        $this->container['primary_phone_number'] = $data['primary_phone_number'] ?? null;
+        $this->container['primary_email_address'] = $data['primary_email_address'] ?? null;
     }
 
     /**
@@ -2087,6 +2129,174 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     public function setAgeGateMinimum($age_gate_minimum)
     {
         $this->container['age_gate_minimum'] = $age_gate_minimum;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_instagram_url
+     *
+     * @return string|null
+     */
+    public function getSocialInstagramUrl()
+    {
+        return $this->container['social_instagram_url'];
+    }
+
+    /**
+     * Sets social_instagram_url
+     *
+     * @param string|null $social_instagram_url social_instagram_url
+     *
+     * @return self
+     */
+    public function setSocialInstagramUrl($social_instagram_url)
+    {
+        $this->container['social_instagram_url'] = $social_instagram_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_facebook_url
+     *
+     * @return string|null
+     */
+    public function getSocialFacebookUrl()
+    {
+        return $this->container['social_facebook_url'];
+    }
+
+    /**
+     * Sets social_facebook_url
+     *
+     * @param string|null $social_facebook_url social_facebook_url
+     *
+     * @return self
+     */
+    public function setSocialFacebookUrl($social_facebook_url)
+    {
+        $this->container['social_facebook_url'] = $social_facebook_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_you_tube_url
+     *
+     * @return string|null
+     */
+    public function getSocialYouTubeUrl()
+    {
+        return $this->container['social_you_tube_url'];
+    }
+
+    /**
+     * Sets social_you_tube_url
+     *
+     * @param string|null $social_you_tube_url social_you_tube_url
+     *
+     * @return self
+     */
+    public function setSocialYouTubeUrl($social_you_tube_url)
+    {
+        $this->container['social_you_tube_url'] = $social_you_tube_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_twitter_url
+     *
+     * @return string|null
+     */
+    public function getSocialTwitterUrl()
+    {
+        return $this->container['social_twitter_url'];
+    }
+
+    /**
+     * Sets social_twitter_url
+     *
+     * @param string|null $social_twitter_url social_twitter_url
+     *
+     * @return self
+     */
+    public function setSocialTwitterUrl($social_twitter_url)
+    {
+        $this->container['social_twitter_url'] = $social_twitter_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_linked_in_url
+     *
+     * @return string|null
+     */
+    public function getSocialLinkedInUrl()
+    {
+        return $this->container['social_linked_in_url'];
+    }
+
+    /**
+     * Sets social_linked_in_url
+     *
+     * @param string|null $social_linked_in_url social_linked_in_url
+     *
+     * @return self
+     */
+    public function setSocialLinkedInUrl($social_linked_in_url)
+    {
+        $this->container['social_linked_in_url'] = $social_linked_in_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_phone_number
+     *
+     * @return string|null
+     */
+    public function getPrimaryPhoneNumber()
+    {
+        return $this->container['primary_phone_number'];
+    }
+
+    /**
+     * Sets primary_phone_number
+     *
+     * @param string|null $primary_phone_number primary_phone_number
+     *
+     * @return self
+     */
+    public function setPrimaryPhoneNumber($primary_phone_number)
+    {
+        $this->container['primary_phone_number'] = $primary_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_email_address
+     *
+     * @return string|null
+     */
+    public function getPrimaryEmailAddress()
+    {
+        return $this->container['primary_email_address'];
+    }
+
+    /**
+     * Sets primary_email_address
+     *
+     * @param string|null $primary_email_address primary_email_address
+     *
+     * @return self
+     */
+    public function setPrimaryEmailAddress($primary_email_address)
+    {
+        $this->container['primary_email_address'] = $primary_email_address;
 
         return $this;
     }
