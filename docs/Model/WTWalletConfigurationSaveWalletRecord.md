@@ -62,5 +62,12 @@ Name | Type | Description | Notes
 **mobile_app_icon_url** | **string** |  | [optional]
 **is_age_gate** | **bool** |  | [optional]
 **age_gate_minimum** | **double** |  | [optional]
+**social_instagram_url** | **string** |  | [optional]
+**social_facebook_url** | **string** |  | [optional]
+**social_you_tube_url** | **string** |  | [optional]
+**social_twitter_url** | **string** |  | [optional]
+**social_linked_in_url** | **string** |  | [optional]
+**primary_phone_number** | **string** |  | [optional]
+**primary_email_address** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
