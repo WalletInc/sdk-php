@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **caller_name** | **string** |  | [optional]
 **caller_type** | **string** |  | [optional]
 **opt_in_list_id** | **string** |  |
-**opt_in_source_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**opt_in_source_id** | [**\OpenAPI\Client\Model\PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID**](PickSSOptInListMemberUpdateParamsExcludeKeyofSSOptInListMemberUpdateParamsMerchantCreatedAtOrMaxSMSCountOptInSourceID.md) |  |
 **is_subscribed** | **bool** |  |
 **is_pending_age21_verification** | **bool** |  |
 **mobile_phone_number** | **string** |  |

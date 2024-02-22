@@ -1,93 +1,93 @@
 # OpenAPI\Client\AnalyticsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**countAllSubscribers()**](AnalyticsApi.md#countAllSubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers
-[**countAuthenticatedSessions()**](AnalyticsApi.md#countAuthenticatedSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions
-[**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign
-[**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date
-[**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers
-[**countNewSessions()**](AnalyticsApi.md#countNewSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions
-[**countOptInListSubscribersPartitionedByDate()**](AnalyticsApi.md#countOptInListSubscribersPartitionedByDate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date
-[**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers
-[**countTotalSessions()**](AnalyticsApi.md#countTotalSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions
-[**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign
-[**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token
-[**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame
-[**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks
-[**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee
-[**fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design
-[**fetchAnalyticsAdCreditsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByValueType) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type
-[**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Fetch redemption amount of ad credits by Ad Credit
-[**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Fetch redemption amount of ad credits by date
-[**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/count/adCredit | Count redemptions of ad credits by Ad Credit
-[**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/count/date | Count redemptions of ad credits by date
-[**fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Fetch refund amount of ad credits by Ad Credit
-[**fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Fetch refund amount of ad credits by date
-[**fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/count/adCredit | Count refunds of ad credits by Ad Credit
-[**fetchAnalyticsAdCreditsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/count/date | Count refunds of ad credits by date
-[**fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/scans/count/adCredit | Count scans of ad credits by Ad Credit
-[**fetchAnalyticsAdCreditsScansCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/scans/count/date | Count scans of ad credits by date
-[**fetchAnalyticsCampaignWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsCampaignWalletPageViews) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Fetch a campaign&#39;s wallet page views
-[**fetchAnalyticsCampaignsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/count/campaign/created | Count created campaigns by campaign
-[**fetchAnalyticsCampaignsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByEmployee) | **GET** /v2/analytics/campaigns/count/employee | Count campaigns by employee
-[**fetchAnalyticsCampaignsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/campaigns/count/paymentDesign | Count campaigns by payment design
-[**fetchAnalyticsCampaignsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByValueType) | **GET** /v2/analytics/campaigns/count/valueType | Count campaigns by value type
-[**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Fetch redemption amount of campaigns by Campaign
-[**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Fetch redemption amount of campaigns by date
-[**fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/count/campaign | Count redemptions of campaigns by Campaign
-[**fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date
-[**fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Fetch refund amount of campaigns by Campaign
-[**fetchAnalyticsCampaignsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Fetch refund amount of campaigns by date
-[**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Fetch refund amount of campaigns by Campaign
-[**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Fetch refund amount of campaigns by date
-[**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date
-[**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number
-[**fetchAnalyticsDistinctWalletSessions()**](AnalyticsApi.md#fetchAnalyticsDistinctWalletSessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Fetch distinct wallet sessions
-[**fetchAnalyticsDynamicVouchersCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByEmployee) | **GET** /v2/analytics/dynamicVouchers/count/employee | Count dynamic vouchers by employee
-[**fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign) | **GET** /v2/analytics/dynamicVouchers/count/paymentDesign | Count dynamic vouchers by payment design
-[**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Fetch redemption amount of dynamic vouchers by date
-[**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Fetch redemption amount of dynamic vouchers by dynamic voucher
-[**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/date | Count redemptions of dynamic vouchers by date
-[**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/dynamicVoucher | Count redemptions of dynamic vouchers by dynamic voucher
-[**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Fetch refund amount of dynamic vouchers by date
-[**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Fetch refund amount of dynamic vouchers by dynamic voucher
-[**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/count/date | Count refunds of dynamic vouchers by date
-[**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/count/dynamicVoucher | Count refunds of dynamic vouchers by dynamic voucher
-[**fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count help desk requests by date
-[**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/resolved | Count resolved help desk requests by date
-[**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee) | **GET** /v2/analytics/helpdeskrequests/count/employee/resolved | Count resolved help desk requests by employee
-[**fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/unresolved | Count unresolved help desk requests by date
-[**fetchAnalyticsItemWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsItemWalletPageViews) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Fetch wallet page views of item
-[**fetchAnalyticsMemberCount()**](AnalyticsApi.md#fetchAnalyticsMemberCount) | **GET** /v2/analytics/membership/member/count | Count members
-[**fetchAnalyticsMerchantCreditCount()**](AnalyticsApi.md#fetchAnalyticsMerchantCreditCount) | **GET** /v2/analytics/membership/merchantCredit/count | Count merchant credits
-[**fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Fetch offer vs redeemed amount by campaign
-[**fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/created | Count created broadcasts by date
-[**fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Fetch execution time of completed broadcasts
-[**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/scheduled | Count scheduled broadcasts by date
-[**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee) | **GET** /v2/analytics/paymentObjectBroadcasts/count/employee/scheduled | Count scheduled broadcasts by employee
-[**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber) | **GET** /v2/analytics/paymentObjectBroadcasts/count/phoneNumber/scheduled | Count scheduled broadcasts by phone number
-[**fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/sms/count/date/scheduled | Count scheduled SMS broadcasts by date
-[**fetchAnalyticsSentOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date
-[**fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number
-[**fetchAnalyticsStaticVoucherWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsStaticVoucherWalletPageViews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views
-[**fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date
-[**fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date
-[**fetchAnalyticsTCPAStopCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByDate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date
-[**fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number
-[**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits
-[**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Fetch redeemed amoun̥t of tiers
-[**fetchAnalyticsTotalAmountRefundedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Fetch refunded amount of merchant credits
-[**fetchAnalyticsTotalAmountRefundedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerTier) | **GET** /v2/analytics/membership/tier/amount/refunded | Fetch refunded amount of tiers
-[**fetchAnalyticsTotalPointsRedeemed()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRedeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points
-[**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points
-[**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity
-[**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID
-[**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites
-[**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign
-[**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**countAllSubscribers()**](AnalyticsApi.md#countAllSubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers |
+| [**countAuthenticatedSessions()**](AnalyticsApi.md#countAuthenticatedSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions |
+| [**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign |
+| [**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date |
+| [**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers |
+| [**countNewSessions()**](AnalyticsApi.md#countNewSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions |
+| [**countOptInListSubscribersPartitionedByDate()**](AnalyticsApi.md#countOptInListSubscribersPartitionedByDate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date |
+| [**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers |
+| [**countTotalSessions()**](AnalyticsApi.md#countTotalSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions |
+| [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign |
+| [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token |
+| [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame |
+| [**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks |
+| [**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee |
+| [**fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design |
+| [**fetchAnalyticsAdCreditsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByValueType) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type |
+| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Fetch redemption amount of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Fetch redemption amount of ad credits by date |
+| [**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/count/adCredit | Count redemptions of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/count/date | Count redemptions of ad credits by date |
+| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Fetch refund amount of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Fetch refund amount of ad credits by date |
+| [**fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/count/adCredit | Count refunds of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/count/date | Count refunds of ad credits by date |
+| [**fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/scans/count/adCredit | Count scans of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsScansCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/scans/count/date | Count scans of ad credits by date |
+| [**fetchAnalyticsCampaignWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsCampaignWalletPageViews) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Fetch a campaign&#39;s wallet page views |
+| [**fetchAnalyticsCampaignsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/count/campaign/created | Count created campaigns by campaign |
+| [**fetchAnalyticsCampaignsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByEmployee) | **GET** /v2/analytics/campaigns/count/employee | Count campaigns by employee |
+| [**fetchAnalyticsCampaignsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/campaigns/count/paymentDesign | Count campaigns by payment design |
+| [**fetchAnalyticsCampaignsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByValueType) | **GET** /v2/analytics/campaigns/count/valueType | Count campaigns by value type |
+| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Fetch redemption amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Fetch redemption amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/count/campaign | Count redemptions of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date |
+| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Fetch refund amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Fetch refund amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Fetch refund amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Fetch refund amount of campaigns by date |
+| [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date |
+| [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number |
+| [**fetchAnalyticsDistinctWalletSessions()**](AnalyticsApi.md#fetchAnalyticsDistinctWalletSessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Fetch distinct wallet sessions |
+| [**fetchAnalyticsDynamicVouchersCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByEmployee) | **GET** /v2/analytics/dynamicVouchers/count/employee | Count dynamic vouchers by employee |
+| [**fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign) | **GET** /v2/analytics/dynamicVouchers/count/paymentDesign | Count dynamic vouchers by payment design |
+| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Fetch redemption amount of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Fetch redemption amount of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/date | Count redemptions of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/dynamicVoucher | Count redemptions of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Fetch refund amount of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Fetch refund amount of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/count/date | Count refunds of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/count/dynamicVoucher | Count refunds of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count help desk requests by date |
+| [**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/resolved | Count resolved help desk requests by date |
+| [**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee) | **GET** /v2/analytics/helpdeskrequests/count/employee/resolved | Count resolved help desk requests by employee |
+| [**fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/unresolved | Count unresolved help desk requests by date |
+| [**fetchAnalyticsItemWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsItemWalletPageViews) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Fetch wallet page views of item |
+| [**fetchAnalyticsMemberCount()**](AnalyticsApi.md#fetchAnalyticsMemberCount) | **GET** /v2/analytics/membership/member/count | Count members |
+| [**fetchAnalyticsMerchantCreditCount()**](AnalyticsApi.md#fetchAnalyticsMerchantCreditCount) | **GET** /v2/analytics/membership/merchantCredit/count | Count merchant credits |
+| [**fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Fetch offer vs redeemed amount by campaign |
+| [**fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/created | Count created broadcasts by date |
+| [**fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Fetch execution time of completed broadcasts |
+| [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/scheduled | Count scheduled broadcasts by date |
+| [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee) | **GET** /v2/analytics/paymentObjectBroadcasts/count/employee/scheduled | Count scheduled broadcasts by employee |
+| [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber) | **GET** /v2/analytics/paymentObjectBroadcasts/count/phoneNumber/scheduled | Count scheduled broadcasts by phone number |
+| [**fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/sms/count/date/scheduled | Count scheduled SMS broadcasts by date |
+| [**fetchAnalyticsSentOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date |
+| [**fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number |
+| [**fetchAnalyticsStaticVoucherWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsStaticVoucherWalletPageViews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views |
+| [**fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date |
+| [**fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date |
+| [**fetchAnalyticsTCPAStopCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByDate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date |
+| [**fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number |
+| [**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits |
+| [**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Fetch redeemed amoun̥t of tiers |
+| [**fetchAnalyticsTotalAmountRefundedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Fetch refunded amount of merchant credits |
+| [**fetchAnalyticsTotalAmountRefundedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerTier) | **GET** /v2/analytics/membership/tier/amount/refunded | Fetch refunded amount of tiers |
+| [**fetchAnalyticsTotalPointsRedeemed()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRedeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points |
+| [**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points |
+| [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity |
+| [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID |
+| [**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites |
+| [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign |
+| [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign |
 
 
 ## `countAllSubscribers()`
@@ -127,13 +127,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_subscribed** | **bool**|  | [optional]
- **is_pending_age21_verification** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_subscribed** | **bool**|  | [optional] |
+| **is_pending_age21_verification** | **bool**|  | [optional] |
+| **is_archive_included** | **bool**|  | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -186,10 +186,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -244,12 +244,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **transaction_type** | **string**|  | [optional]
- **segment_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **transaction_type** | **string**|  | [optional] |
+| **segment_type** | **string**|  | [optional] |
 
 ### Return type
 
@@ -305,13 +305,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
- **is_resolved** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
+| **is_resolved** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -364,10 +364,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -420,10 +420,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -476,10 +476,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -532,10 +532,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -588,10 +588,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -646,12 +646,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **transaction_type** | **string**|  | [optional]
- **segment_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **transaction_type** | **string**|  | [optional] |
+| **segment_type** | **string**|  | [optional] |
 
 ### Return type
 
@@ -704,10 +704,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -760,10 +760,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -816,10 +816,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -872,10 +872,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -928,10 +928,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -984,10 +984,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1040,10 +1040,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1098,12 +1098,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -1156,10 +1156,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1214,12 +1214,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -1272,10 +1272,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1330,12 +1330,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -1388,10 +1388,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1446,12 +1446,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -1504,10 +1504,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1562,12 +1562,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -1619,9 +1619,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1674,10 +1674,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1730,10 +1730,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1786,10 +1786,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1842,10 +1842,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1898,10 +1898,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1956,12 +1956,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2014,10 +2014,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2072,12 +2072,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2130,10 +2130,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2188,12 +2188,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2246,10 +2246,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2304,12 +2304,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2364,12 +2364,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2422,10 +2422,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2478,10 +2478,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -2534,10 +2534,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2590,10 +2590,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2648,12 +2648,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2706,10 +2706,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2764,12 +2764,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2822,10 +2822,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2880,12 +2880,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -2938,10 +2938,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -2996,12 +2996,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3054,10 +3054,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3112,12 +3112,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3172,12 +3172,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3230,10 +3230,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3288,12 +3288,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3345,9 +3345,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **item_id** | **string**|  | |
 
 ### Return type
 
@@ -3402,12 +3402,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3462,12 +3462,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3520,10 +3520,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3578,12 +3578,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3636,10 +3636,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3694,12 +3694,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3752,10 +3752,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3808,10 +3808,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -3866,12 +3866,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3926,12 +3926,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -3984,10 +3984,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -4039,9 +4039,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **voucher_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **voucher_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -4094,10 +4094,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -4150,10 +4150,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -4208,12 +4208,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4266,10 +4266,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
 
 ### Return type
 
@@ -4324,12 +4324,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4384,12 +4384,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4444,12 +4444,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4504,12 +4504,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4564,12 +4564,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4624,12 +4624,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **locale** | **string**|  |
- **timezone** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **locale** | **string**|  | |
+| **timezone** | **string**|  | |
 
 ### Return type
 
@@ -4681,9 +4681,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **session_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**|  | |
 
 ### Return type
 
@@ -4735,9 +4735,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -4790,10 +4790,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  | [optional]
- **end_date** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -4848,12 +4848,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **transaction_type** | **string**|  | [optional]
- **segment_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **transaction_type** | **string**|  | [optional] |
+| **segment_type** | **string**|  | [optional] |
 
 ### Return type
 
@@ -4908,12 +4908,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date** | **\DateTime**|  |
- **end_date** | **\DateTime**|  |
- **transaction_type** | **string**|  | [optional]
- **segment_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | |
+| **end_date** | **\DateTime**|  | |
+| **transaction_type** | **string**|  | [optional] |
+| **segment_type** | **string**|  | [optional] |
 
 ### Return type
 

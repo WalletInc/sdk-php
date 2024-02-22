@@ -1,14 +1,14 @@
 # OpenAPI\Client\ImageGridApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveImageGrid()**](ImageGridApi.md#archiveImageGrid) | **DELETE** /v2/imageGrid/{id} | Archive image
-[**createImageGrid()**](ImageGridApi.md#createImageGrid) | **POST** /v2/imageGrid | Create image
-[**fetchAllImageGrid()**](ImageGridApi.md#fetchAllImageGrid) | **GET** /v2/imageGrid/all | Fetch all images
-[**restoreImageGrid()**](ImageGridApi.md#restoreImageGrid) | **PATCH** /v2/imageGrid/{id} | Restore image
-[**updateImageGrid()**](ImageGridApi.md#updateImageGrid) | **PUT** /v2/imageGrid/{id} | Update image
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveImageGrid()**](ImageGridApi.md#archiveImageGrid) | **DELETE** /v2/imageGrid/{id} | Archive image |
+| [**createImageGrid()**](ImageGridApi.md#createImageGrid) | **POST** /v2/imageGrid | Create image |
+| [**fetchAllImageGrid()**](ImageGridApi.md#fetchAllImageGrid) | **GET** /v2/imageGrid/all | Fetch all images |
+| [**restoreImageGrid()**](ImageGridApi.md#restoreImageGrid) | **PATCH** /v2/imageGrid/{id} | Restore image |
+| [**updateImageGrid()**](ImageGridApi.md#updateImageGrid) | **PUT** /v2/imageGrid/{id} | Update image |
 
 
 ## `archiveImageGrid()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_image_grid_create_params** | [**\OpenAPI\Client\Model\WTImageGridCreateParams**](../Model/WTImageGridCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_image_grid_create_params** | [**\OpenAPI\Client\Model\WTImageGridCreateParams**](../Model/WTImageGridCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_image_grid_update_params** | [**\OpenAPI\Client\Model\WTImageGridUpdateParams**](../Model/WTImageGridUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_image_grid_update_params** | [**\OpenAPI\Client\Model\WTImageGridUpdateParams**](../Model/WTImageGridUpdateParams.md)|  | |
 
 ### Return type
 

@@ -1,30 +1,30 @@
 # OpenAPI\Client\StaticVoucherCampaignsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign
-[**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers
-[**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers
-[**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign
-[**createStaticVoucherCampaignFromCSV()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignFromCSV) | **POST** /v2/payment/staticVoucherCampaign/csv | Import static voucher campaign
-[**createStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignWithVoucher) | **POST** /v2/payment/staticVoucherCampaign/voucher | Create static voucher campaign with voucher
-[**duplicateStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#duplicateStaticVoucherCampaignById) | **POST** /v2/payment/staticVoucherCampaign/duplicate/{campaignID} | Duplicate static voucher campaign
-[**fetchPerformanceOverview()**](StaticVoucherCampaignsApi.md#fetchPerformanceOverview) | **GET** /v2/payment/staticVoucherCampaign/overview/performance/{campaignID} | Fetch performance overview
-[**fetchReachStatsOfAllStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfAllStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/reach/all | Get the reach statistics of all the static voucher campaigns
-[**fetchReachStatsOfIndividualStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfIndividualStaticVoucherCampaign) | **GET** /v2/payment/staticVoucherCampaign/reach/{staticVoucherCampaignID} | Get the reach statistics of an individual static voucher campaign
-[**fetchStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaignById) | **GET** /v2/payment/staticVoucherCampaign/{id} | Fetch static voucher campaign
-[**fetchStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Fetches all static vouchers campaigns
-[**fetchStaticVouchers()**](StaticVoucherCampaignsApi.md#fetchStaticVouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Fetch static vouchers
-[**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Fetch static vouchers by page
-[**fetchViews()**](StaticVoucherCampaignsApi.md#fetchViews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Fetch views
-[**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers
-[**previewMessages()**](StaticVoucherCampaignsApi.md#previewMessages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
-[**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page
-[**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign
-[**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign
-[**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign |
+| [**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers |
+| [**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers |
+| [**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign |
+| [**createStaticVoucherCampaignFromCSV()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignFromCSV) | **POST** /v2/payment/staticVoucherCampaign/csv | Import static voucher campaign |
+| [**createStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignWithVoucher) | **POST** /v2/payment/staticVoucherCampaign/voucher | Create static voucher campaign with voucher |
+| [**duplicateStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#duplicateStaticVoucherCampaignById) | **POST** /v2/payment/staticVoucherCampaign/duplicate/{campaignID} | Duplicate static voucher campaign |
+| [**fetchPerformanceOverview()**](StaticVoucherCampaignsApi.md#fetchPerformanceOverview) | **GET** /v2/payment/staticVoucherCampaign/overview/performance/{campaignID} | Fetch performance overview |
+| [**fetchReachStatsOfAllStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfAllStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/reach/all | Get the reach statistics of all the static voucher campaigns |
+| [**fetchReachStatsOfIndividualStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfIndividualStaticVoucherCampaign) | **GET** /v2/payment/staticVoucherCampaign/reach/{staticVoucherCampaignID} | Get the reach statistics of an individual static voucher campaign |
+| [**fetchStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaignById) | **GET** /v2/payment/staticVoucherCampaign/{id} | Fetch static voucher campaign |
+| [**fetchStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Fetches all static vouchers campaigns |
+| [**fetchStaticVouchers()**](StaticVoucherCampaignsApi.md#fetchStaticVouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Fetch static vouchers |
+| [**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Fetch static vouchers by page |
+| [**fetchViews()**](StaticVoucherCampaignsApi.md#fetchViews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Fetch views |
+| [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers |
+| [**previewMessages()**](StaticVoucherCampaignsApi.md#previewMessages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance. |
+| [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page |
+| [**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign |
+| [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign |
+| [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher |
 
 
 ## `archiveStaticVoucherCampaign()`
@@ -60,9 +60,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -84,7 +84,7 @@ No authorization required
 ## `countVouchersLoaded()`
 
 ```php
-countVouchersLoaded($campaign_id): \OpenAPI\Client\Model\InlineResponse2003
+countVouchersLoaded($campaign_id): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
 Count loaded vouchers
@@ -114,13 +114,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\FetchMembersCount200Response**](../Model/FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 ## `countVouchersRedeemed()`
 
 ```php
-countVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\InlineResponse2003
+countVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
 Count redeemed vouchers
@@ -168,13 +168,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\FetchMembersCount200Response**](../Model/FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -222,9 +222,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaign**](../Model/CreateStaticVoucherCampaign.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_static_voucher_campaign** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaign**](../Model/CreateStaticVoucherCampaign.md)|  | |
 
 ### Return type
 
@@ -276,9 +276,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_static_voucher_campaign_with_voucher_with_csv** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucherWithCSV**](../Model/CreateStaticVoucherCampaignWithVoucherWithCSV.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_static_voucher_campaign_with_voucher_with_csv** | [**\OpenAPI\Client\Model\CreateStaticVoucherCampaignWithVoucherWithCSV**](../Model/CreateStaticVoucherCampaignWithVoucherWithCSV.md)|  | |
 
 ### Return type
 
@@ -330,9 +330,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **\OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **\OpenAPI\Client\Model\PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive**|  | |
 
 ### Return type
 
@@ -384,9 +384,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -438,9 +438,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -493,10 +493,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -550,11 +550,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  |
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  | |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -606,9 +606,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -649,7 +649,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     new GuzzleHttp\Client()
 );
 $is_archive_included = True; // bool
-$source_id = 3.4; // double
+$source_id = 3.4; // float
 
 try {
     $result = $apiInstance->fetchStaticVoucherCampaigns($is_archive_included, $source_id);
@@ -661,10 +661,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **source_id** | **double**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
+| **source_id** | **float**|  | [optional] |
 
 ### Return type
 
@@ -716,9 +716,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -740,7 +740,7 @@ No authorization required
 ## `fetchStaticVouchersPage()`
 
 ```php
-fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\InlineResponse2008
+fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\FetchStaticVouchersPage200Response
 ```
 
 Fetch static vouchers by page
@@ -759,8 +759,8 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     new GuzzleHttp\Client()
 );
 $campaign_id = NULL; // mixed
-$pagenum = 3.4; // double
-$pagesize = 3.4; // double
+$pagenum = 3.4; // float
+$pagesize = 3.4; // float
 
 try {
     $result = $apiInstance->fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize);
@@ -772,15 +772,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
- **pagenum** | **double**|  |
- **pagesize** | **double**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **pagenum** | **float**|  | |
+| **pagesize** | **float**|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\OpenAPI\Client\Model\FetchStaticVouchersPage200Response**](../Model/FetchStaticVouchersPage200Response.md)
 
 ### Authorization
 
@@ -828,9 +828,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -882,9 +882,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -937,10 +937,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
- **wt_static_voucher_campaign_preview_messages** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessages**](../Model/WTStaticVoucherCampaignPreviewMessages.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **wt_static_voucher_campaign_preview_messages** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessages**](../Model/WTStaticVoucherCampaignPreviewMessages.md)|  | |
 
 ### Return type
 
@@ -993,10 +993,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
- **wt_static_voucher_campaign_preview_messages_by_page** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessagesByPage**](../Model/WTStaticVoucherCampaignPreviewMessagesByPage.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **wt_static_voucher_campaign_preview_messages_by_page** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessagesByPage**](../Model/WTStaticVoucherCampaignPreviewMessagesByPage.md)|  | |
 
 ### Return type
 
@@ -1048,9 +1048,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1103,10 +1103,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
- **static_voucher_campaign_update** | [**\OpenAPI\Client\Model\StaticVoucherCampaignUpdate**](../Model/StaticVoucherCampaignUpdate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **static_voucher_campaign_update** | [**\OpenAPI\Client\Model\StaticVoucherCampaignUpdate**](../Model/StaticVoucherCampaignUpdate.md)|  | |
 
 ### Return type
 
@@ -1159,10 +1159,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
- **update_static_voucher_campaign_with_voucher** | [**\OpenAPI\Client\Model\UpdateStaticVoucherCampaignWithVoucher**](../Model/UpdateStaticVoucherCampaignWithVoucher.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **update_static_voucher_campaign_with_voucher** | [**\OpenAPI\Client\Model\UpdateStaticVoucherCampaignWithVoucher**](../Model/UpdateStaticVoucherCampaignWithVoucher.md)|  | |
 
 ### Return type
 

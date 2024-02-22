@@ -1,16 +1,16 @@
 # OpenAPI\Client\CountriesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchAllCountries()**](CountriesApi.md#fetchAllCountries) | **GET** /system/countries/all | Fetch all countries
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchAllCountries()**](CountriesApi.md#fetchAllCountries) | **GET** /system/countries/all | Fetch all countries |
 
 
 ## `fetchAllCountries()`
 
 ```php
-fetchAllCountries(): \OpenAPI\Client\Model\InlineResponse20011[]
+fetchAllCountries(): \OpenAPI\Client\Model\FetchAllCountries200ResponseInner[]
 ```
 
 Fetch all countries
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse20011[]**](../Model/InlineResponse20011.md)
+[**\OpenAPI\Client\Model\FetchAllCountries200ResponseInner[]**](../Model/FetchAllCountries200ResponseInner.md)
 
 ### Authorization
 

@@ -1,13 +1,13 @@
 # OpenAPI\Client\A2PApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**beginA2PApplication()**](A2PApi.md#beginA2PApplication) | **POST** /v2/a2p/application | Create A2P Application
-[**fetchA2PApplication()**](A2PApi.md#fetchA2PApplication) | **GET** /v2/a2p/application | Fetch A2P Application
-[**fetchA2PRegistration()**](A2PApi.md#fetchA2PRegistration) | **GET** /v2/a2p/registration | Fetch A2P Registration
-[**updateA2PApplication()**](A2PApi.md#updateA2PApplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**beginA2PApplication()**](A2PApi.md#beginA2PApplication) | **POST** /v2/a2p/application | Create A2P Application |
+| [**fetchA2PApplication()**](A2PApi.md#fetchA2PApplication) | **GET** /v2/a2p/application | Fetch A2P Application |
+| [**fetchA2PRegistration()**](A2PApi.md#fetchA2PRegistration) | **GET** /v2/a2p/registration | Fetch A2P Registration |
+| [**updateA2PApplication()**](A2PApi.md#updateA2PApplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application |
 
 
 ## `beginA2PApplication()`
@@ -43,9 +43,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **a2_p_application_submission** | [**\OpenAPI\Client\Model\A2PApplicationSubmission**](../Model/A2PApplicationSubmission.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_application_submission** | [**\OpenAPI\Client\Model\A2PApplicationSubmission**](../Model/A2PApplicationSubmission.md)|  | |
 
 ### Return type
 
@@ -200,10 +200,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_id** | **string**|  |
- **wta2_p_application_update_params** | [**\OpenAPI\Client\Model\WTA2PApplicationUpdateParams**](../Model/WTA2PApplicationUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **application_id** | **string**|  | |
+| **wta2_p_application_update_params** | [**\OpenAPI\Client\Model\WTA2PApplicationUpdateParams**](../Model/WTA2PApplicationUpdateParams.md)|  | |
 
 ### Return type
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **message** | **string** |  |
 **s3_bucket** | **string** |  |
 **s3_key** | **string** |  |
-**file_size_bytes** | **double** |  |
+**file_size_bytes** | **float** |  |
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

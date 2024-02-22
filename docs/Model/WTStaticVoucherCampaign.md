@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **title** | **string** |  |
 **notes** | **string** |  |
-**value_type** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**value_type** | [**\OpenAPI\Client\Model\PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  |
 **is_loaded** | **bool** |  |
 **display_value** | **string** |  | [optional]
 **merchants_reference_id** | **string** |  | [optional]
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |
-**voucher_type** | **double** |  |
+**voucher_type** | **float** |  |
 **reinvestment_sum_decimal** | **string** |  |
 **reinvestment_sum_string** | **string** |  |
 **start_date** | **\DateTime** |  |

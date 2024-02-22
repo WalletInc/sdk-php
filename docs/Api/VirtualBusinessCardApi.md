@@ -1,16 +1,16 @@
 # OpenAPI\Client\VirtualBusinessCardApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveVirtualBusinessCard()**](VirtualBusinessCardApi.md#archiveVirtualBusinessCard) | **DELETE** /v2/virtualBusinessCard/{id} | Archive VirtualBusinessCard
-[**createVirtualBusinessCard()**](VirtualBusinessCardApi.md#createVirtualBusinessCard) | **POST** /v2/virtualBusinessCard | Create VirtualBusinessCard
-[**fetchAllVirtualBusinessCards()**](VirtualBusinessCardApi.md#fetchAllVirtualBusinessCards) | **GET** /v2/virtualBusinessCard/all | Fetch all VirtualBusinessCards
-[**fetchVirtualBusinessCard()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCard) | **GET** /v2/virtualBusinessCard/{id} | Fetch virtual business card
-[**fetchVirtualBusinessCardRequests()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Fetch requests
-[**restoreVirtualBusinessCard()**](VirtualBusinessCardApi.md#restoreVirtualBusinessCard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore VirtualBusinessCard
-[**updateVirtualBusinessCard()**](VirtualBusinessCardApi.md#updateVirtualBusinessCard) | **PUT** /v2/virtualBusinessCard/{id} | Update VirtualBusinessCard
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveVirtualBusinessCard()**](VirtualBusinessCardApi.md#archiveVirtualBusinessCard) | **DELETE** /v2/virtualBusinessCard/{id} | Archive VirtualBusinessCard |
+| [**createVirtualBusinessCard()**](VirtualBusinessCardApi.md#createVirtualBusinessCard) | **POST** /v2/virtualBusinessCard | Create VirtualBusinessCard |
+| [**fetchAllVirtualBusinessCards()**](VirtualBusinessCardApi.md#fetchAllVirtualBusinessCards) | **GET** /v2/virtualBusinessCard/all | Fetch all VirtualBusinessCards |
+| [**fetchVirtualBusinessCard()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCard) | **GET** /v2/virtualBusinessCard/{id} | Fetch virtual business card |
+| [**fetchVirtualBusinessCardRequests()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Fetch requests |
+| [**restoreVirtualBusinessCard()**](VirtualBusinessCardApi.md#restoreVirtualBusinessCard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore VirtualBusinessCard |
+| [**updateVirtualBusinessCard()**](VirtualBusinessCardApi.md#updateVirtualBusinessCard) | **PUT** /v2/virtualBusinessCard/{id} | Update VirtualBusinessCard |
 
 
 ## `archiveVirtualBusinessCard()`
@@ -46,9 +46,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -100,9 +100,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_virtual_business_card_create_params** | [**\OpenAPI\Client\Model\WTVirtualBusinessCardCreateParams**](../Model/WTVirtualBusinessCardCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_virtual_business_card_create_params** | [**\OpenAPI\Client\Model\WTVirtualBusinessCardCreateParams**](../Model/WTVirtualBusinessCardCreateParams.md)|  | |
 
 ### Return type
 
@@ -154,9 +154,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -208,9 +208,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -262,9 +262,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -316,9 +316,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -371,10 +371,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_virtual_business_card_update_params** | [**\OpenAPI\Client\Model\WTVirtualBusinessCardUpdateParams**](../Model/WTVirtualBusinessCardUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_virtual_business_card_update_params** | [**\OpenAPI\Client\Model\WTVirtualBusinessCardUpdateParams**](../Model/WTVirtualBusinessCardUpdateParams.md)|  | |
 
 ### Return type
 

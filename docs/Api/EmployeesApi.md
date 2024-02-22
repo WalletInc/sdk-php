@@ -1,55 +1,55 @@
 # OpenAPI\Client\EmployeesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addPeerToRoles()**](EmployeesApi.md#addPeerToRoles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles
-[**createDocument()**](EmployeesApi.md#createDocument) | **POST** /v2/employee/document | Create document
-[**createEmployeePeer()**](EmployeesApi.md#createEmployeePeer) | **POST** /v2/employee/peer | Create employee peer
-[**createFile()**](EmployeesApi.md#createFile) | **POST** /v2/employee/file/create | Create file
-[**createMediaFile()**](EmployeesApi.md#createMediaFile) | **POST** /v2/employee/mediaFile | Create media file
-[**createStaticVoucherCampaignsGroup()**](EmployeesApi.md#createStaticVoucherCampaignsGroup) | **POST** /v2/employee/staticVoucherCampaignsGroup | Create static voucher campaign group
-[**deleteDocument()**](EmployeesApi.md#deleteDocument) | **DELETE** /v2/employee/document/{documentID} | Delete document
-[**deleteMediaFile()**](EmployeesApi.md#deleteMediaFile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file
-[**downloadFile()**](EmployeesApi.md#downloadFile) | **GET** /v2/employee/file/download/{fileID} | Fetch URL for file download
-[**exportClubMembers()**](EmployeesApi.md#exportClubMembers) | **PUT** /v2/employee/export/members | Export club members
-[**exportMerchantCredits()**](EmployeesApi.md#exportMerchantCredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits
-[**exportStaticVoucherCampaign()**](EmployeesApi.md#exportStaticVoucherCampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign
-[**failedImport()**](EmployeesApi.md#failedImport) | **GET** /v2/employee/file/imports/failed/{fileID} | Fetch URL to download a failed import
-[**fetchDocuments()**](EmployeesApi.md#fetchDocuments) | **GET** /v2/employee/documents/all | Fetch all documents
-[**fetchDynamicVouchers()**](EmployeesApi.md#fetchDynamicVouchers) | **GET** /v2/employee/dynamicVouchers/all | Fetch all dynamic vouchers
-[**fetchEmployeeStaticVoucherCampaignGroups()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaignGroups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups
-[**fetchEmployeeStaticVoucherCampaigns()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns
-[**fetchMediaFiles()**](EmployeesApi.md#fetchMediaFiles) | **GET** /v2/employee/mediaFiles/all | Fetch all media files
-[**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Create employee alert
-[**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Fetch all messages
-[**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source
-[**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources
-[**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity
-[**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions
-[**fetchProfileInfo()**](EmployeesApi.md#fetchProfileInfo) | **GET** /v2/employee | Retrieve employee&#39;s webpages
-[**importClubMembers()**](EmployeesApi.md#importClubMembers) | **POST** /v2/employee/import/members | Import club members
-[**importMerchantCredits()**](EmployeesApi.md#importMerchantCredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits
-[**loadWebpagesOfEmployee()**](EmployeesApi.md#loadWebpagesOfEmployee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages
-[**modifyPeersRoles()**](EmployeesApi.md#modifyPeersRoles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles
-[**presignFile()**](EmployeesApi.md#presignFile) | **POST** /v2/employee/file/presign | Presign file for upload
-[**removePeerFromAllRoles()**](EmployeesApi.md#removePeerFromAllRoles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles
-[**scheduleAdvertisementCredit()**](EmployeesApi.md#scheduleAdvertisementCredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit
-[**scheduleDynamicVoucher()**](EmployeesApi.md#scheduleDynamicVoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list
-[**scheduleDynamicVoucherToRecipient()**](EmployeesApi.md#scheduleDynamicVoucherToRecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient
-[**scheduleSimpleSMS()**](EmployeesApi.md#scheduleSimpleSMS) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list
-[**scheduleSimpleSMSToRecipient()**](EmployeesApi.md#scheduleSimpleSMSToRecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient
-[**sendHelpDeskResponse()**](EmployeesApi.md#sendHelpDeskResponse) | **POST** /v2/employee/helpDesk/response | Send help desk response
-[**sendSmsCampaignBroadcast()**](EmployeesApi.md#sendSmsCampaignBroadcast) | **POST** /v2/employee/sms/schedule/campaign/{staticVoucherCampaignID} | Schedule SMS Campaign Broadcast
-[**setAlertsRead()**](EmployeesApi.md#setAlertsRead) | **PATCH** /v2/employee/alerts | Mark alerts as read
-[**setExportDataFilesRead()**](EmployeesApi.md#setExportDataFilesRead) | **PUT** /v2/employee/export/dataFiles | Mark export data files as read
-[**setHelpDeskRequestResolved()**](EmployeesApi.md#setHelpDeskRequestResolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request
-[**setMessagesRead()**](EmployeesApi.md#setMessagesRead) | **PATCH** /v2/employee/messages | Mark messages as read
-[**setProfilePicture()**](EmployeesApi.md#setProfilePicture) | **PUT** /v2/employee/profile/picture | Set profile picture
-[**updateClubMembers()**](EmployeesApi.md#updateClubMembers) | **PUT** /v2/employee/update/members | Update club members
-[**updateEmailNotificationPreference()**](EmployeesApi.md#updateEmailNotificationPreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled
-[**updateEmployeePeer()**](EmployeesApi.md#updateEmployeePeer) | **PUT** /v2/employee/peer/{userID} | Update peer
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addPeerToRoles()**](EmployeesApi.md#addPeerToRoles) | **POST** /v2/employee/roles/peer/{userID} | Add peer to roles |
+| [**createDocument()**](EmployeesApi.md#createDocument) | **POST** /v2/employee/document | Create document |
+| [**createEmployeePeer()**](EmployeesApi.md#createEmployeePeer) | **POST** /v2/employee/peer | Create employee peer |
+| [**createFile()**](EmployeesApi.md#createFile) | **POST** /v2/employee/file/create | Create file |
+| [**createMediaFile()**](EmployeesApi.md#createMediaFile) | **POST** /v2/employee/mediaFile | Create media file |
+| [**createStaticVoucherCampaignsGroup()**](EmployeesApi.md#createStaticVoucherCampaignsGroup) | **POST** /v2/employee/staticVoucherCampaignsGroup | Create static voucher campaign group |
+| [**deleteDocument()**](EmployeesApi.md#deleteDocument) | **DELETE** /v2/employee/document/{documentID} | Delete document |
+| [**deleteMediaFile()**](EmployeesApi.md#deleteMediaFile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file |
+| [**downloadFile()**](EmployeesApi.md#downloadFile) | **GET** /v2/employee/file/download/{fileID} | Fetch URL for file download |
+| [**exportClubMembers()**](EmployeesApi.md#exportClubMembers) | **PUT** /v2/employee/export/members | Export club members |
+| [**exportMerchantCredits()**](EmployeesApi.md#exportMerchantCredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits |
+| [**exportStaticVoucherCampaign()**](EmployeesApi.md#exportStaticVoucherCampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign |
+| [**failedImport()**](EmployeesApi.md#failedImport) | **GET** /v2/employee/file/imports/failed/{fileID} | Fetch URL to download a failed import |
+| [**fetchDocuments()**](EmployeesApi.md#fetchDocuments) | **GET** /v2/employee/documents/all | Fetch all documents |
+| [**fetchDynamicVouchers()**](EmployeesApi.md#fetchDynamicVouchers) | **GET** /v2/employee/dynamicVouchers/all | Fetch all dynamic vouchers |
+| [**fetchEmployeeStaticVoucherCampaignGroups()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaignGroups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups |
+| [**fetchEmployeeStaticVoucherCampaigns()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns |
+| [**fetchMediaFiles()**](EmployeesApi.md#fetchMediaFiles) | **GET** /v2/employee/mediaFiles/all | Fetch all media files |
+| [**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Create employee alert |
+| [**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Fetch all messages |
+| [**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source |
+| [**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources |
+| [**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity |
+| [**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions |
+| [**fetchProfileInfo()**](EmployeesApi.md#fetchProfileInfo) | **GET** /v2/employee | Retrieve employee&#39;s webpages |
+| [**importClubMembers()**](EmployeesApi.md#importClubMembers) | **POST** /v2/employee/import/members | Import club members |
+| [**importMerchantCredits()**](EmployeesApi.md#importMerchantCredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits |
+| [**loadWebpagesOfEmployee()**](EmployeesApi.md#loadWebpagesOfEmployee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages |
+| [**modifyPeersRoles()**](EmployeesApi.md#modifyPeersRoles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles |
+| [**presignFile()**](EmployeesApi.md#presignFile) | **POST** /v2/employee/file/presign | Presign file for upload |
+| [**removePeerFromAllRoles()**](EmployeesApi.md#removePeerFromAllRoles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles |
+| [**scheduleAdvertisementCredit()**](EmployeesApi.md#scheduleAdvertisementCredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit |
+| [**scheduleDynamicVoucher()**](EmployeesApi.md#scheduleDynamicVoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list |
+| [**scheduleDynamicVoucherToRecipient()**](EmployeesApi.md#scheduleDynamicVoucherToRecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient |
+| [**scheduleSimpleSMS()**](EmployeesApi.md#scheduleSimpleSMS) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list |
+| [**scheduleSimpleSMSToRecipient()**](EmployeesApi.md#scheduleSimpleSMSToRecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient |
+| [**sendHelpDeskResponse()**](EmployeesApi.md#sendHelpDeskResponse) | **POST** /v2/employee/helpDesk/response | Send help desk response |
+| [**sendSmsCampaignBroadcast()**](EmployeesApi.md#sendSmsCampaignBroadcast) | **POST** /v2/employee/sms/schedule/campaign/{staticVoucherCampaignID} | Schedule SMS Campaign Broadcast |
+| [**setAlertsRead()**](EmployeesApi.md#setAlertsRead) | **PATCH** /v2/employee/alerts | Mark alerts as read |
+| [**setExportDataFilesRead()**](EmployeesApi.md#setExportDataFilesRead) | **PUT** /v2/employee/export/dataFiles | Mark export data files as read |
+| [**setHelpDeskRequestResolved()**](EmployeesApi.md#setHelpDeskRequestResolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request |
+| [**setMessagesRead()**](EmployeesApi.md#setMessagesRead) | **PATCH** /v2/employee/messages | Mark messages as read |
+| [**setProfilePicture()**](EmployeesApi.md#setProfilePicture) | **PUT** /v2/employee/profile/picture | Set profile picture |
+| [**updateClubMembers()**](EmployeesApi.md#updateClubMembers) | **PUT** /v2/employee/update/members | Update club members |
+| [**updateEmailNotificationPreference()**](EmployeesApi.md#updateEmailNotificationPreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled |
+| [**updateEmployeePeer()**](EmployeesApi.md#updateEmployeePeer) | **PUT** /v2/employee/peer/{userID} | Update peer |
 
 
 ## `addPeerToRoles()`
@@ -86,10 +86,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  | |
 
 ### Return type
 
@@ -141,9 +141,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_document** | [**\OpenAPI\Client\Model\WTEmployeeCreateDocument**](../Model/WTEmployeeCreateDocument.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_create_document** | [**\OpenAPI\Client\Model\WTEmployeeCreateDocument**](../Model/WTEmployeeCreateDocument.md)|  | |
 
 ### Return type
 
@@ -195,9 +195,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create** | [**\OpenAPI\Client\Model\WTEmployeeCreate**](../Model/WTEmployeeCreate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_create** | [**\OpenAPI\Client\Model\WTEmployeeCreate**](../Model/WTEmployeeCreate.md)|  | |
 
 ### Return type
 
@@ -219,7 +219,7 @@ No authorization required
 ## `createFile()`
 
 ```php
-createFile($wt_employee_file_create): \OpenAPI\Client\Model\InlineResponse2001
+createFile($wt_employee_file_create): \OpenAPI\Client\Model\CreateFile200Response
 ```
 
 Create file
@@ -249,13 +249,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_file_create** | [**\OpenAPI\Client\Model\WTEmployeeFileCreate**](../Model/WTEmployeeFileCreate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_file_create** | [**\OpenAPI\Client\Model\WTEmployeeFileCreate**](../Model/WTEmployeeFileCreate.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\OpenAPI\Client\Model\CreateFile200Response**](../Model/CreateFile200Response.md)
 
 ### Authorization
 
@@ -303,9 +303,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_media_file** | [**\OpenAPI\Client\Model\WTEmployeeCreateMediaFile**](../Model/WTEmployeeCreateMediaFile.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_create_media_file** | [**\OpenAPI\Client\Model\WTEmployeeCreateMediaFile**](../Model/WTEmployeeCreateMediaFile.md)|  | |
 
 ### Return type
 
@@ -357,9 +357,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_static_voucher_campaign_group** | [**\OpenAPI\Client\Model\WTEmployeeCreateStaticVoucherCampaignGroup**](../Model/WTEmployeeCreateStaticVoucherCampaignGroup.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_create_static_voucher_campaign_group** | [**\OpenAPI\Client\Model\WTEmployeeCreateStaticVoucherCampaignGroup**](../Model/WTEmployeeCreateStaticVoucherCampaignGroup.md)|  | |
 
 ### Return type
 
@@ -411,9 +411,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **document_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **document_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -465,9 +465,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **media_file_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **media_file_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -519,9 +519,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **file_id** | **string**|  | |
 
 ### Return type
 
@@ -675,9 +675,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -729,9 +729,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **file_id** | **string**|  | |
 
 ### Return type
 
@@ -783,9 +783,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **folder** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **folder** | **string**|  | [optional] |
 
 ### Return type
 
@@ -837,9 +837,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -931,7 +931,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     new GuzzleHttp\Client()
 );
 $is_archive_included = True; // bool
-$source_id = 3.4; // double
+$source_id = 3.4; // float
 
 try {
     $result = $apiInstance->fetchEmployeeStaticVoucherCampaigns($is_archive_included, $source_id);
@@ -943,10 +943,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **source_id** | **double**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
+| **source_id** | **float**|  | [optional] |
 
 ### Return type
 
@@ -998,9 +998,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **folder** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **folder** | **string**|  | [optional] |
 
 ### Return type
 
@@ -1154,9 +1154,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **source_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1259,9 +1259,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **employee_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **employee_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1313,9 +1313,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1418,9 +1418,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  | |
 
 ### Return type
 
@@ -1472,9 +1472,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  | |
 
 ### Return type
 
@@ -1578,10 +1578,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  | |
 
 ### Return type
 
@@ -1633,9 +1633,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_s3_file_presign** | [**\OpenAPI\Client\Model\WTEmployeeS3FilePresign**](../Model/WTEmployeeS3FilePresign.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_s3_file_presign** | [**\OpenAPI\Client\Model\WTEmployeeS3FilePresign**](../Model/WTEmployeeS3FilePresign.md)|  | |
 
 ### Return type
 
@@ -1687,9 +1687,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1742,10 +1742,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **advertisement_credit_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **advertisement_credit_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  | |
 
 ### Return type
 
@@ -1798,10 +1798,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  | |
 
 ### Return type
 
@@ -1854,10 +1854,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_schedule_simple_smsto_recipient** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient**](../Model/WTEmployeeScheduleSimpleSMSToRecipient.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_schedule_simple_smsto_recipient** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient**](../Model/WTEmployeeScheduleSimpleSMSToRecipient.md)|  | |
 
 ### Return type
 
@@ -1879,7 +1879,7 @@ No authorization required
 ## `scheduleSimpleSMS()`
 
 ```php
-scheduleSimpleSMS($wt_employee_schedule_simple_sms): \OpenAPI\Client\Model\SimpleSMSBroadcast
+scheduleSimpleSMS($wt_employee_schedule_simple_sms): bool
 ```
 
 Schedule Simple SMS broadcast to list
@@ -1909,13 +1909,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SimpleSMSBroadcast**](../Model/SimpleSMSBroadcast.md)
+**bool**
 
 ### Authorization
 
@@ -1933,7 +1933,7 @@ No authorization required
 ## `scheduleSimpleSMSToRecipient()`
 
 ```php
-scheduleSimpleSMSToRecipient($wt_employee_schedule_simple_smsto_recipient): \OpenAPI\Client\Model\SimpleSMSBroadcast
+scheduleSimpleSMSToRecipient($wt_employee_schedule_simple_smsto_recipient): bool
 ```
 
 Schedule Simple SMS broadcast to recipient
@@ -1963,13 +1963,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_schedule_simple_smsto_recipient** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient**](../Model/WTEmployeeScheduleSimpleSMSToRecipient.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_schedule_simple_smsto_recipient** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient**](../Model/WTEmployeeScheduleSimpleSMSToRecipient.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SimpleSMSBroadcast**](../Model/SimpleSMSBroadcast.md)
+**bool**
 
 ### Authorization
 
@@ -2017,9 +2017,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_send_help_desk_response** | [**\OpenAPI\Client\Model\WTEmployeeSendHelpDeskResponse**](../Model/WTEmployeeSendHelpDeskResponse.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_send_help_desk_response** | [**\OpenAPI\Client\Model\WTEmployeeSendHelpDeskResponse**](../Model/WTEmployeeSendHelpDeskResponse.md)|  | |
 
 ### Return type
 
@@ -2072,10 +2072,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  |
- **wt_employee_schedule_sms_campaign_broadcast** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSMSCampaignBroadcast**](../Model/WTEmployeeScheduleSMSCampaignBroadcast.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_schedule_sms_campaign_broadcast** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSMSCampaignBroadcast**](../Model/WTEmployeeScheduleSMSCampaignBroadcast.md)|  | |
 
 ### Return type
 
@@ -2229,9 +2229,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **help_desk_request_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **help_desk_request_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -2334,9 +2334,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_create_media_file** | [**\OpenAPI\Client\Model\WTEmployeeCreateMediaFile**](../Model/WTEmployeeCreateMediaFile.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_create_media_file** | [**\OpenAPI\Client\Model\WTEmployeeCreateMediaFile**](../Model/WTEmployeeCreateMediaFile.md)|  | |
 
 ### Return type
 
@@ -2388,9 +2388,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_update_records** | [**\OpenAPI\Client\Model\WTEmployeeUpdateRecords**](../Model/WTEmployeeUpdateRecords.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_update_records** | [**\OpenAPI\Client\Model\WTEmployeeUpdateRecords**](../Model/WTEmployeeUpdateRecords.md)|  | |
 
 ### Return type
 
@@ -2412,7 +2412,7 @@ No authorization required
 ## `updateEmailNotificationPreference()`
 
 ```php
-updateEmailNotificationPreference($inline_object): \OpenAPI\Client\Model\Employee
+updateEmailNotificationPreference($update_email_notification_preference_request): \OpenAPI\Client\Model\Employee
 ```
 
 Changes the employee's email notification preference to enabled or disabled
@@ -2430,10 +2430,10 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$inline_object = new \OpenAPI\Client\Model\InlineObject(); // \OpenAPI\Client\Model\InlineObject
+$update_email_notification_preference_request = new \OpenAPI\Client\Model\UpdateEmailNotificationPreferenceRequest(); // \OpenAPI\Client\Model\UpdateEmailNotificationPreferenceRequest
 
 try {
-    $result = $apiInstance->updateEmailNotificationPreference($inline_object);
+    $result = $apiInstance->updateEmailNotificationPreference($update_email_notification_preference_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployeesApi->updateEmailNotificationPreference: ', $e->getMessage(), PHP_EOL;
@@ -2442,9 +2442,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline_object** | [**\OpenAPI\Client\Model\InlineObject**](../Model/InlineObject.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **update_email_notification_preference_request** | [**\OpenAPI\Client\Model\UpdateEmailNotificationPreferenceRequest**](../Model/UpdateEmailNotificationPreferenceRequest.md)|  | |
 
 ### Return type
 
@@ -2497,10 +2497,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **string**|  |
- **wt_employee_update** | [**\OpenAPI\Client\Model\WTEmployeeUpdate**](../Model/WTEmployeeUpdate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **user_id** | **string**|  | |
+| **wt_employee_update** | [**\OpenAPI\Client\Model\WTEmployeeUpdate**](../Model/WTEmployeeUpdate.md)|  | |
 
 ### Return type
 

@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **icon** | **string** |  |
 **route** | **string** |  |
 **type** | **string** |  |
-**order_number** | **double** |  |
+**order_number** | **float** |  |
 **is_default** | **bool** |  |
 **category** | **string** |  |
 **category_icon** | **string** |  |
-**category_order_number** | **double** |  |
+**category_order_number** | **float** |  |
 **page_name** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

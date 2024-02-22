@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **string** |  |
-**value_type** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**value_type** | [**\OpenAPI\Client\Model\PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  |
 **payment_design_id** | **string** |  |
 **max_uses** | **int** |  |
 **discount_value** | **int** |  |
 **employee_id** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

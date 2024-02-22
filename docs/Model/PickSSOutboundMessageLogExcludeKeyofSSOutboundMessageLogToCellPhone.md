@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
 **employee_id** | **string** |  |
-**status** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**status** | [**\OpenAPI\Client\Model\PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **body** | **string** |  |
 **phone_number_id** | **string** |  |
 **media_urls** | **string[]** |  |
-**payment_object_broadcast_id** | [**AnyOfStringString**](AnyOfStringString.md) |  | [optional]
+**payment_object_broadcast_id** | [**\OpenAPI\Client\Model\PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID.md) |  | [optional]
 **body_template** | **string** |  |
 **status_callback** | **string** |  |
 **is_sent** | **bool** |  |

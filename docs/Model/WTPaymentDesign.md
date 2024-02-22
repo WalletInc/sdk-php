@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **border_color** | **string** |  |
-**border_style_type** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**border_style_type** | [**\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  |
 **border_size** | **string** |  |
 **border_radius** | **int** |  |
 **font_color** | **string** |  |
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **background_image_url** | **string** |  | [optional]
 **company_logo_url** | **string** |  | [optional]
 **employee_id** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

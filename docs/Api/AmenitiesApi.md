@@ -1,14 +1,14 @@
 # OpenAPI\Client\AmenitiesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveAmenity()**](AmenitiesApi.md#archiveAmenity) | **DELETE** /v2/amenities/{id} | Archive amenity
-[**createAmenity()**](AmenitiesApi.md#createAmenity) | **POST** /v2/amenities | Create amenity
-[**fetchAllAmenities()**](AmenitiesApi.md#fetchAllAmenities) | **GET** /v2/amenities/all | Fetch all amenities
-[**restoreAmenity()**](AmenitiesApi.md#restoreAmenity) | **PATCH** /v2/amenities/{id} | Restore amenity
-[**updateAmenity()**](AmenitiesApi.md#updateAmenity) | **PUT** /v2/amenities/{id} | Update amenity
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveAmenity()**](AmenitiesApi.md#archiveAmenity) | **DELETE** /v2/amenities/{id} | Archive amenity |
+| [**createAmenity()**](AmenitiesApi.md#createAmenity) | **POST** /v2/amenities | Create amenity |
+| [**fetchAllAmenities()**](AmenitiesApi.md#fetchAllAmenities) | **GET** /v2/amenities/all | Fetch all amenities |
+| [**restoreAmenity()**](AmenitiesApi.md#restoreAmenity) | **PATCH** /v2/amenities/{id} | Restore amenity |
+| [**updateAmenity()**](AmenitiesApi.md#updateAmenity) | **PUT** /v2/amenities/{id} | Update amenity |
 
 
 ## `archiveAmenity()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_amenity_create_params** | [**\OpenAPI\Client\Model\WTAmenityCreateParams**](../Model/WTAmenityCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_amenity_create_params** | [**\OpenAPI\Client\Model\WTAmenityCreateParams**](../Model/WTAmenityCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_amenity_update_params** | [**\OpenAPI\Client\Model\WTAmenityUpdateParams**](../Model/WTAmenityUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_amenity_update_params** | [**\OpenAPI\Client\Model\WTAmenityUpdateParams**](../Model/WTAmenityUpdateParams.md)|  | |
 
 ### Return type
 

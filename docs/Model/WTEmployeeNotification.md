@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**type** | [**\OpenAPI\Client\Model\WTEmployeeNotificationType**](WTEmployeeNotificationType.md) |  |
 **title** | **string** |  |
 **content** | **string** |  |
 **payload** | **mixed** |  | [optional]

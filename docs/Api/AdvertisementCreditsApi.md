@@ -1,16 +1,16 @@
 # OpenAPI\Client\AdvertisementCreditsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveAdvertisementCredit()**](AdvertisementCreditsApi.md#archiveAdvertisementCredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit
-[**createAdvertisementCredit()**](AdvertisementCreditsApi.md#createAdvertisementCredit) | **POST** /v2/payment/advertisementCredit | Create ad credit
-[**fetchAdvertisementCreditById()**](AdvertisementCreditsApi.md#fetchAdvertisementCreditById) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit
-[**fetchAdvertisementCreditScans()**](AdvertisementCreditsApi.md#fetchAdvertisementCreditScans) | **GET** /v2/payment/advertisementCredit/scans/{id} | Fetch scans
-[**fetchAllAdvertisementCredits()**](AdvertisementCreditsApi.md#fetchAllAdvertisementCredits) | **GET** /v2/payment/advertisementCredit/all | Fetch all active ad credits
-[**restoreAdvertisementCredit()**](AdvertisementCreditsApi.md#restoreAdvertisementCredit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore ad credit
-[**updateAdvertisementCredit()**](AdvertisementCreditsApi.md#updateAdvertisementCredit) | **PUT** /v2/payment/advertisementCredit/{id} | Update ad credit
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveAdvertisementCredit()**](AdvertisementCreditsApi.md#archiveAdvertisementCredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive ad credit |
+| [**createAdvertisementCredit()**](AdvertisementCreditsApi.md#createAdvertisementCredit) | **POST** /v2/payment/advertisementCredit | Create ad credit |
+| [**fetchAdvertisementCreditById()**](AdvertisementCreditsApi.md#fetchAdvertisementCreditById) | **GET** /v2/payment/advertisementCredit/{id} | Fetch ad credit |
+| [**fetchAdvertisementCreditScans()**](AdvertisementCreditsApi.md#fetchAdvertisementCreditScans) | **GET** /v2/payment/advertisementCredit/scans/{id} | Fetch scans |
+| [**fetchAllAdvertisementCredits()**](AdvertisementCreditsApi.md#fetchAllAdvertisementCredits) | **GET** /v2/payment/advertisementCredit/all | Fetch all active ad credits |
+| [**restoreAdvertisementCredit()**](AdvertisementCreditsApi.md#restoreAdvertisementCredit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore ad credit |
+| [**updateAdvertisementCredit()**](AdvertisementCreditsApi.md#updateAdvertisementCredit) | **PUT** /v2/payment/advertisementCredit/{id} | Update ad credit |
 
 
 ## `archiveAdvertisementCredit()`
@@ -46,9 +46,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -100,9 +100,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_advertisement_credit_create_params** | [**\OpenAPI\Client\Model\WTAdvertisementCreditCreateParams**](../Model/WTAdvertisementCreditCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_advertisement_credit_create_params** | [**\OpenAPI\Client\Model\WTAdvertisementCreditCreateParams**](../Model/WTAdvertisementCreditCreateParams.md)|  | |
 
 ### Return type
 
@@ -154,9 +154,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -208,9 +208,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -262,9 +262,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -316,9 +316,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -371,10 +371,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_advertisement_credit_update_params** | [**\OpenAPI\Client\Model\WTAdvertisementCreditUpdateParams**](../Model/WTAdvertisementCreditUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_advertisement_credit_update_params** | [**\OpenAPI\Client\Model\WTAdvertisementCreditUpdateParams**](../Model/WTAdvertisementCreditUpdateParams.md)|  | |
 
 ### Return type
 

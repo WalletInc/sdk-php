@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**check_amount** | **double** |  |
+**check_amount** | **float** |  |
 **transaction_number** | **string** |  |
 **meta_value** | **string** |  | [optional]
 

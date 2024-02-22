@@ -1,12 +1,12 @@
 # OpenAPI\Client\ShopifyTerminalApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#fetchWalletItemFromShopifyTerminal) | **GET** /v2/pos/shopify/item/{itemID} | Fetch item
-[**redeemWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#redeemWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/redeem/{itemID} | Redeem item
-[**refundWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#refundWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/refund/{ledgerEntryID} | Refund transaction
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#fetchWalletItemFromShopifyTerminal) | **GET** /v2/pos/shopify/item/{itemID} | Fetch item |
+| [**redeemWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#redeemWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/redeem/{itemID} | Redeem item |
+| [**refundWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#refundWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/refund/{ledgerEntryID} | Refund transaction |
 
 
 ## `fetchWalletItemFromShopifyTerminal()`
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **item_id** | **string**|  | |
 
 ### Return type
 
@@ -97,10 +97,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
- **wt_wallet_item_redemption** | [**\OpenAPI\Client\Model\WTWalletItemRedemption**](../Model/WTWalletItemRedemption.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **item_id** | **string**|  | |
+| **wt_wallet_item_redemption** | [**\OpenAPI\Client\Model\WTWalletItemRedemption**](../Model/WTWalletItemRedemption.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ledger_entry_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ledger_entry_id** | **string**|  | |
 
 ### Return type
 

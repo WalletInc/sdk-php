@@ -1,18 +1,18 @@
 # OpenAPI\Client\CustomerApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchActiveVouchers()**](CustomerApi.md#fetchActiveVouchers) | **GET** /v2/customer/vouchers/active | Fetch active static vouchers
-[**fetchAllVouchers()**](CustomerApi.md#fetchAllVouchers) | **GET** /v2/customer/vouchers/all | Fetch all static vouchers
-[**fetchExpiredVouchers()**](CustomerApi.md#fetchExpiredVouchers) | **GET** /v2/customer/vouchers/expired | Fetch expired static vouchers
-[**fetchRedeemedVouchers()**](CustomerApi.md#fetchRedeemedVouchers) | **GET** /v2/customer/vouchers/redeemed | Fetch redeemed static vouchers
-[**fetchRefundedVouchers()**](CustomerApi.md#fetchRefundedVouchers) | **GET** /v2/customer/vouchers/refunded | Fetch refunded static vouchers
-[**fetchUpcomingVouchers()**](CustomerApi.md#fetchUpcomingVouchers) | **GET** /v2/customer/vouchers/upcoming | Fetch upcoming static vouchers
-[**fetchWalletViewsForSession()**](CustomerApi.md#fetchWalletViewsForSession) | **GET** /v2/customer/walletViews/session/{id} | Fetch Wallet Views for Session
-[**searchByMemberID()**](CustomerApi.md#searchByMemberID) | **POST** /v2/customer/search/memberID | Find members with memberID
-[**searchByPhoneNumber()**](CustomerApi.md#searchByPhoneNumber) | **POST** /v2/customer/search/phoneNumber | Find members with phone number
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchActiveVouchers()**](CustomerApi.md#fetchActiveVouchers) | **GET** /v2/customer/vouchers/active | Fetch active static vouchers |
+| [**fetchAllVouchers()**](CustomerApi.md#fetchAllVouchers) | **GET** /v2/customer/vouchers/all | Fetch all static vouchers |
+| [**fetchExpiredVouchers()**](CustomerApi.md#fetchExpiredVouchers) | **GET** /v2/customer/vouchers/expired | Fetch expired static vouchers |
+| [**fetchRedeemedVouchers()**](CustomerApi.md#fetchRedeemedVouchers) | **GET** /v2/customer/vouchers/redeemed | Fetch redeemed static vouchers |
+| [**fetchRefundedVouchers()**](CustomerApi.md#fetchRefundedVouchers) | **GET** /v2/customer/vouchers/refunded | Fetch refunded static vouchers |
+| [**fetchUpcomingVouchers()**](CustomerApi.md#fetchUpcomingVouchers) | **GET** /v2/customer/vouchers/upcoming | Fetch upcoming static vouchers |
+| [**fetchWalletViewsForSession()**](CustomerApi.md#fetchWalletViewsForSession) | **GET** /v2/customer/walletViews/session/{id} | Fetch Wallet Views for Session |
+| [**searchByMemberID()**](CustomerApi.md#searchByMemberID) | **POST** /v2/customer/search/memberID | Find members with memberID |
+| [**searchByPhoneNumber()**](CustomerApi.md#searchByPhoneNumber) | **POST** /v2/customer/search/phoneNumber | Find members with phone number |
 
 
 ## `fetchActiveVouchers()`
@@ -49,10 +49,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -105,10 +105,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -161,10 +161,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -217,10 +217,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -273,10 +273,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -329,10 +329,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  | [optional]
- **cell_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | [optional] |
+| **cell_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -384,9 +384,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -438,9 +438,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_customer_search_by_member_id** | [**\OpenAPI\Client\Model\WTCustomerSearchByMemberID**](../Model/WTCustomerSearchByMemberID.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_customer_search_by_member_id** | [**\OpenAPI\Client\Model\WTCustomerSearchByMemberID**](../Model/WTCustomerSearchByMemberID.md)|  | |
 
 ### Return type
 
@@ -492,9 +492,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_customer_search_by_phone_number** | [**\OpenAPI\Client\Model\WTCustomerSearchByPhoneNumber**](../Model/WTCustomerSearchByPhoneNumber.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_customer_search_by_phone_number** | [**\OpenAPI\Client\Model\WTCustomerSearchByPhoneNumber**](../Model/WTCustomerSearchByPhoneNumber.md)|  | |
 
 ### Return type
 

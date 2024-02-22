@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **linked_in** | **string** |  | [optional]
 **whats_app** | **string** |  | [optional]
 **avatar_url** | **string** |  | [optional]
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

@@ -1,14 +1,14 @@
 # OpenAPI\Client\GamingApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveGaming()**](GamingApi.md#archiveGaming) | **DELETE** /v2/gaming/{id} | Archive gaming
-[**createGaming()**](GamingApi.md#createGaming) | **POST** /v2/gaming | Create gaming
-[**fetchAllGaming()**](GamingApi.md#fetchAllGaming) | **GET** /v2/gaming/all | Fetch all gaming
-[**restoreGaming()**](GamingApi.md#restoreGaming) | **PATCH** /v2/gaming/{id} | Restore gaming
-[**updateGaming()**](GamingApi.md#updateGaming) | **PUT** /v2/gaming/{id} | Update gaming
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveGaming()**](GamingApi.md#archiveGaming) | **DELETE** /v2/gaming/{id} | Archive gaming |
+| [**createGaming()**](GamingApi.md#createGaming) | **POST** /v2/gaming | Create gaming |
+| [**fetchAllGaming()**](GamingApi.md#fetchAllGaming) | **GET** /v2/gaming/all | Fetch all gaming |
+| [**restoreGaming()**](GamingApi.md#restoreGaming) | **PATCH** /v2/gaming/{id} | Restore gaming |
+| [**updateGaming()**](GamingApi.md#updateGaming) | **PUT** /v2/gaming/{id} | Update gaming |
 
 
 ## `archiveGaming()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_gaming_create_params** | [**\OpenAPI\Client\Model\WTGamingCreateParams**](../Model/WTGamingCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_gaming_create_params** | [**\OpenAPI\Client\Model\WTGamingCreateParams**](../Model/WTGamingCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_gaming_update_params** | [**\OpenAPI\Client\Model\WTGamingUpdateParams**](../Model/WTGamingUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_gaming_update_params** | [**\OpenAPI\Client\Model\WTGamingUpdateParams**](../Model/WTGamingUpdateParams.md)|  | |
 
 ### Return type
 

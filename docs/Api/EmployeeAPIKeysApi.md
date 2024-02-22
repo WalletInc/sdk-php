@@ -1,14 +1,14 @@
 # OpenAPI\Client\EmployeeAPIKeysApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#archiveEmployeeAPIKeys) | **DELETE** /v2/employee/apiKeys/{id} | Archive employee API Key
-[**createEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#createEmployeeAPIKeys) | **POST** /v2/employee/apiKeys | Create employee API Key
-[**fetchAllEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#fetchAllEmployeeAPIKeys) | **GET** /v2/employee/apiKeys/all | Fetch all employee API Keys
-[**fetchEmployeeAPIKeyById()**](EmployeeAPIKeysApi.md#fetchEmployeeAPIKeyById) | **GET** /v2/employee/apiKeys/{id} | Fetch API Key
-[**updateEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#updateEmployeeAPIKeys) | **PUT** /v2/employee/apiKeys/{id} | Update employee API Key
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#archiveEmployeeAPIKeys) | **DELETE** /v2/employee/apiKeys/{id} | Archive employee API Key |
+| [**createEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#createEmployeeAPIKeys) | **POST** /v2/employee/apiKeys | Create employee API Key |
+| [**fetchAllEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#fetchAllEmployeeAPIKeys) | **GET** /v2/employee/apiKeys/all | Fetch all employee API Keys |
+| [**fetchEmployeeAPIKeyById()**](EmployeeAPIKeysApi.md#fetchEmployeeAPIKeyById) | **GET** /v2/employee/apiKeys/{id} | Fetch API Key |
+| [**updateEmployeeAPIKeys()**](EmployeeAPIKeysApi.md#updateEmployeeAPIKeys) | **PUT** /v2/employee/apiKeys/{id} | Update employee API Key |
 
 
 ## `archiveEmployeeAPIKeys()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_employee_api_key_create_params** | [**\OpenAPI\Client\Model\WTEmployeeAPIKeyCreateParams**](../Model/WTEmployeeAPIKeyCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_employee_api_key_create_params** | [**\OpenAPI\Client\Model\WTEmployeeAPIKeyCreateParams**](../Model/WTEmployeeAPIKeyCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_employee_api_key_update_params** | [**\OpenAPI\Client\Model\WTEmployeeAPIKeyUpdateParams**](../Model/WTEmployeeAPIKeyUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_employee_api_key_update_params** | [**\OpenAPI\Client\Model\WTEmployeeAPIKeyUpdateParams**](../Model/WTEmployeeAPIKeyUpdateParams.md)|  | |
 
 ### Return type
 

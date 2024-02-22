@@ -1,14 +1,14 @@
 # OpenAPI\Client\QuickLinksSectionApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveLinkBookSection()**](QuickLinksSectionApi.md#archiveLinkBookSection) | **DELETE** /v2/linkBookSection/{id} | Archive link book section
-[**createLinkBookSection()**](QuickLinksSectionApi.md#createLinkBookSection) | **POST** /v2/linkBookSection | Create link book section
-[**fetchAllLinkBookSections()**](QuickLinksSectionApi.md#fetchAllLinkBookSections) | **GET** /v2/linkBookSection/all | Fetch all link book sections
-[**restoreLinkBookSection()**](QuickLinksSectionApi.md#restoreLinkBookSection) | **PATCH** /v2/linkBookSection/{id} | Restore link book section
-[**updateLinkBookSection()**](QuickLinksSectionApi.md#updateLinkBookSection) | **PUT** /v2/linkBookSection/{id} | Update link book section
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveLinkBookSection()**](QuickLinksSectionApi.md#archiveLinkBookSection) | **DELETE** /v2/linkBookSection/{id} | Archive link book section |
+| [**createLinkBookSection()**](QuickLinksSectionApi.md#createLinkBookSection) | **POST** /v2/linkBookSection | Create link book section |
+| [**fetchAllLinkBookSections()**](QuickLinksSectionApi.md#fetchAllLinkBookSections) | **GET** /v2/linkBookSection/all | Fetch all link book sections |
+| [**restoreLinkBookSection()**](QuickLinksSectionApi.md#restoreLinkBookSection) | **PATCH** /v2/linkBookSection/{id} | Restore link book section |
+| [**updateLinkBookSection()**](QuickLinksSectionApi.md#updateLinkBookSection) | **PUT** /v2/linkBookSection/{id} | Update link book section |
 
 
 ## `archiveLinkBookSection()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_link_book_section_create_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionCreateParams**](../Model/WTLinkBookSectionCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_link_book_section_create_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionCreateParams**](../Model/WTLinkBookSectionCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_link_book_section_update_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionUpdateParams**](../Model/WTLinkBookSectionUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_link_book_section_update_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionUpdateParams**](../Model/WTLinkBookSectionUpdateParams.md)|  | |
 
 ### Return type
 

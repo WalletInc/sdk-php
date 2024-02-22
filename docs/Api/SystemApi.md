@@ -1,17 +1,17 @@
 # OpenAPI\Client\SystemApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createRole()**](SystemApi.md#createRole) | **POST** /v2/system/roles | Create role
-[**deleteRole()**](SystemApi.md#deleteRole) | **DELETE** /v2/system/roles/{roleID} | Delete role
-[**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log
-[**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role
-[**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role
-[**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes
-[**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Fetch role
-[**saveRole()**](SystemApi.md#saveRole) | **PUT** /v2/system/roles/{roleID} | Update role
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createRole()**](SystemApi.md#createRole) | **POST** /v2/system/roles | Create role |
+| [**deleteRole()**](SystemApi.md#deleteRole) | **DELETE** /v2/system/roles/{roleID} | Delete role |
+| [**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log |
+| [**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role |
+| [**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role |
+| [**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes |
+| [**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Fetch role |
+| [**saveRole()**](SystemApi.md#saveRole) | **PUT** /v2/system/roles/{roleID} | Update role |
 
 
 ## `createRole()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_system_role_create** | [**\OpenAPI\Client\Model\WTSystemRoleCreate**](../Model/WTSystemRoleCreate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_system_role_create** | [**\OpenAPI\Client\Model\WTSystemRoleCreate**](../Model/WTSystemRoleCreate.md)|  | |
 
 ### Return type
 
@@ -101,9 +101,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
 
 ### Return type
 
@@ -156,10 +156,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -211,9 +211,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
 
 ### Return type
 
@@ -265,9 +265,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
 
 ### Return type
 
@@ -370,9 +370,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
 
 ### Return type
 
@@ -425,10 +425,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role_id** | **string**|  |
- **wt_system_role_create** | [**\OpenAPI\Client\Model\WTSystemRoleCreate**](../Model/WTSystemRoleCreate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **role_id** | **string**|  | |
+| **wt_system_role_create** | [**\OpenAPI\Client\Model\WTSystemRoleCreate**](../Model/WTSystemRoleCreate.md)|  | |
 
 ### Return type
 

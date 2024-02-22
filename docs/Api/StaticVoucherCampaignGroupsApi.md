@@ -1,10 +1,10 @@
 # OpenAPI\Client\StaticVoucherCampaignGroupsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchStaticVoucherCampaignGroups()**](StaticVoucherCampaignGroupsApi.md#fetchStaticVoucherCampaignGroups) | **GET** /v2/payment/staticVoucherCampaignGroups/campaigns/{campaignsGroupID} | Fetch all campaigns
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchStaticVoucherCampaignGroups()**](StaticVoucherCampaignGroupsApi.md#fetchStaticVoucherCampaignGroups) | **GET** /v2/payment/staticVoucherCampaignGroups/campaigns/{campaignsGroupID} | Fetch all campaigns |
 
 
 ## `fetchStaticVoucherCampaignGroups()`
@@ -40,9 +40,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaigns_group_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaigns_group_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 

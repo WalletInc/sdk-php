@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **iso_country** | **string** |  |
 **postal_code** | **string** |  |
 **region** | **string** |  |
-**longitude** | **double** |  |
-**latitude** | **double** |  |
+**longitude** | **float** |  |
+**latitude** | **float** |  |
 **rate_center** | **string** |  |
 **locality** | **string** |  |
 **lata** | **string** |  |

@@ -1,19 +1,19 @@
 # OpenAPI\Client\MerchantCreditsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveMerchantCredit()**](MerchantCreditsApi.md#archiveMerchantCredit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive merchant credit
-[**createMerchantCredit()**](MerchantCreditsApi.md#createMerchantCredit) | **POST** /v2/payment/merchantcredit | Create merchant credit
-[**fetchMerchantCreditById()**](MerchantCreditsApi.md#fetchMerchantCreditById) | **GET** /v2/payment/merchantcredit/{id} | Fetch merchant credit
-[**fetchMerchantCreditCount()**](MerchantCreditsApi.md#fetchMerchantCreditCount) | **GET** /v2/payment/merchantcredit/count | Fetch all active merchant credits
-[**fetchMerchantCreditHistoryLog()**](MerchantCreditsApi.md#fetchMerchantCreditHistoryLog) | **POST** /v2/payment/merchantcredit/history/log | Fetch history
-[**fetchMerchantCreditRedemptionLog()**](MerchantCreditsApi.md#fetchMerchantCreditRedemptionLog) | **POST** /v2/payment/merchantcredit/redemption/log | Fetch redemption log
-[**fetchMerchantCreditsByPage()**](MerchantCreditsApi.md#fetchMerchantCreditsByPage) | **POST** /v2/payment/merchantcredit/page | Fetch merchant credits by page
-[**restoreMerchantCredit()**](MerchantCreditsApi.md#restoreMerchantCredit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore merchant credit
-[**searchMerchantCredits()**](MerchantCreditsApi.md#searchMerchantCredits) | **POST** /v2/payment/merchantcredit/search | Search for merchant credits
-[**updateMerchantCredit()**](MerchantCreditsApi.md#updateMerchantCredit) | **PUT** /v2/payment/merchantcredit/{id} | Update merchant credit
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveMerchantCredit()**](MerchantCreditsApi.md#archiveMerchantCredit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive merchant credit |
+| [**createMerchantCredit()**](MerchantCreditsApi.md#createMerchantCredit) | **POST** /v2/payment/merchantcredit | Create merchant credit |
+| [**fetchMerchantCreditById()**](MerchantCreditsApi.md#fetchMerchantCreditById) | **GET** /v2/payment/merchantcredit/{id} | Fetch merchant credit |
+| [**fetchMerchantCreditCount()**](MerchantCreditsApi.md#fetchMerchantCreditCount) | **GET** /v2/payment/merchantcredit/count | Fetch all active merchant credits |
+| [**fetchMerchantCreditHistoryLog()**](MerchantCreditsApi.md#fetchMerchantCreditHistoryLog) | **POST** /v2/payment/merchantcredit/history/log | Fetch history |
+| [**fetchMerchantCreditRedemptionLog()**](MerchantCreditsApi.md#fetchMerchantCreditRedemptionLog) | **POST** /v2/payment/merchantcredit/redemption/log | Fetch redemption log |
+| [**fetchMerchantCreditsByPage()**](MerchantCreditsApi.md#fetchMerchantCreditsByPage) | **POST** /v2/payment/merchantcredit/page | Fetch merchant credits by page |
+| [**restoreMerchantCredit()**](MerchantCreditsApi.md#restoreMerchantCredit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore merchant credit |
+| [**searchMerchantCredits()**](MerchantCreditsApi.md#searchMerchantCredits) | **POST** /v2/payment/merchantcredit/search | Search for merchant credits |
+| [**updateMerchantCredit()**](MerchantCreditsApi.md#updateMerchantCredit) | **PUT** /v2/payment/merchantcredit/{id} | Update merchant credit |
 
 
 ## `archiveMerchantCredit()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -103,9 +103,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_credit_creation_params** | [**\OpenAPI\Client\Model\WTMerchantCreditCreationParams**](../Model/WTMerchantCreditCreationParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_merchant_credit_creation_params** | [**\OpenAPI\Client\Model\WTMerchantCreditCreationParams**](../Model/WTMerchantCreditCreationParams.md)|  | |
 
 ### Return type
 
@@ -157,9 +157,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -181,7 +181,7 @@ No authorization required
 ## `fetchMerchantCreditCount()`
 
 ```php
-fetchMerchantCreditCount(): \OpenAPI\Client\Model\InlineResponse2003
+fetchMerchantCreditCount(): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
 Fetch all active merchant credits
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\FetchMembersCount200Response**](../Model/FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -262,9 +262,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -316,9 +316,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -370,9 +370,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptions**](../Model/PaginationRequestWithSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptions**](../Model/PaginationRequestWithSortOptions.md)|  | |
 
 ### Return type
 
@@ -424,9 +424,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -478,9 +478,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merchant_credit_search** | [**\OpenAPI\Client\Model\MerchantCreditSearch**](../Model/MerchantCreditSearch.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **merchant_credit_search** | [**\OpenAPI\Client\Model\MerchantCreditSearch**](../Model/MerchantCreditSearch.md)|  | |
 
 ### Return type
 
@@ -533,10 +533,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**\OpenAPI\Client\Model\PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](../Model/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**\OpenAPI\Client\Model\PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](../Model/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  | |
 
 ### Return type
 

@@ -1,15 +1,15 @@
 # OpenAPI\Client\PaymentDesignsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archivePaymentDesign()**](PaymentDesignsApi.md#archivePaymentDesign) | **DELETE** /v2/payment/design/{id} | Archive payment design
-[**createPaymentDesign()**](PaymentDesignsApi.md#createPaymentDesign) | **POST** /v2/payment/design | Create payment design
-[**fetchAllPaymentDesigns()**](PaymentDesignsApi.md#fetchAllPaymentDesigns) | **GET** /v2/payment/design/all | Fetch all active payment designs
-[**fetchPaymentDesignById()**](PaymentDesignsApi.md#fetchPaymentDesignById) | **GET** /v2/payment/design/{id} | Fetch payment design
-[**restorePaymentDesign()**](PaymentDesignsApi.md#restorePaymentDesign) | **PATCH** /v2/payment/design/{id} | Restore payment design
-[**updatePaymentDesign()**](PaymentDesignsApi.md#updatePaymentDesign) | **PUT** /v2/payment/design/{id} | Update payment design
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archivePaymentDesign()**](PaymentDesignsApi.md#archivePaymentDesign) | **DELETE** /v2/payment/design/{id} | Archive payment design |
+| [**createPaymentDesign()**](PaymentDesignsApi.md#createPaymentDesign) | **POST** /v2/payment/design | Create payment design |
+| [**fetchAllPaymentDesigns()**](PaymentDesignsApi.md#fetchAllPaymentDesigns) | **GET** /v2/payment/design/all | Fetch all active payment designs |
+| [**fetchPaymentDesignById()**](PaymentDesignsApi.md#fetchPaymentDesignById) | **GET** /v2/payment/design/{id} | Fetch payment design |
+| [**restorePaymentDesign()**](PaymentDesignsApi.md#restorePaymentDesign) | **PATCH** /v2/payment/design/{id} | Restore payment design |
+| [**updatePaymentDesign()**](PaymentDesignsApi.md#updatePaymentDesign) | **PUT** /v2/payment/design/{id} | Update payment design |
 
 
 ## `archivePaymentDesign()`
@@ -45,9 +45,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -99,9 +99,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_payment_design_create_params** | [**\OpenAPI\Client\Model\WTPaymentDesignCreateParams**](../Model/WTPaymentDesignCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_payment_design_create_params** | [**\OpenAPI\Client\Model\WTPaymentDesignCreateParams**](../Model/WTPaymentDesignCreateParams.md)|  | |
 
 ### Return type
 
@@ -153,9 +153,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -207,9 +207,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,9 +261,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -316,10 +316,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_payment_design_update_params** | [**\OpenAPI\Client\Model\WTPaymentDesignUpdateParams**](../Model/WTPaymentDesignUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_payment_design_update_params** | [**\OpenAPI\Client\Model\WTPaymentDesignUpdateParams**](../Model/WTPaymentDesignUpdateParams.md)|  | |
 
 ### Return type
 

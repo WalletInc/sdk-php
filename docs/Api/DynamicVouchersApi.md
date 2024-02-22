@@ -1,18 +1,18 @@
 # OpenAPI\Client\DynamicVouchersApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveDynamicVoucherCampaign()**](DynamicVouchersApi.md#archiveDynamicVoucherCampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign
-[**createDynamicVoucher()**](DynamicVouchersApi.md#createDynamicVoucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher
-[**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers
-[**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher
-[**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions
-[**fetchReachStatsOfAllDynamicVouchers()**](DynamicVouchersApi.md#fetchReachStatsOfAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers
-[**fetchReachStatsOfIndividualDynamicVoucher()**](DynamicVouchersApi.md#fetchReachStatsOfIndividualDynamicVoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher
-[**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign
-[**saveDynamicVoucher()**](DynamicVouchersApi.md#saveDynamicVoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveDynamicVoucherCampaign()**](DynamicVouchersApi.md#archiveDynamicVoucherCampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign |
+| [**createDynamicVoucher()**](DynamicVouchersApi.md#createDynamicVoucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher |
+| [**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers |
+| [**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher |
+| [**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions |
+| [**fetchReachStatsOfAllDynamicVouchers()**](DynamicVouchersApi.md#fetchReachStatsOfAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
+| [**fetchReachStatsOfIndividualDynamicVoucher()**](DynamicVouchersApi.md#fetchReachStatsOfIndividualDynamicVoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
+| [**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign |
+| [**saveDynamicVoucher()**](DynamicVouchersApi.md#saveDynamicVoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher |
 
 
 ## `archiveDynamicVoucherCampaign()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -102,9 +102,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_dynamic_voucher_create_params** | [**\OpenAPI\Client\Model\WTDynamicVoucherCreateParams**](../Model/WTDynamicVoucherCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_dynamic_voucher_create_params** | [**\OpenAPI\Client\Model\WTDynamicVoucherCreateParams**](../Model/WTDynamicVoucherCreateParams.md)|  | |
 
 ### Return type
 
@@ -156,9 +156,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -210,9 +210,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -264,9 +264,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -319,10 +319,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -376,11 +376,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dynamic_voucher_id** | [**mixed**](../Model/.md)|  |
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -432,9 +432,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -487,10 +487,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_dynamic_voucher_update_params** | [**\OpenAPI\Client\Model\WTDynamicVoucherUpdateParams**](../Model/WTDynamicVoucherUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_dynamic_voucher_update_params** | [**\OpenAPI\Client\Model\WTDynamicVoucherUpdateParams**](../Model/WTDynamicVoucherUpdateParams.md)|  | |
 
 ### Return type
 

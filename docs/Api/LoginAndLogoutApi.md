@@ -1,12 +1,12 @@
 # OpenAPI\Client\LoginAndLogoutApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**login()**](LoginAndLogoutApi.md#login) | **POST** /authentication/login | Login
-[**loginStatus()**](LoginAndLogoutApi.md#loginStatus) | **GET** /authentication/status/{token} | Retrieve status of session token
-[**logout()**](LoginAndLogoutApi.md#logout) | **DELETE** /authentication/logout | Logout
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**login()**](LoginAndLogoutApi.md#login) | **POST** /authentication/login | Login |
+| [**loginStatus()**](LoginAndLogoutApi.md#loginStatus) | **GET** /authentication/status/{token} | Retrieve status of session token |
+| [**logout()**](LoginAndLogoutApi.md#logout) | **DELETE** /authentication/logout | Logout |
 
 
 ## `login()`
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_authentication_login_request** | [**\OpenAPI\Client\Model\WTAuthenticationLoginRequest**](../Model/WTAuthenticationLoginRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_authentication_login_request** | [**\OpenAPI\Client\Model\WTAuthenticationLoginRequest**](../Model/WTAuthenticationLoginRequest.md)|  | |
 
 ### Return type
 
@@ -66,7 +66,7 @@ No authorization required
 ## `loginStatus()`
 
 ```php
-loginStatus($token): AnyOfObjectWTAuthenticationCheckSessionTokenStatusResponse
+loginStatus($token): \OpenAPI\Client\Model\LoginStatus200Response
 ```
 
 Retrieve status of session token
@@ -96,13 +96,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **token** | **string**|  | |
 
 ### Return type
 
-[**AnyOfObjectWTAuthenticationCheckSessionTokenStatusResponse**](../Model/AnyOfObjectWTAuthenticationCheckSessionTokenStatusResponse.md)
+[**\OpenAPI\Client\Model\LoginStatus200Response**](../Model/LoginStatus200Response.md)
 
 ### Authorization
 

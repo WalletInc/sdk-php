@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **is_short_code** | **bool** |  |
 **twilio_sid** | **string** |  |
 **twilio_account_sid** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

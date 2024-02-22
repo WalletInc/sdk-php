@@ -1,14 +1,14 @@
 # OpenAPI\Client\IntegratedTerminalsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archivePOSMachine()**](IntegratedTerminalsApi.md#archivePOSMachine) | **DELETE** /v2/pos/machine/{id} | Archive POS machine
-[**createPOSMachine()**](IntegratedTerminalsApi.md#createPOSMachine) | **POST** /v2/pos/machine | Create POS machine
-[**fetchAllPOSMachines()**](IntegratedTerminalsApi.md#fetchAllPOSMachines) | **GET** /v2/pos/machine/all | Fetch all POS machines
-[**restorePOSMachine()**](IntegratedTerminalsApi.md#restorePOSMachine) | **PATCH** /v2/pos/machine/{id} | Restore POS machine
-[**updatePOSMachine()**](IntegratedTerminalsApi.md#updatePOSMachine) | **PUT** /v2/pos/machine/{id} | Update POS machine
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archivePOSMachine()**](IntegratedTerminalsApi.md#archivePOSMachine) | **DELETE** /v2/pos/machine/{id} | Archive POS machine |
+| [**createPOSMachine()**](IntegratedTerminalsApi.md#createPOSMachine) | **POST** /v2/pos/machine | Create POS machine |
+| [**fetchAllPOSMachines()**](IntegratedTerminalsApi.md#fetchAllPOSMachines) | **GET** /v2/pos/machine/all | Fetch all POS machines |
+| [**restorePOSMachine()**](IntegratedTerminalsApi.md#restorePOSMachine) | **PATCH** /v2/pos/machine/{id} | Restore POS machine |
+| [**updatePOSMachine()**](IntegratedTerminalsApi.md#updatePOSMachine) | **PUT** /v2/pos/machine/{id} | Update POS machine |
 
 
 ## `archivePOSMachine()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_pos_machine_create_params** | [**\OpenAPI\Client\Model\WTPosMachineCreateParams**](../Model/WTPosMachineCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_pos_machine_create_params** | [**\OpenAPI\Client\Model\WTPosMachineCreateParams**](../Model/WTPosMachineCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_pos_machine_update_params** | [**\OpenAPI\Client\Model\WTPosMachineUpdateParams**](../Model/WTPosMachineUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_pos_machine_update_params** | [**\OpenAPI\Client\Model\WTPosMachineUpdateParams**](../Model/WTPosMachineUpdateParams.md)|  | |
 
 ### Return type
 
