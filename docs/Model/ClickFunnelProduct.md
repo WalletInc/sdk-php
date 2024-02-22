@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **double** |  |
+**id** | **float** |  |
 **name** | **string** |  |
 **stripe_plan** | **string** |  |
 **amount** | [**\OpenAPI\Client\Model\ClickFunnelAmount**](ClickFunnelAmount.md) |  |
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **updated_at** | **\DateTime** |  |
 **subject** | **string** |  |
 **html_body** | **string** |  |
-**thank_you_page_id** | **double** |  |
+**thank_you_page_id** | **float** |  |
 **stripe_cancel_after_payments** | **mixed** |  | [optional]
 **bump** | **bool** |  |
 **cart_product_id** | **mixed** |  | [optional]

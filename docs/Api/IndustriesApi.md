@@ -1,18 +1,18 @@
 # OpenAPI\Client\IndustriesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchAllIndustries()**](IndustriesApi.md#fetchAllIndustries) | **GET** /system/industries/all | Fetch all industries
-[**fetchDomainsByIndustry()**](IndustriesApi.md#fetchDomainsByIndustry) | **GET** /system/industries/domains | Fetch all industries
-[**fetchIndustriesIDs()**](IndustriesApi.md#fetchIndustriesIDs) | **GET** /system/industries/trimmed | Fetch all industries
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchAllIndustries()**](IndustriesApi.md#fetchAllIndustries) | **GET** /system/industries/all | Fetch all industries |
+| [**fetchDomainsByIndustry()**](IndustriesApi.md#fetchDomainsByIndustry) | **GET** /system/industries/domains | Fetch all industries |
+| [**fetchIndustriesIDs()**](IndustriesApi.md#fetchIndustriesIDs) | **GET** /system/industries/trimmed | Fetch all industries |
 
 
 ## `fetchAllIndustries()`
 
 ```php
-fetchAllIndustries(): \OpenAPI\Client\Model\InlineResponse200[]
+fetchAllIndustries(): \OpenAPI\Client\Model\FetchIndustry200Response[]
 ```
 
 Fetch all industries
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse200[]**](../Model/InlineResponse200.md)
+[**\OpenAPI\Client\Model\FetchIndustry200Response[]**](../Model/FetchIndustry200Response.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 ## `fetchDomainsByIndustry()`
 
 ```php
-fetchDomainsByIndustry(): \OpenAPI\Client\Model\InlineResponse20012
+fetchDomainsByIndustry(): \OpenAPI\Client\Model\FetchDomainsByIndustry200Response
 ```
 
 Fetch all industries
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\OpenAPI\Client\Model\FetchDomainsByIndustry200Response**](../Model/FetchDomainsByIndustry200Response.md)
 
 ### Authorization
 

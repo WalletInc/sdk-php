@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **title** | **string** |  |
 **description** | **string** |  |
 **employee_id** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

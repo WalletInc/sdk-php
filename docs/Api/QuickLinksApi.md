@@ -1,15 +1,15 @@
 # OpenAPI\Client\QuickLinksApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveLinkBook()**](QuickLinksApi.md#archiveLinkBook) | **DELETE** /v2/linkBook/{id} | Archive link
-[**createLinkBook()**](QuickLinksApi.md#createLinkBook) | **POST** /v2/linkBook | Create link
-[**fetchAllLinkBook()**](QuickLinksApi.md#fetchAllLinkBook) | **GET** /v2/linkBook/all | Fetch all links
-[**fetchLinkBookById()**](QuickLinksApi.md#fetchLinkBookById) | **GET** /v2/linkBook/{id} | Fetch link book by id
-[**restoreLinkBook()**](QuickLinksApi.md#restoreLinkBook) | **PATCH** /v2/linkBook/{id} | Restore link
-[**updateLinkBook()**](QuickLinksApi.md#updateLinkBook) | **PUT** /v2/linkBook/{id} | Update link
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveLinkBook()**](QuickLinksApi.md#archiveLinkBook) | **DELETE** /v2/linkBook/{id} | Archive link |
+| [**createLinkBook()**](QuickLinksApi.md#createLinkBook) | **POST** /v2/linkBook | Create link |
+| [**fetchAllLinkBook()**](QuickLinksApi.md#fetchAllLinkBook) | **GET** /v2/linkBook/all | Fetch all links |
+| [**fetchLinkBookById()**](QuickLinksApi.md#fetchLinkBookById) | **GET** /v2/linkBook/{id} | Fetch link book by id |
+| [**restoreLinkBook()**](QuickLinksApi.md#restoreLinkBook) | **PATCH** /v2/linkBook/{id} | Restore link |
+| [**updateLinkBook()**](QuickLinksApi.md#updateLinkBook) | **PUT** /v2/linkBook/{id} | Update link |
 
 
 ## `archiveLinkBook()`
@@ -45,9 +45,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -99,9 +99,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_link_book_create_params** | [**\OpenAPI\Client\Model\WTLinkBookCreateParams**](../Model/WTLinkBookCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_link_book_create_params** | [**\OpenAPI\Client\Model\WTLinkBookCreateParams**](../Model/WTLinkBookCreateParams.md)|  | |
 
 ### Return type
 
@@ -153,9 +153,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -207,9 +207,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,9 +261,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -316,10 +316,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_link_book_update_params** | [**\OpenAPI\Client\Model\WTLinkBookUpdateParams**](../Model/WTLinkBookUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_link_book_update_params** | [**\OpenAPI\Client\Model\WTLinkBookUpdateParams**](../Model/WTLinkBookUpdateParams.md)|  | |
 
 ### Return type
 

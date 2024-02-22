@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **wallet_object_id** | **string** |  |
-**count** | **double** |  |
+**count** | **float** |  |
 **date_occurred** | **\DateTime** |  |
 **wallet_object_name** | **string** |  |
 

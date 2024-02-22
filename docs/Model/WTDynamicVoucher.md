@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **start_date** | **\DateTime** |  |
 **expiration_date** | **\DateTime** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **title** | **string** |  |
 **notes** | **string** |  |
 **merchants_reference_id** | **string** |  | [optional]
@@ -31,11 +31,11 @@ Name | Type | Description | Notes
 **starting_value_string** | **string** |  |
 **max_budget_decimal** | **string** |  |
 **max_budget_string** | **string** |  |
-**current_value** | **double** |  |
+**current_value** | **float** |  |
 **current_value_decimal** | **string** |  |
 **current_value_string** | **string** |  |
-**status** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
-**temporal_decrease_frequency_type** | [**AnyOfStringStringStringStringString**](AnyOfStringStringStringStringString.md) |  |
+**status** | [**\OpenAPI\Client\Model\WTDynamicVoucherSummaryStatus**](WTDynamicVoucherSummaryStatus.md) |  |
+**temporal_decrease_frequency_type** | [**\OpenAPI\Client\Model\DynamicVoucherTemporalDecreaseFrequencyType**](DynamicVoucherTemporalDecreaseFrequencyType.md) |  |
 **summary** | [**\OpenAPI\Client\Model\WTDynamicVoucherSummary**](WTDynamicVoucherSummary.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **stripe_customer_id** | **string** |  |
 **is_payment_method_provided** | **bool** |  |
 **plan_nickname** | **string** |  |
-**max_sms_count** | **double** |  |
+**max_sms_count** | **float** |  |
 **is_sms_agreement** | **bool** |  | [optional]
 **is_white_labeled** | **bool** |  | [optional]
 **is_featured** | **bool** |  | [optional]

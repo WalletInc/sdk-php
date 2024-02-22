@@ -1,15 +1,15 @@
 # OpenAPI\Client\QRCodeDesignsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveQRCodeDesign()**](QRCodeDesignsApi.md#archiveQRCodeDesign) | **DELETE** /v2/qrcodedesign/{id} | Archive QR Code Design
-[**createQRCodeDesign()**](QRCodeDesignsApi.md#createQRCodeDesign) | **POST** /v2/qrcodedesign | Create QR Code design
-[**fetchAllQRCodeDesigns()**](QRCodeDesignsApi.md#fetchAllQRCodeDesigns) | **GET** /v2/qrcodedesign/all | Fetch all active QR Code Designs
-[**fetchQRCodeDesignById()**](QRCodeDesignsApi.md#fetchQRCodeDesignById) | **GET** /v2/qrcodedesign/{id} | Fetch QR Code Design
-[**restoreQRCodeDesign()**](QRCodeDesignsApi.md#restoreQRCodeDesign) | **PATCH** /v2/qrcodedesign/{id} | Restore payment design
-[**updateQRCodeDesign()**](QRCodeDesignsApi.md#updateQRCodeDesign) | **PUT** /v2/qrcodedesign/{id} | Update QR Code Design
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveQRCodeDesign()**](QRCodeDesignsApi.md#archiveQRCodeDesign) | **DELETE** /v2/qrcodedesign/{id} | Archive QR Code Design |
+| [**createQRCodeDesign()**](QRCodeDesignsApi.md#createQRCodeDesign) | **POST** /v2/qrcodedesign | Create QR Code design |
+| [**fetchAllQRCodeDesigns()**](QRCodeDesignsApi.md#fetchAllQRCodeDesigns) | **GET** /v2/qrcodedesign/all | Fetch all active QR Code Designs |
+| [**fetchQRCodeDesignById()**](QRCodeDesignsApi.md#fetchQRCodeDesignById) | **GET** /v2/qrcodedesign/{id} | Fetch QR Code Design |
+| [**restoreQRCodeDesign()**](QRCodeDesignsApi.md#restoreQRCodeDesign) | **PATCH** /v2/qrcodedesign/{id} | Restore payment design |
+| [**updateQRCodeDesign()**](QRCodeDesignsApi.md#updateQRCodeDesign) | **PUT** /v2/qrcodedesign/{id} | Update QR Code Design |
 
 
 ## `archiveQRCodeDesign()`
@@ -45,9 +45,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -99,9 +99,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wtqr_code_design_create_params** | [**\OpenAPI\Client\Model\WTQRCodeDesignCreateParams**](../Model/WTQRCodeDesignCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wtqr_code_design_create_params** | [**\OpenAPI\Client\Model\WTQRCodeDesignCreateParams**](../Model/WTQRCodeDesignCreateParams.md)|  | |
 
 ### Return type
 
@@ -153,9 +153,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -207,9 +207,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,9 +261,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -316,10 +316,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wtqr_code_design_update_params** | [**\OpenAPI\Client\Model\WTQRCodeDesignUpdateParams**](../Model/WTQRCodeDesignUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wtqr_code_design_update_params** | [**\OpenAPI\Client\Model\WTQRCodeDesignUpdateParams**](../Model/WTQRCodeDesignUpdateParams.md)|  | |
 
 ### Return type
 

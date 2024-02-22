@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **method_type** | **string** |  |
 **stack_trace** | **mixed** |  |
 **exception** | **mixed** |  |
-**severity** | **double** |  |
+**severity** | **float** |  |
 **microservice_url** | **string** |  |
 **microservice_data** | **mixed** |  |
 **microservice_method** | **string** |  |

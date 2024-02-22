@@ -1,14 +1,14 @@
 # OpenAPI\Client\TicketApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveTicket()**](TicketApi.md#archiveTicket) | **DELETE** /v2/ticket/{id} | Archive ticket
-[**createTicket()**](TicketApi.md#createTicket) | **POST** /v2/ticket | Create ticket
-[**fetchTicket()**](TicketApi.md#fetchTicket) | **GET** /v2/ticket/{id} | Fetch ticket
-[**restoreTicket()**](TicketApi.md#restoreTicket) | **PATCH** /v2/ticket/{id} | Restore ticket
-[**updateTicket()**](TicketApi.md#updateTicket) | **PUT** /v2/ticket/{id} | Update ticket
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveTicket()**](TicketApi.md#archiveTicket) | **DELETE** /v2/ticket/{id} | Archive ticket |
+| [**createTicket()**](TicketApi.md#createTicket) | **POST** /v2/ticket | Create ticket |
+| [**fetchTicket()**](TicketApi.md#fetchTicket) | **GET** /v2/ticket/{id} | Fetch ticket |
+| [**restoreTicket()**](TicketApi.md#restoreTicket) | **PATCH** /v2/ticket/{id} | Restore ticket |
+| [**updateTicket()**](TicketApi.md#updateTicket) | **PUT** /v2/ticket/{id} | Update ticket |
 
 
 ## `archiveTicket()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_ticket_create_params** | [**\OpenAPI\Client\Model\WTTicketCreateParams**](../Model/WTTicketCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_ticket_create_params** | [**\OpenAPI\Client\Model\WTTicketCreateParams**](../Model/WTTicketCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_ticket_update_params** | [**\OpenAPI\Client\Model\WTTicketUpdateParams**](../Model/WTTicketUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_ticket_update_params** | [**\OpenAPI\Client\Model\WTTicketUpdateParams**](../Model/WTTicketUpdateParams.md)|  | |
 
 ### Return type
 

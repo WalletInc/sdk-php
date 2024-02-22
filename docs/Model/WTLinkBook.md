@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **url** | **string** |  |
 **icon** | **string** |  |
 **order_number** | **int** |  |
-**link_book_section_id** | [**AnyOfStringNumber**](AnyOfStringNumber.md) |  | [optional]
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**link_book_section_id** | [**\OpenAPI\Client\Model\WTLinkBookLinkBookSectionID**](WTLinkBookLinkBookSectionID.md) |  | [optional]
+**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

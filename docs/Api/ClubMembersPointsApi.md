@@ -1,19 +1,19 @@
 # OpenAPI\Client\ClubMembersPointsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveMember()**](ClubMembersPointsApi.md#archiveMember) | **DELETE** /v2/membership/member/{id} | Archive member
-[**createMember()**](ClubMembersPointsApi.md#createMember) | **POST** /v2/membership/member | Create member
-[**fetchMemberById()**](ClubMembersPointsApi.md#fetchMemberById) | **GET** /v2/membership/member/{id} | Fetch member
-[**fetchMemberHistoryLog()**](ClubMembersPointsApi.md#fetchMemberHistoryLog) | **POST** /v2/membership/member/history/log | Fetch history
-[**fetchMemberRedemptionLog()**](ClubMembersPointsApi.md#fetchMemberRedemptionLog) | **POST** /v2/membership/member/redemption/log | Fetch redemption log
-[**fetchMembersByPage()**](ClubMembersPointsApi.md#fetchMembersByPage) | **POST** /v2/membership/member/page | Fetch members by page
-[**fetchMembersCount()**](ClubMembersPointsApi.md#fetchMembersCount) | **GET** /v2/membership/member/count | Count active members
-[**restoreMember()**](ClubMembersPointsApi.md#restoreMember) | **PATCH** /v2/membership/member/{id} | Restore member
-[**searchMembers()**](ClubMembersPointsApi.md#searchMembers) | **POST** /v2/membership/member/search | Search for members
-[**updateMember()**](ClubMembersPointsApi.md#updateMember) | **PUT** /v2/membership/member/{id} | Update member
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveMember()**](ClubMembersPointsApi.md#archiveMember) | **DELETE** /v2/membership/member/{id} | Archive member |
+| [**createMember()**](ClubMembersPointsApi.md#createMember) | **POST** /v2/membership/member | Create member |
+| [**fetchMemberById()**](ClubMembersPointsApi.md#fetchMemberById) | **GET** /v2/membership/member/{id} | Fetch member |
+| [**fetchMemberHistoryLog()**](ClubMembersPointsApi.md#fetchMemberHistoryLog) | **POST** /v2/membership/member/history/log | Fetch history |
+| [**fetchMemberRedemptionLog()**](ClubMembersPointsApi.md#fetchMemberRedemptionLog) | **POST** /v2/membership/member/redemption/log | Fetch redemption log |
+| [**fetchMembersByPage()**](ClubMembersPointsApi.md#fetchMembersByPage) | **POST** /v2/membership/member/page | Fetch members by page |
+| [**fetchMembersCount()**](ClubMembersPointsApi.md#fetchMembersCount) | **GET** /v2/membership/member/count | Count active members |
+| [**restoreMember()**](ClubMembersPointsApi.md#restoreMember) | **PATCH** /v2/membership/member/{id} | Restore member |
+| [**searchMembers()**](ClubMembersPointsApi.md#searchMembers) | **POST** /v2/membership/member/search | Search for members |
+| [**updateMember()**](ClubMembersPointsApi.md#updateMember) | **PUT** /v2/membership/member/{id} | Update member |
 
 
 ## `archiveMember()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -103,9 +103,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_member_creation_params** | [**\OpenAPI\Client\Model\WTMemberCreationParams**](../Model/WTMemberCreationParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_member_creation_params** | [**\OpenAPI\Client\Model\WTMemberCreationParams**](../Model/WTMemberCreationParams.md)|  | |
 
 ### Return type
 
@@ -157,9 +157,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -211,9 +211,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -265,9 +265,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -319,9 +319,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptions**](../Model/PaginationRequestWithSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptions**](../Model/PaginationRequestWithSortOptions.md)|  | |
 
 ### Return type
 
@@ -343,7 +343,7 @@ No authorization required
 ## `fetchMembersCount()`
 
 ```php
-fetchMembersCount(): \OpenAPI\Client\Model\InlineResponse2003
+fetchMembersCount(): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
 Count active members
@@ -376,7 +376,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\FetchMembersCount200Response**](../Model/FetchMembersCount200Response.md)
 
 ### Authorization
 
@@ -424,9 +424,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -478,9 +478,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_search** | [**\OpenAPI\Client\Model\MemberSearch**](../Model/MemberSearch.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_search** | [**\OpenAPI\Client\Model\MemberSearch**](../Model/MemberSearch.md)|  | |
 
 ### Return type
 
@@ -502,7 +502,7 @@ No authorization required
 ## `updateMember()`
 
 ```php
-updateMember($id, $pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number): \OpenAPI\Client\Model\WTMember
+updateMember($id, $pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday): \OpenAPI\Client\Model\WTMember
 ```
 
 Update member
@@ -521,10 +521,10 @@ $apiInstance = new OpenAPI\Client\Api\ClubMembersPointsApi(
     new GuzzleHttp\Client()
 );
 $id = NULL; // mixed
-$pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number = new \OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber(); // \OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber
+$pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday = new \OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday(); // \OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday
 
 try {
-    $result = $apiInstance->updateMember($id, $pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number);
+    $result = $apiInstance->updateMember($id, $pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClubMembersPointsApi->updateMember: ', $e->getMessage(), PHP_EOL;
@@ -533,10 +533,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number** | [**\OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber**](../Model/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumber.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **pick_wt_member_member_idor_first_name_or_last_name_or_membership_tier_idor_points_accrued_or_mobile_number_or_email_or_birthday** | [**\OpenAPI\Client\Model\PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday**](../Model/PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccruedOrMobileNumberOrEmailOrBirthday.md)|  | |
 
 ### Return type
 

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transaction_id** | **string** | The transaction ID at the POS |
-**transaction_type** | [**AnyOfStringString**](AnyOfStringString.md) | The type of the transaction - either redemption or refund |
+**transaction_type** | [**\OpenAPI\Client\Model\MSMemberRedemptionTransactionType**](MSMemberRedemptionTransactionType.md) |  |
 **amount** | **int** | The number of amount involved in this transaction |
-**register_id** | [**AnyOfStringDouble**](AnyOfStringDouble.md) | The ID of the register where the transaction occurred | [optional]
+**register_id** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  | [optional]
 **terminal_type** | **string** | The type of the terminal |
 **id** | **string** | The UUID of this record |
 **merchant_credit_id** | **string** |  |

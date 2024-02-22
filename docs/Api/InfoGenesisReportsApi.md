@@ -1,36 +1,36 @@
 # OpenAPI\Client\InfoGenesisReportsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**countAdCreditsRedemptions()**](InfoGenesisReportsApi.md#countAdCreditsRedemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
-[**countAdCreditsRefunds()**](InfoGenesisReportsApi.md#countAdCreditsRefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
-[**countDynamicVoucherRedemptions()**](InfoGenesisReportsApi.md#countDynamicVoucherRedemptions) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/redemptions | Count dynamic voucher redemptions
-[**countDynamicVoucherRefunds()**](InfoGenesisReportsApi.md#countDynamicVoucherRefunds) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/refunds | Count dynamic voucher refunds
-[**countMembershipPointsRedemptions()**](InfoGenesisReportsApi.md#countMembershipPointsRedemptions) | **POST** /v2/pos/infogenesis/count/membershipPoints/redemptions | Count redeemed membership points
-[**countMembershipPointsRefunds()**](InfoGenesisReportsApi.md#countMembershipPointsRefunds) | **POST** /v2/pos/infogenesis/count/membershipPoints/refunds | Count refunded membership points
-[**countMembershipTierRedemptions()**](InfoGenesisReportsApi.md#countMembershipTierRedemptions) | **POST** /v2/pos/infogenesis/count/membershipTier/redemptions | Count tier redemptions
-[**countMembershipTierRefunds()**](InfoGenesisReportsApi.md#countMembershipTierRefunds) | **POST** /v2/pos/infogenesis/count/membershipTier/refunds | Count tier refunds
-[**countMerchantCreditRedemptions()**](InfoGenesisReportsApi.md#countMerchantCreditRedemptions) | **POST** /v2/pos/infogenesis/count/merchantCredit/redemptions | Count redeemed merchant credits
-[**countMerchantCreditRefunds()**](InfoGenesisReportsApi.md#countMerchantCreditRefunds) | **POST** /v2/pos/infogenesis/count/merchantCredit/refunds | Count refunded merchant credits
-[**countStaticVoucherRedemptions()**](InfoGenesisReportsApi.md#countStaticVoucherRedemptions) | **POST** /v2/pos/infogenesis/count/staticVoucher/redemptions | Count static voucher redemptions
-[**countStaticVoucherRefunds()**](InfoGenesisReportsApi.md#countStaticVoucherRefunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds
-[**fetchInfoGenesisAuthorizations()**](InfoGenesisReportsApi.md#fetchInfoGenesisAuthorizations) | **POST** /v2/pos/infogenesis/authorizations | Fetch InfoGenesis authorizations
-[**fetchInfoGenesisCampaignData()**](InfoGenesisReportsApi.md#fetchInfoGenesisCampaignData) | **POST** /v2/pos/infogenesis/campaign | Fetch campaign information
-[**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Fetch InfoGenesis lookup requests
-[**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Fetch InfoGenesis lookup request errors
-[**fetchInfoGenesisRedeemedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Fetch redeemed static vouchers
-[**fetchInfoGenesisRedeemedUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedUniquePostingIDs) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Fetch redeemed InfoGenesis unique posting IDs
-[**fetchInfoGenesisRedemptions()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedemptions) | **POST** /v2/pos/infogenesis/redemptions | Fetch InfoGenesis redemptions
-[**fetchInfoGenesisRefundedRoutingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedRoutingIDs) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Fetch refunded InfoGenesis unique posting IDs
-[**fetchInfoGenesisRefundedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Fetch refunded static vouchers
-[**fetchInfoGenesisRefunds()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefunds) | **POST** /v2/pos/infogenesis/refunds | Fetch InfoGenesis refunds
-[**fetchInfoGenesisRequest()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequest) | **GET** /v2/pos/infogenesis/request/{transactionID} | Fetch InfoGenesis request with transaction ID
-[**fetchInfoGenesisRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequests) | **POST** /v2/pos/infogenesis/requests | Fetch InfoGenesis requests with routing IDs
-[**fetchInfoGenesisResponseErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponseErrors) | **GET** /v2/pos/infogenesis/responses/errors | Fetch InfoGenesis response errors
-[**fetchInfoGenesisResponses()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponses) | **POST** /v2/pos/infogenesis/responses | Fetch InfoGenesis responses with routing IDs
-[**fetchInfoGenesisTransactionsWithUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisTransactionsWithUniquePostingIDs) | **POST** /v2/pos/infogenesis/transactions | Fetch InfoGenesis transactions
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**countAdCreditsRedemptions()**](InfoGenesisReportsApi.md#countAdCreditsRedemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits |
+| [**countAdCreditsRefunds()**](InfoGenesisReportsApi.md#countAdCreditsRefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits |
+| [**countDynamicVoucherRedemptions()**](InfoGenesisReportsApi.md#countDynamicVoucherRedemptions) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/redemptions | Count dynamic voucher redemptions |
+| [**countDynamicVoucherRefunds()**](InfoGenesisReportsApi.md#countDynamicVoucherRefunds) | **POST** /v2/pos/infogenesis/count/dynamicVoucher/refunds | Count dynamic voucher refunds |
+| [**countMembershipPointsRedemptions()**](InfoGenesisReportsApi.md#countMembershipPointsRedemptions) | **POST** /v2/pos/infogenesis/count/membershipPoints/redemptions | Count redeemed membership points |
+| [**countMembershipPointsRefunds()**](InfoGenesisReportsApi.md#countMembershipPointsRefunds) | **POST** /v2/pos/infogenesis/count/membershipPoints/refunds | Count refunded membership points |
+| [**countMembershipTierRedemptions()**](InfoGenesisReportsApi.md#countMembershipTierRedemptions) | **POST** /v2/pos/infogenesis/count/membershipTier/redemptions | Count tier redemptions |
+| [**countMembershipTierRefunds()**](InfoGenesisReportsApi.md#countMembershipTierRefunds) | **POST** /v2/pos/infogenesis/count/membershipTier/refunds | Count tier refunds |
+| [**countMerchantCreditRedemptions()**](InfoGenesisReportsApi.md#countMerchantCreditRedemptions) | **POST** /v2/pos/infogenesis/count/merchantCredit/redemptions | Count redeemed merchant credits |
+| [**countMerchantCreditRefunds()**](InfoGenesisReportsApi.md#countMerchantCreditRefunds) | **POST** /v2/pos/infogenesis/count/merchantCredit/refunds | Count refunded merchant credits |
+| [**countStaticVoucherRedemptions()**](InfoGenesisReportsApi.md#countStaticVoucherRedemptions) | **POST** /v2/pos/infogenesis/count/staticVoucher/redemptions | Count static voucher redemptions |
+| [**countStaticVoucherRefunds()**](InfoGenesisReportsApi.md#countStaticVoucherRefunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds |
+| [**fetchInfoGenesisAuthorizations()**](InfoGenesisReportsApi.md#fetchInfoGenesisAuthorizations) | **POST** /v2/pos/infogenesis/authorizations | Fetch InfoGenesis authorizations |
+| [**fetchInfoGenesisCampaignData()**](InfoGenesisReportsApi.md#fetchInfoGenesisCampaignData) | **POST** /v2/pos/infogenesis/campaign | Fetch campaign information |
+| [**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Fetch InfoGenesis lookup requests |
+| [**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Fetch InfoGenesis lookup request errors |
+| [**fetchInfoGenesisRedeemedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Fetch redeemed static vouchers |
+| [**fetchInfoGenesisRedeemedUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedUniquePostingIDs) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Fetch redeemed InfoGenesis unique posting IDs |
+| [**fetchInfoGenesisRedemptions()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedemptions) | **POST** /v2/pos/infogenesis/redemptions | Fetch InfoGenesis redemptions |
+| [**fetchInfoGenesisRefundedRoutingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedRoutingIDs) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Fetch refunded InfoGenesis unique posting IDs |
+| [**fetchInfoGenesisRefundedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Fetch refunded static vouchers |
+| [**fetchInfoGenesisRefunds()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefunds) | **POST** /v2/pos/infogenesis/refunds | Fetch InfoGenesis refunds |
+| [**fetchInfoGenesisRequest()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequest) | **GET** /v2/pos/infogenesis/request/{transactionID} | Fetch InfoGenesis request with transaction ID |
+| [**fetchInfoGenesisRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequests) | **POST** /v2/pos/infogenesis/requests | Fetch InfoGenesis requests with routing IDs |
+| [**fetchInfoGenesisResponseErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponseErrors) | **GET** /v2/pos/infogenesis/responses/errors | Fetch InfoGenesis response errors |
+| [**fetchInfoGenesisResponses()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponses) | **POST** /v2/pos/infogenesis/responses | Fetch InfoGenesis responses with routing IDs |
+| [**fetchInfoGenesisTransactionsWithUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisTransactionsWithUniquePostingIDs) | **POST** /v2/pos/infogenesis/transactions | Fetch InfoGenesis transactions |
 
 
 ## `countAdCreditsRedemptions()`
@@ -66,9 +66,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -120,9 +120,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -174,9 +174,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -228,9 +228,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -282,9 +282,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -336,9 +336,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -390,9 +390,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -444,9 +444,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -498,9 +498,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -552,9 +552,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -606,9 +606,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -660,9 +660,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -714,9 +714,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -768,9 +768,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -822,9 +822,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -876,9 +876,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_lookup_request_errors** | [**\OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors**](../Model/WTInfoGenesisLookupRequestErrors.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_lookup_request_errors** | [**\OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors**](../Model/WTInfoGenesisLookupRequestErrors.md)|  | |
 
 ### Return type
 
@@ -930,9 +930,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_unique_posting_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisUniquePostingIDs**](../Model/WTInfoGenesisUniquePostingIDs.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_unique_posting_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisUniquePostingIDs**](../Model/WTInfoGenesisUniquePostingIDs.md)|  | |
 
 ### Return type
 
@@ -985,10 +985,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1040,9 +1040,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -1095,10 +1095,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1150,9 +1150,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  | |
 
 ### Return type
 
@@ -1204,9 +1204,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_record_filter_parameters** | [**\OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters**](../Model/WTInfoGenesisRecordFilterParameters.md)|  | |
 
 ### Return type
 
@@ -1258,9 +1258,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transaction_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **transaction_id** | **string**|  | |
 
 ### Return type
 
@@ -1312,9 +1312,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  | |
 
 ### Return type
 
@@ -1367,10 +1367,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -1422,9 +1422,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_routing_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisRoutingIDs**](../Model/WTInfoGenesisRoutingIDs.md)|  | |
 
 ### Return type
 
@@ -1476,9 +1476,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_info_genesis_unique_posting_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisUniquePostingIDs**](../Model/WTInfoGenesisUniquePostingIDs.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_info_genesis_unique_posting_ids** | [**\OpenAPI\Client\Model\WTInfoGenesisUniquePostingIDs**](../Model/WTInfoGenesisUniquePostingIDs.md)|  | |
 
 ### Return type
 

@@ -1,11 +1,11 @@
 # OpenAPI\Client\AppleWalletSubscribersApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity
-[**fetchAppleWalletSubscribers()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Fetch all subscribers
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity |
+| [**fetchAppleWalletSubscribers()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Fetch all subscribers |
 
 
 ## `fetchAppleWalletSubscriberActivity()`
@@ -41,9 +41,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subscription_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -96,10 +96,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  | [optional]
- **end_date_time** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | [optional] |
+| **end_date_time** | **\DateTime**|  | [optional] |
 
 ### Return type
 

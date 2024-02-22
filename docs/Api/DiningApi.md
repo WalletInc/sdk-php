@@ -1,14 +1,14 @@
 # OpenAPI\Client\DiningApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveDining()**](DiningApi.md#archiveDining) | **DELETE** /v2/dining/{id} | Archive dining
-[**createDining()**](DiningApi.md#createDining) | **POST** /v2/dining | Create dining
-[**fetchAllDining()**](DiningApi.md#fetchAllDining) | **GET** /v2/dining/all | Fetch all dining
-[**restoreDining()**](DiningApi.md#restoreDining) | **PATCH** /v2/dining/{id} | Restore dining
-[**updateDining()**](DiningApi.md#updateDining) | **PUT** /v2/dining/{id} | Update dining
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveDining()**](DiningApi.md#archiveDining) | **DELETE** /v2/dining/{id} | Archive dining |
+| [**createDining()**](DiningApi.md#createDining) | **POST** /v2/dining | Create dining |
+| [**fetchAllDining()**](DiningApi.md#fetchAllDining) | **GET** /v2/dining/all | Fetch all dining |
+| [**restoreDining()**](DiningApi.md#restoreDining) | **PATCH** /v2/dining/{id} | Restore dining |
+| [**updateDining()**](DiningApi.md#updateDining) | **PUT** /v2/dining/{id} | Update dining |
 
 
 ## `archiveDining()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_dining_create_params** | [**\OpenAPI\Client\Model\WTDiningCreateParams**](../Model/WTDiningCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_dining_create_params** | [**\OpenAPI\Client\Model\WTDiningCreateParams**](../Model/WTDiningCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_dining_update_params** | [**\OpenAPI\Client\Model\WTDiningUpdateParams**](../Model/WTDiningUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_dining_update_params** | [**\OpenAPI\Client\Model\WTDiningUpdateParams**](../Model/WTDiningUpdateParams.md)|  | |
 
 ### Return type
 

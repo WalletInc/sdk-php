@@ -1,10 +1,10 @@
 # OpenAPI\Client\EmployeeAccessApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**register()**](EmployeeAccessApi.md#register) | **POST** /authentication/register | Register
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**register()**](EmployeeAccessApi.md#register) | **POST** /authentication/register | Register |
 
 
 ## `register()`
@@ -40,9 +40,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_authentication_register** | [**\OpenAPI\Client\Model\WTAuthenticationRegister**](../Model/WTAuthenticationRegister.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_authentication_register** | [**\OpenAPI\Client\Model\WTAuthenticationRegister**](../Model/WTAuthenticationRegister.md)|  | |
 
 ### Return type
 

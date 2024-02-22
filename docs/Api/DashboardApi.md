@@ -1,27 +1,27 @@
 # OpenAPI\Client\DashboardApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchDashboardActiveStaticVoucherCampaignsCount()**](DashboardApi.md#fetchDashboardActiveStaticVoucherCampaignsCount) | **GET** /v2/dashboard/count/staticVoucherCampaigns/active | Count active static voucher campaigns
-[**fetchDashboardActiveStaticVouchersCount()**](DashboardApi.md#fetchDashboardActiveStaticVouchersCount) | **GET** /v2/dashboard/count/staticVouchers/active | Count active static vouchers
-[**fetchDashboardAppleWalletSubscribersCount()**](DashboardApi.md#fetchDashboardAppleWalletSubscribersCount) | **GET** /v2/dashboard/count/appleWallet/subscribers | Count Apple Wallet Subscribers
-[**fetchDashboardEmployeesCount()**](DashboardApi.md#fetchDashboardEmployeesCount) | **GET** /v2/dashboard/count/employees | Count employees
-[**fetchDashboardMembersCount()**](DashboardApi.md#fetchDashboardMembersCount) | **GET** /v2/dashboard/count/members | Count members
-[**fetchDashboardMembershipTiersCount()**](DashboardApi.md#fetchDashboardMembershipTiersCount) | **GET** /v2/dashboard/count/membershipTiers | Count tiers
-[**fetchDashboardNewsArticlesCount()**](DashboardApi.md#fetchDashboardNewsArticlesCount) | **GET** /v2/dashboard/count/newsArticles | Count News Articles
-[**fetchDashboardOptInListsCount()**](DashboardApi.md#fetchDashboardOptInListsCount) | **GET** /v2/dashboard/count/optInLists | Count opt in lists
-[**fetchDashboardOptInSourcesCount()**](DashboardApi.md#fetchDashboardOptInSourcesCount) | **GET** /v2/dashboard/count/optInSources | Count opt in sources
-[**fetchDashboardOutboundSMSCount()**](DashboardApi.md#fetchDashboardOutboundSMSCount) | **GET** /v2/dashboard/count/sms/outbound | Count Outbound SMS
-[**fetchDashboardPOSMachinesCount()**](DashboardApi.md#fetchDashboardPOSMachinesCount) | **GET** /v2/dashboard/count/pos/machines | Count POS Machines
-[**fetchDashboardPOSTransactionsCount()**](DashboardApi.md#fetchDashboardPOSTransactionsCount) | **GET** /v2/dashboard/count/pos/transactions | Count POS Transactions
-[**fetchDashboardPerformancesCount()**](DashboardApi.md#fetchDashboardPerformancesCount) | **GET** /v2/dashboard/count/performances | Count Performances
-[**fetchDashboardPhoneNumbersCount()**](DashboardApi.md#fetchDashboardPhoneNumbersCount) | **GET** /v2/dashboard/count/phoneNumbers | Count phone numbers
-[**fetchDashboardRedemptionsCount()**](DashboardApi.md#fetchDashboardRedemptionsCount) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions
-[**fetchDashboardRefundsCount()**](DashboardApi.md#fetchDashboardRefundsCount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
-[**fetchDashboardWalletPageViewsCount()**](DashboardApi.md#fetchDashboardWalletPageViewsCount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
-[**fetchDashboardWidgetsCatalog()**](DashboardApi.md#fetchDashboardWidgetsCatalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchDashboardActiveStaticVoucherCampaignsCount()**](DashboardApi.md#fetchDashboardActiveStaticVoucherCampaignsCount) | **GET** /v2/dashboard/count/staticVoucherCampaigns/active | Count active static voucher campaigns |
+| [**fetchDashboardActiveStaticVouchersCount()**](DashboardApi.md#fetchDashboardActiveStaticVouchersCount) | **GET** /v2/dashboard/count/staticVouchers/active | Count active static vouchers |
+| [**fetchDashboardAppleWalletSubscribersCount()**](DashboardApi.md#fetchDashboardAppleWalletSubscribersCount) | **GET** /v2/dashboard/count/appleWallet/subscribers | Count Apple Wallet Subscribers |
+| [**fetchDashboardEmployeesCount()**](DashboardApi.md#fetchDashboardEmployeesCount) | **GET** /v2/dashboard/count/employees | Count employees |
+| [**fetchDashboardMembersCount()**](DashboardApi.md#fetchDashboardMembersCount) | **GET** /v2/dashboard/count/members | Count members |
+| [**fetchDashboardMembershipTiersCount()**](DashboardApi.md#fetchDashboardMembershipTiersCount) | **GET** /v2/dashboard/count/membershipTiers | Count tiers |
+| [**fetchDashboardNewsArticlesCount()**](DashboardApi.md#fetchDashboardNewsArticlesCount) | **GET** /v2/dashboard/count/newsArticles | Count News Articles |
+| [**fetchDashboardOptInListsCount()**](DashboardApi.md#fetchDashboardOptInListsCount) | **GET** /v2/dashboard/count/optInLists | Count opt in lists |
+| [**fetchDashboardOptInSourcesCount()**](DashboardApi.md#fetchDashboardOptInSourcesCount) | **GET** /v2/dashboard/count/optInSources | Count opt in sources |
+| [**fetchDashboardOutboundSMSCount()**](DashboardApi.md#fetchDashboardOutboundSMSCount) | **GET** /v2/dashboard/count/sms/outbound | Count Outbound SMS |
+| [**fetchDashboardPOSMachinesCount()**](DashboardApi.md#fetchDashboardPOSMachinesCount) | **GET** /v2/dashboard/count/pos/machines | Count POS Machines |
+| [**fetchDashboardPOSTransactionsCount()**](DashboardApi.md#fetchDashboardPOSTransactionsCount) | **GET** /v2/dashboard/count/pos/transactions | Count POS Transactions |
+| [**fetchDashboardPerformancesCount()**](DashboardApi.md#fetchDashboardPerformancesCount) | **GET** /v2/dashboard/count/performances | Count Performances |
+| [**fetchDashboardPhoneNumbersCount()**](DashboardApi.md#fetchDashboardPhoneNumbersCount) | **GET** /v2/dashboard/count/phoneNumbers | Count phone numbers |
+| [**fetchDashboardRedemptionsCount()**](DashboardApi.md#fetchDashboardRedemptionsCount) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions |
+| [**fetchDashboardRefundsCount()**](DashboardApi.md#fetchDashboardRefundsCount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds |
+| [**fetchDashboardWalletPageViewsCount()**](DashboardApi.md#fetchDashboardWalletPageViewsCount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views |
+| [**fetchDashboardWidgetsCatalog()**](DashboardApi.md#fetchDashboardWidgetsCatalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog |
 
 
 ## `fetchDashboardActiveStaticVoucherCampaignsCount()`
@@ -58,10 +58,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -114,10 +114,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -170,10 +170,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -226,10 +226,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -282,10 +282,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -338,10 +338,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -394,10 +394,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -450,10 +450,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -506,10 +506,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -562,10 +562,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -618,10 +618,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -674,10 +674,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -730,10 +730,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -786,10 +786,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -842,10 +842,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -898,10 +898,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
 
 ### Return type
 
@@ -955,11 +955,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  |
- **end_date_time** | **\DateTime**|  |
- **wallet_object_prefix** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
+| **wallet_object_prefix** | **string**|  | [optional] |
 
 ### Return type
 

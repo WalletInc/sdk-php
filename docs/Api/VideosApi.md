@@ -1,14 +1,14 @@
 # OpenAPI\Client\VideosApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive video
-[**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create video
-[**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Fetch all video
-[**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore video
-[**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update video
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive video |
+| [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create video |
+| [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Fetch all video |
+| [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore video |
+| [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update video |
 
 
 ## `archiveVideo()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_video_create_params** | [**\OpenAPI\Client\Model\WTVideoCreateParams**](../Model/WTVideoCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_video_create_params** | [**\OpenAPI\Client\Model\WTVideoCreateParams**](../Model/WTVideoCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_video_update_params** | [**\OpenAPI\Client\Model\WTVideoUpdateParams**](../Model/WTVideoUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_video_update_params** | [**\OpenAPI\Client\Model\WTVideoUpdateParams**](../Model/WTVideoUpdateParams.md)|  | |
 
 ### Return type
 

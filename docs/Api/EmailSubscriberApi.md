@@ -1,14 +1,14 @@
 # OpenAPI\Client\EmailSubscriberApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveEmailSubscriber()**](EmailSubscriberApi.md#archiveEmailSubscriber) | **DELETE** /v2/emailSubscriber/{id} | Archive email subscriber
-[**createEmailSubscriber()**](EmailSubscriberApi.md#createEmailSubscriber) | **POST** /v2/emailSubscriber | Create email subscriber
-[**fetchAllEmailSubscribers()**](EmailSubscriberApi.md#fetchAllEmailSubscribers) | **GET** /v2/emailSubscriber/all | Fetch all email subscribers
-[**restoreEmailSubscriber()**](EmailSubscriberApi.md#restoreEmailSubscriber) | **PATCH** /v2/emailSubscriber/{id} | Restore email subscriber
-[**updateEmailSubscriber()**](EmailSubscriberApi.md#updateEmailSubscriber) | **PUT** /v2/emailSubscriber/{id} | Update email subscriber
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveEmailSubscriber()**](EmailSubscriberApi.md#archiveEmailSubscriber) | **DELETE** /v2/emailSubscriber/{id} | Archive email subscriber |
+| [**createEmailSubscriber()**](EmailSubscriberApi.md#createEmailSubscriber) | **POST** /v2/emailSubscriber | Create email subscriber |
+| [**fetchAllEmailSubscribers()**](EmailSubscriberApi.md#fetchAllEmailSubscribers) | **GET** /v2/emailSubscriber/all | Fetch all email subscribers |
+| [**restoreEmailSubscriber()**](EmailSubscriberApi.md#restoreEmailSubscriber) | **PATCH** /v2/emailSubscriber/{id} | Restore email subscriber |
+| [**updateEmailSubscriber()**](EmailSubscriberApi.md#updateEmailSubscriber) | **PUT** /v2/emailSubscriber/{id} | Update email subscriber |
 
 
 ## `archiveEmailSubscriber()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_email_subscriber_create_params** | [**\OpenAPI\Client\Model\WTEmailSubscriberCreateParams**](../Model/WTEmailSubscriberCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_email_subscriber_create_params** | [**\OpenAPI\Client\Model\WTEmailSubscriberCreateParams**](../Model/WTEmailSubscriberCreateParams.md)|  | |
 
 ### Return type
 
@@ -154,11 +154,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_date_time** | **\DateTime**|  | [optional]
- **end_date_time** | **\DateTime**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | [optional] |
+| **end_date_time** | **\DateTime**|  | [optional] |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -210,9 +210,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -265,10 +265,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_email_subscriber_update_params** | [**\OpenAPI\Client\Model\WTEmailSubscriberUpdateParams**](../Model/WTEmailSubscriberUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_email_subscriber_update_params** | [**\OpenAPI\Client\Model\WTEmailSubscriberUpdateParams**](../Model/WTEmailSubscriberUpdateParams.md)|  | |
 
 ### Return type
 

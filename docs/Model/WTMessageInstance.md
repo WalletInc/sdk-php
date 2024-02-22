@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **subresource_uris** | **object** | Construct a type with a set of properties K of type T |
 **api_version** | **string** |  |
 **price_unit** | **string** |  |
-**error_code** | **double** |  |
+**error_code** | **float** |  |
 **date_created** | **\DateTime** |  |
 **date_sent** | **\DateTime** |  |
 **sid** | **string** |  |

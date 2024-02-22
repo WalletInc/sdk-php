@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **max_budget** | **int** |  |
 **decrease_amount** | **int** |  |
 **frequency** | **int** |  |
-**frequency_type** | [**AnyOfStringStringStringStringString**](AnyOfStringStringStringStringString.md) |  |
-**decrease_by** | **double** |  | [optional]
-**decrease_every** | **double** |  | [optional]
+**frequency_type** | [**\OpenAPI\Client\Model\DynamicVoucherTemporalDecreaseFrequencyType**](DynamicVoucherTemporalDecreaseFrequencyType.md) |  |
+**decrease_by** | **float** |  | [optional]
+**decrease_every** | **float** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

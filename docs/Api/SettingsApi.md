@@ -1,11 +1,11 @@
 # OpenAPI\Client\SettingsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getActiveCampaigns()**](SettingsApi.md#getActiveCampaigns) | **GET** /v2/settings/campaigns/active | Get active campaigns
-[**getVouchersCount()**](SettingsApi.md#getVouchersCount) | **GET** /v2/settings/vouchers/count | Get vouchers count
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getActiveCampaigns()**](SettingsApi.md#getActiveCampaigns) | **GET** /v2/settings/campaigns/active | Get active campaigns |
+| [**getVouchersCount()**](SettingsApi.md#getVouchersCount) | **GET** /v2/settings/vouchers/count | Get vouchers count |
 
 
 ## `getActiveCampaigns()`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sort_num** | **double** |  |
+**sort_num** | **float** |  |
 **name** | **string** |  |
 **max_volume** | **string** |  | [optional]
 **measurement** | **string** |  |

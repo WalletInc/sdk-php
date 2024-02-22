@@ -49,11 +49,11 @@ Name | Type | Description | Notes
 **is_settings** | **bool** |  |
 **is_chat_room** | **bool** |  |
 **is_sms_opt_in** | **bool** |  |
-**sms_opt_in_source_id** | **string** |  | [optional]
+**sms_opt_in_source_id** | [**\OpenAPI\Client\Model\WalletConfigurationSmsOptInSourceID**](WalletConfigurationSmsOptInSourceID.md) |  | [optional]
 **is_email_subscriber** | **bool** |  |
 **google_analytics_id** | **string** |  | [optional]
 **facebook_pixel_id** | **string** |  | [optional]
-**public_chat_room_channel_id** | **double** |  | [optional]
+**public_chat_room_channel_id** | **float** |  | [optional]
 **vanity_handle** | **string** |  | [optional]
 **vanity_page_wallet_prefix** | **string** |  | [optional]
 **merchant_credit_payment_design_id** | **string** |  | [optional]
@@ -61,7 +61,7 @@ Name | Type | Description | Notes
 **is_claimed** | **bool** |  | [optional]
 **mobile_app_icon_url** | **string** |  | [optional]
 **is_age_gate** | **bool** |  | [optional]
-**age_gate_minimum** | **double** |  | [optional]
+**age_gate_minimum** | **float** |  | [optional]
 **social_instagram_url** | **string** |  | [optional]
 **social_facebook_url** | **string** |  | [optional]
 **social_you_tube_url** | **string** |  | [optional]

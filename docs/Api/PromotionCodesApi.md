@@ -1,14 +1,14 @@
 # OpenAPI\Client\PromotionCodesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archivePromoCode()**](PromotionCodesApi.md#archivePromoCode) | **DELETE** /v2/promoCodes/{id} | Archive promo code
-[**createPromoCode()**](PromotionCodesApi.md#createPromoCode) | **POST** /v2/promoCodes | Create promo code
-[**fetchAllPromoCodes()**](PromotionCodesApi.md#fetchAllPromoCodes) | **GET** /v2/promoCodes/all | Fetch all promo codes
-[**restorePromoCode()**](PromotionCodesApi.md#restorePromoCode) | **PATCH** /v2/promoCodes/{id} | Restore promo code
-[**updatePromoCode()**](PromotionCodesApi.md#updatePromoCode) | **PUT** /v2/promoCodes/{id} | Update promo code
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archivePromoCode()**](PromotionCodesApi.md#archivePromoCode) | **DELETE** /v2/promoCodes/{id} | Archive promo code |
+| [**createPromoCode()**](PromotionCodesApi.md#createPromoCode) | **POST** /v2/promoCodes | Create promo code |
+| [**fetchAllPromoCodes()**](PromotionCodesApi.md#fetchAllPromoCodes) | **GET** /v2/promoCodes/all | Fetch all promo codes |
+| [**restorePromoCode()**](PromotionCodesApi.md#restorePromoCode) | **PATCH** /v2/promoCodes/{id} | Restore promo code |
+| [**updatePromoCode()**](PromotionCodesApi.md#updatePromoCode) | **PUT** /v2/promoCodes/{id} | Update promo code |
 
 
 ## `archivePromoCode()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_promo_code_create_params** | [**\OpenAPI\Client\Model\WTPromoCodeCreateParams**](../Model/WTPromoCodeCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_promo_code_create_params** | [**\OpenAPI\Client\Model\WTPromoCodeCreateParams**](../Model/WTPromoCodeCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_promo_code_update_params** | [**\OpenAPI\Client\Model\WTPromoCodeUpdateParams**](../Model/WTPromoCodeUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_promo_code_update_params** | [**\OpenAPI\Client\Model\WTPromoCodeUpdateParams**](../Model/WTPromoCodeUpdateParams.md)|  | |
 
 ### Return type
 

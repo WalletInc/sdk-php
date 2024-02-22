@@ -1,14 +1,14 @@
 # OpenAPI\Client\LoungeApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveLounge()**](LoungeApi.md#archiveLounge) | **DELETE** /v2/lounge/{id} | Archive lounge
-[**createLounge()**](LoungeApi.md#createLounge) | **POST** /v2/lounge | Create lounge
-[**fetchAllLounge()**](LoungeApi.md#fetchAllLounge) | **GET** /v2/lounge/all | Fetch all lounge
-[**restoreLounge()**](LoungeApi.md#restoreLounge) | **PATCH** /v2/lounge/{id} | Restore lounge
-[**updateLounge()**](LoungeApi.md#updateLounge) | **PUT** /v2/lounge/{id} | Update lounge
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveLounge()**](LoungeApi.md#archiveLounge) | **DELETE** /v2/lounge/{id} | Archive lounge |
+| [**createLounge()**](LoungeApi.md#createLounge) | **POST** /v2/lounge | Create lounge |
+| [**fetchAllLounge()**](LoungeApi.md#fetchAllLounge) | **GET** /v2/lounge/all | Fetch all lounge |
+| [**restoreLounge()**](LoungeApi.md#restoreLounge) | **PATCH** /v2/lounge/{id} | Restore lounge |
+| [**updateLounge()**](LoungeApi.md#updateLounge) | **PUT** /v2/lounge/{id} | Update lounge |
 
 
 ## `archiveLounge()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_lounge_create_params** | [**\OpenAPI\Client\Model\WTLoungeCreateParams**](../Model/WTLoungeCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_lounge_create_params** | [**\OpenAPI\Client\Model\WTLoungeCreateParams**](../Model/WTLoungeCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_lounge_update_params** | [**\OpenAPI\Client\Model\WTLoungeUpdateParams**](../Model/WTLoungeUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_lounge_update_params** | [**\OpenAPI\Client\Model\WTLoungeUpdateParams**](../Model/WTLoungeUpdateParams.md)|  | |
 
 ### Return type
 

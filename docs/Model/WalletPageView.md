@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **phone_verification_token** | **string** |  |
 **referring_domain** | **string** |  | [optional]
 **referrer** | **string** |  | [optional]
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **status** | **string** |  |
 **country** | **string** |  |
 **country_code** | **string** |  |
@@ -32,8 +32,8 @@ Name | Type | Description | Notes
 **region_name** | **string** |  |
 **city** | **string** |  |
 **zip** | **string** |  |
-**latitude** | **double** |  |
-**longitude** | **double** |  |
+**latitude** | **float** |  |
+**longitude** | **float** |  |
 **timezone** | **string** |  |
 **isp** | **string** |  |
 **org** | **string** |  |

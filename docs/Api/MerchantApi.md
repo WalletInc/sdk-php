@@ -1,36 +1,36 @@
 # OpenAPI\Client\MerchantApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveMerchantProfile()**](MerchantApi.md#archiveMerchantProfile) | **DELETE** /v2/merchant/delete | Archive Merchant
-[**archivePaymentObjectBroadcast()**](MerchantApi.md#archivePaymentObjectBroadcast) | **DELETE** /v2/merchant/paymentObjectBroadcast/{broadcastID} | Archive payment object broadcast
-[**countInboundSMS()**](MerchantApi.md#countInboundSMS) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
-[**exportInboundMessages()**](MerchantApi.md#exportInboundMessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
-[**exportOutboundMessages()**](MerchantApi.md#exportOutboundMessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
-[**fetchAdvertisementCreditBroadcasts()**](MerchantApi.md#fetchAdvertisementCreditBroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Fetch all ad credit broadcasts
-[**fetchCustomRoles()**](MerchantApi.md#fetchCustomRoles) | **GET** /v2/merchant/roles/custom | Fetch custom roles
-[**fetchDynamicVoucherBroadcasts()**](MerchantApi.md#fetchDynamicVoucherBroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Fetch all dynamic voucher broadcasts
-[**fetchEmployees()**](MerchantApi.md#fetchEmployees) | **GET** /v2/merchant/employees/all | Fetch all employees
-[**fetchHelpDeskRequests()**](MerchantApi.md#fetchHelpDeskRequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Fetch help desk requests
-[**fetchImportedList()**](MerchantApi.md#fetchImportedList) | **GET** /v2/merchant/lists/imported/{listID} | Fetch imported list
-[**fetchImportedLists()**](MerchantApi.md#fetchImportedLists) | **GET** /v2/merchant/lists/imported/all | Fetch all imported lists
-[**fetchInboundSMS()**](MerchantApi.md#fetchInboundSMS) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Fetch inbound SMSes
-[**fetchInboundSMSByPage()**](MerchantApi.md#fetchInboundSMSByPage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Fetch inbound SMSes by page
-[**fetchMerchantOutboundSMS()**](MerchantApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Fetch outbound SMSes
-[**fetchMerchantPhoneNumbers()**](MerchantApi.md#fetchMerchantPhoneNumbers) | **GET** /v2/merchant/phoneNumbers/all | Fetch all phone numbers
-[**fetchOptInList()**](MerchantApi.md#fetchOptInList) | **GET** /v2/merchant/lists/optIn/{listID} | Fetch opt in list
-[**fetchOptInLists()**](MerchantApi.md#fetchOptInLists) | **GET** /v2/merchant/lists/optIn/all | Fetch all opt in lists
-[**fetchPhoneNumber()**](MerchantApi.md#fetchPhoneNumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Fetch phone number
-[**fetchPublicEmployees()**](MerchantApi.md#fetchPublicEmployees) | **GET** /v2/merchant/employees/public | Fetch public representative employees of the merchant
-[**fetchSimpleSMSBroadcasts()**](MerchantApi.md#fetchSimpleSMSBroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Fetch all simple SMS broadcasts
-[**fetchStaticVoucherCampaignBroadcasts()**](MerchantApi.md#fetchStaticVoucherCampaignBroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts
-[**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters
-[**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration
-[**updateMerchant()**](MerchantApi.md#updateMerchant) | **PUT** /v2/merchant | Update merchant details
-[**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact
-[**updatePosIntegration()**](MerchantApi.md#updatePosIntegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveMerchantProfile()**](MerchantApi.md#archiveMerchantProfile) | **DELETE** /v2/merchant/delete | Archive Merchant |
+| [**archivePaymentObjectBroadcast()**](MerchantApi.md#archivePaymentObjectBroadcast) | **DELETE** /v2/merchant/paymentObjectBroadcast/{broadcastID} | Archive payment object broadcast |
+| [**countInboundSMS()**](MerchantApi.md#countInboundSMS) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes |
+| [**exportInboundMessages()**](MerchantApi.md#exportInboundMessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages |
+| [**exportOutboundMessages()**](MerchantApi.md#exportOutboundMessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages |
+| [**fetchAdvertisementCreditBroadcasts()**](MerchantApi.md#fetchAdvertisementCreditBroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Fetch all ad credit broadcasts |
+| [**fetchCustomRoles()**](MerchantApi.md#fetchCustomRoles) | **GET** /v2/merchant/roles/custom | Fetch custom roles |
+| [**fetchDynamicVoucherBroadcasts()**](MerchantApi.md#fetchDynamicVoucherBroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Fetch all dynamic voucher broadcasts |
+| [**fetchEmployees()**](MerchantApi.md#fetchEmployees) | **GET** /v2/merchant/employees/all | Fetch all employees |
+| [**fetchHelpDeskRequests()**](MerchantApi.md#fetchHelpDeskRequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Fetch help desk requests |
+| [**fetchImportedList()**](MerchantApi.md#fetchImportedList) | **GET** /v2/merchant/lists/imported/{listID} | Fetch imported list |
+| [**fetchImportedLists()**](MerchantApi.md#fetchImportedLists) | **GET** /v2/merchant/lists/imported/all | Fetch all imported lists |
+| [**fetchInboundSMS()**](MerchantApi.md#fetchInboundSMS) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Fetch inbound SMSes |
+| [**fetchInboundSMSByPage()**](MerchantApi.md#fetchInboundSMSByPage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Fetch inbound SMSes by page |
+| [**fetchMerchantOutboundSMS()**](MerchantApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Fetch outbound SMSes |
+| [**fetchMerchantPhoneNumbers()**](MerchantApi.md#fetchMerchantPhoneNumbers) | **GET** /v2/merchant/phoneNumbers/all | Fetch all phone numbers |
+| [**fetchOptInList()**](MerchantApi.md#fetchOptInList) | **GET** /v2/merchant/lists/optIn/{listID} | Fetch opt in list |
+| [**fetchOptInLists()**](MerchantApi.md#fetchOptInLists) | **GET** /v2/merchant/lists/optIn/all | Fetch all opt in lists |
+| [**fetchPhoneNumber()**](MerchantApi.md#fetchPhoneNumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Fetch phone number |
+| [**fetchPublicEmployees()**](MerchantApi.md#fetchPublicEmployees) | **GET** /v2/merchant/employees/public | Fetch public representative employees of the merchant |
+| [**fetchSimpleSMSBroadcasts()**](MerchantApi.md#fetchSimpleSMSBroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Fetch all simple SMS broadcasts |
+| [**fetchStaticVoucherCampaignBroadcasts()**](MerchantApi.md#fetchStaticVoucherCampaignBroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts |
+| [**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters |
+| [**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration |
+| [**updateMerchant()**](MerchantApi.md#updateMerchant) | **PUT** /v2/merchant | Update merchant details |
+| [**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact |
+| [**updatePosIntegration()**](MerchantApi.md#updatePosIntegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration |
 
 
 ## `archiveMerchantProfile()`
@@ -117,9 +117,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **broadcast_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **broadcast_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -173,11 +173,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
- **from_phone_number** | **string**|  | [optional]
- **body** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **from_phone_number** | **string**|  | [optional] |
+| **body** | **string**|  | [optional] |
 
 ### Return type
 
@@ -230,10 +230,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | **string**|  |
- **locale** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | **string**|  | |
+| **locale** | **string**|  | |
 
 ### Return type
 
@@ -287,11 +287,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | **string**|  |
- **locale** | **string**|  |
- **payment_object_broadcast_id** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | **string**|  | |
+| **locale** | **string**|  | |
+| **payment_object_broadcast_id** | **string**|  | [optional] |
 
 ### Return type
 
@@ -343,9 +343,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -448,9 +448,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -554,10 +554,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
- **is_resolved** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **is_resolved** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -609,9 +609,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **list_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -663,9 +663,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -718,10 +718,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
- **from_phone_number** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **from_phone_number** | **string**|  | [optional] |
 
 ### Return type
 
@@ -743,7 +743,7 @@ No authorization required
 ## `fetchInboundSMSByPage()`
 
 ```php
-fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num): \OpenAPI\Client\Model\InlineResponse2002
+fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num): \OpenAPI\Client\Model\FetchInboundSMSByPage200Response
 ```
 
 Fetch inbound SMSes by page
@@ -763,8 +763,8 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
 );
 $phone_number_id = NULL; // mixed
 $from_phone_number = 'from_phone_number_example'; // string
-$page_size = 3.4; // double
-$page_num = 3.4; // double
+$page_size = 3.4; // float
+$page_num = 3.4; // float
 
 try {
     $result = $apiInstance->fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num);
@@ -776,16 +776,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
- **from_phone_number** | **string**|  | [optional]
- **page_size** | **double**|  | [optional]
- **page_num** | **double**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **from_phone_number** | **string**|  | [optional] |
+| **page_size** | **float**|  | [optional] |
+| **page_num** | **float**|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\FetchInboundSMSByPage200Response**](../Model/FetchInboundSMSByPage200Response.md)
 
 ### Authorization
 
@@ -834,10 +834,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
- **to_phone_number** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **to_phone_number** | **string**|  | |
 
 ### Return type
 
@@ -890,10 +890,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
- **is_approved** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
+| **is_approved** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -945,9 +945,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **list_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **list_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -999,9 +999,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -1053,9 +1053,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **phone_number_id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phone_number_id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -1158,9 +1158,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -1212,9 +1212,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -1368,9 +1368,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_update** | [**\OpenAPI\Client\Model\WTMerchantUpdate**](../Model/WTMerchantUpdate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_merchant_update** | [**\OpenAPI\Client\Model\WTMerchantUpdate**](../Model/WTMerchantUpdate.md)|  | |
 
 ### Return type
 
@@ -1422,9 +1422,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_update_points_of_contact** | [**\OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact**](../Model/WTMerchantUpdatePointsOfContact.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_merchant_update_points_of_contact** | [**\OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact**](../Model/WTMerchantUpdatePointsOfContact.md)|  | |
 
 ### Return type
 
@@ -1476,9 +1476,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_update_pos_integration** | [**\OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration**](../Model/WTMerchantUpdatePOSIntegration.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_merchant_update_pos_integration** | [**\OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration**](../Model/WTMerchantUpdatePOSIntegration.md)|  | |
 
 ### Return type
 
