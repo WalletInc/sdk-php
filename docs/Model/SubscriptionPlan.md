@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
 **name** | **string** |  |
-**price** | **double** |  |
+**price** | **float** |  |
 **nickname** | **string** |  |
 **examples** | **string** |  |
 **products** | [**\OpenAPI\Client\Model\SubscriptionProduct[]**](SubscriptionProduct.md) |  |

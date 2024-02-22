@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **url** | **string** |  |
 **media_url** | **string** |  | [optional]
 **published_date** | **\DateTime** |  | [optional]
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

@@ -1,14 +1,14 @@
 # OpenAPI\Client\ProductsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveProduct()**](ProductsApi.md#archiveProduct) | **DELETE** /v2/products/{id} | Archive product
-[**createProduct()**](ProductsApi.md#createProduct) | **POST** /v2/products | Create product
-[**fetchAllProducts()**](ProductsApi.md#fetchAllProducts) | **GET** /v2/products/all | Fetch all products
-[**restoreProduct()**](ProductsApi.md#restoreProduct) | **PATCH** /v2/products/{id} | Restore product
-[**updateProduct()**](ProductsApi.md#updateProduct) | **PUT** /v2/products/{id} | Update product
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveProduct()**](ProductsApi.md#archiveProduct) | **DELETE** /v2/products/{id} | Archive product |
+| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /v2/products | Create product |
+| [**fetchAllProducts()**](ProductsApi.md#fetchAllProducts) | **GET** /v2/products/all | Fetch all products |
+| [**restoreProduct()**](ProductsApi.md#restoreProduct) | **PATCH** /v2/products/{id} | Restore product |
+| [**updateProduct()**](ProductsApi.md#updateProduct) | **PUT** /v2/products/{id} | Update product |
 
 
 ## `archiveProduct()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_product_create_params** | [**\OpenAPI\Client\Model\WTProductCreateParams**](../Model/WTProductCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_product_create_params** | [**\OpenAPI\Client\Model\WTProductCreateParams**](../Model/WTProductCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_product_update_params** | [**\OpenAPI\Client\Model\WTProductUpdateParams**](../Model/WTProductUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_product_update_params** | [**\OpenAPI\Client\Model\WTProductUpdateParams**](../Model/WTProductUpdateParams.md)|  | |
 
 ### Return type
 

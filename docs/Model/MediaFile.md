@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **file_url** | **string** | The URL of the file |
 **file_type** | **string** | The type of the file |
 **file_name** | **string** | The name of the file |
-**file_size** | **double** | The size of the file |
+**file_size** | **float** | The size of the file |
 **folder** | **string** | The folder in which the file is stored |
 **employee_id** | **string** |  |
 

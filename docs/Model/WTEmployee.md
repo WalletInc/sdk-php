@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **employee_id** | **string** |  |
 **job_title** | **string** |  |
 **department** | **string** |  |
-**schedule_start_day** | [**AnyOfStringStringStringStringStringStringString**](AnyOfStringStringStringStringStringStringString.md) |  | [optional]
-**schedule_start_hour** | [**AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber**](AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber.md) |  | [optional]
-**schedule_start_minute** | [**AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber**](AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber.md) |  | [optional]
-**schedule_start_meridiem** | [**AnyOfStringString**](AnyOfStringString.md) |  | [optional]
-**schedule_end_day** | [**AnyOfStringStringStringStringStringStringString**](AnyOfStringStringStringStringStringStringString.md) |  | [optional]
-**schedule_end_hour** | [**AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber**](AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber.md) |  | [optional]
-**schedule_end_minute** | [**AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber**](AnyOfNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber.md) |  | [optional]
-**schedule_end_meridiem** | [**AnyOfStringString**](AnyOfStringString.md) |  | [optional]
+**schedule_start_day** | [**\OpenAPI\Client\Model\EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional]
+**schedule_start_hour** | [**\OpenAPI\Client\Model\EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional]
+**schedule_start_minute** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional]
+**schedule_start_meridiem** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional]
+**schedule_end_day** | [**\OpenAPI\Client\Model\EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional]
+**schedule_end_hour** | [**\OpenAPI\Client\Model\EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional]
+**schedule_end_minute** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional]
+**schedule_end_meridiem** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional]
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **profile_picture_url** | **string** |  |
 **merchant_id** | **string** |  |
 **session_token** | **string** |  |
-**failed_login_attempts** | **double** |  | [optional]
+**failed_login_attempts** | **float** |  | [optional]
 **last_login_date** | **\DateTime** |  | [optional]
 **cfuvid** | **string** |  | [optional]
 **schedule** | **object** |  | [optional]

@@ -7,14 +7,15 @@ Name | Type | Description | Notes
 **name** | **string** |  |
 **size** | **int** |  |
 **margin** | **int** |  |
+**is_margin_white** | **bool** |  |
 **corner_radius** | **int** |  |
 **color_dark_hex** | **string** |  |
 **color_light_hex** | **string** |  |
 **background_dimming_hex** | **string** |  |
-**logo_image_url** | **string** |  |
-**background_image_url** | **string** |  |
-**animated_gif_background_url** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**logo_image_url** | **string** |  | [optional]
+**background_image_url** | **string** |  | [optional]
+**animated_gif_background_url** | **string** |  | [optional]
+**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

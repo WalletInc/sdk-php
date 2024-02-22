@@ -1,18 +1,18 @@
 # OpenAPI\Client\MembershipTiersApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveMembershipTier()**](MembershipTiersApi.md#archiveMembershipTier) | **DELETE** /v2/membership/tier/{id} | Archive tier
-[**createMembershipTier()**](MembershipTiersApi.md#createMembershipTier) | **POST** /v2/membership/tier | Create tier
-[**fetchAllMembershipTiers()**](MembershipTiersApi.md#fetchAllMembershipTiers) | **GET** /v2/membership/tier/all | Fetch all tiers
-[**fetchAllMembershipTiersWithMemberCount()**](MembershipTiersApi.md#fetchAllMembershipTiersWithMemberCount) | **GET** /v2/membership/tier/allWithMemberCount | Fetch all tiers with member count
-[**fetchMembershipTierById()**](MembershipTiersApi.md#fetchMembershipTierById) | **GET** /v2/membership/tier/{id} | Fetch tier
-[**fetchMembershipTierHistoryLog()**](MembershipTiersApi.md#fetchMembershipTierHistoryLog) | **POST** /v2/membership/tier/history/log | Fetch history
-[**fetchMembershipTierRedemptionLog()**](MembershipTiersApi.md#fetchMembershipTierRedemptionLog) | **POST** /v2/membership/tier/redemption/log | Fetch redemption log
-[**restoreMembershipTier()**](MembershipTiersApi.md#restoreMembershipTier) | **PATCH** /v2/membership/tier/{id} | Restore tier
-[**updateMembershipTier()**](MembershipTiersApi.md#updateMembershipTier) | **PUT** /v2/membership/tier/{id} | Update tier
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveMembershipTier()**](MembershipTiersApi.md#archiveMembershipTier) | **DELETE** /v2/membership/tier/{id} | Archive tier |
+| [**createMembershipTier()**](MembershipTiersApi.md#createMembershipTier) | **POST** /v2/membership/tier | Create tier |
+| [**fetchAllMembershipTiers()**](MembershipTiersApi.md#fetchAllMembershipTiers) | **GET** /v2/membership/tier/all | Fetch all tiers |
+| [**fetchAllMembershipTiersWithMemberCount()**](MembershipTiersApi.md#fetchAllMembershipTiersWithMemberCount) | **GET** /v2/membership/tier/allWithMemberCount | Fetch all tiers with member count |
+| [**fetchMembershipTierById()**](MembershipTiersApi.md#fetchMembershipTierById) | **GET** /v2/membership/tier/{id} | Fetch tier |
+| [**fetchMembershipTierHistoryLog()**](MembershipTiersApi.md#fetchMembershipTierHistoryLog) | **POST** /v2/membership/tier/history/log | Fetch history |
+| [**fetchMembershipTierRedemptionLog()**](MembershipTiersApi.md#fetchMembershipTierRedemptionLog) | **POST** /v2/membership/tier/redemption/log | Fetch redemption log |
+| [**restoreMembershipTier()**](MembershipTiersApi.md#restoreMembershipTier) | **PATCH** /v2/membership/tier/{id} | Restore tier |
+| [**updateMembershipTier()**](MembershipTiersApi.md#updateMembershipTier) | **PUT** /v2/membership/tier/{id} | Update tier |
 
 
 ## `archiveMembershipTier()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -102,9 +102,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_membership_tier_creation_params** | [**\OpenAPI\Client\Model\WTMembershipTierCreationParams**](../Model/WTMembershipTierCreationParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_membership_tier_creation_params** | [**\OpenAPI\Client\Model\WTMembershipTierCreationParams**](../Model/WTMembershipTierCreationParams.md)|  | |
 
 ### Return type
 
@@ -156,9 +156,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -210,9 +210,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -264,9 +264,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -318,9 +318,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -372,9 +372,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pagination_request_with_id_and_without_sort_options** | [**\OpenAPI\Client\Model\PaginationRequestWithIDAndWithoutSortOptions**](../Model/PaginationRequestWithIDAndWithoutSortOptions.md)|  | |
 
 ### Return type
 
@@ -426,9 +426,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -481,10 +481,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_membership_tier_update_params** | [**\OpenAPI\Client\Model\WTMembershipTierUpdateParams**](../Model/WTMembershipTierUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_membership_tier_update_params** | [**\OpenAPI\Client\Model\WTMembershipTierUpdateParams**](../Model/WTMembershipTierUpdateParams.md)|  | |
 
 ### Return type
 

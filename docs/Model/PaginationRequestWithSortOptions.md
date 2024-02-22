@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **page_size** | **int** | Denotes the number of records per page | [optional]
 **page_num** | **int** | Denotes the page number | [optional]
 **sort_key** | **string** | Denotes the key using which the records need to be sorted | [optional]
-**sort_order** | [**AnyOfStringString**](AnyOfStringString.md) | Denotes the sort order | [optional]
+**sort_order** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptionsSortOrder**](PaginationRequestWithSortOptionsSortOrder.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

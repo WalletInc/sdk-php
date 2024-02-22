@@ -1,16 +1,16 @@
 # OpenAPI\Client\MerchantURLsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveMerchantURL()**](MerchantURLsApi.md#archiveMerchantURL) | **DELETE** /v2/business/merchantUrl/{id} | Archive merchant url
-[**createMerchantURL()**](MerchantURLsApi.md#createMerchantURL) | **POST** /v2/business/merchantUrl | Create merchant url
-[**fetchAllMerchantURLs()**](MerchantURLsApi.md#fetchAllMerchantURLs) | **GET** /v2/business/merchantUrl/all | Fetch all merchant urls
-[**fetchMerchantURL()**](MerchantURLsApi.md#fetchMerchantURL) | **GET** /v2/business/merchantUrl/{id} | Fetch merchant url
-[**fetchMerchantURLRequests()**](MerchantURLsApi.md#fetchMerchantURLRequests) | **GET** /v2/business/merchantUrl/requests/{id} | Fetch requests
-[**restoreMerchantURL()**](MerchantURLsApi.md#restoreMerchantURL) | **PATCH** /v2/business/merchantUrl/{id} | Restore merchant url
-[**updateMerchantURL()**](MerchantURLsApi.md#updateMerchantURL) | **PUT** /v2/business/merchantUrl/{id} | Update merchant url
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveMerchantURL()**](MerchantURLsApi.md#archiveMerchantURL) | **DELETE** /v2/business/merchantUrl/{id} | Archive merchant url |
+| [**createMerchantURL()**](MerchantURLsApi.md#createMerchantURL) | **POST** /v2/business/merchantUrl | Create merchant url |
+| [**fetchAllMerchantURLs()**](MerchantURLsApi.md#fetchAllMerchantURLs) | **GET** /v2/business/merchantUrl/all | Fetch all merchant urls |
+| [**fetchMerchantURL()**](MerchantURLsApi.md#fetchMerchantURL) | **GET** /v2/business/merchantUrl/{id} | Fetch merchant url |
+| [**fetchMerchantURLRequests()**](MerchantURLsApi.md#fetchMerchantURLRequests) | **GET** /v2/business/merchantUrl/requests/{id} | Fetch requests |
+| [**restoreMerchantURL()**](MerchantURLsApi.md#restoreMerchantURL) | **PATCH** /v2/business/merchantUrl/{id} | Restore merchant url |
+| [**updateMerchantURL()**](MerchantURLsApi.md#updateMerchantURL) | **PUT** /v2/business/merchantUrl/{id} | Update merchant url |
 
 
 ## `archiveMerchantURL()`
@@ -46,9 +46,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -100,9 +100,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_merchant_url_create** | [**\OpenAPI\Client\Model\WTMerchantURLCreate**](../Model/WTMerchantURLCreate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_merchant_url_create** | [**\OpenAPI\Client\Model\WTMerchantURLCreate**](../Model/WTMerchantURLCreate.md)|  | |
 
 ### Return type
 
@@ -154,9 +154,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -208,9 +208,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -262,9 +262,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -316,9 +316,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -371,10 +371,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_merchant_url_update** | [**\OpenAPI\Client\Model\WTMerchantURLUpdate**](../Model/WTMerchantURLUpdate.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_merchant_url_update** | [**\OpenAPI\Client\Model\WTMerchantURLUpdate**](../Model/WTMerchantURLUpdate.md)|  | |
 
 ### Return type
 

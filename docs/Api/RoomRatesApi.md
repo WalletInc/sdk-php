@@ -1,14 +1,14 @@
 # OpenAPI\Client\RoomRatesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveRoomRate()**](RoomRatesApi.md#archiveRoomRate) | **DELETE** /v2/roomRates/{id} | Archive room rate
-[**createRoomRate()**](RoomRatesApi.md#createRoomRate) | **POST** /v2/roomRates | Create room rate
-[**fetchAllRoomRates()**](RoomRatesApi.md#fetchAllRoomRates) | **GET** /v2/roomRates/all | Fetch all room rates
-[**restoreRoomRate()**](RoomRatesApi.md#restoreRoomRate) | **PATCH** /v2/roomRates/{id} | Restore room rate
-[**updateRoomRate()**](RoomRatesApi.md#updateRoomRate) | **PUT** /v2/roomRates/{id} | Update room rate
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveRoomRate()**](RoomRatesApi.md#archiveRoomRate) | **DELETE** /v2/roomRates/{id} | Archive room rate |
+| [**createRoomRate()**](RoomRatesApi.md#createRoomRate) | **POST** /v2/roomRates | Create room rate |
+| [**fetchAllRoomRates()**](RoomRatesApi.md#fetchAllRoomRates) | **GET** /v2/roomRates/all | Fetch all room rates |
+| [**restoreRoomRate()**](RoomRatesApi.md#restoreRoomRate) | **PATCH** /v2/roomRates/{id} | Restore room rate |
+| [**updateRoomRate()**](RoomRatesApi.md#updateRoomRate) | **PUT** /v2/roomRates/{id} | Update room rate |
 
 
 ## `archiveRoomRate()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_room_rate_create_params** | [**\OpenAPI\Client\Model\WTRoomRateCreateParams**](../Model/WTRoomRateCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_room_rate_create_params** | [**\OpenAPI\Client\Model\WTRoomRateCreateParams**](../Model/WTRoomRateCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_room_rate_update_params** | [**\OpenAPI\Client\Model\WTRoomRateUpdateParams**](../Model/WTRoomRateUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_room_rate_update_params** | [**\OpenAPI\Client\Model\WTRoomRateUpdateParams**](../Model/WTRoomRateUpdateParams.md)|  | |
 
 ### Return type
 

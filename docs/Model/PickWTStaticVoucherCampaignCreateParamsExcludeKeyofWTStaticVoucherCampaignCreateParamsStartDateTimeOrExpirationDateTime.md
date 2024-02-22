@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **string** |  |
 **notes** | **string** |  |
-**value_type** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**value_type** | [**\OpenAPI\Client\Model\PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  |
 **is_loaded** | **bool** |  |
 **display_value** | **string** |  | [optional]
 **merchants_reference_id** | **string** |  | [optional]

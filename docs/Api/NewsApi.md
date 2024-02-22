@@ -1,14 +1,14 @@
 # OpenAPI\Client\NewsApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveNewsArticle()**](NewsApi.md#archiveNewsArticle) | **DELETE** /v2/news/{id} | Archive news article
-[**createNewsArticle()**](NewsApi.md#createNewsArticle) | **POST** /v2/news | Create news article
-[**fetchAllNewsArticles()**](NewsApi.md#fetchAllNewsArticles) | **GET** /v2/news/all | Fetch all news articles
-[**restoreNewsArticle()**](NewsApi.md#restoreNewsArticle) | **PATCH** /v2/news/{id} | Restore news article
-[**updateNewsArticle()**](NewsApi.md#updateNewsArticle) | **PUT** /v2/news/{id} | Update news article
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveNewsArticle()**](NewsApi.md#archiveNewsArticle) | **DELETE** /v2/news/{id} | Archive news article |
+| [**createNewsArticle()**](NewsApi.md#createNewsArticle) | **POST** /v2/news | Create news article |
+| [**fetchAllNewsArticles()**](NewsApi.md#fetchAllNewsArticles) | **GET** /v2/news/all | Fetch all news articles |
+| [**restoreNewsArticle()**](NewsApi.md#restoreNewsArticle) | **PATCH** /v2/news/{id} | Restore news article |
+| [**updateNewsArticle()**](NewsApi.md#updateNewsArticle) | **PUT** /v2/news/{id} | Update news article |
 
 
 ## `archiveNewsArticle()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_news_article_create_params** | [**\OpenAPI\Client\Model\WTNewsArticleCreateParams**](../Model/WTNewsArticleCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_news_article_create_params** | [**\OpenAPI\Client\Model\WTNewsArticleCreateParams**](../Model/WTNewsArticleCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_news_article_update_params** | [**\OpenAPI\Client\Model\WTNewsArticleUpdateParams**](../Model/WTNewsArticleUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_news_article_update_params** | [**\OpenAPI\Client\Model\WTNewsArticleUpdateParams**](../Model/WTNewsArticleUpdateParams.md)|  | |
 
 ### Return type
 

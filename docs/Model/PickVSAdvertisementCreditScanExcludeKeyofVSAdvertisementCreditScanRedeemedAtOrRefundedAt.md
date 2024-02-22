@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
-**transaction_type** | [**AnyOfStringStringString**](AnyOfStringStringString.md) | The type of the transaction - only redemption at the moment |
-**register_id** | [**AnyOfStringDouble**](AnyOfStringDouble.md) | The ID of the register where the transaction occurred |
+**transaction_type** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType.md) |  |
+**register_id** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  |
 **redeemed_source** | **string** |  |
 **redeemed_transaction_id** | **string** |  |
 **redeemed_amount** | **int** |  |

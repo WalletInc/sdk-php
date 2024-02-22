@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **name** | **string** |  |
 **display_name** | **string** |  |
 **is_public** | **bool** |  |
-**order_number** | **double** |  |
+**order_number** | **float** |  |
 **is_system** | **bool** |  |
 **icons** | **string[]** |  |
 **category** | **string** |  |

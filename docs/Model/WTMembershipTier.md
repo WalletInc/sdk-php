@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **tier_discount** | **float** | The provided discount as percentage |
 **tier_design_id** | **string** |  |
 **points_design_id** | **string** |  |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) | The id of the membership tier - autopopulated by the service |
+**id** | [**\OpenAPI\Client\Model\WTMembershipTierId**](WTMembershipTierId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** | The timestamp of when this resource was created |
 **updated_at** | **\DateTime** | The timestamp of when this resource was updated |

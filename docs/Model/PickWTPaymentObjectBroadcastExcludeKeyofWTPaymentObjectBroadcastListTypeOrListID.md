@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **employee_id** | **string** |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **media_urls** | **string[]** |  |
 **opt_in_list** | [**\OpenAPI\Client\Model\WTOptInList**](WTOptInList.md) |  | [optional]
 **imported_list** | [**\OpenAPI\Client\Model\WTImportedList**](WTImportedList.md) |  | [optional]
-**broadcast_status** | [**AnyOfStringStringStringStringString**](AnyOfStringStringStringStringString.md) |  |
+**broadcast_status** | [**\OpenAPI\Client\Model\PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus.md) |  |
 **broadcast_queued_at** | **\DateTime** |  |
 **broadcast_started_at** | **\DateTime** |  |
 **broadcast_completed_at** | **\DateTime** |  |
-**payment_object_prefix** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**payment_object_prefix** | [**\OpenAPI\Client\Model\PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix.md) |  |
 **payment_object_id** | **string** |  |
 **message_template** | **string** |  |
 **broadcast_scheduled_at** | **\DateTime** |  |

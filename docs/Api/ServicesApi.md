@@ -1,14 +1,14 @@
 # OpenAPI\Client\ServicesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archiveService()**](ServicesApi.md#archiveService) | **DELETE** /v2/services/{id} | Archive service
-[**createService()**](ServicesApi.md#createService) | **POST** /v2/services | Create service
-[**fetchAllServices()**](ServicesApi.md#fetchAllServices) | **GET** /v2/services/all | Fetch all services
-[**restoreService()**](ServicesApi.md#restoreService) | **PATCH** /v2/services/{id} | Restore service
-[**updateService()**](ServicesApi.md#updateService) | **PUT** /v2/services/{id} | Update service
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archiveService()**](ServicesApi.md#archiveService) | **DELETE** /v2/services/{id} | Archive service |
+| [**createService()**](ServicesApi.md#createService) | **POST** /v2/services | Create service |
+| [**fetchAllServices()**](ServicesApi.md#fetchAllServices) | **GET** /v2/services/all | Fetch all services |
+| [**restoreService()**](ServicesApi.md#restoreService) | **PATCH** /v2/services/{id} | Restore service |
+| [**updateService()**](ServicesApi.md#updateService) | **PUT** /v2/services/{id} | Update service |
 
 
 ## `archiveService()`
@@ -44,9 +44,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -98,9 +98,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_service_create_params** | [**\OpenAPI\Client\Model\WTServiceCreateParams**](../Model/WTServiceCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_service_create_params** | [**\OpenAPI\Client\Model\WTServiceCreateParams**](../Model/WTServiceCreateParams.md)|  | |
 
 ### Return type
 
@@ -152,9 +152,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -206,9 +206,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -261,10 +261,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_service_update_params** | [**\OpenAPI\Client\Model\WTServiceUpdateParams**](../Model/WTServiceUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_service_update_params** | [**\OpenAPI\Client\Model\WTServiceUpdateParams**](../Model/WTServiceUpdateParams.md)|  | |
 
 ### Return type
 

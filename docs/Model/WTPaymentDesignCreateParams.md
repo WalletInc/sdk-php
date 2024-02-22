@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **border_color** | **string** |  |
-**border_style_type** | [**AnyOfStringStringString**](AnyOfStringStringString.md) |  |
+**border_style_type** | [**\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  |
 **border_size** | **string** |  |
 **border_radius** | **int** |  |
 **font_color** | **string** |  |

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **double** |  |
+**id** | **float** |  |
 **products** | [**\OpenAPI\Client\Model\ClickFunnelProduct[]**](ClickFunnelProduct.md) |  |
 **member_id** | **mixed** |  | [optional]
 **contact** | [**\OpenAPI\Client\Model\ClickFunnelContact**](ClickFunnelContact.md) |  |
-**funnel_id** | **double** |  |
+**funnel_id** | **float** |  |
 **stripe_customer_token** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **infusionsoft_ccid** | **mixed** |  | [optional]
 **oap_customer_id** | **mixed** |  | [optional]
 **payment_instrument_type** | **mixed** |  | [optional]
-**original_amount_cents** | **double** |  |
+**original_amount_cents** | **float** |  |
 **original_amount** | [**\OpenAPI\Client\Model\ClickFunnelOriginalAmount**](ClickFunnelOriginalAmount.md) |  |
 **original_amount_currency** | **string** |  |
 **manual** | **bool** |  |

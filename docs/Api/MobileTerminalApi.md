@@ -1,12 +1,12 @@
 # OpenAPI\Client\MobileTerminalApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchWalletItemFromMobileTerminal()**](MobileTerminalApi.md#fetchWalletItemFromMobileTerminal) | **GET** /v2/pos/mobile/item/{itemID} | Fetch item
-[**findMemberByID()**](MobileTerminalApi.md#findMemberByID) | **GET** /v2/pos/mobile/member/{memberID} | Find member
-[**redeemWalletItemFromMobileTerminal()**](MobileTerminalApi.md#redeemWalletItemFromMobileTerminal) | **POST** /v2/pos/mobile/item/redeem/{itemID} | Redeem item
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchWalletItemFromMobileTerminal()**](MobileTerminalApi.md#fetchWalletItemFromMobileTerminal) | **GET** /v2/pos/mobile/item/{itemID} | Fetch item |
+| [**findMemberByID()**](MobileTerminalApi.md#findMemberByID) | **GET** /v2/pos/mobile/member/{memberID} | Find member |
+| [**redeemWalletItemFromMobileTerminal()**](MobileTerminalApi.md#redeemWalletItemFromMobileTerminal) | **POST** /v2/pos/mobile/item/redeem/{itemID} | Redeem item |
 
 
 ## `fetchWalletItemFromMobileTerminal()`
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **item_id** | **string**|  | |
 
 ### Return type
 
@@ -96,9 +96,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **member_id** | **string**|  | |
 
 ### Return type
 
@@ -151,10 +151,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
- **wt_wallet_item_redemption** | [**\OpenAPI\Client\Model\WTWalletItemRedemption**](../Model/WTWalletItemRedemption.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **item_id** | **string**|  | |
+| **wt_wallet_item_redemption** | [**\OpenAPI\Client\Model\WTWalletItemRedemption**](../Model/WTWalletItemRedemption.md)|  | |
 
 ### Return type
 

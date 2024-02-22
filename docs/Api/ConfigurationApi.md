@@ -1,12 +1,12 @@
 # OpenAPI\Client\ConfigurationApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPublicChatRoom()**](ConfigurationApi.md#createPublicChatRoom) | **POST** /v2/wallet/createPublicChatRoom | 
-[**saveMerchantCreditPaymentDesign()**](ConfigurationApi.md#saveMerchantCreditPaymentDesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update wallet record
-[**saveWalletRecord()**](ConfigurationApi.md#saveWalletRecord) | **PUT** /v2/wallet | Update wallet record
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPublicChatRoom()**](ConfigurationApi.md#createPublicChatRoom) | **POST** /v2/wallet/createPublicChatRoom |  |
+| [**saveMerchantCreditPaymentDesign()**](ConfigurationApi.md#saveMerchantCreditPaymentDesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update wallet record |
+| [**saveWalletRecord()**](ConfigurationApi.md#saveWalletRecord) | **PUT** /v2/wallet | Update wallet record |
 
 
 ## `createPublicChatRoom()`
@@ -65,7 +65,7 @@ No authorization required
 ## `saveMerchantCreditPaymentDesign()`
 
 ```php
-saveMerchantCreditPaymentDesign($inline_object3): mixed
+saveMerchantCreditPaymentDesign($save_merchant_credit_payment_design_request): mixed
 ```
 
 Update wallet record
@@ -83,10 +83,10 @@ $apiInstance = new OpenAPI\Client\Api\ConfigurationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$inline_object3 = new \OpenAPI\Client\Model\InlineObject3(); // \OpenAPI\Client\Model\InlineObject3
+$save_merchant_credit_payment_design_request = new \OpenAPI\Client\Model\SaveMerchantCreditPaymentDesignRequest(); // \OpenAPI\Client\Model\SaveMerchantCreditPaymentDesignRequest
 
 try {
-    $result = $apiInstance->saveMerchantCreditPaymentDesign($inline_object3);
+    $result = $apiInstance->saveMerchantCreditPaymentDesign($save_merchant_credit_payment_design_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfigurationApi->saveMerchantCreditPaymentDesign: ', $e->getMessage(), PHP_EOL;
@@ -95,9 +95,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline_object3** | [**\OpenAPI\Client\Model\InlineObject3**](../Model/InlineObject3.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **save_merchant_credit_payment_design_request** | [**\OpenAPI\Client\Model\SaveMerchantCreditPaymentDesignRequest**](../Model/SaveMerchantCreditPaymentDesignRequest.md)|  | |
 
 ### Return type
 
@@ -149,9 +149,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_wallet_configuration_save_wallet_record** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecord**](../Model/WTWalletConfigurationSaveWalletRecord.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_wallet_configuration_save_wallet_record** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecord**](../Model/WTWalletConfigurationSaveWalletRecord.md)|  | |
 
 ### Return type
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **double** |  |
+**id** | **float** |  |
 **first_name** | **string** |  |
 **last_name** | **string** |  |
 **address** | **string** |  |

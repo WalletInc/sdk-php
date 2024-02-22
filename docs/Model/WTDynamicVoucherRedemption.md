@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **dynamic_voucher_id** | **string** |  |
 **redeemed_source** | **string** |  |
 **redeemed_transaction_id** | **string** |  |
-**transaction_type** | [**AnyOfStringString**](AnyOfStringString.md) | The type of the transaction - only redemption at the moment |
-**register_id** | [**AnyOfStringDouble**](AnyOfStringDouble.md) | The ID of the register where the transaction occurred |
-**id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**transaction_type** | [**\OpenAPI\Client\Model\WTDynamicVoucherRedemptionTransactionType**](WTDynamicVoucherRedemptionTransactionType.md) |  |
+**register_id** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  |
+**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

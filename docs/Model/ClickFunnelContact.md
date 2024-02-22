@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **double** |  |
-**page_id** | **double** |  |
+**id** | **float** |  |
+**page_id** | **float** |  |
 **first_name** | **string** |  |
 **last_name** | **string** |  |
 **name** | **string** |  |
@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **ip** | **string** |  |
-**funnel_id** | **double** |  |
-**funnel_step_id** | **double** |  |
+**funnel_id** | **float** |  |
+**funnel_step_id** | **float** |  |
 **unsubscribed_at** | **mixed** |  | [optional]
 **cf_uvid** | **string** |  |
 **cart_affiliate_id** | **string** |  |
@@ -42,5 +42,7 @@ Name | Type | Description | Notes
 **company_name** | **string** |  |
 **company_industry** | **string** |  |
 **additional_info** | **mixed** |  | [optional]
+**ga_client_id** | **string** |  | [optional]
+**ga_measurement_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

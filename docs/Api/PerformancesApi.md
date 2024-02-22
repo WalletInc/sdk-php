@@ -1,22 +1,22 @@
 # OpenAPI\Client\PerformancesApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**archivePerformance()**](PerformancesApi.md#archivePerformance) | **DELETE** /v2/performances/{id} | Archive performance
-[**countClaimedComps()**](PerformancesApi.md#countClaimedComps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed
-[**countRedeemedComps()**](PerformancesApi.md#countRedeemedComps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed
-[**createPerformance()**](PerformancesApi.md#createPerformance) | **POST** /v2/performances | Create performance
-[**exportTickets()**](PerformancesApi.md#exportTickets) | **POST** /v2/performances/{id}/tickets/export | Update performance
-[**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets
-[**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Fetch all performances
-[**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Fetch a single performance
-[**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page
-[**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Update performance
-[**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore performance
-[**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance
-[**updatePerformance()**](PerformancesApi.md#updatePerformance) | **PUT** /v2/performances/{id} | Update performance
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**archivePerformance()**](PerformancesApi.md#archivePerformance) | **DELETE** /v2/performances/{id} | Archive performance |
+| [**countClaimedComps()**](PerformancesApi.md#countClaimedComps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed |
+| [**countRedeemedComps()**](PerformancesApi.md#countRedeemedComps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed |
+| [**createPerformance()**](PerformancesApi.md#createPerformance) | **POST** /v2/performances | Create performance |
+| [**exportTickets()**](PerformancesApi.md#exportTickets) | **POST** /v2/performances/{id}/tickets/export | Update performance |
+| [**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets |
+| [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Fetch all performances |
+| [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Fetch a single performance |
+| [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page |
+| [**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Update performance |
+| [**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore performance |
+| [**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance |
+| [**updatePerformance()**](PerformancesApi.md#updatePerformance) | **PUT** /v2/performances/{id} | Update performance |
 
 
 ## `archivePerformance()`
@@ -52,9 +52,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -76,7 +76,7 @@ No authorization required
 ## `countClaimedComps()`
 
 ```php
-countClaimedComps($id): \OpenAPI\Client\Model\InlineResponse2003
+countClaimedComps($id): \OpenAPI\Client\Model\CountClaimedComps200Response
 ```
 
 Count number claimed
@@ -106,13 +106,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\CountClaimedComps200Response**](../Model/CountClaimedComps200Response.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ No authorization required
 ## `countRedeemedComps()`
 
 ```php
-countRedeemedComps($id): \OpenAPI\Client\Model\InlineResponse2003
+countRedeemedComps($id): \OpenAPI\Client\Model\CountClaimedComps200Response
 ```
 
 Count number redeemed
@@ -160,13 +160,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\CountClaimedComps200Response**](../Model/CountClaimedComps200Response.md)
 
 ### Authorization
 
@@ -214,9 +214,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_performance_create_params** | [**\OpenAPI\Client\Model\WTPerformanceCreateParams**](../Model/WTPerformanceCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_performance_create_params** | [**\OpenAPI\Client\Model\WTPerformanceCreateParams**](../Model/WTPerformanceCreateParams.md)|  | |
 
 ### Return type
 
@@ -268,9 +268,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -323,10 +323,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -378,9 +378,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -432,9 +432,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -456,7 +456,7 @@ No authorization required
 ## `fetchPerformanceTicketsPage()`
 
 ```php
-fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included): \OpenAPI\Client\Model\InlineResponse2004
+fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $sort_by, $sort_direction, $is_archive_included): \OpenAPI\Client\Model\FetchPerformanceTicketsPage200Response
 ```
 
 Fetch tickets by page
@@ -475,14 +475,16 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     new GuzzleHttp\Client()
 );
 $performance_id = NULL; // mixed
-$page_num = 3.4; // double
-$page_size = 3.4; // double
+$page_num = 3.4; // float
+$page_size = 3.4; // float
 $filter_comps = True; // bool
 $filter_claimed = True; // bool
+$sort_by = NULL; // mixed
+$sort_direction = NULL; // mixed
 $is_archive_included = True; // bool
 
 try {
-    $result = $apiInstance->fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $is_archive_included);
+    $result = $apiInstance->fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $sort_by, $sort_direction, $is_archive_included);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PerformancesApi->fetchPerformanceTicketsPage: ', $e->getMessage(), PHP_EOL;
@@ -491,18 +493,20 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **performance_id** | [**mixed**](../Model/.md)|  |
- **page_num** | **double**|  |
- **page_size** | **double**|  |
- **filter_comps** | **bool**|  | [optional]
- **filter_claimed** | **bool**|  | [optional]
- **is_archive_included** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performance_id** | [**mixed**](../Model/.md)|  | |
+| **page_num** | **float**|  | |
+| **page_size** | **float**|  | |
+| **filter_comps** | **bool**|  | [optional] |
+| **filter_claimed** | **bool**|  | [optional] |
+| **sort_by** | [**mixed**](../Model/.md)|  | [optional] |
+| **sort_direction** | [**mixed**](../Model/.md)|  | [optional] |
+| **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\OpenAPI\Client\Model\FetchPerformanceTicketsPage200Response**](../Model/FetchPerformanceTicketsPage200Response.md)
 
 ### Authorization
 
@@ -520,7 +524,7 @@ No authorization required
 ## `importTickets()`
 
 ```php
-importTickets($id, $inline_object2): string
+importTickets($id, $import_tickets_request): string
 ```
 
 Update performance
@@ -539,10 +543,10 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     new GuzzleHttp\Client()
 );
 $id = NULL; // mixed
-$inline_object2 = new \OpenAPI\Client\Model\InlineObject2(); // \OpenAPI\Client\Model\InlineObject2
+$import_tickets_request = new \OpenAPI\Client\Model\ImportTicketsRequest(); // \OpenAPI\Client\Model\ImportTicketsRequest
 
 try {
-    $result = $apiInstance->importTickets($id, $inline_object2);
+    $result = $apiInstance->importTickets($id, $import_tickets_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PerformancesApi->importTickets: ', $e->getMessage(), PHP_EOL;
@@ -551,10 +555,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **inline_object2** | [**\OpenAPI\Client\Model\InlineObject2**](../Model/InlineObject2.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **import_tickets_request** | [**\OpenAPI\Client\Model\ImportTicketsRequest**](../Model/ImportTicketsRequest.md)|  | |
 
 ### Return type
 
@@ -606,9 +610,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -630,7 +634,7 @@ No authorization required
 ## `saveTicketSettings()`
 
 ```php
-saveTicketSettings($id, $inline_object1): \OpenAPI\Client\Model\Performance
+saveTicketSettings($id, $save_ticket_settings_request): \OpenAPI\Client\Model\Performance
 ```
 
 Update performance
@@ -649,10 +653,10 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     new GuzzleHttp\Client()
 );
 $id = NULL; // mixed
-$inline_object1 = new \OpenAPI\Client\Model\InlineObject1(); // \OpenAPI\Client\Model\InlineObject1
+$save_ticket_settings_request = new \OpenAPI\Client\Model\SaveTicketSettingsRequest(); // \OpenAPI\Client\Model\SaveTicketSettingsRequest
 
 try {
-    $result = $apiInstance->saveTicketSettings($id, $inline_object1);
+    $result = $apiInstance->saveTicketSettings($id, $save_ticket_settings_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PerformancesApi->saveTicketSettings: ', $e->getMessage(), PHP_EOL;
@@ -661,10 +665,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **inline_object1** | [**\OpenAPI\Client\Model\InlineObject1**](../Model/InlineObject1.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **save_ticket_settings_request** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequest**](../Model/SaveTicketSettingsRequest.md)|  | |
 
 ### Return type
 
@@ -717,10 +721,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_performance_update_params** | [**\OpenAPI\Client\Model\WTPerformanceUpdateParams**](../Model/WTPerformanceUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_performance_update_params** | [**\OpenAPI\Client\Model\WTPerformanceUpdateParams**](../Model/WTPerformanceUpdateParams.md)|  | |
 
 ### Return type
 

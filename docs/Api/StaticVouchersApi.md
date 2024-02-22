@@ -1,15 +1,15 @@
 # OpenAPI\Client\StaticVouchersApi
 
-All URIs are relative to https://api.wall.et.
+All URIs are relative to https://api.wall.et, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createStaticVoucher()**](StaticVouchersApi.md#createStaticVoucher) | **POST** /v2/payment/staticVoucher | Create static voucher
-[**deleteStaticVoucher()**](StaticVouchersApi.md#deleteStaticVoucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete static voucher
-[**fetchReachStatsOfAllStaticVouchers()**](StaticVouchersApi.md#fetchReachStatsOfAllStaticVouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get the reach statistics of all the static vouchers
-[**fetchReachStatsOfIndividualStaticVoucher()**](StaticVouchersApi.md#fetchReachStatsOfIndividualStaticVoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get the reach statistics of an individual static voucher
-[**fetchStaticVoucher()**](StaticVouchersApi.md#fetchStaticVoucher) | **GET** /v2/payment/staticVoucher/{id} | Fetch static voucher
-[**updateStaticVoucher()**](StaticVouchersApi.md#updateStaticVoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update static voucher
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createStaticVoucher()**](StaticVouchersApi.md#createStaticVoucher) | **POST** /v2/payment/staticVoucher | Create static voucher |
+| [**deleteStaticVoucher()**](StaticVouchersApi.md#deleteStaticVoucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete static voucher |
+| [**fetchReachStatsOfAllStaticVouchers()**](StaticVouchersApi.md#fetchReachStatsOfAllStaticVouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get the reach statistics of all the static vouchers |
+| [**fetchReachStatsOfIndividualStaticVoucher()**](StaticVouchersApi.md#fetchReachStatsOfIndividualStaticVoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get the reach statistics of an individual static voucher |
+| [**fetchStaticVoucher()**](StaticVouchersApi.md#fetchStaticVoucher) | **GET** /v2/payment/staticVoucher/{id} | Fetch static voucher |
+| [**updateStaticVoucher()**](StaticVouchersApi.md#updateStaticVoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update static voucher |
 
 
 ## `createStaticVoucher()`
@@ -45,9 +45,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **wt_static_voucher_create_params** | [**\OpenAPI\Client\Model\WTStaticVoucherCreateParams**](../Model/WTStaticVoucherCreateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_static_voucher_create_params** | [**\OpenAPI\Client\Model\WTStaticVoucherCreateParams**](../Model/WTStaticVoucherCreateParams.md)|  | |
 
 ### Return type
 
@@ -99,9 +99,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -154,10 +154,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -211,11 +211,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **static_voucher_id** | [**mixed**](../Model/.md)|  |
- **broadcast_scheduled_start_at** | **\DateTime**|  | [optional]
- **broadcast_scheduled_end_at** | **\DateTime**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **static_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
+| **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -267,9 +267,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
 
 ### Return type
 
@@ -322,10 +322,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**mixed**](../Model/.md)|  |
- **wt_static_voucher_update_params** | [**\OpenAPI\Client\Model\WTStaticVoucherUpdateParams**](../Model/WTStaticVoucherUpdateParams.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**mixed**](../Model/.md)|  | |
+| **wt_static_voucher_update_params** | [**\OpenAPI\Client\Model\WTStaticVoucherUpdateParams**](../Model/WTStaticVoucherUpdateParams.md)|  | |
 
 ### Return type
 
