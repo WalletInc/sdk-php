@@ -73,7 +73,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => 'string',
         'country' => 'string',
         'phone_number' => 'string',
-        'ein' => 'string'
+        'ein' => 'string',
+        'ga_client_id' => 'string',
+        'ga_measurement_id' => 'string'
     ];
 
     /**
@@ -99,7 +101,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => null,
         'country' => null,
         'phone_number' => null,
-        'ein' => null
+        'ein' => null,
+        'ga_client_id' => null,
+        'ga_measurement_id' => null
     ];
 
     /**
@@ -123,7 +127,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => false,
         'country' => false,
         'phone_number' => false,
-        'ein' => false
+        'ein' => false,
+        'ga_client_id' => false,
+        'ga_measurement_id' => false
     ];
 
     /**
@@ -227,7 +233,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => 'zip',
         'country' => 'country',
         'phone_number' => 'phoneNumber',
-        'ein' => 'ein'
+        'ein' => 'ein',
+        'ga_client_id' => 'ga_client_id',
+        'ga_measurement_id' => 'ga_measurement_id'
     ];
 
     /**
@@ -251,7 +259,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => 'setZip',
         'country' => 'setCountry',
         'phone_number' => 'setPhoneNumber',
-        'ein' => 'setEin'
+        'ein' => 'setEin',
+        'ga_client_id' => 'setGaClientId',
+        'ga_measurement_id' => 'setGaMeasurementId'
     ];
 
     /**
@@ -275,7 +285,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'zip' => 'getZip',
         'country' => 'getCountry',
         'phone_number' => 'getPhoneNumber',
-        'ein' => 'getEin'
+        'ein' => 'getEin',
+        'ga_client_id' => 'getGaClientId',
+        'ga_measurement_id' => 'getGaMeasurementId'
     ];
 
     /**
@@ -351,6 +363,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
         $this->setIfExists('ein', $data ?? [], null);
+        $this->setIfExists('ga_client_id', $data ?? [], null);
+        $this->setIfExists('ga_measurement_id', $data ?? [], null);
     }
 
     /**
@@ -862,6 +876,60 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable ein cannot be null');
         }
         $this->container['ein'] = $ein;
+
+        return $this;
+    }
+
+    /**
+     * Gets ga_client_id
+     *
+     * @return string|null
+     */
+    public function getGaClientId()
+    {
+        return $this->container['ga_client_id'];
+    }
+
+    /**
+     * Sets ga_client_id
+     *
+     * @param string|null $ga_client_id ga_client_id
+     *
+     * @return self
+     */
+    public function setGaClientId($ga_client_id)
+    {
+        if (is_null($ga_client_id)) {
+            throw new \InvalidArgumentException('non-nullable ga_client_id cannot be null');
+        }
+        $this->container['ga_client_id'] = $ga_client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets ga_measurement_id
+     *
+     * @return string|null
+     */
+    public function getGaMeasurementId()
+    {
+        return $this->container['ga_measurement_id'];
+    }
+
+    /**
+     * Sets ga_measurement_id
+     *
+     * @param string|null $ga_measurement_id ga_measurement_id
+     *
+     * @return self
+     */
+    public function setGaMeasurementId($ga_measurement_id)
+    {
+        if (is_null($ga_measurement_id)) {
+            throw new \InvalidArgumentException('non-nullable ga_measurement_id cannot be null');
+        }
+        $this->container['ga_measurement_id'] = $ga_measurement_id;
 
         return $this;
     }
