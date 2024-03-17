@@ -44,5 +44,6 @@ Name | Type | Description | Notes
 **additional_info** | **mixed** |  | [optional]
 **ga_client_id** | **string** |  | [optional]
 **ga_measurement_id** | **string** |  | [optional]
+**funnel_name** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
