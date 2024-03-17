@@ -97,7 +97,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => 'string',
         'additional_info' => 'mixed',
         'ga_client_id' => 'string',
-        'ga_measurement_id' => 'string'
+        'ga_measurement_id' => 'string',
+        'funnel_name' => 'string'
     ];
 
     /**
@@ -147,7 +148,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => null,
         'additional_info' => null,
         'ga_client_id' => null,
-        'ga_measurement_id' => null
+        'ga_measurement_id' => null,
+        'funnel_name' => null
     ];
 
     /**
@@ -195,7 +197,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => false,
         'additional_info' => true,
         'ga_client_id' => false,
-        'ga_measurement_id' => false
+        'ga_measurement_id' => false,
+        'funnel_name' => false
     ];
 
     /**
@@ -323,7 +326,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => 'company_industry',
         'additional_info' => 'additional_info',
         'ga_client_id' => 'ga_client_id',
-        'ga_measurement_id' => 'ga_measurement_id'
+        'ga_measurement_id' => 'ga_measurement_id',
+        'funnel_name' => 'funnel_name'
     ];
 
     /**
@@ -371,7 +375,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => 'setCompanyIndustry',
         'additional_info' => 'setAdditionalInfo',
         'ga_client_id' => 'setGaClientId',
-        'ga_measurement_id' => 'setGaMeasurementId'
+        'ga_measurement_id' => 'setGaMeasurementId',
+        'funnel_name' => 'setFunnelName'
     ];
 
     /**
@@ -419,7 +424,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'company_industry' => 'getCompanyIndustry',
         'additional_info' => 'getAdditionalInfo',
         'ga_client_id' => 'getGaClientId',
-        'ga_measurement_id' => 'getGaMeasurementId'
+        'ga_measurement_id' => 'getGaMeasurementId',
+        'funnel_name' => 'getFunnelName'
     ];
 
     /**
@@ -519,6 +525,7 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('additional_info', $data ?? [], null);
         $this->setIfExists('ga_client_id', $data ?? [], null);
         $this->setIfExists('ga_measurement_id', $data ?? [], null);
+        $this->setIfExists('funnel_name', $data ?? [], null);
     }
 
     /**
@@ -1775,6 +1782,33 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable ga_measurement_id cannot be null');
         }
         $this->container['ga_measurement_id'] = $ga_measurement_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets funnel_name
+     *
+     * @return string|null
+     */
+    public function getFunnelName()
+    {
+        return $this->container['funnel_name'];
+    }
+
+    /**
+     * Sets funnel_name
+     *
+     * @param string|null $funnel_name funnel_name
+     *
+     * @return self
+     */
+    public function setFunnelName($funnel_name)
+    {
+        if (is_null($funnel_name)) {
+            throw new \InvalidArgumentException('non-nullable funnel_name cannot be null');
+        }
+        $this->container['funnel_name'] = $funnel_name;
 
         return $this;
     }
