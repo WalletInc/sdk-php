@@ -121,6 +121,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => 'string',
         'social_twitter_url' => 'string',
         'social_linked_in_url' => 'string',
+        'social_background_color' => 'string',
+        'social_font_color' => 'string',
         'primary_phone_number' => 'string',
         'primary_whats_app' => 'string',
         'primary_email_address' => 'string'
@@ -197,6 +199,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => null,
         'social_twitter_url' => null,
         'social_linked_in_url' => null,
+        'social_background_color' => null,
+        'social_font_color' => null,
         'primary_phone_number' => null,
         'primary_whats_app' => null,
         'primary_email_address' => null
@@ -271,6 +275,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => false,
         'social_twitter_url' => false,
         'social_linked_in_url' => false,
+        'social_background_color' => false,
+        'social_font_color' => false,
         'primary_phone_number' => false,
         'primary_whats_app' => false,
         'primary_email_address' => false
@@ -425,6 +431,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => 'socialYouTubeURL',
         'social_twitter_url' => 'socialTwitterURL',
         'social_linked_in_url' => 'socialLinkedInURL',
+        'social_background_color' => 'socialBackgroundColor',
+        'social_font_color' => 'socialFontColor',
         'primary_phone_number' => 'primaryPhoneNumber',
         'primary_whats_app' => 'primaryWhatsApp',
         'primary_email_address' => 'primaryEmailAddress'
@@ -499,6 +507,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => 'setSocialYouTubeUrl',
         'social_twitter_url' => 'setSocialTwitterUrl',
         'social_linked_in_url' => 'setSocialLinkedInUrl',
+        'social_background_color' => 'setSocialBackgroundColor',
+        'social_font_color' => 'setSocialFontColor',
         'primary_phone_number' => 'setPrimaryPhoneNumber',
         'primary_whats_app' => 'setPrimaryWhatsApp',
         'primary_email_address' => 'setPrimaryEmailAddress'
@@ -573,6 +583,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_you_tube_url' => 'getSocialYouTubeUrl',
         'social_twitter_url' => 'getSocialTwitterUrl',
         'social_linked_in_url' => 'getSocialLinkedInUrl',
+        'social_background_color' => 'getSocialBackgroundColor',
+        'social_font_color' => 'getSocialFontColor',
         'primary_phone_number' => 'getPrimaryPhoneNumber',
         'primary_whats_app' => 'getPrimaryWhatsApp',
         'primary_email_address' => 'getPrimaryEmailAddress'
@@ -698,6 +710,8 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->setIfExists('social_you_tube_url', $data ?? [], null);
         $this->setIfExists('social_twitter_url', $data ?? [], null);
         $this->setIfExists('social_linked_in_url', $data ?? [], null);
+        $this->setIfExists('social_background_color', $data ?? [], null);
+        $this->setIfExists('social_font_color', $data ?? [], null);
         $this->setIfExists('primary_phone_number', $data ?? [], null);
         $this->setIfExists('primary_whats_app', $data ?? [], null);
         $this->setIfExists('primary_email_address', $data ?? [], null);
@@ -2571,6 +2585,60 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable social_linked_in_url cannot be null');
         }
         $this->container['social_linked_in_url'] = $social_linked_in_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_background_color
+     *
+     * @return string|null
+     */
+    public function getSocialBackgroundColor()
+    {
+        return $this->container['social_background_color'];
+    }
+
+    /**
+     * Sets social_background_color
+     *
+     * @param string|null $social_background_color social_background_color
+     *
+     * @return self
+     */
+    public function setSocialBackgroundColor($social_background_color)
+    {
+        if (is_null($social_background_color)) {
+            throw new \InvalidArgumentException('non-nullable social_background_color cannot be null');
+        }
+        $this->container['social_background_color'] = $social_background_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets social_font_color
+     *
+     * @return string|null
+     */
+    public function getSocialFontColor()
+    {
+        return $this->container['social_font_color'];
+    }
+
+    /**
+     * Sets social_font_color
+     *
+     * @param string|null $social_font_color social_font_color
+     *
+     * @return self
+     */
+    public function setSocialFontColor($social_font_color)
+    {
+        if (is_null($social_font_color)) {
+            throw new \InvalidArgumentException('non-nullable social_font_color cannot be null');
+        }
+        $this->container['social_font_color'] = $social_font_color;
 
         return $this;
     }
