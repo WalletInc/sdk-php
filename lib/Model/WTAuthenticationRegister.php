@@ -397,42 +397,106 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['first_name'] === null) {
             $invalidProperties[] = "'first_name' can't be null";
         }
+        if ((mb_strlen($this->container['first_name']) > 100)) {
+            $invalidProperties[] = "invalid value for 'first_name', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
+        if ((mb_strlen($this->container['last_name']) > 100)) {
+            $invalidProperties[] = "invalid value for 'last_name', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['email'] === null) {
             $invalidProperties[] = "'email' can't be null";
         }
+        if ((mb_strlen($this->container['email']) > 100)) {
+            $invalidProperties[] = "invalid value for 'email', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
+        if ((mb_strlen($this->container['password']) > 100)) {
+            $invalidProperties[] = "invalid value for 'password', the character length must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['hear_about_us']) && (mb_strlen($this->container['hear_about_us']) > 100)) {
+            $invalidProperties[] = "invalid value for 'hear_about_us', the character length must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['hear_about_us_details']) && (mb_strlen($this->container['hear_about_us_details']) > 100)) {
+            $invalidProperties[] = "invalid value for 'hear_about_us_details', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['company_name'] === null) {
             $invalidProperties[] = "'company_name' can't be null";
         }
+        if ((mb_strlen($this->container['company_name']) > 100)) {
+            $invalidProperties[] = "invalid value for 'company_name', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['merchant_type'] === null) {
             $invalidProperties[] = "'merchant_type' can't be null";
         }
+        if ((mb_strlen($this->container['merchant_type']) > 100)) {
+            $invalidProperties[] = "invalid value for 'merchant_type', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['street_address1'] === null) {
             $invalidProperties[] = "'street_address1' can't be null";
         }
+        if ((mb_strlen($this->container['street_address1']) > 200)) {
+            $invalidProperties[] = "invalid value for 'street_address1', the character length must be smaller than or equal to 200.";
+        }
+
         if ($this->container['street_address2'] === null) {
             $invalidProperties[] = "'street_address2' can't be null";
         }
+        if ((mb_strlen($this->container['street_address2']) > 200)) {
+            $invalidProperties[] = "invalid value for 'street_address2', the character length must be smaller than or equal to 200.";
+        }
+
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
+        if ((mb_strlen($this->container['city']) > 100)) {
+            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['state'] === null) {
             $invalidProperties[] = "'state' can't be null";
         }
+        if ((mb_strlen($this->container['state']) > 100)) {
+            $invalidProperties[] = "invalid value for 'state', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['zip'] === null) {
             $invalidProperties[] = "'zip' can't be null";
         }
+        if ((mb_strlen($this->container['zip']) > 100)) {
+            $invalidProperties[] = "invalid value for 'zip', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
+        if ((mb_strlen($this->container['country']) > 100)) {
+            $invalidProperties[] = "invalid value for 'country', the character length must be smaller than or equal to 100.";
+        }
+
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
+        if ((mb_strlen($this->container['phone_number']) > 100)) {
+            $invalidProperties[] = "invalid value for 'phone_number', the character length must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['ein']) && (mb_strlen($this->container['ein']) > 100)) {
+            $invalidProperties[] = "invalid value for 'ein', the character length must be smaller than or equal to 100.";
+        }
+
         return $invalidProperties;
     }
 
@@ -470,6 +534,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($first_name)) {
             throw new \InvalidArgumentException('non-nullable first_name cannot be null');
         }
+        if ((mb_strlen($first_name) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $first_name when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['first_name'] = $first_name;
 
         return $this;
@@ -497,6 +565,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($last_name)) {
             throw new \InvalidArgumentException('non-nullable last_name cannot be null');
         }
+        if ((mb_strlen($last_name) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $last_name when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['last_name'] = $last_name;
 
         return $this;
@@ -524,6 +596,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($email)) {
             throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
+        if ((mb_strlen($email) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $email when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['email'] = $email;
 
         return $this;
@@ -551,6 +627,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($password)) {
             throw new \InvalidArgumentException('non-nullable password cannot be null');
         }
+        if ((mb_strlen($password) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['password'] = $password;
 
         return $this;
@@ -578,6 +658,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($hear_about_us)) {
             throw new \InvalidArgumentException('non-nullable hear_about_us cannot be null');
         }
+        if ((mb_strlen($hear_about_us) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $hear_about_us when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['hear_about_us'] = $hear_about_us;
 
         return $this;
@@ -605,6 +689,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($hear_about_us_details)) {
             throw new \InvalidArgumentException('non-nullable hear_about_us_details cannot be null');
         }
+        if ((mb_strlen($hear_about_us_details) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $hear_about_us_details when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['hear_about_us_details'] = $hear_about_us_details;
 
         return $this;
@@ -632,6 +720,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($company_name)) {
             throw new \InvalidArgumentException('non-nullable company_name cannot be null');
         }
+        if ((mb_strlen($company_name) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $company_name when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['company_name'] = $company_name;
 
         return $this;
@@ -659,6 +751,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($merchant_type)) {
             throw new \InvalidArgumentException('non-nullable merchant_type cannot be null');
         }
+        if ((mb_strlen($merchant_type) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $merchant_type when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['merchant_type'] = $merchant_type;
 
         return $this;
@@ -686,6 +782,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($street_address1)) {
             throw new \InvalidArgumentException('non-nullable street_address1 cannot be null');
         }
+        if ((mb_strlen($street_address1) > 200)) {
+            throw new \InvalidArgumentException('invalid length for $street_address1 when calling WTAuthenticationRegister., must be smaller than or equal to 200.');
+        }
+
         $this->container['street_address1'] = $street_address1;
 
         return $this;
@@ -713,6 +813,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($street_address2)) {
             throw new \InvalidArgumentException('non-nullable street_address2 cannot be null');
         }
+        if ((mb_strlen($street_address2) > 200)) {
+            throw new \InvalidArgumentException('invalid length for $street_address2 when calling WTAuthenticationRegister., must be smaller than or equal to 200.');
+        }
+
         $this->container['street_address2'] = $street_address2;
 
         return $this;
@@ -740,6 +844,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($city)) {
             throw new \InvalidArgumentException('non-nullable city cannot be null');
         }
+        if ((mb_strlen($city) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['city'] = $city;
 
         return $this;
@@ -767,6 +875,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($state)) {
             throw new \InvalidArgumentException('non-nullable state cannot be null');
         }
+        if ((mb_strlen($state) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $state when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['state'] = $state;
 
         return $this;
@@ -794,6 +906,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($zip)) {
             throw new \InvalidArgumentException('non-nullable zip cannot be null');
         }
+        if ((mb_strlen($zip) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $zip when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['zip'] = $zip;
 
         return $this;
@@ -821,6 +937,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($country)) {
             throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
+        if ((mb_strlen($country) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $country when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['country'] = $country;
 
         return $this;
@@ -848,6 +968,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($phone_number)) {
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
+        if ((mb_strlen($phone_number) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $phone_number when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['phone_number'] = $phone_number;
 
         return $this;
@@ -875,6 +999,10 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($ein)) {
             throw new \InvalidArgumentException('non-nullable ein cannot be null');
         }
+        if ((mb_strlen($ein) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $ein when calling WTAuthenticationRegister., must be smaller than or equal to 100.');
+        }
+
         $this->container['ein'] = $ein;
 
         return $this;
