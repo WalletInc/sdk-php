@@ -98,7 +98,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => 'mixed',
         'ga_client_id' => 'string',
         'ga_measurement_id' => 'string',
-        'funnel_name' => 'string'
+        'funnel_name' => 'string',
+        'http_referrer' => 'string',
+        'landing_page' => 'string'
     ];
 
     /**
@@ -149,7 +151,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => null,
         'ga_client_id' => null,
         'ga_measurement_id' => null,
-        'funnel_name' => null
+        'funnel_name' => null,
+        'http_referrer' => null,
+        'landing_page' => null
     ];
 
     /**
@@ -198,7 +202,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => true,
         'ga_client_id' => false,
         'ga_measurement_id' => false,
-        'funnel_name' => false
+        'funnel_name' => false,
+        'http_referrer' => false,
+        'landing_page' => false
     ];
 
     /**
@@ -327,7 +333,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => 'additional_info',
         'ga_client_id' => 'ga_client_id',
         'ga_measurement_id' => 'ga_measurement_id',
-        'funnel_name' => 'funnel_name'
+        'funnel_name' => 'funnel_name',
+        'http_referrer' => 'http_referrer',
+        'landing_page' => 'landing_page'
     ];
 
     /**
@@ -376,7 +384,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => 'setAdditionalInfo',
         'ga_client_id' => 'setGaClientId',
         'ga_measurement_id' => 'setGaMeasurementId',
-        'funnel_name' => 'setFunnelName'
+        'funnel_name' => 'setFunnelName',
+        'http_referrer' => 'setHttpReferrer',
+        'landing_page' => 'setLandingPage'
     ];
 
     /**
@@ -425,7 +435,9 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         'additional_info' => 'getAdditionalInfo',
         'ga_client_id' => 'getGaClientId',
         'ga_measurement_id' => 'getGaMeasurementId',
-        'funnel_name' => 'getFunnelName'
+        'funnel_name' => 'getFunnelName',
+        'http_referrer' => 'getHttpReferrer',
+        'landing_page' => 'getLandingPage'
     ];
 
     /**
@@ -526,6 +538,8 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('ga_client_id', $data ?? [], null);
         $this->setIfExists('ga_measurement_id', $data ?? [], null);
         $this->setIfExists('funnel_name', $data ?? [], null);
+        $this->setIfExists('http_referrer', $data ?? [], null);
+        $this->setIfExists('landing_page', $data ?? [], null);
     }
 
     /**
@@ -1809,6 +1823,60 @@ class ClickFunnelContact implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable funnel_name cannot be null');
         }
         $this->container['funnel_name'] = $funnel_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets http_referrer
+     *
+     * @return string|null
+     */
+    public function getHttpReferrer()
+    {
+        return $this->container['http_referrer'];
+    }
+
+    /**
+     * Sets http_referrer
+     *
+     * @param string|null $http_referrer http_referrer
+     *
+     * @return self
+     */
+    public function setHttpReferrer($http_referrer)
+    {
+        if (is_null($http_referrer)) {
+            throw new \InvalidArgumentException('non-nullable http_referrer cannot be null');
+        }
+        $this->container['http_referrer'] = $http_referrer;
+
+        return $this;
+    }
+
+    /**
+     * Gets landing_page
+     *
+     * @return string|null
+     */
+    public function getLandingPage()
+    {
+        return $this->container['landing_page'];
+    }
+
+    /**
+     * Sets landing_page
+     *
+     * @param string|null $landing_page landing_page
+     *
+     * @return self
+     */
+    public function setLandingPage($landing_page)
+    {
+        if (is_null($landing_page)) {
+            throw new \InvalidArgumentException('non-nullable landing_page cannot be null');
+        }
+        $this->container['landing_page'] = $landing_page;
 
         return $this;
     }

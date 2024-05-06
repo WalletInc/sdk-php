@@ -47,7 +47,6 @@ docs/Api/ServicesApi.md
 docs/Api/SettingsApi.md
 docs/Api/ShopifyTerminalApi.md
 docs/Api/SmsSubscriberApi.md
-docs/Api/StaticVoucherCampaignGroupsApi.md
 docs/Api/StaticVoucherCampaignsApi.md
 docs/Api/StaticVouchersApi.md
 docs/Api/SystemApi.md
@@ -475,7 +474,6 @@ lib/Api/ServicesApi.php
 lib/Api/SettingsApi.php
 lib/Api/ShopifyTerminalApi.php
 lib/Api/SmsSubscriberApi.php
-lib/Api/StaticVoucherCampaignGroupsApi.php
 lib/Api/StaticVoucherCampaignsApi.php
 lib/Api/StaticVouchersApi.php
 lib/Api/SystemApi.php
