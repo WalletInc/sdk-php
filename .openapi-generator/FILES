@@ -252,6 +252,7 @@ docs/Model/SaveMerchantCreditPaymentDesignRequest.md
 docs/Model/SaveTicketSettingsRequest.md
 docs/Model/SaveTicketSettingsRequestPaymentDesignID.md
 docs/Model/Service.md
+docs/Model/SetDefaultPaymentMethodRequest.md
 docs/Model/SimpleSMSBroadcast.md
 docs/Model/SmsSubscriber.md
 docs/Model/StaticVoucher.md
@@ -683,6 +684,7 @@ lib/Model/SaveMerchantCreditPaymentDesignRequest.php
 lib/Model/SaveTicketSettingsRequest.php
 lib/Model/SaveTicketSettingsRequestPaymentDesignID.php
 lib/Model/Service.php
+lib/Model/SetDefaultPaymentMethodRequest.php
 lib/Model/SimpleSMSBroadcast.php
 lib/Model/SmsSubscriber.php
 lib/Model/StaticVoucher.php
@@ -862,3 +864,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/SetDefaultPaymentMethodRequestTest.php
