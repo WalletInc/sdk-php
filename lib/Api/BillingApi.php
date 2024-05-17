@@ -87,6 +87,9 @@ class BillingApi
         'fetchAddOns' => [
             'application/json',
         ],
+        'fetchCustomerPaymentMethods' => [
+            'application/json',
+        ],
         'fetchIndustry' => [
             'application/json',
         ],
@@ -103,6 +106,9 @@ class BillingApi
             'application/json',
         ],
         'savePaymentMethod' => [
+            'application/json',
+        ],
+        'setDefaultPaymentMethod' => [
             'application/json',
         ],
         'upcomingInvoices' => [
@@ -2115,6 +2121,398 @@ class BillingApi
 
 
         $resourcePath = '/v2/billing/products/addOns';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchCustomerPaymentMethods
+     *
+     * Fetch customer payment methods
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerPaymentMethods'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     */
+    public function fetchCustomerPaymentMethods(string $contentType = self::contentTypes['fetchCustomerPaymentMethods'][0])
+    {
+        list($response) = $this->fetchCustomerPaymentMethodsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchCustomerPaymentMethodsWithHttpInfo
+     *
+     * Fetch customer payment methods
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerPaymentMethods'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchCustomerPaymentMethodsWithHttpInfo(string $contentType = self::contentTypes['fetchCustomerPaymentMethods'][0])
+    {
+        $request = $this->fetchCustomerPaymentMethodsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('mixed' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('mixed' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'mixed';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'mixed',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchCustomerPaymentMethodsAsync
+     *
+     * Fetch customer payment methods
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerPaymentMethods'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchCustomerPaymentMethodsAsync(string $contentType = self::contentTypes['fetchCustomerPaymentMethods'][0])
+    {
+        return $this->fetchCustomerPaymentMethodsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchCustomerPaymentMethodsAsyncWithHttpInfo
+     *
+     * Fetch customer payment methods
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerPaymentMethods'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchCustomerPaymentMethodsAsyncWithHttpInfo(string $contentType = self::contentTypes['fetchCustomerPaymentMethods'][0])
+    {
+        $returnType = 'mixed';
+        $request = $this->fetchCustomerPaymentMethodsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchCustomerPaymentMethods'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerPaymentMethods'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchCustomerPaymentMethodsRequest(string $contentType = self::contentTypes['fetchCustomerPaymentMethods'][0])
+    {
+
+
+        $resourcePath = '/v2/billing/paymentMethods/all';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4573,6 +4971,417 @@ class BillingApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation setDefaultPaymentMethod
+     *
+     * Verify payment method
+     *
+     * @param  \OpenAPI\Client\Model\SetDefaultPaymentMethodRequest $set_default_payment_method_request set_default_payment_method_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultPaymentMethod'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\Merchant|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
+     */
+    public function setDefaultPaymentMethod($set_default_payment_method_request, string $contentType = self::contentTypes['setDefaultPaymentMethod'][0])
+    {
+        list($response) = $this->setDefaultPaymentMethodWithHttpInfo($set_default_payment_method_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation setDefaultPaymentMethodWithHttpInfo
+     *
+     * Verify payment method
+     *
+     * @param  \OpenAPI\Client\Model\SetDefaultPaymentMethodRequest $set_default_payment_method_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultPaymentMethod'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\Merchant|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function setDefaultPaymentMethodWithHttpInfo($set_default_payment_method_request, string $contentType = self::contentTypes['setDefaultPaymentMethod'][0])
+    {
+        $request = $this->setDefaultPaymentMethodRequest($set_default_payment_method_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\Merchant' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\Merchant' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Merchant', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\Merchant';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\Merchant',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation setDefaultPaymentMethodAsync
+     *
+     * Verify payment method
+     *
+     * @param  \OpenAPI\Client\Model\SetDefaultPaymentMethodRequest $set_default_payment_method_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultPaymentMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setDefaultPaymentMethodAsync($set_default_payment_method_request, string $contentType = self::contentTypes['setDefaultPaymentMethod'][0])
+    {
+        return $this->setDefaultPaymentMethodAsyncWithHttpInfo($set_default_payment_method_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation setDefaultPaymentMethodAsyncWithHttpInfo
+     *
+     * Verify payment method
+     *
+     * @param  \OpenAPI\Client\Model\SetDefaultPaymentMethodRequest $set_default_payment_method_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultPaymentMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setDefaultPaymentMethodAsyncWithHttpInfo($set_default_payment_method_request, string $contentType = self::contentTypes['setDefaultPaymentMethod'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\Merchant';
+        $request = $this->setDefaultPaymentMethodRequest($set_default_payment_method_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'setDefaultPaymentMethod'
+     *
+     * @param  \OpenAPI\Client\Model\SetDefaultPaymentMethodRequest $set_default_payment_method_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultPaymentMethod'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function setDefaultPaymentMethodRequest($set_default_payment_method_request, string $contentType = self::contentTypes['setDefaultPaymentMethod'][0])
+    {
+
+        // verify the required parameter 'set_default_payment_method_request' is set
+        if ($set_default_payment_method_request === null || (is_array($set_default_payment_method_request) && count($set_default_payment_method_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $set_default_payment_method_request when calling setDefaultPaymentMethod'
+            );
+        }
+
+
+        $resourcePath = '/v2/billing/paymentMethod/default';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($set_default_payment_method_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($set_default_payment_method_request));
+            } else {
+                $httpBody = $set_default_payment_method_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
