@@ -60,10 +60,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
       */
     protected static $openAPITypes = [
         'member_id' => 'string',
-        'mobile_number' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
         'membership_tier_id' => 'string',
+        'mobile_number' => 'string',
         'email' => 'string',
         'birthday' => 'string',
         'points_accrued' => 'int'
@@ -78,10 +78,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
       */
     protected static $openAPIFormats = [
         'member_id' => null,
-        'mobile_number' => null,
         'first_name' => null,
         'last_name' => null,
         'membership_tier_id' => null,
+        'mobile_number' => null,
         'email' => null,
         'birthday' => null,
         'points_accrued' => 'int32'
@@ -94,10 +94,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
       */
     protected static array $openAPINullables = [
         'member_id' => false,
-        'mobile_number' => false,
         'first_name' => false,
         'last_name' => false,
         'membership_tier_id' => false,
+        'mobile_number' => false,
         'email' => false,
         'birthday' => false,
         'points_accrued' => false
@@ -190,10 +190,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
      */
     protected static $attributeMap = [
         'member_id' => 'memberID',
-        'mobile_number' => 'mobileNumber',
         'first_name' => 'firstName',
         'last_name' => 'lastName',
         'membership_tier_id' => 'membershipTierID',
+        'mobile_number' => 'mobileNumber',
         'email' => 'email',
         'birthday' => 'birthday',
         'points_accrued' => 'pointsAccrued'
@@ -206,10 +206,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
      */
     protected static $setters = [
         'member_id' => 'setMemberId',
-        'mobile_number' => 'setMobileNumber',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'membership_tier_id' => 'setMembershipTierId',
+        'mobile_number' => 'setMobileNumber',
         'email' => 'setEmail',
         'birthday' => 'setBirthday',
         'points_accrued' => 'setPointsAccrued'
@@ -222,10 +222,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
      */
     protected static $getters = [
         'member_id' => 'getMemberId',
-        'mobile_number' => 'getMobileNumber',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'membership_tier_id' => 'getMembershipTierId',
+        'mobile_number' => 'getMobileNumber',
         'email' => 'getEmail',
         'birthday' => 'getBirthday',
         'points_accrued' => 'getPointsAccrued'
@@ -289,10 +289,10 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
     public function __construct(array $data = null)
     {
         $this->setIfExists('member_id', $data ?? [], null);
-        $this->setIfExists('mobile_number', $data ?? [], null);
         $this->setIfExists('first_name', $data ?? [], null);
         $this->setIfExists('last_name', $data ?? [], null);
         $this->setIfExists('membership_tier_id', $data ?? [], null);
+        $this->setIfExists('mobile_number', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('birthday', $data ?? [], null);
         $this->setIfExists('points_accrued', $data ?? [], null);
@@ -336,9 +336,6 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
             $invalidProperties[] = "invalid value for 'member_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
-        if ($this->container['mobile_number'] === null) {
-            $invalidProperties[] = "'mobile_number' can't be null";
-        }
         if ($this->container['membership_tier_id'] === null) {
             $invalidProperties[] = "'membership_tier_id' can't be null";
         }
@@ -354,6 +351,9 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
             $invalidProperties[] = "invalid value for 'membership_tier_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
+        if ($this->container['mobile_number'] === null) {
+            $invalidProperties[] = "'mobile_number' can't be null";
+        }
         if ($this->container['email'] === null) {
             $invalidProperties[] = "'email' can't be null";
         }
@@ -413,33 +413,6 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
         }
 
         $this->container['member_id'] = $member_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile_number
-     *
-     * @return string
-     */
-    public function getMobileNumber()
-    {
-        return $this->container['mobile_number'];
-    }
-
-    /**
-     * Sets mobile_number
-     *
-     * @param string $mobile_number mobile_number
-     *
-     * @return self
-     */
-    public function setMobileNumber($mobile_number)
-    {
-        if (is_null($mobile_number)) {
-            throw new \InvalidArgumentException('non-nullable mobile_number cannot be null');
-        }
-        $this->container['mobile_number'] = $mobile_number;
 
         return $this;
     }
@@ -531,6 +504,33 @@ class PickWTMemberMemberIDOrFirstNameOrLastNameOrMembershipTierIDOrPointsAccrued
         }
 
         $this->container['membership_tier_id'] = $membership_tier_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_number
+     *
+     * @return string
+     */
+    public function getMobileNumber()
+    {
+        return $this->container['mobile_number'];
+    }
+
+    /**
+     * Sets mobile_number
+     *
+     * @param string $mobile_number mobile_number
+     *
+     * @return self
+     */
+    public function setMobileNumber($mobile_number)
+    {
+        if (is_null($mobile_number)) {
+            throw new \InvalidArgumentException('non-nullable mobile_number cannot be null');
+        }
+        $this->container['mobile_number'] = $mobile_number;
 
         return $this;
     }
