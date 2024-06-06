@@ -75,7 +75,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => 'string',
         'ein' => 'string',
         'ga_client_id' => 'string',
-        'ga_measurement_id' => 'string'
+        'ga_measurement_id' => 'string',
+        'recaptcha_token' => 'string'
     ];
 
     /**
@@ -103,7 +104,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => null,
         'ein' => null,
         'ga_client_id' => null,
-        'ga_measurement_id' => null
+        'ga_measurement_id' => null,
+        'recaptcha_token' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => false,
         'ein' => false,
         'ga_client_id' => false,
-        'ga_measurement_id' => false
+        'ga_measurement_id' => false,
+        'recaptcha_token' => false
     ];
 
     /**
@@ -235,7 +238,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => 'phoneNumber',
         'ein' => 'ein',
         'ga_client_id' => 'ga_client_id',
-        'ga_measurement_id' => 'ga_measurement_id'
+        'ga_measurement_id' => 'ga_measurement_id',
+        'recaptcha_token' => 'recaptcha_token'
     ];
 
     /**
@@ -261,7 +265,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => 'setPhoneNumber',
         'ein' => 'setEin',
         'ga_client_id' => 'setGaClientId',
-        'ga_measurement_id' => 'setGaMeasurementId'
+        'ga_measurement_id' => 'setGaMeasurementId',
+        'recaptcha_token' => 'setRecaptchaToken'
     ];
 
     /**
@@ -287,7 +292,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'phone_number' => 'getPhoneNumber',
         'ein' => 'getEin',
         'ga_client_id' => 'getGaClientId',
-        'ga_measurement_id' => 'getGaMeasurementId'
+        'ga_measurement_id' => 'getGaMeasurementId',
+        'recaptcha_token' => 'getRecaptchaToken'
     ];
 
     /**
@@ -365,6 +371,7 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('ein', $data ?? [], null);
         $this->setIfExists('ga_client_id', $data ?? [], null);
         $this->setIfExists('ga_measurement_id', $data ?? [], null);
+        $this->setIfExists('recaptcha_token', $data ?? [], null);
     }
 
     /**
@@ -1058,6 +1065,33 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable ga_measurement_id cannot be null');
         }
         $this->container['ga_measurement_id'] = $ga_measurement_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets recaptcha_token
+     *
+     * @return string|null
+     */
+    public function getRecaptchaToken()
+    {
+        return $this->container['recaptcha_token'];
+    }
+
+    /**
+     * Sets recaptcha_token
+     *
+     * @param string|null $recaptcha_token recaptcha_token
+     *
+     * @return self
+     */
+    public function setRecaptchaToken($recaptcha_token)
+    {
+        if (is_null($recaptcha_token)) {
+            throw new \InvalidArgumentException('non-nullable recaptcha_token cannot be null');
+        }
+        $this->container['recaptcha_token'] = $recaptcha_token;
 
         return $this;
     }
