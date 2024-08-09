@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **ga_client_id** | **string** |  | [optional]
 **ga_measurement_id** | **string** |  | [optional]
 **recaptcha_token** | **string** |  | [optional]
+**affiliate_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
