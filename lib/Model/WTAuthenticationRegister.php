@@ -77,7 +77,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => 'string',
         'ga_measurement_id' => 'string',
         'recaptcha_token' => 'string',
-        'affiliate_id' => 'string'
+        'affiliate_id' => 'string',
+        'first_promoter_tracking_id' => 'string',
+        'first_promoter_affiliate_id' => 'string'
     ];
 
     /**
@@ -107,7 +109,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => null,
         'ga_measurement_id' => null,
         'recaptcha_token' => null,
-        'affiliate_id' => null
+        'affiliate_id' => null,
+        'first_promoter_tracking_id' => null,
+        'first_promoter_affiliate_id' => null
     ];
 
     /**
@@ -135,7 +139,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => false,
         'ga_measurement_id' => false,
         'recaptcha_token' => false,
-        'affiliate_id' => false
+        'affiliate_id' => false,
+        'first_promoter_tracking_id' => false,
+        'first_promoter_affiliate_id' => false
     ];
 
     /**
@@ -243,7 +249,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => 'ga_client_id',
         'ga_measurement_id' => 'ga_measurement_id',
         'recaptcha_token' => 'recaptcha_token',
-        'affiliate_id' => 'affiliateID'
+        'affiliate_id' => 'affiliateID',
+        'first_promoter_tracking_id' => 'firstPromoterTrackingID',
+        'first_promoter_affiliate_id' => 'firstPromoterAffiliateID'
     ];
 
     /**
@@ -271,7 +279,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => 'setGaClientId',
         'ga_measurement_id' => 'setGaMeasurementId',
         'recaptcha_token' => 'setRecaptchaToken',
-        'affiliate_id' => 'setAffiliateId'
+        'affiliate_id' => 'setAffiliateId',
+        'first_promoter_tracking_id' => 'setFirstPromoterTrackingId',
+        'first_promoter_affiliate_id' => 'setFirstPromoterAffiliateId'
     ];
 
     /**
@@ -299,7 +309,9 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         'ga_client_id' => 'getGaClientId',
         'ga_measurement_id' => 'getGaMeasurementId',
         'recaptcha_token' => 'getRecaptchaToken',
-        'affiliate_id' => 'getAffiliateId'
+        'affiliate_id' => 'getAffiliateId',
+        'first_promoter_tracking_id' => 'getFirstPromoterTrackingId',
+        'first_promoter_affiliate_id' => 'getFirstPromoterAffiliateId'
     ];
 
     /**
@@ -379,6 +391,8 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('ga_measurement_id', $data ?? [], null);
         $this->setIfExists('recaptcha_token', $data ?? [], null);
         $this->setIfExists('affiliate_id', $data ?? [], null);
+        $this->setIfExists('first_promoter_tracking_id', $data ?? [], null);
+        $this->setIfExists('first_promoter_affiliate_id', $data ?? [], null);
     }
 
     /**
@@ -1126,6 +1140,60 @@ class WTAuthenticationRegister implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable affiliate_id cannot be null');
         }
         $this->container['affiliate_id'] = $affiliate_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_promoter_tracking_id
+     *
+     * @return string|null
+     */
+    public function getFirstPromoterTrackingId()
+    {
+        return $this->container['first_promoter_tracking_id'];
+    }
+
+    /**
+     * Sets first_promoter_tracking_id
+     *
+     * @param string|null $first_promoter_tracking_id first_promoter_tracking_id
+     *
+     * @return self
+     */
+    public function setFirstPromoterTrackingId($first_promoter_tracking_id)
+    {
+        if (is_null($first_promoter_tracking_id)) {
+            throw new \InvalidArgumentException('non-nullable first_promoter_tracking_id cannot be null');
+        }
+        $this->container['first_promoter_tracking_id'] = $first_promoter_tracking_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_promoter_affiliate_id
+     *
+     * @return string|null
+     */
+    public function getFirstPromoterAffiliateId()
+    {
+        return $this->container['first_promoter_affiliate_id'];
+    }
+
+    /**
+     * Sets first_promoter_affiliate_id
+     *
+     * @param string|null $first_promoter_affiliate_id first_promoter_affiliate_id
+     *
+     * @return self
+     */
+    public function setFirstPromoterAffiliateId($first_promoter_affiliate_id)
+    {
+        if (is_null($first_promoter_affiliate_id)) {
+            throw new \InvalidArgumentException('non-nullable first_promoter_affiliate_id cannot be null');
+        }
+        $this->container['first_promoter_affiliate_id'] = $first_promoter_affiliate_id;
 
         return $this;
     }
