@@ -24,5 +24,7 @@ Name | Type | Description | Notes
 **ga_measurement_id** | **string** |  | [optional]
 **recaptcha_token** | **string** |  | [optional]
 **affiliate_id** | **string** |  | [optional]
+**first_promoter_tracking_id** | **string** |  | [optional]
+**first_promoter_affiliate_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
