@@ -362,8 +362,8 @@ class WTQRCodeDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['margin'] === null) {
             $invalidProperties[] = "'margin' can't be null";
         }
-        if (($this->container['margin'] < 1)) {
-            $invalidProperties[] = "invalid value for 'margin', must be bigger than or equal to 1.";
+        if (($this->container['margin'] < 0)) {
+            $invalidProperties[] = "invalid value for 'margin', must be bigger than or equal to 0.";
         }
 
         if ($this->container['is_margin_white'] === null) {
@@ -499,8 +499,8 @@ class WTQRCodeDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable margin cannot be null');
         }
 
-        if (($margin < 1)) {
-            throw new \InvalidArgumentException('invalid value for $margin when calling WTQRCodeDesignUpdateParams., must be bigger than or equal to 1.');
+        if (($margin < 0)) {
+            throw new \InvalidArgumentException('invalid value for $margin when calling WTQRCodeDesignUpdateParams., must be bigger than or equal to 0.');
         }
 
         $this->container['margin'] = $margin;
