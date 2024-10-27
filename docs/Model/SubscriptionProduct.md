@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **title_full** | **string** |  |
 **category** | **string** |  |
 **volume** | **float** |  | [optional]
+**value** | **float** |  | [optional]
 **features** | [**\OpenAPI\Client\Model\SubscriptionFeature[]**](SubscriptionFeature.md) |  |
 **pages** | [**\OpenAPI\Client\Model\PortalPage[]**](PortalPage.md) |  |
 **icon_name** | **string** |  |

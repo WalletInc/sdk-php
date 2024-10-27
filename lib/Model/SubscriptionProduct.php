@@ -63,6 +63,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => 'string',
         'category' => 'string',
         'volume' => 'float',
+        'value' => 'float',
         'features' => '\OpenAPI\Client\Model\SubscriptionFeature[]',
         'pages' => '\OpenAPI\Client\Model\PortalPage[]',
         'icon_name' => 'string',
@@ -84,6 +85,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => null,
         'category' => null,
         'volume' => 'double',
+        'value' => 'double',
         'features' => null,
         'pages' => null,
         'icon_name' => null,
@@ -103,6 +105,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => false,
         'category' => false,
         'volume' => false,
+        'value' => false,
         'features' => false,
         'pages' => false,
         'icon_name' => false,
@@ -202,6 +205,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => 'titleFull',
         'category' => 'category',
         'volume' => 'volume',
+        'value' => 'value',
         'features' => 'features',
         'pages' => 'pages',
         'icon_name' => 'iconName',
@@ -221,6 +225,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => 'setTitleFull',
         'category' => 'setCategory',
         'volume' => 'setVolume',
+        'value' => 'setValue',
         'features' => 'setFeatures',
         'pages' => 'setPages',
         'icon_name' => 'setIconName',
@@ -240,6 +245,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         'title_full' => 'getTitleFull',
         'category' => 'getCategory',
         'volume' => 'getVolume',
+        'value' => 'getValue',
         'features' => 'getFeatures',
         'pages' => 'getPages',
         'icon_name' => 'getIconName',
@@ -310,6 +316,7 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('title_full', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('volume', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('features', $data ?? [], null);
         $this->setIfExists('pages', $data ?? [], null);
         $this->setIfExists('icon_name', $data ?? [], null);
@@ -515,6 +522,33 @@ class SubscriptionProduct implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable volume cannot be null');
         }
         $this->container['volume'] = $volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return float|null
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param float|null $value value
+     *
+     * @return self
+     */
+    public function setValue($value)
+    {
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        }
+        $this->container['value'] = $value;
 
         return $this;
     }
