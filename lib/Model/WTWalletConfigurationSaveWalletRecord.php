@@ -116,6 +116,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => 'string',
         'is_age_gate' => 'bool',
         'age_gate_minimum' => 'float',
+        'age_gate_decline_url' => 'string',
         'social_instagram_url' => 'string',
         'social_facebook_url' => 'string',
         'social_you_tube_url' => 'string',
@@ -125,7 +126,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => 'string',
         'primary_phone_number' => 'string',
         'primary_whats_app' => 'string',
-        'primary_email_address' => 'string'
+        'primary_email_address' => 'string',
+        'custom_js' => 'string',
+        'custom_css' => 'string',
+        'non_mobile_redirect_url' => 'string',
+        'apple_app_store_url' => 'string',
+        'google_play_store_url' => 'string'
     ];
 
     /**
@@ -194,6 +200,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => null,
         'is_age_gate' => null,
         'age_gate_minimum' => 'double',
+        'age_gate_decline_url' => null,
         'social_instagram_url' => null,
         'social_facebook_url' => null,
         'social_you_tube_url' => null,
@@ -203,7 +210,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => null,
         'primary_phone_number' => null,
         'primary_whats_app' => null,
-        'primary_email_address' => null
+        'primary_email_address' => null,
+        'custom_js' => null,
+        'custom_css' => null,
+        'non_mobile_redirect_url' => null,
+        'apple_app_store_url' => null,
+        'google_play_store_url' => null
     ];
 
     /**
@@ -270,6 +282,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => false,
         'is_age_gate' => false,
         'age_gate_minimum' => false,
+        'age_gate_decline_url' => false,
         'social_instagram_url' => false,
         'social_facebook_url' => false,
         'social_you_tube_url' => false,
@@ -279,7 +292,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => false,
         'primary_phone_number' => false,
         'primary_whats_app' => false,
-        'primary_email_address' => false
+        'primary_email_address' => false,
+        'custom_js' => false,
+        'custom_css' => false,
+        'non_mobile_redirect_url' => false,
+        'apple_app_store_url' => false,
+        'google_play_store_url' => false
     ];
 
     /**
@@ -426,6 +444,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => 'mobileAppIconURL',
         'is_age_gate' => 'isAgeGate',
         'age_gate_minimum' => 'ageGateMinimum',
+        'age_gate_decline_url' => 'ageGateDeclineURL',
         'social_instagram_url' => 'socialInstagramURL',
         'social_facebook_url' => 'socialFacebookURL',
         'social_you_tube_url' => 'socialYouTubeURL',
@@ -435,7 +454,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => 'socialFontColor',
         'primary_phone_number' => 'primaryPhoneNumber',
         'primary_whats_app' => 'primaryWhatsApp',
-        'primary_email_address' => 'primaryEmailAddress'
+        'primary_email_address' => 'primaryEmailAddress',
+        'custom_js' => 'customJS',
+        'custom_css' => 'customCSS',
+        'non_mobile_redirect_url' => 'nonMobileRedirectURL',
+        'apple_app_store_url' => 'appleAppStoreURL',
+        'google_play_store_url' => 'googlePlayStoreURL'
     ];
 
     /**
@@ -502,6 +526,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => 'setMobileAppIconUrl',
         'is_age_gate' => 'setIsAgeGate',
         'age_gate_minimum' => 'setAgeGateMinimum',
+        'age_gate_decline_url' => 'setAgeGateDeclineUrl',
         'social_instagram_url' => 'setSocialInstagramUrl',
         'social_facebook_url' => 'setSocialFacebookUrl',
         'social_you_tube_url' => 'setSocialYouTubeUrl',
@@ -511,7 +536,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => 'setSocialFontColor',
         'primary_phone_number' => 'setPrimaryPhoneNumber',
         'primary_whats_app' => 'setPrimaryWhatsApp',
-        'primary_email_address' => 'setPrimaryEmailAddress'
+        'primary_email_address' => 'setPrimaryEmailAddress',
+        'custom_js' => 'setCustomJs',
+        'custom_css' => 'setCustomCss',
+        'non_mobile_redirect_url' => 'setNonMobileRedirectUrl',
+        'apple_app_store_url' => 'setAppleAppStoreUrl',
+        'google_play_store_url' => 'setGooglePlayStoreUrl'
     ];
 
     /**
@@ -578,6 +608,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'mobile_app_icon_url' => 'getMobileAppIconUrl',
         'is_age_gate' => 'getIsAgeGate',
         'age_gate_minimum' => 'getAgeGateMinimum',
+        'age_gate_decline_url' => 'getAgeGateDeclineUrl',
         'social_instagram_url' => 'getSocialInstagramUrl',
         'social_facebook_url' => 'getSocialFacebookUrl',
         'social_you_tube_url' => 'getSocialYouTubeUrl',
@@ -587,7 +618,12 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         'social_font_color' => 'getSocialFontColor',
         'primary_phone_number' => 'getPrimaryPhoneNumber',
         'primary_whats_app' => 'getPrimaryWhatsApp',
-        'primary_email_address' => 'getPrimaryEmailAddress'
+        'primary_email_address' => 'getPrimaryEmailAddress',
+        'custom_js' => 'getCustomJs',
+        'custom_css' => 'getCustomCss',
+        'non_mobile_redirect_url' => 'getNonMobileRedirectUrl',
+        'apple_app_store_url' => 'getAppleAppStoreUrl',
+        'google_play_store_url' => 'getGooglePlayStoreUrl'
     ];
 
     /**
@@ -705,6 +741,7 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->setIfExists('mobile_app_icon_url', $data ?? [], null);
         $this->setIfExists('is_age_gate', $data ?? [], null);
         $this->setIfExists('age_gate_minimum', $data ?? [], null);
+        $this->setIfExists('age_gate_decline_url', $data ?? [], null);
         $this->setIfExists('social_instagram_url', $data ?? [], null);
         $this->setIfExists('social_facebook_url', $data ?? [], null);
         $this->setIfExists('social_you_tube_url', $data ?? [], null);
@@ -715,6 +752,11 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
         $this->setIfExists('primary_phone_number', $data ?? [], null);
         $this->setIfExists('primary_whats_app', $data ?? [], null);
         $this->setIfExists('primary_email_address', $data ?? [], null);
+        $this->setIfExists('custom_js', $data ?? [], null);
+        $this->setIfExists('custom_css', $data ?? [], null);
+        $this->setIfExists('non_mobile_redirect_url', $data ?? [], null);
+        $this->setIfExists('apple_app_store_url', $data ?? [], null);
+        $this->setIfExists('google_play_store_url', $data ?? [], null);
     }
 
     /**
@@ -2455,6 +2497,33 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
     }
 
     /**
+     * Gets age_gate_decline_url
+     *
+     * @return string|null
+     */
+    public function getAgeGateDeclineUrl()
+    {
+        return $this->container['age_gate_decline_url'];
+    }
+
+    /**
+     * Sets age_gate_decline_url
+     *
+     * @param string|null $age_gate_decline_url age_gate_decline_url
+     *
+     * @return self
+     */
+    public function setAgeGateDeclineUrl($age_gate_decline_url)
+    {
+        if (is_null($age_gate_decline_url)) {
+            throw new \InvalidArgumentException('non-nullable age_gate_decline_url cannot be null');
+        }
+        $this->container['age_gate_decline_url'] = $age_gate_decline_url;
+
+        return $this;
+    }
+
+    /**
      * Gets social_instagram_url
      *
      * @return string|null
@@ -2720,6 +2789,141 @@ class WTWalletConfigurationSaveWalletRecord implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable primary_email_address cannot be null');
         }
         $this->container['primary_email_address'] = $primary_email_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_js
+     *
+     * @return string|null
+     */
+    public function getCustomJs()
+    {
+        return $this->container['custom_js'];
+    }
+
+    /**
+     * Sets custom_js
+     *
+     * @param string|null $custom_js custom_js
+     *
+     * @return self
+     */
+    public function setCustomJs($custom_js)
+    {
+        if (is_null($custom_js)) {
+            throw new \InvalidArgumentException('non-nullable custom_js cannot be null');
+        }
+        $this->container['custom_js'] = $custom_js;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_css
+     *
+     * @return string|null
+     */
+    public function getCustomCss()
+    {
+        return $this->container['custom_css'];
+    }
+
+    /**
+     * Sets custom_css
+     *
+     * @param string|null $custom_css custom_css
+     *
+     * @return self
+     */
+    public function setCustomCss($custom_css)
+    {
+        if (is_null($custom_css)) {
+            throw new \InvalidArgumentException('non-nullable custom_css cannot be null');
+        }
+        $this->container['custom_css'] = $custom_css;
+
+        return $this;
+    }
+
+    /**
+     * Gets non_mobile_redirect_url
+     *
+     * @return string|null
+     */
+    public function getNonMobileRedirectUrl()
+    {
+        return $this->container['non_mobile_redirect_url'];
+    }
+
+    /**
+     * Sets non_mobile_redirect_url
+     *
+     * @param string|null $non_mobile_redirect_url non_mobile_redirect_url
+     *
+     * @return self
+     */
+    public function setNonMobileRedirectUrl($non_mobile_redirect_url)
+    {
+        if (is_null($non_mobile_redirect_url)) {
+            throw new \InvalidArgumentException('non-nullable non_mobile_redirect_url cannot be null');
+        }
+        $this->container['non_mobile_redirect_url'] = $non_mobile_redirect_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets apple_app_store_url
+     *
+     * @return string|null
+     */
+    public function getAppleAppStoreUrl()
+    {
+        return $this->container['apple_app_store_url'];
+    }
+
+    /**
+     * Sets apple_app_store_url
+     *
+     * @param string|null $apple_app_store_url apple_app_store_url
+     *
+     * @return self
+     */
+    public function setAppleAppStoreUrl($apple_app_store_url)
+    {
+        if (is_null($apple_app_store_url)) {
+            throw new \InvalidArgumentException('non-nullable apple_app_store_url cannot be null');
+        }
+        $this->container['apple_app_store_url'] = $apple_app_store_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets google_play_store_url
+     *
+     * @return string|null
+     */
+    public function getGooglePlayStoreUrl()
+    {
+        return $this->container['google_play_store_url'];
+    }
+
+    /**
+     * Sets google_play_store_url
+     *
+     * @param string|null $google_play_store_url google_play_store_url
+     *
+     * @return self
+     */
+    public function setGooglePlayStoreUrl($google_play_store_url)
+    {
+        if (is_null($google_play_store_url)) {
+            throw new \InvalidArgumentException('non-nullable google_play_store_url cannot be null');
+        }
+        $this->container['google_play_store_url'] = $google_play_store_url;
 
         return $this;
     }
