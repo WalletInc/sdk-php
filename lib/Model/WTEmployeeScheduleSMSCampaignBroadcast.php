@@ -335,6 +335,10 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         if ($this->container['message_template'] === null) {
             $invalidProperties[] = "'message_template' can't be null";
         }
+        if ((mb_strlen($this->container['message_template']) > 1600)) {
+            $invalidProperties[] = "invalid value for 'message_template', the character length must be smaller than or equal to 1600.";
+        }
+
         if ($this->container['send_qr_code'] === null) {
             $invalidProperties[] = "'send_qr_code' can't be null";
         }
@@ -421,6 +425,10 @@ class WTEmployeeScheduleSMSCampaignBroadcast implements ModelInterface, ArrayAcc
         if (is_null($message_template)) {
             throw new \InvalidArgumentException('non-nullable message_template cannot be null');
         }
+        if ((mb_strlen($message_template) > 1600)) {
+            throw new \InvalidArgumentException('invalid length for $message_template when calling WTEmployeeScheduleSMSCampaignBroadcast., must be smaller than or equal to 1600.');
+        }
+
         $this->container['message_template'] = $message_template;
 
         return $this;
