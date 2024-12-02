@@ -1013,15 +1013,17 @@ class MerchantApi
      * @param  mixed $phone_number_id phone_number_id (required)
      * @param  string $from_phone_number from_phone_number (optional)
      * @param  string $body body (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function countInboundSMS($phone_number_id, $from_phone_number = null, $body = null, string $contentType = self::contentTypes['countInboundSMS'][0])
+    public function countInboundSMS($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        list($response) = $this->countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number, $body, $contentType);
+        list($response) = $this->countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
         return $response;
     }
 
@@ -1033,15 +1035,17 @@ class MerchantApi
      * @param  mixed $phone_number_id (required)
      * @param  string $from_phone_number (optional)
      * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, string $contentType = self::contentTypes['countInboundSMS'][0])
+    public function countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $contentType);
+        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1264,14 +1268,16 @@ class MerchantApi
      * @param  mixed $phone_number_id (required)
      * @param  string $from_phone_number (optional)
      * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countInboundSMSAsync($phone_number_id, $from_phone_number = null, $body = null, string $contentType = self::contentTypes['countInboundSMS'][0])
+    public function countInboundSMSAsync($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        return $this->countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number, $body, $contentType)
+        return $this->countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1287,15 +1293,17 @@ class MerchantApi
      * @param  mixed $phone_number_id (required)
      * @param  string $from_phone_number (optional)
      * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, string $contentType = self::contentTypes['countInboundSMS'][0])
+    public function countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
         $returnType = '\OpenAPI\Client\Model\WTCountResult';
-        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $contentType);
+        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1339,12 +1347,14 @@ class MerchantApi
      * @param  mixed $phone_number_id (required)
      * @param  string $from_phone_number (optional)
      * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function countInboundSMSRequest($phone_number_id, $from_phone_number = null, $body = null, string $contentType = self::contentTypes['countInboundSMS'][0])
+    public function countInboundSMSRequest($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
 
         // verify the required parameter 'phone_number_id' is set
@@ -1353,6 +1363,8 @@ class MerchantApi
                 'Missing the required parameter $phone_number_id when calling countInboundSMS'
             );
         }
+
+
 
 
 
@@ -1377,6 +1389,24 @@ class MerchantApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $body,
             'body', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5635,15 +5665,17 @@ class MerchantApi
      * @param  string $from_phone_number from_phone_number (optional)
      * @param  float $page_size page_size (optional)
      * @param  float $page_num page_num (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\FetchInboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError
      */
-    public function fetchInboundSMSByPage($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    public function fetchInboundSMSByPage($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
     {
-        list($response) = $this->fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $contentType);
+        list($response) = $this->fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
         return $response;
     }
 
@@ -5656,15 +5688,17 @@ class MerchantApi
      * @param  string $from_phone_number (optional)
      * @param  float $page_size (optional)
      * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\FetchInboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    public function fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
     {
-        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $contentType);
+        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5888,14 +5922,16 @@ class MerchantApi
      * @param  string $from_phone_number (optional)
      * @param  float $page_size (optional)
      * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchInboundSMSByPageAsync($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    public function fetchInboundSMSByPageAsync($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
     {
-        return $this->fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $contentType)
+        return $this->fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5912,15 +5948,17 @@ class MerchantApi
      * @param  string $from_phone_number (optional)
      * @param  float $page_size (optional)
      * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    public function fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
     {
         $returnType = '\OpenAPI\Client\Model\FetchInboundSMSByPage200Response';
-        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $contentType);
+        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5965,12 +6003,14 @@ class MerchantApi
      * @param  string $from_phone_number (optional)
      * @param  float $page_size (optional)
      * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    public function fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
     {
 
         // verify the required parameter 'phone_number_id' is set
@@ -5979,6 +6019,8 @@ class MerchantApi
                 'Missing the required parameter $phone_number_id when calling fetchInboundSMSByPage'
             );
         }
+
+
 
 
 
@@ -6014,6 +6056,24 @@ class MerchantApi
             $page_num,
             'pageNum', // param base name
             'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

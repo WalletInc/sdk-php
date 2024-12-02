@@ -141,7 +141,7 @@ No authorization required
 ## `countInboundSMS()`
 
 ```php
-countInboundSMS($phone_number_id, $from_phone_number, $body): \OpenAPI\Client\Model\WTCountResult
+countInboundSMS($phone_number_id, $from_phone_number, $body, $start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
 ```
 
 Count inbound SMSes
@@ -162,9 +162,11 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
 $phone_number_id = NULL; // mixed
 $from_phone_number = 'from_phone_number_example'; // string
 $body = 'body_example'; // string
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
 try {
-    $result = $apiInstance->countInboundSMS($phone_number_id, $from_phone_number, $body);
+    $result = $apiInstance->countInboundSMS($phone_number_id, $from_phone_number, $body, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->countInboundSMS: ', $e->getMessage(), PHP_EOL;
@@ -178,6 +180,8 @@ try {
 | **phone_number_id** | [**mixed**](../Model/.md)|  | |
 | **from_phone_number** | **string**|  | [optional] |
 | **body** | **string**|  | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -743,7 +747,7 @@ No authorization required
 ## `fetchInboundSMSByPage()`
 
 ```php
-fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num): \OpenAPI\Client\Model\FetchInboundSMSByPage200Response
+fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date): \OpenAPI\Client\Model\FetchInboundSMSByPage200Response
 ```
 
 Fetch inbound SMSes by page
@@ -765,9 +769,11 @@ $phone_number_id = NULL; // mixed
 $from_phone_number = 'from_phone_number_example'; // string
 $page_size = 3.4; // float
 $page_num = 3.4; // float
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
 try {
-    $result = $apiInstance->fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num);
+    $result = $apiInstance->fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantApi->fetchInboundSMSByPage: ', $e->getMessage(), PHP_EOL;
@@ -782,6 +788,8 @@ try {
 | **from_phone_number** | **string**|  | [optional] |
 | **page_size** | **float**|  | [optional] |
 | **page_num** | **float**|  | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 

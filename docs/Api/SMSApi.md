@@ -396,7 +396,7 @@ No authorization required
 ## `countOutboundSMS()`
 
 ```php
-countOutboundSMS($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id): \OpenAPI\Client\Model\WTCountResult
+countOutboundSMS($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
 ```
 
 Count outbound SMS
@@ -418,9 +418,11 @@ $phone_number_id = 'phone_number_id_example'; // string
 $to_phone_number = 'to_phone_number_example'; // string
 $status = 'status_example'; // string
 $payment_object_broadcast_id = 'payment_object_broadcast_id_example'; // string
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
 try {
-    $result = $apiInstance->countOutboundSMS($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id);
+    $result = $apiInstance->countOutboundSMS($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSApi->countOutboundSMS: ', $e->getMessage(), PHP_EOL;
@@ -435,6 +437,8 @@ try {
 | **to_phone_number** | **string**|  | [optional] |
 | **status** | **string**|  | [optional] |
 | **payment_object_broadcast_id** | **string**|  | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
@@ -1354,7 +1358,7 @@ No authorization required
 ## `fetchOutboundSMSByPage()`
 
 ```php
-fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status): \OpenAPI\Client\Model\FetchOutboundSMSByPage200Response
+fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date): \OpenAPI\Client\Model\FetchOutboundSMSByPage200Response
 ```
 
 Fetch outbound SMSes by page
@@ -1378,9 +1382,11 @@ $payment_object_broadcast_id = 'payment_object_broadcast_id_example'; // string
 $page_size = 3.4; // float
 $page_num = 3.4; // float
 $status = new \OpenAPI\Client\Model\SSOutboundStatuses(); // SSOutboundStatuses
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
 try {
-    $result = $apiInstance->fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status);
+    $result = $apiInstance->fetchOutboundSMSByPage($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSApi->fetchOutboundSMSByPage: ', $e->getMessage(), PHP_EOL;
@@ -1397,6 +1403,8 @@ try {
 | **page_size** | **float**|  | [optional] |
 | **page_num** | **float**|  | [optional] |
 | **status** | [**SSOutboundStatuses**](../Model/.md)|  | [optional] |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
 
 ### Return type
 
