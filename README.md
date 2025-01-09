@@ -212,6 +212,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**fetchWalletViewsForSession**](docs/Api/CustomerApi.md#fetchwalletviewsforsession) | **GET** /v2/customer/walletViews/session/{id} | Fetch Wallet Views for Session
 *CustomerApi* | [**searchByMemberID**](docs/Api/CustomerApi.md#searchbymemberid) | **POST** /v2/customer/search/memberID | Find members with memberID
 *CustomerApi* | [**searchByPhoneNumber**](docs/Api/CustomerApi.md#searchbyphonenumber) | **POST** /v2/customer/search/phoneNumber | Find members with phone number
+*DashboardApi* | [**countTotalWalletSessions**](docs/Api/DashboardApi.md#counttotalwalletsessions) | **GET** /v2/dashboard/count/visitors | Count new sessions
 *DashboardApi* | [**fetchDashboardActiveStaticVoucherCampaignsCount**](docs/Api/DashboardApi.md#fetchdashboardactivestaticvouchercampaignscount) | **GET** /v2/dashboard/count/staticVoucherCampaigns/active | Count active static voucher campaigns
 *DashboardApi* | [**fetchDashboardActiveStaticVouchersCount**](docs/Api/DashboardApi.md#fetchdashboardactivestaticvoucherscount) | **GET** /v2/dashboard/count/staticVouchers/active | Count active static vouchers
 *DashboardApi* | [**fetchDashboardAppleWalletSubscribersCount**](docs/Api/DashboardApi.md#fetchdashboardapplewalletsubscriberscount) | **GET** /v2/dashboard/count/appleWallet/subscribers | Count Apple Wallet Subscribers
@@ -230,6 +231,7 @@ Class | Method | HTTP request | Description
 *DashboardApi* | [**fetchDashboardRefundsCount**](docs/Api/DashboardApi.md#fetchdashboardrefundscount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds
 *DashboardApi* | [**fetchDashboardWalletPageViewsCount**](docs/Api/DashboardApi.md#fetchdashboardwalletpageviewscount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views
 *DashboardApi* | [**fetchDashboardWidgetsCatalog**](docs/Api/DashboardApi.md#fetchdashboardwidgetscatalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog
+*DashboardApi* | [**fetchSubscriberCount**](docs/Api/DashboardApi.md#fetchsubscribercount) | **GET** /v2/dashboard/count/subscribers | Count Performances
 *DiningApi* | [**archiveDining**](docs/Api/DiningApi.md#archivedining) | **DELETE** /v2/dining/{id} | Archive dining
 *DiningApi* | [**createDining**](docs/Api/DiningApi.md#createdining) | **POST** /v2/dining | Create dining
 *DiningApi* | [**fetchAllDining**](docs/Api/DiningApi.md#fetchalldining) | **GET** /v2/dining/all | Fetch all dining
@@ -351,6 +353,8 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**createEmployeeVCard**](docs/Api/InteractionsApi.md#createemployeevcard) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard
 *InteractionsApi* | [**createIcsFile**](docs/Api/InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event
 *InteractionsApi* | [**createVirtualBusinessCardVCard**](docs/Api/InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard
+*InteractionsApi* | [**fetchActiveDynamicVouchers**](docs/Api/InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
+*InteractionsApi* | [**fetchAdvertisementCreditScansFromList**](docs/Api/InteractionsApi.md#fetchadvertisementcreditscansfromlist) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Fetch multiple credit scans w/ array of IDs
 *InteractionsApi* | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](docs/Api/InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID
 *InteractionsApi* | [**fetchCustomerTicketsWithToken**](docs/Api/InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket
 *InteractionsApi* | [**fetchDynamicVoucherWithVoucherID**](docs/Api/InteractionsApi.md#fetchdynamicvoucherwithvoucherid) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher
@@ -651,6 +655,7 @@ Class | Method | HTTP request | Description
 - [FalsumError](docs/Model/FalsumError.md)
 - [FalsumField](docs/Model/FalsumField.md)
 - [Feature](docs/Model/Feature.md)
+- [FetchAdvertisementCreditScansFromListRequest](docs/Model/FetchAdvertisementCreditScansFromListRequest.md)
 - [FetchAllCountries200ResponseInner](docs/Model/FetchAllCountries200ResponseInner.md)
 - [FetchAllLedgerTransactions200Response](docs/Model/FetchAllLedgerTransactions200Response.md)
 - [FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner](docs/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md)
@@ -712,8 +717,6 @@ Class | Method | HTTP request | Description
 - [MerchantNotInitialized](docs/Model/MerchantNotInitialized.md)
 - [MerchantURL](docs/Model/MerchantURL.md)
 - [Message](docs/Model/Message.md)
-- [MessageDirection](docs/Model/MessageDirection.md)
-- [MessageStatus](docs/Model/MessageStatus.md)
 - [ModuleError](docs/Model/ModuleError.md)
 - [NewsArticle](docs/Model/NewsArticle.md)
 - [OptInList](docs/Model/OptInList.md)

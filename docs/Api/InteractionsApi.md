@@ -9,6 +9,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard |
 | [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event |
 | [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard |
+| [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID |
+| [**fetchAdvertisementCreditScansFromList()**](InteractionsApi.md#fetchAdvertisementCreditScansFromList) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Fetch multiple credit scans w/ array of IDs |
 | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket |
 | [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher |
@@ -289,6 +291,116 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchActiveDynamicVouchers()`
+
+```php
+fetchActiveDynamicVouchers($merchant_id): \OpenAPI\Client\Model\DynamicVoucher[]
+```
+
+Fetch a customer's static vouchers on the basis of a given voucher ID
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$merchant_id = NULL; // mixed
+
+try {
+    $result = $apiInstance->fetchActiveDynamicVouchers($merchant_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->fetchActiveDynamicVouchers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **merchant_id** | [**mixed**](../Model/.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DynamicVoucher[]**](../Model/DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchAdvertisementCreditScansFromList()`
+
+```php
+fetchAdvertisementCreditScansFromList($merchant_id, $fetch_advertisement_credit_scans_from_list_request): mixed[]
+```
+
+Fetch multiple credit scans w/ array of IDs
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$merchant_id = 'merchant_id_example'; // string
+$fetch_advertisement_credit_scans_from_list_request = new \OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest(); // \OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest
+
+try {
+    $result = $apiInstance->fetchAdvertisementCreditScansFromList($merchant_id, $fetch_advertisement_credit_scans_from_list_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->fetchAdvertisementCreditScansFromList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **merchant_id** | **string**|  | |
+| **fetch_advertisement_credit_scans_from_list_request** | [**\OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest**](../Model/FetchAdvertisementCreditScansFromListRequest.md)|  | |
+
+### Return type
+
+**mixed[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -177,6 +177,8 @@ class PortalPage
 
     public const LOUNGES = 'lounges';
 
+    public const WEBHOOKS = 'webhooks';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -250,7 +252,8 @@ class PortalPage
             self::AMENITIES,
             self::DINING,
             self::GAMING,
-            self::LOUNGES
+            self::LOUNGES,
+            self::WEBHOOKS
         ];
     }
 }

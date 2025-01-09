@@ -1,6 +1,6 @@
 <?php
 /**
- * WTMessageInstance
+ * FetchAdvertisementCreditScansFromListRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTMessageInstance Class Doc Comment
+ * FetchAdvertisementCreditScansFromListRequest Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializable
+class FetchAdvertisementCreditScansFromListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTMessageInstance';
+    protected static $openAPIModelName = 'fetchAdvertisementCreditScansFromList_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        
+        'array_of_ad_credit_scan_ids' => 'string[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        
+        'array_of_ad_credit_scan_ids' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        
+        'array_of_ad_credit_scan_ids' => false
     ];
 
     /**
@@ -167,7 +167,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'array_of_ad_credit_scan_ids' => 'arrayOfAdCreditScanIDs'
     ];
 
     /**
@@ -176,7 +176,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        
+        'array_of_ad_credit_scan_ids' => 'setArrayOfAdCreditScanIds'
     ];
 
     /**
@@ -185,7 +185,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        
+        'array_of_ad_credit_scan_ids' => 'getArrayOfAdCreditScanIds'
     ];
 
     /**
@@ -245,6 +245,7 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('array_of_ad_credit_scan_ids', $data ?? [], null);
     }
 
     /**
@@ -274,6 +275,9 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
+        if ($this->container['array_of_ad_credit_scan_ids'] === null) {
+            $invalidProperties[] = "'array_of_ad_credit_scan_ids' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -288,6 +292,33 @@ class WTMessageInstance implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets array_of_ad_credit_scan_ids
+     *
+     * @return string[]
+     */
+    public function getArrayOfAdCreditScanIds()
+    {
+        return $this->container['array_of_ad_credit_scan_ids'];
+    }
+
+    /**
+     * Sets array_of_ad_credit_scan_ids
+     *
+     * @param string[] $array_of_ad_credit_scan_ids array_of_ad_credit_scan_ids
+     *
+     * @return self
+     */
+    public function setArrayOfAdCreditScanIds($array_of_ad_credit_scan_ids)
+    {
+        if (is_null($array_of_ad_credit_scan_ids)) {
+            throw new \InvalidArgumentException('non-nullable array_of_ad_credit_scan_ids cannot be null');
+        }
+        $this->container['array_of_ad_credit_scan_ids'] = $array_of_ad_credit_scan_ids;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

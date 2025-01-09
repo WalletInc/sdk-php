@@ -1,11 +1,9 @@
-# # WTQRCodeDesignUpdateParams
+# # FetchAdvertisementCreditScansFromListRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  |
-**serialized_json_configuration** | **object** |  |
-**serialized_json_border** | **object** |  | [optional]
+**array_of_ad_credit_scan_ids** | **string[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

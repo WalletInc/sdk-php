@@ -4,6 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**countTotalWalletSessions()**](DashboardApi.md#countTotalWalletSessions) | **GET** /v2/dashboard/count/visitors | Count new sessions |
 | [**fetchDashboardActiveStaticVoucherCampaignsCount()**](DashboardApi.md#fetchDashboardActiveStaticVoucherCampaignsCount) | **GET** /v2/dashboard/count/staticVoucherCampaigns/active | Count active static voucher campaigns |
 | [**fetchDashboardActiveStaticVouchersCount()**](DashboardApi.md#fetchDashboardActiveStaticVouchersCount) | **GET** /v2/dashboard/count/staticVouchers/active | Count active static vouchers |
 | [**fetchDashboardAppleWalletSubscribersCount()**](DashboardApi.md#fetchDashboardAppleWalletSubscribersCount) | **GET** /v2/dashboard/count/appleWallet/subscribers | Count Apple Wallet Subscribers |
@@ -22,7 +23,64 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchDashboardRefundsCount()**](DashboardApi.md#fetchDashboardRefundsCount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds |
 | [**fetchDashboardWalletPageViewsCount()**](DashboardApi.md#fetchDashboardWalletPageViewsCount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views |
 | [**fetchDashboardWidgetsCatalog()**](DashboardApi.md#fetchDashboardWidgetsCatalog) | **GET** /v2/dashboard/widgets | Fetch widgets catalog |
+| [**fetchSubscriberCount()**](DashboardApi.md#fetchSubscriberCount) | **GET** /v2/dashboard/count/subscribers | Count Performances |
 
+
+## `countTotalWalletSessions()`
+
+```php
+countTotalWalletSessions($start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
+```
+
+Count new sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DashboardApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->countTotalWalletSessions($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DashboardApi->countTotalWalletSessions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCountResult**](../Model/WTCountResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `fetchDashboardActiveStaticVoucherCampaignsCount()`
 
@@ -1015,6 +1073,62 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\OpenAPI\Client\Model\DashboardWidget[]**](../Model/DashboardWidget.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchSubscriberCount()`
+
+```php
+fetchSubscriberCount($start_date_time, $end_date_time): \OpenAPI\Client\Model\WTCountResult
+```
+
+Count Performances
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DashboardApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->fetchSubscriberCount($start_date_time, $end_date_time);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DashboardApi->fetchSubscriberCount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date_time** | **\DateTime**|  | |
+| **end_date_time** | **\DateTime**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCountResult**](../Model/WTCountResult.md)
 
 ### Authorization
 

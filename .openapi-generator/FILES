@@ -108,6 +108,7 @@ docs/Model/ExportDataFile.md
 docs/Model/FalsumError.md
 docs/Model/FalsumField.md
 docs/Model/Feature.md
+docs/Model/FetchAdvertisementCreditScansFromListRequest.md
 docs/Model/FetchAllCountries200ResponseInner.md
 docs/Model/FetchAllLedgerTransactions200Response.md
 docs/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md
@@ -169,8 +170,6 @@ docs/Model/MerchantCreditSearch.md
 docs/Model/MerchantNotInitialized.md
 docs/Model/MerchantURL.md
 docs/Model/Message.md
-docs/Model/MessageDirection.md
-docs/Model/MessageStatus.md
 docs/Model/ModuleError.md
 docs/Model/NewsArticle.md
 docs/Model/OptInList.md
@@ -539,6 +538,7 @@ lib/Model/ExportDataFile.php
 lib/Model/FalsumError.php
 lib/Model/FalsumField.php
 lib/Model/Feature.php
+lib/Model/FetchAdvertisementCreditScansFromListRequest.php
 lib/Model/FetchAllCountries200ResponseInner.php
 lib/Model/FetchAllLedgerTransactions200Response.php
 lib/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.php
@@ -600,8 +600,6 @@ lib/Model/MerchantCreditSearch.php
 lib/Model/MerchantNotInitialized.php
 lib/Model/MerchantURL.php
 lib/Model/Message.php
-lib/Model/MessageDirection.php
-lib/Model/MessageStatus.php
 lib/Model/ModelInterface.php
 lib/Model/ModuleError.php
 lib/Model/NewsArticle.php
@@ -864,3 +862,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/FetchAdvertisementCreditScansFromListRequestTest.php
