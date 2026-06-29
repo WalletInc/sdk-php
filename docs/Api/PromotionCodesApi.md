@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archivePromoCode()**](PromotionCodesApi.md#archivePromoCode) | **DELETE** /v2/promoCodes/{id} | Archive promo code |
-| [**createPromoCode()**](PromotionCodesApi.md#createPromoCode) | **POST** /v2/promoCodes | Create promo code |
-| [**fetchAllPromoCodes()**](PromotionCodesApi.md#fetchAllPromoCodes) | **GET** /v2/promoCodes/all | Fetch all promo codes |
-| [**restorePromoCode()**](PromotionCodesApi.md#restorePromoCode) | **PATCH** /v2/promoCodes/{id} | Restore promo code |
-| [**updatePromoCode()**](PromotionCodesApi.md#updatePromoCode) | **PUT** /v2/promoCodes/{id} | Update promo code |
+| [**archivePromoCode()**](PromotionCodesApi.md#archivePromoCode) | **DELETE** /v2/promoCodes/{id} | Archive Promotion Code |
+| [**createPromoCode()**](PromotionCodesApi.md#createPromoCode) | **POST** /v2/promoCodes | Create Promotion Code |
+| [**fetchAllPromoCodes()**](PromotionCodesApi.md#fetchAllPromoCodes) | **GET** /v2/promoCodes/all | Get all Promotion Codes |
+| [**restorePromoCode()**](PromotionCodesApi.md#restorePromoCode) | **PATCH** /v2/promoCodes/{id} | Restore Promotion Code |
+| [**updatePromoCode()**](PromotionCodesApi.md#updatePromoCode) | **PUT** /v2/promoCodes/{id} | Update Promotion Code |
 
 
 ## `archivePromoCode()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archivePromoCode($id): \OpenAPI\Client\Model\PromoCode
 ```
 
-Archive promo code
+Archive Promotion Code
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\PromotionCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archivePromoCode($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createPromoCode($wt_promo_code_create_params): \OpenAPI\Client\Model\PromoCode
 ```
 
-Create promo code
+Create Promotion Code
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllPromoCodes($is_archive_included): mixed
 ```
 
-Fetch all promo codes
+Get all Promotion Codes
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restorePromoCode($id): \OpenAPI\Client\Model\PromoCode
 ```
 
-Restore promo code
+Restore Promotion Code
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\PromotionCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restorePromoCode($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updatePromoCode($id, $wt_promo_code_update_params): \OpenAPI\Client\Model\PromoCode
 ```
 
-Update promo code
+Update Promotion Code
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\PromotionCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_promo_code_update_params = new \OpenAPI\Client\Model\WTPromoCodeUpdateParams(); // \OpenAPI\Client\Model\WTPromoCodeUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_promo_code_update_params** | [**\OpenAPI\Client\Model\WTPromoCodeUpdateParams**](../Model/WTPromoCodeUpdateParams.md)|  | |
 
 ### Return type

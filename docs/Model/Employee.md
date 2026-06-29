@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **string** |  |
-**last_name** | **string** |  |
-**email** | **string** |  |
-**phone_number** | **string** |  |
-**is_public_representative** | **bool** |  |
-**wallet_sequence_number** | **int** |  |
-**employee_id** | **string** |  |
-**job_title** | **string** |  |
-**department** | **string** |  |
+**first_name** | **mixed** |  |
+**last_name** | **mixed** |  |
+**email** | **mixed** |  |
+**phone_number** | **mixed** |  |
+**is_public_representative** | **mixed** |  |
+**wallet_sequence_number** | **mixed** |  |
+**employee_id** | **mixed** |  |
+**job_title** | **mixed** |  |
+**department** | **mixed** |  |
 **schedule_start_day** | [**\OpenAPI\Client\Model\EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional]
 **schedule_start_hour** | [**\OpenAPI\Client\Model\EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional]
 **schedule_start_minute** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional]
@@ -22,17 +22,17 @@ Name | Type | Description | Notes
 **schedule_end_minute** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional]
 **schedule_end_meridiem** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMeridiem**](EmployeeScheduleStartMeridiem.md) |  | [optional]
 **id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**username** | **string** |  |
-**email_verified** | **string** |  |
-**profile_picture_url** | **string** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**username** | **mixed** |  |
+**email_verified** | **mixed** |  |
+**profile_picture_url** | **mixed** |  |
 **merchant_id** | **string** |  |
-**session_token** | **string** |  |
-**failed_login_attempts** | **float** |  | [optional]
-**last_login_date** | **\DateTime** |  | [optional]
-**cfuvid** | **string** |  | [optional]
-**schedule** | **object** |  | [optional]
-**is_email_notification_disabled** | **bool** |  | [optional]
+**session_token** | **mixed** |  |
+**failed_login_attempts** | **mixed** |  | [optional]
+**last_login_date** | **mixed** |  | [optional]
+**cfuvid** | **mixed** |  | [optional]
+**schedule** | **object** | Construct a type with a set of properties K of type T | [optional]
+**is_email_notification_disabled** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

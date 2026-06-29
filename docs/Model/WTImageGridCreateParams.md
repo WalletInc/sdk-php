@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **string** |  |
+**title** | **mixed** |  |
 **url** | **string** |  |
-**media_url** | **string** |  |
+**media_url** | **mixed** |  |
 **sequence_number** | **int** |  |
 **is_pinned** | **bool** |  | [optional]
 

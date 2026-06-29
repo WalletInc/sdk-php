@@ -16,21 +16,21 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**countMerchantCreditRefunds()**](InfoGenesisReportsApi.md#countMerchantCreditRefunds) | **POST** /v2/pos/infogenesis/count/merchantCredit/refunds | Count refunded merchant credits |
 | [**countStaticVoucherRedemptions()**](InfoGenesisReportsApi.md#countStaticVoucherRedemptions) | **POST** /v2/pos/infogenesis/count/staticVoucher/redemptions | Count static voucher redemptions |
 | [**countStaticVoucherRefunds()**](InfoGenesisReportsApi.md#countStaticVoucherRefunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds |
-| [**fetchInfoGenesisAuthorizations()**](InfoGenesisReportsApi.md#fetchInfoGenesisAuthorizations) | **POST** /v2/pos/infogenesis/authorizations | Fetch InfoGenesis authorizations |
-| [**fetchInfoGenesisCampaignData()**](InfoGenesisReportsApi.md#fetchInfoGenesisCampaignData) | **POST** /v2/pos/infogenesis/campaign | Fetch campaign information |
-| [**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Fetch InfoGenesis lookup requests |
-| [**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Fetch InfoGenesis lookup request errors |
-| [**fetchInfoGenesisRedeemedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Fetch redeemed static vouchers |
-| [**fetchInfoGenesisRedeemedUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedUniquePostingIDs) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Fetch redeemed InfoGenesis unique posting IDs |
-| [**fetchInfoGenesisRedemptions()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedemptions) | **POST** /v2/pos/infogenesis/redemptions | Fetch InfoGenesis redemptions |
-| [**fetchInfoGenesisRefundedRoutingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedRoutingIDs) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Fetch refunded InfoGenesis unique posting IDs |
-| [**fetchInfoGenesisRefundedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Fetch refunded static vouchers |
-| [**fetchInfoGenesisRefunds()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefunds) | **POST** /v2/pos/infogenesis/refunds | Fetch InfoGenesis refunds |
-| [**fetchInfoGenesisRequest()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequest) | **GET** /v2/pos/infogenesis/request/{transactionID} | Fetch InfoGenesis request with transaction ID |
-| [**fetchInfoGenesisRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequests) | **POST** /v2/pos/infogenesis/requests | Fetch InfoGenesis requests with routing IDs |
-| [**fetchInfoGenesisResponseErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponseErrors) | **GET** /v2/pos/infogenesis/responses/errors | Fetch InfoGenesis response errors |
-| [**fetchInfoGenesisResponses()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponses) | **POST** /v2/pos/infogenesis/responses | Fetch InfoGenesis responses with routing IDs |
-| [**fetchInfoGenesisTransactionsWithUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisTransactionsWithUniquePostingIDs) | **POST** /v2/pos/infogenesis/transactions | Fetch InfoGenesis transactions |
+| [**fetchInfoGenesisAuthorizations()**](InfoGenesisReportsApi.md#fetchInfoGenesisAuthorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations |
+| [**fetchInfoGenesisCampaignData()**](InfoGenesisReportsApi.md#fetchInfoGenesisCampaignData) | **POST** /v2/pos/infogenesis/campaign | Get campaign information |
+| [**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries |
+| [**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors |
+| [**fetchInfoGenesisRedeemedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers |
+| [**fetchInfoGenesisRedeemedUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedUniquePostingIDs) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs |
+| [**fetchInfoGenesisRedemptions()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions |
+| [**fetchInfoGenesisRefundedRoutingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedRoutingIDs) | **POST** /v2/pos/infogenesis/routingIDs/refunded | Get refunded unique posting IDs |
+| [**fetchInfoGenesisRefundedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefundedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/refunded | Get refunded static vouchers |
+| [**fetchInfoGenesisRefunds()**](InfoGenesisReportsApi.md#fetchInfoGenesisRefunds) | **POST** /v2/pos/infogenesis/refunds | Get refunds |
+| [**fetchInfoGenesisRequest()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequest) | **GET** /v2/pos/infogenesis/request/{transactionID} | Get request |
+| [**fetchInfoGenesisRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisRequests) | **POST** /v2/pos/infogenesis/requests | Get requests |
+| [**fetchInfoGenesisResponseErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponseErrors) | **GET** /v2/pos/infogenesis/responses/errors | Get response errors |
+| [**fetchInfoGenesisResponses()**](InfoGenesisReportsApi.md#fetchInfoGenesisResponses) | **POST** /v2/pos/infogenesis/responses | Get responses |
+| [**fetchInfoGenesisTransactionsWithUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisTransactionsWithUniquePostingIDs) | **POST** /v2/pos/infogenesis/transactions | Get transactions |
 
 
 ## `countAdCreditsRedemptions()`
@@ -687,7 +687,7 @@ No authorization required
 fetchInfoGenesisAuthorizations($wt_info_genesis_record_filter_parameters): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis authorizations
+Get authorizations
 
 ### Example
 
@@ -741,7 +741,7 @@ No authorization required
 fetchInfoGenesisCampaignData($wt_info_genesis_record_filter_parameters): bool
 ```
 
-Fetch campaign information
+Get campaign information
 
 ### Example
 
@@ -795,7 +795,7 @@ No authorization required
 fetchInfoGenesisLookupRequests($wt_info_genesis_record_filter_parameters): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis lookup requests
+Get queries
 
 ### Example
 
@@ -849,7 +849,7 @@ No authorization required
 fetchInfoGenesisLookupRequestsErrors($wt_info_genesis_lookup_request_errors): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis lookup request errors
+Get queries errors
 
 ### Example
 
@@ -903,7 +903,7 @@ No authorization required
 fetchInfoGenesisRedeemedStaticVouchers($wt_info_genesis_unique_posting_ids): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch redeemed static vouchers
+Get redeemed static vouchers
 
 ### Example
 
@@ -957,7 +957,7 @@ No authorization required
 fetchInfoGenesisRedeemedUniquePostingIDs($start_date_time, $end_date_time): mixed[]
 ```
 
-Fetch redeemed InfoGenesis unique posting IDs
+Get redeemed unique posting IDs
 
 ### Example
 
@@ -1013,7 +1013,7 @@ No authorization required
 fetchInfoGenesisRedemptions($wt_info_genesis_record_filter_parameters): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis redemptions
+Get redemptions
 
 ### Example
 
@@ -1067,7 +1067,7 @@ No authorization required
 fetchInfoGenesisRefundedRoutingIDs($start_date_time, $end_date_time): mixed[]
 ```
 
-Fetch refunded InfoGenesis unique posting IDs
+Get refunded unique posting IDs
 
 ### Example
 
@@ -1123,7 +1123,7 @@ No authorization required
 fetchInfoGenesisRefundedStaticVouchers($wt_info_genesis_routing_ids): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch refunded static vouchers
+Get refunded static vouchers
 
 ### Example
 
@@ -1177,7 +1177,7 @@ No authorization required
 fetchInfoGenesisRefunds($wt_info_genesis_record_filter_parameters): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis refunds
+Get refunds
 
 ### Example
 
@@ -1231,7 +1231,7 @@ No authorization required
 fetchInfoGenesisRequest($transaction_id): \OpenAPI\Client\Model\Request
 ```
 
-Fetch InfoGenesis request with transaction ID
+Get request
 
 ### Example
 
@@ -1285,7 +1285,7 @@ No authorization required
 fetchInfoGenesisRequests($wt_info_genesis_routing_ids): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis requests with routing IDs
+Get requests
 
 ### Example
 
@@ -1339,7 +1339,7 @@ No authorization required
 fetchInfoGenesisResponseErrors($start_date_time, $end_date_time): \OpenAPI\Client\Model\Response[]
 ```
 
-Fetch InfoGenesis response errors
+Get response errors
 
 ### Example
 
@@ -1395,7 +1395,7 @@ No authorization required
 fetchInfoGenesisResponses($wt_info_genesis_routing_ids): \OpenAPI\Client\Model\Response[]
 ```
 
-Fetch InfoGenesis responses with routing IDs
+Get responses
 
 ### Example
 
@@ -1449,7 +1449,7 @@ No authorization required
 fetchInfoGenesisTransactionsWithUniquePostingIDs($wt_info_genesis_unique_posting_ids): \OpenAPI\Client\Model\Request[]
 ```
 
-Fetch InfoGenesis transactions
+Get transactions
 
 ### Example
 

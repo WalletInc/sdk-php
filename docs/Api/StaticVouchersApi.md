@@ -4,12 +4,12 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createStaticVoucher()**](StaticVouchersApi.md#createStaticVoucher) | **POST** /v2/payment/staticVoucher | Create static voucher |
-| [**deleteStaticVoucher()**](StaticVouchersApi.md#deleteStaticVoucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete static voucher |
-| [**fetchReachStatsOfAllStaticVouchers()**](StaticVouchersApi.md#fetchReachStatsOfAllStaticVouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get the reach statistics of all the static vouchers |
-| [**fetchReachStatsOfIndividualStaticVoucher()**](StaticVouchersApi.md#fetchReachStatsOfIndividualStaticVoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get the reach statistics of an individual static voucher |
-| [**fetchStaticVoucher()**](StaticVouchersApi.md#fetchStaticVoucher) | **GET** /v2/payment/staticVoucher/{id} | Fetch static voucher |
-| [**updateStaticVoucher()**](StaticVouchersApi.md#updateStaticVoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update static voucher |
+| [**createStaticVoucher()**](StaticVouchersApi.md#createStaticVoucher) | **POST** /v2/payment/staticVoucher | Create Static Voucher |
+| [**deleteStaticVoucher()**](StaticVouchersApi.md#deleteStaticVoucher) | **DELETE** /v2/payment/staticVoucher/{id} | Delete Static Voucher |
+| [**fetchReachStatsOfAllStaticVouchers()**](StaticVouchersApi.md#fetchReachStatsOfAllStaticVouchers) | **GET** /v2/payment/staticVoucher/reach/all | Get reach statistics of all Static Vouchers |
+| [**fetchReachStatsOfIndividualStaticVoucher()**](StaticVouchersApi.md#fetchReachStatsOfIndividualStaticVoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get reach statistics of a single Static Voucher |
+| [**fetchStaticVoucher()**](StaticVouchersApi.md#fetchStaticVoucher) | **GET** /v2/payment/staticVoucher/{id} | Get Static Voucher |
+| [**updateStaticVoucher()**](StaticVouchersApi.md#updateStaticVoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update Static Voucher |
 
 
 ## `createStaticVoucher()`
@@ -18,7 +18,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 createStaticVoucher($wt_static_voucher_create_params): \OpenAPI\Client\Model\WTStaticVoucher
 ```
 
-Create static voucher
+Create Static Voucher
 
 ### Example
 
@@ -72,7 +72,7 @@ No authorization required
 deleteStaticVoucher($id): bool
 ```
 
-Delete static voucher
+Delete Static Voucher
 
 ### Example
 
@@ -87,7 +87,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->deleteStaticVoucher($id);
@@ -101,7 +101,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 fetchReachStatsOfAllStaticVouchers($broadcast_scheduled_start_at, $broadcast_scheduled_end_at): \OpenAPI\Client\Model\ReachPerformanceStats
 ```
 
-Get the reach statistics of all the static vouchers
+Get reach statistics of all Static Vouchers
 
 ### Example
 
@@ -182,7 +182,7 @@ No authorization required
 fetchReachStatsOfIndividualStaticVoucher($static_voucher_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at): \OpenAPI\Client\Model\ReachPerformanceStats
 ```
 
-Get the reach statistics of an individual static voucher
+Get reach statistics of a single Static Voucher
 
 ### Example
 
@@ -197,7 +197,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$static_voucher_id = NULL; // mixed
+$static_voucher_id = 'static_voucher_id_example'; // string
 $broadcast_scheduled_start_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $broadcast_scheduled_end_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
@@ -213,7 +213,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **static_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **static_voucher_id** | **string**|  | |
 | **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
 | **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
@@ -240,7 +240,7 @@ No authorization required
 fetchStaticVoucher($id): \OpenAPI\Client\Model\WTStaticVoucher
 ```
 
-Fetch static voucher
+Get Static Voucher
 
 ### Example
 
@@ -255,7 +255,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchStaticVoucher($id);
@@ -269,7 +269,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -294,7 +294,7 @@ No authorization required
 updateStaticVoucher($id, $wt_static_voucher_update_params): \OpenAPI\Client\Model\WTStaticVoucher
 ```
 
-Update static voucher
+Update Static Voucher
 
 ### Example
 
@@ -309,7 +309,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_static_voucher_update_params = new \OpenAPI\Client\Model\WTStaticVoucherUpdateParams(); // \OpenAPI\Client\Model\WTStaticVoucherUpdateParams
 
 try {
@@ -324,7 +324,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_static_voucher_update_params** | [**\OpenAPI\Client\Model\WTStaticVoucherUpdateParams**](../Model/WTStaticVoucherUpdateParams.md)|  | |
 
 ### Return type

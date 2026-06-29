@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive video |
-| [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create video |
-| [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Fetch all video |
-| [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore video |
-| [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update video |
+| [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive Video |
+| [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create Video |
+| [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Get all Videos |
+| [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore Video |
+| [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update Video |
 
 
 ## `archiveVideo()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveVideo($id): \OpenAPI\Client\Model\Video
 ```
 
-Archive video
+Archive Video
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveVideo($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createVideo($wt_video_create_params): \OpenAPI\Client\Model\Video
 ```
 
-Create video
+Create Video
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllVideo($is_archive_included): mixed
 ```
 
-Fetch all video
+Get all Videos
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreVideo($id): \OpenAPI\Client\Model\Video
 ```
 
-Restore video
+Restore Video
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreVideo($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateVideo($id, $wt_video_update_params): \OpenAPI\Client\Model\Video
 ```
 
-Update video
+Update Video
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_video_update_params = new \OpenAPI\Client\Model\WTVideoUpdateParams(); // \OpenAPI\Client\Model\WTVideoUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_video_update_params** | [**\OpenAPI\Client\Model\WTVideoUpdateParams**](../Model/WTVideoUpdateParams.md)|  | |
 
 ### Return type

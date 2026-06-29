@@ -6,11 +6,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**createRole()**](SystemApi.md#createRole) | **POST** /v2/system/roles | Create role |
 | [**deleteRole()**](SystemApi.md#deleteRole) | **DELETE** /v2/system/roles/{roleID} | Delete role |
-| [**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Fetch role&#39;s audit log |
-| [**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Fetch employees with role |
-| [**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Fetch webpages for role |
+| [**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log |
+| [**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role |
+| [**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role |
 | [**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes |
-| [**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Fetch role |
+| [**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Get role |
 | [**saveRole()**](SystemApi.md#saveRole) | **PUT** /v2/system/roles/{roleID} | Update role |
 
 
@@ -128,7 +128,7 @@ No authorization required
 fetchAuditLogOfRoles($start_date_time, $end_date_time): \OpenAPI\Client\Model\RoleAuditLog[]
 ```
 
-Fetch role's audit log
+Get role's audit log
 
 ### Example
 
@@ -184,7 +184,7 @@ No authorization required
 fetchEmployeesWithRole($role_id): \OpenAPI\Client\Model\Employee[]
 ```
 
-Fetch employees with role
+Get employees with role
 
 ### Example
 
@@ -238,7 +238,7 @@ No authorization required
 fetchWebpagesForRole($role_id): \OpenAPI\Client\Model\Webpage[]
 ```
 
-Fetch webpages for role
+Get webpages for role
 
 ### Example
 
@@ -343,7 +343,7 @@ No authorization required
 loadRole($role_id): \OpenAPI\Client\Model\WTRole
 ```
 
-Fetch role
+Get role
 
 ### Example
 

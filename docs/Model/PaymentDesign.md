@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **background_image_url** | **string** |  | [optional]
 **company_logo_url** | **string** |  | [optional]
 **employee_id** | **string** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

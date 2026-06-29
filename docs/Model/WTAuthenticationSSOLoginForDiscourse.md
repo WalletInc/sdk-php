@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  |
-**password** | **string** |  |
+**username** | **mixed** |  |
+**password** | **mixed** |  |
 **sso_payload** | **string** |  |
 **sig_payload** | **string** |  |
 

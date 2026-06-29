@@ -4,27 +4,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **employee_id** | **string** |  |
-**status** | [**\OpenAPI\Client\Model\PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhoneStatus.md) |  |
+**status** | [**\OpenAPI\Client\Model\OutboundSMSStatus**](OutboundSMSStatus.md) |  |
 **merchant_id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**is_active** | **bool** |  |
-**body** | **string** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**is_active** | **mixed** |  |
+**body** | **mixed** |  |
 **phone_number_id** | **string** |  |
-**media_urls** | **string[]** |  |
-**payment_object_broadcast_id** | [**\OpenAPI\Client\Model\PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID**](PickSSOutboundMessageLogExcludeKeyofSSOutboundMessageLogToCellPhonePaymentObjectBroadcastID.md) |  | [optional]
-**body_template** | **string** |  |
-**status_callback** | **string** |  |
-**is_sent** | **bool** |  |
-**sent_at** | **\DateTime** |  | [optional]
-**delivered_at** | **\DateTime** |  | [optional]
-**message_sid** | **string** |  |
-**num_segments** | **int** |  | [optional]
-**num_media** | **int** |  | [optional]
-**error_code** | **string** |  | [optional]
-**error_message** | **string** |  | [optional]
-**to** | **string** |  |
+**media_urls** | **mixed** |  |
+**payment_object_broadcast_id** | [**\OpenAPI\Client\Model\OutboundSMSPaymentObjectBroadcastID**](OutboundSMSPaymentObjectBroadcastID.md) |  | [optional]
+**body_template** | **mixed** |  |
+**status_callback** | **mixed** |  |
+**is_sent** | **mixed** |  |
+**sent_at** | **mixed** |  | [optional]
+**delivered_at** | **mixed** |  | [optional]
+**message_sid** | **mixed** |  |
+**num_segments** | **mixed** |  | [optional]
+**num_media** | **mixed** |  | [optional]
+**error_code** | **mixed** |  | [optional]
+**error_message** | **mixed** |  | [optional]
+**to** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -6,88 +6,88 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**countAllSubscribers()**](AnalyticsApi.md#countAllSubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers |
 | [**countAuthenticatedSessions()**](AnalyticsApi.md#countAuthenticatedSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions |
-| [**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Fetch refund amount of campaigns by Campaign |
-| [**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests by date |
+| [**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign |
+| [**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests |
 | [**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers |
 | [**countNewSessions()**](AnalyticsApi.md#countNewSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions |
 | [**countOptInListSubscribersPartitionedByDate()**](AnalyticsApi.md#countOptInListSubscribersPartitionedByDate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date |
 | [**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers |
 | [**countTotalSessions()**](AnalyticsApi.md#countTotalSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions |
-| [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Fetch refund amount of campaigns by Campaign |
-| [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame that have a valid phone verification token |
-| [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Fetch wallet object counts within a given time frame |
+| [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign |
+| [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token |
+| [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame |
 | [**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks |
 | [**fetchAnalyticsAdCreditsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByEmployee) | **GET** /v2/analytics/advertisementCredits/count/employee | Count ad credits by employee |
 | [**fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/advertisementCredits/count/paymentDesign | Count ad credits by payment design |
 | [**fetchAnalyticsAdCreditsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsAdCreditsCountPartitionedByValueType) | **GET** /v2/analytics/advertisementCredits/count/valueType | Count ad credits by value type |
-| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Fetch redemption amount of ad credits by Ad Credit |
-| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Fetch redemption amount of ad credits by date |
+| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/adCredit | Get redemption amount of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/amount/date | Get redemption amount of ad credits by date |
 | [**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/redemptions/count/adCredit | Count redemptions of ad credits by Ad Credit |
 | [**fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/redemptions/count/date | Count redemptions of ad credits by date |
-| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Fetch refund amount of ad credits by Ad Credit |
-| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Fetch refund amount of ad credits by date |
+| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/amount/adCredit | Get refund amount of ad credits by Ad Credit |
+| [**fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/amount/date | Get refund amount of ad credits by date |
 | [**fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/refunds/count/adCredit | Count refunds of ad credits by Ad Credit |
 | [**fetchAnalyticsAdCreditsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsRefundsCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/refunds/count/date | Count refunds of ad credits by date |
 | [**fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByAdCreditID) | **GET** /v2/analytics/advertisementCredits/scans/count/adCredit | Count scans of ad credits by Ad Credit |
 | [**fetchAnalyticsAdCreditsScansCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsAdCreditsScansCountPartitionedByDate) | **GET** /v2/analytics/advertisementCredits/scans/count/date | Count scans of ad credits by date |
-| [**fetchAnalyticsCampaignWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsCampaignWalletPageViews) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Fetch a campaign&#39;s wallet page views |
+| [**fetchAnalyticsCampaignWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsCampaignWalletPageViews) | **GET** /v2/analytics/walletPageViews/campaign/{campaignID} | Get a campaign&#39;s wallet page views |
 | [**fetchAnalyticsCampaignsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/count/campaign/created | Count created campaigns by campaign |
 | [**fetchAnalyticsCampaignsCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByEmployee) | **GET** /v2/analytics/campaigns/count/employee | Count campaigns by employee |
 | [**fetchAnalyticsCampaignsCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByPaymentDesign) | **GET** /v2/analytics/campaigns/count/paymentDesign | Count campaigns by payment design |
 | [**fetchAnalyticsCampaignsCountPartitionedByValueType()**](AnalyticsApi.md#fetchAnalyticsCampaignsCountPartitionedByValueType) | **GET** /v2/analytics/campaigns/count/valueType | Count campaigns by value type |
-| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Fetch redemption amount of campaigns by Campaign |
-| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Fetch redemption amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/amount/campaign | Get redemption amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/amount/date | Get redemption amount of campaigns by date |
 | [**fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/redemptions/count/campaign | Count redemptions of campaigns by Campaign |
 | [**fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date |
-| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Fetch refund amount of campaigns by Campaign |
-| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Fetch refund amount of campaigns by date |
-| [**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Fetch refund amount of campaigns by Campaign |
-| [**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Fetch refund amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date |
 | [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date |
 | [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number |
-| [**fetchAnalyticsDistinctWalletSessions()**](AnalyticsApi.md#fetchAnalyticsDistinctWalletSessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Fetch distinct wallet sessions |
+| [**fetchAnalyticsDistinctWalletSessions()**](AnalyticsApi.md#fetchAnalyticsDistinctWalletSessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions |
 | [**fetchAnalyticsDynamicVouchersCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByEmployee) | **GET** /v2/analytics/dynamicVouchers/count/employee | Count dynamic vouchers by employee |
 | [**fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersCountPartitionedByPaymentDesign) | **GET** /v2/analytics/dynamicVouchers/count/paymentDesign | Count dynamic vouchers by payment design |
-| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Fetch redemption amount of dynamic vouchers by date |
-| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Fetch redemption amount of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/date | Get redemption amount of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/amount/dynamicVoucher | Get redemption amount of dynamic vouchers by dynamic voucher |
 | [**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/date | Count redemptions of dynamic vouchers by date |
 | [**fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRedemptionsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/redemptions/count/dynamicVoucher | Count redemptions of dynamic vouchers by dynamic voucher |
-| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Fetch refund amount of dynamic vouchers by date |
-| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Fetch refund amount of dynamic vouchers by dynamic voucher |
+| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/date | Get refund amount of dynamic vouchers by date |
+| [**fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/amount/dynamicVoucher | Get refund amount of dynamic vouchers by dynamic voucher |
 | [**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDate) | **GET** /v2/analytics/dynamicVouchers/refunds/count/date | Count refunds of dynamic vouchers by date |
 | [**fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID()**](AnalyticsApi.md#fetchAnalyticsDynamicVouchersRefundsCountPartitionedByDynamicVoucherID) | **GET** /v2/analytics/dynamicVouchers/refunds/count/dynamicVoucher | Count refunds of dynamic vouchers by dynamic voucher |
-| [**fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count help desk requests by date |
+| [**fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/created | Count daily help desk requests |
 | [**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/resolved | Count resolved help desk requests by date |
 | [**fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsResolvedCountPartitionedByEmployee) | **GET** /v2/analytics/helpdeskrequests/count/employee/resolved | Count resolved help desk requests by employee |
 | [**fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsHelpDeskRequestsUnresolvedCountPartitionedByDate) | **GET** /v2/analytics/helpdeskrequests/count/date/unresolved | Count unresolved help desk requests by date |
-| [**fetchAnalyticsItemWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsItemWalletPageViews) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Fetch wallet page views of item |
+| [**fetchAnalyticsItemWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsItemWalletPageViews) | **GET** /v2/analytics/walletPageViews/item/{itemID} | Get wallet page views of item |
 | [**fetchAnalyticsMemberCount()**](AnalyticsApi.md#fetchAnalyticsMemberCount) | **GET** /v2/analytics/membership/member/count | Count members |
 | [**fetchAnalyticsMerchantCreditCount()**](AnalyticsApi.md#fetchAnalyticsMerchantCreditCount) | **GET** /v2/analytics/membership/merchantCredit/count | Count merchant credits |
-| [**fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Fetch offer vs redeemed amount by campaign |
+| [**fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/amount/campaign/offerVsRedeemed | Get offer vs redeemed amount by campaign |
 | [**fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsCreatedCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/created | Count created broadcasts by date |
-| [**fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Fetch execution time of completed broadcasts |
+| [**fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts) | **GET** /v2/analytics/paymentObjectBroadcasts/executionTime/completed | Get execution time of completed broadcasts |
 | [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/count/date/scheduled | Count scheduled broadcasts by date |
 | [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByEmployee) | **GET** /v2/analytics/paymentObjectBroadcasts/count/employee/scheduled | Count scheduled broadcasts by employee |
 | [**fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledCountPartitionedByPhoneNumber) | **GET** /v2/analytics/paymentObjectBroadcasts/count/phoneNumber/scheduled | Count scheduled broadcasts by phone number |
 | [**fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsPaymentObjectBroadcastsScheduledSMSCountPartitionedByDate) | **GET** /v2/analytics/paymentObjectBroadcasts/sms/count/date/scheduled | Count scheduled SMS broadcasts by date |
 | [**fetchAnalyticsSentOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/sent | Count sent outbound messages by date |
 | [**fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsSentOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/sent | Count sent outbound messages by phone number |
-| [**fetchAnalyticsStaticVoucherWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsStaticVoucherWalletPageViews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Fetch a static voucher&#39;s wallet page views |
+| [**fetchAnalyticsStaticVoucherWalletPageViews()**](AnalyticsApi.md#fetchAnalyticsStaticVoucherWalletPageViews) | **GET** /v2/analytics/walletPageViews/staticVoucher/{voucherID} | Get a static voucher&#39;s wallet page views |
 | [**fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersCreateCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/create | Count created TCPA Filter entries by date |
 | [**fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAFiltersDeleteCountPartitionedByDate) | **GET** /v2/analytics/tcpafilters/count/date/delete | Count deleted TCPA Filter entries by date |
 | [**fetchAnalyticsTCPAStopCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByDate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date |
 | [**fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number |
-| [**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Fetch redeemed amount of merchant credits |
-| [**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Fetch redeemed amoun̥t of tiers |
-| [**fetchAnalyticsTotalAmountRefundedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Fetch refunded amount of merchant credits |
-| [**fetchAnalyticsTotalAmountRefundedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerTier) | **GET** /v2/analytics/membership/tier/amount/refunded | Fetch refunded amount of tiers |
+| [**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits |
+| [**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers |
+| [**fetchAnalyticsTotalAmountRefundedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits |
+| [**fetchAnalyticsTotalAmountRefundedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerTier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers |
 | [**fetchAnalyticsTotalPointsRedeemed()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRedeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points |
 | [**fetchAnalyticsTotalPointsRefunded()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRefunded) | **GET** /v2/analytics/membership/member/points/refunded | Count refunded points |
-| [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Fetch session activity |
-| [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Fetch session activity by wallet page view ID |
+| [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity |
+| [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID |
 | [**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites |
-| [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Fetch refund amount of campaigns by Campaign |
-| [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Fetch refund amount of campaigns by Campaign |
+| [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign |
+| [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign |
 
 
 ## `countAllSubscribers()`
@@ -214,7 +214,7 @@ No authorization required
 countDistinctRedemptions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -274,7 +274,7 @@ No authorization required
 countHelpDeskRequests($start_date, $end_date, $locale, $timezone, $is_resolved): mixed
 ```
 
-Count help desk requests by date
+Count help desk requests
 
 ### Example
 
@@ -616,7 +616,7 @@ No authorization required
 countTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -676,7 +676,7 @@ No authorization required
 countVerifiedWalletPageViews($start_date, $end_date): \OpenAPI\Client\Model\WTWalletObjectPrefixCounts[]
 ```
 
-Fetch wallet object counts within a given time frame that have a valid phone verification token
+Get wallet object counts within a given time frame that have a valid phone verification token
 
 ### Example
 
@@ -732,7 +732,7 @@ No authorization required
 countWalletPageViews($start_date, $end_date): \OpenAPI\Client\Model\WTWalletObjectPrefixCounts[]
 ```
 
-Fetch wallet object counts within a given time frame
+Get wallet object counts within a given time frame
 
 ### Example
 
@@ -1012,7 +1012,7 @@ No authorization required
 fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByAdCreditID($start_date, $end_date): mixed[]
 ```
 
-Fetch redemption amount of ad credits by Ad Credit
+Get redemption amount of ad credits by Ad Credit
 
 ### Example
 
@@ -1068,7 +1068,7 @@ No authorization required
 fetchAnalyticsAdCreditsRedemptionsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch redemption amount of ad credits by date
+Get redemption amount of ad credits by date
 
 ### Example
 
@@ -1244,7 +1244,7 @@ No authorization required
 fetchAnalyticsAdCreditsRefundsAmountPartitionedByAdCreditID($start_date, $end_date): mixed[]
 ```
 
-Fetch refund amount of ad credits by Ad Credit
+Get refund amount of ad credits by Ad Credit
 
 ### Example
 
@@ -1300,7 +1300,7 @@ No authorization required
 fetchAnalyticsAdCreditsRefundsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch refund amount of ad credits by date
+Get refund amount of ad credits by date
 
 ### Example
 
@@ -1592,7 +1592,7 @@ No authorization required
 fetchAnalyticsCampaignWalletPageViews($campaign_id): \OpenAPI\Client\Model\WTWalletPageView[]
 ```
 
-Fetch a campaign's wallet page views
+Get a campaign's wallet page views
 
 ### Example
 
@@ -1607,7 +1607,7 @@ $apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->fetchAnalyticsCampaignWalletPageViews($campaign_id);
@@ -1621,7 +1621,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -1870,7 +1870,7 @@ No authorization required
 fetchAnalyticsCampaignsRedemptionsAmountPartitionedByCampaignID($start_date, $end_date): mixed[]
 ```
 
-Fetch redemption amount of campaigns by Campaign
+Get redemption amount of campaigns by Campaign
 
 ### Example
 
@@ -1926,7 +1926,7 @@ No authorization required
 fetchAnalyticsCampaignsRedemptionsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch redemption amount of campaigns by date
+Get redemption amount of campaigns by date
 
 ### Example
 
@@ -2102,7 +2102,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID($start_date, $end_date): mixed[]
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -2158,7 +2158,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch refund amount of campaigns by date
+Get refund amount of campaigns by date
 
 ### Example
 
@@ -2218,7 +2218,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID($start_date, $end_date): mixed[]
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -2274,7 +2274,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsCountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch refund amount of campaigns by date
+Get refund amount of campaigns by date
 
 ### Example
 
@@ -2450,7 +2450,7 @@ No authorization required
 fetchAnalyticsDistinctWalletSessions($start_date, $end_date): mixed
 ```
 
-Fetch distinct wallet sessions
+Get distinct wallet sessions
 
 ### Example
 
@@ -2618,7 +2618,7 @@ No authorization required
 fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch redemption amount of dynamic vouchers by date
+Get redemption amount of dynamic vouchers by date
 
 ### Example
 
@@ -2678,7 +2678,7 @@ No authorization required
 fetchAnalyticsDynamicVouchersRedemptionsAmountPartitionedByDynamicVoucherID($start_date, $end_date): mixed[]
 ```
 
-Fetch redemption amount of dynamic vouchers by dynamic voucher
+Get redemption amount of dynamic vouchers by dynamic voucher
 
 ### Example
 
@@ -2850,7 +2850,7 @@ No authorization required
 fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch refund amount of dynamic vouchers by date
+Get refund amount of dynamic vouchers by date
 
 ### Example
 
@@ -2910,7 +2910,7 @@ No authorization required
 fetchAnalyticsDynamicVouchersRefundsAmountPartitionedByDynamicVoucherID($start_date, $end_date): mixed[]
 ```
 
-Fetch refund amount of dynamic vouchers by dynamic voucher
+Get refund amount of dynamic vouchers by dynamic voucher
 
 ### Example
 
@@ -3082,7 +3082,7 @@ No authorization required
 fetchAnalyticsHelpDeskRequestsCreatedCountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Count help desk requests by date
+Count daily help desk requests
 
 ### Example
 
@@ -3318,7 +3318,7 @@ No authorization required
 fetchAnalyticsItemWalletPageViews($item_id): mixed
 ```
 
-Fetch wallet page views of item
+Get wallet page views of item
 
 ### Example
 
@@ -3492,7 +3492,7 @@ No authorization required
 fetchAnalyticsOfferVsRedeemedAmountPartitionedByCampaignID($start_date, $end_date): mixed[]
 ```
 
-Fetch offer vs redeemed amount by campaign
+Get offer vs redeemed amount by campaign
 
 ### Example
 
@@ -3608,7 +3608,7 @@ No authorization required
 fetchAnalyticsPaymentObjectBroadcastsIndividualExecutionTimeOfCompletedBroadcasts($start_date, $end_date): mixed
 ```
 
-Fetch execution time of completed broadcasts
+Get execution time of completed broadcasts
 
 ### Example
 
@@ -4012,7 +4012,7 @@ No authorization required
 fetchAnalyticsStaticVoucherWalletPageViews($voucher_id): \OpenAPI\Client\Model\WTWalletPageView[]
 ```
 
-Fetch a static voucher's wallet page views
+Get a static voucher's wallet page views
 
 ### Example
 
@@ -4027,7 +4027,7 @@ $apiInstance = new OpenAPI\Client\Api\AnalyticsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$voucher_id = NULL; // mixed
+$voucher_id = 'voucher_id_example'; // string
 
 try {
     $result = $apiInstance->fetchAnalyticsStaticVoucherWalletPageViews($voucher_id);
@@ -4041,7 +4041,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **voucher_id** | [**mixed**](../Model/.md)|  | |
+| **voucher_id** | **string**|  | |
 
 ### Return type
 
@@ -4294,7 +4294,7 @@ No authorization required
 fetchAnalyticsTotalAmountRedeemedPerMerchantCredit($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch redeemed amount of merchant credits
+Get redeemed amount of merchant credits
 
 ### Example
 
@@ -4354,7 +4354,7 @@ No authorization required
 fetchAnalyticsTotalAmountRedeemedPerTier($start_date, $end_date, $locale, $timezone): \OpenAPI\Client\Model\MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate[]
 ```
 
-Fetch redeemed amoun̥t of tiers
+Get redeemed amoun̥t of tiers
 
 ### Example
 
@@ -4414,7 +4414,7 @@ No authorization required
 fetchAnalyticsTotalAmountRefundedPerMerchantCredit($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Fetch refunded amount of merchant credits
+Get refunded amount of merchant credits
 
 ### Example
 
@@ -4474,7 +4474,7 @@ No authorization required
 fetchAnalyticsTotalAmountRefundedPerTier($start_date, $end_date, $locale, $timezone): \OpenAPI\Client\Model\MSAnalyticsMembershipTierAmountRefundedPartitionedByDate[]
 ```
 
-Fetch refunded amount of tiers
+Get refunded amount of tiers
 
 ### Example
 
@@ -4654,7 +4654,7 @@ No authorization required
 fetchAnalyticsWalletSessionActivity($session_id): \OpenAPI\Client\Model\WTWalletPageView[]
 ```
 
-Fetch session activity
+Get session activity
 
 ### Example
 
@@ -4708,7 +4708,7 @@ No authorization required
 fetchWalletPageViewByID($id): \OpenAPI\Client\Model\WalletPageView
 ```
 
-Fetch session activity by wallet page view ID
+Get session activity by wallet page view ID
 
 ### Example
 
@@ -4818,7 +4818,7 @@ No authorization required
 sumRevenue($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 
@@ -4878,7 +4878,7 @@ No authorization required
 sumTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Fetch refund amount of campaigns by Campaign
+Get refund amount of campaigns by Campaign
 
 ### Example
 

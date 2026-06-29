@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  |
-**serialized_json_configuration** | **object** |  |
-**serialized_json_border** | **object** |  | [optional]
-**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
+**name** | **mixed** |  |
+**serialized_json_configuration** | **object** | Construct a type with a set of properties K of type T |
+**serialized_json_border** | **object** | Construct a type with a set of properties K of type T | [optional]
+**id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

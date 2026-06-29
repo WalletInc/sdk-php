@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  |
 **price** | **string** |  |
-**features** | [**\OpenAPI\Client\Model\Feature[]**](Feature.md) |  |
+**features** | **mixed** |  |
 **measurement** | **string** |  | [optional]
 **is_exceeded** | **bool** |  | [optional]
 **is_current** | **bool** |  | [optional]

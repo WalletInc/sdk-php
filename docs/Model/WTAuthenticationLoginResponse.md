@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**first_name** | **string** |  |
-**last_name** | **string** |  |
-**username** | **string** |  |
-**email** | **string** |  |
-**merchant_id** | **string** |  |
-**employee_id** | **string** |  |
-**profile_picture_url** | **string** |  |
-**job_title** | **string** |  |
-**department** | **string** |  |
-**merchant_name** | **string** |  |
-**merchant_currency_abbreviation** | **string** |  | [optional]
-**merchant_industry** | **string** |  |
-**custom_domain** | **string** |  | [optional]
+**id** | **mixed** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**first_name** | **mixed** |  |
+**last_name** | **mixed** |  |
+**username** | **mixed** |  |
+**email** | **mixed** |  |
+**merchant_id** | **mixed** |  |
+**employee_id** | **mixed** |  |
+**profile_picture_url** | **mixed** |  |
+**job_title** | **mixed** |  |
+**department** | **mixed** |  |
+**merchant_name** | **mixed** |  |
+**merchant_currency_abbreviation** | **mixed** |  | [optional]
+**merchant_industry** | **mixed** |  |
+**custom_domain** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

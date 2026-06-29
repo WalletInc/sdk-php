@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveService()**](ServicesApi.md#archiveService) | **DELETE** /v2/services/{id} | Archive service |
-| [**createService()**](ServicesApi.md#createService) | **POST** /v2/services | Create service |
-| [**fetchAllServices()**](ServicesApi.md#fetchAllServices) | **GET** /v2/services/all | Fetch all services |
-| [**restoreService()**](ServicesApi.md#restoreService) | **PATCH** /v2/services/{id} | Restore service |
-| [**updateService()**](ServicesApi.md#updateService) | **PUT** /v2/services/{id} | Update service |
+| [**archiveService()**](ServicesApi.md#archiveService) | **DELETE** /v2/services/{id} | Archive Service |
+| [**createService()**](ServicesApi.md#createService) | **POST** /v2/services | Create Service |
+| [**fetchAllServices()**](ServicesApi.md#fetchAllServices) | **GET** /v2/services/all | Get all Services |
+| [**restoreService()**](ServicesApi.md#restoreService) | **PATCH** /v2/services/{id} | Restore Service |
+| [**updateService()**](ServicesApi.md#updateService) | **PUT** /v2/services/{id} | Update Service |
 
 
 ## `archiveService()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveService($id): \OpenAPI\Client\Model\Service
 ```
 
-Archive service
+Archive Service
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\ServicesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveService($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createService($wt_service_create_params): \OpenAPI\Client\Model\Service
 ```
 
-Create service
+Create Service
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllServices($is_archive_included): mixed
 ```
 
-Fetch all services
+Get all Services
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreService($id): \OpenAPI\Client\Model\Service
 ```
 
-Restore service
+Restore Service
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\ServicesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreService($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateService($id, $wt_service_update_params): \OpenAPI\Client\Model\Service
 ```
 
-Update service
+Update Service
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\ServicesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_service_update_params = new \OpenAPI\Client\Model\WTServiceUpdateParams(); // \OpenAPI\Client\Model\WTServiceUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_service_update_params** | [**\OpenAPI\Client\Model\WTServiceUpdateParams**](../Model/WTServiceUpdateParams.md)|  | |
 
 ### Return type

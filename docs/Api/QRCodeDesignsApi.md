@@ -6,9 +6,9 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**archiveQRCodeDesign()**](QRCodeDesignsApi.md#archiveQRCodeDesign) | **DELETE** /v2/qrcodedesign/{id} | Archive QR Code Design |
 | [**createQRCodeDesign()**](QRCodeDesignsApi.md#createQRCodeDesign) | **POST** /v2/qrcodedesign | Create QR Code design |
-| [**fetchAllQRCodeDesigns()**](QRCodeDesignsApi.md#fetchAllQRCodeDesigns) | **GET** /v2/qrcodedesign/all | Fetch all active QR Code Designs |
-| [**fetchQRCodeDesignById()**](QRCodeDesignsApi.md#fetchQRCodeDesignById) | **GET** /v2/qrcodedesign/{id} | Fetch QR Code Design |
-| [**restoreQRCodeDesign()**](QRCodeDesignsApi.md#restoreQRCodeDesign) | **PATCH** /v2/qrcodedesign/{id} | Restore payment design |
+| [**fetchAllQRCodeDesigns()**](QRCodeDesignsApi.md#fetchAllQRCodeDesigns) | **GET** /v2/qrcodedesign/all | Get all QR Code Designs |
+| [**fetchQRCodeDesignById()**](QRCodeDesignsApi.md#fetchQRCodeDesignById) | **GET** /v2/qrcodedesign/{id} | Get QR Code Design |
+| [**restoreQRCodeDesign()**](QRCodeDesignsApi.md#restoreQRCodeDesign) | **PATCH** /v2/qrcodedesign/{id} | Restore QR Code Design |
 | [**updateQRCodeDesign()**](QRCodeDesignsApi.md#updateQRCodeDesign) | **PUT** /v2/qrcodedesign/{id} | Update QR Code Design |
 
 
@@ -33,7 +33,7 @@ $apiInstance = new OpenAPI\Client\Api\QRCodeDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveQRCodeDesign($id);
@@ -47,7 +47,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 fetchAllQRCodeDesigns($is_archive_included): \OpenAPI\Client\Model\WTQRCodeDesign[]
 ```
 
-Fetch all active QR Code Designs
+Get all QR Code Designs
 
 ### Example
 
@@ -180,7 +180,7 @@ No authorization required
 fetchQRCodeDesignById($id): \OpenAPI\Client\Model\WTQRCodeDesign
 ```
 
-Fetch QR Code Design
+Get QR Code Design
 
 ### Example
 
@@ -195,7 +195,7 @@ $apiInstance = new OpenAPI\Client\Api\QRCodeDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchQRCodeDesignById($id);
@@ -209,7 +209,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -234,7 +234,7 @@ No authorization required
 restoreQRCodeDesign($id): \OpenAPI\Client\Model\QRCodeDesign
 ```
 
-Restore payment design
+Restore QR Code Design
 
 ### Example
 
@@ -249,7 +249,7 @@ $apiInstance = new OpenAPI\Client\Api\QRCodeDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreQRCodeDesign($id);
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -303,7 +303,7 @@ $apiInstance = new OpenAPI\Client\Api\QRCodeDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wtqr_code_design_update_params = new \OpenAPI\Client\Model\WTQRCodeDesignUpdateParams(); // \OpenAPI\Client\Model\WTQRCodeDesignUpdateParams
 
 try {
@@ -318,7 +318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wtqr_code_design_update_params** | [**\OpenAPI\Client\Model\WTQRCodeDesignUpdateParams**](../Model/WTQRCodeDesignUpdateParams.md)|  | |
 
 ### Return type
