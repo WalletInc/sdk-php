@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**employee_id** | **string** |  |
-**first_name** | **string** |  |
-**last_name** | **string** |  |
-**phone_number** | **string** |  |
-**is_public_representative** | **bool** |  |
-**wallet_sequence_number** | **int** |  |
-**job_title** | **string** |  |
-**department** | **string** |  |
+**employee_id** | **mixed** |  |
+**first_name** | **mixed** |  |
+**last_name** | **mixed** |  |
+**phone_number** | **mixed** |  |
+**is_public_representative** | **mixed** |  |
+**wallet_sequence_number** | **mixed** |  |
+**job_title** | **mixed** |  |
+**department** | **mixed** |  |
 **schedule_start_day** | [**\OpenAPI\Client\Model\EmployeeScheduleStartDay**](EmployeeScheduleStartDay.md) |  | [optional]
 **schedule_start_hour** | [**\OpenAPI\Client\Model\EmployeeScheduleStartHour**](EmployeeScheduleStartHour.md) |  | [optional]
 **schedule_start_minute** | [**\OpenAPI\Client\Model\EmployeeScheduleStartMinute**](EmployeeScheduleStartMinute.md) |  | [optional]

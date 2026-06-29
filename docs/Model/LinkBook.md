@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **string** |  |
+**title** | **mixed** |  |
 **url** | **string** |  |
-**icon** | **string** |  |
+**icon** | **mixed** |  |
 **order_number** | **int** |  |
-**link_book_section_id** | [**\OpenAPI\Client\Model\WTLinkBookLinkBookSectionID**](WTLinkBookLinkBookSectionID.md) |  | [optional]
-**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
+**link_book_section_id** | [**\OpenAPI\Client\Model\WTQuickLinkLinkBookSectionID**](WTQuickLinkLinkBookSectionID.md) |  | [optional]
+**id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

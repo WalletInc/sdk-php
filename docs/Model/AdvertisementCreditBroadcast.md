@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number_id** | **string** |  |
-**payment_object_prefix** | [**\OpenAPI\Client\Model\PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDPaymentObjectPrefix.md) |  |
+**payment_object_prefix** | [**\OpenAPI\Client\Model\StaticVoucherCampaignBroadcastPaymentObjectPrefix**](StaticVoucherCampaignBroadcastPaymentObjectPrefix.md) |  |
 **payment_object_id** | **string** |  |
-**message_template** | **string** |  |
-**media_urls** | **string[]** |  |
+**message_template** | **mixed** |  |
+**media_urls** | **mixed** |  |
 **employee_id** | **string** |  |
-**broadcast_scheduled_at** | **\DateTime** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**broadcast_scheduled_at** | **mixed** |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **merchant_id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**is_active** | **bool** |  |
-**broadcast_status** | [**\OpenAPI\Client\Model\PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus**](PickWTPaymentObjectBroadcastExcludeKeyofWTPaymentObjectBroadcastListTypeOrListIDBroadcastStatus.md) |  |
-**broadcast_queued_at** | **\DateTime** |  |
-**broadcast_started_at** | **\DateTime** |  |
-**broadcast_completed_at** | **\DateTime** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**is_active** | **mixed** |  |
+**broadcast_status** | [**\OpenAPI\Client\Model\StaticVoucherCampaignBroadcastBroadcastStatus**](StaticVoucherCampaignBroadcastBroadcastStatus.md) |  |
+**broadcast_queued_at** | **mixed** |  |
+**broadcast_started_at** | **mixed** |  |
+**broadcast_completed_at** | **mixed** |  |
 **list_type** | [**\OpenAPI\Client\Model\DynamicVoucherBroadcastListType**](DynamicVoucherBroadcastListType.md) |  |
 **list_id** | **string** |  |
 **opt_in_list** | [**\OpenAPI\Client\Model\WTOptInList**](WTOptInList.md) |  | [optional]

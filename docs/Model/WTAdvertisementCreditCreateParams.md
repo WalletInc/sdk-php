@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **value_type** | [**\OpenAPI\Client\Model\PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType**](PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md) |  |
 **payment_design_id** | **string** |  |
 **max_uses** | **int** |  |
-**discount_value** | **int** |  |
+**discount_value** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

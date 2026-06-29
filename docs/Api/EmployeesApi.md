@@ -9,29 +9,26 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**createEmployeePeer()**](EmployeesApi.md#createEmployeePeer) | **POST** /v2/employee/peer | Create employee peer |
 | [**createFile()**](EmployeesApi.md#createFile) | **POST** /v2/employee/file/create | Create file |
 | [**createMediaFile()**](EmployeesApi.md#createMediaFile) | **POST** /v2/employee/mediaFile | Create media file |
-| [**createStaticVoucherCampaignsGroup()**](EmployeesApi.md#createStaticVoucherCampaignsGroup) | **POST** /v2/employee/staticVoucherCampaignsGroup | Create static voucher campaign group |
 | [**deleteDocument()**](EmployeesApi.md#deleteDocument) | **DELETE** /v2/employee/document/{documentID} | Delete document |
 | [**deleteMediaFile()**](EmployeesApi.md#deleteMediaFile) | **DELETE** /v2/employee/mediaFile/{mediaFileID} | Delete media file |
-| [**downloadFile()**](EmployeesApi.md#downloadFile) | **GET** /v2/employee/file/download/{fileID} | Fetch URL for file download |
+| [**downloadFile()**](EmployeesApi.md#downloadFile) | **GET** /v2/employee/file/download/{fileID} | Get URL for file download |
 | [**exportClubMembers()**](EmployeesApi.md#exportClubMembers) | **PUT** /v2/employee/export/members | Export club members |
 | [**exportMerchantCredits()**](EmployeesApi.md#exportMerchantCredits) | **PUT** /v2/employee/export/merchantCredits | Export merchant credits |
 | [**exportStaticVoucherCampaign()**](EmployeesApi.md#exportStaticVoucherCampaign) | **PUT** /v2/employee/export/staticVoucherCampaign/{campaignID} | Export static voucher campaign |
-| [**failedImport()**](EmployeesApi.md#failedImport) | **GET** /v2/employee/file/imports/failed/{fileID} | Fetch URL to download a failed import |
-| [**fetchDocuments()**](EmployeesApi.md#fetchDocuments) | **GET** /v2/employee/documents/all | Fetch all documents |
-| [**fetchDynamicVouchers()**](EmployeesApi.md#fetchDynamicVouchers) | **GET** /v2/employee/dynamicVouchers/all | Fetch all dynamic vouchers |
-| [**fetchEmployeeStaticVoucherCampaignGroups()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaignGroups) | **GET** /v2/employee/staticVoucherCampaignGroups/all | Fetch static voucher campaign groups |
-| [**fetchEmployeeStaticVoucherCampaigns()**](EmployeesApi.md#fetchEmployeeStaticVoucherCampaigns) | **GET** /v2/employee/staticVoucherCampaigns/all | Fetch static voucher campaigns |
-| [**fetchMediaFiles()**](EmployeesApi.md#fetchMediaFiles) | **GET** /v2/employee/mediaFiles/all | Fetch all media files |
+| [**failedImport()**](EmployeesApi.md#failedImport) | **GET** /v2/employee/file/imports/failed/{fileID} | Get URL to download a failed import |
+| [**fetchDocuments()**](EmployeesApi.md#fetchDocuments) | **GET** /v2/employee/documents/all | Get all documents |
+| [**fetchDynamicVouchers()**](EmployeesApi.md#fetchDynamicVouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers |
+| [**fetchMediaFiles()**](EmployeesApi.md#fetchMediaFiles) | **GET** /v2/employee/mediaFiles/all | Get all media files |
 | [**fetchMerchant()**](EmployeesApi.md#fetchMerchant) | **GET** /v2/employee/merchant | Create employee alert |
-| [**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Fetch all messages |
-| [**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Fetch opt in list source |
-| [**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Fetch all opt in list sources |
-| [**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Fetch peer activity |
-| [**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Fetch peer permissions |
-| [**fetchProfileInfo()**](EmployeesApi.md#fetchProfileInfo) | **GET** /v2/employee | Retrieve employee&#39;s webpages |
+| [**fetchMessages()**](EmployeesApi.md#fetchMessages) | **GET** /v2/employee/messages/all | Get all messages |
+| [**fetchOptInListSource()**](EmployeesApi.md#fetchOptInListSource) | **GET** /v2/employee/optInListSource/{sourceID} | Get opt in list source |
+| [**fetchOptInListSourcesCreatedByEmployee()**](EmployeesApi.md#fetchOptInListSourcesCreatedByEmployee) | **GET** /v2/employee/optInListSources/all | Get all opt in list sources |
+| [**fetchPeerActivity()**](EmployeesApi.md#fetchPeerActivity) | **GET** /v2/employee/peer/activity/{employeeID} | Get peer activity |
+| [**fetchPeersPermissions()**](EmployeesApi.md#fetchPeersPermissions) | **GET** /v2/employee/peer/permissions/{userID} | Get peer permissions |
+| [**fetchProfileInfo()**](EmployeesApi.md#fetchProfileInfo) | **GET** /v2/employee | Get employee info |
 | [**importClubMembers()**](EmployeesApi.md#importClubMembers) | **POST** /v2/employee/import/members | Import club members |
 | [**importMerchantCredits()**](EmployeesApi.md#importMerchantCredits) | **POST** /v2/employee/import/merchantCredits | Import merchant credits |
-| [**loadWebpagesOfEmployee()**](EmployeesApi.md#loadWebpagesOfEmployee) | **GET** /v2/employee/webpages/all | Retrieve employee&#39;s webpages |
+| [**loadWebpagesOfEmployee()**](EmployeesApi.md#loadWebpagesOfEmployee) | **GET** /v2/employee/webpages/all | Get employee&#39;s permissions |
 | [**modifyPeersRoles()**](EmployeesApi.md#modifyPeersRoles) | **PUT** /v2/employee/peer/permissions/{userID} | Modify peer&#39;s roles |
 | [**presignFile()**](EmployeesApi.md#presignFile) | **POST** /v2/employee/file/presign | Presign file for upload |
 | [**removePeerFromAllRoles()**](EmployeesApi.md#removePeerFromAllRoles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles |
@@ -73,7 +70,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_id = NULL; // mixed
+$user_id = 'user_id_example'; // string
 $wt_employee_peer_roles = new \OpenAPI\Client\Model\WTEmployeePeerRoles(); // \OpenAPI\Client\Model\WTEmployeePeerRoles
 
 try {
@@ -88,7 +85,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **user_id** | [**mixed**](../Model/.md)|  | |
+| **user_id** | **string**|  | |
 | **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  | |
 
 ### Return type
@@ -324,60 +321,6 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `createStaticVoucherCampaignsGroup()`
-
-```php
-createStaticVoucherCampaignsGroup($wt_employee_create_static_voucher_campaign_group): \OpenAPI\Client\Model\StaticVoucherCampaignGroup
-```
-
-Create static voucher campaign group
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wt_employee_create_static_voucher_campaign_group = new \OpenAPI\Client\Model\WTEmployeeCreateStaticVoucherCampaignGroup(); // \OpenAPI\Client\Model\WTEmployeeCreateStaticVoucherCampaignGroup
-
-try {
-    $result = $apiInstance->createStaticVoucherCampaignsGroup($wt_employee_create_static_voucher_campaign_group);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EmployeesApi->createStaticVoucherCampaignsGroup: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **wt_employee_create_static_voucher_campaign_group** | [**\OpenAPI\Client\Model\WTEmployeeCreateStaticVoucherCampaignGroup**](../Model/WTEmployeeCreateStaticVoucherCampaignGroup.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\StaticVoucherCampaignGroup**](../Model/StaticVoucherCampaignGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `deleteDocument()`
 
 ```php
@@ -399,7 +342,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$document_id = NULL; // mixed
+$document_id = 'document_id_example'; // string
 
 try {
     $result = $apiInstance->deleteDocument($document_id);
@@ -413,7 +356,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **document_id** | [**mixed**](../Model/.md)|  | |
+| **document_id** | **string**|  | |
 
 ### Return type
 
@@ -453,7 +396,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$media_file_id = NULL; // mixed
+$media_file_id = 'media_file_id_example'; // string
 
 try {
     $result = $apiInstance->deleteMediaFile($media_file_id);
@@ -467,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **media_file_id** | [**mixed**](../Model/.md)|  | |
+| **media_file_id** | **string**|  | |
 
 ### Return type
 
@@ -492,7 +435,7 @@ No authorization required
 downloadFile($file_id): string
 ```
 
-Fetch URL for file download
+Get URL for file download
 
 ### Example
 
@@ -663,7 +606,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->exportStaticVoucherCampaign($campaign_id);
@@ -677,7 +620,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -702,7 +645,7 @@ No authorization required
 failedImport($file_id): string
 ```
 
-Fetch URL to download a failed import
+Get URL to download a failed import
 
 ### Example
 
@@ -756,7 +699,7 @@ No authorization required
 fetchDocuments($folder): \OpenAPI\Client\Model\Document[]
 ```
 
-Fetch all documents
+Get all documents
 
 ### Example
 
@@ -810,7 +753,7 @@ No authorization required
 fetchDynamicVouchers($is_archive_included): \OpenAPI\Client\Model\DynamicVoucher[]
 ```
 
-Fetch all dynamic vouchers
+Get all dynamic vouchers
 
 ### Example
 
@@ -858,120 +801,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchEmployeeStaticVoucherCampaignGroups()`
-
-```php
-fetchEmployeeStaticVoucherCampaignGroups(): \OpenAPI\Client\Model\StaticVoucherCampaignGroup[]
-```
-
-Fetch static voucher campaign groups
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->fetchEmployeeStaticVoucherCampaignGroups();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EmployeesApi->fetchEmployeeStaticVoucherCampaignGroups: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenAPI\Client\Model\StaticVoucherCampaignGroup[]**](../Model/StaticVoucherCampaignGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `fetchEmployeeStaticVoucherCampaigns()`
-
-```php
-fetchEmployeeStaticVoucherCampaigns($is_archive_included, $source_id): \OpenAPI\Client\Model\StaticVoucherCampaign[]
-```
-
-Fetch static voucher campaigns
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$is_archive_included = True; // bool
-$source_id = 3.4; // float
-
-try {
-    $result = $apiInstance->fetchEmployeeStaticVoucherCampaigns($is_archive_included, $source_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EmployeesApi->fetchEmployeeStaticVoucherCampaigns: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **is_archive_included** | **bool**|  | [optional] |
-| **source_id** | **float**|  | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\StaticVoucherCampaign[]**](../Model/StaticVoucherCampaign.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `fetchMediaFiles()`
 
 ```php
 fetchMediaFiles($folder): \OpenAPI\Client\Model\MediaFile[]
 ```
 
-Fetch all media files
+Get all media files
 
 ### Example
 
@@ -1076,7 +912,7 @@ No authorization required
 fetchMessages(): \OpenAPI\Client\Model\Message[]
 ```
 
-Fetch all messages
+Get all messages
 
 ### Example
 
@@ -1127,7 +963,7 @@ No authorization required
 fetchOptInListSource($source_id): \OpenAPI\Client\Model\OptInListSource
 ```
 
-Fetch opt in list source
+Get opt in list source
 
 ### Example
 
@@ -1142,7 +978,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$source_id = NULL; // mixed
+$source_id = 'source_id_example'; // string
 
 try {
     $result = $apiInstance->fetchOptInListSource($source_id);
@@ -1156,7 +992,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **source_id** | [**mixed**](../Model/.md)|  | |
+| **source_id** | **string**|  | |
 
 ### Return type
 
@@ -1181,7 +1017,7 @@ No authorization required
 fetchOptInListSourcesCreatedByEmployee(): \OpenAPI\Client\Model\OptInListSource[]
 ```
 
-Fetch all opt in list sources
+Get all opt in list sources
 
 ### Example
 
@@ -1232,7 +1068,7 @@ No authorization required
 fetchPeerActivity($employee_id): \OpenAPI\Client\Model\EmployeeActivityLog[]
 ```
 
-Fetch peer activity
+Get peer activity
 
 ### Example
 
@@ -1247,7 +1083,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$employee_id = NULL; // mixed
+$employee_id = 'employee_id_example'; // string
 
 try {
     $result = $apiInstance->fetchPeerActivity($employee_id);
@@ -1261,7 +1097,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **employee_id** | [**mixed**](../Model/.md)|  | |
+| **employee_id** | **string**|  | |
 
 ### Return type
 
@@ -1286,7 +1122,7 @@ No authorization required
 fetchPeersPermissions($user_id): mixed[]
 ```
 
-Fetch peer permissions
+Get peer permissions
 
 ### Example
 
@@ -1301,7 +1137,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_id = NULL; // mixed
+$user_id = 'user_id_example'; // string
 
 try {
     $result = $apiInstance->fetchPeersPermissions($user_id);
@@ -1315,7 +1151,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **user_id** | [**mixed**](../Model/.md)|  | |
+| **user_id** | **string**|  | |
 
 ### Return type
 
@@ -1340,7 +1176,7 @@ No authorization required
 fetchProfileInfo(): \OpenAPI\Client\Model\Employee
 ```
 
-Retrieve employee's webpages
+Get employee info
 
 ### Example
 
@@ -1499,7 +1335,7 @@ No authorization required
 loadWebpagesOfEmployee(): \OpenAPI\Client\Model\Webpage[]
 ```
 
-Retrieve employee's webpages
+Get employee's permissions
 
 ### Example
 
@@ -1565,7 +1401,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_id = NULL; // mixed
+$user_id = 'user_id_example'; // string
 $wt_employee_peer_roles = new \OpenAPI\Client\Model\WTEmployeePeerRoles(); // \OpenAPI\Client\Model\WTEmployeePeerRoles
 
 try {
@@ -1580,7 +1416,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **user_id** | [**mixed**](../Model/.md)|  | |
+| **user_id** | **string**|  | |
 | **wt_employee_peer_roles** | [**\OpenAPI\Client\Model\WTEmployeePeerRoles**](../Model/WTEmployeePeerRoles.md)|  | |
 
 ### Return type
@@ -1675,7 +1511,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$user_id = NULL; // mixed
+$user_id = 'user_id_example'; // string
 
 try {
     $result = $apiInstance->removePeerFromAllRoles($user_id);
@@ -1689,7 +1525,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **user_id** | [**mixed**](../Model/.md)|  | |
+| **user_id** | **string**|  | |
 
 ### Return type
 
@@ -1729,7 +1565,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$advertisement_credit_id = NULL; // mixed
+$advertisement_credit_id = 'advertisement_credit_id_example'; // string
 $wt_employee_schedule_simple_sms = new \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS(); // \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS
 
 try {
@@ -1744,7 +1580,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **advertisement_credit_id** | [**mixed**](../Model/.md)|  | |
+| **advertisement_credit_id** | **string**|  | |
 | **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  | |
 
 ### Return type
@@ -1785,7 +1621,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$dynamic_voucher_id = NULL; // mixed
+$dynamic_voucher_id = 'dynamic_voucher_id_example'; // string
 $wt_employee_schedule_simple_sms = new \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS(); // \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS
 
 try {
@@ -1800,7 +1636,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **dynamic_voucher_id** | **string**|  | |
 | **wt_employee_schedule_simple_sms** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMS**](../Model/WTEmployeeScheduleSimpleSMS.md)|  | |
 
 ### Return type
@@ -1841,7 +1677,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$dynamic_voucher_id = NULL; // mixed
+$dynamic_voucher_id = 'dynamic_voucher_id_example'; // string
 $wt_employee_schedule_simple_smsto_recipient = new \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient(); // \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient
 
 try {
@@ -1856,7 +1692,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **dynamic_voucher_id** | **string**|  | |
 | **wt_employee_schedule_simple_smsto_recipient** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient**](../Model/WTEmployeeScheduleSimpleSMSToRecipient.md)|  | |
 
 ### Return type
@@ -2059,7 +1895,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$static_voucher_campaign_id = NULL; // mixed
+$static_voucher_campaign_id = 'static_voucher_campaign_id_example'; // string
 $wt_employee_schedule_sms_campaign_broadcast = new \OpenAPI\Client\Model\WTEmployeeScheduleSMSCampaignBroadcast(); // \OpenAPI\Client\Model\WTEmployeeScheduleSMSCampaignBroadcast
 
 try {
@@ -2074,7 +1910,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  | |
+| **static_voucher_campaign_id** | **string**|  | |
 | **wt_employee_schedule_sms_campaign_broadcast** | [**\OpenAPI\Client\Model\WTEmployeeScheduleSMSCampaignBroadcast**](../Model/WTEmployeeScheduleSMSCampaignBroadcast.md)|  | |
 
 ### Return type
@@ -2217,7 +2053,7 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$help_desk_request_id = NULL; // mixed
+$help_desk_request_id = 'help_desk_request_id_example'; // string
 
 try {
     $result = $apiInstance->setHelpDeskRequestResolved($help_desk_request_id);
@@ -2231,7 +2067,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **help_desk_request_id** | [**mixed**](../Model/.md)|  | |
+| **help_desk_request_id** | **string**|  | |
 
 ### Return type
 

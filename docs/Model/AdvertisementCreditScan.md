@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **transaction_type** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtTransactionType.md) |  |
 **register_id** | [**\OpenAPI\Client\Model\PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID**](PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAtRegisterID.md) |  |
 **redeemed_source** | **string** |  |
@@ -21,11 +21,11 @@ Name | Type | Description | Notes
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |
 **advertisement_credit_id** | **string** |  |
-**redeemed_amount_decimal** | **string** |  |
-**redeemed_amount_string** | **string** |  |
-**authorized_amount_decimal** | **string** |  |
-**authorized_amount_string** | **string** |  |
-**date_time_redeemed** | **\DateTime** |  |
-**date_time_refunded** | **\DateTime** |  |
+**redeemed_amount_decimal** | **mixed** |  |
+**redeemed_amount_string** | **mixed** |  |
+**authorized_amount_decimal** | **mixed** |  |
+**authorized_amount_string** | **mixed** |  |
+**date_time_redeemed** | **mixed** |  |
+**date_time_refunded** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

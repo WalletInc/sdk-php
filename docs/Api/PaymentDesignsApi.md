@@ -6,8 +6,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**archivePaymentDesign()**](PaymentDesignsApi.md#archivePaymentDesign) | **DELETE** /v2/payment/design/{id} | Archive payment design |
 | [**createPaymentDesign()**](PaymentDesignsApi.md#createPaymentDesign) | **POST** /v2/payment/design | Create payment design |
-| [**fetchAllPaymentDesigns()**](PaymentDesignsApi.md#fetchAllPaymentDesigns) | **GET** /v2/payment/design/all | Fetch all active payment designs |
-| [**fetchPaymentDesignById()**](PaymentDesignsApi.md#fetchPaymentDesignById) | **GET** /v2/payment/design/{id} | Fetch payment design |
+| [**fetchAllPaymentDesigns()**](PaymentDesignsApi.md#fetchAllPaymentDesigns) | **GET** /v2/payment/design/all | Get all payment designs |
+| [**fetchPaymentDesignById()**](PaymentDesignsApi.md#fetchPaymentDesignById) | **GET** /v2/payment/design/{id} | Get payment design |
 | [**restorePaymentDesign()**](PaymentDesignsApi.md#restorePaymentDesign) | **PATCH** /v2/payment/design/{id} | Restore payment design |
 | [**updatePaymentDesign()**](PaymentDesignsApi.md#updatePaymentDesign) | **PUT** /v2/payment/design/{id} | Update payment design |
 
@@ -33,7 +33,7 @@ $apiInstance = new OpenAPI\Client\Api\PaymentDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archivePaymentDesign($id);
@@ -47,7 +47,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 fetchAllPaymentDesigns($is_archive_included): \OpenAPI\Client\Model\WTPaymentDesign[]
 ```
 
-Fetch all active payment designs
+Get all payment designs
 
 ### Example
 
@@ -180,7 +180,7 @@ No authorization required
 fetchPaymentDesignById($id): \OpenAPI\Client\Model\WTPaymentDesign
 ```
 
-Fetch payment design
+Get payment design
 
 ### Example
 
@@ -195,7 +195,7 @@ $apiInstance = new OpenAPI\Client\Api\PaymentDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchPaymentDesignById($id);
@@ -209,7 +209,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -249,7 +249,7 @@ $apiInstance = new OpenAPI\Client\Api\PaymentDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restorePaymentDesign($id);
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -303,7 +303,7 @@ $apiInstance = new OpenAPI\Client\Api\PaymentDesignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_payment_design_update_params = new \OpenAPI\Client\Model\WTPaymentDesignUpdateParams(); // \OpenAPI\Client\Model\WTPaymentDesignUpdateParams
 
 try {
@@ -318,7 +318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_payment_design_update_params** | [**\OpenAPI\Client\Model\WTPaymentDesignUpdateParams**](../Model/WTPaymentDesignUpdateParams.md)|  | |
 
 ### Return type

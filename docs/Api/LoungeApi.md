@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveLounge()**](LoungeApi.md#archiveLounge) | **DELETE** /v2/lounge/{id} | Archive lounge |
-| [**createLounge()**](LoungeApi.md#createLounge) | **POST** /v2/lounge | Create lounge |
-| [**fetchAllLounge()**](LoungeApi.md#fetchAllLounge) | **GET** /v2/lounge/all | Fetch all lounge |
-| [**restoreLounge()**](LoungeApi.md#restoreLounge) | **PATCH** /v2/lounge/{id} | Restore lounge |
-| [**updateLounge()**](LoungeApi.md#updateLounge) | **PUT** /v2/lounge/{id} | Update lounge |
+| [**archiveLounge()**](LoungeApi.md#archiveLounge) | **DELETE** /v2/lounge/{id} | Archive Lounge |
+| [**createLounge()**](LoungeApi.md#createLounge) | **POST** /v2/lounge | Create Lounge |
+| [**fetchAllLounge()**](LoungeApi.md#fetchAllLounge) | **GET** /v2/lounge/all | Get all Lounges |
+| [**restoreLounge()**](LoungeApi.md#restoreLounge) | **PATCH** /v2/lounge/{id} | Restore Lounge |
+| [**updateLounge()**](LoungeApi.md#updateLounge) | **PUT** /v2/lounge/{id} | Update Lounge |
 
 
 ## `archiveLounge()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveLounge($id): \OpenAPI\Client\Model\Lounge
 ```
 
-Archive lounge
+Archive Lounge
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\LoungeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveLounge($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createLounge($wt_lounge_create_params): \OpenAPI\Client\Model\Lounge
 ```
 
-Create lounge
+Create Lounge
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllLounge($is_archive_included): mixed
 ```
 
-Fetch all lounge
+Get all Lounges
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreLounge($id): \OpenAPI\Client\Model\Lounge
 ```
 
-Restore lounge
+Restore Lounge
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\LoungeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreLounge($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateLounge($id, $wt_lounge_update_params): \OpenAPI\Client\Model\Lounge
 ```
 
-Update lounge
+Update Lounge
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\LoungeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_lounge_update_params = new \OpenAPI\Client\Model\WTLoungeUpdateParams(); // \OpenAPI\Client\Model\WTLoungeUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_lounge_update_params** | [**\OpenAPI\Client\Model\WTLoungeUpdateParams**](../Model/WTLoungeUpdateParams.md)|  | |
 
 ### Return type

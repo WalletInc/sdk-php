@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#fetchWalletItemFromShopifyTerminal) | **GET** /v2/pos/shopify/item/{itemID} | Fetch item |
+| [**fetchWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#fetchWalletItemFromShopifyTerminal) | **GET** /v2/pos/shopify/item/{itemID} | Get item |
 | [**redeemWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#redeemWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/redeem/{itemID} | Redeem item |
 | [**refundWalletItemFromShopifyTerminal()**](ShopifyTerminalApi.md#refundWalletItemFromShopifyTerminal) | **POST** /v2/pos/shopify/item/refund/{ledgerEntryID} | Refund transaction |
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchWalletItemFromShopifyTerminal($item_id): mixed
 ```
 
-Fetch item
+Get item
 
 ### Example
 

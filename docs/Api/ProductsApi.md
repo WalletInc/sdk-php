@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveProduct()**](ProductsApi.md#archiveProduct) | **DELETE** /v2/products/{id} | Archive product |
-| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /v2/products | Create product |
-| [**fetchAllProducts()**](ProductsApi.md#fetchAllProducts) | **GET** /v2/products/all | Fetch all products |
-| [**restoreProduct()**](ProductsApi.md#restoreProduct) | **PATCH** /v2/products/{id} | Restore product |
-| [**updateProduct()**](ProductsApi.md#updateProduct) | **PUT** /v2/products/{id} | Update product |
+| [**archiveProduct()**](ProductsApi.md#archiveProduct) | **DELETE** /v2/products/{id} | Archive Product |
+| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /v2/products | Create Product |
+| [**fetchAllProducts()**](ProductsApi.md#fetchAllProducts) | **GET** /v2/products/all | Get all Products |
+| [**restoreProduct()**](ProductsApi.md#restoreProduct) | **PATCH** /v2/products/{id} | Restore Product |
+| [**updateProduct()**](ProductsApi.md#updateProduct) | **PUT** /v2/products/{id} | Update Product |
 
 
 ## `archiveProduct()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveProduct($id): \OpenAPI\Client\Model\Product
 ```
 
-Archive product
+Archive Product
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveProduct($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createProduct($wt_product_create_params): \OpenAPI\Client\Model\Product
 ```
 
-Create product
+Create Product
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllProducts($is_archive_included): mixed
 ```
 
-Fetch all products
+Get all Products
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreProduct($id): \OpenAPI\Client\Model\Product
 ```
 
-Restore product
+Restore Product
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreProduct($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateProduct($id, $wt_product_update_params): \OpenAPI\Client\Model\Product
 ```
 
-Update product
+Update Product
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_product_update_params = new \OpenAPI\Client\Model\WTProductUpdateParams(); // \OpenAPI\Client\Model\WTProductUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_product_update_params** | [**\OpenAPI\Client\Model\WTProductUpdateParams**](../Model/WTProductUpdateParams.md)|  | |
 
 ### Return type

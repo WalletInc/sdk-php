@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveDining()**](DiningApi.md#archiveDining) | **DELETE** /v2/dining/{id} | Archive dining |
-| [**createDining()**](DiningApi.md#createDining) | **POST** /v2/dining | Create dining |
-| [**fetchAllDining()**](DiningApi.md#fetchAllDining) | **GET** /v2/dining/all | Fetch all dining |
-| [**restoreDining()**](DiningApi.md#restoreDining) | **PATCH** /v2/dining/{id} | Restore dining |
-| [**updateDining()**](DiningApi.md#updateDining) | **PUT** /v2/dining/{id} | Update dining |
+| [**archiveDining()**](DiningApi.md#archiveDining) | **DELETE** /v2/dining/{id} | Archive Dining info |
+| [**createDining()**](DiningApi.md#createDining) | **POST** /v2/dining | Create Dining info |
+| [**fetchAllDining()**](DiningApi.md#fetchAllDining) | **GET** /v2/dining/all | Get all Dining info |
+| [**restoreDining()**](DiningApi.md#restoreDining) | **PATCH** /v2/dining/{id} | Restore Dining info |
+| [**updateDining()**](DiningApi.md#updateDining) | **PUT** /v2/dining/{id} | Update Dining info |
 
 
 ## `archiveDining()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveDining($id): \OpenAPI\Client\Model\Dining
 ```
 
-Archive dining
+Archive Dining info
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\DiningApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveDining($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createDining($wt_dining_create_params): \OpenAPI\Client\Model\Dining
 ```
 
-Create dining
+Create Dining info
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllDining($is_archive_included): mixed
 ```
 
-Fetch all dining
+Get all Dining info
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreDining($id): \OpenAPI\Client\Model\Dining
 ```
 
-Restore dining
+Restore Dining info
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\DiningApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreDining($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateDining($id, $wt_dining_update_params): \OpenAPI\Client\Model\Dining
 ```
 
-Update dining
+Update Dining info
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\DiningApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_dining_update_params = new \OpenAPI\Client\Model\WTDiningUpdateParams(); // \OpenAPI\Client\Model\WTDiningUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_dining_update_params** | [**\OpenAPI\Client\Model\WTDiningUpdateParams**](../Model/WTDiningUpdateParams.md)|  | |
 
 ### Return type

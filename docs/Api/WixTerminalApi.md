@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchWalletItemFromWixTerminal()**](WixTerminalApi.md#fetchWalletItemFromWixTerminal) | **GET** /v2/pos/wix/item/{itemID} | Fetch item |
+| [**fetchWalletItemFromWixTerminal()**](WixTerminalApi.md#fetchWalletItemFromWixTerminal) | **GET** /v2/pos/wix/item/{itemID} | Get item |
 | [**redeemWalletItemFromWixTerminal()**](WixTerminalApi.md#redeemWalletItemFromWixTerminal) | **POST** /v2/pos/wix/item/redeem/{itemID} | Redeem item |
 | [**refundWalletItemFromWixTerminal()**](WixTerminalApi.md#refundWalletItemFromWixTerminal) | **POST** /v2/pos/wix/item/refund/{ledgerEntryID} | Refund transaction |
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchWalletItemFromWixTerminal($item_id): mixed
 ```
 
-Fetch item
+Get item
 
 ### Example
 

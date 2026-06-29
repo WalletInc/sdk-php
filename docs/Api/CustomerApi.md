@@ -4,13 +4,13 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchActiveVouchers()**](CustomerApi.md#fetchActiveVouchers) | **GET** /v2/customer/vouchers/active | Fetch active static vouchers |
-| [**fetchAllVouchers()**](CustomerApi.md#fetchAllVouchers) | **GET** /v2/customer/vouchers/all | Fetch all static vouchers |
-| [**fetchExpiredVouchers()**](CustomerApi.md#fetchExpiredVouchers) | **GET** /v2/customer/vouchers/expired | Fetch expired static vouchers |
-| [**fetchRedeemedVouchers()**](CustomerApi.md#fetchRedeemedVouchers) | **GET** /v2/customer/vouchers/redeemed | Fetch redeemed static vouchers |
-| [**fetchRefundedVouchers()**](CustomerApi.md#fetchRefundedVouchers) | **GET** /v2/customer/vouchers/refunded | Fetch refunded static vouchers |
-| [**fetchUpcomingVouchers()**](CustomerApi.md#fetchUpcomingVouchers) | **GET** /v2/customer/vouchers/upcoming | Fetch upcoming static vouchers |
-| [**fetchWalletViewsForSession()**](CustomerApi.md#fetchWalletViewsForSession) | **GET** /v2/customer/walletViews/session/{id} | Fetch Wallet Views for Session |
+| [**fetchActiveVouchers()**](CustomerApi.md#fetchActiveVouchers) | **GET** /v2/customer/vouchers/active | Get active static vouchers |
+| [**fetchAllVouchers()**](CustomerApi.md#fetchAllVouchers) | **GET** /v2/customer/vouchers/all | Get all static vouchers |
+| [**fetchExpiredVouchers()**](CustomerApi.md#fetchExpiredVouchers) | **GET** /v2/customer/vouchers/expired | Get expired static vouchers |
+| [**fetchRedeemedVouchers()**](CustomerApi.md#fetchRedeemedVouchers) | **GET** /v2/customer/vouchers/redeemed | Get redeemed static vouchers |
+| [**fetchRefundedVouchers()**](CustomerApi.md#fetchRefundedVouchers) | **GET** /v2/customer/vouchers/refunded | Get refunded static vouchers |
+| [**fetchUpcomingVouchers()**](CustomerApi.md#fetchUpcomingVouchers) | **GET** /v2/customer/vouchers/upcoming | Get upcoming static vouchers |
+| [**fetchWalletViewsForSession()**](CustomerApi.md#fetchWalletViewsForSession) | **GET** /v2/customer/walletViews/session/{id} | Get Wallet Views for Session |
 | [**searchByMemberID()**](CustomerApi.md#searchByMemberID) | **POST** /v2/customer/search/memberID | Find members with memberID |
 | [**searchByPhoneNumber()**](CustomerApi.md#searchByPhoneNumber) | **POST** /v2/customer/search/phoneNumber | Find members with phone number |
 
@@ -21,7 +21,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchActiveVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch active static vouchers
+Get active static vouchers
 
 ### Example
 
@@ -77,7 +77,7 @@ No authorization required
 fetchAllVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch all static vouchers
+Get all static vouchers
 
 ### Example
 
@@ -133,7 +133,7 @@ No authorization required
 fetchExpiredVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch expired static vouchers
+Get expired static vouchers
 
 ### Example
 
@@ -189,7 +189,7 @@ No authorization required
 fetchRedeemedVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch redeemed static vouchers
+Get redeemed static vouchers
 
 ### Example
 
@@ -245,7 +245,7 @@ No authorization required
 fetchRefundedVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch refunded static vouchers
+Get refunded static vouchers
 
 ### Example
 
@@ -301,7 +301,7 @@ No authorization required
 fetchUpcomingVouchers($member_id, $cell_phone_number): \OpenAPI\Client\Model\StaticVoucher[]
 ```
 
-Fetch upcoming static vouchers
+Get upcoming static vouchers
 
 ### Example
 
@@ -357,7 +357,7 @@ No authorization required
 fetchWalletViewsForSession($id): \OpenAPI\Client\Model\WalletPageView[]
 ```
 
-Fetch Wallet Views for Session
+Get Wallet Views for Session
 
 ### Example
 

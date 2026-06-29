@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  |
-**order_number** | **int** |  |
-**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**is_active** | **bool** |  |
+**name** | **mixed** |  |
+**order_number** | **mixed** |  |
+**id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**is_active** | **mixed** |  |
 **merchant_id** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **string** |  |
-**description** | **string** |  |
-**promo_code** | **string** |  |
-**display_value** | **string** |  |
+**title** | **mixed** |  |
+**description** | **mixed** |  |
+**promo_code** | **mixed** |  |
+**display_value** | **mixed** |  |
 **order_number** | **int** |  |
 **media_url** | **string** |  | [optional]
 **start_date** | **\DateTime** |  |

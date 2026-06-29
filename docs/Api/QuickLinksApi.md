@@ -4,12 +4,12 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveLinkBook()**](QuickLinksApi.md#archiveLinkBook) | **DELETE** /v2/linkBook/{id} | Archive link |
-| [**createLinkBook()**](QuickLinksApi.md#createLinkBook) | **POST** /v2/linkBook | Create link |
-| [**fetchAllLinkBook()**](QuickLinksApi.md#fetchAllLinkBook) | **GET** /v2/linkBook/all | Fetch all links |
-| [**fetchLinkBookById()**](QuickLinksApi.md#fetchLinkBookById) | **GET** /v2/linkBook/{id} | Fetch link book by id |
-| [**restoreLinkBook()**](QuickLinksApi.md#restoreLinkBook) | **PATCH** /v2/linkBook/{id} | Restore link |
-| [**updateLinkBook()**](QuickLinksApi.md#updateLinkBook) | **PUT** /v2/linkBook/{id} | Update link |
+| [**archiveLinkBook()**](QuickLinksApi.md#archiveLinkBook) | **DELETE** /v2/linkBook/{id} | Archive Quick Link |
+| [**createLinkBook()**](QuickLinksApi.md#createLinkBook) | **POST** /v2/linkBook | Create Quick Link |
+| [**fetchAllLinkBook()**](QuickLinksApi.md#fetchAllLinkBook) | **GET** /v2/linkBook/all | Get all Quick Links |
+| [**fetchLinkBookById()**](QuickLinksApi.md#fetchLinkBookById) | **GET** /v2/linkBook/{id} | Get Quick Link |
+| [**restoreLinkBook()**](QuickLinksApi.md#restoreLinkBook) | **PATCH** /v2/linkBook/{id} | Restore Quick Link |
+| [**updateLinkBook()**](QuickLinksApi.md#updateLinkBook) | **PUT** /v2/linkBook/{id} | Update Quick Link |
 
 
 ## `archiveLinkBook()`
@@ -18,7 +18,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveLinkBook($id): \OpenAPI\Client\Model\LinkBook
 ```
 
-Archive link
+Archive Quick Link
 
 ### Example
 
@@ -33,7 +33,7 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveLinkBook($id);
@@ -47,7 +47,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -69,10 +69,10 @@ No authorization required
 ## `createLinkBook()`
 
 ```php
-createLinkBook($wt_link_book_create_params): \OpenAPI\Client\Model\LinkBook
+createLinkBook($wt_quick_link_create_params): \OpenAPI\Client\Model\LinkBook
 ```
 
-Create link
+Create Quick Link
 
 ### Example
 
@@ -87,10 +87,10 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wt_link_book_create_params = new \OpenAPI\Client\Model\WTLinkBookCreateParams(); // \OpenAPI\Client\Model\WTLinkBookCreateParams
+$wt_quick_link_create_params = new \OpenAPI\Client\Model\WTQuickLinkCreateParams(); // \OpenAPI\Client\Model\WTQuickLinkCreateParams
 
 try {
-    $result = $apiInstance->createLinkBook($wt_link_book_create_params);
+    $result = $apiInstance->createLinkBook($wt_quick_link_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuickLinksApi->createLinkBook: ', $e->getMessage(), PHP_EOL;
@@ -101,7 +101,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **wt_link_book_create_params** | [**\OpenAPI\Client\Model\WTLinkBookCreateParams**](../Model/WTLinkBookCreateParams.md)|  | |
+| **wt_quick_link_create_params** | [**\OpenAPI\Client\Model\WTQuickLinkCreateParams**](../Model/WTQuickLinkCreateParams.md)|  | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 fetchAllLinkBook($is_archive_included): mixed
 ```
 
-Fetch all links
+Get all Quick Links
 
 ### Example
 
@@ -177,10 +177,10 @@ No authorization required
 ## `fetchLinkBookById()`
 
 ```php
-fetchLinkBookById($id): \OpenAPI\Client\Model\WTLinkBook
+fetchLinkBookById($id): \OpenAPI\Client\Model\WTQuickLink
 ```
 
-Fetch link book by id
+Get Quick Link
 
 ### Example
 
@@ -195,7 +195,7 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchLinkBookById($id);
@@ -209,11 +209,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\WTLinkBook**](../Model/WTLinkBook.md)
+[**\OpenAPI\Client\Model\WTQuickLink**](../Model/WTQuickLink.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ No authorization required
 restoreLinkBook($id): \OpenAPI\Client\Model\LinkBook
 ```
 
-Restore link
+Restore Quick Link
 
 ### Example
 
@@ -249,7 +249,7 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreLinkBook($id);
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -285,10 +285,10 @@ No authorization required
 ## `updateLinkBook()`
 
 ```php
-updateLinkBook($id, $wt_link_book_update_params): \OpenAPI\Client\Model\LinkBook
+updateLinkBook($id, $wt_quick_link_update_params): \OpenAPI\Client\Model\LinkBook
 ```
 
-Update link
+Update Quick Link
 
 ### Example
 
@@ -303,11 +303,11 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
-$wt_link_book_update_params = new \OpenAPI\Client\Model\WTLinkBookUpdateParams(); // \OpenAPI\Client\Model\WTLinkBookUpdateParams
+$id = 'id_example'; // string
+$wt_quick_link_update_params = new \OpenAPI\Client\Model\WTQuickLinkUpdateParams(); // \OpenAPI\Client\Model\WTQuickLinkUpdateParams
 
 try {
-    $result = $apiInstance->updateLinkBook($id, $wt_link_book_update_params);
+    $result = $apiInstance->updateLinkBook($id, $wt_quick_link_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuickLinksApi->updateLinkBook: ', $e->getMessage(), PHP_EOL;
@@ -318,8 +318,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
-| **wt_link_book_update_params** | [**\OpenAPI\Client\Model\WTLinkBookUpdateParams**](../Model/WTLinkBookUpdateParams.md)|  | |
+| **id** | **string**|  | |
+| **wt_quick_link_update_params** | [**\OpenAPI\Client\Model\WTQuickLinkUpdateParams**](../Model/WTQuickLinkUpdateParams.md)|  | |
 
 ### Return type
 

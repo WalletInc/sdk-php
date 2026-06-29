@@ -4,44 +4,44 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ip** | **string** |  |
-**wallet_object_id** | **string** |  |
-**wallet_object_prefix** | **string** |  |
-**parent_object_id** | **string** |  |
-**parent_object_prefix** | **string** |  |
-**session_id** | **string** |  |
-**navigator_agent** | **string** |  |
-**browser_name** | **string** |  |
-**browser_version** | **string** |  |
-**engine_name** | **string** |  |
-**engine_version** | **string** |  |
-**o_s_name** | **string** |  |
-**o_s_version** | **string** |  |
-**is_mobile** | **bool** |  |
-**device_vendor** | **string** |  |
-**device_model** | **string** |  |
-**device_type** | **string** |  |
-**phone_verification_token** | **string** |  |
-**referring_domain** | **string** |  | [optional]
-**referrer** | **string** |  | [optional]
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
-**status** | **string** |  |
-**country** | **string** |  |
-**country_code** | **string** |  |
-**region** | **string** |  |
-**region_name** | **string** |  |
-**city** | **string** |  |
-**zip** | **string** |  |
-**latitude** | **float** |  |
-**longitude** | **float** |  |
-**timezone** | **string** |  |
-**isp** | **string** |  |
-**org** | **string** |  |
-**asn** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
+**ip** | **mixed** |  |
+**wallet_object_id** | **mixed** |  |
+**wallet_object_prefix** | **mixed** |  |
+**parent_object_id** | **mixed** |  |
+**parent_object_prefix** | **mixed** |  |
+**session_id** | **mixed** |  |
+**navigator_agent** | **mixed** |  |
+**browser_name** | **mixed** |  |
+**browser_version** | **mixed** |  |
+**engine_name** | **mixed** |  |
+**engine_version** | **mixed** |  |
+**o_s_name** | **mixed** |  |
+**o_s_version** | **mixed** |  |
+**is_mobile** | **mixed** |  |
+**device_vendor** | **mixed** |  |
+**device_model** | **mixed** |  |
+**device_type** | **mixed** |  |
+**phone_verification_token** | **mixed** |  |
+**referring_domain** | **mixed** |  | [optional]
+**referrer** | **mixed** |  | [optional]
+**id** | **string** |  |
+**status** | **mixed** |  |
+**country** | **mixed** |  |
+**country_code** | **mixed** |  |
+**region** | **mixed** |  |
+**region_name** | **mixed** |  |
+**city** | **mixed** |  |
+**zip** | **mixed** |  |
+**latitude** | **mixed** |  |
+**longitude** | **mixed** |  |
+**timezone** | **mixed** |  |
+**isp** | **mixed** |  |
+**org** | **mixed** |  |
+**asn** | **mixed** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
 **merchant_id** | **string** |  |
-**is_active** | **bool** | Denotes if this resource is active |
+**is_active** | **mixed** | Denotes if this resource is active |
 **geo_point** | [**\OpenAPI\Client\Model\WTWalletPageViewGeoPoint**](WTWalletPageViewGeoPoint.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

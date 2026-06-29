@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **string** |  |
-**description** | **string** |  |
+**title** | **mixed** |  |
+**description** | **mixed** |  |
 **order_number** | **int** |  |
-**media_url** | **string** |  |
-**additional_info_url** | **string** |  | [optional]
+**media_url** | **mixed** |  |
+**additional_info_url** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

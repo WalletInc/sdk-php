@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** |  |
 **list_name** | **string** |  |
 **phone_number_id** | **string** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

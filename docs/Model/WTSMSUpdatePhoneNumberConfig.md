@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**company_name** | **string** |  |
-**privacy_policy_url** | **string** |  | [optional]
-**terms_of_service_url** | **string** |  | [optional]
-**message_footer** | **string** |  |
-**stop_response** | **string** |  |
-**help_response** | **string** |  |
-**help_desk_keyword** | **string** |  |
-**help_desk_queue_response** | **string** |  |
-**is_connected_to_watson** | **bool** |  | [optional]
-**watson_username** | **string** |  | [optional]
-**watson_password** | **string** |  | [optional]
-**watson_conversation_workplace_id** | **string** |  | [optional]
+**company_name** | **mixed** |  |
+**privacy_policy_url** | **mixed** |  | [optional]
+**terms_of_service_url** | **mixed** |  | [optional]
+**message_footer** | **mixed** |  |
+**stop_response** | **mixed** |  |
+**help_response** | **mixed** |  |
+**help_desk_keyword** | **mixed** |  |
+**help_desk_queue_response** | **mixed** |  |
+**is_connected_to_watson** | **mixed** |  | [optional]
+**watson_username** | **mixed** |  | [optional]
+**watson_password** | **mixed** |  | [optional]
+**watson_conversation_workplace_id** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

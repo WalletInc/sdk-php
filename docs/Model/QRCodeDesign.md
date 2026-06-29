@@ -4,18 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  |
-**size** | **int** |  |
-**margin** | **int** |  |
-**is_margin_white** | **bool** |  |
-**corner_radius** | **int** |  |
-**color_dark_hex** | **string** |  |
-**color_light_hex** | **string** |  |
-**background_dimming_hex** | **string** |  |
-**logo_image_url** | **string** |  | [optional]
-**background_image_url** | **string** |  | [optional]
-**animated_gif_background_url** | **string** |  | [optional]
-**id** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequestPaymentDesignID**](SaveTicketSettingsRequestPaymentDesignID.md) |  |
+**name** | **mixed** |  |
+**serialized_json_configuration** | **object** | Construct a type with a set of properties K of type T |
+**serialized_json_border** | **object** | Construct a type with a set of properties K of type T | [optional]
+**id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |

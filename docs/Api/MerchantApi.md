@@ -9,25 +9,25 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**countInboundSMS()**](MerchantApi.md#countInboundSMS) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes |
 | [**exportInboundMessages()**](MerchantApi.md#exportInboundMessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages |
 | [**exportOutboundMessages()**](MerchantApi.md#exportOutboundMessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages |
-| [**fetchAdvertisementCreditBroadcasts()**](MerchantApi.md#fetchAdvertisementCreditBroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Fetch all ad credit broadcasts |
-| [**fetchCustomRoles()**](MerchantApi.md#fetchCustomRoles) | **GET** /v2/merchant/roles/custom | Fetch custom roles |
-| [**fetchDynamicVoucherBroadcasts()**](MerchantApi.md#fetchDynamicVoucherBroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Fetch all dynamic voucher broadcasts |
-| [**fetchEmployees()**](MerchantApi.md#fetchEmployees) | **GET** /v2/merchant/employees/all | Fetch all employees |
-| [**fetchHelpDeskRequests()**](MerchantApi.md#fetchHelpDeskRequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Fetch help desk requests |
-| [**fetchImportedList()**](MerchantApi.md#fetchImportedList) | **GET** /v2/merchant/lists/imported/{listID} | Fetch imported list |
-| [**fetchImportedLists()**](MerchantApi.md#fetchImportedLists) | **GET** /v2/merchant/lists/imported/all | Fetch all imported lists |
-| [**fetchInboundSMS()**](MerchantApi.md#fetchInboundSMS) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Fetch inbound SMSes |
-| [**fetchInboundSMSByPage()**](MerchantApi.md#fetchInboundSMSByPage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Fetch inbound SMSes by page |
-| [**fetchMerchantOutboundSMS()**](MerchantApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Fetch outbound SMSes |
-| [**fetchMerchantPhoneNumbers()**](MerchantApi.md#fetchMerchantPhoneNumbers) | **GET** /v2/merchant/phoneNumbers/all | Fetch all phone numbers |
-| [**fetchOptInList()**](MerchantApi.md#fetchOptInList) | **GET** /v2/merchant/lists/optIn/{listID} | Fetch opt in list |
-| [**fetchOptInLists()**](MerchantApi.md#fetchOptInLists) | **GET** /v2/merchant/lists/optIn/all | Fetch all opt in lists |
-| [**fetchPhoneNumber()**](MerchantApi.md#fetchPhoneNumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Fetch phone number |
-| [**fetchPublicEmployees()**](MerchantApi.md#fetchPublicEmployees) | **GET** /v2/merchant/employees/public | Fetch public representative employees of the merchant |
-| [**fetchSimpleSMSBroadcasts()**](MerchantApi.md#fetchSimpleSMSBroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Fetch all simple SMS broadcasts |
-| [**fetchStaticVoucherCampaignBroadcasts()**](MerchantApi.md#fetchStaticVoucherCampaignBroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Fetch all static voucher campaign broadcasts |
-| [**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Fetch all TCPA Filters |
-| [**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Fetch wallet configuration |
+| [**fetchAdvertisementCreditBroadcasts()**](MerchantApi.md#fetchAdvertisementCreditBroadcasts) | **GET** /v2/merchant/broadcasts/adCredits/all | Get all ad credit broadcasts |
+| [**fetchCustomRoles()**](MerchantApi.md#fetchCustomRoles) | **GET** /v2/merchant/roles/custom | Get custom roles |
+| [**fetchDynamicVoucherBroadcasts()**](MerchantApi.md#fetchDynamicVoucherBroadcasts) | **GET** /v2/merchant/broadcasts/dynamicVouchers/all | Get all dynamic voucher broadcasts |
+| [**fetchEmployees()**](MerchantApi.md#fetchEmployees) | **GET** /v2/merchant/employees/all | Get all employees |
+| [**fetchHelpDeskRequests()**](MerchantApi.md#fetchHelpDeskRequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests |
+| [**fetchImportedList()**](MerchantApi.md#fetchImportedList) | **GET** /v2/merchant/lists/imported/{listID} | Get imported list |
+| [**fetchImportedLists()**](MerchantApi.md#fetchImportedLists) | **GET** /v2/merchant/lists/imported/all | Get all imported lists |
+| [**fetchInboundSMS()**](MerchantApi.md#fetchInboundSMS) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes |
+| [**fetchInboundSMSByPage()**](MerchantApi.md#fetchInboundSMSByPage) | **GET** /v2/merchant/sms/inbound/page/{phoneNumberID} | Get inbound SMSes by page |
+| [**fetchMerchantOutboundSMS()**](MerchantApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
+| [**fetchMerchantPhoneNumbers()**](MerchantApi.md#fetchMerchantPhoneNumbers) | **GET** /v2/merchant/phoneNumbers/all | Get all phone numbers |
+| [**fetchOptInList()**](MerchantApi.md#fetchOptInList) | **GET** /v2/merchant/lists/optIn/{listID} | Get opt in list |
+| [**fetchOptInLists()**](MerchantApi.md#fetchOptInLists) | **GET** /v2/merchant/lists/optIn/all | Get all opt in lists |
+| [**fetchPhoneNumber()**](MerchantApi.md#fetchPhoneNumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number |
+| [**fetchPublicEmployees()**](MerchantApi.md#fetchPublicEmployees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant |
+| [**fetchSimpleSMSBroadcasts()**](MerchantApi.md#fetchSimpleSMSBroadcasts) | **GET** /v2/merchant/broadcasts/simpleSMS/all | Get all simple SMS broadcasts |
+| [**fetchStaticVoucherCampaignBroadcasts()**](MerchantApi.md#fetchStaticVoucherCampaignBroadcasts) | **GET** /v2/merchant/broadcasts/staticVoucherCampaign/all | Get all static voucher campaign broadcasts |
+| [**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters |
+| [**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration |
 | [**updateMerchant()**](MerchantApi.md#updateMerchant) | **PUT** /v2/merchant | Update merchant details |
 | [**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact |
 | [**updatePosIntegration()**](MerchantApi.md#updatePosIntegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration |
@@ -105,7 +105,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$broadcast_id = NULL; // mixed
+$broadcast_id = 'broadcast_id_example'; // string
 
 try {
     $result = $apiInstance->archivePaymentObjectBroadcast($broadcast_id);
@@ -119,7 +119,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **broadcast_id** | [**mixed**](../Model/.md)|  | |
+| **broadcast_id** | **string**|  | |
 
 ### Return type
 
@@ -159,7 +159,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 $from_phone_number = 'from_phone_number_example'; // string
 $body = 'body_example'; // string
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
@@ -177,7 +177,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 | **from_phone_number** | **string**|  | [optional] |
 | **body** | **string**|  | [optional] |
 | **start_date** | **\DateTime**|  | [optional] |
@@ -320,7 +320,7 @@ No authorization required
 fetchAdvertisementCreditBroadcasts($is_archive_included): \OpenAPI\Client\Model\AdvertisementCreditBroadcast[]
 ```
 
-Fetch all ad credit broadcasts
+Get all ad credit broadcasts
 
 ### Example
 
@@ -374,7 +374,7 @@ No authorization required
 fetchCustomRoles(): mixed
 ```
 
-Fetch custom roles
+Get custom roles
 
 ### Example
 
@@ -425,7 +425,7 @@ No authorization required
 fetchDynamicVoucherBroadcasts($is_archive_included): \OpenAPI\Client\Model\DynamicVoucherBroadcast[]
 ```
 
-Fetch all dynamic voucher broadcasts
+Get all dynamic voucher broadcasts
 
 ### Example
 
@@ -479,7 +479,7 @@ No authorization required
 fetchEmployees(): mixed
 ```
 
-Fetch all employees
+Get all employees
 
 ### Example
 
@@ -530,7 +530,7 @@ No authorization required
 fetchHelpDeskRequests($phone_number_id, $is_resolved): \OpenAPI\Client\Model\HelpDeskRequest[]
 ```
 
-Fetch help desk requests
+Get help desk requests
 
 ### Example
 
@@ -545,7 +545,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 $is_resolved = True; // bool
 
 try {
@@ -560,7 +560,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 | **is_resolved** | **bool**|  | [optional] |
 
 ### Return type
@@ -586,7 +586,7 @@ No authorization required
 fetchImportedList($list_id): \OpenAPI\Client\Model\ImportedList
 ```
 
-Fetch imported list
+Get imported list
 
 ### Example
 
@@ -601,7 +601,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$list_id = NULL; // mixed
+$list_id = 'list_id_example'; // string
 
 try {
     $result = $apiInstance->fetchImportedList($list_id);
@@ -615,7 +615,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **list_id** | [**mixed**](../Model/.md)|  | |
+| **list_id** | **string**|  | |
 
 ### Return type
 
@@ -640,7 +640,7 @@ No authorization required
 fetchImportedLists($is_archive_included): mixed
 ```
 
-Fetch all imported lists
+Get all imported lists
 
 ### Example
 
@@ -694,7 +694,7 @@ No authorization required
 fetchInboundSMS($phone_number_id, $from_phone_number): \OpenAPI\Client\Model\InboundSMS[]
 ```
 
-Fetch inbound SMSes
+Get inbound SMSes
 
 ### Example
 
@@ -709,7 +709,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 $from_phone_number = 'from_phone_number_example'; // string
 
 try {
@@ -724,7 +724,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 | **from_phone_number** | **string**|  | [optional] |
 
 ### Return type
@@ -750,7 +750,7 @@ No authorization required
 fetchInboundSMSByPage($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date): \OpenAPI\Client\Model\FetchInboundSMSByPage200Response
 ```
 
-Fetch inbound SMSes by page
+Get inbound SMSes by page
 
 ### Example
 
@@ -765,7 +765,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 $from_phone_number = 'from_phone_number_example'; // string
 $page_size = 3.4; // float
 $page_num = 3.4; // float
@@ -784,7 +784,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 | **from_phone_number** | **string**|  | [optional] |
 | **page_size** | **float**|  | [optional] |
 | **page_num** | **float**|  | [optional] |
@@ -814,7 +814,7 @@ No authorization required
 fetchMerchantOutboundSMS($phone_number_id, $to_phone_number): \OpenAPI\Client\Model\OutboundSMS[]
 ```
 
-Fetch outbound SMSes
+Get outbound SMSes
 
 ### Example
 
@@ -829,7 +829,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 $to_phone_number = 'to_phone_number_example'; // string
 
 try {
@@ -844,7 +844,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 | **to_phone_number** | **string**|  | |
 
 ### Return type
@@ -870,7 +870,7 @@ No authorization required
 fetchMerchantPhoneNumbers($is_archive_included, $is_approved): mixed
 ```
 
-Fetch all phone numbers
+Get all phone numbers
 
 ### Example
 
@@ -926,7 +926,7 @@ No authorization required
 fetchOptInList($list_id): \OpenAPI\Client\Model\OptInList
 ```
 
-Fetch opt in list
+Get opt in list
 
 ### Example
 
@@ -941,7 +941,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$list_id = NULL; // mixed
+$list_id = 'list_id_example'; // string
 
 try {
     $result = $apiInstance->fetchOptInList($list_id);
@@ -955,7 +955,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **list_id** | [**mixed**](../Model/.md)|  | |
+| **list_id** | **string**|  | |
 
 ### Return type
 
@@ -980,7 +980,7 @@ No authorization required
 fetchOptInLists($is_archive_included): mixed
 ```
 
-Fetch all opt in lists
+Get all opt in lists
 
 ### Example
 
@@ -1034,7 +1034,7 @@ No authorization required
 fetchPhoneNumber($phone_number_id): \OpenAPI\Client\Model\PhoneNumber
 ```
 
-Fetch phone number
+Get phone number
 
 ### Example
 
@@ -1049,7 +1049,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$phone_number_id = NULL; // mixed
+$phone_number_id = 'phone_number_id_example'; // string
 
 try {
     $result = $apiInstance->fetchPhoneNumber($phone_number_id);
@@ -1063,7 +1063,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phone_number_id** | [**mixed**](../Model/.md)|  | |
+| **phone_number_id** | **string**|  | |
 
 ### Return type
 
@@ -1088,7 +1088,7 @@ No authorization required
 fetchPublicEmployees(): mixed
 ```
 
-Fetch public representative employees of the merchant
+Get public representative employees of the merchant
 
 ### Example
 
@@ -1139,7 +1139,7 @@ No authorization required
 fetchSimpleSMSBroadcasts($is_archive_included): \OpenAPI\Client\Model\SimpleSMSBroadcast[]
 ```
 
-Fetch all simple SMS broadcasts
+Get all simple SMS broadcasts
 
 ### Example
 
@@ -1193,7 +1193,7 @@ No authorization required
 fetchStaticVoucherCampaignBroadcasts($is_archive_included): \OpenAPI\Client\Model\StaticVoucherCampaignBroadcast[]
 ```
 
-Fetch all static voucher campaign broadcasts
+Get all static voucher campaign broadcasts
 
 ### Example
 
@@ -1247,7 +1247,7 @@ No authorization required
 fetchTCPAFilter(): \OpenAPI\Client\Model\Tcpa[]
 ```
 
-Fetch all TCPA Filters
+Get all TCPA Filters
 
 ### Example
 
@@ -1298,7 +1298,7 @@ No authorization required
 fetchWalletConfiguration(): mixed
 ```
 
-Fetch wallet configuration
+Get wallet configuration
 
 ### Example
 

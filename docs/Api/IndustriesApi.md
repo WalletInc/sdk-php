@@ -4,9 +4,9 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchAllIndustries()**](IndustriesApi.md#fetchAllIndustries) | **GET** /system/industries/all | Fetch all industries |
-| [**fetchDomainsByIndustry()**](IndustriesApi.md#fetchDomainsByIndustry) | **GET** /system/industries/domains | Fetch all industries |
-| [**fetchIndustriesIDs()**](IndustriesApi.md#fetchIndustriesIDs) | **GET** /system/industries/trimmed | Fetch all industries |
+| [**fetchAllIndustries()**](IndustriesApi.md#fetchAllIndustries) | **GET** /system/industries/all | Get all Industries &amp; Pricing Plans |
+| [**fetchDomainsByIndustry()**](IndustriesApi.md#fetchDomainsByIndustry) | **GET** /system/industries/domains | Get all white-labeled custom domains by industry |
+| [**fetchIndustriesIDs()**](IndustriesApi.md#fetchIndustriesIDs) | **GET** /system/industries/trimmed | Get all Industries &amp; Pricing Plans with trimmed metadata |
 
 
 ## `fetchAllIndustries()`
@@ -15,7 +15,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchAllIndustries(): \OpenAPI\Client\Model\FetchIndustry200Response[]
 ```
 
-Fetch all industries
+Get all Industries & Pricing Plans
 
 ### Example
 
@@ -66,7 +66,7 @@ No authorization required
 fetchDomainsByIndustry(): \OpenAPI\Client\Model\FetchDomainsByIndustry200Response
 ```
 
-Fetch all industries
+Get all white-labeled custom domains by industry
 
 ### Example
 
@@ -117,7 +117,7 @@ No authorization required
 fetchIndustriesIDs(): mixed
 ```
 
-Fetch all industries
+Get all Industries & Pricing Plans with trimmed metadata
 
 ### Example
 

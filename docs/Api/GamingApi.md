@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveGaming()**](GamingApi.md#archiveGaming) | **DELETE** /v2/gaming/{id} | Archive gaming |
-| [**createGaming()**](GamingApi.md#createGaming) | **POST** /v2/gaming | Create gaming |
-| [**fetchAllGaming()**](GamingApi.md#fetchAllGaming) | **GET** /v2/gaming/all | Fetch all gaming |
-| [**restoreGaming()**](GamingApi.md#restoreGaming) | **PATCH** /v2/gaming/{id} | Restore gaming |
-| [**updateGaming()**](GamingApi.md#updateGaming) | **PUT** /v2/gaming/{id} | Update gaming |
+| [**archiveGaming()**](GamingApi.md#archiveGaming) | **DELETE** /v2/gaming/{id} | Archive Gaming info |
+| [**createGaming()**](GamingApi.md#createGaming) | **POST** /v2/gaming | Create Gaming info |
+| [**fetchAllGaming()**](GamingApi.md#fetchAllGaming) | **GET** /v2/gaming/all | Get all Gaming details |
+| [**restoreGaming()**](GamingApi.md#restoreGaming) | **PATCH** /v2/gaming/{id} | Restore Gaming info |
+| [**updateGaming()**](GamingApi.md#updateGaming) | **PUT** /v2/gaming/{id} | Update Gaming info |
 
 
 ## `archiveGaming()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveGaming($id): \OpenAPI\Client\Model\Gaming
 ```
 
-Archive gaming
+Archive Gaming info
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\GamingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveGaming($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createGaming($wt_gaming_create_params): \OpenAPI\Client\Model\Gaming
 ```
 
-Create gaming
+Create Gaming info
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllGaming($is_archive_included): mixed
 ```
 
-Fetch all gaming
+Get all Gaming details
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreGaming($id): \OpenAPI\Client\Model\Gaming
 ```
 
-Restore gaming
+Restore Gaming info
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\GamingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreGaming($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateGaming($id, $wt_gaming_update_params): \OpenAPI\Client\Model\Gaming
 ```
 
-Update gaming
+Update Gaming info
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\GamingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_gaming_update_params = new \OpenAPI\Client\Model\WTGamingUpdateParams(); // \OpenAPI\Client\Model\WTGamingUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_gaming_update_params** | [**\OpenAPI\Client\Model\WTGamingUpdateParams**](../Model/WTGamingUpdateParams.md)|  | |
 
 ### Return type
