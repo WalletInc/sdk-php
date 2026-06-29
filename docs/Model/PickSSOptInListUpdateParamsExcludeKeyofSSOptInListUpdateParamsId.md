@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **opt_in_confirmed_customer_receives** | **string** |  |
 **opt_out_confirmed_customer_receives** | **string** |  |
 **opt_in_confirmed_media_urls** | **string[]** |  |
-**opt_out_confirmed_media_urls** | **string[]** |  |
+**opt_out_confirmed_media_urls** | **mixed** |  |
 **is_over21_required** | **bool** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

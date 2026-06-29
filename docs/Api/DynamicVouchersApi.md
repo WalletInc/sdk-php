@@ -4,15 +4,15 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveDynamicVoucherCampaign()**](DynamicVouchersApi.md#archiveDynamicVoucherCampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive dynamic voucher campaign |
-| [**createDynamicVoucher()**](DynamicVouchersApi.md#createDynamicVoucher) | **POST** /v2/payment/dynamicVoucher | Create dynamic voucher |
-| [**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Fetch all active dynamic vouchers |
-| [**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Fetch dynamic voucher |
-| [**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Fetch redemptions |
+| [**archiveDynamicVoucherCampaign()**](DynamicVouchersApi.md#archiveDynamicVoucherCampaign) | **DELETE** /v2/payment/dynamicVoucher/{campaignID} | Archive Dynamic Voucher Campaign |
+| [**createDynamicVoucher()**](DynamicVouchersApi.md#createDynamicVoucher) | **POST** /v2/payment/dynamicVoucher | Create Dynamic Voucher Campaign |
+| [**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns |
+| [**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign |
+| [**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions |
 | [**fetchReachStatsOfAllDynamicVouchers()**](DynamicVouchersApi.md#fetchReachStatsOfAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
 | [**fetchReachStatsOfIndividualDynamicVoucher()**](DynamicVouchersApi.md#fetchReachStatsOfIndividualDynamicVoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
-| [**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore dynamic voucher campaign |
-| [**saveDynamicVoucher()**](DynamicVouchersApi.md#saveDynamicVoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update dynamic voucher |
+| [**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign |
+| [**saveDynamicVoucher()**](DynamicVouchersApi.md#saveDynamicVoucher) | **PUT** /v2/payment/dynamicVoucher/{id} | Update Dynamic Voucher Campaign |
 
 
 ## `archiveDynamicVoucherCampaign()`
@@ -21,7 +21,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveDynamicVoucherCampaign($campaign_id): \OpenAPI\Client\Model\DynamicVoucher
 ```
 
-Archive dynamic voucher campaign
+Archive Dynamic Voucher Campaign
 
 ### Example
 
@@ -36,7 +36,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->archiveDynamicVoucherCampaign($campaign_id);
@@ -50,7 +50,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 createDynamicVoucher($wt_dynamic_voucher_create_params): \OpenAPI\Client\Model\WTDynamicVoucher
 ```
 
-Create dynamic voucher
+Create Dynamic Voucher Campaign
 
 ### Example
 
@@ -129,7 +129,7 @@ No authorization required
 fetchAllDynamicVouchers($is_archive_included): \OpenAPI\Client\Model\WTDynamicVoucher[]
 ```
 
-Fetch all active dynamic vouchers
+Get all Dynamic Voucher Campaigns
 
 ### Example
 
@@ -183,7 +183,7 @@ No authorization required
 fetchDynamicVoucherById($id): \OpenAPI\Client\Model\WTDynamicVoucher
 ```
 
-Fetch dynamic voucher
+Get Dynamic Voucher Campaign
 
 ### Example
 
@@ -198,7 +198,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchDynamicVoucherById($id);
@@ -212,7 +212,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -237,7 +237,7 @@ No authorization required
 fetchDynamicVoucherRedemptions($id): \OpenAPI\Client\Model\WTDynamicVoucherRedemption[]
 ```
 
-Fetch redemptions
+Get Dynamic Voucher Campaign Redemptions
 
 ### Example
 
@@ -252,7 +252,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchDynamicVoucherRedemptions($id);
@@ -266,7 +266,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -362,7 +362,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$dynamic_voucher_id = NULL; // mixed
+$dynamic_voucher_id = 'dynamic_voucher_id_example'; // string
 $broadcast_scheduled_start_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $broadcast_scheduled_end_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
@@ -378,7 +378,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **dynamic_voucher_id** | [**mixed**](../Model/.md)|  | |
+| **dynamic_voucher_id** | **string**|  | |
 | **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
 | **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
@@ -405,7 +405,7 @@ No authorization required
 restoreDynamicVoucherCampaign($campaign_id): \OpenAPI\Client\Model\DynamicVoucher
 ```
 
-Restore dynamic voucher campaign
+Restore Dynamic Voucher Campaign
 
 ### Example
 
@@ -420,7 +420,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->restoreDynamicVoucherCampaign($campaign_id);
@@ -434,7 +434,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -459,7 +459,7 @@ No authorization required
 saveDynamicVoucher($id, $wt_dynamic_voucher_update_params): \OpenAPI\Client\Model\WTDynamicVoucher
 ```
 
-Update dynamic voucher
+Update Dynamic Voucher Campaign
 
 ### Example
 
@@ -474,7 +474,7 @@ $apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_dynamic_voucher_update_params = new \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams(); // \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams
 
 try {
@@ -489,7 +489,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_dynamic_voucher_update_params** | [**\OpenAPI\Client\Model\WTDynamicVoucherUpdateParams**](../Model/WTDynamicVoucherUpdateParams.md)|  | |
 
 ### Return type

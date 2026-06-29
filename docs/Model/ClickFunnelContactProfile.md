@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **last_name** | **string** |  |
 **address** | **string** |  |
 **city** | **string** |  |
-**country** | **string** |  | [optional]
-**state** | **string** |  | [optional]
+**country** | **mixed** |  | [optional]
+**state** | **mixed** |  | [optional]
 **zip** | **string** |  |
 **email** | **string** |  |
 **phone** | **string** |  |
@@ -35,8 +35,8 @@ Name | Type | Description | Notes
 **age_range_upper** | **mixed** |  | [optional]
 **action_score** | **mixed** |  | [optional]
 **known_ltv** | **string** |  |
-**tags** | **mixed[]** |  |
-**time_zone** | **string** |  | [optional]
+**tags** | **mixed** |  |
+**time_zone** | **mixed** |  | [optional]
 **lists_names** | **string** |  | [optional]
 **globally_unsubscribed** | **bool** |  |
 

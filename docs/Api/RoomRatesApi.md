@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveRoomRate()**](RoomRatesApi.md#archiveRoomRate) | **DELETE** /v2/roomRates/{id} | Archive room rate |
-| [**createRoomRate()**](RoomRatesApi.md#createRoomRate) | **POST** /v2/roomRates | Create room rate |
-| [**fetchAllRoomRates()**](RoomRatesApi.md#fetchAllRoomRates) | **GET** /v2/roomRates/all | Fetch all room rates |
-| [**restoreRoomRate()**](RoomRatesApi.md#restoreRoomRate) | **PATCH** /v2/roomRates/{id} | Restore room rate |
-| [**updateRoomRate()**](RoomRatesApi.md#updateRoomRate) | **PUT** /v2/roomRates/{id} | Update room rate |
+| [**archiveRoomRate()**](RoomRatesApi.md#archiveRoomRate) | **DELETE** /v2/roomRates/{id} | Archive Room &amp; Rate |
+| [**createRoomRate()**](RoomRatesApi.md#createRoomRate) | **POST** /v2/roomRates | Create Room &amp; Rate |
+| [**fetchAllRoomRates()**](RoomRatesApi.md#fetchAllRoomRates) | **GET** /v2/roomRates/all | Get all Rooms &amp; Rates |
+| [**restoreRoomRate()**](RoomRatesApi.md#restoreRoomRate) | **PATCH** /v2/roomRates/{id} | Restore Room &amp; Rate |
+| [**updateRoomRate()**](RoomRatesApi.md#updateRoomRate) | **PUT** /v2/roomRates/{id} | Update Room &amp; Rate |
 
 
 ## `archiveRoomRate()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveRoomRate($id): \OpenAPI\Client\Model\RoomRate
 ```
 
-Archive room rate
+Archive Room & Rate
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\RoomRatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveRoomRate($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createRoomRate($wt_room_rate_create_params): \OpenAPI\Client\Model\RoomRate
 ```
 
-Create room rate
+Create Room & Rate
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllRoomRates($is_archive_included): mixed
 ```
 
-Fetch all room rates
+Get all Rooms & Rates
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreRoomRate($id): \OpenAPI\Client\Model\RoomRate
 ```
 
-Restore room rate
+Restore Room & Rate
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\RoomRatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreRoomRate($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateRoomRate($id, $wt_room_rate_update_params): \OpenAPI\Client\Model\RoomRate
 ```
 
-Update room rate
+Update Room & Rate
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\RoomRatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_room_rate_update_params = new \OpenAPI\Client\Model\WTRoomRateUpdateParams(); // \OpenAPI\Client\Model\WTRoomRateUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_room_rate_update_params** | [**\OpenAPI\Client\Model\WTRoomRateUpdateParams**](../Model/WTRoomRateUpdateParams.md)|  | |
 
 ### Return type

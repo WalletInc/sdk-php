@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **category** | **string** |  |
 **icon_name** | **string** |  |
 **description** | **string** |  |
-**plans** | [**\OpenAPI\Client\Model\Plan[]**](Plan.md) |  |
+**plans** | **mixed** |  |
 **is_hourly** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

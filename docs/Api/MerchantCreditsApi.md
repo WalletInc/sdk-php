@@ -4,16 +4,16 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveMerchantCredit()**](MerchantCreditsApi.md#archiveMerchantCredit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive merchant credit |
-| [**createMerchantCredit()**](MerchantCreditsApi.md#createMerchantCredit) | **POST** /v2/payment/merchantcredit | Create merchant credit |
-| [**fetchMerchantCreditById()**](MerchantCreditsApi.md#fetchMerchantCreditById) | **GET** /v2/payment/merchantcredit/{id} | Fetch merchant credit |
-| [**fetchMerchantCreditCount()**](MerchantCreditsApi.md#fetchMerchantCreditCount) | **GET** /v2/payment/merchantcredit/count | Fetch all active merchant credits |
-| [**fetchMerchantCreditHistoryLog()**](MerchantCreditsApi.md#fetchMerchantCreditHistoryLog) | **POST** /v2/payment/merchantcredit/history/log | Fetch history |
-| [**fetchMerchantCreditRedemptionLog()**](MerchantCreditsApi.md#fetchMerchantCreditRedemptionLog) | **POST** /v2/payment/merchantcredit/redemption/log | Fetch redemption log |
-| [**fetchMerchantCreditsByPage()**](MerchantCreditsApi.md#fetchMerchantCreditsByPage) | **POST** /v2/payment/merchantcredit/page | Fetch merchant credits by page |
-| [**restoreMerchantCredit()**](MerchantCreditsApi.md#restoreMerchantCredit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore merchant credit |
-| [**searchMerchantCredits()**](MerchantCreditsApi.md#searchMerchantCredits) | **POST** /v2/payment/merchantcredit/search | Search for merchant credits |
-| [**updateMerchantCredit()**](MerchantCreditsApi.md#updateMerchantCredit) | **PUT** /v2/payment/merchantcredit/{id} | Update merchant credit |
+| [**archiveMerchantCredit()**](MerchantCreditsApi.md#archiveMerchantCredit) | **DELETE** /v2/payment/merchantcredit/{id} | Archive Merchant Credit |
+| [**createMerchantCredit()**](MerchantCreditsApi.md#createMerchantCredit) | **POST** /v2/payment/merchantcredit | Create Merchant Credit |
+| [**fetchMerchantCreditById()**](MerchantCreditsApi.md#fetchMerchantCreditById) | **GET** /v2/payment/merchantcredit/{id} | Get Merchant Credit |
+| [**fetchMerchantCreditCount()**](MerchantCreditsApi.md#fetchMerchantCreditCount) | **GET** /v2/payment/merchantcredit/count | Count all Merchant Credits |
+| [**fetchMerchantCreditHistoryLog()**](MerchantCreditsApi.md#fetchMerchantCreditHistoryLog) | **POST** /v2/payment/merchantcredit/history/log | Get history |
+| [**fetchMerchantCreditRedemptionLog()**](MerchantCreditsApi.md#fetchMerchantCreditRedemptionLog) | **POST** /v2/payment/merchantcredit/redemption/log | Get redemption log |
+| [**fetchMerchantCreditsByPage()**](MerchantCreditsApi.md#fetchMerchantCreditsByPage) | **POST** /v2/payment/merchantcredit/page | Get Merchant Credits |
+| [**restoreMerchantCredit()**](MerchantCreditsApi.md#restoreMerchantCredit) | **PATCH** /v2/payment/merchantcredit/{id} | Restore Merchant Credit |
+| [**searchMerchantCredits()**](MerchantCreditsApi.md#searchMerchantCredits) | **POST** /v2/payment/merchantcredit/search | Search for Merchant Credits with Member ID |
+| [**updateMerchantCredit()**](MerchantCreditsApi.md#updateMerchantCredit) | **PUT** /v2/payment/merchantcredit/{id} | Update Merchant Credit |
 
 
 ## `archiveMerchantCredit()`
@@ -22,7 +22,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveMerchantCredit($id): \OpenAPI\Client\Model\WTMerchantCredit
 ```
 
-Archive merchant credit
+Archive Merchant Credit
 
 ### Example
 
@@ -37,7 +37,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantCreditsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveMerchantCredit($id);
@@ -51,7 +51,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -76,7 +76,7 @@ No authorization required
 createMerchantCredit($wt_merchant_credit_creation_params): \OpenAPI\Client\Model\WTMerchantCredit
 ```
 
-Create merchant credit
+Create Merchant Credit
 
 ### Example
 
@@ -130,7 +130,7 @@ No authorization required
 fetchMerchantCreditById($id): \OpenAPI\Client\Model\WTMerchantCredit
 ```
 
-Fetch merchant credit
+Get Merchant Credit
 
 ### Example
 
@@ -145,7 +145,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantCreditsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchMerchantCreditById($id);
@@ -159,7 +159,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -184,7 +184,7 @@ No authorization required
 fetchMerchantCreditCount(): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
-Fetch all active merchant credits
+Count all Merchant Credits
 
 ### Example
 
@@ -235,7 +235,7 @@ No authorization required
 fetchMerchantCreditHistoryLog($pagination_request_with_id_and_without_sort_options): \OpenAPI\Client\Model\MSMerchantCreditHistoryPagination
 ```
 
-Fetch history
+Get history
 
 ### Example
 
@@ -289,7 +289,7 @@ No authorization required
 fetchMerchantCreditRedemptionLog($pagination_request_with_id_and_without_sort_options): \OpenAPI\Client\Model\MSMerchantCreditRedemptionPagination
 ```
 
-Fetch redemption log
+Get redemption log
 
 ### Example
 
@@ -343,7 +343,7 @@ No authorization required
 fetchMerchantCreditsByPage($pagination_request_with_sort_options): \OpenAPI\Client\Model\WTMerchantCredit[]
 ```
 
-Fetch merchant credits by page
+Get Merchant Credits
 
 ### Example
 
@@ -397,7 +397,7 @@ No authorization required
 restoreMerchantCredit($id): \OpenAPI\Client\Model\WTMerchantCredit
 ```
 
-Restore merchant credit
+Restore Merchant Credit
 
 ### Example
 
@@ -412,7 +412,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantCreditsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreMerchantCredit($id);
@@ -426,7 +426,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -451,7 +451,7 @@ No authorization required
 searchMerchantCredits($merchant_credit_search): \OpenAPI\Client\Model\PaginatedWTMerchantCredits
 ```
 
-Search for merchant credits
+Search for Merchant Credits with Member ID
 
 ### Example
 
@@ -505,7 +505,7 @@ No authorization required
 updateMerchantCredit($id, $pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number): \OpenAPI\Client\Model\WTMerchantCredit
 ```
 
-Update merchant credit
+Update Merchant Credit
 
 ### Example
 
@@ -520,7 +520,7 @@ $apiInstance = new OpenAPI\Client\Api\MerchantCreditsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number = new \OpenAPI\Client\Model\PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber(); // \OpenAPI\Client\Model\PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber
 
 try {
@@ -535,7 +535,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **pick_wt_merchant_credit_member_idor_credit_amount_or_mobile_number** | [**\OpenAPI\Client\Model\PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber**](../Model/PickWTMerchantCreditMemberIDOrCreditAmountOrMobileNumber.md)|  | |
 
 ### Return type

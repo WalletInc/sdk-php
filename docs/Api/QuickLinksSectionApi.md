@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveLinkBookSection()**](QuickLinksSectionApi.md#archiveLinkBookSection) | **DELETE** /v2/linkBookSection/{id} | Archive link book section |
-| [**createLinkBookSection()**](QuickLinksSectionApi.md#createLinkBookSection) | **POST** /v2/linkBookSection | Create link book section |
-| [**fetchAllLinkBookSections()**](QuickLinksSectionApi.md#fetchAllLinkBookSections) | **GET** /v2/linkBookSection/all | Fetch all link book sections |
-| [**restoreLinkBookSection()**](QuickLinksSectionApi.md#restoreLinkBookSection) | **PATCH** /v2/linkBookSection/{id} | Restore link book section |
-| [**updateLinkBookSection()**](QuickLinksSectionApi.md#updateLinkBookSection) | **PUT** /v2/linkBookSection/{id} | Update link book section |
+| [**archiveLinkBookSection()**](QuickLinksSectionApi.md#archiveLinkBookSection) | **DELETE** /v2/linkBookSection/{id} | Archive quick link section |
+| [**createLinkBookSection()**](QuickLinksSectionApi.md#createLinkBookSection) | **POST** /v2/linkBookSection | Create quick link section |
+| [**fetchAllLinkBookSections()**](QuickLinksSectionApi.md#fetchAllLinkBookSections) | **GET** /v2/linkBookSection/all | Get all quick link sections |
+| [**restoreLinkBookSection()**](QuickLinksSectionApi.md#restoreLinkBookSection) | **PATCH** /v2/linkBookSection/{id} | Restore quick link section |
+| [**updateLinkBookSection()**](QuickLinksSectionApi.md#updateLinkBookSection) | **PUT** /v2/linkBookSection/{id} | Update quick link section |
 
 
 ## `archiveLinkBookSection()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveLinkBookSection($id): \OpenAPI\Client\Model\LinkBookSection
 ```
 
-Archive link book section
+Archive quick link section
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksSectionApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveLinkBookSection($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -68,10 +68,10 @@ No authorization required
 ## `createLinkBookSection()`
 
 ```php
-createLinkBookSection($wt_link_book_section_create_params): \OpenAPI\Client\Model\LinkBookSection
+createLinkBookSection($wt_quick_link_section_create_params): \OpenAPI\Client\Model\LinkBookSection
 ```
 
-Create link book section
+Create quick link section
 
 ### Example
 
@@ -86,10 +86,10 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksSectionApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wt_link_book_section_create_params = new \OpenAPI\Client\Model\WTLinkBookSectionCreateParams(); // \OpenAPI\Client\Model\WTLinkBookSectionCreateParams
+$wt_quick_link_section_create_params = new \OpenAPI\Client\Model\WTQuickLinkSectionCreateParams(); // \OpenAPI\Client\Model\WTQuickLinkSectionCreateParams
 
 try {
-    $result = $apiInstance->createLinkBookSection($wt_link_book_section_create_params);
+    $result = $apiInstance->createLinkBookSection($wt_quick_link_section_create_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuickLinksSectionApi->createLinkBookSection: ', $e->getMessage(), PHP_EOL;
@@ -100,7 +100,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **wt_link_book_section_create_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionCreateParams**](../Model/WTLinkBookSectionCreateParams.md)|  | |
+| **wt_quick_link_section_create_params** | [**\OpenAPI\Client\Model\WTQuickLinkSectionCreateParams**](../Model/WTQuickLinkSectionCreateParams.md)|  | |
 
 ### Return type
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllLinkBookSections($is_archive_included): mixed
 ```
 
-Fetch all link book sections
+Get all quick link sections
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreLinkBookSection($id): \OpenAPI\Client\Model\LinkBookSection
 ```
 
-Restore link book section
+Restore quick link section
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksSectionApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreLinkBookSection($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -230,10 +230,10 @@ No authorization required
 ## `updateLinkBookSection()`
 
 ```php
-updateLinkBookSection($id, $wt_link_book_section_update_params): \OpenAPI\Client\Model\LinkBookSection
+updateLinkBookSection($id, $wt_quick_link_section_update_params): \OpenAPI\Client\Model\LinkBookSection
 ```
 
-Update link book section
+Update quick link section
 
 ### Example
 
@@ -248,11 +248,11 @@ $apiInstance = new OpenAPI\Client\Api\QuickLinksSectionApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
-$wt_link_book_section_update_params = new \OpenAPI\Client\Model\WTLinkBookSectionUpdateParams(); // \OpenAPI\Client\Model\WTLinkBookSectionUpdateParams
+$id = 'id_example'; // string
+$wt_quick_link_section_update_params = new \OpenAPI\Client\Model\WTQuickLinkSectionUpdateParams(); // \OpenAPI\Client\Model\WTQuickLinkSectionUpdateParams
 
 try {
-    $result = $apiInstance->updateLinkBookSection($id, $wt_link_book_section_update_params);
+    $result = $apiInstance->updateLinkBookSection($id, $wt_quick_link_section_update_params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuickLinksSectionApi->updateLinkBookSection: ', $e->getMessage(), PHP_EOL;
@@ -263,8 +263,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
-| **wt_link_book_section_update_params** | [**\OpenAPI\Client\Model\WTLinkBookSectionUpdateParams**](../Model/WTLinkBookSectionUpdateParams.md)|  | |
+| **id** | **string**|  | |
+| **wt_quick_link_section_update_params** | [**\OpenAPI\Client\Model\WTQuickLinkSectionUpdateParams**](../Model/WTQuickLinkSectionUpdateParams.md)|  | |
 
 ### Return type
 

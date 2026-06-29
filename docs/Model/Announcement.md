@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
-**subject** | **string** |  |
-**body** | **string** |  |
+**subject** | **mixed** |  |
+**body** | **mixed** |  |
 **severity** | **string** |  |
 **is_active** | **bool** |  |
 

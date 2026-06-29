@@ -4,19 +4,19 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archivePerformance()**](PerformancesApi.md#archivePerformance) | **DELETE** /v2/performances/{id} | Archive performance |
-| [**countClaimedComps()**](PerformancesApi.md#countClaimedComps) | **GET** /v2/performances/{id}/claimed/count | Count number claimed |
-| [**countRedeemedComps()**](PerformancesApi.md#countRedeemedComps) | **GET** /v2/performances/{id}/redeemed/count | Count number redeemed |
+| [**archivePerformance()**](PerformancesApi.md#archivePerformance) | **DELETE** /v2/performances/{id} | Archive Performance |
+| [**countClaimedComps()**](PerformancesApi.md#countClaimedComps) | **GET** /v2/performances/{id}/claimed/count | Count Performance&#39;s claimed Tickets |
+| [**countRedeemedComps()**](PerformancesApi.md#countRedeemedComps) | **GET** /v2/performances/{id}/redeemed/count | Count Performance&#39;s redeemed Tickets |
 | [**createPerformance()**](PerformancesApi.md#createPerformance) | **POST** /v2/performances | Create performance |
-| [**exportTickets()**](PerformancesApi.md#exportTickets) | **POST** /v2/performances/{id}/tickets/export | Update performance |
-| [**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Fetch all tickets |
-| [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Fetch all performances |
-| [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Fetch a single performance |
-| [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Fetch tickets by page |
-| [**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Update performance |
-| [**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore performance |
-| [**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance |
-| [**updatePerformance()**](PerformancesApi.md#updatePerformance) | **PUT** /v2/performances/{id} | Update performance |
+| [**exportTickets()**](PerformancesApi.md#exportTickets) | **POST** /v2/performances/{id}/tickets/export | Export Performance&#39;s Tickets |
+| [**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets |
+| [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Get all Performances |
+| [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Get Performance |
+| [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets |
+| [**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets |
+| [**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore Performance |
+| [**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings |
+| [**updatePerformance()**](PerformancesApi.md#updatePerformance) | **PUT** /v2/performances/{id} | Update Performance |
 
 
 ## `archivePerformance()`
@@ -25,7 +25,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archivePerformance($id): \OpenAPI\Client\Model\Performance
 ```
 
-Archive performance
+Archive Performance
 
 ### Example
 
@@ -40,7 +40,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archivePerformance($id);
@@ -54,7 +54,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -79,7 +79,7 @@ No authorization required
 countClaimedComps($id): \OpenAPI\Client\Model\CountClaimedComps200Response
 ```
 
-Count number claimed
+Count Performance's claimed Tickets
 
 ### Example
 
@@ -94,7 +94,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->countClaimedComps($id);
@@ -108,7 +108,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -133,7 +133,7 @@ No authorization required
 countRedeemedComps($id): \OpenAPI\Client\Model\CountClaimedComps200Response
 ```
 
-Count number redeemed
+Count Performance's redeemed Tickets
 
 ### Example
 
@@ -148,7 +148,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->countRedeemedComps($id);
@@ -162,7 +162,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -241,7 +241,7 @@ No authorization required
 exportTickets($id): \OpenAPI\Client\Model\Ticket[]
 ```
 
-Update performance
+Export Performance's Tickets
 
 ### Example
 
@@ -256,7 +256,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->exportTickets($id);
@@ -270,7 +270,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -295,7 +295,7 @@ No authorization required
 fetchAllPerformanceTickets($id, $is_archive_included): \OpenAPI\Client\Model\Ticket[]
 ```
 
-Fetch all tickets
+Get Performance's Tickets
 
 ### Example
 
@@ -310,7 +310,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $is_archive_included = True; // bool
 
 try {
@@ -325,7 +325,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
@@ -351,7 +351,7 @@ No authorization required
 fetchAllPerformances($is_archive_included): mixed
 ```
 
-Fetch all performances
+Get all Performances
 
 ### Example
 
@@ -405,7 +405,7 @@ No authorization required
 fetchPerformance($id): \OpenAPI\Client\Model\Performance
 ```
 
-Fetch a single performance
+Get Performance
 
 ### Example
 
@@ -420,7 +420,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchPerformance($id);
@@ -434,7 +434,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -459,7 +459,7 @@ No authorization required
 fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $sort_by, $sort_direction, $is_archive_included): \OpenAPI\Client\Model\FetchPerformanceTicketsPage200Response
 ```
 
-Fetch tickets by page
+Get Peformance's Tickets
 
 ### Example
 
@@ -474,13 +474,13 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$performance_id = NULL; // mixed
+$performance_id = 'performance_id_example'; // string
 $page_num = 3.4; // float
 $page_size = 3.4; // float
 $filter_comps = True; // bool
 $filter_claimed = True; // bool
-$sort_by = NULL; // mixed
-$sort_direction = NULL; // mixed
+$sort_by = new \OpenAPI\Client\Model\TicketSortKeys(); // TicketSortKeys
+$sort_direction = new \OpenAPI\Client\Model\SortDirection(); // SortDirection
 $is_archive_included = True; // bool
 
 try {
@@ -495,13 +495,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performance_id** | [**mixed**](../Model/.md)|  | |
+| **performance_id** | **string**|  | |
 | **page_num** | **float**|  | |
 | **page_size** | **float**|  | |
 | **filter_comps** | **bool**|  | [optional] |
 | **filter_claimed** | **bool**|  | [optional] |
-| **sort_by** | [**mixed**](../Model/.md)|  | [optional] |
-| **sort_direction** | [**mixed**](../Model/.md)|  | [optional] |
+| **sort_by** | [**TicketSortKeys**](../Model/.md)|  | [optional] |
+| **sort_direction** | [**SortDirection**](../Model/.md)|  | [optional] |
 | **is_archive_included** | **bool**|  | [optional] |
 
 ### Return type
@@ -527,7 +527,7 @@ No authorization required
 importTickets($id, $import_tickets_request): string
 ```
 
-Update performance
+Import Performance's Tickets
 
 ### Example
 
@@ -542,7 +542,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $import_tickets_request = new \OpenAPI\Client\Model\ImportTicketsRequest(); // \OpenAPI\Client\Model\ImportTicketsRequest
 
 try {
@@ -557,7 +557,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **import_tickets_request** | [**\OpenAPI\Client\Model\ImportTicketsRequest**](../Model/ImportTicketsRequest.md)|  | |
 
 ### Return type
@@ -583,7 +583,7 @@ No authorization required
 restorePerformance($id): \OpenAPI\Client\Model\Performance
 ```
 
-Restore performance
+Restore Performance
 
 ### Example
 
@@ -598,7 +598,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restorePerformance($id);
@@ -612,7 +612,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -637,7 +637,7 @@ No authorization required
 saveTicketSettings($id, $save_ticket_settings_request): \OpenAPI\Client\Model\Performance
 ```
 
-Update performance
+Update performance's Ticket Settings
 
 ### Example
 
@@ -652,7 +652,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $save_ticket_settings_request = new \OpenAPI\Client\Model\SaveTicketSettingsRequest(); // \OpenAPI\Client\Model\SaveTicketSettingsRequest
 
 try {
@@ -667,7 +667,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **save_ticket_settings_request** | [**\OpenAPI\Client\Model\SaveTicketSettingsRequest**](../Model/SaveTicketSettingsRequest.md)|  | |
 
 ### Return type
@@ -693,7 +693,7 @@ No authorization required
 updatePerformance($id, $wt_performance_update_params): \OpenAPI\Client\Model\Performance
 ```
 
-Update performance
+Update Performance
 
 ### Example
 
@@ -708,7 +708,7 @@ $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_performance_update_params = new \OpenAPI\Client\Model\WTPerformanceUpdateParams(); // \OpenAPI\Client\Model\WTPerformanceUpdateParams
 
 try {
@@ -723,7 +723,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_performance_update_params** | [**\OpenAPI\Client\Model\WTPerformanceUpdateParams**](../Model/WTPerformanceUpdateParams.md)|  | |
 
 ### Return type

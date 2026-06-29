@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchWalletItemFromWooCommerceTerminal()**](WooCommerceTerminalApi.md#fetchWalletItemFromWooCommerceTerminal) | **GET** /v2/pos/woocommerce/item/{itemID} | Fetch item |
+| [**fetchWalletItemFromWooCommerceTerminal()**](WooCommerceTerminalApi.md#fetchWalletItemFromWooCommerceTerminal) | **GET** /v2/pos/woocommerce/item/{itemID} | Get item |
 | [**redeemWalletItemFromWooCommerceTerminal()**](WooCommerceTerminalApi.md#redeemWalletItemFromWooCommerceTerminal) | **POST** /v2/pos/woocommerce/item/redeem/{itemID} | Redeem item |
 | [**refundWalletItemFromWooCommerceTerminal()**](WooCommerceTerminalApi.md#refundWalletItemFromWooCommerceTerminal) | **POST** /v2/pos/woocommerce/item/refund/{ledgerEntryID} | Refund transaction |
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchWalletItemFromWooCommerceTerminal($item_id): mixed
 ```
 
-Fetch item
+Get item
 
 ### Example
 

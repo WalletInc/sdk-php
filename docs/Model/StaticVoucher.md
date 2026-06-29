@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **campaign_id** | **string** |  |
 **member_id** | **string** |  | [optional]
 **cell_phone_number** | **string** |  | [optional]
@@ -26,15 +26,15 @@ Name | Type | Description | Notes
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |
-**authorized_amount_decimal** | **string** |  |
-**authorized_amount_string** | **string** |  |
-**offer_amount_cents_decimal** | **string** |  |
-**offer_amount_cents_string** | **string** |  |
-**redeemed_amount_decimal** | **string** |  |
-**redeemed_amount_string** | **string** |  |
-**date_time_redeemed** | **\DateTime** |  | [optional]
-**date_time_refunded** | **\DateTime** |  | [optional]
-**date_time_last_viewed** | **\DateTime** |  | [optional]
-**reason_invalid** | **string** |  | [optional]
+**authorized_amount_decimal** | **mixed** |  |
+**authorized_amount_string** | **mixed** |  |
+**offer_amount_cents_decimal** | **mixed** |  |
+**offer_amount_cents_string** | **mixed** |  |
+**redeemed_amount_decimal** | **mixed** |  |
+**redeemed_amount_string** | **mixed** |  |
+**date_time_redeemed** | **mixed** |  | [optional]
+**date_time_refunded** | **mixed** |  | [optional]
+**date_time_last_viewed** | **mixed** |  | [optional]
+**reason_invalid** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

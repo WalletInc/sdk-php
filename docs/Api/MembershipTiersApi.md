@@ -4,15 +4,15 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveMembershipTier()**](MembershipTiersApi.md#archiveMembershipTier) | **DELETE** /v2/membership/tier/{id} | Archive tier |
-| [**createMembershipTier()**](MembershipTiersApi.md#createMembershipTier) | **POST** /v2/membership/tier | Create tier |
-| [**fetchAllMembershipTiers()**](MembershipTiersApi.md#fetchAllMembershipTiers) | **GET** /v2/membership/tier/all | Fetch all tiers |
-| [**fetchAllMembershipTiersWithMemberCount()**](MembershipTiersApi.md#fetchAllMembershipTiersWithMemberCount) | **GET** /v2/membership/tier/allWithMemberCount | Fetch all tiers with member count |
-| [**fetchMembershipTierById()**](MembershipTiersApi.md#fetchMembershipTierById) | **GET** /v2/membership/tier/{id} | Fetch tier |
-| [**fetchMembershipTierHistoryLog()**](MembershipTiersApi.md#fetchMembershipTierHistoryLog) | **POST** /v2/membership/tier/history/log | Fetch history |
-| [**fetchMembershipTierRedemptionLog()**](MembershipTiersApi.md#fetchMembershipTierRedemptionLog) | **POST** /v2/membership/tier/redemption/log | Fetch redemption log |
-| [**restoreMembershipTier()**](MembershipTiersApi.md#restoreMembershipTier) | **PATCH** /v2/membership/tier/{id} | Restore tier |
-| [**updateMembershipTier()**](MembershipTiersApi.md#updateMembershipTier) | **PUT** /v2/membership/tier/{id} | Update tier |
+| [**archiveMembershipTier()**](MembershipTiersApi.md#archiveMembershipTier) | **DELETE** /v2/membership/tier/{id} | Archive Membership Tier |
+| [**createMembershipTier()**](MembershipTiersApi.md#createMembershipTier) | **POST** /v2/membership/tier | Create Membership Tier |
+| [**fetchAllMembershipTiers()**](MembershipTiersApi.md#fetchAllMembershipTiers) | **GET** /v2/membership/tier/all | Get all Membership Tiers |
+| [**fetchAllMembershipTiersWithMemberCount()**](MembershipTiersApi.md#fetchAllMembershipTiersWithMemberCount) | **GET** /v2/membership/tier/allWithMemberCount | Get all Membership Tiers with member count |
+| [**fetchMembershipTierById()**](MembershipTiersApi.md#fetchMembershipTierById) | **GET** /v2/membership/tier/{id} | Get Membership Tier |
+| [**fetchMembershipTierHistoryLog()**](MembershipTiersApi.md#fetchMembershipTierHistoryLog) | **POST** /v2/membership/tier/history/log | Get Membership Tier history |
+| [**fetchMembershipTierRedemptionLog()**](MembershipTiersApi.md#fetchMembershipTierRedemptionLog) | **POST** /v2/membership/tier/redemption/log | Get Membership Tier redemption log |
+| [**restoreMembershipTier()**](MembershipTiersApi.md#restoreMembershipTier) | **PATCH** /v2/membership/tier/{id} | Restore Membership Tier |
+| [**updateMembershipTier()**](MembershipTiersApi.md#updateMembershipTier) | **PUT** /v2/membership/tier/{id} | Update Membership Tier |
 
 
 ## `archiveMembershipTier()`
@@ -21,7 +21,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveMembershipTier($id): \OpenAPI\Client\Model\WTMembershipTier
 ```
 
-Archive tier
+Archive Membership Tier
 
 ### Example
 
@@ -36,7 +36,7 @@ $apiInstance = new OpenAPI\Client\Api\MembershipTiersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveMembershipTier($id);
@@ -50,7 +50,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -75,7 +75,7 @@ No authorization required
 createMembershipTier($wt_membership_tier_creation_params): \OpenAPI\Client\Model\WTMembershipTier
 ```
 
-Create tier
+Create Membership Tier
 
 ### Example
 
@@ -129,7 +129,7 @@ No authorization required
 fetchAllMembershipTiers($is_archive_included): \OpenAPI\Client\Model\WTMembershipTier[]
 ```
 
-Fetch all tiers
+Get all Membership Tiers
 
 ### Example
 
@@ -183,7 +183,7 @@ No authorization required
 fetchAllMembershipTiersWithMemberCount($is_archive_included): \OpenAPI\Client\Model\WTMembershipTierWithMemberCount[]
 ```
 
-Fetch all tiers with member count
+Get all Membership Tiers with member count
 
 ### Example
 
@@ -237,7 +237,7 @@ No authorization required
 fetchMembershipTierById($id): \OpenAPI\Client\Model\WTMembershipTier
 ```
 
-Fetch tier
+Get Membership Tier
 
 ### Example
 
@@ -252,7 +252,7 @@ $apiInstance = new OpenAPI\Client\Api\MembershipTiersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchMembershipTierById($id);
@@ -266,7 +266,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -291,7 +291,7 @@ No authorization required
 fetchMembershipTierHistoryLog($pagination_request_with_id_and_without_sort_options): \OpenAPI\Client\Model\MSMembershipTierHistoryPagination
 ```
 
-Fetch history
+Get Membership Tier history
 
 ### Example
 
@@ -345,7 +345,7 @@ No authorization required
 fetchMembershipTierRedemptionLog($pagination_request_with_id_and_without_sort_options): \OpenAPI\Client\Model\MSMembershipTierRedemptionPagination
 ```
 
-Fetch redemption log
+Get Membership Tier redemption log
 
 ### Example
 
@@ -399,7 +399,7 @@ No authorization required
 restoreMembershipTier($id): \OpenAPI\Client\Model\WTMembershipTier
 ```
 
-Restore tier
+Restore Membership Tier
 
 ### Example
 
@@ -453,7 +453,7 @@ No authorization required
 updateMembershipTier($id, $wt_membership_tier_update_params): \OpenAPI\Client\Model\WTMembershipTier
 ```
 
-Update tier
+Update Membership Tier
 
 ### Example
 
@@ -468,7 +468,7 @@ $apiInstance = new OpenAPI\Client\Api\MembershipTiersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_membership_tier_update_params = new \OpenAPI\Client\Model\WTMembershipTierUpdateParams(); // \OpenAPI\Client\Model\WTMembershipTierUpdateParams
 
 try {
@@ -483,7 +483,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_membership_tier_update_params** | [**\OpenAPI\Client\Model\WTMembershipTierUpdateParams**](../Model/WTMembershipTierUpdateParams.md)|  | |
 
 ### Return type

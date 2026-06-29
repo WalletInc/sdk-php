@@ -4,36 +4,36 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date** | **\DateTime** |  |
-**expiration_date** | **\DateTime** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
-**title** | **string** |  |
-**notes** | **string** |  |
-**merchants_reference_id** | **string** |  | [optional]
-**valid_only_at_pos_register_ids** | **string[]** |  | [optional]
+**start_date** | **mixed** |  |
+**expiration_date** | **mixed** |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
+**title** | **mixed** |  |
+**notes** | **mixed** |  |
+**merchants_reference_id** | **mixed** |  | [optional]
+**valid_only_at_pos_register_ids** | **mixed** |  | [optional]
 **payment_design_id** | **string** |  |
 **employee_id** | **string** |  |
 **merchant_id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**is_active** | **bool** |  |
-**starting_value** | **int** |  |
-**max_budget** | **int** |  |
-**temporal_decrease_amount** | **int** |  |
-**temporal_decrease_frequency** | **int** |  |
-**numerical_decrease_amount** | **int** |  | [optional]
-**numerical_decrease_frequency** | **int** |  | [optional]
-**temporal_decrease_amount_decimal** | **string** |  |
-**temporal_decrease_amount_string** | **string** |  |
-**numerical_decrease_amount_decimal** | **string** |  |
-**numerical_decrease_amount_string** | **string** |  |
-**starting_value_decimal** | **string** |  |
-**starting_value_string** | **string** |  |
-**max_budget_decimal** | **string** |  |
-**max_budget_string** | **string** |  |
-**current_value** | **float** |  |
-**current_value_decimal** | **string** |  |
-**current_value_string** | **string** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**is_active** | **mixed** |  |
+**starting_value** | **mixed** |  |
+**max_budget** | **mixed** |  |
+**temporal_decrease_amount** | **mixed** |  |
+**temporal_decrease_frequency** | **mixed** |  |
+**numerical_decrease_amount** | **mixed** |  | [optional]
+**numerical_decrease_frequency** | **mixed** |  | [optional]
+**temporal_decrease_amount_decimal** | **mixed** |  |
+**temporal_decrease_amount_string** | **mixed** |  |
+**numerical_decrease_amount_decimal** | **mixed** |  |
+**numerical_decrease_amount_string** | **mixed** |  |
+**starting_value_decimal** | **mixed** |  |
+**starting_value_string** | **mixed** |  |
+**max_budget_decimal** | **mixed** |  |
+**max_budget_string** | **mixed** |  |
+**current_value** | **mixed** |  |
+**current_value_decimal** | **mixed** |  |
+**current_value_string** | **mixed** |  |
 **status** | [**\OpenAPI\Client\Model\WTDynamicVoucherSummaryStatus**](WTDynamicVoucherSummaryStatus.md) |  |
 **temporal_decrease_frequency_type** | [**\OpenAPI\Client\Model\DynamicVoucherTemporalDecreaseFrequencyType**](DynamicVoucherTemporalDecreaseFrequencyType.md) |  |
 **summary** | [**\OpenAPI\Client\Model\WTDynamicVoucherSummary**](WTDynamicVoucherSummary.md) |  |

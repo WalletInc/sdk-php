@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchAllCountries()**](CountriesApi.md#fetchAllCountries) | **GET** /system/countries/all | Fetch all countries |
+| [**fetchAllCountries()**](CountriesApi.md#fetchAllCountries) | **GET** /system/countries/all | Get all Countries with ISO abbreviations &amp; Telephone country code prefixes |
 
 
 ## `fetchAllCountries()`
@@ -13,7 +13,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchAllCountries(): \OpenAPI\Client\Model\FetchAllCountries200ResponseInner[]
 ```
 
-Fetch all countries
+Get all Countries with ISO abbreviations & Telephone country code prefixes
 
 ### Example
 

@@ -4,13 +4,13 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveVirtualBusinessCard()**](VirtualBusinessCardApi.md#archiveVirtualBusinessCard) | **DELETE** /v2/virtualBusinessCard/{id} | Archive VirtualBusinessCard |
-| [**createVirtualBusinessCard()**](VirtualBusinessCardApi.md#createVirtualBusinessCard) | **POST** /v2/virtualBusinessCard | Create VirtualBusinessCard |
-| [**fetchAllVirtualBusinessCards()**](VirtualBusinessCardApi.md#fetchAllVirtualBusinessCards) | **GET** /v2/virtualBusinessCard/all | Fetch all VirtualBusinessCards |
-| [**fetchVirtualBusinessCard()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCard) | **GET** /v2/virtualBusinessCard/{id} | Fetch virtual business card |
-| [**fetchVirtualBusinessCardRequests()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Fetch requests |
-| [**restoreVirtualBusinessCard()**](VirtualBusinessCardApi.md#restoreVirtualBusinessCard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore VirtualBusinessCard |
-| [**updateVirtualBusinessCard()**](VirtualBusinessCardApi.md#updateVirtualBusinessCard) | **PUT** /v2/virtualBusinessCard/{id} | Update VirtualBusinessCard |
+| [**archiveVirtualBusinessCard()**](VirtualBusinessCardApi.md#archiveVirtualBusinessCard) | **DELETE** /v2/virtualBusinessCard/{id} | Archive Virtual Business Card |
+| [**createVirtualBusinessCard()**](VirtualBusinessCardApi.md#createVirtualBusinessCard) | **POST** /v2/virtualBusinessCard | Create Virtual Business Card |
+| [**fetchAllVirtualBusinessCards()**](VirtualBusinessCardApi.md#fetchAllVirtualBusinessCards) | **GET** /v2/virtualBusinessCard/all | Get all Virtual Business Cards |
+| [**fetchVirtualBusinessCard()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCard) | **GET** /v2/virtualBusinessCard/{id} | Get Virtual Business Card |
+| [**fetchVirtualBusinessCardRequests()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Get Virtual Business Card traffic |
+| [**restoreVirtualBusinessCard()**](VirtualBusinessCardApi.md#restoreVirtualBusinessCard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore Virtual Business Card |
+| [**updateVirtualBusinessCard()**](VirtualBusinessCardApi.md#updateVirtualBusinessCard) | **PUT** /v2/virtualBusinessCard/{id} | Update Virtual Business Card |
 
 
 ## `archiveVirtualBusinessCard()`
@@ -19,7 +19,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveVirtualBusinessCard($id): \OpenAPI\Client\Model\VirtualBusinessCard
 ```
 
-Archive VirtualBusinessCard
+Archive Virtual Business Card
 
 ### Example
 
@@ -34,7 +34,7 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveVirtualBusinessCard($id);
@@ -48,7 +48,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 createVirtualBusinessCard($wt_virtual_business_card_create_params): \OpenAPI\Client\Model\VirtualBusinessCard
 ```
 
-Create VirtualBusinessCard
+Create Virtual Business Card
 
 ### Example
 
@@ -127,7 +127,7 @@ No authorization required
 fetchAllVirtualBusinessCards($is_archive_included): mixed
 ```
 
-Fetch all VirtualBusinessCards
+Get all Virtual Business Cards
 
 ### Example
 
@@ -181,7 +181,7 @@ No authorization required
 fetchVirtualBusinessCard($id): \OpenAPI\Client\Model\VirtualBusinessCard
 ```
 
-Fetch virtual business card
+Get Virtual Business Card
 
 ### Example
 
@@ -196,7 +196,7 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchVirtualBusinessCard($id);
@@ -210,7 +210,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -235,7 +235,7 @@ No authorization required
 fetchVirtualBusinessCardRequests($id): \OpenAPI\Client\Model\WalletPageView[]
 ```
 
-Fetch requests
+Get Virtual Business Card traffic
 
 ### Example
 
@@ -250,7 +250,7 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchVirtualBusinessCardRequests($id);
@@ -264,7 +264,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -289,7 +289,7 @@ No authorization required
 restoreVirtualBusinessCard($id): \OpenAPI\Client\Model\VirtualBusinessCard
 ```
 
-Restore VirtualBusinessCard
+Restore Virtual Business Card
 
 ### Example
 
@@ -304,7 +304,7 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreVirtualBusinessCard($id);
@@ -318,7 +318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -343,7 +343,7 @@ No authorization required
 updateVirtualBusinessCard($id, $wt_virtual_business_card_update_params): \OpenAPI\Client\Model\VirtualBusinessCard
 ```
 
-Update VirtualBusinessCard
+Update Virtual Business Card
 
 ### Example
 
@@ -358,7 +358,7 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_virtual_business_card_update_params = new \OpenAPI\Client\Model\WTVirtualBusinessCardUpdateParams(); // \OpenAPI\Client\Model\WTVirtualBusinessCardUpdateParams
 
 try {
@@ -373,7 +373,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_virtual_business_card_update_params** | [**\OpenAPI\Client\Model\WTVirtualBusinessCardUpdateParams**](../Model/WTVirtualBusinessCardUpdateParams.md)|  | |
 
 ### Return type

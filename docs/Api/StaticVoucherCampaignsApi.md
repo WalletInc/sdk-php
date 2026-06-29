@@ -4,27 +4,26 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive static voucher campaign |
-| [**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count loaded vouchers |
-| [**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers |
-| [**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create static voucher campaign |
-| [**createStaticVoucherCampaignFromCSV()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignFromCSV) | **POST** /v2/payment/staticVoucherCampaign/csv | Import static voucher campaign |
-| [**createStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignWithVoucher) | **POST** /v2/payment/staticVoucherCampaign/voucher | Create static voucher campaign with voucher |
-| [**duplicateStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#duplicateStaticVoucherCampaignById) | **POST** /v2/payment/staticVoucherCampaign/duplicate/{campaignID} | Duplicate static voucher campaign |
-| [**fetchPerformanceOverview()**](StaticVoucherCampaignsApi.md#fetchPerformanceOverview) | **GET** /v2/payment/staticVoucherCampaign/overview/performance/{campaignID} | Fetch performance overview |
-| [**fetchReachStatsOfAllStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfAllStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/reach/all | Get the reach statistics of all the static voucher campaigns |
-| [**fetchReachStatsOfIndividualStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfIndividualStaticVoucherCampaign) | **GET** /v2/payment/staticVoucherCampaign/reach/{staticVoucherCampaignID} | Get the reach statistics of an individual static voucher campaign |
-| [**fetchStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaignById) | **GET** /v2/payment/staticVoucherCampaign/{id} | Fetch static voucher campaign |
-| [**fetchStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Fetches all static vouchers campaigns |
-| [**fetchStaticVouchers()**](StaticVoucherCampaignsApi.md#fetchStaticVouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Fetch static vouchers |
-| [**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Fetch static vouchers by page |
-| [**fetchViews()**](StaticVoucherCampaignsApi.md#fetchViews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Fetch views |
-| [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Fetch redeemed vouchers |
-| [**previewMessages()**](StaticVoucherCampaignsApi.md#previewMessages) | **PUT** /v2/payment/staticVoucherCampaign/preview/{campaignID} | Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance. |
-| [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview static vouchers by page |
-| [**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore static voucher campaign |
-| [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update static voucher campaign |
-| [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update static voucher campaign with voucher |
+| [**archiveStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#archiveStaticVoucherCampaign) | **DELETE** /v2/payment/staticVoucherCampaign/{campaignID} | Archive Static Voucher Campaign |
+| [**countVouchersLoaded()**](StaticVoucherCampaignsApi.md#countVouchersLoaded) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/loaded/{campaignID} | Count vouchers in Static Vouchers Campaign |
+| [**countVouchersRedeemed()**](StaticVoucherCampaignsApi.md#countVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/count/vouchers/redeemed/{campaignID} | Count redeemed vouchers in Static Vouchers Campaign |
+| [**createStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaign) | **POST** /v2/payment/staticVoucherCampaign | Create Static Voucher Campaign |
+| [**createStaticVoucherCampaignFromCSV()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignFromCSV) | **POST** /v2/payment/staticVoucherCampaign/csv | Import Static Voucher Campaign |
+| [**createStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#createStaticVoucherCampaignWithVoucher) | **POST** /v2/payment/staticVoucherCampaign/voucher | Create Static Voucher Campaign with single voucher |
+| [**duplicateStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#duplicateStaticVoucherCampaignById) | **POST** /v2/payment/staticVoucherCampaign/duplicate/{campaignID} | Duplicate Static Vouchers Campaign |
+| [**fetchPerformanceOverview()**](StaticVoucherCampaignsApi.md#fetchPerformanceOverview) | **GET** /v2/payment/staticVoucherCampaign/overview/performance/{campaignID} | Get Static Voucher Campaign performance overview |
+| [**fetchReachStatsOfAllStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfAllStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/reach/all | Get the reach statistics of all Static Voucher Campaigns |
+| [**fetchReachStatsOfIndividualStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#fetchReachStatsOfIndividualStaticVoucherCampaign) | **GET** /v2/payment/staticVoucherCampaign/reach/{staticVoucherCampaignID} | Get the reach statistics of a single Static Voucher Campaign |
+| [**fetchStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaignById) | **GET** /v2/payment/staticVoucherCampaign/{id} | Get Static Vouchers Campaign |
+| [**fetchStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Get all Static Vouchers Campaigns |
+| [**fetchStaticVouchers()**](StaticVoucherCampaignsApi.md#fetchStaticVouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Get vouchers in Static Vouchers Campaign |
+| [**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get vouchers in Static Vouchers Campaign |
+| [**fetchViews()**](StaticVoucherCampaignsApi.md#fetchViews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Get Static Vouchers Campaign traffic |
+| [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Get redeemed vouchers in Static Vouchers Campaign |
+| [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | View vouchers in Static Voucher Campaign |
+| [**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore Static Voucher Campaign |
+| [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update Static Voucher Campaign |
+| [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update Static Voucher Campaign with single voucher |
 
 
 ## `archiveStaticVoucherCampaign()`
@@ -33,7 +32,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
 ```
 
-Archive static voucher campaign
+Archive Static Voucher Campaign
 
 ### Example
 
@@ -48,7 +47,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->archiveStaticVoucherCampaign($campaign_id);
@@ -62,7 +61,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -87,7 +86,7 @@ No authorization required
 countVouchersLoaded($campaign_id): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
-Count loaded vouchers
+Count vouchers in Static Vouchers Campaign
 
 ### Example
 
@@ -102,7 +101,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->countVouchersLoaded($campaign_id);
@@ -116,7 +115,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -141,7 +140,7 @@ No authorization required
 countVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\FetchMembersCount200Response
 ```
 
-Count redeemed vouchers
+Count redeemed vouchers in Static Vouchers Campaign
 
 ### Example
 
@@ -156,7 +155,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->countVouchersRedeemed($campaign_id);
@@ -170,7 +169,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -195,7 +194,7 @@ No authorization required
 createStaticVoucherCampaign($create_static_voucher_campaign): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Create static voucher campaign
+Create Static Voucher Campaign
 
 ### Example
 
@@ -249,7 +248,7 @@ No authorization required
 createStaticVoucherCampaignFromCSV($create_static_voucher_campaign_with_voucher_with_csv): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Import static voucher campaign
+Import Static Voucher Campaign
 
 ### Example
 
@@ -303,7 +302,7 @@ No authorization required
 createStaticVoucherCampaignWithVoucher($body): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Create static voucher campaign with voucher
+Create Static Voucher Campaign with single voucher
 
 ### Example
 
@@ -357,7 +356,7 @@ No authorization required
 duplicateStaticVoucherCampaignById($campaign_id): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Duplicate static voucher campaign
+Duplicate Static Vouchers Campaign
 
 ### Example
 
@@ -372,7 +371,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->duplicateStaticVoucherCampaignById($campaign_id);
@@ -386,7 +385,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -411,7 +410,7 @@ No authorization required
 fetchPerformanceOverview($campaign_id): object
 ```
 
-Fetch performance overview
+Get Static Voucher Campaign performance overview
 
 ### Example
 
@@ -426,7 +425,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->fetchPerformanceOverview($campaign_id);
@@ -440,7 +439,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -465,7 +464,7 @@ No authorization required
 fetchReachStatsOfAllStaticVoucherCampaigns($broadcast_scheduled_start_at, $broadcast_scheduled_end_at): \OpenAPI\Client\Model\ReachPerformanceStats
 ```
 
-Get the reach statistics of all the static voucher campaigns
+Get the reach statistics of all Static Voucher Campaigns
 
 ### Example
 
@@ -521,7 +520,7 @@ No authorization required
 fetchReachStatsOfIndividualStaticVoucherCampaign($static_voucher_campaign_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at): \OpenAPI\Client\Model\ReachPerformanceStats
 ```
 
-Get the reach statistics of an individual static voucher campaign
+Get the reach statistics of a single Static Voucher Campaign
 
 ### Example
 
@@ -536,7 +535,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$static_voucher_campaign_id = NULL; // mixed
+$static_voucher_campaign_id = 'static_voucher_campaign_id_example'; // string
 $broadcast_scheduled_start_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $broadcast_scheduled_end_at = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 
@@ -552,7 +551,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **static_voucher_campaign_id** | [**mixed**](../Model/.md)|  | |
+| **static_voucher_campaign_id** | **string**|  | |
 | **broadcast_scheduled_start_at** | **\DateTime**|  | [optional] |
 | **broadcast_scheduled_end_at** | **\DateTime**|  | [optional] |
 
@@ -579,7 +578,7 @@ No authorization required
 fetchStaticVoucherCampaignById($id): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Fetch static voucher campaign
+Get Static Vouchers Campaign
 
 ### Example
 
@@ -594,7 +593,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->fetchStaticVoucherCampaignById($id);
@@ -608,7 +607,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -633,7 +632,7 @@ No authorization required
 fetchStaticVoucherCampaigns($is_archive_included, $source_id): \OpenAPI\Client\Model\WTStaticVoucherCampaign[]
 ```
 
-Fetches all static vouchers campaigns
+Get all Static Vouchers Campaigns
 
 ### Example
 
@@ -689,7 +688,7 @@ No authorization required
 fetchStaticVouchers($campaign_id): \OpenAPI\Client\Model\WTStaticVoucher[]
 ```
 
-Fetch static vouchers
+Get vouchers in Static Vouchers Campaign
 
 ### Example
 
@@ -704,7 +703,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->fetchStaticVouchers($campaign_id);
@@ -718,7 +717,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -743,7 +742,7 @@ No authorization required
 fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\FetchStaticVouchersPage200Response
 ```
 
-Fetch static vouchers by page
+Get vouchers in Static Vouchers Campaign
 
 ### Example
 
@@ -758,7 +757,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 $pagenum = 3.4; // float
 $pagesize = 3.4; // float
 
@@ -774,7 +773,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 | **pagenum** | **float**|  | |
 | **pagesize** | **float**|  | |
 
@@ -801,7 +800,7 @@ No authorization required
 fetchViews($campaign_id): \OpenAPI\Client\Model\WTWalletPageView[]
 ```
 
-Fetch views
+Get Static Vouchers Campaign traffic
 
 ### Example
 
@@ -816,7 +815,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->fetchViews($campaign_id);
@@ -830,7 +829,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -855,7 +854,7 @@ No authorization required
 fetchVouchersRedeemed($campaign_id): \OpenAPI\Client\Model\WTStaticVoucher[]
 ```
 
-Fetch redeemed vouchers
+Get redeemed vouchers in Static Vouchers Campaign
 
 ### Example
 
@@ -870,7 +869,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->fetchVouchersRedeemed($campaign_id);
@@ -884,7 +883,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -903,69 +902,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `previewMessages()`
-
-```php
-previewMessages($campaign_id, $wt_static_voucher_campaign_preview_messages): \OpenAPI\Client\Model\VSCampaignGeneratedMessage[]
-```
-
-Preview static vouchers. This method has been deprecated. Please use /preview/page/{campaignID} for better performance.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$campaign_id = NULL; // mixed
-$wt_static_voucher_campaign_preview_messages = new \OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessages(); // \OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessages
-
-try {
-    $result = $apiInstance->previewMessages($campaign_id, $wt_static_voucher_campaign_preview_messages);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling StaticVoucherCampaignsApi->previewMessages: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
-| **wt_static_voucher_campaign_preview_messages** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessages**](../Model/WTStaticVoucherCampaignPreviewMessages.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\VSCampaignGeneratedMessage[]**](../Model/VSCampaignGeneratedMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `previewMessagesByPage()`
 
 ```php
 previewMessagesByPage($campaign_id, $wt_static_voucher_campaign_preview_messages_by_page): \OpenAPI\Client\Model\VSCampaignGeneratedMessagePagination
 ```
 
-Preview static vouchers by page
+View vouchers in Static Voucher Campaign
 
 ### Example
 
@@ -980,7 +923,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 $wt_static_voucher_campaign_preview_messages_by_page = new \OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessagesByPage(); // \OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessagesByPage
 
 try {
@@ -995,7 +938,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 | **wt_static_voucher_campaign_preview_messages_by_page** | [**\OpenAPI\Client\Model\WTStaticVoucherCampaignPreviewMessagesByPage**](../Model/WTStaticVoucherCampaignPreviewMessagesByPage.md)|  | |
 
 ### Return type
@@ -1021,7 +964,7 @@ No authorization required
 restoreStaticVoucherCampaign($campaign_id): \OpenAPI\Client\Model\StaticVoucherCampaign
 ```
 
-Restore static voucher campaign
+Restore Static Voucher Campaign
 
 ### Example
 
@@ -1036,7 +979,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 
 try {
     $result = $apiInstance->restoreStaticVoucherCampaign($campaign_id);
@@ -1050,7 +993,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 
 ### Return type
 
@@ -1075,7 +1018,7 @@ No authorization required
 updateStaticVoucherCampaign($campaign_id, $static_voucher_campaign_update): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Update static voucher campaign
+Update Static Voucher Campaign
 
 ### Example
 
@@ -1090,7 +1033,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 $static_voucher_campaign_update = new \OpenAPI\Client\Model\StaticVoucherCampaignUpdate(); // \OpenAPI\Client\Model\StaticVoucherCampaignUpdate
 
 try {
@@ -1105,7 +1048,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 | **static_voucher_campaign_update** | [**\OpenAPI\Client\Model\StaticVoucherCampaignUpdate**](../Model/StaticVoucherCampaignUpdate.md)|  | |
 
 ### Return type
@@ -1131,7 +1074,7 @@ No authorization required
 updateStaticVoucherCampaignWithVoucher($campaign_id, $update_static_voucher_campaign_with_voucher): \OpenAPI\Client\Model\WTStaticVoucherCampaign
 ```
 
-Update static voucher campaign with voucher
+Update Static Voucher Campaign with single voucher
 
 ### Example
 
@@ -1146,7 +1089,7 @@ $apiInstance = new OpenAPI\Client\Api\StaticVoucherCampaignsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$campaign_id = NULL; // mixed
+$campaign_id = 'campaign_id_example'; // string
 $update_static_voucher_campaign_with_voucher = new \OpenAPI\Client\Model\UpdateStaticVoucherCampaignWithVoucher(); // \OpenAPI\Client\Model\UpdateStaticVoucherCampaignWithVoucher
 
 try {
@@ -1161,7 +1104,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | [**mixed**](../Model/.md)|  | |
+| **campaign_id** | **string**|  | |
 | **update_static_voucher_campaign_with_voucher** | [**\OpenAPI\Client\Model\UpdateStaticVoucherCampaignWithVoucher**](../Model/UpdateStaticVoucherCampaignWithVoucher.md)|  | |
 
 ### Return type

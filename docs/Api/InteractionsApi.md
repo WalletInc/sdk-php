@@ -6,17 +6,19 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**claimTicket()**](InteractionsApi.md#claimTicket) | **PUT** /wallet/ticket/claim/{id} | Update ticket |
 | [**createAdvertisementCreditScan()**](InteractionsApi.md#createAdvertisementCreditScan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
-| [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Fetch an employee&#39;s VCard |
-| [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Fetch ICS for live event |
-| [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Fetch an employee&#39;s VCard |
-| [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Fetch a customer&#39;s static vouchers on the basis of a given voucher ID |
+| [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
+| [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
+| [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
+| [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
+| [**fetchAdvertisementCreditScansFromList()**](InteractionsApi.md#fetchAdvertisementCreditScansFromList) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
+| [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket |
-| [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Fetch dynamic voucher |
-| [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Fetch member information |
-| [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Fetch static voucher |
-| [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
-| [**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
-| [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Fetch vanity handle |
+| [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
+| [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Get member information |
+| [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
+| [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
+| [**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
+| [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item |
 | [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
 | [**subscribeEmail()**](InteractionsApi.md#subscribeEmail) | **POST** /wallet/subscribeEmail | Create email subscriber |
@@ -44,7 +46,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $claim_ticket_request = new \OpenAPI\Client\Model\ClaimTicketRequest(); // \OpenAPI\Client\Model\ClaimTicketRequest
 
 try {
@@ -59,7 +61,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **claim_ticket_request** | [**\OpenAPI\Client\Model\ClaimTicketRequest**](../Model/ClaimTicketRequest.md)|  | |
 
 ### Return type
@@ -100,7 +102,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$ad_credit_id = NULL; // mixed
+$ad_credit_id = 'ad_credit_id_example'; // string
 
 try {
     $result = $apiInstance->createAdvertisementCreditScan($ad_credit_id);
@@ -114,7 +116,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ad_credit_id** | [**mixed**](../Model/.md)|  | |
+| **ad_credit_id** | **string**|  | |
 
 ### Return type
 
@@ -139,7 +141,7 @@ No authorization required
 createEmployeeVCard($id): string
 ```
 
-Fetch an employee's VCard
+Download a representative's Virtual Business Card
 
 ### Example
 
@@ -154,7 +156,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->createEmployeeVCard($id);
@@ -168,7 +170,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -193,7 +195,7 @@ No authorization required
 createIcsFile($id): mixed
 ```
 
-Fetch ICS for live event
+Get ICS for live event
 
 ### Example
 
@@ -208,7 +210,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->createIcsFile($id);
@@ -222,7 +224,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -247,7 +249,7 @@ No authorization required
 createVirtualBusinessCardVCard($id): string
 ```
 
-Fetch an employee's VCard
+Download a non-representative's Virtual Business Card
 
 ### Example
 
@@ -262,7 +264,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->createVirtualBusinessCardVCard($id);
@@ -276,7 +278,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -295,13 +297,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()`
+## `fetchActiveDynamicVouchers()`
 
 ```php
-fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID($voucher_id): \OpenAPI\Client\Model\FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner[]
+fetchActiveDynamicVouchers($merchant_id): \OpenAPI\Client\Model\DynamicVoucher[]
 ```
 
-Fetch a customer's static vouchers on the basis of a given voucher ID
+Get a customer's static vouchers on the basis of a given voucher ID
 
 ### Example
 
@@ -316,7 +318,117 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$voucher_id = NULL; // mixed
+$merchant_id = 'merchant_id_example'; // string
+
+try {
+    $result = $apiInstance->fetchActiveDynamicVouchers($merchant_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->fetchActiveDynamicVouchers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **merchant_id** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DynamicVoucher[]**](../Model/DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchAdvertisementCreditScansFromList()`
+
+```php
+fetchAdvertisementCreditScansFromList($merchant_id, $fetch_advertisement_credit_scans_from_list_request): mixed[]
+```
+
+Get multiple credit scans w/ array of IDs
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$merchant_id = 'merchant_id_example'; // string
+$fetch_advertisement_credit_scans_from_list_request = new \OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest(); // \OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest
+
+try {
+    $result = $apiInstance->fetchAdvertisementCreditScansFromList($merchant_id, $fetch_advertisement_credit_scans_from_list_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->fetchAdvertisementCreditScansFromList: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **merchant_id** | **string**|  | |
+| **fetch_advertisement_credit_scans_from_list_request** | [**\OpenAPI\Client\Model\FetchAdvertisementCreditScansFromListRequest**](../Model/FetchAdvertisementCreditScansFromListRequest.md)|  | |
+
+### Return type
+
+**mixed[]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()`
+
+```php
+fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID($voucher_id): \OpenAPI\Client\Model\FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner[]
+```
+
+Get a customer's static vouchers on the basis of a given voucher ID
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$voucher_id = 'voucher_id_example'; // string
 
 try {
     $result = $apiInstance->fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID($voucher_id);
@@ -330,7 +442,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **voucher_id** | [**mixed**](../Model/.md)|  | |
+| **voucher_id** | **string**|  | |
 
 ### Return type
 
@@ -409,7 +521,7 @@ No authorization required
 fetchDynamicVoucherWithVoucherID($voucher_id): \OpenAPI\Client\Model\DynamicVoucher
 ```
 
-Fetch dynamic voucher
+Get dynamic voucher
 
 ### Example
 
@@ -424,7 +536,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$voucher_id = NULL; // mixed
+$voucher_id = 'voucher_id_example'; // string
 
 try {
     $result = $apiInstance->fetchDynamicVoucherWithVoucherID($voucher_id);
@@ -438,7 +550,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **voucher_id** | [**mixed**](../Model/.md)|  | |
+| **voucher_id** | **string**|  | |
 
 ### Return type
 
@@ -463,7 +575,7 @@ No authorization required
 fetchMemberInformation($member_id, $merchant_id): \OpenAPI\Client\Model\Member
 ```
 
-Fetch member information
+Get member information
 
 ### Example
 
@@ -519,7 +631,7 @@ No authorization required
 fetchStaticVoucherWithVoucherID($voucher_id): \OpenAPI\Client\Model\StaticVoucher
 ```
 
-Fetch static voucher
+Get static voucher
 
 ### Example
 
@@ -534,7 +646,7 @@ $apiInstance = new OpenAPI\Client\Api\InteractionsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$voucher_id = NULL; // mixed
+$voucher_id = 'voucher_id_example'; // string
 
 try {
     $result = $apiInstance->fetchStaticVoucherWithVoucherID($voucher_id);
@@ -548,7 +660,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **voucher_id** | [**mixed**](../Model/.md)|  | |
+| **voucher_id** | **string**|  | |
 
 ### Return type
 
@@ -573,7 +685,7 @@ No authorization required
 fetchWalletPageWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
-Fetch page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
 ### Example
 
@@ -627,7 +739,7 @@ No authorization required
 fetchWalletPaymentObjectsWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
-Fetch payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
 
 ### Example
 
@@ -681,7 +793,7 @@ No authorization required
 findByVanityHandle($handle): \OpenAPI\Client\Model\WalletConfiguration
 ```
 
-Fetch vanity handle
+Get vanity handle
 
 ### Example
 

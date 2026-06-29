@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**list_name** | **string** |  |
+**list_name** | **mixed** |  |
 **phone_number_id** | **string** |  |
 **tier_id** | [**\OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImportTierID**](WTImportedListRecipientFromMembershipTierImportTierID.md) |  |
 

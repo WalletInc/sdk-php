@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveNewsArticle()**](NewsApi.md#archiveNewsArticle) | **DELETE** /v2/news/{id} | Archive news article |
-| [**createNewsArticle()**](NewsApi.md#createNewsArticle) | **POST** /v2/news | Create news article |
-| [**fetchAllNewsArticles()**](NewsApi.md#fetchAllNewsArticles) | **GET** /v2/news/all | Fetch all news articles |
-| [**restoreNewsArticle()**](NewsApi.md#restoreNewsArticle) | **PATCH** /v2/news/{id} | Restore news article |
-| [**updateNewsArticle()**](NewsApi.md#updateNewsArticle) | **PUT** /v2/news/{id} | Update news article |
+| [**archiveNewsArticle()**](NewsApi.md#archiveNewsArticle) | **DELETE** /v2/news/{id} | Archive News &amp; Blog post |
+| [**createNewsArticle()**](NewsApi.md#createNewsArticle) | **POST** /v2/news | Create News &amp; Blog post |
+| [**fetchAllNewsArticles()**](NewsApi.md#fetchAllNewsArticles) | **GET** /v2/news/all | Get all News &amp; Blog posts |
+| [**restoreNewsArticle()**](NewsApi.md#restoreNewsArticle) | **PATCH** /v2/news/{id} | Restore News &amp; Blog post |
+| [**updateNewsArticle()**](NewsApi.md#updateNewsArticle) | **PUT** /v2/news/{id} | Update News &amp; Blog post |
 
 
 ## `archiveNewsArticle()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveNewsArticle($id): \OpenAPI\Client\Model\NewsArticle
 ```
 
-Archive news article
+Archive News & Blog post
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\NewsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveNewsArticle($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createNewsArticle($wt_news_article_create_params): \OpenAPI\Client\Model\NewsArticle
 ```
 
-Create news article
+Create News & Blog post
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllNewsArticles($is_archive_included): mixed
 ```
 
-Fetch all news articles
+Get all News & Blog posts
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreNewsArticle($id): \OpenAPI\Client\Model\NewsArticle
 ```
 
-Restore news article
+Restore News & Blog post
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\NewsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreNewsArticle($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateNewsArticle($id, $wt_news_article_update_params): \OpenAPI\Client\Model\NewsArticle
 ```
 
-Update news article
+Update News & Blog post
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\NewsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_news_article_update_params = new \OpenAPI\Client\Model\WTNewsArticleUpdateParams(); // \OpenAPI\Client\Model\WTNewsArticleUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_news_article_update_params** | [**\OpenAPI\Client\Model\WTNewsArticleUpdateParams**](../Model/WTNewsArticleUpdateParams.md)|  | |
 
 ### Return type

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  |
-**products** | [**\OpenAPI\Client\Model\ClickFunnelProduct[]**](ClickFunnelProduct.md) |  |
+**products** | **mixed** |  |
 **member_id** | **mixed** |  | [optional]
 **contact** | [**\OpenAPI\Client\Model\ClickFunnelContact**](ClickFunnelContact.md) |  |
 **funnel_id** | **float** |  |
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **status** | **string** |  |
 **fulfillment_status** | **mixed** |  | [optional]
 **fulfillment_id** | **mixed** |  | [optional]
-**fulfillments** | **object** |  |
+**fulfillments** | **array<string,mixed>** |  |
 **payments_count** | **mixed** |  | [optional]
 **infusionsoft_ccid** | **mixed** |  | [optional]
 **oap_customer_id** | **mixed** |  | [optional]

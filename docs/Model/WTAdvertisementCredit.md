@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **max_uses** | **int** |  |
 **discount_value** | **int** |  |
 **employee_id** | **string** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **is_active** | **bool** |  |
-**discount_value_decimal** | **string** |  |
-**discount_value_string** | **string** |  |
+**discount_value_decimal** | **mixed** |  |
+**discount_value_string** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

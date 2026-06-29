@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
-**employees** | [**\OpenAPI\Client\Model\WTEmployee[]**](WTEmployee.md) |  |
-**roles** | [**\OpenAPI\Client\Model\WTRole[]**](WTRole.md) |  |
+**employees** | **mixed** |  |
+**roles** | **mixed** |  |
 **employee_id** | **string** |  |
 **merchant_id** | **string** |  |
 **name** | **string** |  |
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **is_public** | **bool** |  |
 **order_number** | **float** |  |
 **is_system** | **bool** |  |
-**icons** | **string[]** |  |
+**icons** | **mixed** |  |
 **category** | **string** |  |
 **admin_page** | **string** |  |
 

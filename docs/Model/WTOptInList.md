@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **opt_out_confirmed_response** | **string** |  |
 **opt_in_confirmed_customer_receives** | **string** |  |
 **opt_out_confirmed_customer_receives** | **string** |  |
-**opt_in_confirmed_media_urls** | **string[]** |  |
-**opt_out_confirmed_media_urls** | **string[]** |  |
+**opt_in_confirmed_media_urls** | **mixed** |  |
+**opt_out_confirmed_media_urls** | **mixed** |  |
 **is_over21_required** | **bool** |  |
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
 **merchant_id** | **string** |  |
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |

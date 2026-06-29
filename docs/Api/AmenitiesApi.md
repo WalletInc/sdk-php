@@ -4,11 +4,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveAmenity()**](AmenitiesApi.md#archiveAmenity) | **DELETE** /v2/amenities/{id} | Archive amenity |
-| [**createAmenity()**](AmenitiesApi.md#createAmenity) | **POST** /v2/amenities | Create amenity |
-| [**fetchAllAmenities()**](AmenitiesApi.md#fetchAllAmenities) | **GET** /v2/amenities/all | Fetch all amenities |
-| [**restoreAmenity()**](AmenitiesApi.md#restoreAmenity) | **PATCH** /v2/amenities/{id} | Restore amenity |
-| [**updateAmenity()**](AmenitiesApi.md#updateAmenity) | **PUT** /v2/amenities/{id} | Update amenity |
+| [**archiveAmenity()**](AmenitiesApi.md#archiveAmenity) | **DELETE** /v2/amenities/{id} | Archive Amenity |
+| [**createAmenity()**](AmenitiesApi.md#createAmenity) | **POST** /v2/amenities | Create Amenity |
+| [**fetchAllAmenities()**](AmenitiesApi.md#fetchAllAmenities) | **GET** /v2/amenities/all | Get all Amenities |
+| [**restoreAmenity()**](AmenitiesApi.md#restoreAmenity) | **PATCH** /v2/amenities/{id} | Restore Amenity |
+| [**updateAmenity()**](AmenitiesApi.md#updateAmenity) | **PUT** /v2/amenities/{id} | Update Amenity |
 
 
 ## `archiveAmenity()`
@@ -17,7 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveAmenity($id): \OpenAPI\Client\Model\Amenity
 ```
 
-Archive amenity
+Archive Amenity
 
 ### Example
 
@@ -32,7 +32,7 @@ $apiInstance = new OpenAPI\Client\Api\AmenitiesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->archiveAmenity($id);
@@ -46,7 +46,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -71,7 +71,7 @@ No authorization required
 createAmenity($wt_amenity_create_params): \OpenAPI\Client\Model\Amenity
 ```
 
-Create amenity
+Create Amenity
 
 ### Example
 
@@ -125,7 +125,7 @@ No authorization required
 fetchAllAmenities($is_archive_included): mixed
 ```
 
-Fetch all amenities
+Get all Amenities
 
 ### Example
 
@@ -179,7 +179,7 @@ No authorization required
 restoreAmenity($id): \OpenAPI\Client\Model\Amenity
 ```
 
-Restore amenity
+Restore Amenity
 
 ### Example
 
@@ -194,7 +194,7 @@ $apiInstance = new OpenAPI\Client\Api\AmenitiesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->restoreAmenity($id);
@@ -208,7 +208,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 updateAmenity($id, $wt_amenity_update_params): \OpenAPI\Client\Model\Amenity
 ```
 
-Update amenity
+Update Amenity
 
 ### Example
 
@@ -248,7 +248,7 @@ $apiInstance = new OpenAPI\Client\Api\AmenitiesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = NULL; // mixed
+$id = 'id_example'; // string
 $wt_amenity_update_params = new \OpenAPI\Client\Model\WTAmenityUpdateParams(); // \OpenAPI\Client\Model\WTAmenityUpdateParams
 
 try {
@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**mixed**](../Model/.md)|  | |
+| **id** | **string**|  | |
 | **wt_amenity_update_params** | [**\OpenAPI\Client\Model\WTAmenityUpdateParams**](../Model/WTAmenityUpdateParams.md)|  | |
 
 ### Return type

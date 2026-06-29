@@ -4,27 +4,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **string** |  |
-**last_name** | **string** |  |
-**email** | **string** |  |
-**password** | **string** |  |
-**hear_about_us** | **string** |  | [optional]
-**hear_about_us_details** | **string** |  | [optional]
-**company_name** | **string** |  |
-**merchant_type** | **string** |  |
-**street_address1** | **string** |  |
-**street_address2** | **string** |  |
-**city** | **string** |  |
-**state** | **string** |  |
-**zip** | **string** |  |
-**country** | **string** |  |
-**phone_number** | **string** |  |
-**ein** | **string** |  | [optional]
-**ga_client_id** | **string** |  | [optional]
-**ga_measurement_id** | **string** |  | [optional]
-**recaptcha_token** | **string** |  | [optional]
-**affiliate_id** | **string** |  | [optional]
-**first_promoter_tracking_id** | **string** |  | [optional]
-**first_promoter_affiliate_id** | **string** |  | [optional]
+**first_name** | **mixed** |  |
+**last_name** | **mixed** |  |
+**email** | **mixed** |  |
+**password** | **mixed** |  |
+**hear_about_us** | **mixed** |  | [optional]
+**hear_about_us_details** | **mixed** |  | [optional]
+**company_name** | **mixed** |  |
+**merchant_type** | **mixed** |  |
+**street_address1** | **mixed** |  |
+**street_address2** | **mixed** |  |
+**city** | **mixed** |  |
+**state** | **mixed** |  |
+**zip** | **mixed** |  |
+**country** | **mixed** |  |
+**phone_number** | **mixed** |  |
+**ein** | **mixed** |  | [optional]
+**ga_client_id** | **mixed** |  | [optional]
+**ga_measurement_id** | **mixed** |  | [optional]
+**recaptcha_token** | **mixed** |  | [optional]
+**affiliate_id** | **mixed** |  | [optional]
+**first_promoter_tracking_id** | **mixed** |  | [optional]
+**first_promoter_affiliate_id** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

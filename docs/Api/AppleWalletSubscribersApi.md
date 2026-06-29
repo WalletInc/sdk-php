@@ -4,8 +4,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Fetch subscriber activity |
-| [**fetchAppleWalletSubscribers()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Fetch all subscribers |
+| [**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity |
+| [**fetchAppleWalletSubscribers()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Get all subscribers |
 
 
 ## `fetchAppleWalletSubscriberActivity()`
@@ -14,7 +14,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchAppleWalletSubscriberActivity($subscription_id): mixed[]
 ```
 
-Fetch subscriber activity
+Get subscriber activity
 
 ### Example
 
@@ -29,7 +29,7 @@ $apiInstance = new OpenAPI\Client\Api\AppleWalletSubscribersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$subscription_id = NULL; // mixed
+$subscription_id = 'subscription_id_example'; // string
 
 try {
     $result = $apiInstance->fetchAppleWalletSubscriberActivity($subscription_id);
@@ -43,7 +43,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subscription_id** | [**mixed**](../Model/.md)|  | |
+| **subscription_id** | **string**|  | |
 
 ### Return type
 
@@ -68,7 +68,7 @@ No authorization required
 fetchAppleWalletSubscribers($start_date_time, $end_date_time): mixed[]
 ```
 
-Fetch all subscribers
+Get all subscribers
 
 ### Example
 

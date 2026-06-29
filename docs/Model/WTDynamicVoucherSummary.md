@@ -4,29 +4,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calc_error** | **bool** |  |
-**calc_error_details** | **string** |  |
-**current_value** | **float** |  |
-**current_value_decimal** | **string** |  |
-**current_value_string** | **string** |  |
-**time_value_zero** | **bool** |  |
-**time_value_zero_subtracted_amount** | **float** |  |
-**total_number_redeemed** | **float** |  |
-**total_value_redeemed** | **float** |  |
-**total_budget_remaining** | **float** |  |
-**maximum_budget_exhausted** | **bool** |  |
-**maximum_budget_exhausted_by** | **float** |  |
-**maximum_budget_exhausted_by_decimal** | **string** |  |
-**maximum_budget_exhausted_by_string** | **string** |  |
-**maximum_budget_exhausted_total_value_redeemed** | **float** |  |
-**maximum_budget_exhausted_total_value_redeemed_decimal** | **string** |  |
-**maximum_budget_exhausted_total_value_redeemed_string** | **string** |  |
-**total_amount_subtracted** | **float** |  |
-**total_amount_subtracted_decimal** | **string** |  |
-**total_amount_subtracted_string** | **string** |  |
-**total_decremented_multiple** | **float** |  |
-**redeemed_keys** | **string[]** |  |
+**calc_error** | **mixed** |  |
+**calc_error_details** | **mixed** |  |
+**current_value** | **mixed** |  |
+**current_value_decimal** | **mixed** |  |
+**current_value_string** | **mixed** |  |
+**time_value_zero** | **mixed** |  |
+**time_value_zero_subtracted_amount** | **mixed** |  |
+**total_number_redeemed** | **mixed** |  |
+**total_value_redeemed** | **mixed** |  |
+**total_budget_remaining** | **mixed** |  |
+**maximum_budget_exhausted** | **mixed** |  |
+**maximum_budget_exhausted_by** | **mixed** |  |
+**maximum_budget_exhausted_by_decimal** | **mixed** |  |
+**maximum_budget_exhausted_by_string** | **mixed** |  |
+**maximum_budget_exhausted_total_value_redeemed** | **mixed** |  |
+**maximum_budget_exhausted_total_value_redeemed_decimal** | **mixed** |  |
+**maximum_budget_exhausted_total_value_redeemed_string** | **mixed** |  |
+**total_amount_subtracted** | **mixed** |  |
+**total_amount_subtracted_decimal** | **mixed** |  |
+**total_amount_subtracted_string** | **mixed** |  |
+**total_decremented_multiple** | **mixed** |  |
+**redeemed_keys** | **mixed** |  |
 **status** | [**\OpenAPI\Client\Model\WTDynamicVoucherSummaryStatus**](WTDynamicVoucherSummaryStatus.md) |  |
-**expired** | **bool** |  |
+**expired** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

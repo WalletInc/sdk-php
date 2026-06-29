@@ -4,41 +4,41 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**\OpenAPI\Client\Model\WTWalletPageViewId**](WTWalletPageViewId.md) |  |
-**automated_reply** | **string** |  |
-**automated_reply_additional_info** | **string** |  |
-**sms_sid** | **string** |  |
-**sms_message_sid** | **string** |  |
-**sms_status** | **string** |  |
-**messaging_service_sid** | **string** |  | [optional]
-**account_sid** | **string** |  |
-**message_sid** | **string** |  |
-**body** | **string** |  |
-**num_segments** | **int** |  |
-**to** | **string** |  |
-**to_city** | **string** |  |
-**to_state** | **string** |  |
-**to_zip** | **string** |  |
-**to_country** | **string** |  |
-**from** | **string** |  |
-**from_city** | **string** |  |
-**from_state** | **string** |  |
-**from_zip** | **string** |  |
-**from_country** | **string** |  |
-**media_urls** | **string[]** |  | [optional]
-**watson_intent** | **string** |  | [optional]
-**watson_intents** | **string** |  | [optional]
-**watson_context** | **string** |  | [optional]
-**watson_contexts** | **string** |  | [optional]
-**num_media** | **int** |  |
-**api_version** | **string** |  |
-**is_opt_in** | **bool** |  | [optional]
-**is_help_desk_request** | **bool** |  | [optional]
+**id** | [**\OpenAPI\Client\Model\StaticVoucherId**](StaticVoucherId.md) |  |
+**automated_reply** | **mixed** |  |
+**automated_reply_additional_info** | **mixed** |  |
+**sms_sid** | **mixed** |  |
+**sms_message_sid** | **mixed** |  |
+**sms_status** | **mixed** |  |
+**messaging_service_sid** | **mixed** |  | [optional]
+**account_sid** | **mixed** |  |
+**message_sid** | **mixed** |  |
+**body** | **mixed** |  |
+**num_segments** | **mixed** |  |
+**to** | **mixed** |  |
+**to_city** | **mixed** |  |
+**to_state** | **mixed** |  |
+**to_zip** | **mixed** |  |
+**to_country** | **mixed** |  |
+**from** | **mixed** |  |
+**from_city** | **mixed** |  |
+**from_state** | **mixed** |  |
+**from_zip** | **mixed** |  |
+**from_country** | **mixed** |  |
+**media_urls** | **mixed** |  | [optional]
+**watson_intent** | **mixed** |  | [optional]
+**watson_intents** | **mixed** |  | [optional]
+**watson_context** | **mixed** |  | [optional]
+**watson_contexts** | **mixed** |  | [optional]
+**num_media** | **mixed** |  |
+**api_version** | **mixed** |  |
+**is_opt_in** | **mixed** |  | [optional]
+**is_help_desk_request** | **mixed** |  | [optional]
 **merchant_id** | **string** |  |
-**created_at** | **\DateTime** |  |
-**updated_at** | **\DateTime** |  |
-**is_active** | **bool** |  |
-**body_lowercase** | **string** |  |
-**from_localized** | **string** |  |
+**created_at** | **mixed** |  |
+**updated_at** | **mixed** |  |
+**is_active** | **mixed** |  |
+**body_lowercase** | **mixed** |  |
+**from_localized** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

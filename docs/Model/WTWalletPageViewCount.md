@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallet_object_id** | **string** |  |
-**count** | **float** |  |
-**date_occurred** | **\DateTime** |  |
-**wallet_object_name** | **string** |  |
+**wallet_object_id** | **mixed** |  |
+**count** | **mixed** |  |
+**date_occurred** | **mixed** |  |
+**wallet_object_name** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

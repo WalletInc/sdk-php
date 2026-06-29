@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **aff_sub2** | **string** |  |
 **cf_affiliate_id** | **mixed** |  | [optional]
 **contact_profile** | [**\OpenAPI\Client\Model\ClickFunnelContactProfile**](ClickFunnelContactProfile.md) |  | [optional]
-**time_zone** | **string** |  | [optional]
+**time_zone** | **mixed** |  | [optional]
 **company_name** | **string** |  |
 **company_industry** | **string** |  |
 **additional_info** | **mixed** |  | [optional]
