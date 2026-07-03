@@ -7,6 +7,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive Video |
 | [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create Video |
 | [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Get all Videos |
+| [**presignVideoUpload()**](VideosApi.md#presignVideoUpload) | **POST** /v2/video/presign | Presign a direct-to-R2 video upload |
 | [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore Video |
 | [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update Video |
 
@@ -167,6 +168,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `presignVideoUpload()`
+
+```php
+presignVideoUpload($wt_video_upload_presign_params): \OpenAPI\Client\Model\WTVideoUploadPresign
+```
+
+Presign a direct-to-R2 video upload
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\VideosApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_video_upload_presign_params = new \OpenAPI\Client\Model\WTVideoUploadPresignParams(); // \OpenAPI\Client\Model\WTVideoUploadPresignParams
+
+try {
+    $result = $apiInstance->presignVideoUpload($wt_video_upload_presign_params);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VideosApi->presignVideoUpload: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_video_upload_presign_params** | [**\OpenAPI\Client\Model\WTVideoUploadPresignParams**](../Model/WTVideoUploadPresignParams.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTVideoUploadPresign**](../Model/WTVideoUploadPresign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
