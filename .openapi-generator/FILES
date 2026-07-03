@@ -285,6 +285,7 @@ docs/Model/StaticVoucherId.md
 docs/Model/Status.md
 docs/Model/SubscriptionFeature.md
 docs/Model/SubscriptionPlan.md
+docs/Model/SubscriptionPlanAnnual.md
 docs/Model/SubscriptionProduct.md
 docs/Model/Tcpa.md
 docs/Model/Thread.md
@@ -743,6 +744,7 @@ lib/Model/StaticVoucherId.php
 lib/Model/Status.php
 lib/Model/SubscriptionFeature.php
 lib/Model/SubscriptionPlan.php
+lib/Model/SubscriptionPlanAnnual.php
 lib/Model/SubscriptionProduct.php
 lib/Model/Tcpa.php
 lib/Model/Thread.php
@@ -916,3 +918,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/SubscriptionPlanAnnualTest.php

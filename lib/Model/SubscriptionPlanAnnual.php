@@ -1,6 +1,6 @@
 <?php
 /**
- * SubscriptionPlan
+ * SubscriptionPlanAnnual
  *
  * PHP version 7.4
  *
@@ -33,15 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * SubscriptionPlan Class Doc Comment
+ * SubscriptionPlanAnnual Class Doc Comment
  *
  * @category Class
+ * @description PLACEHOLDER annual pricing for the monthly/annual toggle UX. Optional: only populated for plans surfaced through Industries.list(). &#x60;id&#x60; is a placeholder string, not a real Stripe price, and MUST NOT be used at checkout. See PlanCatalog.withAnnualPlaceholder().
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionPlanAnnual implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SubscriptionPlan';
+    protected static $openAPIModelName = 'SubscriptionPlan_annual';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +59,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'mixed',
-        'name' => 'mixed',
         'price' => 'mixed',
-        'nickname' => 'mixed',
-        'examples' => 'mixed',
-        'products' => 'mixed',
-        'all_pages' => 'mixed',
-        'annual' => '\OpenAPI\Client\Model\SubscriptionPlanAnnual'
+        'id' => 'mixed'
     ];
 
     /**
@@ -76,14 +71,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
         'price' => 'double',
-        'nickname' => null,
-        'examples' => null,
-        'products' => null,
-        'all_pages' => null,
-        'annual' => null
+        'id' => null
     ];
 
     /**
@@ -92,14 +81,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => true,
-        'name' => true,
         'price' => true,
-        'nickname' => true,
-        'examples' => true,
-        'products' => true,
-        'all_pages' => true,
-        'annual' => false
+        'id' => true
     ];
 
     /**
@@ -188,14 +171,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
         'price' => 'price',
-        'nickname' => 'nickname',
-        'examples' => 'examples',
-        'products' => 'products',
-        'all_pages' => 'allPages',
-        'annual' => 'annual'
+        'id' => 'id'
     ];
 
     /**
@@ -204,14 +181,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
         'price' => 'setPrice',
-        'nickname' => 'setNickname',
-        'examples' => 'setExamples',
-        'products' => 'setProducts',
-        'all_pages' => 'setAllPages',
-        'annual' => 'setAnnual'
+        'id' => 'setId'
     ];
 
     /**
@@ -220,14 +191,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
         'price' => 'getPrice',
-        'nickname' => 'getNickname',
-        'examples' => 'getExamples',
-        'products' => 'getProducts',
-        'all_pages' => 'getAllPages',
-        'annual' => 'getAnnual'
+        'id' => 'getId'
     ];
 
     /**
@@ -287,14 +252,8 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
-        $this->setIfExists('nickname', $data ?? [], null);
-        $this->setIfExists('examples', $data ?? [], null);
-        $this->setIfExists('products', $data ?? [], null);
-        $this->setIfExists('all_pages', $data ?? [], null);
-        $this->setIfExists('annual', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -324,26 +283,11 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if ($this->container['price'] === null) {
             $invalidProperties[] = "'price' can't be null";
         }
-        if ($this->container['nickname'] === null) {
-            $invalidProperties[] = "'nickname' can't be null";
-        }
-        if ($this->container['examples'] === null) {
-            $invalidProperties[] = "'examples' can't be null";
-        }
-        if ($this->container['products'] === null) {
-            $invalidProperties[] = "'products' can't be null";
-        }
-        if ($this->container['all_pages'] === null) {
-            $invalidProperties[] = "'all_pages' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         return $invalidProperties;
     }
@@ -359,74 +303,6 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param mixed $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param mixed $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets price
@@ -463,164 +339,35 @@ class SubscriptionPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets nickname
+     * Gets id
      *
      * @return mixed
      */
-    public function getNickname()
+    public function getId()
     {
-        return $this->container['nickname'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets nickname
+     * Sets id
      *
-     * @param mixed $nickname nickname
+     * @param mixed $id id
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setId($id)
     {
-        if (is_null($nickname)) {
-            array_push($this->openAPINullablesSetToNull, 'nickname');
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('nickname', $nullablesSetToNull);
+            $index = array_search('id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['nickname'] = $nickname;
-
-        return $this;
-    }
-
-    /**
-     * Gets examples
-     *
-     * @return mixed
-     */
-    public function getExamples()
-    {
-        return $this->container['examples'];
-    }
-
-    /**
-     * Sets examples
-     *
-     * @param mixed $examples examples
-     *
-     * @return self
-     */
-    public function setExamples($examples)
-    {
-        if (is_null($examples)) {
-            array_push($this->openAPINullablesSetToNull, 'examples');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('examples', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['examples'] = $examples;
-
-        return $this;
-    }
-
-    /**
-     * Gets products
-     *
-     * @return mixed
-     */
-    public function getProducts()
-    {
-        return $this->container['products'];
-    }
-
-    /**
-     * Sets products
-     *
-     * @param mixed $products products
-     *
-     * @return self
-     */
-    public function setProducts($products)
-    {
-        if (is_null($products)) {
-            array_push($this->openAPINullablesSetToNull, 'products');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('products', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['products'] = $products;
-
-        return $this;
-    }
-
-    /**
-     * Gets all_pages
-     *
-     * @return mixed
-     */
-    public function getAllPages()
-    {
-        return $this->container['all_pages'];
-    }
-
-    /**
-     * Sets all_pages
-     *
-     * @param mixed $all_pages all_pages
-     *
-     * @return self
-     */
-    public function setAllPages($all_pages)
-    {
-        if (is_null($all_pages)) {
-            array_push($this->openAPINullablesSetToNull, 'all_pages');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('all_pages', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['all_pages'] = $all_pages;
-
-        return $this;
-    }
-
-    /**
-     * Gets annual
-     *
-     * @return \OpenAPI\Client\Model\SubscriptionPlanAnnual|null
-     */
-    public function getAnnual()
-    {
-        return $this->container['annual'];
-    }
-
-    /**
-     * Sets annual
-     *
-     * @param \OpenAPI\Client\Model\SubscriptionPlanAnnual|null $annual annual
-     *
-     * @return self
-     */
-    public function setAnnual($annual)
-    {
-        if (is_null($annual)) {
-            throw new \InvalidArgumentException('non-nullable annual cannot be null');
-        }
-        $this->container['annual'] = $annual;
+        $this->container['id'] = $id;
 
         return $this;
     }
