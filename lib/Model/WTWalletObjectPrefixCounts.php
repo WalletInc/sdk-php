@@ -58,8 +58,8 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'wallet_object_prefix' => 'mixed',
-        'wallet_object_name' => 'mixed',
+        'wallet_object_prefix' => 'string',
+        'wallet_object_name' => 'string',
         'list' => 'mixed'
     ];
 
@@ -82,8 +82,8 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'wallet_object_prefix' => true,
-        'wallet_object_name' => true,
+        'wallet_object_prefix' => false,
+        'wallet_object_name' => false,
         'list' => true
     ];
 
@@ -316,7 +316,7 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets wallet_object_prefix
      *
-     * @return mixed
+     * @return string
      */
     public function getWalletObjectPrefix()
     {
@@ -326,21 +326,14 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets wallet_object_prefix
      *
-     * @param mixed $wallet_object_prefix wallet_object_prefix
+     * @param string $wallet_object_prefix wallet_object_prefix
      *
      * @return self
      */
     public function setWalletObjectPrefix($wallet_object_prefix)
     {
         if (is_null($wallet_object_prefix)) {
-            array_push($this->openAPINullablesSetToNull, 'wallet_object_prefix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('wallet_object_prefix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable wallet_object_prefix cannot be null');
         }
         $this->container['wallet_object_prefix'] = $wallet_object_prefix;
 
@@ -350,7 +343,7 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets wallet_object_name
      *
-     * @return mixed
+     * @return string
      */
     public function getWalletObjectName()
     {
@@ -360,21 +353,14 @@ class WTWalletObjectPrefixCounts implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets wallet_object_name
      *
-     * @param mixed $wallet_object_name wallet_object_name
+     * @param string $wallet_object_name wallet_object_name
      *
      * @return self
      */
     public function setWalletObjectName($wallet_object_name)
     {
         if (is_null($wallet_object_name)) {
-            array_push($this->openAPINullablesSetToNull, 'wallet_object_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('wallet_object_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable wallet_object_name cannot be null');
         }
         $this->container['wallet_object_name'] = $wallet_object_name;
 
