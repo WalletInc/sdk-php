@@ -942,11 +942,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/BroadcastsApiTest.php
-test/Api/FilesDocumentsApiTest.php
-test/Api/HelpDeskApiTest.php
-test/Api/ImportExportApiTest.php
-test/Api/ImportedListsApiTest.php
-test/Api/OptInListsApiTest.php
-test/Api/PhoneNumbersApiTest.php
-test/Api/SMSMessagesApiTest.php

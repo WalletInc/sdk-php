@@ -1,6 +1,8 @@
 # OpenAPIClient-php
 
-API
+Wallet Inc. API reference.
+
+**Spec version 2.1.604**, built 2026-07-04T20:23:06.121Z
 
 
 ## Installation & Usage
