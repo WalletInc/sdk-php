@@ -7,7 +7,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive Video |
 | [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create Video |
 | [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Get all Videos |
-| [**presignVideoUpload()**](VideosApi.md#presignVideoUpload) | **POST** /v2/video/presign | Presign a direct-to-R2 video upload |
+| [**provisionVideoUpload()**](VideosApi.md#provisionVideoUpload) | **POST** /v2/video/upload/provision | Provision a direct video upload |
 | [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore Video |
 | [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update Video |
 
@@ -174,13 +174,13 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `presignVideoUpload()`
+## `provisionVideoUpload()`
 
 ```php
-presignVideoUpload($wt_video_upload_presign_params): \OpenAPI\Client\Model\WTVideoUploadPresign
+provisionVideoUpload($wt_video_upload_provision_params): \OpenAPI\Client\Model\WTVideoUploadProvision
 ```
 
-Presign a direct-to-R2 video upload
+Provision a direct video upload
 
 ### Example
 
@@ -195,13 +195,13 @@ $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$wt_video_upload_presign_params = new \OpenAPI\Client\Model\WTVideoUploadPresignParams(); // \OpenAPI\Client\Model\WTVideoUploadPresignParams
+$wt_video_upload_provision_params = new \OpenAPI\Client\Model\WTVideoUploadProvisionParams(); // \OpenAPI\Client\Model\WTVideoUploadProvisionParams
 
 try {
-    $result = $apiInstance->presignVideoUpload($wt_video_upload_presign_params);
+    $result = $apiInstance->provisionVideoUpload($wt_video_upload_provision_params);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VideosApi->presignVideoUpload: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling VideosApi->provisionVideoUpload: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -209,11 +209,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **wt_video_upload_presign_params** | [**\OpenAPI\Client\Model\WTVideoUploadPresignParams**](../Model/WTVideoUploadPresignParams.md)|  | |
+| **wt_video_upload_provision_params** | [**\OpenAPI\Client\Model\WTVideoUploadProvisionParams**](../Model/WTVideoUploadProvisionParams.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\WTVideoUploadPresign**](../Model/WTVideoUploadPresign.md)
+[**\OpenAPI\Client\Model\WTVideoUploadProvision**](../Model/WTVideoUploadProvision.md)
 
 ### Authorization
 

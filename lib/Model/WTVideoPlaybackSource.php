@@ -1,6 +1,6 @@
 <?php
 /**
- * WTVideoCreateParams
+ * WTVideoPlaybackSource
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * WTVideoCreateParams Class Doc Comment
+ * WTVideoPlaybackSource Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializable
+class WTVideoPlaybackSource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WTVideoCreateParams';
+    protected static $openAPIModelName = 'WTVideoPlaybackSource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'mixed',
-        'description' => 'mixed',
-        'order_number' => 'mixed',
-        'additional_info_url' => 'mixed',
-        'provider' => '\OpenAPI\Client\Model\VideoProvider',
-        'asset_id' => 'mixed'
+        'type' => '\OpenAPI\Client\Model\WTVideoPlaybackSourceType',
+        'url' => 'mixed'
     ];
 
     /**
@@ -74,12 +70,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'description' => null,
-        'order_number' => 'int32',
-        'additional_info_url' => null,
-        'provider' => null,
-        'asset_id' => null
+        'type' => null,
+        'url' => null
     ];
 
     /**
@@ -88,12 +80,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'title' => true,
-        'description' => true,
-        'order_number' => true,
-        'additional_info_url' => true,
-        'provider' => false,
-        'asset_id' => true
+        'type' => false,
+        'url' => true
     ];
 
     /**
@@ -182,12 +170,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'description' => 'description',
-        'order_number' => 'orderNumber',
-        'additional_info_url' => 'additionalInfoURL',
-        'provider' => 'provider',
-        'asset_id' => 'assetId'
+        'type' => 'type',
+        'url' => 'url'
     ];
 
     /**
@@ -196,12 +180,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'description' => 'setDescription',
-        'order_number' => 'setOrderNumber',
-        'additional_info_url' => 'setAdditionalInfoUrl',
-        'provider' => 'setProvider',
-        'asset_id' => 'setAssetId'
+        'type' => 'setType',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -210,12 +190,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'description' => 'getDescription',
-        'order_number' => 'getOrderNumber',
-        'additional_info_url' => 'getAdditionalInfoUrl',
-        'provider' => 'getProvider',
-        'asset_id' => 'getAssetId'
+        'type' => 'getType',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -275,12 +251,8 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('title', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('order_number', $data ?? [], null);
-        $this->setIfExists('additional_info_url', $data ?? [], null);
-        $this->setIfExists('provider', $data ?? [], null);
-        $this->setIfExists('asset_id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('url', $data ?? [], null);
     }
 
     /**
@@ -310,37 +282,12 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
         }
-
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['order_number'] === null) {
-            $invalidProperties[] = "'order_number' can't be null";
-        }
-        if (($this->container['order_number'] < 1)) {
-            $invalidProperties[] = "invalid value for 'order_number', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['provider'] === null) {
-            $invalidProperties[] = "'provider' can't be null";
-        }
-        if ($this->container['asset_id'] === null) {
-            $invalidProperties[] = "'asset_id' can't be null";
-        }
-        if ((mb_strlen($this->container['asset_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'asset_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -357,218 +304,62 @@ class WTVideoCreateParams implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets title
+     * Gets type
+     *
+     * @return \OpenAPI\Client\Model\WTVideoPlaybackSourceType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \OpenAPI\Client\Model\WTVideoPlaybackSourceType $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
      *
      * @return mixed
      */
-    public function getTitle()
+    public function getUrl()
     {
-        return $this->container['title'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets title
+     * Sets url
      *
-     * @param mixed $title title
+     * @param mixed $url url
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setUrl($url)
     {
-        if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
+        if (is_null($url)) {
+            array_push($this->openAPINullablesSetToNull, 'url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
+            $index = array_search('url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-        if (!is_null($title) && (mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling WTVideoCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param mixed $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling WTVideoCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_number
-     *
-     * @return mixed
-     */
-    public function getOrderNumber()
-    {
-        return $this->container['order_number'];
-    }
-
-    /**
-     * Sets order_number
-     *
-     * @param mixed $order_number order_number
-     *
-     * @return self
-     */
-    public function setOrderNumber($order_number)
-    {
-        if (is_null($order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_number', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($order_number) && ($order_number < 1)) {
-            throw new \InvalidArgumentException('invalid value for $order_number when calling WTVideoCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['order_number'] = $order_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_info_url
-     *
-     * @return mixed|null
-     */
-    public function getAdditionalInfoUrl()
-    {
-        return $this->container['additional_info_url'];
-    }
-
-    /**
-     * Sets additional_info_url
-     *
-     * @param mixed|null $additional_info_url additional_info_url
-     *
-     * @return self
-     */
-    public function setAdditionalInfoUrl($additional_info_url)
-    {
-        if (is_null($additional_info_url)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_info_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_info_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['additional_info_url'] = $additional_info_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets provider
-     *
-     * @return \OpenAPI\Client\Model\VideoProvider
-     */
-    public function getProvider()
-    {
-        return $this->container['provider'];
-    }
-
-    /**
-     * Sets provider
-     *
-     * @param \OpenAPI\Client\Model\VideoProvider $provider provider
-     *
-     * @return self
-     */
-    public function setProvider($provider)
-    {
-        if (is_null($provider)) {
-            throw new \InvalidArgumentException('non-nullable provider cannot be null');
-        }
-        $this->container['provider'] = $provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets asset_id
-     *
-     * @return mixed
-     */
-    public function getAssetId()
-    {
-        return $this->container['asset_id'];
-    }
-
-    /**
-     * Sets asset_id
-     *
-     * @param mixed $asset_id asset_id
-     *
-     * @return self
-     */
-    public function setAssetId($asset_id)
-    {
-        if (is_null($asset_id)) {
-            array_push($this->openAPINullablesSetToNull, 'asset_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asset_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($asset_id) && (mb_strlen($asset_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $asset_id when calling WTVideoCreateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['asset_id'] = $asset_id;
+        $this->container['url'] = $url;
 
         return $this;
     }

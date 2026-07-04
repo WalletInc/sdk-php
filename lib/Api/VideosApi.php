@@ -81,7 +81,7 @@ class VideosApi
         'fetchAllVideo' => [
             'application/json',
         ],
-        'presignVideoUpload' => [
+        'provisionVideoUpload' => [
             'application/json',
         ],
         'restoreVideo' => [
@@ -1378,38 +1378,38 @@ class VideosApi
     }
 
     /**
-     * Operation presignVideoUpload
+     * Operation provisionVideoUpload
      *
-     * Presign a direct-to-R2 video upload
+     * Provision a direct video upload
      *
-     * @param  \OpenAPI\Client\Model\WTVideoUploadPresignParams $wt_video_upload_presign_params wt_video_upload_presign_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presignVideoUpload'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\WTVideoUploadProvisionParams $wt_video_upload_provision_params wt_video_upload_provision_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['provisionVideoUpload'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTVideoUploadPresign|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\WTVideoUploadProvision|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function presignVideoUpload($wt_video_upload_presign_params, string $contentType = self::contentTypes['presignVideoUpload'][0])
+    public function provisionVideoUpload($wt_video_upload_provision_params, string $contentType = self::contentTypes['provisionVideoUpload'][0])
     {
-        list($response) = $this->presignVideoUploadWithHttpInfo($wt_video_upload_presign_params, $contentType);
+        list($response) = $this->provisionVideoUploadWithHttpInfo($wt_video_upload_provision_params, $contentType);
         return $response;
     }
 
     /**
-     * Operation presignVideoUploadWithHttpInfo
+     * Operation provisionVideoUploadWithHttpInfo
      *
-     * Presign a direct-to-R2 video upload
+     * Provision a direct video upload
      *
-     * @param  \OpenAPI\Client\Model\WTVideoUploadPresignParams $wt_video_upload_presign_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presignVideoUpload'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\WTVideoUploadProvisionParams $wt_video_upload_provision_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['provisionVideoUpload'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTVideoUploadPresign|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\WTVideoUploadProvision|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function presignVideoUploadWithHttpInfo($wt_video_upload_presign_params, string $contentType = self::contentTypes['presignVideoUpload'][0])
+    public function provisionVideoUploadWithHttpInfo($wt_video_upload_provision_params, string $contentType = self::contentTypes['provisionVideoUpload'][0])
     {
-        $request = $this->presignVideoUploadRequest($wt_video_upload_presign_params, $contentType);
+        $request = $this->provisionVideoUploadRequest($wt_video_upload_provision_params, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1448,11 +1448,11 @@ class VideosApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WTVideoUploadPresign' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\WTVideoUploadProvision' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTVideoUploadPresign' !== 'string') {
+                        if ('\OpenAPI\Client\Model\WTVideoUploadProvision' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1470,7 +1470,7 @@ class VideosApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTVideoUploadPresign', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTVideoUploadProvision', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1557,7 +1557,7 @@ class VideosApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTVideoUploadPresign';
+            $returnType = '\OpenAPI\Client\Model\WTVideoUploadProvision';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1590,7 +1590,7 @@ class VideosApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTVideoUploadPresign',
+                        '\OpenAPI\Client\Model\WTVideoUploadProvision',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1625,19 +1625,19 @@ class VideosApi
     }
 
     /**
-     * Operation presignVideoUploadAsync
+     * Operation provisionVideoUploadAsync
      *
-     * Presign a direct-to-R2 video upload
+     * Provision a direct video upload
      *
-     * @param  \OpenAPI\Client\Model\WTVideoUploadPresignParams $wt_video_upload_presign_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presignVideoUpload'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\WTVideoUploadProvisionParams $wt_video_upload_provision_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['provisionVideoUpload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function presignVideoUploadAsync($wt_video_upload_presign_params, string $contentType = self::contentTypes['presignVideoUpload'][0])
+    public function provisionVideoUploadAsync($wt_video_upload_provision_params, string $contentType = self::contentTypes['provisionVideoUpload'][0])
     {
-        return $this->presignVideoUploadAsyncWithHttpInfo($wt_video_upload_presign_params, $contentType)
+        return $this->provisionVideoUploadAsyncWithHttpInfo($wt_video_upload_provision_params, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1646,20 +1646,20 @@ class VideosApi
     }
 
     /**
-     * Operation presignVideoUploadAsyncWithHttpInfo
+     * Operation provisionVideoUploadAsyncWithHttpInfo
      *
-     * Presign a direct-to-R2 video upload
+     * Provision a direct video upload
      *
-     * @param  \OpenAPI\Client\Model\WTVideoUploadPresignParams $wt_video_upload_presign_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presignVideoUpload'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\WTVideoUploadProvisionParams $wt_video_upload_provision_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['provisionVideoUpload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function presignVideoUploadAsyncWithHttpInfo($wt_video_upload_presign_params, string $contentType = self::contentTypes['presignVideoUpload'][0])
+    public function provisionVideoUploadAsyncWithHttpInfo($wt_video_upload_provision_params, string $contentType = self::contentTypes['provisionVideoUpload'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WTVideoUploadPresign';
-        $request = $this->presignVideoUploadRequest($wt_video_upload_presign_params, $contentType);
+        $returnType = '\OpenAPI\Client\Model\WTVideoUploadProvision';
+        $request = $this->provisionVideoUploadRequest($wt_video_upload_provision_params, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1698,26 +1698,26 @@ class VideosApi
     }
 
     /**
-     * Create request for operation 'presignVideoUpload'
+     * Create request for operation 'provisionVideoUpload'
      *
-     * @param  \OpenAPI\Client\Model\WTVideoUploadPresignParams $wt_video_upload_presign_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presignVideoUpload'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\WTVideoUploadProvisionParams $wt_video_upload_provision_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['provisionVideoUpload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function presignVideoUploadRequest($wt_video_upload_presign_params, string $contentType = self::contentTypes['presignVideoUpload'][0])
+    public function provisionVideoUploadRequest($wt_video_upload_provision_params, string $contentType = self::contentTypes['provisionVideoUpload'][0])
     {
 
-        // verify the required parameter 'wt_video_upload_presign_params' is set
-        if ($wt_video_upload_presign_params === null || (is_array($wt_video_upload_presign_params) && count($wt_video_upload_presign_params) === 0)) {
+        // verify the required parameter 'wt_video_upload_provision_params' is set
+        if ($wt_video_upload_provision_params === null || (is_array($wt_video_upload_provision_params) && count($wt_video_upload_provision_params) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_video_upload_presign_params when calling presignVideoUpload'
+                'Missing the required parameter $wt_video_upload_provision_params when calling provisionVideoUpload'
             );
         }
 
 
-        $resourcePath = '/v2/video/presign';
+        $resourcePath = '/v2/video/upload/provision';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1735,12 +1735,12 @@ class VideosApi
         );
 
         // for model (json/xml)
-        if (isset($wt_video_upload_presign_params)) {
+        if (isset($wt_video_upload_provision_params)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_video_upload_presign_params));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_video_upload_provision_params));
             } else {
-                $httpBody = $wt_video_upload_presign_params;
+                $httpBody = $wt_video_upload_provision_params;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
