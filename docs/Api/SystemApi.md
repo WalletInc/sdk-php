@@ -9,7 +9,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAuditLogOfRoles()**](SystemApi.md#fetchAuditLogOfRoles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log |
 | [**fetchEmployeesWithRole()**](SystemApi.md#fetchEmployeesWithRole) | **GET** /v2/system/roles/employees/{roleID} | Get employees with role |
 | [**fetchWebpagesForRole()**](SystemApi.md#fetchWebpagesForRole) | **GET** /v2/system/roles/webpages/{roleID} | Get webpages for role |
-| [**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes |
+| [**getPaymentPrefixes()**](SystemApi.md#getPaymentPrefixes) | **GET** /v2/system/prefixes | Get payment prefixes (empty stub) |
 | [**loadRole()**](SystemApi.md#loadRole) | **GET** /v2/system/roles/{roleID} | Get role |
 | [**saveRole()**](SystemApi.md#saveRole) | **PUT** /v2/system/roles/{roleID} | Update role |
 
@@ -292,7 +292,7 @@ No authorization required
 getPaymentPrefixes(): mixed[]
 ```
 
-Get payment prefixes
+Get payment prefixes (empty stub)
 
 ### Example
 

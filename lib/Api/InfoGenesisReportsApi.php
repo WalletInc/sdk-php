@@ -5958,7 +5958,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequests
      *
-     * Get queries
+     * Get lookup requests
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters $wt_info_genesis_record_filter_parameters wt_info_genesis_record_filter_parameters (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequests'] to see the possible values for this operation
@@ -5976,7 +5976,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsWithHttpInfo
      *
-     * Get queries
+     * Get lookup requests
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters $wt_info_genesis_record_filter_parameters (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequests'] to see the possible values for this operation
@@ -6205,7 +6205,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsAsync
      *
-     * Get queries
+     * Get lookup requests
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters $wt_info_genesis_record_filter_parameters (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequests'] to see the possible values for this operation
@@ -6226,7 +6226,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsAsyncWithHttpInfo
      *
-     * Get queries
+     * Get lookup requests
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisRecordFilterParameters $wt_info_genesis_record_filter_parameters (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequests'] to see the possible values for this operation
@@ -6369,7 +6369,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsErrors
      *
-     * Get queries errors
+     * Get lookup request errors
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors $wt_info_genesis_lookup_request_errors wt_info_genesis_lookup_request_errors (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequestsErrors'] to see the possible values for this operation
@@ -6387,7 +6387,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsErrorsWithHttpInfo
      *
-     * Get queries errors
+     * Get lookup request errors
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors $wt_info_genesis_lookup_request_errors (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequestsErrors'] to see the possible values for this operation
@@ -6616,7 +6616,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsErrorsAsync
      *
-     * Get queries errors
+     * Get lookup request errors
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors $wt_info_genesis_lookup_request_errors (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequestsErrors'] to see the possible values for this operation
@@ -6637,7 +6637,7 @@ class InfoGenesisReportsApi
     /**
      * Operation fetchInfoGenesisLookupRequestsErrorsAsyncWithHttpInfo
      *
-     * Get queries errors
+     * Get lookup request errors
      *
      * @param  \OpenAPI\Client\Model\WTInfoGenesisLookupRequestErrors $wt_info_genesis_lookup_request_errors (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInfoGenesisLookupRequestsErrors'] to see the possible values for this operation

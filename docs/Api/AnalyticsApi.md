@@ -6,14 +6,14 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**countAllSubscribers()**](AnalyticsApi.md#countAllSubscribers) | **GET** /v2/analytics/sms/all/subscribers/count | Count opt in list subscribers |
 | [**countAuthenticatedSessions()**](AnalyticsApi.md#countAuthenticatedSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/authenticated | Count authenticated sessions |
-| [**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Get refund amount of campaigns by Campaign |
+| [**countDistinctRedemptions()**](AnalyticsApi.md#countDistinctRedemptions) | **GET** /v2/analytics/ledger/paymentObject/distinct/count | Count distinct payment object redemptions |
 | [**countHelpDeskRequests()**](AnalyticsApi.md#countHelpDeskRequests) | **GET** /v2/analytics/helpdeskrequests/count | Count help desk requests |
-| [**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count opt in list subscribers |
+| [**countInboundMessages()**](AnalyticsApi.md#countInboundMessages) | **GET** /v2/analytics/sms/inbound/count | Count inbound SMS messages |
 | [**countNewSessions()**](AnalyticsApi.md#countNewSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct/first | Count new sessions |
 | [**countOptInListSubscribersPartitionedByDate()**](AnalyticsApi.md#countOptInListSubscribersPartitionedByDate) | **GET** /v2/analytics/sms/all/subscribers/count/date | Count opt in list subscribers by date |
-| [**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count opt in list subscribers |
+| [**countOutboundMessages()**](AnalyticsApi.md#countOutboundMessages) | **GET** /v2/analytics/sms/outbound/count | Count outbound SMS messages |
 | [**countTotalSessions()**](AnalyticsApi.md#countTotalSessions) | **GET** /v2/analytics/walletPageViews/sessions/count/distinct | Count total sessions |
-| [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Get refund amount of campaigns by Campaign |
+| [**countTransactions()**](AnalyticsApi.md#countTransactions) | **GET** /v2/analytics/ledger/transactions/count | Count ledger transactions |
 | [**countVerifiedWalletPageViews()**](AnalyticsApi.md#countVerifiedWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/verified/distinct/walletObjectsCount | Get wallet object counts within a given time frame that have a valid phone verification token |
 | [**countWalletPageViews()**](AnalyticsApi.md#countWalletPageViews) | **GET** /v2/analytics/walletPageViews/sessions/distinct/walletObjectsCount | Get wallet object counts within a given time frame |
 | [**exitLinkSummary()**](AnalyticsApi.md#exitLinkSummary) | **GET** /v2/analytics/walletPageViews/exitLinkSummary | Count exit clicks |
@@ -41,8 +41,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRedemptionsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/redemptions/count/date | Count redemptions of campaigns by date |
 | [**fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/amount/campaign | Get refund amount of campaigns by Campaign |
 | [**fetchAnalyticsCampaignsRefundsAmountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsAmountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/amount/date | Get refund amount of campaigns by date |
-| [**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Get refund amount of campaigns by Campaign |
-| [**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Get refund amount of campaigns by date |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID) | **GET** /v2/analytics/campaigns/refunds/count/campaign | Count refunds of campaigns by Campaign |
+| [**fetchAnalyticsCampaignsRefundsCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsCampaignsRefundsCountPartitionedByDate) | **GET** /v2/analytics/campaigns/refunds/count/date | Count refunds of campaigns by date |
 | [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByDate) | **GET** /v2/analytics/outboundSMS/count/date/delivered | Count delivered outbound messages by date |
 | [**fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsDeliveredOutboundMessagesCountPartitionedByPhoneNumber) | **GET** /v2/analytics/outboundSMS/count/phoneNumber/delivered | Count delivered outbound messages by phone number |
 | [**fetchAnalyticsDistinctWalletSessions()**](AnalyticsApi.md#fetchAnalyticsDistinctWalletSessions) | **GET** /v2/analytics/walletPageViews/sessions/distinct | Get distinct wallet sessions |
@@ -86,8 +86,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAnalyticsWalletSessionActivity()**](AnalyticsApi.md#fetchAnalyticsWalletSessionActivity) | **GET** /v2/analytics/walletPageViews/session/activity/{sessionID} | Get session activity |
 | [**fetchWalletPageViewByID()**](AnalyticsApi.md#fetchWalletPageViewByID) | **GET** /v2/analytics/walletPageViews/activity/{id} | Get session activity by wallet page view ID |
 | [**referringSitesSummary()**](AnalyticsApi.md#referringSitesSummary) | **GET** /v2/analytics/walletPageViews/referringSitesSummary | Count referring sites |
-| [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Get refund amount of campaigns by Campaign |
-| [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Get refund amount of campaigns by Campaign |
+| [**sumRevenue()**](AnalyticsApi.md#sumRevenue) | **GET** /v2/analytics/ledger/revenue/sum | Sum ledger revenue |
+| [**sumTransactions()**](AnalyticsApi.md#sumTransactions) | **GET** /v2/analytics/ledger/transactions/sum | Sum ledger transaction amounts |
 
 
 ## `countAllSubscribers()`
@@ -214,7 +214,7 @@ No authorization required
 countDistinctRedemptions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Get refund amount of campaigns by Campaign
+Count distinct payment object redemptions
 
 ### Example
 
@@ -336,7 +336,7 @@ No authorization required
 countInboundMessages($start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
 ```
 
-Count opt in list subscribers
+Count inbound SMS messages
 
 ### Example
 
@@ -504,7 +504,7 @@ No authorization required
 countOutboundMessages($start_date, $end_date): \OpenAPI\Client\Model\WTCountResult
 ```
 
-Count opt in list subscribers
+Count outbound SMS messages
 
 ### Example
 
@@ -616,7 +616,7 @@ No authorization required
 countTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Get refund amount of campaigns by Campaign
+Count ledger transactions
 
 ### Example
 
@@ -2218,7 +2218,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID($start_date, $end_date): mixed[]
 ```
 
-Get refund amount of campaigns by Campaign
+Count refunds of campaigns by Campaign
 
 ### Example
 
@@ -2274,7 +2274,7 @@ No authorization required
 fetchAnalyticsCampaignsRefundsCountPartitionedByDate($start_date, $end_date, $locale, $timezone): mixed
 ```
 
-Get refund amount of campaigns by date
+Count refunds of campaigns by date
 
 ### Example
 
@@ -4818,7 +4818,7 @@ No authorization required
 sumRevenue($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Get refund amount of campaigns by Campaign
+Sum ledger revenue
 
 ### Example
 
@@ -4878,7 +4878,7 @@ No authorization required
 sumTransactions($start_date, $end_date, $transaction_type, $segment_type): mixed
 ```
 
-Get refund amount of campaigns by Campaign
+Sum ledger transaction amounts
 
 ### Example
 

@@ -553,7 +553,7 @@ class WTPosMachine implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets outlet_number
      *
-     * @param mixed $outlet_number Stores the outlet number
+     * @param mixed $outlet_number outlet_number
      *
      * @return self
      */

@@ -4,15 +4,15 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**claimTicket()**](InteractionsApi.md#claimTicket) | **PUT** /wallet/ticket/claim/{id} | Update ticket |
+| [**claimTicket()**](InteractionsApi.md#claimTicket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID |
 | [**createAdvertisementCreditScan()**](InteractionsApi.md#createAdvertisementCreditScan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
 | [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
 | [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
-| [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
+| [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
 | [**fetchAdvertisementCreditScansFromList()**](InteractionsApi.md#fetchAdvertisementCreditScansFromList) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
 | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
-| [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Update ticket |
+| [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
 | [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
 | [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Get member information |
 | [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
@@ -31,7 +31,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 claimTicket($id, $claim_ticket_request): \OpenAPI\Client\Model\Ticket
 ```
 
-Update ticket
+Claim a ticket by ID
 
 ### Example
 
@@ -303,7 +303,7 @@ No authorization required
 fetchActiveDynamicVouchers($merchant_id): \OpenAPI\Client\Model\DynamicVoucher[]
 ```
 
-Get a customer's static vouchers on the basis of a given voucher ID
+Get a merchant's active dynamic vouchers
 
 ### Example
 
@@ -467,7 +467,7 @@ No authorization required
 fetchCustomerTicketsWithToken($fetch_customer_tickets_with_token_request): \OpenAPI\Client\Model\Ticket[]
 ```
 
-Update ticket
+Get a customer's upcoming tickets via phone verification token
 
 ### Example
 

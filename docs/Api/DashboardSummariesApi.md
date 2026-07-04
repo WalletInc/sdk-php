@@ -21,7 +21,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchDashboardRedemptionsCount()**](DashboardSummariesApi.md#fetchDashboardRedemptionsCount) | **GET** /v2/dashboard/count/pos/redemptions | Count POS redemptions |
 | [**fetchDashboardRefundsCount()**](DashboardSummariesApi.md#fetchDashboardRefundsCount) | **GET** /v2/dashboard/count/pos/refunds | Count POS refunds |
 | [**fetchDashboardWalletPageViewsCount()**](DashboardSummariesApi.md#fetchDashboardWalletPageViewsCount) | **GET** /v2/dashboard/count/wallet/pageViews | Count Wallet page views |
-| [**fetchSubscriberCount()**](DashboardSummariesApi.md#fetchSubscriberCount) | **GET** /v2/dashboard/count/subscribers | Count Performances |
+| [**fetchSubscriberCount()**](DashboardSummariesApi.md#fetchSubscriberCount) | **GET** /v2/dashboard/count/subscribers | Count subscribers |
 
 
 ## `countTotalWalletSessions()`
@@ -984,7 +984,7 @@ No authorization required
 fetchSubscriberCount($start_date_time, $end_date_time): \OpenAPI\Client\Model\WTCountResult
 ```
 
-Count Performances
+Count subscribers
 
 ### Example
 

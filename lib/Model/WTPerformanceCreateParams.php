@@ -60,16 +60,16 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'title' => 'mixed',
         'body' => 'mixed',
-        'start_date_time' => 'mixed',
+        'start_date_time' => '\DateTime',
         'price' => 'mixed',
         'url' => 'mixed',
         'order_number' => 'mixed',
         'is_sold_out' => 'mixed',
-        'media_url' => 'mixed',
+        'media_url' => 'string',
         'payment_design_id' => 'string',
-        'max_comp_tickets' => 'mixed',
-        'ticket_expiration_date_time' => 'mixed',
-        'redemption_instructions' => 'mixed'
+        'max_comp_tickets' => 'float',
+        'ticket_expiration_date_time' => '\DateTime',
+        'redemption_instructions' => 'string'
     ];
 
     /**
@@ -102,16 +102,16 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'title' => true,
         'body' => true,
-        'start_date_time' => true,
+        'start_date_time' => false,
         'price' => true,
         'url' => true,
         'order_number' => true,
         'is_sold_out' => true,
-        'media_url' => true,
+        'media_url' => false,
         'payment_design_id' => false,
-        'max_comp_tickets' => true,
-        'ticket_expiration_date_time' => true,
-        'redemption_instructions' => true
+        'max_comp_tickets' => false,
+        'ticket_expiration_date_time' => false,
+        'redemption_instructions' => false
     ];
 
     /**
@@ -372,10 +372,6 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['price'] === null) {
             $invalidProperties[] = "'price' can't be null";
         }
-        if (($this->container['price'] < 0)) {
-            $invalidProperties[] = "invalid value for 'price', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['url'] === null) {
             $invalidProperties[] = "'url' can't be null";
         }
@@ -497,7 +493,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets start_date_time
      *
-     * @return mixed
+     * @return \DateTime
      */
     public function getStartDateTime()
     {
@@ -507,21 +503,14 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets start_date_time
      *
-     * @param mixed $start_date_time start_date_time
+     * @param \DateTime $start_date_time start_date_time
      *
      * @return self
      */
     public function setStartDateTime($start_date_time)
     {
         if (is_null($start_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date_time', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable start_date_time cannot be null');
         }
         $this->container['start_date_time'] = $start_date_time;
 
@@ -557,11 +546,6 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-        if (!is_null($price) && ($price < 0)) {
-            throw new \InvalidArgumentException('invalid value for $price when calling WTPerformanceCreateParams., must be bigger than or equal to 0.');
-        }
-
         $this->container['price'] = $price;
 
         return $this;
@@ -614,7 +598,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets order_number
      *
-     * @param mixed $order_number Stores the order number
+     * @param mixed $order_number order_number
      *
      * @return self
      */
@@ -677,7 +661,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets media_url
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getMediaUrl()
     {
@@ -687,21 +671,14 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets media_url
      *
-     * @param mixed|null $media_url media_url
+     * @param string|null $media_url media_url
      *
      * @return self
      */
     public function setMediaUrl($media_url)
     {
         if (is_null($media_url)) {
-            array_push($this->openAPINullablesSetToNull, 'media_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('media_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable media_url cannot be null');
         }
         $this->container['media_url'] = $media_url;
 
@@ -748,7 +725,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets max_comp_tickets
      *
-     * @return mixed|null
+     * @return float|null
      */
     public function getMaxCompTickets()
     {
@@ -758,21 +735,14 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets max_comp_tickets
      *
-     * @param mixed|null $max_comp_tickets max_comp_tickets
+     * @param float|null $max_comp_tickets max_comp_tickets
      *
      * @return self
      */
     public function setMaxCompTickets($max_comp_tickets)
     {
         if (is_null($max_comp_tickets)) {
-            array_push($this->openAPINullablesSetToNull, 'max_comp_tickets');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('max_comp_tickets', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable max_comp_tickets cannot be null');
         }
         $this->container['max_comp_tickets'] = $max_comp_tickets;
 
@@ -782,7 +752,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets ticket_expiration_date_time
      *
-     * @return mixed|null
+     * @return \DateTime|null
      */
     public function getTicketExpirationDateTime()
     {
@@ -792,21 +762,14 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets ticket_expiration_date_time
      *
-     * @param mixed|null $ticket_expiration_date_time ticket_expiration_date_time
+     * @param \DateTime|null $ticket_expiration_date_time ticket_expiration_date_time
      *
      * @return self
      */
     public function setTicketExpirationDateTime($ticket_expiration_date_time)
     {
         if (is_null($ticket_expiration_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'ticket_expiration_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ticket_expiration_date_time', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ticket_expiration_date_time cannot be null');
         }
         $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
 
@@ -816,7 +779,7 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets redemption_instructions
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getRedemptionInstructions()
     {
@@ -826,21 +789,14 @@ class WTPerformanceCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets redemption_instructions
      *
-     * @param mixed|null $redemption_instructions redemption_instructions
+     * @param string|null $redemption_instructions redemption_instructions
      *
      * @return self
      */
     public function setRedemptionInstructions($redemption_instructions)
     {
         if (is_null($redemption_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'redemption_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redemption_instructions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable redemption_instructions cannot be null');
         }
         $this->container['redemption_instructions'] = $redemption_instructions;
 

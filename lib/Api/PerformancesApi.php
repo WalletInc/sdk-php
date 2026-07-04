@@ -3526,7 +3526,7 @@ class PerformancesApi
     /**
      * Operation fetchPerformanceTicketsPage
      *
-     * Get Peformance&#39;s Tickets
+     * Get Performance&#39;s Tickets
      *
      * @param  string $performance_id performance_id (required)
      * @param  float $page_num page_num (required)
@@ -3551,7 +3551,7 @@ class PerformancesApi
     /**
      * Operation fetchPerformanceTicketsPageWithHttpInfo
      *
-     * Get Peformance&#39;s Tickets
+     * Get Performance&#39;s Tickets
      *
      * @param  string $performance_id (required)
      * @param  float $page_num (required)
@@ -3787,7 +3787,7 @@ class PerformancesApi
     /**
      * Operation fetchPerformanceTicketsPageAsync
      *
-     * Get Peformance&#39;s Tickets
+     * Get Performance&#39;s Tickets
      *
      * @param  string $performance_id (required)
      * @param  float $page_num (required)
@@ -3815,7 +3815,7 @@ class PerformancesApi
     /**
      * Operation fetchPerformanceTicketsPageAsyncWithHttpInfo
      *
-     * Get Peformance&#39;s Tickets
+     * Get Performance&#39;s Tickets
      *
      * @param  string $performance_id (required)
      * @param  float $page_num (required)

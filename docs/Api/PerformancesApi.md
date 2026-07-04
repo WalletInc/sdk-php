@@ -12,7 +12,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllPerformanceTickets()**](PerformancesApi.md#fetchAllPerformanceTickets) | **GET** /v2/performances/tickets/all/{id} | Get Performance&#39;s Tickets |
 | [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Get all Performances |
 | [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Get Performance |
-| [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Peformance&#39;s Tickets |
+| [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets |
 | [**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets |
 | [**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore Performance |
 | [**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings |
@@ -459,7 +459,7 @@ No authorization required
 fetchPerformanceTicketsPage($performance_id, $page_num, $page_size, $filter_comps, $filter_claimed, $sort_by, $sort_direction, $is_archive_included): \OpenAPI\Client\Model\FetchPerformanceTicketsPage200Response
 ```
 
-Get Peformance's Tickets
+Get Performance's Tickets
 
 ### Example
 

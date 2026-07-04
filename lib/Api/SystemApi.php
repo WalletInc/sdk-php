@@ -2255,7 +2255,7 @@ class SystemApi
     /**
      * Operation getPaymentPrefixes
      *
-     * Get payment prefixes
+     * Get payment prefixes (empty stub)
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentPrefixes'] to see the possible values for this operation
      *
@@ -2272,7 +2272,7 @@ class SystemApi
     /**
      * Operation getPaymentPrefixesWithHttpInfo
      *
-     * Get payment prefixes
+     * Get payment prefixes (empty stub)
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentPrefixes'] to see the possible values for this operation
      *
@@ -2500,7 +2500,7 @@ class SystemApi
     /**
      * Operation getPaymentPrefixesAsync
      *
-     * Get payment prefixes
+     * Get payment prefixes (empty stub)
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentPrefixes'] to see the possible values for this operation
      *
@@ -2520,7 +2520,7 @@ class SystemApi
     /**
      * Operation getPaymentPrefixesAsyncWithHttpInfo
      *
-     * Get payment prefixes
+     * Get payment prefixes (empty stub)
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentPrefixes'] to see the possible values for this operation
      *
