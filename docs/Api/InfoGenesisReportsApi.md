@@ -18,8 +18,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**countStaticVoucherRefunds()**](InfoGenesisReportsApi.md#countStaticVoucherRefunds) | **POST** /v2/pos/infogenesis/count/staticVoucher/refunds | Count static voucher refunds |
 | [**fetchInfoGenesisAuthorizations()**](InfoGenesisReportsApi.md#fetchInfoGenesisAuthorizations) | **POST** /v2/pos/infogenesis/authorizations | Get authorizations |
 | [**fetchInfoGenesisCampaignData()**](InfoGenesisReportsApi.md#fetchInfoGenesisCampaignData) | **POST** /v2/pos/infogenesis/campaign | Get campaign information |
-| [**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Get queries |
-| [**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get queries errors |
+| [**fetchInfoGenesisLookupRequests()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequests) | **POST** /v2/pos/infogenesis/requests/lookup | Get lookup requests |
+| [**fetchInfoGenesisLookupRequestsErrors()**](InfoGenesisReportsApi.md#fetchInfoGenesisLookupRequestsErrors) | **POST** /v2/pos/infogenesis/requests/lookup/errors | Get lookup request errors |
 | [**fetchInfoGenesisRedeemedStaticVouchers()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedStaticVouchers) | **POST** /v2/pos/infogenesis/staticVouchers/redeemed | Get redeemed static vouchers |
 | [**fetchInfoGenesisRedeemedUniquePostingIDs()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedeemedUniquePostingIDs) | **GET** /v2/pos/infogenesis/postingIDs/redeemed | Get redeemed unique posting IDs |
 | [**fetchInfoGenesisRedemptions()**](InfoGenesisReportsApi.md#fetchInfoGenesisRedemptions) | **POST** /v2/pos/infogenesis/redemptions | Get redemptions |
@@ -795,7 +795,7 @@ No authorization required
 fetchInfoGenesisLookupRequests($wt_info_genesis_record_filter_parameters): \OpenAPI\Client\Model\Request[]
 ```
 
-Get queries
+Get lookup requests
 
 ### Example
 
@@ -849,7 +849,7 @@ No authorization required
 fetchInfoGenesisLookupRequestsErrors($wt_info_genesis_lookup_request_errors): \OpenAPI\Client\Model\Request[]
 ```
 
-Get queries errors
+Get lookup request errors
 
 ### Example
 

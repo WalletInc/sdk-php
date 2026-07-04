@@ -180,7 +180,7 @@ class InteractionsApi
     /**
      * Operation claimTicket
      *
-     * Update ticket
+     * Claim a ticket by ID
      *
      * @param  string $id id (required)
      * @param  \OpenAPI\Client\Model\ClaimTicketRequest $claim_ticket_request claim_ticket_request (required)
@@ -199,7 +199,7 @@ class InteractionsApi
     /**
      * Operation claimTicketWithHttpInfo
      *
-     * Update ticket
+     * Claim a ticket by ID
      *
      * @param  string $id (required)
      * @param  \OpenAPI\Client\Model\ClaimTicketRequest $claim_ticket_request (required)
@@ -394,7 +394,7 @@ class InteractionsApi
     /**
      * Operation claimTicketAsync
      *
-     * Update ticket
+     * Claim a ticket by ID
      *
      * @param  string $id (required)
      * @param  \OpenAPI\Client\Model\ClaimTicketRequest $claim_ticket_request (required)
@@ -416,7 +416,7 @@ class InteractionsApi
     /**
      * Operation claimTicketAsyncWithHttpInfo
      *
-     * Update ticket
+     * Claim a ticket by ID
      *
      * @param  string $id (required)
      * @param  \OpenAPI\Client\Model\ClaimTicketRequest $claim_ticket_request (required)
@@ -2129,7 +2129,7 @@ class InteractionsApi
     /**
      * Operation fetchActiveDynamicVouchers
      *
-     * Get a customer&#39;s static vouchers on the basis of a given voucher ID
+     * Get a merchant&#39;s active dynamic vouchers
      *
      * @param  string $merchant_id merchant_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchActiveDynamicVouchers'] to see the possible values for this operation
@@ -2147,7 +2147,7 @@ class InteractionsApi
     /**
      * Operation fetchActiveDynamicVouchersWithHttpInfo
      *
-     * Get a customer&#39;s static vouchers on the basis of a given voucher ID
+     * Get a merchant&#39;s active dynamic vouchers
      *
      * @param  string $merchant_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchActiveDynamicVouchers'] to see the possible values for this operation
@@ -2341,7 +2341,7 @@ class InteractionsApi
     /**
      * Operation fetchActiveDynamicVouchersAsync
      *
-     * Get a customer&#39;s static vouchers on the basis of a given voucher ID
+     * Get a merchant&#39;s active dynamic vouchers
      *
      * @param  string $merchant_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchActiveDynamicVouchers'] to see the possible values for this operation
@@ -2362,7 +2362,7 @@ class InteractionsApi
     /**
      * Operation fetchActiveDynamicVouchersAsyncWithHttpInfo
      *
-     * Get a customer&#39;s static vouchers on the basis of a given voucher ID
+     * Get a merchant&#39;s active dynamic vouchers
      *
      * @param  string $merchant_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchActiveDynamicVouchers'] to see the possible values for this operation
@@ -3308,7 +3308,7 @@ class InteractionsApi
     /**
      * Operation fetchCustomerTicketsWithToken
      *
-     * Update ticket
+     * Get a customer&#39;s upcoming tickets via phone verification token
      *
      * @param  \OpenAPI\Client\Model\FetchCustomerTicketsWithTokenRequest $fetch_customer_tickets_with_token_request fetch_customer_tickets_with_token_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerTicketsWithToken'] to see the possible values for this operation
@@ -3326,7 +3326,7 @@ class InteractionsApi
     /**
      * Operation fetchCustomerTicketsWithTokenWithHttpInfo
      *
-     * Update ticket
+     * Get a customer&#39;s upcoming tickets via phone verification token
      *
      * @param  \OpenAPI\Client\Model\FetchCustomerTicketsWithTokenRequest $fetch_customer_tickets_with_token_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerTicketsWithToken'] to see the possible values for this operation
@@ -3520,7 +3520,7 @@ class InteractionsApi
     /**
      * Operation fetchCustomerTicketsWithTokenAsync
      *
-     * Update ticket
+     * Get a customer&#39;s upcoming tickets via phone verification token
      *
      * @param  \OpenAPI\Client\Model\FetchCustomerTicketsWithTokenRequest $fetch_customer_tickets_with_token_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerTicketsWithToken'] to see the possible values for this operation
@@ -3541,7 +3541,7 @@ class InteractionsApi
     /**
      * Operation fetchCustomerTicketsWithTokenAsyncWithHttpInfo
      *
-     * Update ticket
+     * Get a customer&#39;s upcoming tickets via phone verification token
      *
      * @param  \OpenAPI\Client\Model\FetchCustomerTicketsWithTokenRequest $fetch_customer_tickets_with_token_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomerTicketsWithToken'] to see the possible values for this operation

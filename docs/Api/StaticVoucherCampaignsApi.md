@@ -17,10 +17,10 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchStaticVoucherCampaignById()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaignById) | **GET** /v2/payment/staticVoucherCampaign/{id} | Get Static Vouchers Campaign |
 | [**fetchStaticVoucherCampaigns()**](StaticVoucherCampaignsApi.md#fetchStaticVoucherCampaigns) | **GET** /v2/payment/staticVoucherCampaign/all | Get all Static Vouchers Campaigns |
 | [**fetchStaticVouchers()**](StaticVoucherCampaignsApi.md#fetchStaticVouchers) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/{campaignID} | Get vouchers in Static Vouchers Campaign |
-| [**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get vouchers in Static Vouchers Campaign |
+| [**fetchStaticVouchersPage()**](StaticVoucherCampaignsApi.md#fetchStaticVouchersPage) | **GET** /v2/payment/staticVoucherCampaign/staticVouchers/page/{campaignID} | Get a page of vouchers in a Static Voucher Campaign |
 | [**fetchViews()**](StaticVoucherCampaignsApi.md#fetchViews) | **GET** /v2/payment/staticVoucherCampaign/views/{campaignID} | Get Static Vouchers Campaign traffic |
 | [**fetchVouchersRedeemed()**](StaticVoucherCampaignsApi.md#fetchVouchersRedeemed) | **GET** /v2/payment/staticVoucherCampaign/vouchers/redeemed/{campaignID} | Get redeemed vouchers in Static Vouchers Campaign |
-| [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | View vouchers in Static Voucher Campaign |
+| [**previewMessagesByPage()**](StaticVoucherCampaignsApi.md#previewMessagesByPage) | **PUT** /v2/payment/staticVoucherCampaign/preview/page/{campaignID} | Preview generated broadcast messages by page |
 | [**restoreStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#restoreStaticVoucherCampaign) | **PATCH** /v2/payment/staticVoucherCampaign/{campaignID} | Restore Static Voucher Campaign |
 | [**updateStaticVoucherCampaign()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaign) | **PUT** /v2/payment/staticVoucherCampaign/{campaignID} | Update Static Voucher Campaign |
 | [**updateStaticVoucherCampaignWithVoucher()**](StaticVoucherCampaignsApi.md#updateStaticVoucherCampaignWithVoucher) | **PUT** /v2/payment/staticVoucherCampaign/voucher/{campaignID} | Update Static Voucher Campaign with single voucher |
@@ -742,7 +742,7 @@ No authorization required
 fetchStaticVouchersPage($campaign_id, $pagenum, $pagesize): \OpenAPI\Client\Model\FetchStaticVouchersPage200Response
 ```
 
-Get vouchers in Static Vouchers Campaign
+Get a page of vouchers in a Static Voucher Campaign
 
 ### Example
 
@@ -908,7 +908,7 @@ No authorization required
 previewMessagesByPage($campaign_id, $wt_static_voucher_campaign_preview_messages_by_page): \OpenAPI\Client\Model\VSCampaignGeneratedMessagePagination
 ```
 
-View vouchers in Static Voucher Campaign
+Preview generated broadcast messages by page
 
 ### Example
 

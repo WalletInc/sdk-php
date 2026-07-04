@@ -7558,7 +7558,7 @@ class DashboardSummariesApi
     /**
      * Operation fetchSubscriberCount
      *
-     * Count Performances
+     * Count subscribers
      *
      * @param  \DateTime $start_date_time start_date_time (required)
      * @param  \DateTime $end_date_time end_date_time (required)
@@ -7577,7 +7577,7 @@ class DashboardSummariesApi
     /**
      * Operation fetchSubscriberCountWithHttpInfo
      *
-     * Count Performances
+     * Count subscribers
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
@@ -7807,7 +7807,7 @@ class DashboardSummariesApi
     /**
      * Operation fetchSubscriberCountAsync
      *
-     * Count Performances
+     * Count subscribers
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)
@@ -7829,7 +7829,7 @@ class DashboardSummariesApi
     /**
      * Operation fetchSubscriberCountAsyncWithHttpInfo
      *
-     * Count Performances
+     * Count subscribers
      *
      * @param  \DateTime $start_date_time (required)
      * @param  \DateTime $end_date_time (required)

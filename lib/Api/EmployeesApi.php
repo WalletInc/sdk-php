@@ -12695,7 +12695,7 @@ class EmployeesApi
     /**
      * Operation scheduleDynamicVoucherToRecipient
      *
-     * Schedule Dyanamic Voucher to recipient
+     * Schedule Dynamic Voucher to recipient
      *
      * @param  string $dynamic_voucher_id dynamic_voucher_id (required)
      * @param  \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient $wt_employee_schedule_simple_smsto_recipient wt_employee_schedule_simple_smsto_recipient (required)
@@ -12714,7 +12714,7 @@ class EmployeesApi
     /**
      * Operation scheduleDynamicVoucherToRecipientWithHttpInfo
      *
-     * Schedule Dyanamic Voucher to recipient
+     * Schedule Dynamic Voucher to recipient
      *
      * @param  string $dynamic_voucher_id (required)
      * @param  \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient $wt_employee_schedule_simple_smsto_recipient (required)
@@ -12979,7 +12979,7 @@ class EmployeesApi
     /**
      * Operation scheduleDynamicVoucherToRecipientAsync
      *
-     * Schedule Dyanamic Voucher to recipient
+     * Schedule Dynamic Voucher to recipient
      *
      * @param  string $dynamic_voucher_id (required)
      * @param  \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient $wt_employee_schedule_simple_smsto_recipient (required)
@@ -13001,7 +13001,7 @@ class EmployeesApi
     /**
      * Operation scheduleDynamicVoucherToRecipientAsyncWithHttpInfo
      *
-     * Schedule Dyanamic Voucher to recipient
+     * Schedule Dynamic Voucher to recipient
      *
      * @param  string $dynamic_voucher_id (required)
      * @param  \OpenAPI\Client\Model\WTEmployeeScheduleSimpleSMSToRecipient $wt_employee_schedule_simple_smsto_recipient (required)
