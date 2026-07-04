@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantApi
+ * SMSMessagesApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use OpenAPI\Client\HeaderSelector;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
- * MerchantApi Class Doc Comment
+ * SMSMessagesApi Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class MerchantApi
+class SMSMessagesApi
 {
     /**
      * @var ClientInterface
@@ -72,28 +72,34 @@ class MerchantApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'archiveMerchantProfile' => [
+        'countInboundSMS' => [
             'application/json',
         ],
-        'fetchCustomRoles' => [
+        'countOutboundSMS' => [
             'application/json',
         ],
-        'fetchEmployees' => [
+        'exportInboundMessages' => [
             'application/json',
         ],
-        'fetchPublicEmployees' => [
+        'exportOutboundMessages' => [
             'application/json',
         ],
-        'fetchWalletConfiguration' => [
+        'fetchInboundSMS' => [
             'application/json',
         ],
-        'updateMerchant' => [
+        'fetchInboundSMSByPage' => [
             'application/json',
         ],
-        'updatePointsOfContact' => [
+        'fetchMerchantOutboundSMS' => [
             'application/json',
         ],
-        'updatePosIntegration' => [
+        'fetchOutboundSMS' => [
+            'application/json',
+        ],
+        'fetchOutboundSMSByPage' => [
+            'application/json',
+        ],
+        'retrieveSentAndMaxCountOfMessages' => [
             'application/json',
         ],
     ];
@@ -145,36 +151,46 @@ class MerchantApi
     }
 
     /**
-     * Operation archiveMerchantProfile
+     * Operation countInboundSMS
      *
-     * Archive Merchant
+     * Count inbound SMSes
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveMerchantProfile'] to see the possible values for this operation
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $from_phone_number from_phone_number (optional)
+     * @param  string $body body (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function archiveMerchantProfile(string $contentType = self::contentTypes['archiveMerchantProfile'][0])
+    public function countInboundSMS($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        list($response) = $this->archiveMerchantProfileWithHttpInfo($contentType);
+        list($response) = $this->countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
         return $response;
     }
 
     /**
-     * Operation archiveMerchantProfileWithHttpInfo
+     * Operation countInboundSMSWithHttpInfo
      *
-     * Archive Merchant
+     * Count inbound SMSes
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveMerchantProfile'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function archiveMerchantProfileWithHttpInfo(string $contentType = self::contentTypes['archiveMerchantProfile'][0])
+    public function countInboundSMSWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        $request = $this->archiveMerchantProfileRequest($contentType);
+        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -213,11 +229,11 @@ class MerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('mixed' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\WTCountResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
+                        if ('\OpenAPI\Client\Model\WTCountResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -235,7 +251,7 @@ class MerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTCountResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -322,7 +338,7 @@ class MerchantApi
                     ];
             }
 
-            $returnType = 'mixed';
+            $returnType = '\OpenAPI\Client\Model\WTCountResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -355,7 +371,7 @@ class MerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'mixed',
+                        '\OpenAPI\Client\Model\WTCountResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -390,18 +406,23 @@ class MerchantApi
     }
 
     /**
-     * Operation archiveMerchantProfileAsync
+     * Operation countInboundSMSAsync
      *
-     * Archive Merchant
+     * Count inbound SMSes
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveMerchantProfile'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function archiveMerchantProfileAsync(string $contentType = self::contentTypes['archiveMerchantProfile'][0])
+    public function countInboundSMSAsync($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        return $this->archiveMerchantProfileAsyncWithHttpInfo($contentType)
+        return $this->countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -410,19 +431,24 @@ class MerchantApi
     }
 
     /**
-     * Operation archiveMerchantProfileAsyncWithHttpInfo
+     * Operation countInboundSMSAsyncWithHttpInfo
      *
-     * Archive Merchant
+     * Count inbound SMSes
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveMerchantProfile'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function archiveMerchantProfileAsyncWithHttpInfo(string $contentType = self::contentTypes['archiveMerchantProfile'][0])
+    public function countInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
-        $returnType = 'mixed';
-        $request = $this->archiveMerchantProfileRequest($contentType);
+        $returnType = '\OpenAPI\Client\Model\WTCountResult';
+        $request = $this->countInboundSMSRequest($phone_number_id, $from_phone_number, $body, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -461,1998 +487,95 @@ class MerchantApi
     }
 
     /**
-     * Create request for operation 'archiveMerchantProfile'
+     * Create request for operation 'countInboundSMS'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveMerchantProfile'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function archiveMerchantProfileRequest(string $contentType = self::contentTypes['archiveMerchantProfile'][0])
-    {
-
-
-        $resourcePath = '/v2/merchant/delete';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchCustomRoles
-     *
-     * Get custom roles
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomRoles'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchCustomRoles(string $contentType = self::contentTypes['fetchCustomRoles'][0])
-    {
-        list($response) = $this->fetchCustomRolesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchCustomRolesWithHttpInfo
-     *
-     * Get custom roles
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomRoles'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchCustomRolesWithHttpInfo(string $contentType = self::contentTypes['fetchCustomRoles'][0])
-    {
-        $request = $this->fetchCustomRolesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchCustomRolesAsync
-     *
-     * Get custom roles
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomRoles'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchCustomRolesAsync(string $contentType = self::contentTypes['fetchCustomRoles'][0])
-    {
-        return $this->fetchCustomRolesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchCustomRolesAsyncWithHttpInfo
-     *
-     * Get custom roles
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomRoles'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchCustomRolesAsyncWithHttpInfo(string $contentType = self::contentTypes['fetchCustomRoles'][0])
-    {
-        $returnType = 'mixed';
-        $request = $this->fetchCustomRolesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchCustomRoles'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchCustomRoles'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $body (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countInboundSMS'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchCustomRolesRequest(string $contentType = self::contentTypes['fetchCustomRoles'][0])
+    public function countInboundSMSRequest($phone_number_id, $from_phone_number = null, $body = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countInboundSMS'][0])
     {
 
-
-        $resourcePath = '/v2/merchant/roles/custom';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchEmployees
-     *
-     * Get all employees
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchEmployees'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchEmployees(string $contentType = self::contentTypes['fetchEmployees'][0])
-    {
-        list($response) = $this->fetchEmployeesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchEmployeesWithHttpInfo
-     *
-     * Get all employees
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchEmployees'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchEmployeesWithHttpInfo(string $contentType = self::contentTypes['fetchEmployees'][0])
-    {
-        $request = $this->fetchEmployeesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchEmployeesAsync
-     *
-     * Get all employees
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchEmployeesAsync(string $contentType = self::contentTypes['fetchEmployees'][0])
-    {
-        return $this->fetchEmployeesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchEmployeesAsyncWithHttpInfo
-     *
-     * Get all employees
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchEmployeesAsyncWithHttpInfo(string $contentType = self::contentTypes['fetchEmployees'][0])
-    {
-        $returnType = 'mixed';
-        $request = $this->fetchEmployeesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchEmployees'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchEmployeesRequest(string $contentType = self::contentTypes['fetchEmployees'][0])
-    {
-
-
-        $resourcePath = '/v2/merchant/employees/all';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchPublicEmployees
-     *
-     * Get public representative employees of the merchant
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchPublicEmployees'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchPublicEmployees(string $contentType = self::contentTypes['fetchPublicEmployees'][0])
-    {
-        list($response) = $this->fetchPublicEmployeesWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchPublicEmployeesWithHttpInfo
-     *
-     * Get public representative employees of the merchant
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchPublicEmployees'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchPublicEmployeesWithHttpInfo(string $contentType = self::contentTypes['fetchPublicEmployees'][0])
-    {
-        $request = $this->fetchPublicEmployeesRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchPublicEmployeesAsync
-     *
-     * Get public representative employees of the merchant
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchPublicEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchPublicEmployeesAsync(string $contentType = self::contentTypes['fetchPublicEmployees'][0])
-    {
-        return $this->fetchPublicEmployeesAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchPublicEmployeesAsyncWithHttpInfo
-     *
-     * Get public representative employees of the merchant
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchPublicEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchPublicEmployeesAsyncWithHttpInfo(string $contentType = self::contentTypes['fetchPublicEmployees'][0])
-    {
-        $returnType = 'mixed';
-        $request = $this->fetchPublicEmployeesRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchPublicEmployees'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchPublicEmployees'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchPublicEmployeesRequest(string $contentType = self::contentTypes['fetchPublicEmployees'][0])
-    {
-
-
-        $resourcePath = '/v2/merchant/employees/public';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchWalletConfiguration
-     *
-     * Get wallet configuration
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchWalletConfiguration'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchWalletConfiguration(string $contentType = self::contentTypes['fetchWalletConfiguration'][0])
-    {
-        list($response) = $this->fetchWalletConfigurationWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchWalletConfigurationWithHttpInfo
-     *
-     * Get wallet configuration
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchWalletConfiguration'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchWalletConfigurationWithHttpInfo(string $contentType = self::contentTypes['fetchWalletConfiguration'][0])
-    {
-        $request = $this->fetchWalletConfigurationRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchWalletConfigurationAsync
-     *
-     * Get wallet configuration
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchWalletConfiguration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchWalletConfigurationAsync(string $contentType = self::contentTypes['fetchWalletConfiguration'][0])
-    {
-        return $this->fetchWalletConfigurationAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchWalletConfigurationAsyncWithHttpInfo
-     *
-     * Get wallet configuration
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchWalletConfiguration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchWalletConfigurationAsyncWithHttpInfo(string $contentType = self::contentTypes['fetchWalletConfiguration'][0])
-    {
-        $returnType = 'mixed';
-        $request = $this->fetchWalletConfigurationRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchWalletConfiguration'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchWalletConfiguration'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchWalletConfigurationRequest(string $contentType = self::contentTypes['fetchWalletConfiguration'][0])
-    {
-
-
-        $resourcePath = '/v2/merchant/wallet/configuration';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation updateMerchant
-     *
-     * Update merchant details
-     *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdate $wt_merchant_update wt_merchant_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMerchant'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function updateMerchant($wt_merchant_update, string $contentType = self::contentTypes['updateMerchant'][0])
-    {
-        list($response) = $this->updateMerchantWithHttpInfo($wt_merchant_update, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation updateMerchantWithHttpInfo
-     *
-     * Update merchant details
-     *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdate $wt_merchant_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMerchant'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateMerchantWithHttpInfo($wt_merchant_update, string $contentType = self::contentTypes['updateMerchant'][0])
-    {
-        $request = $this->updateMerchantRequest($wt_merchant_update, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('mixed' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = 'mixed';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'mixed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateMerchantAsync
-     *
-     * Update merchant details
-     *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdate $wt_merchant_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMerchant'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateMerchantAsync($wt_merchant_update, string $contentType = self::contentTypes['updateMerchant'][0])
-    {
-        return $this->updateMerchantAsyncWithHttpInfo($wt_merchant_update, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation updateMerchantAsyncWithHttpInfo
-     *
-     * Update merchant details
-     *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdate $wt_merchant_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMerchant'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateMerchantAsyncWithHttpInfo($wt_merchant_update, string $contentType = self::contentTypes['updateMerchant'][0])
-    {
-        $returnType = 'mixed';
-        $request = $this->updateMerchantRequest($wt_merchant_update, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'updateMerchant'
-     *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdate $wt_merchant_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMerchant'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function updateMerchantRequest($wt_merchant_update, string $contentType = self::contentTypes['updateMerchant'][0])
-    {
-
-        // verify the required parameter 'wt_merchant_update' is set
-        if ($wt_merchant_update === null || (is_array($wt_merchant_update) && count($wt_merchant_update) === 0)) {
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_merchant_update when calling updateMerchant'
+                'Missing the required parameter $phone_number_id when calling countInboundSMS'
             );
         }
+        if (strlen($phone_number_id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.countInboundSMS, must be smaller than or equal to 12.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.countInboundSMS, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.countInboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
 
 
-        $resourcePath = '/v2/merchant';
+
+
+
+        $resourcePath = '/v2/merchant/sms/inbound/count/{phoneNumberID}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_phone_number,
+            'fromPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $body,
+            'body', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -2462,14 +585,954 @@ class MerchantApi
         );
 
         // for model (json/xml)
-        if (isset($wt_merchant_update)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_merchant_update));
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
-                $httpBody = $wt_merchant_update;
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
-        } elseif (count($formParams) > 0) {
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation countOutboundSMS
+     *
+     * Count outbound SMS
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $to_phone_number to_phone_number (optional)
+     * @param  string $status status (optional)
+     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function countOutboundSMS($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countOutboundSMS'][0])
+    {
+        list($response) = $this->countOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation countOutboundSMSWithHttpInfo
+     *
+     * Count outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function countOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countOutboundSMS'][0])
+    {
+        $request = $this->countOutboundSMSRequest($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\WTCountResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\WTCountResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTCountResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\WTCountResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\WTCountResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation countOutboundSMSAsync
+     *
+     * Count outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function countOutboundSMSAsync($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countOutboundSMS'][0])
+    {
+        return $this->countOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation countOutboundSMSAsyncWithHttpInfo
+     *
+     * Count outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function countOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countOutboundSMS'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\WTCountResult';
+        $request = $this->countOutboundSMSRequest($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $start_date, $end_date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'countOutboundSMS'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function countOutboundSMSRequest($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countOutboundSMS'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling countOutboundSMS'
+            );
+        }
+        if (strlen($phone_number_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.countOutboundSMS, must be smaller than or equal to 10.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.countOutboundSMS, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.countOutboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.countOutboundSMS, must be smaller than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.countOutboundSMS, must be bigger than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && !preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
+            throw new \InvalidArgumentException("invalid value for \"payment_object_broadcast_id\" when calling SMSMessagesApi.countOutboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+        $resourcePath = '/v2/sms/outbound/count/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_phone_number,
+            'toPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $payment_object_broadcast_id,
+            'paymentObjectBroadcastID', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation exportInboundMessages
+     *
+     * Export inbound messages
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $locale locale (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportInboundMessages'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function exportInboundMessages($phone_number_id, $locale, string $contentType = self::contentTypes['exportInboundMessages'][0])
+    {
+        list($response) = $this->exportInboundMessagesWithHttpInfo($phone_number_id, $locale, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation exportInboundMessagesWithHttpInfo
+     *
+     * Export inbound messages
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportInboundMessages'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function exportInboundMessagesWithHttpInfo($phone_number_id, $locale, string $contentType = self::contentTypes['exportInboundMessages'][0])
+    {
+        $request = $this->exportInboundMessagesRequest($phone_number_id, $locale, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation exportInboundMessagesAsync
+     *
+     * Export inbound messages
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportInboundMessages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportInboundMessagesAsync($phone_number_id, $locale, string $contentType = self::contentTypes['exportInboundMessages'][0])
+    {
+        return $this->exportInboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation exportInboundMessagesAsyncWithHttpInfo
+     *
+     * Export inbound messages
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportInboundMessages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportInboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, string $contentType = self::contentTypes['exportInboundMessages'][0])
+    {
+        $returnType = 'string';
+        $request = $this->exportInboundMessagesRequest($phone_number_id, $locale, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'exportInboundMessages'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportInboundMessages'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function exportInboundMessagesRequest($phone_number_id, $locale, string $contentType = self::contentTypes['exportInboundMessages'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling exportInboundMessages'
+            );
+        }
+        if (strlen($phone_number_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.exportInboundMessages, must be smaller than or equal to 10.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.exportInboundMessages, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.exportInboundMessages, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+        // verify the required parameter 'locale' is set
+        if ($locale === null || (is_array($locale) && count($locale) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $locale when calling exportInboundMessages'
+            );
+        }
+
+
+        $resourcePath = '/v2/merchant/sms/inbound/export/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $locale,
+            'locale', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2516,38 +1579,42 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePointsOfContact
+     * Operation exportOutboundMessages
      *
-     * Update points of contact
+     * Export outbound messages
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact wt_merchant_update_points_of_contact (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $locale locale (required)
+     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportOutboundMessages'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function updatePointsOfContact($wt_merchant_update_points_of_contact, string $contentType = self::contentTypes['updatePointsOfContact'][0])
+    public function exportOutboundMessages($phone_number_id, $locale, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['exportOutboundMessages'][0])
     {
-        list($response) = $this->updatePointsOfContactWithHttpInfo($wt_merchant_update_points_of_contact, $contentType);
+        list($response) = $this->exportOutboundMessagesWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation updatePointsOfContactWithHttpInfo
+     * Operation exportOutboundMessagesWithHttpInfo
      *
-     * Update points of contact
+     * Export outbound messages
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportOutboundMessages'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePointsOfContactWithHttpInfo($wt_merchant_update_points_of_contact, string $contentType = self::contentTypes['updatePointsOfContact'][0])
+    public function exportOutboundMessagesWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['exportOutboundMessages'][0])
     {
-        $request = $this->updatePointsOfContactRequest($wt_merchant_update_points_of_contact, $contentType);
+        $request = $this->exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2586,11 +1653,11 @@ class MerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('mixed' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('mixed' !== 'string') {
+                        if ('string' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2608,7 +1675,7 @@ class MerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2695,7 +1762,7 @@ class MerchantApi
                     ];
             }
 
-            $returnType = 'mixed';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2728,7 +1795,7 @@ class MerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'mixed',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2763,19 +1830,21 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePointsOfContactAsync
+     * Operation exportOutboundMessagesAsync
      *
-     * Update points of contact
+     * Export outbound messages
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportOutboundMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePointsOfContactAsync($wt_merchant_update_points_of_contact, string $contentType = self::contentTypes['updatePointsOfContact'][0])
+    public function exportOutboundMessagesAsync($phone_number_id, $locale, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['exportOutboundMessages'][0])
     {
-        return $this->updatePointsOfContactAsyncWithHttpInfo($wt_merchant_update_points_of_contact, $contentType)
+        return $this->exportOutboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2784,20 +1853,22 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePointsOfContactAsyncWithHttpInfo
+     * Operation exportOutboundMessagesAsyncWithHttpInfo
      *
-     * Update points of contact
+     * Export outbound messages
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportOutboundMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePointsOfContactAsyncWithHttpInfo($wt_merchant_update_points_of_contact, string $contentType = self::contentTypes['updatePointsOfContact'][0])
+    public function exportOutboundMessagesAsyncWithHttpInfo($phone_number_id, $locale, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['exportOutboundMessages'][0])
     {
-        $returnType = 'mixed';
-        $request = $this->updatePointsOfContactRequest($wt_merchant_update_points_of_contact, $contentType);
+        $returnType = 'string';
+        $request = $this->exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2836,34 +1907,88 @@ class MerchantApi
     }
 
     /**
-     * Create request for operation 'updatePointsOfContact'
+     * Create request for operation 'exportOutboundMessages'
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
+     * @param  string $phone_number_id (required)
+     * @param  string $locale (required)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportOutboundMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updatePointsOfContactRequest($wt_merchant_update_points_of_contact, string $contentType = self::contentTypes['updatePointsOfContact'][0])
+    public function exportOutboundMessagesRequest($phone_number_id, $locale, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['exportOutboundMessages'][0])
     {
 
-        // verify the required parameter 'wt_merchant_update_points_of_contact' is set
-        if ($wt_merchant_update_points_of_contact === null || (is_array($wt_merchant_update_points_of_contact) && count($wt_merchant_update_points_of_contact) === 0)) {
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_merchant_update_points_of_contact when calling updatePointsOfContact'
+                'Missing the required parameter $phone_number_id when calling exportOutboundMessages'
+            );
+        }
+        if (strlen($phone_number_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.exportOutboundMessages, must be smaller than or equal to 10.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.exportOutboundMessages, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.exportOutboundMessages, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+        // verify the required parameter 'locale' is set
+        if ($locale === null || (is_array($locale) && count($locale) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $locale when calling exportOutboundMessages'
             );
         }
 
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.exportOutboundMessages, must be smaller than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.exportOutboundMessages, must be bigger than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && !preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
+            throw new \InvalidArgumentException("invalid value for \"payment_object_broadcast_id\" when calling SMSMessagesApi.exportOutboundMessages, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
 
-        $resourcePath = '/v2/merchant/pointsOfContact';
+        $resourcePath = '/v2/merchant/sms/outbound/export/{phoneNumberID}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $locale,
+            'locale', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $payment_object_broadcast_id,
+            'paymentObjectBroadcastID', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -2873,14 +1998,7 @@ class MerchantApi
         );
 
         // for model (json/xml)
-        if (isset($wt_merchant_update_points_of_contact)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_merchant_update_points_of_contact));
-            } else {
-                $httpBody = $wt_merchant_update_points_of_contact;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2927,38 +2045,2420 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePosIntegration
+     * Operation fetchInboundSMS
      *
-     * Update POS Integration
+     * Get inbound SMSes
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration $wt_merchant_update_pos_integration wt_merchant_update_pos_integration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePosIntegration'] to see the possible values for this operation
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $from_phone_number from_phone_number (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\InboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchInboundSMS($phone_number_id, $from_phone_number = null, string $contentType = self::contentTypes['fetchInboundSMS'][0])
+    {
+        list($response) = $this->fetchInboundSMSWithHttpInfo($phone_number_id, $from_phone_number, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchInboundSMSWithHttpInfo
+     *
+     * Get inbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\InboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchInboundSMSWithHttpInfo($phone_number_id, $from_phone_number = null, string $contentType = self::contentTypes['fetchInboundSMS'][0])
+    {
+        $request = $this->fetchInboundSMSRequest($phone_number_id, $from_phone_number, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\InboundSMS[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InboundSMS[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InboundSMS[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\InboundSMS[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InboundSMS[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchInboundSMSAsync
+     *
+     * Get inbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchInboundSMSAsync($phone_number_id, $from_phone_number = null, string $contentType = self::contentTypes['fetchInboundSMS'][0])
+    {
+        return $this->fetchInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchInboundSMSAsyncWithHttpInfo
+     *
+     * Get inbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchInboundSMSAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, string $contentType = self::contentTypes['fetchInboundSMS'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\InboundSMS[]';
+        $request = $this->fetchInboundSMSRequest($phone_number_id, $from_phone_number, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchInboundSMS'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchInboundSMSRequest($phone_number_id, $from_phone_number = null, string $contentType = self::contentTypes['fetchInboundSMS'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling fetchInboundSMS'
+            );
+        }
+        if (strlen($phone_number_id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchInboundSMS, must be smaller than or equal to 12.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchInboundSMS, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.fetchInboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+        $resourcePath = '/v2/merchant/sms/inbound/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_phone_number,
+            'fromPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchInboundSMSByPage
+     *
+     * Get inbound SMSes by page
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $from_phone_number from_phone_number (optional)
+     * @param  float $page_size page_size (optional)
+     * @param  float $page_num page_num (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\FetchInboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchInboundSMSByPage($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    {
+        list($response) = $this->fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchInboundSMSByPageWithHttpInfo
+     *
+     * Get inbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\FetchInboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchInboundSMSByPageWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    {
+        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\FetchInboundSMSByPage200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FetchInboundSMSByPage200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FetchInboundSMSByPage200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\FetchInboundSMSByPage200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FetchInboundSMSByPage200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchInboundSMSByPageAsync
+     *
+     * Get inbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchInboundSMSByPageAsync($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    {
+        return $this->fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchInboundSMSByPageAsyncWithHttpInfo
+     *
+     * Get inbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchInboundSMSByPageAsyncWithHttpInfo($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\FetchInboundSMSByPage200Response';
+        $request = $this->fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number, $page_size, $page_num, $start_date, $end_date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchInboundSMSByPage'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $from_phone_number (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchInboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchInboundSMSByPageRequest($phone_number_id, $from_phone_number = null, $page_size = null, $page_num = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchInboundSMSByPage'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling fetchInboundSMSByPage'
+            );
+        }
+        if (strlen($phone_number_id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchInboundSMSByPage, must be smaller than or equal to 12.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchInboundSMSByPage, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.fetchInboundSMSByPage, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/v2/merchant/sms/inbound/page/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_phone_number,
+            'fromPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_num,
+            'pageNum', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchMerchantOutboundSMS
+     *
+     * Get outbound SMSes
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $to_phone_number to_phone_number (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchMerchantOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\OutboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchMerchantOutboundSMS($phone_number_id, $to_phone_number, string $contentType = self::contentTypes['fetchMerchantOutboundSMS'][0])
+    {
+        list($response) = $this->fetchMerchantOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchMerchantOutboundSMSWithHttpInfo
+     *
+     * Get outbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchMerchantOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\OutboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchMerchantOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number, string $contentType = self::contentTypes['fetchMerchantOutboundSMS'][0])
+    {
+        $request = $this->fetchMerchantOutboundSMSRequest($phone_number_id, $to_phone_number, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\OutboundSMS[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\OutboundSMS[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutboundSMS[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\OutboundSMS[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\OutboundSMS[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchMerchantOutboundSMSAsync
+     *
+     * Get outbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchMerchantOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchMerchantOutboundSMSAsync($phone_number_id, $to_phone_number, string $contentType = self::contentTypes['fetchMerchantOutboundSMS'][0])
+    {
+        return $this->fetchMerchantOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchMerchantOutboundSMSAsyncWithHttpInfo
+     *
+     * Get outbound SMSes
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchMerchantOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchMerchantOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number, string $contentType = self::contentTypes['fetchMerchantOutboundSMS'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\OutboundSMS[]';
+        $request = $this->fetchMerchantOutboundSMSRequest($phone_number_id, $to_phone_number, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchMerchantOutboundSMS'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchMerchantOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchMerchantOutboundSMSRequest($phone_number_id, $to_phone_number, string $contentType = self::contentTypes['fetchMerchantOutboundSMS'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling fetchMerchantOutboundSMS'
+            );
+        }
+        if (strlen($phone_number_id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchMerchantOutboundSMS, must be smaller than or equal to 12.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchMerchantOutboundSMS, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.fetchMerchantOutboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+        // verify the required parameter 'to_phone_number' is set
+        if ($to_phone_number === null || (is_array($to_phone_number) && count($to_phone_number) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_phone_number when calling fetchMerchantOutboundSMS'
+            );
+        }
+
+
+        $resourcePath = '/v2/merchant/sms/outbound/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_phone_number,
+            'toPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchOutboundSMS
+     *
+     * Get outbound SMS
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $to_phone_number to_phone_number (optional)
+     * @param  string $status status (optional)
+     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\OutboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchOutboundSMS($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['fetchOutboundSMS'][0])
+    {
+        list($response) = $this->fetchOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchOutboundSMSWithHttpInfo
+     *
+     * Get outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\OutboundSMS[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchOutboundSMSWithHttpInfo($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['fetchOutboundSMS'][0])
+    {
+        $request = $this->fetchOutboundSMSRequest($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\OutboundSMS[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\OutboundSMS[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OutboundSMS[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\OutboundSMS[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\OutboundSMS[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchOutboundSMSAsync
+     *
+     * Get outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchOutboundSMSAsync($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['fetchOutboundSMS'][0])
+    {
+        return $this->fetchOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchOutboundSMSAsyncWithHttpInfo
+     *
+     * Get outbound SMS
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchOutboundSMSAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['fetchOutboundSMS'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\OutboundSMS[]';
+        $request = $this->fetchOutboundSMSRequest($phone_number_id, $to_phone_number, $status, $payment_object_broadcast_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchOutboundSMS'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $status (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMS'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchOutboundSMSRequest($phone_number_id, $to_phone_number = null, $status = null, $payment_object_broadcast_id = null, string $contentType = self::contentTypes['fetchOutboundSMS'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling fetchOutboundSMS'
+            );
+        }
+        if (strlen($phone_number_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchOutboundSMS, must be smaller than or equal to 10.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchOutboundSMS, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.fetchOutboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.fetchOutboundSMS, must be smaller than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.fetchOutboundSMS, must be bigger than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && !preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
+            throw new \InvalidArgumentException("invalid value for \"payment_object_broadcast_id\" when calling SMSMessagesApi.fetchOutboundSMS, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+        $resourcePath = '/v2/sms/outbound/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_phone_number,
+            'toPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $payment_object_broadcast_id,
+            'paymentObjectBroadcastID', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchOutboundSMSByPage
+     *
+     * Get outbound SMSes by page
+     *
+     * @param  string $phone_number_id phone_number_id (required)
+     * @param  string $to_phone_number to_phone_number (optional)
+     * @param  string $payment_object_broadcast_id payment_object_broadcast_id (optional)
+     * @param  float $page_size page_size (optional)
+     * @param  float $page_num page_num (optional)
+     * @param  SSOutboundStatuses $status status (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\FetchOutboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchOutboundSMSByPage($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchOutboundSMSByPage'][0])
+    {
+        list($response) = $this->fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchOutboundSMSByPageWithHttpInfo
+     *
+     * Get outbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  SSOutboundStatuses $status (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\FetchOutboundSMSByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchOutboundSMSByPageWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchOutboundSMSByPage'][0])
+    {
+        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchOutboundSMSByPageAsync
+     *
+     * Get outbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  SSOutboundStatuses $status (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchOutboundSMSByPageAsync($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchOutboundSMSByPage'][0])
+    {
+        return $this->fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchOutboundSMSByPageAsyncWithHttpInfo
+     *
+     * Get outbound SMSes by page
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  SSOutboundStatuses $status (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchOutboundSMSByPageAsyncWithHttpInfo($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchOutboundSMSByPage'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response';
+        $request = $this->fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number, $payment_object_broadcast_id, $page_size, $page_num, $status, $start_date, $end_date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchOutboundSMSByPage'
+     *
+     * @param  string $phone_number_id (required)
+     * @param  string $to_phone_number (optional)
+     * @param  string $payment_object_broadcast_id (optional)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  SSOutboundStatuses $status (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchOutboundSMSByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchOutboundSMSByPageRequest($phone_number_id, $to_phone_number = null, $payment_object_broadcast_id = null, $page_size = null, $page_num = null, $status = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchOutboundSMSByPage'][0])
+    {
+
+        // verify the required parameter 'phone_number_id' is set
+        if ($phone_number_id === null || (is_array($phone_number_id) && count($phone_number_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $phone_number_id when calling fetchOutboundSMSByPage'
+            );
+        }
+        if (strlen($phone_number_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchOutboundSMSByPage, must be smaller than or equal to 10.');
+        }
+        if (strlen($phone_number_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$phone_number_id" when calling SMSMessagesApi.fetchOutboundSMSByPage, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $phone_number_id)) {
+            throw new \InvalidArgumentException("invalid value for \"phone_number_id\" when calling SMSMessagesApi.fetchOutboundSMSByPage, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.fetchOutboundSMSByPage, must be smaller than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && strlen($payment_object_broadcast_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$payment_object_broadcast_id" when calling SMSMessagesApi.fetchOutboundSMSByPage, must be bigger than or equal to 10.');
+        }
+        if ($payment_object_broadcast_id !== null && !preg_match("/^[a-zA-Z0-9]+$/", $payment_object_broadcast_id)) {
+            throw new \InvalidArgumentException("invalid value for \"payment_object_broadcast_id\" when calling SMSMessagesApi.fetchOutboundSMSByPage, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/v2/sms/outbound/page/{phoneNumberID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_phone_number,
+            'toPhoneNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $payment_object_broadcast_id,
+            'paymentObjectBroadcastID', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_num,
+            'pageNum', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'AnyOfStringStringStringStringStringString', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($phone_number_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'phoneNumberID' . '}',
+                ObjectSerializer::toPathValue($phone_number_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation retrieveSentAndMaxCountOfMessages
+     *
+     * Retrieve the number of messages sent by the merchant within the current billing cycle
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['retrieveSentAndMaxCountOfMessages'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function updatePosIntegration($wt_merchant_update_pos_integration, string $contentType = self::contentTypes['updatePosIntegration'][0])
+    public function retrieveSentAndMaxCountOfMessages(string $contentType = self::contentTypes['retrieveSentAndMaxCountOfMessages'][0])
     {
-        list($response) = $this->updatePosIntegrationWithHttpInfo($wt_merchant_update_pos_integration, $contentType);
+        list($response) = $this->retrieveSentAndMaxCountOfMessagesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation updatePosIntegrationWithHttpInfo
+     * Operation retrieveSentAndMaxCountOfMessagesWithHttpInfo
      *
-     * Update POS Integration
+     * Retrieve the number of messages sent by the merchant within the current billing cycle
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration $wt_merchant_update_pos_integration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePosIntegration'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['retrieveSentAndMaxCountOfMessages'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePosIntegrationWithHttpInfo($wt_merchant_update_pos_integration, string $contentType = self::contentTypes['updatePosIntegration'][0])
+    public function retrieveSentAndMaxCountOfMessagesWithHttpInfo(string $contentType = self::contentTypes['retrieveSentAndMaxCountOfMessages'][0])
     {
-        $request = $this->updatePosIntegrationRequest($wt_merchant_update_pos_integration, $contentType);
+        $request = $this->retrieveSentAndMaxCountOfMessagesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3174,19 +4674,18 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePosIntegrationAsync
+     * Operation retrieveSentAndMaxCountOfMessagesAsync
      *
-     * Update POS Integration
+     * Retrieve the number of messages sent by the merchant within the current billing cycle
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration $wt_merchant_update_pos_integration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePosIntegration'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['retrieveSentAndMaxCountOfMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePosIntegrationAsync($wt_merchant_update_pos_integration, string $contentType = self::contentTypes['updatePosIntegration'][0])
+    public function retrieveSentAndMaxCountOfMessagesAsync(string $contentType = self::contentTypes['retrieveSentAndMaxCountOfMessages'][0])
     {
-        return $this->updatePosIntegrationAsyncWithHttpInfo($wt_merchant_update_pos_integration, $contentType)
+        return $this->retrieveSentAndMaxCountOfMessagesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3195,20 +4694,19 @@ class MerchantApi
     }
 
     /**
-     * Operation updatePosIntegrationAsyncWithHttpInfo
+     * Operation retrieveSentAndMaxCountOfMessagesAsyncWithHttpInfo
      *
-     * Update POS Integration
+     * Retrieve the number of messages sent by the merchant within the current billing cycle
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration $wt_merchant_update_pos_integration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePosIntegration'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['retrieveSentAndMaxCountOfMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePosIntegrationAsyncWithHttpInfo($wt_merchant_update_pos_integration, string $contentType = self::contentTypes['updatePosIntegration'][0])
+    public function retrieveSentAndMaxCountOfMessagesAsyncWithHttpInfo(string $contentType = self::contentTypes['retrieveSentAndMaxCountOfMessages'][0])
     {
         $returnType = 'mixed';
-        $request = $this->updatePosIntegrationRequest($wt_merchant_update_pos_integration, $contentType);
+        $request = $this->retrieveSentAndMaxCountOfMessagesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3247,26 +4745,18 @@ class MerchantApi
     }
 
     /**
-     * Create request for operation 'updatePosIntegration'
+     * Create request for operation 'retrieveSentAndMaxCountOfMessages'
      *
-     * @param  \OpenAPI\Client\Model\WTMerchantUpdatePOSIntegration $wt_merchant_update_pos_integration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePosIntegration'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['retrieveSentAndMaxCountOfMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updatePosIntegrationRequest($wt_merchant_update_pos_integration, string $contentType = self::contentTypes['updatePosIntegration'][0])
+    public function retrieveSentAndMaxCountOfMessagesRequest(string $contentType = self::contentTypes['retrieveSentAndMaxCountOfMessages'][0])
     {
 
-        // verify the required parameter 'wt_merchant_update_pos_integration' is set
-        if ($wt_merchant_update_pos_integration === null || (is_array($wt_merchant_update_pos_integration) && count($wt_merchant_update_pos_integration) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_merchant_update_pos_integration when calling updatePosIntegration'
-            );
-        }
 
-
-        $resourcePath = '/v2/merchant/pos/integration';
+        $resourcePath = '/v2/sms/sent';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3284,14 +4774,7 @@ class MerchantApi
         );
 
         // for model (json/xml)
-        if (isset($wt_merchant_update_pos_integration)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_merchant_update_pos_integration));
-            } else {
-                $httpBody = $wt_merchant_update_pos_integration;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -3330,7 +4813,7 @@ class MerchantApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

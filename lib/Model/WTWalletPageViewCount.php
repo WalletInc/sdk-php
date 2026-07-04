@@ -60,7 +60,7 @@ class WTWalletPageViewCount implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'wallet_object_id' => 'mixed',
         'count' => 'mixed',
-        'date_occurred' => 'mixed',
+        'date_occurred' => '\DateTime',
         'wallet_object_name' => 'mixed'
     ];
 
@@ -86,7 +86,7 @@ class WTWalletPageViewCount implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static array $openAPINullables = [
         'wallet_object_id' => true,
         'count' => true,
-        'date_occurred' => true,
+        'date_occurred' => false,
         'wallet_object_name' => true
     ];
 
@@ -394,7 +394,7 @@ class WTWalletPageViewCount implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets date_occurred
      *
-     * @return mixed
+     * @return \DateTime
      */
     public function getDateOccurred()
     {
@@ -404,21 +404,14 @@ class WTWalletPageViewCount implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_occurred
      *
-     * @param mixed $date_occurred date_occurred
+     * @param \DateTime $date_occurred date_occurred
      *
      * @return self
      */
     public function setDateOccurred($date_occurred)
     {
         if (is_null($date_occurred)) {
-            array_push($this->openAPINullablesSetToNull, 'date_occurred');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_occurred', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable date_occurred cannot be null');
         }
         $this->container['date_occurred'] = $date_occurred;
 

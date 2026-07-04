@@ -1,6 +1,6 @@
 <?php
 /**
- * DynamicVouchersApi
+ * ImportedListsApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use OpenAPI\Client\HeaderSelector;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
- * DynamicVouchersApi Class Doc Comment
+ * ImportedListsApi Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DynamicVouchersApi
+class ImportedListsApi
 {
     /**
      * @var ClientInterface
@@ -72,34 +72,43 @@ class DynamicVouchersApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'archiveDynamicVoucherCampaign' => [
+        'archiveRecipient' => [
             'application/json',
         ],
-        'createDynamicVoucher' => [
+        'countImportedListRecipients' => [
             'application/json',
         ],
-        'fetchAllDynamicVouchers' => [
+        'createImportedList' => [
             'application/json',
         ],
-        'fetchDynamicVoucherById' => [
+        'createRecipientInImportedList' => [
             'application/json',
         ],
-        'fetchDynamicVoucherRedemptions' => [
+        'exportImportedListRecipients' => [
             'application/json',
         ],
-        'fetchDynamicVouchers' => [
+        'fetchImportedList' => [
             'application/json',
         ],
-        'fetchReachStatsOfAllDynamicVouchers' => [
+        'fetchImportedListRecipients' => [
             'application/json',
         ],
-        'fetchReachStatsOfIndividualDynamicVoucher' => [
+        'fetchImportedListRecipientsByPage' => [
             'application/json',
         ],
-        'restoreDynamicVoucherCampaign' => [
+        'fetchImportedLists' => [
             'application/json',
         ],
-        'saveDynamicVoucher' => [
+        'importImportedListRecipients' => [
+            'application/json',
+        ],
+        'importImportedListRecipientsFromMembershipTier' => [
+            'application/json',
+        ],
+        'restoreRecipient' => [
+            'application/json',
+        ],
+        'saveImportedList' => [
             'application/json',
         ],
     ];
@@ -151,38 +160,38 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation archiveDynamicVoucherCampaign
+     * Operation archiveRecipient
      *
-     * Archive Dynamic Voucher Campaign
+     * Archive recipient
      *
-     * @param  string $campaign_id campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveDynamicVoucherCampaign'] to see the possible values for this operation
+     * @param  string $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveRecipient'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function archiveDynamicVoucherCampaign($campaign_id, string $contentType = self::contentTypes['archiveDynamicVoucherCampaign'][0])
+    public function archiveRecipient($id, string $contentType = self::contentTypes['archiveRecipient'][0])
     {
-        list($response) = $this->archiveDynamicVoucherCampaignWithHttpInfo($campaign_id, $contentType);
+        list($response) = $this->archiveRecipientWithHttpInfo($id, $contentType);
         return $response;
     }
 
     /**
-     * Operation archiveDynamicVoucherCampaignWithHttpInfo
+     * Operation archiveRecipientWithHttpInfo
      *
-     * Archive Dynamic Voucher Campaign
+     * Archive recipient
      *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveDynamicVoucherCampaign'] to see the possible values for this operation
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveRecipient'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function archiveDynamicVoucherCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['archiveDynamicVoucherCampaign'][0])
+    public function archiveRecipientWithHttpInfo($id, string $contentType = self::contentTypes['archiveRecipient'][0])
     {
-        $request = $this->archiveDynamicVoucherCampaignRequest($campaign_id, $contentType);
+        $request = $this->archiveRecipientRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -221,11 +230,11 @@ class DynamicVouchersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DynamicVoucher' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ImportedListRecipient' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DynamicVoucher' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ImportedListRecipient' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -243,7 +252,7 @@ class DynamicVouchersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DynamicVoucher', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedListRecipient', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -330,7 +339,7 @@ class DynamicVouchersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\DynamicVoucher';
+            $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -363,7 +372,7 @@ class DynamicVouchersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DynamicVoucher',
+                        '\OpenAPI\Client\Model\ImportedListRecipient',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -398,19 +407,19 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation archiveDynamicVoucherCampaignAsync
+     * Operation archiveRecipientAsync
      *
-     * Archive Dynamic Voucher Campaign
+     * Archive recipient
      *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveDynamicVoucherCampaign'] to see the possible values for this operation
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveRecipient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function archiveDynamicVoucherCampaignAsync($campaign_id, string $contentType = self::contentTypes['archiveDynamicVoucherCampaign'][0])
+    public function archiveRecipientAsync($id, string $contentType = self::contentTypes['archiveRecipient'][0])
     {
-        return $this->archiveDynamicVoucherCampaignAsyncWithHttpInfo($campaign_id, $contentType)
+        return $this->archiveRecipientAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -419,20 +428,20 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation archiveDynamicVoucherCampaignAsyncWithHttpInfo
+     * Operation archiveRecipientAsyncWithHttpInfo
      *
-     * Archive Dynamic Voucher Campaign
+     * Archive recipient
      *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveDynamicVoucherCampaign'] to see the possible values for this operation
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveRecipient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function archiveDynamicVoucherCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['archiveDynamicVoucherCampaign'][0])
+    public function archiveRecipientAsyncWithHttpInfo($id, string $contentType = self::contentTypes['archiveRecipient'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DynamicVoucher';
-        $request = $this->archiveDynamicVoucherCampaignRequest($campaign_id, $contentType);
+        $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
+        $request = $this->archiveRecipientRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -471,35 +480,35 @@ class DynamicVouchersApi
     }
 
     /**
-     * Create request for operation 'archiveDynamicVoucherCampaign'
+     * Create request for operation 'archiveRecipient'
      *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveDynamicVoucherCampaign'] to see the possible values for this operation
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['archiveRecipient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function archiveDynamicVoucherCampaignRequest($campaign_id, string $contentType = self::contentTypes['archiveDynamicVoucherCampaign'][0])
+    public function archiveRecipientRequest($id, string $contentType = self::contentTypes['archiveRecipient'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling archiveDynamicVoucherCampaign'
+                'Missing the required parameter $id when calling archiveRecipient'
             );
         }
-        if (strlen($campaign_id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$campaign_id" when calling DynamicVouchersApi.archiveDynamicVoucherCampaign, must be smaller than or equal to 12.');
+        if (strlen($id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$id" when calling ImportedListsApi.archiveRecipient, must be smaller than or equal to 10.');
         }
-        if (strlen($campaign_id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$campaign_id" when calling DynamicVouchersApi.archiveDynamicVoucherCampaign, must be bigger than or equal to 10.');
+        if (strlen($id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$id" when calling ImportedListsApi.archiveRecipient, must be bigger than or equal to 10.');
         }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $campaign_id)) {
-            throw new \InvalidArgumentException("invalid value for \"campaign_id\" when calling DynamicVouchersApi.archiveDynamicVoucherCampaign, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $id)) {
+            throw new \InvalidArgumentException("invalid value for \"id\" when calling ImportedListsApi.archiveRecipient, must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
         
 
-        $resourcePath = '/v2/payment/dynamicVoucher/{campaignID}';
+        $resourcePath = '/v2/sms/importedList/recipients/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -509,10 +518,10 @@ class DynamicVouchersApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'campaignID' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
@@ -572,38 +581,44 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation createDynamicVoucher
+     * Operation countImportedListRecipients
      *
-     * Create Dynamic Voucher Campaign
+     * Count imported list recipients
      *
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherCreateParams $wt_dynamic_voucher_create_params wt_dynamic_voucher_create_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id list_id (required)
+     * @param  bool $is_archive_included is_archive_included (optional)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\DuplicateRowFound|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\MerchantNotInitialized|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function createDynamicVoucher($wt_dynamic_voucher_create_params, string $contentType = self::contentTypes['createDynamicVoucher'][0])
+    public function countImportedListRecipients($list_id, $is_archive_included = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countImportedListRecipients'][0])
     {
-        list($response) = $this->createDynamicVoucherWithHttpInfo($wt_dynamic_voucher_create_params, $contentType);
+        list($response) = $this->countImportedListRecipientsWithHttpInfo($list_id, $is_archive_included, $start_date, $end_date, $contentType);
         return $response;
     }
 
     /**
-     * Operation createDynamicVoucherWithHttpInfo
+     * Operation countImportedListRecipientsWithHttpInfo
      *
-     * Create Dynamic Voucher Campaign
+     * Count imported list recipients
      *
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherCreateParams $wt_dynamic_voucher_create_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  bool $is_archive_included (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\DuplicateRowFound|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\MerchantNotInitialized|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\WTCountResult|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDynamicVoucherWithHttpInfo($wt_dynamic_voucher_create_params, string $contentType = self::contentTypes['createDynamicVoucher'][0])
+    public function countImportedListRecipientsWithHttpInfo($list_id, $is_archive_included = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countImportedListRecipients'][0])
     {
-        $request = $this->createDynamicVoucherRequest($wt_dynamic_voucher_create_params, $contentType);
+        $request = $this->countImportedListRecipientsRequest($list_id, $is_archive_included, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -641,12 +656,12 @@ class DynamicVouchersApi
             }
 
             switch($statusCode) {
-                case 201:
-                    if ('\OpenAPI\Client\Model\WTDynamicVoucher' === '\SplFileObject') {
+                case 200:
+                    if ('\OpenAPI\Client\Model\WTCountResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTDynamicVoucher' !== 'string') {
+                        if ('\OpenAPI\Client\Model\WTCountResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -664,7 +679,7 @@ class DynamicVouchersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTDynamicVoucher', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTCountResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -695,33 +710,6 @@ class DynamicVouchersApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 409:
-                    if ('\OpenAPI\Client\Model\DuplicateRowFound' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DuplicateRowFound' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DuplicateRowFound', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
                 case 422:
                     if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -746,33 +734,6 @@ class DynamicVouchersApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 424:
-                    if ('\OpenAPI\Client\Model\MerchantNotInitialized' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\MerchantNotInitialized' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\MerchantNotInitialized', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -805,7 +766,7 @@ class DynamicVouchersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
+            $returnType = '\OpenAPI\Client\Model\WTCountResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -835,10 +796,10 @@ class DynamicVouchersApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTDynamicVoucher',
+                        '\OpenAPI\Client\Model\WTCountResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -851,26 +812,10 @@ class DynamicVouchersApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DuplicateRowFound',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 424:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\MerchantNotInitialized',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -889,19 +834,22 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation createDynamicVoucherAsync
+     * Operation countImportedListRecipientsAsync
      *
-     * Create Dynamic Voucher Campaign
+     * Count imported list recipients
      *
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherCreateParams $wt_dynamic_voucher_create_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  bool $is_archive_included (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDynamicVoucherAsync($wt_dynamic_voucher_create_params, string $contentType = self::contentTypes['createDynamicVoucher'][0])
+    public function countImportedListRecipientsAsync($list_id, $is_archive_included = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countImportedListRecipients'][0])
     {
-        return $this->createDynamicVoucherAsyncWithHttpInfo($wt_dynamic_voucher_create_params, $contentType)
+        return $this->countImportedListRecipientsAsyncWithHttpInfo($list_id, $is_archive_included, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -910,20 +858,23 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation createDynamicVoucherAsyncWithHttpInfo
+     * Operation countImportedListRecipientsAsyncWithHttpInfo
      *
-     * Create Dynamic Voucher Campaign
+     * Count imported list recipients
      *
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherCreateParams $wt_dynamic_voucher_create_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  bool $is_archive_included (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDynamicVoucherAsyncWithHttpInfo($wt_dynamic_voucher_create_params, string $contentType = self::contentTypes['createDynamicVoucher'][0])
+    public function countImportedListRecipientsAsyncWithHttpInfo($list_id, $is_archive_included = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countImportedListRecipients'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
-        $request = $this->createDynamicVoucherRequest($wt_dynamic_voucher_create_params, $contentType);
+        $returnType = '\OpenAPI\Client\Model\WTCountResult';
+        $request = $this->countImportedListRecipientsRequest($list_id, $is_archive_included, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -962,26 +913,480 @@ class DynamicVouchersApi
     }
 
     /**
-     * Create request for operation 'createDynamicVoucher'
+     * Create request for operation 'countImportedListRecipients'
      *
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherCreateParams $wt_dynamic_voucher_create_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  bool $is_archive_included (optional)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['countImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createDynamicVoucherRequest($wt_dynamic_voucher_create_params, string $contentType = self::contentTypes['createDynamicVoucher'][0])
+    public function countImportedListRecipientsRequest($list_id, $is_archive_included = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['countImportedListRecipients'][0])
     {
 
-        // verify the required parameter 'wt_dynamic_voucher_create_params' is set
-        if ($wt_dynamic_voucher_create_params === null || (is_array($wt_dynamic_voucher_create_params) && count($wt_dynamic_voucher_create_params) === 0)) {
+        // verify the required parameter 'list_id' is set
+        if ($list_id === null || (is_array($list_id) && count($list_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_dynamic_voucher_create_params when calling createDynamicVoucher'
+                'Missing the required parameter $list_id when calling countImportedListRecipients'
+            );
+        }
+        if (strlen($list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.countImportedListRecipients, must be smaller than or equal to 10.');
+        }
+        if (strlen($list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.countImportedListRecipients, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"list_id\" when calling ImportedListsApi.countImportedListRecipients, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+
+        $resourcePath = '/v2/sms/importedList/recipients/count/{listID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $is_archive_included,
+            'isArchiveIncluded', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'listID' . '}',
+                ObjectSerializer::toPathValue($list_id),
+                $resourcePath
             );
         }
 
 
-        $resourcePath = '/v2/payment/dynamicVoucher';
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createImportedList
+     *
+     * Create imported list
+     *
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportedList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function createImportedList($wtsms_imported_list_create, string $contentType = self::contentTypes['createImportedList'][0])
+    {
+        list($response) = $this->createImportedListWithHttpInfo($wtsms_imported_list_create, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createImportedListWithHttpInfo
+     *
+     * Create imported list
+     *
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportedList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createImportedListWithHttpInfo($wtsms_imported_list_create, string $contentType = self::contentTypes['createImportedList'][0])
+    {
+        $request = $this->createImportedListRequest($wtsms_imported_list_create, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ImportedList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\ImportedList' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ImportedList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ImportedList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createImportedListAsync
+     *
+     * Create imported list
+     *
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createImportedListAsync($wtsms_imported_list_create, string $contentType = self::contentTypes['createImportedList'][0])
+    {
+        return $this->createImportedListAsyncWithHttpInfo($wtsms_imported_list_create, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createImportedListAsyncWithHttpInfo
+     *
+     * Create imported list
+     *
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createImportedListAsyncWithHttpInfo($wtsms_imported_list_create, string $contentType = self::contentTypes['createImportedList'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\ImportedList';
+        $request = $this->createImportedListRequest($wtsms_imported_list_create, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createImportedList'
+     *
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createImportedListRequest($wtsms_imported_list_create, string $contentType = self::contentTypes['createImportedList'][0])
+    {
+
+        // verify the required parameter 'wtsms_imported_list_create' is set
+        if ($wtsms_imported_list_create === null || (is_array($wtsms_imported_list_create) && count($wtsms_imported_list_create) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $wtsms_imported_list_create when calling createImportedList'
+            );
+        }
+
+
+        $resourcePath = '/v2/sms/importedList';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -999,12 +1404,12 @@ class DynamicVouchersApi
         );
 
         // for model (json/xml)
-        if (isset($wt_dynamic_voucher_create_params)) {
+        if (isset($wtsms_imported_list_create)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_dynamic_voucher_create_params));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wtsms_imported_list_create));
             } else {
-                $httpBody = $wt_dynamic_voucher_create_params;
+                $httpBody = $wtsms_imported_list_create;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1053,38 +1458,38 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchAllDynamicVouchers
+     * Operation createRecipientInImportedList
      *
-     * Get all Dynamic Voucher Campaigns
+     * Add new recipient in an imported list
      *
-     * @param  bool $is_archive_included is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchAllDynamicVouchers'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\SSImportedListRecipientCreateParams $ss_imported_list_recipient_create_params ss_imported_list_recipient_create_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRecipientInImportedList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTDynamicVoucher[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function fetchAllDynamicVouchers($is_archive_included = null, string $contentType = self::contentTypes['fetchAllDynamicVouchers'][0])
+    public function createRecipientInImportedList($ss_imported_list_recipient_create_params, string $contentType = self::contentTypes['createRecipientInImportedList'][0])
     {
-        list($response) = $this->fetchAllDynamicVouchersWithHttpInfo($is_archive_included, $contentType);
+        list($response) = $this->createRecipientInImportedListWithHttpInfo($ss_imported_list_recipient_create_params, $contentType);
         return $response;
     }
 
     /**
-     * Operation fetchAllDynamicVouchersWithHttpInfo
+     * Operation createRecipientInImportedListWithHttpInfo
      *
-     * Get all Dynamic Voucher Campaigns
+     * Add new recipient in an imported list
      *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchAllDynamicVouchers'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\SSImportedListRecipientCreateParams $ss_imported_list_recipient_create_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRecipientInImportedList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTDynamicVoucher[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchAllDynamicVouchersWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchAllDynamicVouchers'][0])
+    public function createRecipientInImportedListWithHttpInfo($ss_imported_list_recipient_create_params, string $contentType = self::contentTypes['createRecipientInImportedList'][0])
     {
-        $request = $this->fetchAllDynamicVouchersRequest($is_archive_included, $contentType);
+        $request = $this->createRecipientInImportedListRequest($ss_imported_list_recipient_create_params, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1123,11 +1528,11 @@ class DynamicVouchersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WTDynamicVoucher[]' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ImportedListRecipient' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTDynamicVoucher[]' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ImportedListRecipient' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1145,7 +1550,7 @@ class DynamicVouchersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTDynamicVoucher[]', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedListRecipient', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1232,7 +1637,7 @@ class DynamicVouchersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher[]';
+            $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1265,7 +1670,7 @@ class DynamicVouchersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTDynamicVoucher[]',
+                        '\OpenAPI\Client\Model\ImportedListRecipient',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1300,19 +1705,19 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchAllDynamicVouchersAsync
+     * Operation createRecipientInImportedListAsync
      *
-     * Get all Dynamic Voucher Campaigns
+     * Add new recipient in an imported list
      *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchAllDynamicVouchers'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\SSImportedListRecipientCreateParams $ss_imported_list_recipient_create_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRecipientInImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAllDynamicVouchersAsync($is_archive_included = null, string $contentType = self::contentTypes['fetchAllDynamicVouchers'][0])
+    public function createRecipientInImportedListAsync($ss_imported_list_recipient_create_params, string $contentType = self::contentTypes['createRecipientInImportedList'][0])
     {
-        return $this->fetchAllDynamicVouchersAsyncWithHttpInfo($is_archive_included, $contentType)
+        return $this->createRecipientInImportedListAsyncWithHttpInfo($ss_imported_list_recipient_create_params, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1321,20 +1726,20 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchAllDynamicVouchersAsyncWithHttpInfo
+     * Operation createRecipientInImportedListAsyncWithHttpInfo
      *
-     * Get all Dynamic Voucher Campaigns
+     * Add new recipient in an imported list
      *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchAllDynamicVouchers'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\SSImportedListRecipientCreateParams $ss_imported_list_recipient_create_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRecipientInImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchAllDynamicVouchersAsyncWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchAllDynamicVouchers'][0])
+    public function createRecipientInImportedListAsyncWithHttpInfo($ss_imported_list_recipient_create_params, string $contentType = self::contentTypes['createRecipientInImportedList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher[]';
-        $request = $this->fetchAllDynamicVouchersRequest($is_archive_included, $contentType);
+        $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
+        $request = $this->createRecipientInImportedListRequest($ss_imported_list_recipient_create_params, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1373,20 +1778,2160 @@ class DynamicVouchersApi
     }
 
     /**
-     * Create request for operation 'fetchAllDynamicVouchers'
+     * Create request for operation 'createRecipientInImportedList'
      *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchAllDynamicVouchers'] to see the possible values for this operation
+     * @param  \OpenAPI\Client\Model\SSImportedListRecipientCreateParams $ss_imported_list_recipient_create_params (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRecipientInImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchAllDynamicVouchersRequest($is_archive_included = null, string $contentType = self::contentTypes['fetchAllDynamicVouchers'][0])
+    public function createRecipientInImportedListRequest($ss_imported_list_recipient_create_params, string $contentType = self::contentTypes['createRecipientInImportedList'][0])
+    {
+
+        // verify the required parameter 'ss_imported_list_recipient_create_params' is set
+        if ($ss_imported_list_recipient_create_params === null || (is_array($ss_imported_list_recipient_create_params) && count($ss_imported_list_recipient_create_params) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ss_imported_list_recipient_create_params when calling createRecipientInImportedList'
+            );
+        }
+
+
+        $resourcePath = '/v2/sms/importedList/recipients/create';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($ss_imported_list_recipient_create_params)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ss_imported_list_recipient_create_params));
+            } else {
+                $httpBody = $ss_imported_list_recipient_create_params;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation exportImportedListRecipients
+     *
+     * Export imported list recipients
+     *
+     * @param  string $imported_list_id imported_list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function exportImportedListRecipients($imported_list_id, string $contentType = self::contentTypes['exportImportedListRecipients'][0])
+    {
+        list($response) = $this->exportImportedListRecipientsWithHttpInfo($imported_list_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation exportImportedListRecipientsWithHttpInfo
+     *
+     * Export imported list recipients
+     *
+     * @param  string $imported_list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function exportImportedListRecipientsWithHttpInfo($imported_list_id, string $contentType = self::contentTypes['exportImportedListRecipients'][0])
+    {
+        $request = $this->exportImportedListRecipientsRequest($imported_list_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation exportImportedListRecipientsAsync
+     *
+     * Export imported list recipients
+     *
+     * @param  string $imported_list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportImportedListRecipientsAsync($imported_list_id, string $contentType = self::contentTypes['exportImportedListRecipients'][0])
+    {
+        return $this->exportImportedListRecipientsAsyncWithHttpInfo($imported_list_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation exportImportedListRecipientsAsyncWithHttpInfo
+     *
+     * Export imported list recipients
+     *
+     * @param  string $imported_list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportImportedListRecipientsAsyncWithHttpInfo($imported_list_id, string $contentType = self::contentTypes['exportImportedListRecipients'][0])
+    {
+        $returnType = 'string';
+        $request = $this->exportImportedListRecipientsRequest($imported_list_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'exportImportedListRecipients'
+     *
+     * @param  string $imported_list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function exportImportedListRecipientsRequest($imported_list_id, string $contentType = self::contentTypes['exportImportedListRecipients'][0])
+    {
+
+        // verify the required parameter 'imported_list_id' is set
+        if ($imported_list_id === null || (is_array($imported_list_id) && count($imported_list_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $imported_list_id when calling exportImportedListRecipients'
+            );
+        }
+        if (strlen($imported_list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$imported_list_id" when calling ImportedListsApi.exportImportedListRecipients, must be smaller than or equal to 10.');
+        }
+        if (strlen($imported_list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$imported_list_id" when calling ImportedListsApi.exportImportedListRecipients, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $imported_list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"imported_list_id\" when calling ImportedListsApi.exportImportedListRecipients, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+        $resourcePath = '/v2/sms/importedList/recipients/export/{importedListID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($imported_list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'importedListID' . '}',
+                ObjectSerializer::toPathValue($imported_list_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchImportedList
+     *
+     * Get imported list
+     *
+     * @param  string $list_id list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchImportedList($list_id, string $contentType = self::contentTypes['fetchImportedList'][0])
+    {
+        list($response) = $this->fetchImportedListWithHttpInfo($list_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchImportedListWithHttpInfo
+     *
+     * Get imported list
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchImportedListWithHttpInfo($list_id, string $contentType = self::contentTypes['fetchImportedList'][0])
+    {
+        $request = $this->fetchImportedListRequest($list_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ImportedList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\ImportedList' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ImportedList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ImportedList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchImportedListAsync
+     *
+     * Get imported list
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListAsync($list_id, string $contentType = self::contentTypes['fetchImportedList'][0])
+    {
+        return $this->fetchImportedListAsyncWithHttpInfo($list_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchImportedListAsyncWithHttpInfo
+     *
+     * Get imported list
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListAsyncWithHttpInfo($list_id, string $contentType = self::contentTypes['fetchImportedList'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\ImportedList';
+        $request = $this->fetchImportedListRequest($list_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchImportedList'
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchImportedListRequest($list_id, string $contentType = self::contentTypes['fetchImportedList'][0])
+    {
+
+        // verify the required parameter 'list_id' is set
+        if ($list_id === null || (is_array($list_id) && count($list_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $list_id when calling fetchImportedList'
+            );
+        }
+        if (strlen($list_id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedList, must be smaller than or equal to 12.');
+        }
+        if (strlen($list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedList, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"list_id\" when calling ImportedListsApi.fetchImportedList, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+        $resourcePath = '/v2/merchant/lists/imported/{listID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'listID' . '}',
+                ObjectSerializer::toPathValue($list_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchImportedListRecipients
+     *
+     * Get imported list recipients
+     *
+     * @param  string $list_id list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ImportedListRecipient[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchImportedListRecipients($list_id, string $contentType = self::contentTypes['fetchImportedListRecipients'][0])
+    {
+        list($response) = $this->fetchImportedListRecipientsWithHttpInfo($list_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsWithHttpInfo
+     *
+     * Get imported list recipients
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ImportedListRecipient[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchImportedListRecipientsWithHttpInfo($list_id, string $contentType = self::contentTypes['fetchImportedListRecipients'][0])
+    {
+        $request = $this->fetchImportedListRecipientsRequest($list_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ImportedListRecipient[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\ImportedListRecipient[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedListRecipient[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ImportedListRecipient[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ImportedListRecipient[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsAsync
+     *
+     * Get imported list recipients
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListRecipientsAsync($list_id, string $contentType = self::contentTypes['fetchImportedListRecipients'][0])
+    {
+        return $this->fetchImportedListRecipientsAsyncWithHttpInfo($list_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsAsyncWithHttpInfo
+     *
+     * Get imported list recipients
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListRecipientsAsyncWithHttpInfo($list_id, string $contentType = self::contentTypes['fetchImportedListRecipients'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\ImportedListRecipient[]';
+        $request = $this->fetchImportedListRecipientsRequest($list_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchImportedListRecipients'
+     *
+     * @param  string $list_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipients'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchImportedListRecipientsRequest($list_id, string $contentType = self::contentTypes['fetchImportedListRecipients'][0])
+    {
+
+        // verify the required parameter 'list_id' is set
+        if ($list_id === null || (is_array($list_id) && count($list_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $list_id when calling fetchImportedListRecipients'
+            );
+        }
+        if (strlen($list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedListRecipients, must be smaller than or equal to 10.');
+        }
+        if (strlen($list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedListRecipients, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"list_id\" when calling ImportedListsApi.fetchImportedListRecipients, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+        $resourcePath = '/v2/sms/importedList/recipients/{listID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'listID' . '}',
+                ObjectSerializer::toPathValue($list_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsByPage
+     *
+     * Get imported list recipients by page
+     *
+     * @param  string $list_id list_id (required)
+     * @param  float $page_size page_size (optional)
+     * @param  float $page_num page_num (optional)
+     * @param  bool $is_archive_included is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipientsByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchImportedListRecipientsByPage($list_id, $page_size = null, $page_num = null, $is_archive_included = null, string $contentType = self::contentTypes['fetchImportedListRecipientsByPage'][0])
+    {
+        list($response) = $this->fetchImportedListRecipientsByPageWithHttpInfo($list_id, $page_size, $page_num, $is_archive_included, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsByPageWithHttpInfo
+     *
+     * Get imported list recipients by page
+     *
+     * @param  string $list_id (required)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipientsByPage'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchImportedListRecipientsByPageWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_archive_included = null, string $contentType = self::contentTypes['fetchImportedListRecipientsByPage'][0])
+    {
+        $request = $this->fetchImportedListRecipientsByPageRequest($list_id, $page_size, $page_num, $is_archive_included, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsByPageAsync
+     *
+     * Get imported list recipients by page
+     *
+     * @param  string $list_id (required)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipientsByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListRecipientsByPageAsync($list_id, $page_size = null, $page_num = null, $is_archive_included = null, string $contentType = self::contentTypes['fetchImportedListRecipientsByPage'][0])
+    {
+        return $this->fetchImportedListRecipientsByPageAsyncWithHttpInfo($list_id, $page_size, $page_num, $is_archive_included, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchImportedListRecipientsByPageAsyncWithHttpInfo
+     *
+     * Get imported list recipients by page
+     *
+     * @param  string $list_id (required)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipientsByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListRecipientsByPageAsyncWithHttpInfo($list_id, $page_size = null, $page_num = null, $is_archive_included = null, string $contentType = self::contentTypes['fetchImportedListRecipientsByPage'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\FetchImportedListRecipientsByPage200Response';
+        $request = $this->fetchImportedListRecipientsByPageRequest($list_id, $page_size, $page_num, $is_archive_included, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchImportedListRecipientsByPage'
+     *
+     * @param  string $list_id (required)
+     * @param  float $page_size (optional)
+     * @param  float $page_num (optional)
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedListRecipientsByPage'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchImportedListRecipientsByPageRequest($list_id, $page_size = null, $page_num = null, $is_archive_included = null, string $contentType = self::contentTypes['fetchImportedListRecipientsByPage'][0])
+    {
+
+        // verify the required parameter 'list_id' is set
+        if ($list_id === null || (is_array($list_id) && count($list_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $list_id when calling fetchImportedListRecipientsByPage'
+            );
+        }
+        if (strlen($list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedListRecipientsByPage, must be smaller than or equal to 10.');
+        }
+        if (strlen($list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.fetchImportedListRecipientsByPage, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"list_id\" when calling ImportedListsApi.fetchImportedListRecipientsByPage, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+
+        $resourcePath = '/v2/sms/importedList/recipients/page/{listID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_num,
+            'pageNum', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $is_archive_included,
+            'isArchiveIncluded', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'listID' . '}',
+                ObjectSerializer::toPathValue($list_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchImportedLists
+     *
+     * Get all imported lists
+     *
+     * @param  bool $is_archive_included is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedLists'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchImportedLists($is_archive_included = null, string $contentType = self::contentTypes['fetchImportedLists'][0])
+    {
+        list($response) = $this->fetchImportedListsWithHttpInfo($is_archive_included, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchImportedListsWithHttpInfo
+     *
+     * Get all imported lists
+     *
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedLists'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of mixed|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchImportedListsWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchImportedLists'][0])
+    {
+        $request = $this->fetchImportedListsRequest($is_archive_included, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('mixed' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('mixed' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'mixed', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'mixed';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'mixed',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchImportedListsAsync
+     *
+     * Get all imported lists
+     *
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedLists'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListsAsync($is_archive_included = null, string $contentType = self::contentTypes['fetchImportedLists'][0])
+    {
+        return $this->fetchImportedListsAsyncWithHttpInfo($is_archive_included, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchImportedListsAsyncWithHttpInfo
+     *
+     * Get all imported lists
+     *
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedLists'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchImportedListsAsyncWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchImportedLists'][0])
+    {
+        $returnType = 'mixed';
+        $request = $this->fetchImportedListsRequest($is_archive_included, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchImportedLists'
+     *
+     * @param  bool $is_archive_included (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchImportedLists'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchImportedListsRequest($is_archive_included = null, string $contentType = self::contentTypes['fetchImportedLists'][0])
     {
 
 
 
-        $resourcePath = '/v2/payment/dynamicVoucher/all';
+        $resourcePath = '/v2/merchant/lists/imported/all';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1460,38 +4005,40 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchDynamicVoucherById
+     * Operation importImportedListRecipients
      *
-     * Get Dynamic Voucher Campaign
+     * Import imported list recipients
      *
-     * @param  string $id id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherById'] to see the possible values for this operation
+     * @param  string $imported_list_id imported_list_id (required)
+     * @param  \OpenAPI\Client\Model\WTEmployeeImportRecords $wt_employee_import_records wt_employee_import_records (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function fetchDynamicVoucherById($id, string $contentType = self::contentTypes['fetchDynamicVoucherById'][0])
+    public function importImportedListRecipients($imported_list_id, $wt_employee_import_records, string $contentType = self::contentTypes['importImportedListRecipients'][0])
     {
-        list($response) = $this->fetchDynamicVoucherByIdWithHttpInfo($id, $contentType);
+        list($response) = $this->importImportedListRecipientsWithHttpInfo($imported_list_id, $wt_employee_import_records, $contentType);
         return $response;
     }
 
     /**
-     * Operation fetchDynamicVoucherByIdWithHttpInfo
+     * Operation importImportedListRecipientsWithHttpInfo
      *
-     * Get Dynamic Voucher Campaign
+     * Import imported list recipients
      *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherById'] to see the possible values for this operation
+     * @param  string $imported_list_id (required)
+     * @param  \OpenAPI\Client\Model\WTEmployeeImportRecords $wt_employee_import_records (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchDynamicVoucherByIdWithHttpInfo($id, string $contentType = self::contentTypes['fetchDynamicVoucherById'][0])
+    public function importImportedListRecipientsWithHttpInfo($imported_list_id, $wt_employee_import_records, string $contentType = self::contentTypes['importImportedListRecipients'][0])
     {
-        $request = $this->fetchDynamicVoucherByIdRequest($id, $contentType);
+        $request = $this->importImportedListRecipientsRequest($imported_list_id, $wt_employee_import_records, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1530,11 +4077,11 @@ class DynamicVouchersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WTDynamicVoucher' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTDynamicVoucher' !== 'string') {
+                        if ('string' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1552,7 +4099,7 @@ class DynamicVouchersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTDynamicVoucher', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1639,7 +4186,7 @@ class DynamicVouchersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1672,7 +4219,7 @@ class DynamicVouchersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTDynamicVoucher',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1707,19 +4254,20 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchDynamicVoucherByIdAsync
+     * Operation importImportedListRecipientsAsync
      *
-     * Get Dynamic Voucher Campaign
+     * Import imported list recipients
      *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherById'] to see the possible values for this operation
+     * @param  string $imported_list_id (required)
+     * @param  \OpenAPI\Client\Model\WTEmployeeImportRecords $wt_employee_import_records (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchDynamicVoucherByIdAsync($id, string $contentType = self::contentTypes['fetchDynamicVoucherById'][0])
+    public function importImportedListRecipientsAsync($imported_list_id, $wt_employee_import_records, string $contentType = self::contentTypes['importImportedListRecipients'][0])
     {
-        return $this->fetchDynamicVoucherByIdAsyncWithHttpInfo($id, $contentType)
+        return $this->importImportedListRecipientsAsyncWithHttpInfo($imported_list_id, $wt_employee_import_records, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1728,20 +4276,21 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation fetchDynamicVoucherByIdAsyncWithHttpInfo
+     * Operation importImportedListRecipientsAsyncWithHttpInfo
      *
-     * Get Dynamic Voucher Campaign
+     * Import imported list recipients
      *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherById'] to see the possible values for this operation
+     * @param  string $imported_list_id (required)
+     * @param  \OpenAPI\Client\Model\WTEmployeeImportRecords $wt_employee_import_records (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchDynamicVoucherByIdAsyncWithHttpInfo($id, string $contentType = self::contentTypes['fetchDynamicVoucherById'][0])
+    public function importImportedListRecipientsAsyncWithHttpInfo($imported_list_id, $wt_employee_import_records, string $contentType = self::contentTypes['importImportedListRecipients'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
-        $request = $this->fetchDynamicVoucherByIdRequest($id, $contentType);
+        $returnType = 'string';
+        $request = $this->importImportedListRecipientsRequest($imported_list_id, $wt_employee_import_records, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1780,35 +4329,882 @@ class DynamicVouchersApi
     }
 
     /**
-     * Create request for operation 'fetchDynamicVoucherById'
+     * Create request for operation 'importImportedListRecipients'
      *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherById'] to see the possible values for this operation
+     * @param  string $imported_list_id (required)
+     * @param  \OpenAPI\Client\Model\WTEmployeeImportRecords $wt_employee_import_records (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipients'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function fetchDynamicVoucherByIdRequest($id, string $contentType = self::contentTypes['fetchDynamicVoucherById'][0])
+    public function importImportedListRecipientsRequest($imported_list_id, $wt_employee_import_records, string $contentType = self::contentTypes['importImportedListRecipients'][0])
+    {
+
+        // verify the required parameter 'imported_list_id' is set
+        if ($imported_list_id === null || (is_array($imported_list_id) && count($imported_list_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $imported_list_id when calling importImportedListRecipients'
+            );
+        }
+        if (strlen($imported_list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$imported_list_id" when calling ImportedListsApi.importImportedListRecipients, must be smaller than or equal to 10.');
+        }
+        if (strlen($imported_list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$imported_list_id" when calling ImportedListsApi.importImportedListRecipients, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $imported_list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"imported_list_id\" when calling ImportedListsApi.importImportedListRecipients, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+        // verify the required parameter 'wt_employee_import_records' is set
+        if ($wt_employee_import_records === null || (is_array($wt_employee_import_records) && count($wt_employee_import_records) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $wt_employee_import_records when calling importImportedListRecipients'
+            );
+        }
+
+
+        $resourcePath = '/v2/sms/importedList/recipients/import/{importedListID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($imported_list_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'importedListID' . '}',
+                ObjectSerializer::toPathValue($imported_list_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($wt_employee_import_records)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_employee_import_records));
+            } else {
+                $httpBody = $wt_employee_import_records;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTier
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import wt_imported_list_recipient_from_membership_tier_import (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipientsFromMembershipTier'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function importImportedListRecipientsFromMembershipTier($wt_imported_list_recipient_from_membership_tier_import, string $contentType = self::contentTypes['importImportedListRecipientsFromMembershipTier'][0])
+    {
+        list($response) = $this->importImportedListRecipientsFromMembershipTierWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierWithHttpInfo
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipientsFromMembershipTier'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of string|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function importImportedListRecipientsFromMembershipTierWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import, string $contentType = self::contentTypes['importImportedListRecipientsFromMembershipTier'][0])
+    {
+        $request = $this->importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierAsync
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipientsFromMembershipTier'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function importImportedListRecipientsFromMembershipTierAsync($wt_imported_list_recipient_from_membership_tier_import, string $contentType = self::contentTypes['importImportedListRecipientsFromMembershipTier'][0])
+    {
+        return $this->importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo
+     *
+     * Import imported list recipients from a given membership tier
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipientsFromMembershipTier'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function importImportedListRecipientsFromMembershipTierAsyncWithHttpInfo($wt_imported_list_recipient_from_membership_tier_import, string $contentType = self::contentTypes['importImportedListRecipientsFromMembershipTier'][0])
+    {
+        $returnType = 'string';
+        $request = $this->importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'importImportedListRecipientsFromMembershipTier'
+     *
+     * @param  \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport $wt_imported_list_recipient_from_membership_tier_import (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importImportedListRecipientsFromMembershipTier'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function importImportedListRecipientsFromMembershipTierRequest($wt_imported_list_recipient_from_membership_tier_import, string $contentType = self::contentTypes['importImportedListRecipientsFromMembershipTier'][0])
+    {
+
+        // verify the required parameter 'wt_imported_list_recipient_from_membership_tier_import' is set
+        if ($wt_imported_list_recipient_from_membership_tier_import === null || (is_array($wt_imported_list_recipient_from_membership_tier_import) && count($wt_imported_list_recipient_from_membership_tier_import) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $wt_imported_list_recipient_from_membership_tier_import when calling importImportedListRecipientsFromMembershipTier'
+            );
+        }
+
+
+        $resourcePath = '/v2/sms/importedList/recipients/import-from-tier';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($wt_imported_list_recipient_from_membership_tier_import)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_imported_list_recipient_from_membership_tier_import));
+            } else {
+                $httpBody = $wt_imported_list_recipient_from_membership_tier_import;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation restoreRecipient
+     *
+     * Restore recipient
+     *
+     * @param  string $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreRecipient'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function restoreRecipient($id, string $contentType = self::contentTypes['restoreRecipient'][0])
+    {
+        list($response) = $this->restoreRecipientWithHttpInfo($id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation restoreRecipientWithHttpInfo
+     *
+     * Restore recipient
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreRecipient'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ImportedListRecipient|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function restoreRecipientWithHttpInfo($id, string $contentType = self::contentTypes['restoreRecipient'][0])
+    {
+        $request = $this->restoreRecipientRequest($id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ImportedListRecipient' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\ImportedListRecipient' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedListRecipient', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ImportedListRecipient',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation restoreRecipientAsync
+     *
+     * Restore recipient
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreRecipient'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function restoreRecipientAsync($id, string $contentType = self::contentTypes['restoreRecipient'][0])
+    {
+        return $this->restoreRecipientAsyncWithHttpInfo($id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation restoreRecipientAsyncWithHttpInfo
+     *
+     * Restore recipient
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreRecipient'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function restoreRecipientAsyncWithHttpInfo($id, string $contentType = self::contentTypes['restoreRecipient'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\ImportedListRecipient';
+        $request = $this->restoreRecipientRequest($id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'restoreRecipient'
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreRecipient'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function restoreRecipientRequest($id, string $contentType = self::contentTypes['restoreRecipient'][0])
     {
 
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling fetchDynamicVoucherById'
+                'Missing the required parameter $id when calling restoreRecipient'
             );
         }
-        if (strlen($id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.fetchDynamicVoucherById, must be smaller than or equal to 12.');
+        if (strlen($id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$id" when calling ImportedListsApi.restoreRecipient, must be smaller than or equal to 10.');
         }
         if (strlen($id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.fetchDynamicVoucherById, must be bigger than or equal to 10.');
+            throw new \InvalidArgumentException('invalid length for "$id" when calling ImportedListsApi.restoreRecipient, must be bigger than or equal to 10.');
         }
         if (!preg_match("/^[a-zA-Z0-9]+$/", $id)) {
-            throw new \InvalidArgumentException("invalid value for \"id\" when calling DynamicVouchersApi.fetchDynamicVoucherById, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+            throw new \InvalidArgumentException("invalid value for \"id\" when calling ImportedListsApi.restoreRecipient, must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
         
 
-        $resourcePath = '/v2/payment/dynamicVoucher/{id}';
+        $resourcePath = '/v2/sms/importedList/recipients/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1822,2128 +5218,6 @@ class DynamicVouchersApi
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchDynamicVoucherRedemptions
-     *
-     * Get Dynamic Voucher Campaign Redemptions
-     *
-     * @param  string $id id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherRedemptions'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTDynamicVoucherRedemption[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchDynamicVoucherRedemptions($id, string $contentType = self::contentTypes['fetchDynamicVoucherRedemptions'][0])
-    {
-        list($response) = $this->fetchDynamicVoucherRedemptionsWithHttpInfo($id, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchDynamicVoucherRedemptionsWithHttpInfo
-     *
-     * Get Dynamic Voucher Campaign Redemptions
-     *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherRedemptions'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTDynamicVoucherRedemption[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchDynamicVoucherRedemptionsWithHttpInfo($id, string $contentType = self::contentTypes['fetchDynamicVoucherRedemptions'][0])
-    {
-        $request = $this->fetchDynamicVoucherRedemptionsRequest($id, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchDynamicVoucherRedemptionsAsync
-     *
-     * Get Dynamic Voucher Campaign Redemptions
-     *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherRedemptions'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchDynamicVoucherRedemptionsAsync($id, string $contentType = self::contentTypes['fetchDynamicVoucherRedemptions'][0])
-    {
-        return $this->fetchDynamicVoucherRedemptionsAsyncWithHttpInfo($id, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchDynamicVoucherRedemptionsAsyncWithHttpInfo
-     *
-     * Get Dynamic Voucher Campaign Redemptions
-     *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherRedemptions'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchDynamicVoucherRedemptionsAsyncWithHttpInfo($id, string $contentType = self::contentTypes['fetchDynamicVoucherRedemptions'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]';
-        $request = $this->fetchDynamicVoucherRedemptionsRequest($id, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchDynamicVoucherRedemptions'
-     *
-     * @param  string $id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVoucherRedemptions'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchDynamicVoucherRedemptionsRequest($id, string $contentType = self::contentTypes['fetchDynamicVoucherRedemptions'][0])
-    {
-
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling fetchDynamicVoucherRedemptions'
-            );
-        }
-        if (strlen($id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.fetchDynamicVoucherRedemptions, must be smaller than or equal to 12.');
-        }
-        if (strlen($id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.fetchDynamicVoucherRedemptions, must be bigger than or equal to 10.');
-        }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $id)) {
-            throw new \InvalidArgumentException("invalid value for \"id\" when calling DynamicVouchersApi.fetchDynamicVoucherRedemptions, must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-        
-
-        $resourcePath = '/v2/payment/dynamicVoucher/redemptions/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchDynamicVouchers
-     *
-     * Get all dynamic vouchers
-     *
-     * @param  bool $is_archive_included is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DynamicVoucher[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchDynamicVouchers($is_archive_included = null, string $contentType = self::contentTypes['fetchDynamicVouchers'][0])
-    {
-        list($response) = $this->fetchDynamicVouchersWithHttpInfo($is_archive_included, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchDynamicVouchersWithHttpInfo
-     *
-     * Get all dynamic vouchers
-     *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DynamicVoucher[]|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchDynamicVouchersWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchDynamicVouchers'][0])
-    {
-        $request = $this->fetchDynamicVouchersRequest($is_archive_included, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\DynamicVoucher[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DynamicVoucher[]' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DynamicVoucher[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\DynamicVoucher[]';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DynamicVoucher[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchDynamicVouchersAsync
-     *
-     * Get all dynamic vouchers
-     *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchDynamicVouchersAsync($is_archive_included = null, string $contentType = self::contentTypes['fetchDynamicVouchers'][0])
-    {
-        return $this->fetchDynamicVouchersAsyncWithHttpInfo($is_archive_included, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchDynamicVouchersAsyncWithHttpInfo
-     *
-     * Get all dynamic vouchers
-     *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchDynamicVouchersAsyncWithHttpInfo($is_archive_included = null, string $contentType = self::contentTypes['fetchDynamicVouchers'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\DynamicVoucher[]';
-        $request = $this->fetchDynamicVouchersRequest($is_archive_included, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchDynamicVouchers'
-     *
-     * @param  bool $is_archive_included (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchDynamicVouchersRequest($is_archive_included = null, string $contentType = self::contentTypes['fetchDynamicVouchers'][0])
-    {
-
-
-
-        $resourcePath = '/v2/employee/dynamicVouchers/all';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_archive_included,
-            'isArchiveIncluded', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchReachStatsOfAllDynamicVouchers
-     *
-     * Get the reach statistics of all the dynamic vouchers
-     *
-     * @param  \DateTime $broadcast_scheduled_start_at broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfAllDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReachPerformanceStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchReachStatsOfAllDynamicVouchers($broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfAllDynamicVouchers'][0])
-    {
-        list($response) = $this->fetchReachStatsOfAllDynamicVouchersWithHttpInfo($broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchReachStatsOfAllDynamicVouchersWithHttpInfo
-     *
-     * Get the reach statistics of all the dynamic vouchers
-     *
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfAllDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReachPerformanceStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchReachStatsOfAllDynamicVouchersWithHttpInfo($broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfAllDynamicVouchers'][0])
-    {
-        $request = $this->fetchReachStatsOfAllDynamicVouchersRequest($broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\ReachPerformanceStats' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReachPerformanceStats' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReachPerformanceStats', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\ReachPerformanceStats';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReachPerformanceStats',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchReachStatsOfAllDynamicVouchersAsync
-     *
-     * Get the reach statistics of all the dynamic vouchers
-     *
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfAllDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchReachStatsOfAllDynamicVouchersAsync($broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfAllDynamicVouchers'][0])
-    {
-        return $this->fetchReachStatsOfAllDynamicVouchersAsyncWithHttpInfo($broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchReachStatsOfAllDynamicVouchersAsyncWithHttpInfo
-     *
-     * Get the reach statistics of all the dynamic vouchers
-     *
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfAllDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchReachStatsOfAllDynamicVouchersAsyncWithHttpInfo($broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfAllDynamicVouchers'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\ReachPerformanceStats';
-        $request = $this->fetchReachStatsOfAllDynamicVouchersRequest($broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchReachStatsOfAllDynamicVouchers'
-     *
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfAllDynamicVouchers'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchReachStatsOfAllDynamicVouchersRequest($broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfAllDynamicVouchers'][0])
-    {
-
-
-
-
-        $resourcePath = '/v2/payment/dynamicVoucher/reach/all';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $broadcast_scheduled_start_at,
-            'broadcastScheduledStartAt', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $broadcast_scheduled_end_at,
-            'broadcastScheduledEndAt', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation fetchReachStatsOfIndividualDynamicVoucher
-     *
-     * Get the reach statistics of an individual dynamic voucher
-     *
-     * @param  string $dynamic_voucher_id dynamic_voucher_id (required)
-     * @param  \DateTime $broadcast_scheduled_start_at broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReachPerformanceStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function fetchReachStatsOfIndividualDynamicVoucher($dynamic_voucher_id, $broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'][0])
-    {
-        list($response) = $this->fetchReachStatsOfIndividualDynamicVoucherWithHttpInfo($dynamic_voucher_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation fetchReachStatsOfIndividualDynamicVoucherWithHttpInfo
-     *
-     * Get the reach statistics of an individual dynamic voucher
-     *
-     * @param  string $dynamic_voucher_id (required)
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReachPerformanceStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function fetchReachStatsOfIndividualDynamicVoucherWithHttpInfo($dynamic_voucher_id, $broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'][0])
-    {
-        $request = $this->fetchReachStatsOfIndividualDynamicVoucherRequest($dynamic_voucher_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\ReachPerformanceStats' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReachPerformanceStats' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReachPerformanceStats', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\ReachPerformanceStats';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReachPerformanceStats',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation fetchReachStatsOfIndividualDynamicVoucherAsync
-     *
-     * Get the reach statistics of an individual dynamic voucher
-     *
-     * @param  string $dynamic_voucher_id (required)
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchReachStatsOfIndividualDynamicVoucherAsync($dynamic_voucher_id, $broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'][0])
-    {
-        return $this->fetchReachStatsOfIndividualDynamicVoucherAsyncWithHttpInfo($dynamic_voucher_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation fetchReachStatsOfIndividualDynamicVoucherAsyncWithHttpInfo
-     *
-     * Get the reach statistics of an individual dynamic voucher
-     *
-     * @param  string $dynamic_voucher_id (required)
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function fetchReachStatsOfIndividualDynamicVoucherAsyncWithHttpInfo($dynamic_voucher_id, $broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\ReachPerformanceStats';
-        $request = $this->fetchReachStatsOfIndividualDynamicVoucherRequest($dynamic_voucher_id, $broadcast_scheduled_start_at, $broadcast_scheduled_end_at, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'fetchReachStatsOfIndividualDynamicVoucher'
-     *
-     * @param  string $dynamic_voucher_id (required)
-     * @param  \DateTime $broadcast_scheduled_start_at (optional)
-     * @param  \DateTime $broadcast_scheduled_end_at (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function fetchReachStatsOfIndividualDynamicVoucherRequest($dynamic_voucher_id, $broadcast_scheduled_start_at = null, $broadcast_scheduled_end_at = null, string $contentType = self::contentTypes['fetchReachStatsOfIndividualDynamicVoucher'][0])
-    {
-
-        // verify the required parameter 'dynamic_voucher_id' is set
-        if ($dynamic_voucher_id === null || (is_array($dynamic_voucher_id) && count($dynamic_voucher_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamic_voucher_id when calling fetchReachStatsOfIndividualDynamicVoucher'
-            );
-        }
-        if (strlen($dynamic_voucher_id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$dynamic_voucher_id" when calling DynamicVouchersApi.fetchReachStatsOfIndividualDynamicVoucher, must be smaller than or equal to 12.');
-        }
-        if (strlen($dynamic_voucher_id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$dynamic_voucher_id" when calling DynamicVouchersApi.fetchReachStatsOfIndividualDynamicVoucher, must be bigger than or equal to 10.');
-        }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $dynamic_voucher_id)) {
-            throw new \InvalidArgumentException("invalid value for \"dynamic_voucher_id\" when calling DynamicVouchersApi.fetchReachStatsOfIndividualDynamicVoucher, must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-        
-
-
-
-        $resourcePath = '/v2/payment/dynamicVoucher/reach/{dynamicVoucherID}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $broadcast_scheduled_start_at,
-            'broadcastScheduledStartAt', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $broadcast_scheduled_end_at,
-            'broadcastScheduledEndAt', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-        // path params
-        if ($dynamic_voucher_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'dynamicVoucherID' . '}',
-                ObjectSerializer::toPathValue($dynamic_voucher_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation restoreDynamicVoucherCampaign
-     *
-     * Restore Dynamic Voucher Campaign
-     *
-     * @param  string $campaign_id campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDynamicVoucherCampaign'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
-     */
-    public function restoreDynamicVoucherCampaign($campaign_id, string $contentType = self::contentTypes['restoreDynamicVoucherCampaign'][0])
-    {
-        list($response) = $this->restoreDynamicVoucherCampaignWithHttpInfo($campaign_id, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation restoreDynamicVoucherCampaignWithHttpInfo
-     *
-     * Restore Dynamic Voucher Campaign
-     *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDynamicVoucherCampaign'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function restoreDynamicVoucherCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['restoreDynamicVoucherCampaign'][0])
-    {
-        $request = $this->restoreDynamicVoucherCampaignRequest($campaign_id, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\OpenAPI\Client\Model\DynamicVoucher' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DynamicVoucher' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DynamicVoucher', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\OpenAPI\Client\Model\DynamicVoucher';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DynamicVoucher',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AuthError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InternalServerError500',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation restoreDynamicVoucherCampaignAsync
-     *
-     * Restore Dynamic Voucher Campaign
-     *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDynamicVoucherCampaign'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function restoreDynamicVoucherCampaignAsync($campaign_id, string $contentType = self::contentTypes['restoreDynamicVoucherCampaign'][0])
-    {
-        return $this->restoreDynamicVoucherCampaignAsyncWithHttpInfo($campaign_id, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation restoreDynamicVoucherCampaignAsyncWithHttpInfo
-     *
-     * Restore Dynamic Voucher Campaign
-     *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDynamicVoucherCampaign'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function restoreDynamicVoucherCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['restoreDynamicVoucherCampaign'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\DynamicVoucher';
-        $request = $this->restoreDynamicVoucherCampaignRequest($campaign_id, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'restoreDynamicVoucherCampaign'
-     *
-     * @param  string $campaign_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreDynamicVoucherCampaign'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function restoreDynamicVoucherCampaignRequest($campaign_id, string $contentType = self::contentTypes['restoreDynamicVoucherCampaign'][0])
-    {
-
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling restoreDynamicVoucherCampaign'
-            );
-        }
-        if (strlen($campaign_id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$campaign_id" when calling DynamicVouchersApi.restoreDynamicVoucherCampaign, must be smaller than or equal to 12.');
-        }
-        if (strlen($campaign_id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$campaign_id" when calling DynamicVouchersApi.restoreDynamicVoucherCampaign, must be bigger than or equal to 10.');
-        }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $campaign_id)) {
-            throw new \InvalidArgumentException("invalid value for \"campaign_id\" when calling DynamicVouchersApi.restoreDynamicVoucherCampaign, must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-        
-
-        $resourcePath = '/v2/payment/dynamicVoucher/{campaignID}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($campaign_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'campaignID' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -4003,40 +5277,40 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation saveDynamicVoucher
+     * Operation saveImportedList
      *
-     * Update Dynamic Voucher Campaign
+     * Save imported list
      *
-     * @param  string $id id (required)
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams $wt_dynamic_voucher_update_params wt_dynamic_voucher_update_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id list_id (required)
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveImportedList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\DuplicateRowFound|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\ForeignKeyDoesNotExist|\OpenAPI\Client\Model\InternalServerError500
+     * @return \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
      */
-    public function saveDynamicVoucher($id, $wt_dynamic_voucher_update_params, string $contentType = self::contentTypes['saveDynamicVoucher'][0])
+    public function saveImportedList($list_id, $wtsms_imported_list_create, string $contentType = self::contentTypes['saveImportedList'][0])
     {
-        list($response) = $this->saveDynamicVoucherWithHttpInfo($id, $wt_dynamic_voucher_update_params, $contentType);
+        list($response) = $this->saveImportedListWithHttpInfo($list_id, $wtsms_imported_list_create, $contentType);
         return $response;
     }
 
     /**
-     * Operation saveDynamicVoucherWithHttpInfo
+     * Operation saveImportedListWithHttpInfo
      *
-     * Update Dynamic Voucher Campaign
+     * Save imported list
      *
-     * @param  string $id (required)
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams $wt_dynamic_voucher_update_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveImportedList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WTDynamicVoucher|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\DuplicateRowFound|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\ForeignKeyDoesNotExist|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ImportedList|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveDynamicVoucherWithHttpInfo($id, $wt_dynamic_voucher_update_params, string $contentType = self::contentTypes['saveDynamicVoucher'][0])
+    public function saveImportedListWithHttpInfo($list_id, $wtsms_imported_list_create, string $contentType = self::contentTypes['saveImportedList'][0])
     {
-        $request = $this->saveDynamicVoucherRequest($id, $wt_dynamic_voucher_update_params, $contentType);
+        $request = $this->saveImportedListRequest($list_id, $wtsms_imported_list_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4075,11 +5349,11 @@ class DynamicVouchersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WTDynamicVoucher' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ImportedList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WTDynamicVoucher' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ImportedList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4097,7 +5371,7 @@ class DynamicVouchersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTDynamicVoucher', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ImportedList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4128,33 +5402,6 @@ class DynamicVouchersApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 409:
-                    if ('\OpenAPI\Client\Model\DuplicateRowFound' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DuplicateRowFound' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DuplicateRowFound', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
                 case 422:
                     if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -4179,33 +5426,6 @@ class DynamicVouchersApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 424:
-                    if ('\OpenAPI\Client\Model\ForeignKeyDoesNotExist' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ForeignKeyDoesNotExist' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ForeignKeyDoesNotExist', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4238,7 +5458,7 @@ class DynamicVouchersApi
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
+            $returnType = '\OpenAPI\Client\Model\ImportedList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4271,7 +5491,7 @@ class DynamicVouchersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WTDynamicVoucher',
+                        '\OpenAPI\Client\Model\ImportedList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4284,26 +5504,10 @@ class DynamicVouchersApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DuplicateRowFound',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\FalsumError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 424:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ForeignKeyDoesNotExist',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4322,20 +5526,20 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation saveDynamicVoucherAsync
+     * Operation saveImportedListAsync
      *
-     * Update Dynamic Voucher Campaign
+     * Save imported list
      *
-     * @param  string $id (required)
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams $wt_dynamic_voucher_update_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveDynamicVoucherAsync($id, $wt_dynamic_voucher_update_params, string $contentType = self::contentTypes['saveDynamicVoucher'][0])
+    public function saveImportedListAsync($list_id, $wtsms_imported_list_create, string $contentType = self::contentTypes['saveImportedList'][0])
     {
-        return $this->saveDynamicVoucherAsyncWithHttpInfo($id, $wt_dynamic_voucher_update_params, $contentType)
+        return $this->saveImportedListAsyncWithHttpInfo($list_id, $wtsms_imported_list_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4344,21 +5548,21 @@ class DynamicVouchersApi
     }
 
     /**
-     * Operation saveDynamicVoucherAsyncWithHttpInfo
+     * Operation saveImportedListAsyncWithHttpInfo
      *
-     * Update Dynamic Voucher Campaign
+     * Save imported list
      *
-     * @param  string $id (required)
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams $wt_dynamic_voucher_update_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveDynamicVoucherAsyncWithHttpInfo($id, $wt_dynamic_voucher_update_params, string $contentType = self::contentTypes['saveDynamicVoucher'][0])
+    public function saveImportedListAsyncWithHttpInfo($list_id, $wtsms_imported_list_create, string $contentType = self::contentTypes['saveImportedList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WTDynamicVoucher';
-        $request = $this->saveDynamicVoucherRequest($id, $wt_dynamic_voucher_update_params, $contentType);
+        $returnType = '\OpenAPI\Client\Model\ImportedList';
+        $request = $this->saveImportedListRequest($list_id, $wtsms_imported_list_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4397,43 +5601,43 @@ class DynamicVouchersApi
     }
 
     /**
-     * Create request for operation 'saveDynamicVoucher'
+     * Create request for operation 'saveImportedList'
      *
-     * @param  string $id (required)
-     * @param  \OpenAPI\Client\Model\WTDynamicVoucherUpdateParams $wt_dynamic_voucher_update_params (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveDynamicVoucher'] to see the possible values for this operation
+     * @param  string $list_id (required)
+     * @param  \OpenAPI\Client\Model\WTSMSImportedListCreate $wtsms_imported_list_create (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveImportedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveDynamicVoucherRequest($id, $wt_dynamic_voucher_update_params, string $contentType = self::contentTypes['saveDynamicVoucher'][0])
+    public function saveImportedListRequest($list_id, $wtsms_imported_list_create, string $contentType = self::contentTypes['saveImportedList'][0])
     {
 
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'list_id' is set
+        if ($list_id === null || (is_array($list_id) && count($list_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling saveDynamicVoucher'
+                'Missing the required parameter $list_id when calling saveImportedList'
             );
         }
-        if (strlen($id) > 12) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.saveDynamicVoucher, must be smaller than or equal to 12.');
+        if (strlen($list_id) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.saveImportedList, must be smaller than or equal to 10.');
         }
-        if (strlen($id) < 10) {
-            throw new \InvalidArgumentException('invalid length for "$id" when calling DynamicVouchersApi.saveDynamicVoucher, must be bigger than or equal to 10.');
+        if (strlen($list_id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$list_id" when calling ImportedListsApi.saveImportedList, must be bigger than or equal to 10.');
         }
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $id)) {
-            throw new \InvalidArgumentException("invalid value for \"id\" when calling DynamicVouchersApi.saveDynamicVoucher, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $list_id)) {
+            throw new \InvalidArgumentException("invalid value for \"list_id\" when calling ImportedListsApi.saveImportedList, must conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
         
-        // verify the required parameter 'wt_dynamic_voucher_update_params' is set
-        if ($wt_dynamic_voucher_update_params === null || (is_array($wt_dynamic_voucher_update_params) && count($wt_dynamic_voucher_update_params) === 0)) {
+        // verify the required parameter 'wtsms_imported_list_create' is set
+        if ($wtsms_imported_list_create === null || (is_array($wtsms_imported_list_create) && count($wtsms_imported_list_create) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $wt_dynamic_voucher_update_params when calling saveDynamicVoucher'
+                'Missing the required parameter $wtsms_imported_list_create when calling saveImportedList'
             );
         }
 
 
-        $resourcePath = '/v2/payment/dynamicVoucher/{id}';
+        $resourcePath = '/v2/sms/importedList/{listID}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4443,10 +5647,10 @@ class DynamicVouchersApi
 
 
         // path params
-        if ($id !== null) {
+        if ($list_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'listID' . '}',
+                ObjectSerializer::toPathValue($list_id),
                 $resourcePath
             );
         }
@@ -4459,12 +5663,12 @@ class DynamicVouchersApi
         );
 
         // for model (json/xml)
-        if (isset($wt_dynamic_voucher_update_params)) {
+        if (isset($wtsms_imported_list_create)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wt_dynamic_voucher_update_params));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wtsms_imported_list_create));
             } else {
-                $httpBody = $wt_dynamic_voucher_update_params;
+                $httpBody = $wtsms_imported_list_create;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

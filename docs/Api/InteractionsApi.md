@@ -16,8 +16,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
 | [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Get member information |
 | [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
-| [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
-| [**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client. |
+| [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Get page (token-scoped) |
+| [**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped) |
 | [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item |
 | [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
@@ -685,7 +685,7 @@ No authorization required
 fetchWalletPageWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
-Get page with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get page (token-scoped)
 
 ### Example
 
@@ -739,7 +739,7 @@ No authorization required
 fetchWalletPaymentObjectsWithToken($wt_fetch_wallet_payment_objects_with_token): mixed
 ```
 
-Get payment objects with token NOTE: This route exists because a token can completely change the dataset returned to the client. A simple fetch just logs the token with the request, but a fetchWithToken request can have a very different object returned to the client.
+Get payment objects (token-scoped)
 
 ### Example
 
