@@ -10714,7 +10714,7 @@ class MerchantApi
     /**
      * Operation updatePointsOfContact
      *
-     * Update billing contact
+     * Update points of contact
      *
      * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact wt_merchant_update_points_of_contact (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
@@ -10732,7 +10732,7 @@ class MerchantApi
     /**
      * Operation updatePointsOfContactWithHttpInfo
      *
-     * Update billing contact
+     * Update points of contact
      *
      * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
@@ -10961,7 +10961,7 @@ class MerchantApi
     /**
      * Operation updatePointsOfContactAsync
      *
-     * Update billing contact
+     * Update points of contact
      *
      * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation
@@ -10982,7 +10982,7 @@ class MerchantApi
     /**
      * Operation updatePointsOfContactAsyncWithHttpInfo
      *
-     * Update billing contact
+     * Update points of contact
      *
      * @param  \OpenAPI\Client\Model\WTMerchantUpdatePointsOfContact $wt_merchant_update_points_of_contact (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePointsOfContact'] to see the possible values for this operation

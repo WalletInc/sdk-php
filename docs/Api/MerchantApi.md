@@ -29,7 +29,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchTCPAFilter()**](MerchantApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters |
 | [**fetchWalletConfiguration()**](MerchantApi.md#fetchWalletConfiguration) | **GET** /v2/merchant/wallet/configuration | Get wallet configuration |
 | [**updateMerchant()**](MerchantApi.md#updateMerchant) | **PUT** /v2/merchant | Update merchant details |
-| [**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update billing contact |
+| [**updatePointsOfContact()**](MerchantApi.md#updatePointsOfContact) | **PUT** /v2/merchant/pointsOfContact | Update points of contact |
 | [**updatePosIntegration()**](MerchantApi.md#updatePosIntegration) | **PUT** /v2/merchant/pos/integration | Update POS Integration |
 
 
@@ -1403,7 +1403,7 @@ No authorization required
 updatePointsOfContact($wt_merchant_update_points_of_contact): mixed
 ```
 
-Update billing contact
+Update points of contact
 
 ### Example
 

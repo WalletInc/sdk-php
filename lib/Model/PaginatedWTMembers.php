@@ -326,7 +326,7 @@ class PaginatedWTMembers implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets results
      *
-     * @param mixed $results Stores the results as an array
+     * @param mixed $results The page of records returned for this request.
      *
      * @return self
      */

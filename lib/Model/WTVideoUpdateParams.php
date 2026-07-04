@@ -60,8 +60,7 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'title' => 'mixed',
         'description' => 'mixed',
-        'order_number' => 'int',
-        'media_url' => 'mixed',
+        'order_number' => 'mixed',
         'additional_info_url' => 'mixed'
     ];
 
@@ -76,7 +75,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => null,
         'description' => null,
         'order_number' => 'int32',
-        'media_url' => null,
         'additional_info_url' => null
     ];
 
@@ -88,8 +86,7 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'title' => true,
         'description' => true,
-        'order_number' => false,
-        'media_url' => true,
+        'order_number' => true,
         'additional_info_url' => true
     ];
 
@@ -182,7 +179,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'title',
         'description' => 'description',
         'order_number' => 'orderNumber',
-        'media_url' => 'mediaURL',
         'additional_info_url' => 'additionalInfoURL'
     ];
 
@@ -195,7 +191,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'setTitle',
         'description' => 'setDescription',
         'order_number' => 'setOrderNumber',
-        'media_url' => 'setMediaUrl',
         'additional_info_url' => 'setAdditionalInfoUrl'
     ];
 
@@ -208,7 +203,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         'title' => 'getTitle',
         'description' => 'getDescription',
         'order_number' => 'getOrderNumber',
-        'media_url' => 'getMediaUrl',
         'additional_info_url' => 'getAdditionalInfoUrl'
     ];
 
@@ -272,7 +266,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('order_number', $data ?? [], null);
-        $this->setIfExists('media_url', $data ?? [], null);
         $this->setIfExists('additional_info_url', $data ?? [], null);
     }
 
@@ -322,13 +315,6 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if (($this->container['order_number'] < 1)) {
             $invalidProperties[] = "invalid value for 'order_number', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['media_url'] === null) {
-            $invalidProperties[] = "'media_url' can't be null";
-        }
-        if ((mb_strlen($this->container['media_url']) < 12)) {
-            $invalidProperties[] = "invalid value for 'media_url', the character length must be bigger than or equal to 12.";
         }
 
         return $invalidProperties;
@@ -427,7 +413,7 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets order_number
      *
-     * @return int
+     * @return mixed
      */
     public function getOrderNumber()
     {
@@ -437,60 +423,28 @@ class WTVideoUpdateParams implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets order_number
      *
-     * @param int $order_number order_number
+     * @param mixed $order_number order_number
      *
      * @return self
      */
     public function setOrderNumber($order_number)
     {
         if (is_null($order_number)) {
-            throw new \InvalidArgumentException('non-nullable order_number cannot be null');
-        }
-
-        if (($order_number < 1)) {
-            throw new \InvalidArgumentException('invalid value for $order_number when calling WTVideoUpdateParams., must be bigger than or equal to 1.');
-        }
-
-        $this->container['order_number'] = $order_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets media_url
-     *
-     * @return mixed
-     */
-    public function getMediaUrl()
-    {
-        return $this->container['media_url'];
-    }
-
-    /**
-     * Sets media_url
-     *
-     * @param mixed $media_url media_url
-     *
-     * @return self
-     */
-    public function setMediaUrl($media_url)
-    {
-        if (is_null($media_url)) {
-            array_push($this->openAPINullablesSetToNull, 'media_url');
+            array_push($this->openAPINullablesSetToNull, 'order_number');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('media_url', $nullablesSetToNull);
+            $index = array_search('order_number', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        if (!is_null($media_url) && (mb_strlen($media_url) < 12)) {
-            throw new \InvalidArgumentException('invalid length for $media_url when calling WTVideoUpdateParams., must be bigger than or equal to 12.');
+        if (!is_null($order_number) && ($order_number < 1)) {
+            throw new \InvalidArgumentException('invalid value for $order_number when calling WTVideoUpdateParams., must be bigger than or equal to 1.');
         }
 
-        $this->container['media_url'] = $media_url;
+        $this->container['order_number'] = $order_number;
 
         return $this;
     }

@@ -58,16 +58,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'mixed',
-        'description' => 'mixed',
-        'order_number' => 'mixed',
-        'media_url' => 'mixed',
-        'additional_info_url' => 'mixed',
         'id' => '\OpenAPI\Client\Model\AmenityId',
         'created_at' => 'mixed',
         'updated_at' => 'mixed',
+        'title' => 'mixed',
+        'description' => 'mixed',
+        'order_number' => 'mixed',
+        'additional_info_url' => 'mixed',
         'is_active' => 'mixed',
-        'merchant_id' => 'string'
+        'merchant_id' => 'string',
+        'provider' => '\OpenAPI\Client\Model\VideoProvider',
+        'asset_id' => 'mixed',
+        'source' => '\OpenAPI\Client\Model\WTVideoPlaybackSource'
     ];
 
     /**
@@ -78,16 +80,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'description' => null,
-        'order_number' => 'int32',
-        'media_url' => null,
-        'additional_info_url' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'title' => null,
+        'description' => null,
+        'order_number' => 'double',
+        'additional_info_url' => null,
         'is_active' => null,
-        'merchant_id' => null
+        'merchant_id' => null,
+        'provider' => null,
+        'asset_id' => null,
+        'source' => null
     ];
 
     /**
@@ -96,16 +100,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'title' => true,
-        'description' => true,
-        'order_number' => true,
-        'media_url' => true,
-        'additional_info_url' => true,
         'id' => false,
         'created_at' => true,
         'updated_at' => true,
+        'title' => true,
+        'description' => true,
+        'order_number' => true,
+        'additional_info_url' => true,
         'is_active' => true,
-        'merchant_id' => false
+        'merchant_id' => false,
+        'provider' => false,
+        'asset_id' => true,
+        'source' => false
     ];
 
     /**
@@ -194,16 +200,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'description' => 'description',
-        'order_number' => 'orderNumber',
-        'media_url' => 'mediaURL',
-        'additional_info_url' => 'additionalInfoURL',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
+        'title' => 'title',
+        'description' => 'description',
+        'order_number' => 'orderNumber',
+        'additional_info_url' => 'additionalInfoURL',
         'is_active' => 'isActive',
-        'merchant_id' => 'merchantID'
+        'merchant_id' => 'merchantID',
+        'provider' => 'provider',
+        'asset_id' => 'assetId',
+        'source' => 'source'
     ];
 
     /**
@@ -212,16 +220,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'description' => 'setDescription',
-        'order_number' => 'setOrderNumber',
-        'media_url' => 'setMediaUrl',
-        'additional_info_url' => 'setAdditionalInfoUrl',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'title' => 'setTitle',
+        'description' => 'setDescription',
+        'order_number' => 'setOrderNumber',
+        'additional_info_url' => 'setAdditionalInfoUrl',
         'is_active' => 'setIsActive',
-        'merchant_id' => 'setMerchantId'
+        'merchant_id' => 'setMerchantId',
+        'provider' => 'setProvider',
+        'asset_id' => 'setAssetId',
+        'source' => 'setSource'
     ];
 
     /**
@@ -230,16 +240,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'description' => 'getDescription',
-        'order_number' => 'getOrderNumber',
-        'media_url' => 'getMediaUrl',
-        'additional_info_url' => 'getAdditionalInfoUrl',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'title' => 'getTitle',
+        'description' => 'getDescription',
+        'order_number' => 'getOrderNumber',
+        'additional_info_url' => 'getAdditionalInfoUrl',
         'is_active' => 'getIsActive',
-        'merchant_id' => 'getMerchantId'
+        'merchant_id' => 'getMerchantId',
+        'provider' => 'getProvider',
+        'asset_id' => 'getAssetId',
+        'source' => 'getSource'
     ];
 
     /**
@@ -299,16 +311,18 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('title', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('order_number', $data ?? [], null);
-        $this->setIfExists('media_url', $data ?? [], null);
-        $this->setIfExists('additional_info_url', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('order_number', $data ?? [], null);
+        $this->setIfExists('additional_info_url', $data ?? [], null);
         $this->setIfExists('is_active', $data ?? [], null);
         $this->setIfExists('merchant_id', $data ?? [], null);
+        $this->setIfExists('provider', $data ?? [], null);
+        $this->setIfExists('asset_id', $data ?? [], null);
+        $this->setIfExists('source', $data ?? [], null);
     }
 
     /**
@@ -338,34 +352,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ((mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['order_number'] === null) {
-            $invalidProperties[] = "'order_number' can't be null";
-        }
-        if (($this->container['order_number'] < 1)) {
-            $invalidProperties[] = "invalid value for 'order_number', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['media_url'] === null) {
-            $invalidProperties[] = "'media_url' can't be null";
-        }
-        if ((mb_strlen($this->container['media_url']) < 12)) {
-            $invalidProperties[] = "invalid value for 'media_url', the character length must be bigger than or equal to 12.";
-        }
-
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
@@ -374,6 +360,15 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
+        if ($this->container['order_number'] === null) {
+            $invalidProperties[] = "'order_number' can't be null";
         }
         if ($this->container['is_active'] === null) {
             $invalidProperties[] = "'is_active' can't be null";
@@ -393,6 +388,15 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'merchant_id', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
         }
 
+        if ($this->container['provider'] === null) {
+            $invalidProperties[] = "'provider' can't be null";
+        }
+        if ($this->container['asset_id'] === null) {
+            $invalidProperties[] = "'asset_id' can't be null";
+        }
+        if ($this->container['source'] === null) {
+            $invalidProperties[] = "'source' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -407,196 +411,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets title
-     *
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param mixed $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($title) && (mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling Video., must be bigger than or equal to 1.');
-        }
-
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param mixed $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling Video., must be bigger than or equal to 1.');
-        }
-
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_number
-     *
-     * @return mixed
-     */
-    public function getOrderNumber()
-    {
-        return $this->container['order_number'];
-    }
-
-    /**
-     * Sets order_number
-     *
-     * @param mixed $order_number order_number
-     *
-     * @return self
-     */
-    public function setOrderNumber($order_number)
-    {
-        if (is_null($order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_number', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($order_number) && ($order_number < 1)) {
-            throw new \InvalidArgumentException('invalid value for $order_number when calling Video., must be bigger than or equal to 1.');
-        }
-
-        $this->container['order_number'] = $order_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets media_url
-     *
-     * @return mixed
-     */
-    public function getMediaUrl()
-    {
-        return $this->container['media_url'];
-    }
-
-    /**
-     * Sets media_url
-     *
-     * @param mixed $media_url media_url
-     *
-     * @return self
-     */
-    public function setMediaUrl($media_url)
-    {
-        if (is_null($media_url)) {
-            array_push($this->openAPINullablesSetToNull, 'media_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('media_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($media_url) && (mb_strlen($media_url) < 12)) {
-            throw new \InvalidArgumentException('invalid length for $media_url when calling Video., must be bigger than or equal to 12.');
-        }
-
-        $this->container['media_url'] = $media_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_info_url
-     *
-     * @return mixed|null
-     */
-    public function getAdditionalInfoUrl()
-    {
-        return $this->container['additional_info_url'];
-    }
-
-    /**
-     * Sets additional_info_url
-     *
-     * @param mixed|null $additional_info_url additional_info_url
-     *
-     * @return self
-     */
-    public function setAdditionalInfoUrl($additional_info_url)
-    {
-        if (is_null($additional_info_url)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_info_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_info_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['additional_info_url'] = $additional_info_url;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -694,6 +508,142 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets title
+     *
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param mixed $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        if (is_null($title)) {
+            array_push($this->openAPINullablesSetToNull, 'title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param mixed $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_number
+     *
+     * @return mixed
+     */
+    public function getOrderNumber()
+    {
+        return $this->container['order_number'];
+    }
+
+    /**
+     * Sets order_number
+     *
+     * @param mixed $order_number order_number
+     *
+     * @return self
+     */
+    public function setOrderNumber($order_number)
+    {
+        if (is_null($order_number)) {
+            array_push($this->openAPINullablesSetToNull, 'order_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('order_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['order_number'] = $order_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_info_url
+     *
+     * @return mixed|null
+     */
+    public function getAdditionalInfoUrl()
+    {
+        return $this->container['additional_info_url'];
+    }
+
+    /**
+     * Sets additional_info_url
+     *
+     * @param mixed|null $additional_info_url additional_info_url
+     *
+     * @return self
+     */
+    public function setAdditionalInfoUrl($additional_info_url)
+    {
+        if (is_null($additional_info_url)) {
+            array_push($this->openAPINullablesSetToNull, 'additional_info_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_info_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['additional_info_url'] = $additional_info_url;
+
+        return $this;
+    }
+
+    /**
      * Gets is_active
      *
      * @return mixed
@@ -760,6 +710,94 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['merchant_id'] = $merchant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider
+     *
+     * @return \OpenAPI\Client\Model\VideoProvider
+     */
+    public function getProvider()
+    {
+        return $this->container['provider'];
+    }
+
+    /**
+     * Sets provider
+     *
+     * @param \OpenAPI\Client\Model\VideoProvider $provider provider
+     *
+     * @return self
+     */
+    public function setProvider($provider)
+    {
+        if (is_null($provider)) {
+            throw new \InvalidArgumentException('non-nullable provider cannot be null');
+        }
+        $this->container['provider'] = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets asset_id
+     *
+     * @return mixed
+     */
+    public function getAssetId()
+    {
+        return $this->container['asset_id'];
+    }
+
+    /**
+     * Sets asset_id
+     *
+     * @param mixed $asset_id asset_id
+     *
+     * @return self
+     */
+    public function setAssetId($asset_id)
+    {
+        if (is_null($asset_id)) {
+            array_push($this->openAPINullablesSetToNull, 'asset_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('asset_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['asset_id'] = $asset_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return \OpenAPI\Client\Model\WTVideoPlaybackSource
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param \OpenAPI\Client\Model\WTVideoPlaybackSource $source source
+     *
+     * @return self
+     */
+    public function setSource($source)
+    {
+        if (is_null($source)) {
+            throw new \InvalidArgumentException('non-nullable source cannot be null');
+        }
+        $this->container['source'] = $source;
 
         return $this;
     }

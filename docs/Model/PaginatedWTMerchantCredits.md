@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | **mixed** | Stores the results as an array |
+**results** | **mixed** | The page of records returned for this request. |
 **length** | **mixed** | Denotes the length of the results array |
 **total** | **mixed** | Denotes the total number of records present in the database |
 

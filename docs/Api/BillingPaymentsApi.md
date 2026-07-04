@@ -8,6 +8,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**buySpecialOffer()**](BillingPaymentsApi.md#buySpecialOffer) | **POST** /v2/billing/products/specialOffers/{productID} | Buy special offer |
 | [**cancelPlan()**](BillingPaymentsApi.md#cancelPlan) | **DELETE** /v2/billing/plan | Cancel billing plan |
 | [**changePlan()**](BillingPaymentsApi.md#changePlan) | **PUT** /v2/billing/plan | Change billing plan |
+| [**createBillingPortalSession()**](BillingPaymentsApi.md#createBillingPortalSession) | **POST** /v2/billing/portal/session | Create a Stripe Billing Portal session |
 | [**fetchAddOns()**](BillingPaymentsApi.md#fetchAddOns) | **GET** /v2/billing/products/addOns | Get add-on products |
 | [**fetchCustomerPaymentMethods()**](BillingPaymentsApi.md#fetchCustomerPaymentMethods) | **GET** /v2/billing/paymentMethods/all | Get payment methods |
 | [**fetchIndustry()**](BillingPaymentsApi.md#fetchIndustry) | **GET** /v2/billing/industry | Get merchant&#39;s industry |
@@ -228,6 +229,57 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createBillingPortalSession()`
+
+```php
+createBillingPortalSession(): mixed
+```
+
+Create a Stripe Billing Portal session
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingPaymentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->createBillingPortalSession();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingPaymentsApi->createBillingPortalSession: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

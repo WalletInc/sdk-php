@@ -63,7 +63,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => 'mixed',
         'order_number' => 'int',
         'media_url' => 'string',
-        'additional_info_url' => 'mixed'
+        'additional_info_url' => 'mixed',
+        'price_amount' => 'int',
+        'currency' => 'mixed',
+        'is_buyable' => 'bool',
+        'tax_behavior' => '\OpenAPI\Client\Model\ProductTaxBehavior'
     ];
 
     /**
@@ -79,7 +83,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => null,
         'order_number' => 'int32',
         'media_url' => null,
-        'additional_info_url' => null
+        'additional_info_url' => null,
+        'price_amount' => 'int32',
+        'currency' => null,
+        'is_buyable' => null,
+        'tax_behavior' => null
     ];
 
     /**
@@ -93,7 +101,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => true,
         'order_number' => false,
         'media_url' => false,
-        'additional_info_url' => true
+        'additional_info_url' => true,
+        'price_amount' => false,
+        'currency' => true,
+        'is_buyable' => false,
+        'tax_behavior' => false
     ];
 
     /**
@@ -187,7 +199,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => 'displayedPrice',
         'order_number' => 'orderNumber',
         'media_url' => 'mediaURL',
-        'additional_info_url' => 'additionalInfoURL'
+        'additional_info_url' => 'additionalInfoURL',
+        'price_amount' => 'priceAmount',
+        'currency' => 'currency',
+        'is_buyable' => 'isBuyable',
+        'tax_behavior' => 'taxBehavior'
     ];
 
     /**
@@ -201,7 +217,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => 'setDisplayedPrice',
         'order_number' => 'setOrderNumber',
         'media_url' => 'setMediaUrl',
-        'additional_info_url' => 'setAdditionalInfoUrl'
+        'additional_info_url' => 'setAdditionalInfoUrl',
+        'price_amount' => 'setPriceAmount',
+        'currency' => 'setCurrency',
+        'is_buyable' => 'setIsBuyable',
+        'tax_behavior' => 'setTaxBehavior'
     ];
 
     /**
@@ -215,7 +235,11 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         'displayed_price' => 'getDisplayedPrice',
         'order_number' => 'getOrderNumber',
         'media_url' => 'getMediaUrl',
-        'additional_info_url' => 'getAdditionalInfoUrl'
+        'additional_info_url' => 'getAdditionalInfoUrl',
+        'price_amount' => 'getPriceAmount',
+        'currency' => 'getCurrency',
+        'is_buyable' => 'getIsBuyable',
+        'tax_behavior' => 'getTaxBehavior'
     ];
 
     /**
@@ -281,6 +305,10 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('order_number', $data ?? [], null);
         $this->setIfExists('media_url', $data ?? [], null);
         $this->setIfExists('additional_info_url', $data ?? [], null);
+        $this->setIfExists('price_amount', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('is_buyable', $data ?? [], null);
+        $this->setIfExists('tax_behavior', $data ?? [], null);
     }
 
     /**
@@ -329,6 +357,10 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if (($this->container['order_number'] < 1)) {
             $invalidProperties[] = "invalid value for 'order_number', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['price_amount']) && ($this->container['price_amount'] < 0)) {
+            $invalidProperties[] = "invalid value for 'price_amount', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -547,6 +579,126 @@ class WTProductUpdateParams implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['additional_info_url'] = $additional_info_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_amount
+     *
+     * @return int|null
+     */
+    public function getPriceAmount()
+    {
+        return $this->container['price_amount'];
+    }
+
+    /**
+     * Sets price_amount
+     *
+     * @param int|null $price_amount price_amount
+     *
+     * @return self
+     */
+    public function setPriceAmount($price_amount)
+    {
+        if (is_null($price_amount)) {
+            throw new \InvalidArgumentException('non-nullable price_amount cannot be null');
+        }
+
+        if (($price_amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $price_amount when calling WTProductUpdateParams., must be bigger than or equal to 0.');
+        }
+
+        $this->container['price_amount'] = $price_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return mixed|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param mixed|null $currency currency
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            array_push($this->openAPINullablesSetToNull, 'currency');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('currency', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_buyable
+     *
+     * @return bool|null
+     */
+    public function getIsBuyable()
+    {
+        return $this->container['is_buyable'];
+    }
+
+    /**
+     * Sets is_buyable
+     *
+     * @param bool|null $is_buyable is_buyable
+     *
+     * @return self
+     */
+    public function setIsBuyable($is_buyable)
+    {
+        if (is_null($is_buyable)) {
+            throw new \InvalidArgumentException('non-nullable is_buyable cannot be null');
+        }
+        $this->container['is_buyable'] = $is_buyable;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_behavior
+     *
+     * @return \OpenAPI\Client\Model\ProductTaxBehavior|null
+     */
+    public function getTaxBehavior()
+    {
+        return $this->container['tax_behavior'];
+    }
+
+    /**
+     * Sets tax_behavior
+     *
+     * @param \OpenAPI\Client\Model\ProductTaxBehavior|null $tax_behavior tax_behavior
+     *
+     * @return self
+     */
+    public function setTaxBehavior($tax_behavior)
+    {
+        if (is_null($tax_behavior)) {
+            throw new \InvalidArgumentException('non-nullable tax_behavior cannot be null');
+        }
+        $this->container['tax_behavior'] = $tax_behavior;
 
         return $this;
     }

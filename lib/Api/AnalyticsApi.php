@@ -1264,7 +1264,7 @@ class AnalyticsApi
     /**
      * Operation countDistinctRedemptions
      *
-     * Get refund amount of campaigns by Campaign
+     * Count distinct payment object redemptions
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -1285,7 +1285,7 @@ class AnalyticsApi
     /**
      * Operation countDistinctRedemptionsWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count distinct payment object redemptions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -1517,7 +1517,7 @@ class AnalyticsApi
     /**
      * Operation countDistinctRedemptionsAsync
      *
-     * Get refund amount of campaigns by Campaign
+     * Count distinct payment object redemptions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -1541,7 +1541,7 @@ class AnalyticsApi
     /**
      * Operation countDistinctRedemptionsAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count distinct payment object redemptions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -2219,7 +2219,7 @@ class AnalyticsApi
     /**
      * Operation countInboundMessages
      *
-     * Count opt in list subscribers
+     * Count inbound SMS messages
      *
      * @param  \DateTime $start_date start_date (optional)
      * @param  \DateTime $end_date end_date (optional)
@@ -2238,7 +2238,7 @@ class AnalyticsApi
     /**
      * Operation countInboundMessagesWithHttpInfo
      *
-     * Count opt in list subscribers
+     * Count inbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -2468,7 +2468,7 @@ class AnalyticsApi
     /**
      * Operation countInboundMessagesAsync
      *
-     * Count opt in list subscribers
+     * Count inbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -2490,7 +2490,7 @@ class AnalyticsApi
     /**
      * Operation countInboundMessagesAsyncWithHttpInfo
      *
-     * Count opt in list subscribers
+     * Count inbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -3497,7 +3497,7 @@ class AnalyticsApi
     /**
      * Operation countOutboundMessages
      *
-     * Count opt in list subscribers
+     * Count outbound SMS messages
      *
      * @param  \DateTime $start_date start_date (optional)
      * @param  \DateTime $end_date end_date (optional)
@@ -3516,7 +3516,7 @@ class AnalyticsApi
     /**
      * Operation countOutboundMessagesWithHttpInfo
      *
-     * Count opt in list subscribers
+     * Count outbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -3746,7 +3746,7 @@ class AnalyticsApi
     /**
      * Operation countOutboundMessagesAsync
      *
-     * Count opt in list subscribers
+     * Count outbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -3768,7 +3768,7 @@ class AnalyticsApi
     /**
      * Operation countOutboundMessagesAsyncWithHttpInfo
      *
-     * Count opt in list subscribers
+     * Count outbound SMS messages
      *
      * @param  \DateTime $start_date (optional)
      * @param  \DateTime $end_date (optional)
@@ -4341,7 +4341,7 @@ class AnalyticsApi
     /**
      * Operation countTransactions
      *
-     * Get refund amount of campaigns by Campaign
+     * Count ledger transactions
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -4362,7 +4362,7 @@ class AnalyticsApi
     /**
      * Operation countTransactionsWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count ledger transactions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -4594,7 +4594,7 @@ class AnalyticsApi
     /**
      * Operation countTransactionsAsync
      *
-     * Get refund amount of campaigns by Campaign
+     * Count ledger transactions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -4618,7 +4618,7 @@ class AnalyticsApi
     /**
      * Operation countTransactionsAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count ledger transactions
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -16834,7 +16834,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignID
      *
-     * Get refund amount of campaigns by Campaign
+     * Count refunds of campaigns by Campaign
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -16853,7 +16853,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count refunds of campaigns by Campaign
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -17083,7 +17083,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDAsync
      *
-     * Get refund amount of campaigns by Campaign
+     * Count refunds of campaigns by Campaign
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -17105,7 +17105,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByCampaignIDAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Count refunds of campaigns by Campaign
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -17268,7 +17268,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByDate
      *
-     * Get refund amount of campaigns by date
+     * Count refunds of campaigns by date
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -17289,7 +17289,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByDateWithHttpInfo
      *
-     * Get refund amount of campaigns by date
+     * Count refunds of campaigns by date
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -17521,7 +17521,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByDateAsync
      *
-     * Get refund amount of campaigns by date
+     * Count refunds of campaigns by date
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -17545,7 +17545,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsCampaignsRefundsCountPartitionedByDateAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by date
+     * Count refunds of campaigns by date
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -33559,7 +33559,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsTotalAmountRedeemedPerTier
      *
-     * Get redeemed amoun̥t of tiers
+     * Get redeemed amount of tiers
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -33580,7 +33580,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsTotalAmountRedeemedPerTierWithHttpInfo
      *
-     * Get redeemed amoun̥t of tiers
+     * Get redeemed amount of tiers
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -33812,7 +33812,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsTotalAmountRedeemedPerTierAsync
      *
-     * Get redeemed amoun̥t of tiers
+     * Get redeemed amount of tiers
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -33836,7 +33836,7 @@ class AnalyticsApi
     /**
      * Operation fetchAnalyticsTotalAmountRedeemedPerTierAsyncWithHttpInfo
      *
-     * Get redeemed amoun̥t of tiers
+     * Get redeemed amount of tiers
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37185,7 +37185,7 @@ class AnalyticsApi
     /**
      * Operation sumRevenue
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger revenue
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -37206,7 +37206,7 @@ class AnalyticsApi
     /**
      * Operation sumRevenueWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger revenue
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37438,7 +37438,7 @@ class AnalyticsApi
     /**
      * Operation sumRevenueAsync
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger revenue
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37462,7 +37462,7 @@ class AnalyticsApi
     /**
      * Operation sumRevenueAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger revenue
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37649,7 +37649,7 @@ class AnalyticsApi
     /**
      * Operation sumTransactions
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger transaction amounts
      *
      * @param  \DateTime $start_date start_date (required)
      * @param  \DateTime $end_date end_date (required)
@@ -37670,7 +37670,7 @@ class AnalyticsApi
     /**
      * Operation sumTransactionsWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger transaction amounts
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37902,7 +37902,7 @@ class AnalyticsApi
     /**
      * Operation sumTransactionsAsync
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger transaction amounts
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)
@@ -37926,7 +37926,7 @@ class AnalyticsApi
     /**
      * Operation sumTransactionsAsyncWithHttpInfo
      *
-     * Get refund amount of campaigns by Campaign
+     * Sum ledger transaction amounts
      *
      * @param  \DateTime $start_date (required)
      * @param  \DateTime $end_date (required)

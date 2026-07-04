@@ -60,20 +60,20 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'title' => 'mixed',
         'body' => 'mixed',
-        'start_date_time' => '\DateTime',
+        'start_date_time' => 'mixed',
         'price' => 'mixed',
         'url' => 'mixed',
         'order_number' => 'mixed',
         'is_sold_out' => 'mixed',
-        'media_url' => 'string',
+        'media_url' => 'mixed',
         'payment_design_id' => 'string',
-        'max_comp_tickets' => 'float',
-        'ticket_expiration_date_time' => '\DateTime',
-        'redemption_instructions' => 'string',
+        'max_comp_tickets' => 'mixed',
+        'ticket_expiration_date_time' => 'mixed',
+        'redemption_instructions' => 'mixed',
         'id' => '\OpenAPI\Client\Model\AmenityId',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'is_active' => 'bool',
+        'created_at' => 'mixed',
+        'updated_at' => 'mixed',
+        'is_active' => 'mixed',
         'merchant_id' => 'string'
     ];
 
@@ -112,20 +112,20 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'title' => true,
         'body' => true,
-        'start_date_time' => false,
+        'start_date_time' => true,
         'price' => true,
         'url' => true,
         'order_number' => true,
         'is_sold_out' => true,
-        'media_url' => false,
+        'media_url' => true,
         'payment_design_id' => false,
-        'max_comp_tickets' => false,
-        'ticket_expiration_date_time' => false,
-        'redemption_instructions' => false,
+        'max_comp_tickets' => true,
+        'ticket_expiration_date_time' => true,
+        'redemption_instructions' => true,
         'id' => false,
-        'created_at' => false,
-        'updated_at' => false,
-        'is_active' => false,
+        'created_at' => true,
+        'updated_at' => true,
+        'is_active' => true,
         'merchant_id' => false
     ];
 
@@ -407,10 +407,6 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['price'] === null) {
             $invalidProperties[] = "'price' can't be null";
         }
-        if (($this->container['price'] < 0)) {
-            $invalidProperties[] = "invalid value for 'price', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['url'] === null) {
             $invalidProperties[] = "'url' can't be null";
         }
@@ -559,7 +555,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date_time
      *
-     * @return \DateTime
+     * @return mixed
      */
     public function getStartDateTime()
     {
@@ -569,14 +565,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date_time
      *
-     * @param \DateTime $start_date_time start_date_time
+     * @param mixed $start_date_time start_date_time
      *
      * @return self
      */
     public function setStartDateTime($start_date_time)
     {
         if (is_null($start_date_time)) {
-            throw new \InvalidArgumentException('non-nullable start_date_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'start_date_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start_date_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['start_date_time'] = $start_date_time;
 
@@ -612,11 +615,6 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-        if (!is_null($price) && ($price < 0)) {
-            throw new \InvalidArgumentException('invalid value for $price when calling Performance., must be bigger than or equal to 0.');
-        }
-
         $this->container['price'] = $price;
 
         return $this;
@@ -669,7 +667,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_number
      *
-     * @param mixed $order_number Stores the order number
+     * @param mixed $order_number order_number
      *
      * @return self
      */
@@ -732,7 +730,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets media_url
      *
-     * @return string|null
+     * @return mixed|null
      */
     public function getMediaUrl()
     {
@@ -742,14 +740,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets media_url
      *
-     * @param string|null $media_url media_url
+     * @param mixed|null $media_url media_url
      *
      * @return self
      */
     public function setMediaUrl($media_url)
     {
         if (is_null($media_url)) {
-            throw new \InvalidArgumentException('non-nullable media_url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'media_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('media_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['media_url'] = $media_url;
 
@@ -796,7 +801,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets max_comp_tickets
      *
-     * @return float|null
+     * @return mixed|null
      */
     public function getMaxCompTickets()
     {
@@ -806,14 +811,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets max_comp_tickets
      *
-     * @param float|null $max_comp_tickets max_comp_tickets
+     * @param mixed|null $max_comp_tickets max_comp_tickets
      *
      * @return self
      */
     public function setMaxCompTickets($max_comp_tickets)
     {
         if (is_null($max_comp_tickets)) {
-            throw new \InvalidArgumentException('non-nullable max_comp_tickets cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'max_comp_tickets');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('max_comp_tickets', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['max_comp_tickets'] = $max_comp_tickets;
 
@@ -823,7 +835,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ticket_expiration_date_time
      *
-     * @return \DateTime|null
+     * @return mixed|null
      */
     public function getTicketExpirationDateTime()
     {
@@ -833,14 +845,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ticket_expiration_date_time
      *
-     * @param \DateTime|null $ticket_expiration_date_time ticket_expiration_date_time
+     * @param mixed|null $ticket_expiration_date_time ticket_expiration_date_time
      *
      * @return self
      */
     public function setTicketExpirationDateTime($ticket_expiration_date_time)
     {
         if (is_null($ticket_expiration_date_time)) {
-            throw new \InvalidArgumentException('non-nullable ticket_expiration_date_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ticket_expiration_date_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ticket_expiration_date_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ticket_expiration_date_time'] = $ticket_expiration_date_time;
 
@@ -850,7 +869,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets redemption_instructions
      *
-     * @return string|null
+     * @return mixed|null
      */
     public function getRedemptionInstructions()
     {
@@ -860,14 +879,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redemption_instructions
      *
-     * @param string|null $redemption_instructions redemption_instructions
+     * @param mixed|null $redemption_instructions redemption_instructions
      *
      * @return self
      */
     public function setRedemptionInstructions($redemption_instructions)
     {
         if (is_null($redemption_instructions)) {
-            throw new \InvalidArgumentException('non-nullable redemption_instructions cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'redemption_instructions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redemption_instructions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['redemption_instructions'] = $redemption_instructions;
 
@@ -904,7 +930,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_at
      *
-     * @return \DateTime
+     * @return mixed
      */
     public function getCreatedAt()
     {
@@ -914,14 +940,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime $created_at created_at
+     * @param mixed $created_at created_at
      *
      * @return self
      */
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -931,7 +964,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets updated_at
      *
-     * @return \DateTime
+     * @return mixed
      */
     public function getUpdatedAt()
     {
@@ -941,14 +974,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updated_at
      *
-     * @param \DateTime $updated_at updated_at
+     * @param mixed $updated_at updated_at
      *
      * @return self
      */
     public function setUpdatedAt($updated_at)
     {
         if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updated_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updated_at'] = $updated_at;
 
@@ -958,7 +998,7 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets is_active
      *
-     * @return bool
+     * @return mixed
      */
     public function getIsActive()
     {
@@ -968,14 +1008,21 @@ class Performance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_active
      *
-     * @param bool $is_active is_active
+     * @param mixed $is_active is_active
      *
      * @return self
      */
     public function setIsActive($is_active)
     {
         if (is_null($is_active)) {
-            throw new \InvalidArgumentException('non-nullable is_active cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_active');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_active', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_active'] = $is_active;
 

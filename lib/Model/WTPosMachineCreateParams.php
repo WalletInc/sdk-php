@@ -479,7 +479,7 @@ class WTPosMachineCreateParams implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets outlet_number
      *
-     * @param mixed $outlet_number Stores the outlet number
+     * @param mixed $outlet_number outlet_number
      *
      * @return self
      */

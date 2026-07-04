@@ -34,7 +34,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**removePeerFromAllRoles()**](EmployeesApi.md#removePeerFromAllRoles) | **DELETE** /v2/employee/peer/permissions/{userID} | Remove peer from all roles |
 | [**scheduleAdvertisementCredit()**](EmployeesApi.md#scheduleAdvertisementCredit) | **POST** /v2/employee/sms/schedule/adCredit/{advertisementCreditID} | Schedule Ad Credit |
 | [**scheduleDynamicVoucher()**](EmployeesApi.md#scheduleDynamicVoucher) | **POST** /v2/employee/sms/schedule/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to list |
-| [**scheduleDynamicVoucherToRecipient()**](EmployeesApi.md#scheduleDynamicVoucherToRecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dyanamic Voucher to recipient |
+| [**scheduleDynamicVoucherToRecipient()**](EmployeesApi.md#scheduleDynamicVoucherToRecipient) | **POST** /v2/employee/sms/schedule/recipient/dynamicVoucher/{dynamicVoucherID} | Schedule Dynamic Voucher to recipient |
 | [**scheduleSimpleSMS()**](EmployeesApi.md#scheduleSimpleSMS) | **POST** /v2/employee/sms/schedule/simple | Schedule Simple SMS broadcast to list |
 | [**scheduleSimpleSMSToRecipient()**](EmployeesApi.md#scheduleSimpleSMSToRecipient) | **POST** /v2/employee/sms/schedule/recipient/simple | Schedule Simple SMS broadcast to recipient |
 | [**sendHelpDeskResponse()**](EmployeesApi.md#sendHelpDeskResponse) | **POST** /v2/employee/helpDesk/response | Send help desk response |
@@ -1662,7 +1662,7 @@ No authorization required
 scheduleDynamicVoucherToRecipient($dynamic_voucher_id, $wt_employee_schedule_simple_smsto_recipient): \OpenAPI\Client\Model\DynamicVoucherBroadcast
 ```
 
-Schedule Dyanamic Voucher to recipient
+Schedule Dynamic Voucher to recipient
 
 ### Example
 
