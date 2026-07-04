@@ -9,6 +9,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllDynamicVouchers()**](DynamicVouchersApi.md#fetchAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/all | Get all Dynamic Voucher Campaigns |
 | [**fetchDynamicVoucherById()**](DynamicVouchersApi.md#fetchDynamicVoucherById) | **GET** /v2/payment/dynamicVoucher/{id} | Get Dynamic Voucher Campaign |
 | [**fetchDynamicVoucherRedemptions()**](DynamicVouchersApi.md#fetchDynamicVoucherRedemptions) | **GET** /v2/payment/dynamicVoucher/redemptions/{id} | Get Dynamic Voucher Campaign Redemptions |
+| [**fetchDynamicVouchers()**](DynamicVouchersApi.md#fetchDynamicVouchers) | **GET** /v2/employee/dynamicVouchers/all | Get all dynamic vouchers |
 | [**fetchReachStatsOfAllDynamicVouchers()**](DynamicVouchersApi.md#fetchReachStatsOfAllDynamicVouchers) | **GET** /v2/payment/dynamicVoucher/reach/all | Get the reach statistics of all the dynamic vouchers |
 | [**fetchReachStatsOfIndividualDynamicVoucher()**](DynamicVouchersApi.md#fetchReachStatsOfIndividualDynamicVoucher) | **GET** /v2/payment/dynamicVoucher/reach/{dynamicVoucherID} | Get the reach statistics of an individual dynamic voucher |
 | [**restoreDynamicVoucherCampaign()**](DynamicVouchersApi.md#restoreDynamicVoucherCampaign) | **PATCH** /v2/payment/dynamicVoucher/{campaignID} | Restore Dynamic Voucher Campaign |
@@ -271,6 +272,60 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WTDynamicVoucherRedemption[]**](../Model/WTDynamicVoucherRedemption.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchDynamicVouchers()`
+
+```php
+fetchDynamicVouchers($is_archive_included): \OpenAPI\Client\Model\DynamicVoucher[]
+```
+
+Get all dynamic vouchers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DynamicVouchersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$is_archive_included = True; // bool
+
+try {
+    $result = $apiInstance->fetchDynamicVouchers($is_archive_included);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DynamicVouchersApi->fetchDynamicVouchers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **is_archive_included** | **bool**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DynamicVoucher[]**](../Model/DynamicVoucher.md)
 
 ### Authorization
 
