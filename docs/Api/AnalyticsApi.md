@@ -78,7 +78,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAnalyticsTCPAStopCountPartitionedByDate()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByDate) | **GET** /v2/analytics/tcpa/count/date/stop | Count TCPA (STOP) entries by date |
 | [**fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber()**](AnalyticsApi.md#fetchAnalyticsTCPAStopCountPartitionedByPhoneNumber) | **GET** /v2/analytics/tcpa/count/phoneNumber/stop | Count TCPA (STOP) entries by phone number |
 | [**fetchAnalyticsTotalAmountRedeemedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/redeemed | Get redeemed amount of merchant credits |
-| [**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amoun̥t of tiers |
+| [**fetchAnalyticsTotalAmountRedeemedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRedeemedPerTier) | **GET** /v2/analytics/membership/tier/amount/redeemed | Get redeemed amount of tiers |
 | [**fetchAnalyticsTotalAmountRefundedPerMerchantCredit()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerMerchantCredit) | **GET** /v2/analytics/membership/merchantCredit/amount/refunded | Get refunded amount of merchant credits |
 | [**fetchAnalyticsTotalAmountRefundedPerTier()**](AnalyticsApi.md#fetchAnalyticsTotalAmountRefundedPerTier) | **GET** /v2/analytics/membership/tier/amount/refunded | Get refunded amount of tiers |
 | [**fetchAnalyticsTotalPointsRedeemed()**](AnalyticsApi.md#fetchAnalyticsTotalPointsRedeemed) | **GET** /v2/analytics/membership/member/points/redeemed | Count redeemed points |
@@ -4354,7 +4354,7 @@ No authorization required
 fetchAnalyticsTotalAmountRedeemedPerTier($start_date, $end_date, $locale, $timezone): \OpenAPI\Client\Model\MSAnalyticsMembershipTierAmountRedeemedPartitionedByDate[]
 ```
 
-Get redeemed amoun̥t of tiers
+Get redeemed amount of tiers
 
 ### Example
 

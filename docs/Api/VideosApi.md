@@ -7,6 +7,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**archiveVideo()**](VideosApi.md#archiveVideo) | **DELETE** /v2/video/{id} | Archive Video |
 | [**createVideo()**](VideosApi.md#createVideo) | **POST** /v2/video | Create Video |
 | [**fetchAllVideo()**](VideosApi.md#fetchAllVideo) | **GET** /v2/video/all | Get all Videos |
+| [**provisionVideoUpload()**](VideosApi.md#provisionVideoUpload) | **POST** /v2/video/upload/provision | Provision a direct video upload |
 | [**restoreVideo()**](VideosApi.md#restoreVideo) | **PATCH** /v2/video/{id} | Restore Video |
 | [**updateVideo()**](VideosApi.md#updateVideo) | **PUT** /v2/video/{id} | Update Video |
 
@@ -167,6 +168,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `provisionVideoUpload()`
+
+```php
+provisionVideoUpload($wt_video_upload_provision_params): \OpenAPI\Client\Model\WTVideoUploadProvision
+```
+
+Provision a direct video upload
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\VideosApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_video_upload_provision_params = new \OpenAPI\Client\Model\WTVideoUploadProvisionParams(); // \OpenAPI\Client\Model\WTVideoUploadProvisionParams
+
+try {
+    $result = $apiInstance->provisionVideoUpload($wt_video_upload_provision_params);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VideosApi->provisionVideoUpload: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_video_upload_provision_params** | [**\OpenAPI\Client\Model\WTVideoUploadProvisionParams**](../Model/WTVideoUploadProvisionParams.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTVideoUploadProvision**](../Model/WTVideoUploadProvision.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
