@@ -255,6 +255,7 @@ docs/Model/PortalPage.md
 docs/Model/PresignedPost.md
 docs/Model/PresignedPostFields.md
 docs/Model/Product.md
+docs/Model/ProductTaxBehavior.md
 docs/Model/ProfileStatuses.md
 docs/Model/PromoCode.md
 docs/Model/QRCodeDesign.md
@@ -720,6 +721,7 @@ lib/Model/PortalPage.php
 lib/Model/PresignedPost.php
 lib/Model/PresignedPostFields.php
 lib/Model/Product.php
+lib/Model/ProductTaxBehavior.php
 lib/Model/ProfileStatuses.php
 lib/Model/PromoCode.php
 lib/Model/QRCodeDesign.php
@@ -930,3 +932,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/ProductTaxBehaviorTest.php
