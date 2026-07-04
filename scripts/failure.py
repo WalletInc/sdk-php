@@ -34,34 +34,45 @@ squadcast_data = {
     "severity": "high"
 }
 
-retrials = 5
-for i in range(retrials):
-    if i == (retrials - 1):
-        print("Couldn't send message to SquadCast after " +
-              str(retrials) + " retrials")
-        sys.exit(1)
-    else:
-        resp = requests.post(squadcast_url, json=squadcast_data)
-        if resp.status_code == 200:
-            sys.exit(0)
-        else:
-            print("Received status code: "+str(resp.status_code) +
-                  " from slack. Expecting 200. Retrying after 5 seconds...")
-            time.sleep(5)
-            continue
+RETRIALS = 5
 
 
-for i in range(retrials):
-    if i == (retrials - 1):
-        print("Couldn't send message on Slack after " +
-              str(retrials) + " retrials")
-        sys.exit(1)
-    else:
-        resp = requests.post(slack_url, json=slack_data)
-        if resp.status_code == 200:
-            sys.exit(0)
+def notify(name, url, payload):
+    """POST payload to url, retrying on failure. Returns True on success.
+
+    Any 2xx is treated as success: Slack incoming webhooks return 200 while
+    SquadCast returns 202 (Accepted), so keying only on 200 wrongly reported
+    delivered alerts as failures.
+    """
+    for attempt in range(1, RETRIALS + 1):
+        try:
+            resp = requests.post(url, json=payload)
+        except requests.RequestException as err:
+            print("Error sending message to " + name + ": " + str(err))
         else:
-            print("Received status code: "+str(resp.status_code) +
-                  " from slack. Expecting 200. Retrying after 5 seconds...")
+            if 200 <= resp.status_code < 300:
+                print("Message sent to " + name +
+                      " (status " + str(resp.status_code) + ")")
+                return True
+            print("Received status code: " + str(resp.status_code) +
+                  " from " + name + ". Expecting 2xx.")
+
+        if attempt < RETRIALS:
+            print("Retrying " + name + " after 5 seconds...")
             time.sleep(5)
-            continue
+
+    print("Couldn't send message to " + name + " after " +
+          str(RETRIALS) + " retrials")
+    return False
+
+
+# Notify both channels independently: a SquadCast failure must not skip Slack.
+squadcast_ok = notify("SquadCast", squadcast_url, squadcast_data)
+slack_ok = notify("Slack", slack_url, slack_data)
+
+# Non-zero exit if either channel ultimately failed, so alerting problems stay
+# visible in the CI logs even though both channels were still attempted.
+if not (squadcast_ok and slack_ok):
+    sys.exit(1)
+
+sys.exit(0)
