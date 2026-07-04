@@ -930,9 +930,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/VideoProviderTest.php
-test/Model/WTVideoPlaybackSourceTest.php
-test/Model/WTVideoPlaybackSourceTypeTest.php
-test/Model/WTVideoUploadProvisionParamsTest.php
-test/Model/WTVideoUploadProvisionProviderTest.php
-test/Model/WTVideoUploadProvisionTest.php
