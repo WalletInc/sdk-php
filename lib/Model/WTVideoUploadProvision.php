@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-05T00:23:08.028Z
+ * Wallet Inc. API reference.  **Spec version 2.1.604**, built 2026-07-05T06:38:30.500Z
  *
  * The version of the OpenAPI document: 2.1.604
  * Contact: development@wallet.inc
@@ -60,7 +60,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'provider' => '\OpenAPI\Client\Model\WTVideoUploadProvisionProvider',
         'url' => 'mixed',
-        'fields' => 'array<string,mixed>',
         'asset_id' => 'mixed',
         'hd_included' => 'mixed'
     ];
@@ -75,7 +74,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'provider' => null,
         'url' => null,
-        'fields' => null,
         'asset_id' => null,
         'hd_included' => null
     ];
@@ -88,7 +86,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'provider' => false,
         'url' => true,
-        'fields' => false,
         'asset_id' => true,
         'hd_included' => true
     ];
@@ -181,7 +178,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'provider' => 'provider',
         'url' => 'url',
-        'fields' => 'fields',
         'asset_id' => 'assetId',
         'hd_included' => 'hdIncluded'
     ];
@@ -194,7 +190,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'provider' => 'setProvider',
         'url' => 'setUrl',
-        'fields' => 'setFields',
         'asset_id' => 'setAssetId',
         'hd_included' => 'setHdIncluded'
     ];
@@ -207,7 +202,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'provider' => 'getProvider',
         'url' => 'getUrl',
-        'fields' => 'getFields',
         'asset_id' => 'getAssetId',
         'hd_included' => 'getHdIncluded'
     ];
@@ -271,7 +265,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('provider', $data ?? [], null);
         $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('fields', $data ?? [], null);
         $this->setIfExists('asset_id', $data ?? [], null);
         $this->setIfExists('hd_included', $data ?? [], null);
     }
@@ -387,33 +380,6 @@ class WTVideoUploadProvision implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets fields
-     *
-     * @return array<string,mixed>|null
-     */
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     *
-     * @param array<string,mixed>|null $fields fields
-     *
-     * @return self
-     */
-    public function setFields($fields)
-    {
-        if (is_null($fields)) {
-            throw new \InvalidArgumentException('non-nullable fields cannot be null');
-        }
-        $this->container['fields'] = $fields;
 
         return $this;
     }

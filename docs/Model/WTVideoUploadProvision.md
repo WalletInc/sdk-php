@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider** | [**\OpenAPI\Client\Model\WTVideoUploadProvisionProvider**](WTVideoUploadProvisionProvider.md) |  |
 **url** | **mixed** |  |
-**fields** | **array<string,mixed>** |  | [optional]
 **asset_id** | **mixed** |  |
 **hd_included** | **mixed** |  |
 
