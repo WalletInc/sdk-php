@@ -1,0 +1,14 @@
+Wallet SDK
+Copyright 2026 Wallet Inc.
+
+This product is licensed under the Apache License, Version 2.0 (the "License").
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
+
+This software is generated from the Wallet Inc. OpenAPI specification and
+contains client stubs, model interfaces, and usage examples only.
+
+"Wallet", the Wallet logo, and "WALLET-IN-BIO" are trademarks of Wallet Inc.
+As stated in Section 6 of the License, this license does not grant permission
+to use the Wallet trade names, trademarks, service marks, or product names,
+except as required for reasonable and customary use in describing the origin
+of the work.
