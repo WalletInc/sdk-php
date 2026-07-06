@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.1.604**, built 2026-07-06T15:19:40.135Z
+**Spec version 2.1.604**, built 2026-07-06T15:37:07.333Z
 
 
 ## Installation & Usage
