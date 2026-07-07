@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
+**Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
 
 
 ## Installation & Usage
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *BillingPaymentsApi* | [**fetchSpecialOffers**](docs/Api/BillingPaymentsApi.md#fetchspecialoffers) | **GET** /v2/billing/products/specialOffers | Get special offers
 *BillingPaymentsApi* | [**fetchSubscription**](docs/Api/BillingPaymentsApi.md#fetchsubscription) | **GET** /v2/billing/subscription | Get subscription
 *BillingPaymentsApi* | [**fetchUsageSummary**](docs/Api/BillingPaymentsApi.md#fetchusagesummary) | **GET** /v2/billing/summary | Get usage summary
+*BillingPaymentsApi* | [**runFinancingSoftPull**](docs/Api/BillingPaymentsApi.md#runfinancingsoftpull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off).
 *BillingPaymentsApi* | [**savePaymentMethod**](docs/Api/BillingPaymentsApi.md#savepaymentmethod) | **PUT** /v2/billing/paymentMethod | Save payment method
 *BillingPaymentsApi* | [**setDefaultPaymentMethod**](docs/Api/BillingPaymentsApi.md#setdefaultpaymentmethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default
 *BillingPaymentsApi* | [**upcomingInvoices**](docs/Api/BillingPaymentsApi.md#upcominginvoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices
@@ -818,6 +819,8 @@ Class | Method | HTTP request | Description
 - [WTEmployeeUpdate](docs/Model/WTEmployeeUpdate.md)
 - [WTEmployeeUpdateRecords](docs/Model/WTEmployeeUpdateRecords.md)
 - [WTFetchWalletPaymentObjectsWithToken](docs/Model/WTFetchWalletPaymentObjectsWithToken.md)
+- [WTFinancingSoftPullRequest](docs/Model/WTFinancingSoftPullRequest.md)
+- [WTFinancingSoftPullResponse](docs/Model/WTFinancingSoftPullResponse.md)
 - [WTGamingCreateParams](docs/Model/WTGamingCreateParams.md)
 - [WTGamingUpdateParams](docs/Model/WTGamingUpdateParams.md)
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
