@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
+**Spec version 2.3.1**, built 2026-07-07T17:31:17.903Z
 
 
 ## Installation & Usage
@@ -473,6 +473,9 @@ Class | Method | HTTP request | Description
 *StaticVouchersApi* | [**fetchReachStatsOfIndividualStaticVoucher**](docs/Api/StaticVouchersApi.md#fetchreachstatsofindividualstaticvoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get reach statistics of a single Static Voucher
 *StaticVouchersApi* | [**fetchStaticVoucher**](docs/Api/StaticVouchersApi.md#fetchstaticvoucher) | **GET** /v2/payment/staticVoucher/{id} | Get Static Voucher
 *StaticVouchersApi* | [**updateStaticVoucher**](docs/Api/StaticVouchersApi.md#updatestaticvoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update Static Voucher
+*StripeConnectApi* | [**createConnectOnboardingLink**](docs/Api/StripeConnectApi.md#createconnectonboardinglink) | **POST** /v2/connect/account/onboarding-link | Create a Stripe Connect onboarding link Creates the merchant&#39;s STANDARD connected account on first call (pass-through model; the merchant owns their Stripe relationship) and returns a hosted onboarding link (single-use, expiring). returnUrl/refreshUrl are validated against the origin allowlist. Not a fund-moving write; 403 when the merchant&#39;s plan does not include Connect ecommerce.
+*StripeConnectApi* | [**fetchConnectAccountStatus**](docs/Api/StripeConnectApi.md#fetchconnectaccountstatus) | **GET** /v2/connect/account | Get Stripe Connect account status Observability for Flow B ecommerce: the connected-account id and capability flags for the authenticated merchant, plus the derived onboarding status and the server-side ecommerce eligibility flag. Returns the defined not-started shape (accountId null) rather than 404 when onboarding has not begun.
+*StripeConnectApi* | [**fetchConnectPaymentsSummary**](docs/Api/StripeConnectApi.md#fetchconnectpaymentssummary) | **GET** /v2/connect/payments-summary | Get a read-only Connect payments summary Balances, recent payouts, and recent charges (up to 10 each) for the merchant&#39;s connected account, in Stripe minor units with currency codes. Read-only observability; Wallet is not in the Flow B money path.
 *SystemApi* | [**createRole**](docs/Api/SystemApi.md#createrole) | **POST** /v2/system/roles | Create role
 *SystemApi* | [**deleteRole**](docs/Api/SystemApi.md#deleterole) | **DELETE** /v2/system/roles/{roleID} | Delete role
 *SystemApi* | [**fetchAuditLogOfRoles**](docs/Api/SystemApi.md#fetchauditlogofroles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
@@ -782,6 +785,13 @@ Class | Method | HTTP request | Description
 - [WTBillingChangePlanBillingCadence](docs/Model/WTBillingChangePlanBillingCadence.md)
 - [WTBillingSavePaymentMethod](docs/Model/WTBillingSavePaymentMethod.md)
 - [WTBillingVerifyPaymentMethodResponse](docs/Model/WTBillingVerifyPaymentMethodResponse.md)
+- [WTConnectAccountStatus](docs/Model/WTConnectAccountStatus.md)
+- [WTConnectMoney](docs/Model/WTConnectMoney.md)
+- [WTConnectOnboardingLinkRequest](docs/Model/WTConnectOnboardingLinkRequest.md)
+- [WTConnectOnboardingLinkResponse](docs/Model/WTConnectOnboardingLinkResponse.md)
+- [WTConnectOnboardingStatus](docs/Model/WTConnectOnboardingStatus.md)
+- [WTConnectPaymentsSummary](docs/Model/WTConnectPaymentsSummary.md)
+- [WTConnectPaymentsSummaryBalance](docs/Model/WTConnectPaymentsSummaryBalance.md)
 - [WTCountResult](docs/Model/WTCountResult.md)
 - [WTCustomerSearchByMemberID](docs/Model/WTCustomerSearchByMemberID.md)
 - [WTCustomerSearchByPhoneNumber](docs/Model/WTCustomerSearchByPhoneNumber.md)

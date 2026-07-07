@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **technical_contact_employee_id** | **mixed** |  |
 **customer_service_contact_employee_id** | **mixed** |  |
 **stripe_customer_id** | **mixed** |  |
+**stripe_connect_account_id** | **mixed** |  | [optional]
 **is_payment_method_provided** | **mixed** |  |
 **plan_nickname** | **mixed** |  |
 **max_sms_count** | **mixed** |  |

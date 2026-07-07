@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:31:17.903Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -79,6 +79,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => 'mixed',
         'customer_service_contact_employee_id' => 'mixed',
         'stripe_customer_id' => 'mixed',
+        'stripe_connect_account_id' => 'mixed',
         'is_payment_method_provided' => 'mixed',
         'plan_nickname' => 'mixed',
         'max_sms_count' => 'mixed',
@@ -116,6 +117,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => null,
         'customer_service_contact_employee_id' => null,
         'stripe_customer_id' => null,
+        'stripe_connect_account_id' => null,
         'is_payment_method_provided' => null,
         'plan_nickname' => null,
         'max_sms_count' => 'double',
@@ -151,6 +153,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => true,
         'customer_service_contact_employee_id' => true,
         'stripe_customer_id' => true,
+        'stripe_connect_account_id' => true,
         'is_payment_method_provided' => true,
         'plan_nickname' => true,
         'max_sms_count' => true,
@@ -266,6 +269,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => 'technicalContactEmployeeID',
         'customer_service_contact_employee_id' => 'customerServiceContactEmployeeID',
         'stripe_customer_id' => 'stripeCustomerID',
+        'stripe_connect_account_id' => 'stripeConnectAccountID',
         'is_payment_method_provided' => 'isPaymentMethodProvided',
         'plan_nickname' => 'planNickname',
         'max_sms_count' => 'maxSMSCount',
@@ -301,6 +305,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => 'setTechnicalContactEmployeeId',
         'customer_service_contact_employee_id' => 'setCustomerServiceContactEmployeeId',
         'stripe_customer_id' => 'setStripeCustomerId',
+        'stripe_connect_account_id' => 'setStripeConnectAccountId',
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
         'plan_nickname' => 'setPlanNickname',
         'max_sms_count' => 'setMaxSmsCount',
@@ -336,6 +341,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'technical_contact_employee_id' => 'getTechnicalContactEmployeeId',
         'customer_service_contact_employee_id' => 'getCustomerServiceContactEmployeeId',
         'stripe_customer_id' => 'getStripeCustomerId',
+        'stripe_connect_account_id' => 'getStripeConnectAccountId',
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
         'plan_nickname' => 'getPlanNickname',
         'max_sms_count' => 'getMaxSmsCount',
@@ -422,6 +428,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('technical_contact_employee_id', $data ?? [], null);
         $this->setIfExists('customer_service_contact_employee_id', $data ?? [], null);
         $this->setIfExists('stripe_customer_id', $data ?? [], null);
+        $this->setIfExists('stripe_connect_account_id', $data ?? [], null);
         $this->setIfExists('is_payment_method_provided', $data ?? [], null);
         $this->setIfExists('plan_nickname', $data ?? [], null);
         $this->setIfExists('max_sms_count', $data ?? [], null);
@@ -1266,6 +1273,40 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['stripe_customer_id'] = $stripe_customer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripe_connect_account_id
+     *
+     * @return mixed|null
+     */
+    public function getStripeConnectAccountId()
+    {
+        return $this->container['stripe_connect_account_id'];
+    }
+
+    /**
+     * Sets stripe_connect_account_id
+     *
+     * @param mixed|null $stripe_connect_account_id stripe_connect_account_id
+     *
+     * @return self
+     */
+    public function setStripeConnectAccountId($stripe_connect_account_id)
+    {
+        if (is_null($stripe_connect_account_id)) {
+            array_push($this->openAPINullablesSetToNull, 'stripe_connect_account_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stripe_connect_account_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['stripe_connect_account_id'] = $stripe_connect_account_id;
 
         return $this;
     }
