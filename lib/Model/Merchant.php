@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:38:25.478Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:53:52.739Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -80,6 +80,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => 'mixed',
         'stripe_customer_id' => 'mixed',
         'stripe_connect_account_id' => 'mixed',
+        'stripe_connect_charges_enabled' => 'mixed',
+        'stripe_connect_payouts_enabled' => 'mixed',
+        'stripe_connect_details_submitted' => 'mixed',
+        'stripe_connect_onboarding_status' => 'mixed',
         'is_payment_method_provided' => 'mixed',
         'plan_nickname' => 'mixed',
         'max_sms_count' => 'mixed',
@@ -118,6 +122,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => null,
         'stripe_customer_id' => null,
         'stripe_connect_account_id' => null,
+        'stripe_connect_charges_enabled' => null,
+        'stripe_connect_payouts_enabled' => null,
+        'stripe_connect_details_submitted' => null,
+        'stripe_connect_onboarding_status' => null,
         'is_payment_method_provided' => null,
         'plan_nickname' => null,
         'max_sms_count' => 'double',
@@ -154,6 +162,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => true,
         'stripe_customer_id' => true,
         'stripe_connect_account_id' => true,
+        'stripe_connect_charges_enabled' => true,
+        'stripe_connect_payouts_enabled' => true,
+        'stripe_connect_details_submitted' => true,
+        'stripe_connect_onboarding_status' => true,
         'is_payment_method_provided' => true,
         'plan_nickname' => true,
         'max_sms_count' => true,
@@ -270,6 +282,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => 'customerServiceContactEmployeeID',
         'stripe_customer_id' => 'stripeCustomerID',
         'stripe_connect_account_id' => 'stripeConnectAccountID',
+        'stripe_connect_charges_enabled' => 'stripeConnectChargesEnabled',
+        'stripe_connect_payouts_enabled' => 'stripeConnectPayoutsEnabled',
+        'stripe_connect_details_submitted' => 'stripeConnectDetailsSubmitted',
+        'stripe_connect_onboarding_status' => 'stripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'isPaymentMethodProvided',
         'plan_nickname' => 'planNickname',
         'max_sms_count' => 'maxSMSCount',
@@ -306,6 +322,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => 'setCustomerServiceContactEmployeeId',
         'stripe_customer_id' => 'setStripeCustomerId',
         'stripe_connect_account_id' => 'setStripeConnectAccountId',
+        'stripe_connect_charges_enabled' => 'setStripeConnectChargesEnabled',
+        'stripe_connect_payouts_enabled' => 'setStripeConnectPayoutsEnabled',
+        'stripe_connect_details_submitted' => 'setStripeConnectDetailsSubmitted',
+        'stripe_connect_onboarding_status' => 'setStripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
         'plan_nickname' => 'setPlanNickname',
         'max_sms_count' => 'setMaxSmsCount',
@@ -342,6 +362,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_service_contact_employee_id' => 'getCustomerServiceContactEmployeeId',
         'stripe_customer_id' => 'getStripeCustomerId',
         'stripe_connect_account_id' => 'getStripeConnectAccountId',
+        'stripe_connect_charges_enabled' => 'getStripeConnectChargesEnabled',
+        'stripe_connect_payouts_enabled' => 'getStripeConnectPayoutsEnabled',
+        'stripe_connect_details_submitted' => 'getStripeConnectDetailsSubmitted',
+        'stripe_connect_onboarding_status' => 'getStripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
         'plan_nickname' => 'getPlanNickname',
         'max_sms_count' => 'getMaxSmsCount',
@@ -429,6 +453,10 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('customer_service_contact_employee_id', $data ?? [], null);
         $this->setIfExists('stripe_customer_id', $data ?? [], null);
         $this->setIfExists('stripe_connect_account_id', $data ?? [], null);
+        $this->setIfExists('stripe_connect_charges_enabled', $data ?? [], null);
+        $this->setIfExists('stripe_connect_payouts_enabled', $data ?? [], null);
+        $this->setIfExists('stripe_connect_details_submitted', $data ?? [], null);
+        $this->setIfExists('stripe_connect_onboarding_status', $data ?? [], null);
         $this->setIfExists('is_payment_method_provided', $data ?? [], null);
         $this->setIfExists('plan_nickname', $data ?? [], null);
         $this->setIfExists('max_sms_count', $data ?? [], null);
@@ -1307,6 +1335,142 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['stripe_connect_account_id'] = $stripe_connect_account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripe_connect_charges_enabled
+     *
+     * @return mixed|null
+     */
+    public function getStripeConnectChargesEnabled()
+    {
+        return $this->container['stripe_connect_charges_enabled'];
+    }
+
+    /**
+     * Sets stripe_connect_charges_enabled
+     *
+     * @param mixed|null $stripe_connect_charges_enabled stripe_connect_charges_enabled
+     *
+     * @return self
+     */
+    public function setStripeConnectChargesEnabled($stripe_connect_charges_enabled)
+    {
+        if (is_null($stripe_connect_charges_enabled)) {
+            array_push($this->openAPINullablesSetToNull, 'stripe_connect_charges_enabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stripe_connect_charges_enabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['stripe_connect_charges_enabled'] = $stripe_connect_charges_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripe_connect_payouts_enabled
+     *
+     * @return mixed|null
+     */
+    public function getStripeConnectPayoutsEnabled()
+    {
+        return $this->container['stripe_connect_payouts_enabled'];
+    }
+
+    /**
+     * Sets stripe_connect_payouts_enabled
+     *
+     * @param mixed|null $stripe_connect_payouts_enabled stripe_connect_payouts_enabled
+     *
+     * @return self
+     */
+    public function setStripeConnectPayoutsEnabled($stripe_connect_payouts_enabled)
+    {
+        if (is_null($stripe_connect_payouts_enabled)) {
+            array_push($this->openAPINullablesSetToNull, 'stripe_connect_payouts_enabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stripe_connect_payouts_enabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['stripe_connect_payouts_enabled'] = $stripe_connect_payouts_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripe_connect_details_submitted
+     *
+     * @return mixed|null
+     */
+    public function getStripeConnectDetailsSubmitted()
+    {
+        return $this->container['stripe_connect_details_submitted'];
+    }
+
+    /**
+     * Sets stripe_connect_details_submitted
+     *
+     * @param mixed|null $stripe_connect_details_submitted stripe_connect_details_submitted
+     *
+     * @return self
+     */
+    public function setStripeConnectDetailsSubmitted($stripe_connect_details_submitted)
+    {
+        if (is_null($stripe_connect_details_submitted)) {
+            array_push($this->openAPINullablesSetToNull, 'stripe_connect_details_submitted');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stripe_connect_details_submitted', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['stripe_connect_details_submitted'] = $stripe_connect_details_submitted;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripe_connect_onboarding_status
+     *
+     * @return mixed|null
+     */
+    public function getStripeConnectOnboardingStatus()
+    {
+        return $this->container['stripe_connect_onboarding_status'];
+    }
+
+    /**
+     * Sets stripe_connect_onboarding_status
+     *
+     * @param mixed|null $stripe_connect_onboarding_status stripe_connect_onboarding_status
+     *
+     * @return self
+     */
+    public function setStripeConnectOnboardingStatus($stripe_connect_onboarding_status)
+    {
+        if (is_null($stripe_connect_onboarding_status)) {
+            array_push($this->openAPINullablesSetToNull, 'stripe_connect_onboarding_status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('stripe_connect_onboarding_status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['stripe_connect_onboarding_status'] = $stripe_connect_onboarding_status;
 
         return $this;
     }

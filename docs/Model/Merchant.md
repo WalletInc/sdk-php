@@ -26,6 +26,10 @@ Name | Type | Description | Notes
 **customer_service_contact_employee_id** | **mixed** |  |
 **stripe_customer_id** | **mixed** |  |
 **stripe_connect_account_id** | **mixed** |  | [optional]
+**stripe_connect_charges_enabled** | **mixed** |  | [optional]
+**stripe_connect_payouts_enabled** | **mixed** |  | [optional]
+**stripe_connect_details_submitted** | **mixed** |  | [optional]
+**stripe_connect_onboarding_status** | **mixed** |  | [optional]
 **is_payment_method_provided** | **mixed** |  |
 **plan_nickname** | **mixed** |  |
 **max_sms_count** | **mixed** |  |
