@@ -324,6 +324,7 @@ docs/Model/WTAuthenticationRequestResetPassword.md
 docs/Model/WTAuthenticationResetPassword.md
 docs/Model/WTAuthenticationSSOLoginForDiscourse.md
 docs/Model/WTBillingChangePlan.md
+docs/Model/WTBillingChangePlanBillingCadence.md
 docs/Model/WTBillingSavePaymentMethod.md
 docs/Model/WTBillingVerifyPaymentMethodResponse.md
 docs/Model/WTCountResult.md
@@ -795,6 +796,7 @@ lib/Model/WTAuthenticationRequestResetPassword.php
 lib/Model/WTAuthenticationResetPassword.php
 lib/Model/WTAuthenticationSSOLoginForDiscourse.php
 lib/Model/WTBillingChangePlan.php
+lib/Model/WTBillingChangePlanBillingCadence.php
 lib/Model/WTBillingSavePaymentMethod.php
 lib/Model/WTBillingVerifyPaymentMethodResponse.php
 lib/Model/WTCountResult.php
@@ -942,3 +944,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/WTBillingChangePlanBillingCadenceTest.php

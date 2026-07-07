@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-07T15:40:46.402Z
+**Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
 
 
 ## Installation & Usage
@@ -778,6 +778,7 @@ Class | Method | HTTP request | Description
 - [WTAuthenticationResetPassword](docs/Model/WTAuthenticationResetPassword.md)
 - [WTAuthenticationSSOLoginForDiscourse](docs/Model/WTAuthenticationSSOLoginForDiscourse.md)
 - [WTBillingChangePlan](docs/Model/WTBillingChangePlan.md)
+- [WTBillingChangePlanBillingCadence](docs/Model/WTBillingChangePlanBillingCadence.md)
 - [WTBillingSavePaymentMethod](docs/Model/WTBillingSavePaymentMethod.md)
 - [WTBillingVerifyPaymentMethodResponse](docs/Model/WTBillingVerifyPaymentMethodResponse.md)
 - [WTCountResult](docs/Model/WTCountResult.md)

@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T15:40:46.402Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T16:25:38.386Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * SubscriptionPlanAnnual Class Doc Comment
  *
  * @category Class
- * @description PLACEHOLDER annual pricing for the monthly/annual toggle UX. Optional: only populated for plans surfaced through Industries.list(). &#x60;id&#x60; is a placeholder string, not a real Stripe price, and MUST NOT be used at checkout. See PlanCatalog.withAnnualPlaceholder().
+ * @description Annual pricing for the monthly/annual billing toggle. Optional. When a plan factory defines it, &#x60;id&#x60; is the REAL annual Stripe price id and is chargeable via &#x60;/v2/billing/plan&#x60; with &#x60;billingCadence: \&quot;annual\&quot;&#x60;. When absent, non-prod environments receive a PLACEHOLDER from PlanCatalog.withAnnualPlaceholder() (id prefixed &#x60;price_ANNUAL_PLACEHOLDER_&#x60;), which MUST NOT be used at checkout and is rejected there.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
