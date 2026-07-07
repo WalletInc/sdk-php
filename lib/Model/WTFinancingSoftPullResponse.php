@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+ * Wallet Inc. API reference.  **Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
  *
  * The version of the OpenAPI document: 2.3.1
  * Contact: development@wallet.inc
@@ -60,8 +60,9 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'authorization_record_id' => 'mixed',
         'qualification_tier' => 'mixed',
+        'tier' => 'mixed',
         'bureaus' => 'mixed',
-        'result' => 'mixed'
+        'result' => '\OpenAPI\Client\Model\WTLeadFiInquiryResult'
     ];
 
     /**
@@ -74,6 +75,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'authorization_record_id' => null,
         'qualification_tier' => null,
+        'tier' => null,
         'bureaus' => null,
         'result' => null
     ];
@@ -86,8 +88,9 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static array $openAPINullables = [
         'authorization_record_id' => true,
         'qualification_tier' => true,
+        'tier' => true,
         'bureaus' => true,
-        'result' => true
+        'result' => false
     ];
 
     /**
@@ -178,6 +181,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'authorization_record_id' => 'authorizationRecordID',
         'qualification_tier' => 'qualificationTier',
+        'tier' => 'tier',
         'bureaus' => 'bureaus',
         'result' => 'result'
     ];
@@ -190,6 +194,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'authorization_record_id' => 'setAuthorizationRecordId',
         'qualification_tier' => 'setQualificationTier',
+        'tier' => 'setTier',
         'bureaus' => 'setBureaus',
         'result' => 'setResult'
     ];
@@ -202,6 +207,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'authorization_record_id' => 'getAuthorizationRecordId',
         'qualification_tier' => 'getQualificationTier',
+        'tier' => 'getTier',
         'bureaus' => 'getBureaus',
         'result' => 'getResult'
     ];
@@ -265,6 +271,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('authorization_record_id', $data ?? [], null);
         $this->setIfExists('qualification_tier', $data ?? [], null);
+        $this->setIfExists('tier', $data ?? [], null);
         $this->setIfExists('bureaus', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
     }
@@ -386,6 +393,40 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets tier
+     *
+     * @return mixed|null
+     */
+    public function getTier()
+    {
+        return $this->container['tier'];
+    }
+
+    /**
+     * Sets tier
+     *
+     * @param mixed|null $tier tier
+     *
+     * @return self
+     */
+    public function setTier($tier)
+    {
+        if (is_null($tier)) {
+            array_push($this->openAPINullablesSetToNull, 'tier');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tier', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['tier'] = $tier;
+
+        return $this;
+    }
+
+    /**
      * Gets bureaus
      *
      * @return mixed
@@ -422,7 +463,7 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets result
      *
-     * @return mixed|null
+     * @return \OpenAPI\Client\Model\WTLeadFiInquiryResult|null
      */
     public function getResult()
     {
@@ -432,21 +473,14 @@ class WTFinancingSoftPullResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets result
      *
-     * @param mixed|null $result result
+     * @param \OpenAPI\Client\Model\WTLeadFiInquiryResult|null $result result
      *
      * @return self
      */
     public function setResult($result)
     {
         if (is_null($result)) {
-            array_push($this->openAPINullablesSetToNull, 'result');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('result', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable result cannot be null');
         }
         $this->container['result'] = $result;
 

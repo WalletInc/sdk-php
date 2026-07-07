@@ -377,6 +377,12 @@ docs/Model/WTInfoGenesisLookupRequestErrors.md
 docs/Model/WTInfoGenesisRecordFilterParameters.md
 docs/Model/WTInfoGenesisRoutingIDs.md
 docs/Model/WTInfoGenesisUniquePostingIDs.md
+docs/Model/WTLeadFiConsumerProfile.md
+docs/Model/WTLeadFiConsumerProfileAddress.md
+docs/Model/WTLeadFiConsumerProfileAssets.md
+docs/Model/WTLeadFiConsumerProfileIncome.md
+docs/Model/WTLeadFiCreditOffer.md
+docs/Model/WTLeadFiInquiryResult.md
 docs/Model/WTLocalInstance.md
 docs/Model/WTLoungeCreateParams.md
 docs/Model/WTLoungeUpdateParams.md
@@ -851,6 +857,12 @@ lib/Model/WTInfoGenesisLookupRequestErrors.php
 lib/Model/WTInfoGenesisRecordFilterParameters.php
 lib/Model/WTInfoGenesisRoutingIDs.php
 lib/Model/WTInfoGenesisUniquePostingIDs.php
+lib/Model/WTLeadFiConsumerProfile.php
+lib/Model/WTLeadFiConsumerProfileAddress.php
+lib/Model/WTLeadFiConsumerProfileAssets.php
+lib/Model/WTLeadFiConsumerProfileIncome.php
+lib/Model/WTLeadFiCreditOffer.php
+lib/Model/WTLeadFiInquiryResult.php
 lib/Model/WTLocalInstance.php
 lib/Model/WTLoungeCreateParams.php
 lib/Model/WTLoungeUpdateParams.php
@@ -948,5 +960,9 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/WTFinancingSoftPullRequestTest.php
-test/Model/WTFinancingSoftPullResponseTest.php
+test/Model/WTLeadFiConsumerProfileAddressTest.php
+test/Model/WTLeadFiConsumerProfileAssetsTest.php
+test/Model/WTLeadFiConsumerProfileIncomeTest.php
+test/Model/WTLeadFiConsumerProfileTest.php
+test/Model/WTLeadFiCreditOfferTest.php
+test/Model/WTLeadFiInquiryResultTest.php

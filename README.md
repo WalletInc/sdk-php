@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-07T17:06:57.691Z
+**Spec version 2.3.1**, built 2026-07-07T17:18:23.721Z
 
 
 ## Installation & Usage
@@ -832,6 +832,12 @@ Class | Method | HTTP request | Description
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)
 - [WTInfoGenesisUniquePostingIDs](docs/Model/WTInfoGenesisUniquePostingIDs.md)
+- [WTLeadFiConsumerProfile](docs/Model/WTLeadFiConsumerProfile.md)
+- [WTLeadFiConsumerProfileAddress](docs/Model/WTLeadFiConsumerProfileAddress.md)
+- [WTLeadFiConsumerProfileAssets](docs/Model/WTLeadFiConsumerProfileAssets.md)
+- [WTLeadFiConsumerProfileIncome](docs/Model/WTLeadFiConsumerProfileIncome.md)
+- [WTLeadFiCreditOffer](docs/Model/WTLeadFiCreditOffer.md)
+- [WTLeadFiInquiryResult](docs/Model/WTLeadFiInquiryResult.md)
 - [WTLocalInstance](docs/Model/WTLocalInstance.md)
 - [WTLoungeCreateParams](docs/Model/WTLoungeCreateParams.md)
 - [WTLoungeUpdateParams](docs/Model/WTLoungeUpdateParams.md)
