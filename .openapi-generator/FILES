@@ -976,11 +976,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/StripeConnectApiTest.php
-test/Model/WTConnectAccountStatusTest.php
-test/Model/WTConnectMoneyTest.php
-test/Model/WTConnectOnboardingLinkRequestTest.php
-test/Model/WTConnectOnboardingLinkResponseTest.php
-test/Model/WTConnectOnboardingStatusTest.php
-test/Model/WTConnectPaymentsSummaryBalanceTest.php
-test/Model/WTConnectPaymentsSummaryTest.php
