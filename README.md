@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-06T22:50:00.234Z
+**Spec version 2.3.2**, built 2026-07-08T17:05:12.210Z
 
 
 ## Installation & Usage
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *BillingPaymentsApi* | [**fetchSpecialOffers**](docs/Api/BillingPaymentsApi.md#fetchspecialoffers) | **GET** /v2/billing/products/specialOffers | Get special offers
 *BillingPaymentsApi* | [**fetchSubscription**](docs/Api/BillingPaymentsApi.md#fetchsubscription) | **GET** /v2/billing/subscription | Get subscription
 *BillingPaymentsApi* | [**fetchUsageSummary**](docs/Api/BillingPaymentsApi.md#fetchusagesummary) | **GET** /v2/billing/summary | Get usage summary
+*BillingPaymentsApi* | [**runFinancingSoftPull**](docs/Api/BillingPaymentsApi.md#runfinancingsoftpull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off).
 *BillingPaymentsApi* | [**savePaymentMethod**](docs/Api/BillingPaymentsApi.md#savepaymentmethod) | **PUT** /v2/billing/paymentMethod | Save payment method
 *BillingPaymentsApi* | [**setDefaultPaymentMethod**](docs/Api/BillingPaymentsApi.md#setdefaultpaymentmethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default
 *BillingPaymentsApi* | [**upcomingInvoices**](docs/Api/BillingPaymentsApi.md#upcominginvoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices
@@ -472,6 +473,9 @@ Class | Method | HTTP request | Description
 *StaticVouchersApi* | [**fetchReachStatsOfIndividualStaticVoucher**](docs/Api/StaticVouchersApi.md#fetchreachstatsofindividualstaticvoucher) | **GET** /v2/payment/staticVoucher/reach/{staticVoucherID} | Get reach statistics of a single Static Voucher
 *StaticVouchersApi* | [**fetchStaticVoucher**](docs/Api/StaticVouchersApi.md#fetchstaticvoucher) | **GET** /v2/payment/staticVoucher/{id} | Get Static Voucher
 *StaticVouchersApi* | [**updateStaticVoucher**](docs/Api/StaticVouchersApi.md#updatestaticvoucher) | **PUT** /v2/payment/staticVoucher/{id} | Update Static Voucher
+*StripeConnectApi* | [**createConnectOnboardingLink**](docs/Api/StripeConnectApi.md#createconnectonboardinglink) | **POST** /v2/connect/account/onboarding-link | Create a Stripe Connect onboarding link Creates the merchant&#39;s STANDARD connected account on first call (pass-through model; the merchant owns their Stripe relationship) and returns a hosted onboarding link (single-use, expiring). returnUrl/refreshUrl are validated against the origin allowlist. Not a fund-moving write; 403 when the merchant&#39;s plan does not include Connect ecommerce.
+*StripeConnectApi* | [**fetchConnectAccountStatus**](docs/Api/StripeConnectApi.md#fetchconnectaccountstatus) | **GET** /v2/connect/account | Get Stripe Connect account status Observability for Flow B ecommerce: the connected-account id and capability flags for the authenticated merchant, plus the derived onboarding status and the server-side ecommerce eligibility flag. Returns the defined not-started shape (accountId null) rather than 404 when onboarding has not begun.
+*StripeConnectApi* | [**fetchConnectPaymentsSummary**](docs/Api/StripeConnectApi.md#fetchconnectpaymentssummary) | **GET** /v2/connect/payments-summary | Get a read-only Connect payments summary Balances, recent payouts, and recent charges (up to 10 each) for the merchant&#39;s connected account, in Stripe minor units with currency codes. Read-only observability; Wallet is not in the Flow B money path.
 *SystemApi* | [**createRole**](docs/Api/SystemApi.md#createrole) | **POST** /v2/system/roles | Create role
 *SystemApi* | [**deleteRole**](docs/Api/SystemApi.md#deleterole) | **DELETE** /v2/system/roles/{roleID} | Delete role
 *SystemApi* | [**fetchAuditLogOfRoles**](docs/Api/SystemApi.md#fetchauditlogofroles) | **GET** /v2/system/roles/auditLog | Get role&#39;s audit log
@@ -778,8 +782,16 @@ Class | Method | HTTP request | Description
 - [WTAuthenticationResetPassword](docs/Model/WTAuthenticationResetPassword.md)
 - [WTAuthenticationSSOLoginForDiscourse](docs/Model/WTAuthenticationSSOLoginForDiscourse.md)
 - [WTBillingChangePlan](docs/Model/WTBillingChangePlan.md)
+- [WTBillingChangePlanBillingCadence](docs/Model/WTBillingChangePlanBillingCadence.md)
 - [WTBillingSavePaymentMethod](docs/Model/WTBillingSavePaymentMethod.md)
 - [WTBillingVerifyPaymentMethodResponse](docs/Model/WTBillingVerifyPaymentMethodResponse.md)
+- [WTConnectAccountStatus](docs/Model/WTConnectAccountStatus.md)
+- [WTConnectMoney](docs/Model/WTConnectMoney.md)
+- [WTConnectOnboardingLinkRequest](docs/Model/WTConnectOnboardingLinkRequest.md)
+- [WTConnectOnboardingLinkResponse](docs/Model/WTConnectOnboardingLinkResponse.md)
+- [WTConnectOnboardingStatus](docs/Model/WTConnectOnboardingStatus.md)
+- [WTConnectPaymentsSummary](docs/Model/WTConnectPaymentsSummary.md)
+- [WTConnectPaymentsSummaryBalance](docs/Model/WTConnectPaymentsSummaryBalance.md)
 - [WTCountResult](docs/Model/WTCountResult.md)
 - [WTCustomerSearchByMemberID](docs/Model/WTCustomerSearchByMemberID.md)
 - [WTCustomerSearchByPhoneNumber](docs/Model/WTCustomerSearchByPhoneNumber.md)
@@ -817,6 +829,8 @@ Class | Method | HTTP request | Description
 - [WTEmployeeUpdate](docs/Model/WTEmployeeUpdate.md)
 - [WTEmployeeUpdateRecords](docs/Model/WTEmployeeUpdateRecords.md)
 - [WTFetchWalletPaymentObjectsWithToken](docs/Model/WTFetchWalletPaymentObjectsWithToken.md)
+- [WTFinancingSoftPullRequest](docs/Model/WTFinancingSoftPullRequest.md)
+- [WTFinancingSoftPullResponse](docs/Model/WTFinancingSoftPullResponse.md)
 - [WTGamingCreateParams](docs/Model/WTGamingCreateParams.md)
 - [WTGamingUpdateParams](docs/Model/WTGamingUpdateParams.md)
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
@@ -828,6 +842,12 @@ Class | Method | HTTP request | Description
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)
 - [WTInfoGenesisUniquePostingIDs](docs/Model/WTInfoGenesisUniquePostingIDs.md)
+- [WTLeadFiConsumerProfile](docs/Model/WTLeadFiConsumerProfile.md)
+- [WTLeadFiConsumerProfileAddress](docs/Model/WTLeadFiConsumerProfileAddress.md)
+- [WTLeadFiConsumerProfileAssets](docs/Model/WTLeadFiConsumerProfileAssets.md)
+- [WTLeadFiConsumerProfileIncome](docs/Model/WTLeadFiConsumerProfileIncome.md)
+- [WTLeadFiCreditOffer](docs/Model/WTLeadFiCreditOffer.md)
+- [WTLeadFiInquiryResult](docs/Model/WTLeadFiInquiryResult.md)
 - [WTLocalInstance](docs/Model/WTLocalInstance.md)
 - [WTLoungeCreateParams](docs/Model/WTLoungeCreateParams.md)
 - [WTLoungeUpdateParams](docs/Model/WTLoungeUpdateParams.md)
@@ -951,7 +971,7 @@ development@wallet.inc
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.3.1`
+- API version: `2.3.2`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
 
 
