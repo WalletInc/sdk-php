@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.3.1**, built 2026-07-07T21:13:51.937Z
+**Spec version 2.3.1**, built 2026-07-08T14:47:43.573Z
 
 
 ## Installation & Usage
@@ -257,7 +257,6 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**createIcsFile**](docs/Api/InteractionsApi.md#createicsfile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event
 *InteractionsApi* | [**createVirtualBusinessCardVCard**](docs/Api/InteractionsApi.md#createvirtualbusinesscardvcard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card
 *InteractionsApi* | [**fetchActiveDynamicVouchers**](docs/Api/InteractionsApi.md#fetchactivedynamicvouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers
-*InteractionsApi* | [**fetchActivePrizeGamePromotion**](docs/Api/InteractionsApi.md#fetchactiveprizegamepromotion) | **GET** /wallet/prizeGame/active/{merchantID} | Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
 *InteractionsApi* | [**fetchAdvertisementCreditScansFromList**](docs/Api/InteractionsApi.md#fetchadvertisementcreditscansfromlist) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs
 *InteractionsApi* | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID**](docs/Api/InteractionsApi.md#fetchallstaticvouchersassociatedwithcustomerwithvoucherid) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID
 *InteractionsApi* | [**fetchCustomerTicketsWithToken**](docs/Api/InteractionsApi.md#fetchcustomerticketswithtoken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token
@@ -268,7 +267,6 @@ Class | Method | HTTP request | Description
 *InteractionsApi* | [**fetchWalletPaymentObjectsWithToken**](docs/Api/InteractionsApi.md#fetchwalletpaymentobjectswithtoken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped)
 *InteractionsApi* | [**findByVanityHandle**](docs/Api/InteractionsApi.md#findbyvanityhandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle
 *InteractionsApi* | [**identifyItem**](docs/Api/InteractionsApi.md#identifyitem) | **GET** /wallet/item/identify/{itemID} | Identify item
-*InteractionsApi* | [**playPrizeGame**](docs/Api/InteractionsApi.md#playprizegame) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
 *InteractionsApi* | [**requestMerchantURLRedirect**](docs/Api/InteractionsApi.md#requestmerchanturlredirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL
 *InteractionsApi* | [**subscribeEmail**](docs/Api/InteractionsApi.md#subscribeemail) | **POST** /wallet/subscribeEmail | Create email subscriber
 *InteractionsApi* | [**subscribeSms**](docs/Api/InteractionsApi.md#subscribesms) | **POST** /wallet/subscribeSms | Create sms subscriber
@@ -382,14 +380,11 @@ Class | Method | HTTP request | Description
 *PointOfSaleConfigurationApi* | [**updatePOSMachine**](docs/Api/PointOfSaleConfigurationApi.md#updateposmachine) | **PUT** /v2/pos/machine/{id} | Update PoS machine
 *PrizesApi* | [**archiveAdvertisementCredit**](docs/Api/PrizesApi.md#archiveadvertisementcredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive Prize
 *PrizesApi* | [**createAdvertisementCredit**](docs/Api/PrizesApi.md#createadvertisementcredit) | **POST** /v2/payment/advertisementCredit | Create Prize
-*PrizesApi* | [**createPrizePromotion**](docs/Api/PrizesApi.md#createprizepromotion) | **POST** /v2/prizePromotions | Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
 *PrizesApi* | [**fetchAdvertisementCreditById**](docs/Api/PrizesApi.md#fetchadvertisementcreditbyid) | **GET** /v2/payment/advertisementCredit/{id} | Get Prize
 *PrizesApi* | [**fetchAdvertisementCreditScans**](docs/Api/PrizesApi.md#fetchadvertisementcreditscans) | **GET** /v2/payment/advertisementCredit/scans/{id} | Get Prizes awarded
 *PrizesApi* | [**fetchAllAdvertisementCredits**](docs/Api/PrizesApi.md#fetchalladvertisementcredits) | **GET** /v2/payment/advertisementCredit/all | Get all Prizes
-*PrizesApi* | [**fetchPrizePromotions**](docs/Api/PrizesApi.md#fetchprizepromotions) | **GET** /v2/prizePromotions/all | List the merchant&#39;s prize-game promotions
 *PrizesApi* | [**restoreAdvertisementCredit**](docs/Api/PrizesApi.md#restoreadvertisementcredit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore Prize
 *PrizesApi* | [**updateAdvertisementCredit**](docs/Api/PrizesApi.md#updateadvertisementcredit) | **PUT** /v2/payment/advertisementCredit/{id} | Update Prize
-*PrizesApi* | [**updatePrizePromotion**](docs/Api/PrizesApi.md#updateprizepromotion) | **PUT** /v2/prizePromotions/{promotionID} | Update a prize-game promotion Deactivate a promotion or bring its end date forward.
 *ProductsApi* | [**archiveProduct**](docs/Api/ProductsApi.md#archiveproduct) | **DELETE** /v2/products/{id} | Archive Product
 *ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /v2/products | Create Product
 *ProductsApi* | [**fetchAllProducts**](docs/Api/ProductsApi.md#fetchallproducts) | **GET** /v2/products/all | Get all Products
@@ -884,18 +879,6 @@ Class | Method | HTTP request | Description
 - [WTPosMachine](docs/Model/WTPosMachine.md)
 - [WTPosMachineCreateParams](docs/Model/WTPosMachineCreateParams.md)
 - [WTPosMachineUpdateParams](docs/Model/WTPosMachineUpdateParams.md)
-- [WTPrizeGameActivePromotion](docs/Model/WTPrizeGameActivePromotion.md)
-- [WTPrizeGamePlayLimitPeriod](docs/Model/WTPrizeGamePlayLimitPeriod.md)
-- [WTPrizeGamePlayRequest](docs/Model/WTPrizeGamePlayRequest.md)
-- [WTPrizeGamePlayResult](docs/Model/WTPrizeGamePlayResult.md)
-- [WTPrizeGamePlayResultOutcome](docs/Model/WTPrizeGamePlayResultOutcome.md)
-- [WTPrizeGamePlayResultPrize](docs/Model/WTPrizeGamePlayResultPrize.md)
-- [WTPrizeGameTrigger](docs/Model/WTPrizeGameTrigger.md)
-- [WTPrizeGameType](docs/Model/WTPrizeGameType.md)
-- [WTPrizePromotion](docs/Model/WTPrizePromotion.md)
-- [WTPrizePromotionCreateParams](docs/Model/WTPrizePromotionCreateParams.md)
-- [WTPrizePromotionPrizeTier](docs/Model/WTPrizePromotionPrizeTier.md)
-- [WTPrizePromotionUpdateParams](docs/Model/WTPrizePromotionUpdateParams.md)
 - [WTProductCreateParams](docs/Model/WTProductCreateParams.md)
 - [WTProductUpdateParams](docs/Model/WTProductUpdateParams.md)
 - [WTPromoCodeCreateParams](docs/Model/WTPromoCodeCreateParams.md)

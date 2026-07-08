@@ -10,7 +10,6 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
 | [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
-| [**fetchActivePrizeGamePromotion()**](InteractionsApi.md#fetchActivePrizeGamePromotion) | **GET** /wallet/prizeGame/active/{merchantID} | Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game. |
 | [**fetchAdvertisementCreditScansFromList()**](InteractionsApi.md#fetchAdvertisementCreditScansFromList) | **POST** /wallet/advertisementCredit/fetchScans/{merchantID} | Get multiple credit scans w/ array of IDs |
 | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
@@ -21,7 +20,6 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchWalletPaymentObjectsWithToken()**](InteractionsApi.md#fetchWalletPaymentObjectsWithToken) | **POST** /wallet/paymentObject/token | Get payment objects (token-scoped) |
 | [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item |
-| [**playPrizeGame()**](InteractionsApi.md#playPrizeGame) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). |
 | [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
 | [**subscribeEmail()**](InteractionsApi.md#subscribeEmail) | **POST** /wallet/subscribeEmail | Create email subscriber |
 | [**subscribeSms()**](InteractionsApi.md#subscribeSms) | **POST** /wallet/subscribeSms | Create sms subscriber |
@@ -339,62 +337,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\DynamicVoucher[]**](../Model/DynamicVoucher.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `fetchActivePrizeGamePromotion()`
-
-```php
-fetchActivePrizeGamePromotion($merchant_id, $game_type): \OpenAPI\Client\Model\WTPrizeGameActivePromotion
-```
-
-Get the active prize-game promotion Guest-facing read that drives the game UI and the Official Rules surface: sponsor (the merchant), title, honest odds disclosure, prize list, play limits, and the minimum age. Returns { active: false } when the merchant has no live promotion for the game.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$merchant_id = 'merchant_id_example'; // string
-$game_type = new \OpenAPI\Client\Model\WTPrizeGameType(); // WTPrizeGameType
-
-try {
-    $result = $apiInstance->fetchActivePrizeGamePromotion($merchant_id, $game_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InteractionsApi->fetchActivePrizeGamePromotion: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **merchant_id** | **string**|  | |
-| **game_type** | [**WTPrizeGameType**](../Model/.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\WTPrizeGameActivePromotion**](../Model/WTPrizeGameActivePromotion.md)
 
 ### Authorization
 
@@ -953,60 +895,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `playPrizeGame()`
-
-```php
-playPrizeGame($wt_prize_game_play_request): \OpenAPI\Client\Model\WTPrizeGamePlayResult
-```
-
-Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest's My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free).
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wt_prize_game_play_request = new \OpenAPI\Client\Model\WTPrizeGamePlayRequest(); // \OpenAPI\Client\Model\WTPrizeGamePlayRequest
-
-try {
-    $result = $apiInstance->playPrizeGame($wt_prize_game_play_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InteractionsApi->playPrizeGame: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **wt_prize_game_play_request** | [**\OpenAPI\Client\Model\WTPrizeGamePlayRequest**](../Model/WTPrizeGamePlayRequest.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\WTPrizeGamePlayResult**](../Model/WTPrizeGamePlayResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

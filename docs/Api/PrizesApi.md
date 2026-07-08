@@ -6,14 +6,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**archiveAdvertisementCredit()**](PrizesApi.md#archiveAdvertisementCredit) | **DELETE** /v2/payment/advertisementCredit/{id} | Archive Prize |
 | [**createAdvertisementCredit()**](PrizesApi.md#createAdvertisementCredit) | **POST** /v2/payment/advertisementCredit | Create Prize |
-| [**createPrizePromotion()**](PrizesApi.md#createPrizePromotion) | **POST** /v2/prizePromotions | Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type. |
 | [**fetchAdvertisementCreditById()**](PrizesApi.md#fetchAdvertisementCreditById) | **GET** /v2/payment/advertisementCredit/{id} | Get Prize |
 | [**fetchAdvertisementCreditScans()**](PrizesApi.md#fetchAdvertisementCreditScans) | **GET** /v2/payment/advertisementCredit/scans/{id} | Get Prizes awarded |
 | [**fetchAllAdvertisementCredits()**](PrizesApi.md#fetchAllAdvertisementCredits) | **GET** /v2/payment/advertisementCredit/all | Get all Prizes |
-| [**fetchPrizePromotions()**](PrizesApi.md#fetchPrizePromotions) | **GET** /v2/prizePromotions/all | List the merchant&#39;s prize-game promotions |
 | [**restoreAdvertisementCredit()**](PrizesApi.md#restoreAdvertisementCredit) | **PATCH** /v2/payment/advertisementCredit/{id} | Restore Prize |
 | [**updateAdvertisementCredit()**](PrizesApi.md#updateAdvertisementCredit) | **PUT** /v2/payment/advertisementCredit/{id} | Update Prize |
-| [**updatePrizePromotion()**](PrizesApi.md#updatePrizePromotion) | **PUT** /v2/prizePromotions/{promotionID} | Update a prize-game promotion Deactivate a promotion or bring its end date forward. |
 
 
 ## `archiveAdvertisementCredit()`
@@ -110,60 +107,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WTAdvertisementCredit**](../Model/WTAdvertisementCredit.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `createPrizePromotion()`
-
-```php
-createPrizePromotion($wt_prize_promotion_create_params): \OpenAPI\Client\Model\WTPrizePromotion
-```
-
-Create a prize-game promotion Creates one instant-win promotion for the authenticated merchant. Guardrails enforced: purchase-independent trigger only, odds within (0,1], currency-valued prizes belonging to the merchant, total prize-pool value above $500 requires registration attestation, minimum age 18, and only one live promotion per game type.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\PrizesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$wt_prize_promotion_create_params = new \OpenAPI\Client\Model\WTPrizePromotionCreateParams(); // \OpenAPI\Client\Model\WTPrizePromotionCreateParams
-
-try {
-    $result = $apiInstance->createPrizePromotion($wt_prize_promotion_create_params);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PrizesApi->createPrizePromotion: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **wt_prize_promotion_create_params** | [**\OpenAPI\Client\Model\WTPrizePromotionCreateParams**](../Model/WTPrizePromotionCreateParams.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\WTPrizePromotion**](../Model/WTPrizePromotion.md)
 
 ### Authorization
 
@@ -340,57 +283,6 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchPrizePromotions()`
-
-```php
-fetchPrizePromotions(): \OpenAPI\Client\Model\WTPrizePromotion[]
-```
-
-List the merchant's prize-game promotions
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\PrizesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->fetchPrizePromotions();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PrizesApi->fetchPrizePromotions: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenAPI\Client\Model\WTPrizePromotion[]**](../Model/WTPrizePromotion.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `restoreAdvertisementCredit()`
 
 ```php
@@ -487,62 +379,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WTAdvertisementCredit**](../Model/WTAdvertisementCredit.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `updatePrizePromotion()`
-
-```php
-updatePrizePromotion($promotion_id, $wt_prize_promotion_update_params): \OpenAPI\Client\Model\WTPrizePromotion
-```
-
-Update a prize-game promotion Deactivate a promotion or bring its end date forward.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\PrizesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$promotion_id = 'promotion_id_example'; // string
-$wt_prize_promotion_update_params = new \OpenAPI\Client\Model\WTPrizePromotionUpdateParams(); // \OpenAPI\Client\Model\WTPrizePromotionUpdateParams
-
-try {
-    $result = $apiInstance->updatePrizePromotion($promotion_id, $wt_prize_promotion_update_params);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PrizesApi->updatePrizePromotion: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **promotion_id** | **string**|  | |
-| **wt_prize_promotion_update_params** | [**\OpenAPI\Client\Model\WTPrizePromotionUpdateParams**](../Model/WTPrizePromotionUpdateParams.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\WTPrizePromotion**](../Model/WTPrizePromotion.md)
 
 ### Authorization
 
