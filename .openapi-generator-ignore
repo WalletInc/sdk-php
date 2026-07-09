@@ -21,3 +21,8 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# CI workflows and notifier scripts are hand-maintained; regeneration must
+# never overwrite them (2026-07-09).
+.github/**
+scripts/**

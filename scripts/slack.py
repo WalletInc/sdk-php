@@ -37,6 +37,32 @@ for f in open(commit_messages_f, "r").read().split("\n"):
 # Trim the number of commit messages to 10, since Slack does not support large payload size
 commit_messages = commit_messages[:10]
 
+# Slack rejects any section block whose text exceeds ~3000 characters with HTTP 400
+# (invalid_blocks). SDK regeneration pushes change hundreds of files (a 20k+ character
+# list), which made every regeneration notification silently fail. Clamp each list to
+# fit the block, and point at the run link for the full detail.
+MAX_LIST_CHARS = 2800
+
+
+def clamp_list(items):
+    text = "\n".join(items)
+    if len(text) <= MAX_LIST_CHARS:
+        return text
+    clipped = []
+    total = 0
+    for item in items:
+        if total + len(item) + 1 > MAX_LIST_CHARS:
+            break
+        clipped.append(item)
+        total = total + len(item) + 1
+    omitted = len(items) - len(clipped)
+    clipped.append("... and " + str(omitted) + " more (see the logs link above)")
+    return "\n".join(clipped)
+
+
+print("Files changed are: ", files_changed)
+print("\nCommit Messages are: ", commit_messages)
+
 slack_message = {}
 
 blocks = []
@@ -55,7 +81,7 @@ blocks.append({
     "type": "section",
     "text": {
         "type": "mrkdwn",
-        "text": "*Files changed*\n"+"\n".join(files_changed)
+        "text": "*Files changed*\n"+clamp_list(files_changed)
     }
 })
 # Commit messages
@@ -63,11 +89,13 @@ blocks.append({
     "type": "section",
     "text": {
         "type": "mrkdwn",
-        "text": "*Commit messages*\n"+"\n".join(commit_messages)
+        "text": "*Commit messages*\n"+clamp_list(commit_messages)
     }
 })
 
 slack_message["blocks"] = blocks
+
+print("\nSlack message is: ", slack_message)
 
 retrials = 5
 for i in range(retrials):
@@ -78,9 +106,12 @@ for i in range(retrials):
     else:
         resp = requests.post(slack_url, json=slack_message)
         if resp.status_code == 200:
+            print("Sent message to slack")
             sys.exit(0)
         else:
             print("Received status code: "+str(resp.status_code) +
                   " from slack. Expecting 200. Retrying after 5 seconds...")
+            print("Response is: \n")
+            print(resp.text)
             time.sleep(5)
             continue
