@@ -34,6 +34,7 @@ docs/Api/MerchantCreditsApi.md
 docs/Api/NewsApi.md
 docs/Api/OpenAIApi.md
 docs/Api/OptInListsApi.md
+docs/Api/OrdersApi.md
 docs/Api/PaymentDesignsApi.md
 docs/Api/PerformancesApi.md
 docs/Api/PhoneNumbersApi.md
@@ -194,6 +195,7 @@ docs/Model/OptInList.md
 docs/Model/OptInListSource.md
 docs/Model/OptInListSubscriber.md
 docs/Model/OptInListSubscriberOptInSourceID.md
+docs/Model/OrderStatus.md
 docs/Model/OutboundSMS.md
 docs/Model/OutboundSMSPaymentObjectBroadcastID.md
 docs/Model/OutboundSMSStatus.md
@@ -340,6 +342,7 @@ docs/Model/WTConnectOnboardingLinkResponse.md
 docs/Model/WTConnectOnboardingStatus.md
 docs/Model/WTConnectPaymentsSummary.md
 docs/Model/WTConnectPaymentsSummaryBalance.md
+docs/Model/WTConnectRequirements.md
 docs/Model/WTCountResult.md
 docs/Model/WTCustomerSearchByMemberID.md
 docs/Model/WTCustomerSearchByPhoneNumber.md
@@ -420,6 +423,8 @@ docs/Model/WTNewsArticleCreateParams.md
 docs/Model/WTNewsArticleUpdateParams.md
 docs/Model/WTOptInList.md
 docs/Model/WTOptInListCreationParams.md
+docs/Model/WTOrder.md
+docs/Model/WTOrderLineItem.md
 docs/Model/WTPassBrandKit.md
 docs/Model/WTPaymentDesign.md
 docs/Model/WTPaymentDesignCreateParams.md
@@ -471,6 +476,7 @@ docs/Model/WTTicketCreateParams.md
 docs/Model/WTTicketUpdateParams.md
 docs/Model/WTTwilioRequestAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCode.md
+docs/Model/WTTwilioVerifyAuthyCodeResponse.md
 docs/Model/WTVideoCreateParams.md
 docs/Model/WTVideoPlaybackSource.md
 docs/Model/WTVideoPlaybackSourceType.md
@@ -526,6 +532,7 @@ lib/Api/MerchantCreditsApi.php
 lib/Api/NewsApi.php
 lib/Api/OpenAIApi.php
 lib/Api/OptInListsApi.php
+lib/Api/OrdersApi.php
 lib/Api/PaymentDesignsApi.php
 lib/Api/PerformancesApi.php
 lib/Api/PhoneNumbersApi.php
@@ -690,6 +697,7 @@ lib/Model/OptInList.php
 lib/Model/OptInListSource.php
 lib/Model/OptInListSubscriber.php
 lib/Model/OptInListSubscriberOptInSourceID.php
+lib/Model/OrderStatus.php
 lib/Model/OutboundSMS.php
 lib/Model/OutboundSMSPaymentObjectBroadcastID.php
 lib/Model/OutboundSMSStatus.php
@@ -836,6 +844,7 @@ lib/Model/WTConnectOnboardingLinkResponse.php
 lib/Model/WTConnectOnboardingStatus.php
 lib/Model/WTConnectPaymentsSummary.php
 lib/Model/WTConnectPaymentsSummaryBalance.php
+lib/Model/WTConnectRequirements.php
 lib/Model/WTCountResult.php
 lib/Model/WTCustomerSearchByMemberID.php
 lib/Model/WTCustomerSearchByPhoneNumber.php
@@ -916,6 +925,8 @@ lib/Model/WTNewsArticleCreateParams.php
 lib/Model/WTNewsArticleUpdateParams.php
 lib/Model/WTOptInList.php
 lib/Model/WTOptInListCreationParams.php
+lib/Model/WTOrder.php
+lib/Model/WTOrderLineItem.php
 lib/Model/WTPassBrandKit.php
 lib/Model/WTPaymentDesign.php
 lib/Model/WTPaymentDesignCreateParams.php
@@ -967,6 +978,7 @@ lib/Model/WTTicketCreateParams.php
 lib/Model/WTTicketUpdateParams.php
 lib/Model/WTTwilioRequestAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCode.php
+lib/Model/WTTwilioVerifyAuthyCodeResponse.php
 lib/Model/WTVideoCreateParams.php
 lib/Model/WTVideoPlaybackSource.php
 lib/Model/WTVideoPlaybackSourceType.php
@@ -991,12 +1003,9 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/GiftCardsApiTest.php
-test/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronymTest.php
-test/Model/WTBillingVerifyPaymentMethodResponseBillingCadenceTest.php
-test/Model/WTCertificateDealCreateRequestEntitlementTypeTest.php
-test/Model/WTCertificateDealCreateRequestTest.php
-test/Model/WTCertificateEntitlementSnapshotTest.php
-test/Model/WTCertificatePurchaseRequestTest.php
-test/Model/WTGiftCardPurchaseRequestTest.php
-test/Model/WTGiftClaimRequestTest.php
+test/Api/OrdersApiTest.php
+test/Model/OrderStatusTest.php
+test/Model/WTConnectRequirementsTest.php
+test/Model/WTOrderLineItemTest.php
+test/Model/WTOrderTest.php
+test/Model/WTTwilioVerifyAuthyCodeResponseTest.php
