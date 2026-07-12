@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
+**Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
 
 
 ## Installation & Usage
@@ -351,6 +351,8 @@ Class | Method | HTTP request | Description
 *OptInListsApi* | [**importOptInListSubscribers**](docs/Api/OptInListsApi.md#importoptinlistsubscribers) | **POST** /v2/sms/optInList/subscribers/import/{listID} | Import opt in list subscribers
 *OptInListsApi* | [**saveOptInList**](docs/Api/OptInListsApi.md#saveoptinlist) | **PUT** /v2/sms/optInList/{listID} | Save opt in list
 *OptInListsApi* | [**saveOptInListSource**](docs/Api/OptInListsApi.md#saveoptinlistsource) | **PUT** /v2/sms/optInListSource/{sourceID} | Save opt in list source
+*OrdersApi* | [**fetchOrder**](docs/Api/OrdersApi.md#fetchorder) | **GET** /orders/{orderId} | Fetch one of the authenticated merchant&#39;s orders by id Returns the order with its line items. 403-family error if the order belongs to another merchant (ownership is asserted server-side).
+*OrdersApi* | [**listOrders**](docs/Api/OrdersApi.md#listorders) | **GET** /orders | List the authenticated merchant&#39;s orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B.
 *PaymentDesignsApi* | [**archivePaymentDesign**](docs/Api/PaymentDesignsApi.md#archivepaymentdesign) | **DELETE** /v2/payment/design/{id} | Archive payment design
 *PaymentDesignsApi* | [**createPaymentDesign**](docs/Api/PaymentDesignsApi.md#createpaymentdesign) | **POST** /v2/payment/design | Create payment design
 *PaymentDesignsApi* | [**fetchAllPaymentDesigns**](docs/Api/PaymentDesignsApi.md#fetchallpaymentdesigns) | **GET** /v2/payment/design/all | Get all payment designs
@@ -658,6 +660,7 @@ Class | Method | HTTP request | Description
 - [OptInListSource](docs/Model/OptInListSource.md)
 - [OptInListSubscriber](docs/Model/OptInListSubscriber.md)
 - [OptInListSubscriberOptInSourceID](docs/Model/OptInListSubscriberOptInSourceID.md)
+- [OrderStatus](docs/Model/OrderStatus.md)
 - [OutboundSMS](docs/Model/OutboundSMS.md)
 - [OutboundSMSPaymentObjectBroadcastID](docs/Model/OutboundSMSPaymentObjectBroadcastID.md)
 - [OutboundSMSStatus](docs/Model/OutboundSMSStatus.md)
@@ -804,6 +807,7 @@ Class | Method | HTTP request | Description
 - [WTConnectOnboardingStatus](docs/Model/WTConnectOnboardingStatus.md)
 - [WTConnectPaymentsSummary](docs/Model/WTConnectPaymentsSummary.md)
 - [WTConnectPaymentsSummaryBalance](docs/Model/WTConnectPaymentsSummaryBalance.md)
+- [WTConnectRequirements](docs/Model/WTConnectRequirements.md)
 - [WTCountResult](docs/Model/WTCountResult.md)
 - [WTCustomerSearchByMemberID](docs/Model/WTCustomerSearchByMemberID.md)
 - [WTCustomerSearchByPhoneNumber](docs/Model/WTCustomerSearchByPhoneNumber.md)
@@ -884,6 +888,8 @@ Class | Method | HTTP request | Description
 - [WTNewsArticleUpdateParams](docs/Model/WTNewsArticleUpdateParams.md)
 - [WTOptInList](docs/Model/WTOptInList.md)
 - [WTOptInListCreationParams](docs/Model/WTOptInListCreationParams.md)
+- [WTOrder](docs/Model/WTOrder.md)
+- [WTOrderLineItem](docs/Model/WTOrderLineItem.md)
 - [WTPassBrandKit](docs/Model/WTPassBrandKit.md)
 - [WTPaymentDesign](docs/Model/WTPaymentDesign.md)
 - [WTPaymentDesignCreateParams](docs/Model/WTPaymentDesignCreateParams.md)
@@ -935,6 +941,7 @@ Class | Method | HTTP request | Description
 - [WTTicketUpdateParams](docs/Model/WTTicketUpdateParams.md)
 - [WTTwilioRequestAuthyCode](docs/Model/WTTwilioRequestAuthyCode.md)
 - [WTTwilioVerifyAuthyCode](docs/Model/WTTwilioVerifyAuthyCode.md)
+- [WTTwilioVerifyAuthyCodeResponse](docs/Model/WTTwilioVerifyAuthyCodeResponse.md)
 - [WTVideoCreateParams](docs/Model/WTVideoCreateParams.md)
 - [WTVideoPlaybackSource](docs/Model/WTVideoPlaybackSource.md)
 - [WTVideoPlaybackSourceType](docs/Model/WTVideoPlaybackSourceType.md)
