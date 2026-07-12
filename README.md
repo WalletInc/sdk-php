@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-09T22:41:01.331Z
+**Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
 
 
 ## Installation & Usage
@@ -198,6 +198,13 @@ Class | Method | HTTP request | Description
 *GamingApi* | [**fetchAllGaming**](docs/Api/GamingApi.md#fetchallgaming) | **GET** /v2/gaming/all | Get all Gaming details
 *GamingApi* | [**restoreGaming**](docs/Api/GamingApi.md#restoregaming) | **PATCH** /v2/gaming/{id} | Restore Gaming info
 *GamingApi* | [**updateGaming**](docs/Api/GamingApi.md#updategaming) | **PUT** /v2/gaming/{id} | Update Gaming info
+*GiftCardsApi* | [**claimGift**](docs/Api/GiftCardsApi.md#claimgift) | **POST** /giftcards/{giftID}/claim | Claim a gifted card or certificate Claims a gift into the recipient&#39;s wallet (guest-to-guest). For a certificate with the gift-redemption requirement, the claimer must be someone other than the purchaser.
+*GiftCardsApi* | [**createCertificateDeal**](docs/Api/GiftCardsApi.md#createcertificatedeal) | **POST** /giftcards/deals | Create a gift-certificate deal (draft) Creates the discounted \&quot;deal\&quot; template (product/service entitlement, retail + sale price, quantity, validity) as a DRAFT. It is not purchasable until published. Authoring a draft does not require Stripe Connect.
+*GiftCardsApi* | [**fetchCertificateDeal**](docs/Api/GiftCardsApi.md#fetchcertificatedeal) | **GET** /giftcards/deals/{dealID} | Fetch a certificate deal by id
+*GiftCardsApi* | [**fetchGift**](docs/Api/GiftCardsApi.md#fetchgift) | **GET** /giftcards/{giftID} | Fetch a gift card or certificate by id
+*GiftCardsApi* | [**publishCertificateDeal**](docs/Api/GiftCardsApi.md#publishcertificatedeal) | **POST** /giftcards/deals/{dealID}/publish | Publish a certificate deal (put it on sale) Flips a draft deal live so guests can buy certificates from it. Requires the merchant&#39;s Stripe Connect account to be active (charges enabled), since a purchase is a direct charge to that account.
+*GiftCardsApi* | [**purchaseCertificateFromDeal**](docs/Api/GiftCardsApi.md#purchasecertificatefromdeal) | **POST** /giftcards/deals/{dealID}/purchase | Purchase a certificate from a deal Runs the (mock) Connect direct charge of the deal&#39;s discounted sale price to the merchant, then mints a single-use certificate from the deal. Optionally gifts it to a recipient.
+*GiftCardsApi* | [**purchaseGiftCard**](docs/Api/GiftCardsApi.md#purchasegiftcard) | **POST** /giftcards/purchase | Purchase a gift card Runs the (mock) Connect direct charge to the merchant, then issues a funded, reloadable gift card. Optionally gifts it to a recipient. Requires the merchant&#39;s Stripe Connect account to be active (charges enabled).
 *HelpDeskApi* | [**fetchHelpDeskRequests**](docs/Api/HelpDeskApi.md#fetchhelpdeskrequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests
 *HelpDeskApi* | [**sendHelpDeskResponse**](docs/Api/HelpDeskApi.md#sendhelpdeskresponse) | **POST** /v2/employee/helpDesk/response | Send help desk response
 *HelpDeskApi* | [**setHelpDeskRequestResolved**](docs/Api/HelpDeskApi.md#sethelpdeskrequestresolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request
@@ -691,7 +698,7 @@ Class | Method | HTTP request | Description
 - [PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate](docs/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate.md)
 - [PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType](docs/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md)
 - [PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType](docs/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType.md)
-- [PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID](docs/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md)
+- [PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym](docs/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym.md)
 - [PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId](docs/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md)
 - [PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType](docs/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md)
 - [PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt](docs/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md)
@@ -785,6 +792,11 @@ Class | Method | HTTP request | Description
 - [WTBillingChangePlanBillingCadence](docs/Model/WTBillingChangePlanBillingCadence.md)
 - [WTBillingSavePaymentMethod](docs/Model/WTBillingSavePaymentMethod.md)
 - [WTBillingVerifyPaymentMethodResponse](docs/Model/WTBillingVerifyPaymentMethodResponse.md)
+- [WTBillingVerifyPaymentMethodResponseBillingCadence](docs/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.md)
+- [WTCertificateDealCreateRequest](docs/Model/WTCertificateDealCreateRequest.md)
+- [WTCertificateDealCreateRequestEntitlementType](docs/Model/WTCertificateDealCreateRequestEntitlementType.md)
+- [WTCertificateEntitlementSnapshot](docs/Model/WTCertificateEntitlementSnapshot.md)
+- [WTCertificatePurchaseRequest](docs/Model/WTCertificatePurchaseRequest.md)
 - [WTConnectAccountStatus](docs/Model/WTConnectAccountStatus.md)
 - [WTConnectMoney](docs/Model/WTConnectMoney.md)
 - [WTConnectOnboardingLinkRequest](docs/Model/WTConnectOnboardingLinkRequest.md)
@@ -833,6 +845,8 @@ Class | Method | HTTP request | Description
 - [WTFinancingSoftPullResponse](docs/Model/WTFinancingSoftPullResponse.md)
 - [WTGamingCreateParams](docs/Model/WTGamingCreateParams.md)
 - [WTGamingUpdateParams](docs/Model/WTGamingUpdateParams.md)
+- [WTGiftCardPurchaseRequest](docs/Model/WTGiftCardPurchaseRequest.md)
+- [WTGiftClaimRequest](docs/Model/WTGiftClaimRequest.md)
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
 - [WTImageGridUpdateParams](docs/Model/WTImageGridUpdateParams.md)
 - [WTImportedList](docs/Model/WTImportedList.md)

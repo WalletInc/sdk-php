@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-09T22:41:01.331Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T09:49:03.606Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -59,7 +59,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'is_payment_method_provided' => 'mixed',
-        'subscription' => '\OpenAPI\Client\Model\SubscriptionPlan'
+        'subscription' => '\OpenAPI\Client\Model\SubscriptionPlan',
+        'billing_cadence' => '\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence'
     ];
 
     /**
@@ -71,7 +72,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'is_payment_method_provided' => null,
-        'subscription' => null
+        'subscription' => null,
+        'billing_cadence' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
       */
     protected static array $openAPINullables = [
         'is_payment_method_provided' => true,
-        'subscription' => false
+        'subscription' => false,
+        'billing_cadence' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'is_payment_method_provided' => 'isPaymentMethodProvided',
-        'subscription' => 'subscription'
+        'subscription' => 'subscription',
+        'billing_cadence' => 'billingCadence'
     ];
 
     /**
@@ -181,7 +185,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
-        'subscription' => 'setSubscription'
+        'subscription' => 'setSubscription',
+        'billing_cadence' => 'setBillingCadence'
     ];
 
     /**
@@ -191,7 +196,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
-        'subscription' => 'getSubscription'
+        'subscription' => 'getSubscription',
+        'billing_cadence' => 'getBillingCadence'
     ];
 
     /**
@@ -253,6 +259,7 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     {
         $this->setIfExists('is_payment_method_provided', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
+        $this->setIfExists('billing_cadence', $data ?? [], null);
     }
 
     /**
@@ -287,6 +294,9 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
         }
         if ($this->container['subscription'] === null) {
             $invalidProperties[] = "'subscription' can't be null";
+        }
+        if ($this->container['billing_cadence'] === null) {
+            $invalidProperties[] = "'billing_cadence' can't be null";
         }
         return $invalidProperties;
     }
@@ -360,6 +370,33 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable subscription cannot be null');
         }
         $this->container['subscription'] = $subscription;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing_cadence
+     *
+     * @return \OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence
+     */
+    public function getBillingCadence()
+    {
+        return $this->container['billing_cadence'];
+    }
+
+    /**
+     * Sets billing_cadence
+     *
+     * @param \OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence $billing_cadence billing_cadence
+     *
+     * @return self
+     */
+    public function setBillingCadence($billing_cadence)
+    {
+        if (is_null($billing_cadence)) {
+            throw new \InvalidArgumentException('non-nullable billing_cadence cannot be null');
+        }
+        $this->container['billing_cadence'] = $billing_cadence;
 
         return $this;
     }

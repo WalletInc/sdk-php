@@ -1,0 +1,10 @@
+# # WTGiftClaimRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**claimed_by_phone_number** | **mixed** |  |
+**claimed_by_member_id** | **mixed** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

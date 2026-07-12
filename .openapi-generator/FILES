@@ -21,6 +21,7 @@ docs/Api/EmployeesApi.md
 docs/Api/FilesDocumentsApi.md
 docs/Api/GalleryApi.md
 docs/Api/GamingApi.md
+docs/Api/GiftCardsApi.md
 docs/Api/HelpDeskApi.md
 docs/Api/ImportExportApi.md
 docs/Api/ImportedListsApi.md
@@ -234,7 +235,7 @@ docs/Model/PickVSAdvertisementCreditUpdateParamsExcludeKeyofVSAdvertisementCredi
 docs/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate.md
 docs/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.md
 docs/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType.md
-docs/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.md
+docs/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym.md
 docs/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.md
 docs/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md
 docs/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.md
@@ -328,6 +329,11 @@ docs/Model/WTBillingChangePlan.md
 docs/Model/WTBillingChangePlanBillingCadence.md
 docs/Model/WTBillingSavePaymentMethod.md
 docs/Model/WTBillingVerifyPaymentMethodResponse.md
+docs/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.md
+docs/Model/WTCertificateDealCreateRequest.md
+docs/Model/WTCertificateDealCreateRequestEntitlementType.md
+docs/Model/WTCertificateEntitlementSnapshot.md
+docs/Model/WTCertificatePurchaseRequest.md
 docs/Model/WTConnectAccountStatus.md
 docs/Model/WTConnectMoney.md
 docs/Model/WTConnectOnboardingLinkRequest.md
@@ -376,6 +382,8 @@ docs/Model/WTFinancingSoftPullRequest.md
 docs/Model/WTFinancingSoftPullResponse.md
 docs/Model/WTGamingCreateParams.md
 docs/Model/WTGamingUpdateParams.md
+docs/Model/WTGiftCardPurchaseRequest.md
+docs/Model/WTGiftClaimRequest.md
 docs/Model/WTImageGridCreateParams.md
 docs/Model/WTImageGridUpdateParams.md
 docs/Model/WTImportedList.md
@@ -505,6 +513,7 @@ lib/Api/EmployeesApi.php
 lib/Api/FilesDocumentsApi.php
 lib/Api/GalleryApi.php
 lib/Api/GamingApi.php
+lib/Api/GiftCardsApi.php
 lib/Api/HelpDeskApi.php
 lib/Api/ImportExportApi.php
 lib/Api/ImportedListsApi.php
@@ -722,7 +731,7 @@ lib/Model/PickVSAdvertisementCreditUpdateParamsExcludeKeyofVSAdvertisementCredit
 lib/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDate.php
 lib/Model/PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExpirationDateValueType.php
 lib/Model/PickVSDynamicVoucherExcludeKeyofVSDynamicVoucherTemporalDecreaseFrequencyType.php
-lib/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeID.php
+lib/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym.php
 lib/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsId.php
 lib/Model/PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.php
 lib/Model/PickVSStaticVoucherExcludeKeyofVSStaticVoucherRedeemedAtOrRefundedAtOrLastViewedAt.php
@@ -816,6 +825,11 @@ lib/Model/WTBillingChangePlan.php
 lib/Model/WTBillingChangePlanBillingCadence.php
 lib/Model/WTBillingSavePaymentMethod.php
 lib/Model/WTBillingVerifyPaymentMethodResponse.php
+lib/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.php
+lib/Model/WTCertificateDealCreateRequest.php
+lib/Model/WTCertificateDealCreateRequestEntitlementType.php
+lib/Model/WTCertificateEntitlementSnapshot.php
+lib/Model/WTCertificatePurchaseRequest.php
 lib/Model/WTConnectAccountStatus.php
 lib/Model/WTConnectMoney.php
 lib/Model/WTConnectOnboardingLinkRequest.php
@@ -864,6 +878,8 @@ lib/Model/WTFinancingSoftPullRequest.php
 lib/Model/WTFinancingSoftPullResponse.php
 lib/Model/WTGamingCreateParams.php
 lib/Model/WTGamingUpdateParams.php
+lib/Model/WTGiftCardPurchaseRequest.php
+lib/Model/WTGiftClaimRequest.php
 lib/Model/WTImageGridCreateParams.php
 lib/Model/WTImageGridUpdateParams.php
 lib/Model/WTImportedList.php
@@ -976,3 +992,12 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/GiftCardsApiTest.php
+test/Model/PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronymTest.php
+test/Model/WTBillingVerifyPaymentMethodResponseBillingCadenceTest.php
+test/Model/WTCertificateDealCreateRequestEntitlementTypeTest.php
+test/Model/WTCertificateDealCreateRequestTest.php
+test/Model/WTCertificateEntitlementSnapshotTest.php
+test/Model/WTCertificatePurchaseRequestTest.php
+test/Model/WTGiftCardPurchaseRequestTest.php
+test/Model/WTGiftClaimRequestTest.php
