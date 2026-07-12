@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-12T13:05:00.071Z
+**Spec version 2.4.1**, built 2026-07-12T13:15:37.660Z
 
 
 ## Installation & Usage
@@ -807,6 +807,7 @@ Class | Method | HTTP request | Description
 - [WTConnectOnboardingStatus](docs/Model/WTConnectOnboardingStatus.md)
 - [WTConnectPaymentsSummary](docs/Model/WTConnectPaymentsSummary.md)
 - [WTConnectPaymentsSummaryBalance](docs/Model/WTConnectPaymentsSummaryBalance.md)
+- [WTConnectRequirements](docs/Model/WTConnectRequirements.md)
 - [WTCountResult](docs/Model/WTCountResult.md)
 - [WTCustomerSearchByMemberID](docs/Model/WTCustomerSearchByMemberID.md)
 - [WTCustomerSearchByPhoneNumber](docs/Model/WTCustomerSearchByPhoneNumber.md)

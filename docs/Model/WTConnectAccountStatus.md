@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **charges_enabled** | **mixed** |  |
 **payouts_enabled** | **mixed** |  |
 **ecommerce_eligible** | **mixed** |  |
+**requirements** | [**\OpenAPI\Client\Model\WTConnectRequirements**](WTConnectRequirements.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

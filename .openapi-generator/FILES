@@ -343,6 +343,7 @@ docs/Model/WTConnectOnboardingLinkResponse.md
 docs/Model/WTConnectOnboardingStatus.md
 docs/Model/WTConnectPaymentsSummary.md
 docs/Model/WTConnectPaymentsSummaryBalance.md
+docs/Model/WTConnectRequirements.md
 docs/Model/WTCountResult.md
 docs/Model/WTCustomerSearchByMemberID.md
 docs/Model/WTCustomerSearchByPhoneNumber.md
@@ -844,6 +845,7 @@ lib/Model/WTConnectOnboardingLinkResponse.php
 lib/Model/WTConnectOnboardingStatus.php
 lib/Model/WTConnectPaymentsSummary.php
 lib/Model/WTConnectPaymentsSummaryBalance.php
+lib/Model/WTConnectRequirements.php
 lib/Model/WTCountResult.php
 lib/Model/WTCustomerSearchByMemberID.php
 lib/Model/WTCustomerSearchByPhoneNumber.php
@@ -1002,3 +1004,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/WTConnectRequirementsTest.php
