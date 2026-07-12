@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **stripe_connect_onboarding_status** | **mixed** |  | [optional]
 **is_payment_method_provided** | **mixed** |  |
 **plan_nickname** | **mixed** |  |
+**billing_cadence** | [**\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  | [optional]
 **max_sms_count** | **mixed** |  |
 **is_sms_agreement** | **mixed** |  | [optional]
 **is_white_labeled** | **mixed** |  | [optional]

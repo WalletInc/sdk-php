@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-11T14:00:18.428Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T00:43:56.031Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -86,6 +86,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => 'mixed',
         'is_payment_method_provided' => 'mixed',
         'plan_nickname' => 'mixed',
+        'billing_cadence' => '\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence',
         'max_sms_count' => 'mixed',
         'is_sms_agreement' => 'mixed',
         'is_white_labeled' => 'mixed',
@@ -128,6 +129,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => null,
         'is_payment_method_provided' => null,
         'plan_nickname' => null,
+        'billing_cadence' => null,
         'max_sms_count' => 'double',
         'is_sms_agreement' => null,
         'is_white_labeled' => null,
@@ -168,6 +170,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => true,
         'is_payment_method_provided' => true,
         'plan_nickname' => true,
+        'billing_cadence' => false,
         'max_sms_count' => true,
         'is_sms_agreement' => true,
         'is_white_labeled' => true,
@@ -288,6 +291,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => 'stripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'isPaymentMethodProvided',
         'plan_nickname' => 'planNickname',
+        'billing_cadence' => 'billingCadence',
         'max_sms_count' => 'maxSMSCount',
         'is_sms_agreement' => 'isSmsAgreement',
         'is_white_labeled' => 'isWhiteLabeled',
@@ -328,6 +332,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => 'setStripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
         'plan_nickname' => 'setPlanNickname',
+        'billing_cadence' => 'setBillingCadence',
         'max_sms_count' => 'setMaxSmsCount',
         'is_sms_agreement' => 'setIsSmsAgreement',
         'is_white_labeled' => 'setIsWhiteLabeled',
@@ -368,6 +373,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         'stripe_connect_onboarding_status' => 'getStripeConnectOnboardingStatus',
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
         'plan_nickname' => 'getPlanNickname',
+        'billing_cadence' => 'getBillingCadence',
         'max_sms_count' => 'getMaxSmsCount',
         'is_sms_agreement' => 'getIsSmsAgreement',
         'is_white_labeled' => 'getIsWhiteLabeled',
@@ -459,6 +465,7 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('stripe_connect_onboarding_status', $data ?? [], null);
         $this->setIfExists('is_payment_method_provided', $data ?? [], null);
         $this->setIfExists('plan_nickname', $data ?? [], null);
+        $this->setIfExists('billing_cadence', $data ?? [], null);
         $this->setIfExists('max_sms_count', $data ?? [], null);
         $this->setIfExists('is_sms_agreement', $data ?? [], null);
         $this->setIfExists('is_white_labeled', $data ?? [], null);
@@ -1539,6 +1546,33 @@ class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['plan_nickname'] = $plan_nickname;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing_cadence
+     *
+     * @return \OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence|null
+     */
+    public function getBillingCadence()
+    {
+        return $this->container['billing_cadence'];
+    }
+
+    /**
+     * Sets billing_cadence
+     *
+     * @param \OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence|null $billing_cadence billing_cadence
+     *
+     * @return self
+     */
+    public function setBillingCadence($billing_cadence)
+    {
+        if (is_null($billing_cadence)) {
+            throw new \InvalidArgumentException('non-nullable billing_cadence cannot be null');
+        }
+        $this->container['billing_cadence'] = $billing_cadence;
 
         return $this;
     }
