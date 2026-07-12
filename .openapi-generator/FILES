@@ -992,11 +992,3 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/GiftCardsApiTest.php
-test/Model/WTBillingVerifyPaymentMethodResponseBillingCadenceTest.php
-test/Model/WTCertificateDealCreateRequestEntitlementTypeTest.php
-test/Model/WTCertificateDealCreateRequestTest.php
-test/Model/WTCertificateEntitlementSnapshotTest.php
-test/Model/WTCertificatePurchaseRequestTest.php
-test/Model/WTGiftCardPurchaseRequestTest.php
-test/Model/WTGiftClaimRequestTest.php
