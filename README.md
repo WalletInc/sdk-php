@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-12T11:21:53.715Z
+**Spec version 2.4.1**, built 2026-07-12T12:25:17.674Z
 
 
 ## Installation & Usage
@@ -940,6 +940,7 @@ Class | Method | HTTP request | Description
 - [WTTicketUpdateParams](docs/Model/WTTicketUpdateParams.md)
 - [WTTwilioRequestAuthyCode](docs/Model/WTTwilioRequestAuthyCode.md)
 - [WTTwilioVerifyAuthyCode](docs/Model/WTTwilioVerifyAuthyCode.md)
+- [WTTwilioVerifyAuthyCodeResponse](docs/Model/WTTwilioVerifyAuthyCodeResponse.md)
 - [WTVideoCreateParams](docs/Model/WTVideoCreateParams.md)
 - [WTVideoPlaybackSource](docs/Model/WTVideoPlaybackSource.md)
 - [WTVideoPlaybackSourceType](docs/Model/WTVideoPlaybackSourceType.md)
