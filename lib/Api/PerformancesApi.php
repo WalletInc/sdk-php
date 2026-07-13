@@ -12,7 +12,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T23:33:23.761Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T11:57:37.196Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -97,6 +97,12 @@ class PerformancesApi
             'application/json',
         ],
         'fetchPerformanceTicketsPage' => [
+            'application/json',
+        ],
+        'fetchTicketReachStatsAll' => [
+            'application/json',
+        ],
+        'fetchTicketReachStatsForPerformance' => [
             'application/json',
         ],
         'importTickets' => [
@@ -4003,6 +4009,879 @@ class PerformancesApi
             $resourcePath = str_replace(
                 '{' . 'performanceID' . '}',
                 ObjectSerializer::toPathValue($performance_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchTicketReachStatsAll
+     *
+     * Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+     *
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsAll'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\WTTicketReachStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchTicketReachStatsAll($start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsAll'][0])
+    {
+        list($response) = $this->fetchTicketReachStatsAllWithHttpInfo($start_date, $end_date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchTicketReachStatsAllWithHttpInfo
+     *
+     * Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+     *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsAll'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\WTTicketReachStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchTicketReachStatsAllWithHttpInfo($start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsAll'][0])
+    {
+        $request = $this->fetchTicketReachStatsAllRequest($start_date, $end_date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\WTTicketReachStats' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\WTTicketReachStats' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTTicketReachStats', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\WTTicketReachStats';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\WTTicketReachStats',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchTicketReachStatsAllAsync
+     *
+     * Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+     *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchTicketReachStatsAllAsync($start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsAll'][0])
+    {
+        return $this->fetchTicketReachStatsAllAsyncWithHttpInfo($start_date, $end_date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchTicketReachStatsAllAsyncWithHttpInfo
+     *
+     * Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+     *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchTicketReachStatsAllAsyncWithHttpInfo($start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsAll'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\WTTicketReachStats';
+        $request = $this->fetchTicketReachStatsAllRequest($start_date, $end_date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchTicketReachStatsAll'
+     *
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsAll'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchTicketReachStatsAllRequest($start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsAll'][0])
+    {
+
+
+
+
+        $resourcePath = '/v2/performances/reach/all';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation fetchTicketReachStatsForPerformance
+     *
+     * Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
+     *
+     * @param  string $id id (required)
+     * @param  \DateTime $start_date start_date (optional)
+     * @param  \DateTime $end_date end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsForPerformance'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\WTTicketReachStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500
+     */
+    public function fetchTicketReachStatsForPerformance($id, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsForPerformance'][0])
+    {
+        list($response) = $this->fetchTicketReachStatsForPerformanceWithHttpInfo($id, $start_date, $end_date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation fetchTicketReachStatsForPerformanceWithHttpInfo
+     *
+     * Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
+     *
+     * @param  string $id (required)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsForPerformance'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\WTTicketReachStats|\OpenAPI\Client\Model\AuthError|\OpenAPI\Client\Model\FalsumError|\OpenAPI\Client\Model\InternalServerError500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function fetchTicketReachStatsForPerformanceWithHttpInfo($id, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsForPerformance'][0])
+    {
+        $request = $this->fetchTicketReachStatsForPerformanceRequest($id, $start_date, $end_date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\WTTicketReachStats' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\WTTicketReachStats' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WTTicketReachStats', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\OpenAPI\Client\Model\AuthError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AuthError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AuthError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\FalsumError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\FalsumError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\FalsumError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\OpenAPI\Client\Model\InternalServerError500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\InternalServerError500' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InternalServerError500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\WTTicketReachStats';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\WTTicketReachStats',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AuthError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\FalsumError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InternalServerError500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation fetchTicketReachStatsForPerformanceAsync
+     *
+     * Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
+     *
+     * @param  string $id (required)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsForPerformance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchTicketReachStatsForPerformanceAsync($id, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsForPerformance'][0])
+    {
+        return $this->fetchTicketReachStatsForPerformanceAsyncWithHttpInfo($id, $start_date, $end_date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation fetchTicketReachStatsForPerformanceAsyncWithHttpInfo
+     *
+     * Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
+     *
+     * @param  string $id (required)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsForPerformance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function fetchTicketReachStatsForPerformanceAsyncWithHttpInfo($id, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsForPerformance'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\WTTicketReachStats';
+        $request = $this->fetchTicketReachStatsForPerformanceRequest($id, $start_date, $end_date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'fetchTicketReachStatsForPerformance'
+     *
+     * @param  string $id (required)
+     * @param  \DateTime $start_date (optional)
+     * @param  \DateTime $end_date (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['fetchTicketReachStatsForPerformance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function fetchTicketReachStatsForPerformanceRequest($id, $start_date = null, $end_date = null, string $contentType = self::contentTypes['fetchTicketReachStatsForPerformance'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling fetchTicketReachStatsForPerformance'
+            );
+        }
+        if (strlen($id) > 12) {
+            throw new \InvalidArgumentException('invalid length for "$id" when calling PerformancesApi.fetchTicketReachStatsForPerformance, must be smaller than or equal to 12.');
+        }
+        if (strlen($id) < 10) {
+            throw new \InvalidArgumentException('invalid length for "$id" when calling PerformancesApi.fetchTicketReachStatsForPerformance, must be bigger than or equal to 10.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $id)) {
+            throw new \InvalidArgumentException("invalid value for \"id\" when calling PerformancesApi.fetchTicketReachStatsForPerformance, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+        
+
+
+
+        $resourcePath = '/v2/performances/{id}/reach';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_date,
+            'startDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
