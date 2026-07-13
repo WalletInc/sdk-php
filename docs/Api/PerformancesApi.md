@@ -13,6 +13,8 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllPerformances()**](PerformancesApi.md#fetchAllPerformances) | **GET** /v2/performances/all | Get all Performances |
 | [**fetchPerformance()**](PerformancesApi.md#fetchPerformance) | **GET** /v2/performances/{id} | Get Performance |
 | [**fetchPerformanceTicketsPage()**](PerformancesApi.md#fetchPerformanceTicketsPage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets |
+| [**fetchTicketReachStatsAll()**](PerformancesApi.md#fetchTicketReachStatsAll) | **GET** /v2/performances/reach/all | Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when. |
+| [**fetchTicketReachStatsForPerformance()**](PerformancesApi.md#fetchTicketReachStatsForPerformance) | **GET** /v2/performances/{id}/reach | Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel. |
 | [**importTickets()**](PerformancesApi.md#importTickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets |
 | [**restorePerformance()**](PerformancesApi.md#restorePerformance) | **PATCH** /v2/performances/{id} | Restore Performance |
 | [**saveTicketSettings()**](PerformancesApi.md#saveTicketSettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings |
@@ -507,6 +509,120 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\FetchPerformanceTicketsPage200Response**](../Model/FetchPerformanceTicketsPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchTicketReachStatsAll()`
+
+```php
+fetchTicketReachStatsAll($start_date, $end_date): \OpenAPI\Client\Model\WTTicketReachStats
+```
+
+Ticket reach funnel across all of the merchant's performances Merchant-wide ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics > Customers > Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\PerformancesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->fetchTicketReachStatsAll($start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PerformancesApi->fetchTicketReachStatsAll: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTTicketReachStats**](../Model/WTTicketReachStats.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchTicketReachStatsForPerformance()`
+
+```php
+fetchTicketReachStatsForPerformance($id, $start_date, $end_date): \OpenAPI\Client\Model\WTTicketReachStats
+```
+
+Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -> Claimed -> Redeemed) with seats and comp/paid splits, for the /tickets \"Show Analytics\" slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance's all-time funnel.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\PerformancesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string
+$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+
+try {
+    $result = $apiInstance->fetchTicketReachStatsForPerformance($id, $start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PerformancesApi->fetchTicketReachStatsForPerformance: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **start_date** | **\DateTime**|  | [optional] |
+| **end_date** | **\DateTime**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTTicketReachStats**](../Model/WTTicketReachStats.md)
 
 ### Authorization
 

@@ -473,6 +473,7 @@ docs/Model/WTTCPAOptListID.md
 docs/Model/WTTCPAOptSourceID.md
 docs/Model/WTTicket.md
 docs/Model/WTTicketCreateParams.md
+docs/Model/WTTicketReachStats.md
 docs/Model/WTTicketUpdateParams.md
 docs/Model/WTTwilioRequestAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCode.md
@@ -975,6 +976,7 @@ lib/Model/WTTCPAOptListID.php
 lib/Model/WTTCPAOptSourceID.php
 lib/Model/WTTicket.php
 lib/Model/WTTicketCreateParams.php
+lib/Model/WTTicketReachStats.php
 lib/Model/WTTicketUpdateParams.php
 lib/Model/WTTwilioRequestAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCode.php
@@ -1003,9 +1005,4 @@ lib/Model/WalletPageView.php
 lib/Model/Webpage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/OrdersApiTest.php
-test/Model/OrderStatusTest.php
-test/Model/WTConnectRequirementsTest.php
-test/Model/WTOrderLineItemTest.php
-test/Model/WTOrderTest.php
-test/Model/WTTwilioVerifyAuthyCodeResponseTest.php
+test/Model/WTTicketReachStatsTest.php
