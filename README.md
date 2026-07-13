@@ -2,7 +2,7 @@
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
+**Spec version 2.4.1**, built 2026-07-13T17:36:00.108Z
 
 
 ## Installation & Usage
@@ -368,6 +368,8 @@ Class | Method | HTTP request | Description
 *PerformancesApi* | [**fetchAllPerformances**](docs/Api/PerformancesApi.md#fetchallperformances) | **GET** /v2/performances/all | Get all Performances
 *PerformancesApi* | [**fetchPerformance**](docs/Api/PerformancesApi.md#fetchperformance) | **GET** /v2/performances/{id} | Get Performance
 *PerformancesApi* | [**fetchPerformanceTicketsPage**](docs/Api/PerformancesApi.md#fetchperformanceticketspage) | **GET** /v2/performances/tickets/page/{performanceID} | Get Performance&#39;s Tickets
+*PerformancesApi* | [**fetchTicketReachStatsAll**](docs/Api/PerformancesApi.md#fetchticketreachstatsall) | **GET** /v2/performances/reach/all | Ticket reach funnel across all of the merchant&#39;s performances Merchant-wide ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the Dashboard Customer tab and the View Analytics &gt; Customers &gt; Tickets page. Cohort is keyed on issue date: the optional startDate/endDate filter tickets by when they were issued (createdAt), and the later stages count how far those tickets got, regardless of when.
+*PerformancesApi* | [**fetchTicketReachStatsForPerformance**](docs/Api/PerformancesApi.md#fetchticketreachstatsforperformance) | **GET** /v2/performances/{id}/reach | Ticket reach funnel for a single performance Per-performance ticket lifecycle funnel (Issued -&gt; Claimed -&gt; Redeemed) with seats and comp/paid splits, for the /tickets \&quot;Show Analytics\&quot; slide-open. Optional startDate/endDate key the cohort on issue date (createdAt); omit them for the performance&#39;s all-time funnel.
 *PerformancesApi* | [**importTickets**](docs/Api/PerformancesApi.md#importtickets) | **POST** /v2/performances/{id}/tickets/import | Import Performance&#39;s Tickets
 *PerformancesApi* | [**restorePerformance**](docs/Api/PerformancesApi.md#restoreperformance) | **PATCH** /v2/performances/{id} | Restore Performance
 *PerformancesApi* | [**saveTicketSettings**](docs/Api/PerformancesApi.md#saveticketsettings) | **POST** /v2/performances/{id} | Update performance&#39;s Ticket Settings
@@ -938,6 +940,7 @@ Class | Method | HTTP request | Description
 - [WTTCPAOptSourceID](docs/Model/WTTCPAOptSourceID.md)
 - [WTTicket](docs/Model/WTTicket.md)
 - [WTTicketCreateParams](docs/Model/WTTicketCreateParams.md)
+- [WTTicketReachStats](docs/Model/WTTicketReachStats.md)
 - [WTTicketUpdateParams](docs/Model/WTTicketUpdateParams.md)
 - [WTTwilioRequestAuthyCode](docs/Model/WTTwilioRequestAuthyCode.md)
 - [WTTwilioVerifyAuthyCode](docs/Model/WTTwilioVerifyAuthyCode.md)

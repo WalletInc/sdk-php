@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-12T13:57:46.543Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-13T17:36:00.108Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -115,6 +115,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => 'mixed',
         'mobile_app_icon_url' => 'mixed',
         'is_age_gate' => 'mixed',
+        'is_flip_required_for_qr' => 'mixed',
         'age_gate_minimum' => 'mixed',
         'age_gate_decline_url' => 'mixed',
         'social_instagram_url' => 'mixed',
@@ -205,6 +206,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => null,
         'mobile_app_icon_url' => null,
         'is_age_gate' => null,
+        'is_flip_required_for_qr' => null,
         'age_gate_minimum' => 'double',
         'age_gate_decline_url' => null,
         'social_instagram_url' => null,
@@ -293,6 +295,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => true,
         'mobile_app_icon_url' => true,
         'is_age_gate' => true,
+        'is_flip_required_for_qr' => true,
         'age_gate_minimum' => true,
         'age_gate_decline_url' => true,
         'social_instagram_url' => true,
@@ -461,6 +464,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => 'isClaimed',
         'mobile_app_icon_url' => 'mobileAppIconURL',
         'is_age_gate' => 'isAgeGate',
+        'is_flip_required_for_qr' => 'isFlipRequiredForQR',
         'age_gate_minimum' => 'ageGateMinimum',
         'age_gate_decline_url' => 'ageGateDeclineURL',
         'social_instagram_url' => 'socialInstagramURL',
@@ -549,6 +553,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => 'setIsClaimed',
         'mobile_app_icon_url' => 'setMobileAppIconUrl',
         'is_age_gate' => 'setIsAgeGate',
+        'is_flip_required_for_qr' => 'setIsFlipRequiredForQr',
         'age_gate_minimum' => 'setAgeGateMinimum',
         'age_gate_decline_url' => 'setAgeGateDeclineUrl',
         'social_instagram_url' => 'setSocialInstagramUrl',
@@ -637,6 +642,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_claimed' => 'getIsClaimed',
         'mobile_app_icon_url' => 'getMobileAppIconUrl',
         'is_age_gate' => 'getIsAgeGate',
+        'is_flip_required_for_qr' => 'getIsFlipRequiredForQr',
         'age_gate_minimum' => 'getAgeGateMinimum',
         'age_gate_decline_url' => 'getAgeGateDeclineUrl',
         'social_instagram_url' => 'getSocialInstagramUrl',
@@ -776,6 +782,7 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('is_claimed', $data ?? [], null);
         $this->setIfExists('mobile_app_icon_url', $data ?? [], null);
         $this->setIfExists('is_age_gate', $data ?? [], null);
+        $this->setIfExists('is_flip_required_for_qr', $data ?? [], null);
         $this->setIfExists('age_gate_minimum', $data ?? [], null);
         $this->setIfExists('age_gate_decline_url', $data ?? [], null);
         $this->setIfExists('social_instagram_url', $data ?? [], null);
@@ -2935,6 +2942,40 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['is_age_gate'] = $is_age_gate;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_flip_required_for_qr
+     *
+     * @return mixed|null
+     */
+    public function getIsFlipRequiredForQr()
+    {
+        return $this->container['is_flip_required_for_qr'];
+    }
+
+    /**
+     * Sets is_flip_required_for_qr
+     *
+     * @param mixed|null $is_flip_required_for_qr is_flip_required_for_qr
+     *
+     * @return self
+     */
+    public function setIsFlipRequiredForQr($is_flip_required_for_qr)
+    {
+        if (is_null($is_flip_required_for_qr)) {
+            array_push($this->openAPINullablesSetToNull, 'is_flip_required_for_qr');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_flip_required_for_qr', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['is_flip_required_for_qr'] = $is_flip_required_for_qr;
 
         return $this;
     }
