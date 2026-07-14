@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-14T20:20:23.684Z
+**Spec version 2.4.1**, built 2026-07-14T22:18:48.463Z
 
 
 ## Installation & Usage
@@ -567,14 +567,6 @@ Class | Method | HTTP request | Description
 - [ChatCompletionMessageToolCall](docs/Model/ChatCompletionMessageToolCall.md)
 - [ChatCompletionMessageToolCallFunction](docs/Model/ChatCompletionMessageToolCallFunction.md)
 - [ClaimTicketRequest](docs/Model/ClaimTicketRequest.md)
-- [ClickFunnelAmount](docs/Model/ClickFunnelAmount.md)
-- [ClickFunnelContact](docs/Model/ClickFunnelContact.md)
-- [ClickFunnelContactProfile](docs/Model/ClickFunnelContactProfile.md)
-- [ClickFunnelEvent](docs/Model/ClickFunnelEvent.md)
-- [ClickFunnelOriginalAmount](docs/Model/ClickFunnelOriginalAmount.md)
-- [ClickFunnelProduct](docs/Model/ClickFunnelProduct.md)
-- [ClickFunnelPurchase](docs/Model/ClickFunnelPurchase.md)
-- [ClickFunnelRegistration](docs/Model/ClickFunnelRegistration.md)
 - [CountClaimedComps200Response](docs/Model/CountClaimedComps200Response.md)
 - [CreateFile200Response](docs/Model/CreateFile200Response.md)
 - [CreateRunOnThreadRequest](docs/Model/CreateRunOnThreadRequest.md)
