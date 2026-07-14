@@ -7,13 +7,13 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 - Website: https://wallet.inc
 - Developer docs: https://wallet.dev
-- API status: https://status.wallet.inc
+- API status: https://uptime.wallet.inc
 - All SDKs: https://github.com/walletinc
 
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-14T18:16:04.538Z
+**Spec version 2.4.1**, built 2026-07-14T18:40:44.800Z
 
 
 ## Installation & Usage
