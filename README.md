@@ -1,8 +1,19 @@
 # OpenAPIClient-php
 
+## About Wallet
+
+Wallet is a guest-engagement platform: a personalized mobile wallet for every guest, with no app
+and no login, unlocked by one SMS code. This is the official PHP SDK for the Wallet API.
+
+- Website: https://wallet.inc
+- Developer docs: https://wallet.dev
+- API status: https://uptime.wallet.inc
+- All SDKs: https://github.com/walletinc
+
+
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-14T05:08:58.326Z
+**Spec version 2.4.1**, built 2026-07-14T20:20:23.684Z
 
 
 ## Installation & Usage
