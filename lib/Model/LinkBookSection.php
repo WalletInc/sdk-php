@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-15T19:47:21.833Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-15T21:02:37.076Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
