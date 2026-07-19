@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-18T13:19:23.739Z
+**Spec version 2.4.1**, built 2026-07-19T20:26:49.007Z
 
 
 ## Installation & Usage
@@ -441,6 +441,7 @@ Class | Method | HTTP request | Description
 *RoomRatesApi* | [**updateRoomRate**](docs/Api/RoomRatesApi.md#updateroomrate) | **PUT** /v2/roomRates/{id} | Update Room &amp; Rate
 *SMSMessagesApi* | [**countInboundSMS**](docs/Api/SMSMessagesApi.md#countinboundsms) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes
 *SMSMessagesApi* | [**countOutboundSMS**](docs/Api/SMSMessagesApi.md#countoutboundsms) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS
+*SMSMessagesApi* | [**estimateSMSSegments**](docs/Api/SMSMessagesApi.md#estimatesmssegments) | **POST** /sms/segment-estimate | Estimate SMS/MMS segments for a message
 *SMSMessagesApi* | [**exportInboundMessages**](docs/Api/SMSMessagesApi.md#exportinboundmessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages
 *SMSMessagesApi* | [**exportOutboundMessages**](docs/Api/SMSMessagesApi.md#exportoutboundmessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages
 *SMSMessagesApi* | [**fetchInboundSMS**](docs/Api/SMSMessagesApi.md#fetchinboundsms) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes
@@ -925,6 +926,11 @@ Class | Method | HTTP request | Description
 - [WTSMSImportedListCreate](docs/Model/WTSMSImportedListCreate.md)
 - [WTSMSOptInListSourceCreate](docs/Model/WTSMSOptInListSourceCreate.md)
 - [WTSMSUpdatePhoneNumberConfig](docs/Model/WTSMSUpdatePhoneNumberConfig.md)
+- [WTSegmentAdvisory](docs/Model/WTSegmentAdvisory.md)
+- [WTSegmentAdvisoryRecommend](docs/Model/WTSegmentAdvisoryRecommend.md)
+- [WTSegmentEstimate](docs/Model/WTSegmentEstimate.md)
+- [WTSegmentEstimateEncoding](docs/Model/WTSegmentEstimateEncoding.md)
+- [WTSegmentEstimateRequest](docs/Model/WTSegmentEstimateRequest.md)
 - [WTServiceCreateParams](docs/Model/WTServiceCreateParams.md)
 - [WTServiceUpdateParams](docs/Model/WTServiceUpdateParams.md)
 - [WTSettingsSetPassword](docs/Model/WTSettingsSetPassword.md)
