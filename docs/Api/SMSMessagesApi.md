@@ -6,6 +6,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**countInboundSMS()**](SMSMessagesApi.md#countInboundSMS) | **GET** /v2/merchant/sms/inbound/count/{phoneNumberID} | Count inbound SMSes |
 | [**countOutboundSMS()**](SMSMessagesApi.md#countOutboundSMS) | **GET** /v2/sms/outbound/count/{phoneNumberID} | Count outbound SMS |
+| [**estimateSMSSegments()**](SMSMessagesApi.md#estimateSMSSegments) | **POST** /sms/segment-estimate | Estimate SMS/MMS segments for a message |
 | [**exportInboundMessages()**](SMSMessagesApi.md#exportInboundMessages) | **PUT** /v2/merchant/sms/inbound/export/{phoneNumberID} | Export inbound messages |
 | [**exportOutboundMessages()**](SMSMessagesApi.md#exportOutboundMessages) | **PUT** /v2/merchant/sms/outbound/export/{phoneNumberID} | Export outbound messages |
 | [**fetchInboundSMS()**](SMSMessagesApi.md#fetchInboundSMS) | **GET** /v2/merchant/sms/inbound/{phoneNumberID} | Get inbound SMSes |
@@ -136,6 +137,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `estimateSMSSegments()`
+
+```php
+estimateSMSSegments($wt_segment_estimate_request): \OpenAPI\Client\Model\WTSegmentEstimate
+```
+
+Estimate SMS/MMS segments for a message
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSMessagesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_segment_estimate_request = new \OpenAPI\Client\Model\WTSegmentEstimateRequest(); // \OpenAPI\Client\Model\WTSegmentEstimateRequest
+
+try {
+    $result = $apiInstance->estimateSMSSegments($wt_segment_estimate_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSMessagesApi->estimateSMSSegments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_segment_estimate_request** | [**\OpenAPI\Client\Model\WTSegmentEstimateRequest**](../Model/WTSegmentEstimateRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTSegmentEstimate**](../Model/WTSegmentEstimate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
