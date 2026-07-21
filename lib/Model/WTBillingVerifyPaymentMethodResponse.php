@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-21T15:43:42.754Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-21T19:57:31.962Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -60,7 +60,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'is_payment_method_provided' => 'mixed',
         'subscription' => '\OpenAPI\Client\Model\SubscriptionPlan',
-        'billing_cadence' => '\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence'
+        'billing_cadence' => '\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence',
+        'is_trial_eligible' => 'mixed'
     ];
 
     /**
@@ -73,7 +74,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'is_payment_method_provided' => null,
         'subscription' => null,
-        'billing_cadence' => null
+        'billing_cadence' => null,
+        'is_trial_eligible' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static array $openAPINullables = [
         'is_payment_method_provided' => true,
         'subscription' => false,
-        'billing_cadence' => false
+        'billing_cadence' => false,
+        'is_trial_eligible' => true
     ];
 
     /**
@@ -175,7 +178,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'is_payment_method_provided' => 'isPaymentMethodProvided',
         'subscription' => 'subscription',
-        'billing_cadence' => 'billingCadence'
+        'billing_cadence' => 'billingCadence',
+        'is_trial_eligible' => 'isTrialEligible'
     ];
 
     /**
@@ -186,7 +190,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static $setters = [
         'is_payment_method_provided' => 'setIsPaymentMethodProvided',
         'subscription' => 'setSubscription',
-        'billing_cadence' => 'setBillingCadence'
+        'billing_cadence' => 'setBillingCadence',
+        'is_trial_eligible' => 'setIsTrialEligible'
     ];
 
     /**
@@ -197,7 +202,8 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
     protected static $getters = [
         'is_payment_method_provided' => 'getIsPaymentMethodProvided',
         'subscription' => 'getSubscription',
-        'billing_cadence' => 'getBillingCadence'
+        'billing_cadence' => 'getBillingCadence',
+        'is_trial_eligible' => 'getIsTrialEligible'
     ];
 
     /**
@@ -260,6 +266,7 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
         $this->setIfExists('is_payment_method_provided', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
         $this->setIfExists('billing_cadence', $data ?? [], null);
+        $this->setIfExists('is_trial_eligible', $data ?? [], null);
     }
 
     /**
@@ -297,6 +304,9 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
         }
         if ($this->container['billing_cadence'] === null) {
             $invalidProperties[] = "'billing_cadence' can't be null";
+        }
+        if ($this->container['is_trial_eligible'] === null) {
+            $invalidProperties[] = "'is_trial_eligible' can't be null";
         }
         return $invalidProperties;
     }
@@ -397,6 +407,40 @@ class WTBillingVerifyPaymentMethodResponse implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable billing_cadence cannot be null');
         }
         $this->container['billing_cadence'] = $billing_cadence;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_trial_eligible
+     *
+     * @return mixed
+     */
+    public function getIsTrialEligible()
+    {
+        return $this->container['is_trial_eligible'];
+    }
+
+    /**
+     * Sets is_trial_eligible
+     *
+     * @param mixed $is_trial_eligible is_trial_eligible
+     *
+     * @return self
+     */
+    public function setIsTrialEligible($is_trial_eligible)
+    {
+        if (is_null($is_trial_eligible)) {
+            array_push($this->openAPINullablesSetToNull, 'is_trial_eligible');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_trial_eligible', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['is_trial_eligible'] = $is_trial_eligible;
 
         return $this;
     }
