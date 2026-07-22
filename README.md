@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-22T16:16:59.520Z
+**Spec version 2.4.1**, built 2026-07-22T16:21:50.429Z
 
 
 ## Installation & Usage
@@ -449,7 +449,7 @@ Class | Method | HTTP request | Description
 *SMSMessagesApi* | [**fetchMerchantOutboundSMS**](docs/Api/SMSMessagesApi.md#fetchmerchantoutboundsms) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes
 *SMSMessagesApi* | [**fetchOutboundSMS**](docs/Api/SMSMessagesApi.md#fetchoutboundsms) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS
 *SMSMessagesApi* | [**fetchOutboundSMSByPage**](docs/Api/SMSMessagesApi.md#fetchoutboundsmsbypage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page
-*SMSMessagesApi* | [**retrieveSentAndMaxCountOfMessages**](docs/Api/SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle
+*SMSMessagesApi* | [**retrieveSentAndMaxCountOfMessages**](docs/Api/SMSMessagesApi.md#retrievesentandmaxcountofmessages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle
 *SMSSubscribersApi* | [**archiveSmsSubscriber**](docs/Api/SMSSubscribersApi.md#archivesmssubscriber) | **DELETE** /v2/SmsSubscriber/{id} | Archive SMS Subscriber
 *SMSSubscribersApi* | [**createSmsSubscriber**](docs/Api/SMSSubscribersApi.md#createsmssubscriber) | **POST** /v2/SmsSubscriber | Create SMS Subscriber
 *SMSSubscribersApi* | [**fetchAllSmsSubscribers**](docs/Api/SMSSubscribersApi.md#fetchallsmssubscribers) | **GET** /v2/SmsSubscriber/all | Get all SMS Subscribers
