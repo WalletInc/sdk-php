@@ -14,7 +14,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchMerchantOutboundSMS()**](SMSMessagesApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
 | [**fetchOutboundSMS()**](SMSMessagesApi.md#fetchOutboundSMS) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS |
 | [**fetchOutboundSMSByPage()**](SMSMessagesApi.md#fetchOutboundSMSByPage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page |
-| [**retrieveSentAndMaxCountOfMessages()**](SMSMessagesApi.md#retrieveSentAndMaxCountOfMessages) | **GET** /v2/sms/sent | Retrieve the number of messages sent by the merchant within the current billing cycle |
+| [**retrieveSentAndMaxCountOfMessages()**](SMSMessagesApi.md#retrieveSentAndMaxCountOfMessages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle |
 
 
 ## `countInboundSMS()`
@@ -621,7 +621,7 @@ No authorization required
 retrieveSentAndMaxCountOfMessages(): mixed
 ```
 
-Retrieve the number of messages sent by the merchant within the current billing cycle
+Retrieve the message segments used by the merchant within the current billing cycle
 
 ### Example
 
