@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-24T20:10:57.270Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-24T21:07:11.653Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ProductKey Class Doc Comment
  *
  * @category Class
- * @description Product update (\&quot;What&#39;s New\&quot;) entries for the in-product News widget (KAN-557).  DESIGN - fan-out at write time, never read ReadMe here:    The release process writes each release to TWO sinks: ReadMe (the external wallet.dev surface)    and a structured store WE own (what this class reads). The in-product widget reads THIS store,    never ReadMe, which answers the two concerns directly:      - ReadMe outages cannot affect the merchant widget. ReadMe is a WRITE-TIME sink only, and that        write is already best-effort/non-fatal. Read time has zero external dependency.      - Nothing parses changelog markdown at read time. Entries are already structured (title +        items[]). The only split-into-items happens once, at WRITE time, on our OWN generated        release notes (semantic-release&#39;s \&quot;* item\&quot; list) - deterministic input we control, not a        regex over arbitrary third-party content.  PROTOTYPE NOTE: &#x60;readFromStore&#x60; below returns a seeded fixture so the endpoint returns real-looking data today. In production it reads the durable store the release plugin writes to. That store is the ONE open decision (Parse class for durability vs a capped Redis list); everything else here - the read path, filtering, read-through caching, and the unread-count - is the shape being shown, and does not change with the store choice because it all sits behind &#x60;readFromStore&#x60;.
+ * @description Product update (\&quot;What&#39;s New\&quot;) entries for the in-product News widget (KAN-557).  DESIGN - fan-out at write time, never read ReadMe here:    The release process writes each release to TWO sinks: ReadMe (the external wallet.dev surface)    and a structured store WE own (what this class reads). The in-product widget reads THIS store,    never ReadMe, which answers the two concerns directly:      - ReadMe outages cannot affect the merchant widget. ReadMe is a WRITE-TIME sink only, and that        write is already best-effort/non-fatal. Read time has zero external dependency.      - Nothing parses changelog markdown at read time. Entries are already structured (title +        items[]). The only split-into-items happens once, at WRITE time, on our OWN generated        release notes (semantic-release&#39;s \&quot;* item\&quot; list) - deterministic input we control, not a        regex over arbitrary third-party content.  STORE: the durable store is the Parse &#x60;ProductUpdate&#x60; class (KAN-557; chosen over a capped Redis list so entries survive a cache flush and can be curated/edited without a deploy). The one-time backfill and (later) the release fan-out write structured rows via &#x60;create&#x60;; &#x60;readFromStore&#x60; reads them. Everything else here - type/product filtering, read-through caching, the unread-count - sits behind &#x60;readFromStore&#x60;, so the store choice does not ripple into the endpoint or the widget.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
