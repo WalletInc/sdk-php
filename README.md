@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-24T12:01:30.419Z
+**Spec version 2.4.1**, built 2026-07-24T12:18:43.777Z
 
 
 ## Installation & Usage
