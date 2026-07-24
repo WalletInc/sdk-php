@@ -256,7 +256,10 @@ docs/Model/PortalPage.md
 docs/Model/PresignedPost.md
 docs/Model/PresignedPostFields.md
 docs/Model/Product.md
+docs/Model/ProductKey.md
 docs/Model/ProductTaxBehavior.md
+docs/Model/ProductUpdateEntry.md
+docs/Model/ProductUpdateType.md
 docs/Model/ProfileStatuses.md
 docs/Model/PromoCode.md
 docs/Model/QRCodeDesign.md
@@ -756,7 +759,10 @@ lib/Model/PortalPage.php
 lib/Model/PresignedPost.php
 lib/Model/PresignedPostFields.php
 lib/Model/Product.php
+lib/Model/ProductKey.php
 lib/Model/ProductTaxBehavior.php
+lib/Model/ProductUpdateEntry.php
+lib/Model/ProductUpdateType.php
 lib/Model/ProfileStatuses.php
 lib/Model/PromoCode.php
 lib/Model/QRCodeDesign.php
@@ -1252,8 +1258,11 @@ test/Model/PlanTest.php
 test/Model/PortalPageTest.php
 test/Model/PresignedPostFieldsTest.php
 test/Model/PresignedPostTest.php
+test/Model/ProductKeyTest.php
 test/Model/ProductTaxBehaviorTest.php
 test/Model/ProductTest.php
+test/Model/ProductUpdateEntryTest.php
+test/Model/ProductUpdateTypeTest.php
 test/Model/ProfileStatusesTest.php
 test/Model/PromoCodeTest.php
 test/Model/QRCodeDesignTest.php
