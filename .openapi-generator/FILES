@@ -259,6 +259,8 @@ docs/Model/Product.md
 docs/Model/ProductKey.md
 docs/Model/ProductTaxBehavior.md
 docs/Model/ProductUpdateEntry.md
+docs/Model/ProductUpdateIngestAck.md
+docs/Model/ProductUpdateIngestBody.md
 docs/Model/ProductUpdateType.md
 docs/Model/ProfileStatuses.md
 docs/Model/PromoCode.md
@@ -762,6 +764,8 @@ lib/Model/Product.php
 lib/Model/ProductKey.php
 lib/Model/ProductTaxBehavior.php
 lib/Model/ProductUpdateEntry.php
+lib/Model/ProductUpdateIngestAck.php
+lib/Model/ProductUpdateIngestBody.php
 lib/Model/ProductUpdateType.php
 lib/Model/ProfileStatuses.php
 lib/Model/PromoCode.php
@@ -1262,6 +1266,8 @@ test/Model/ProductKeyTest.php
 test/Model/ProductTaxBehaviorTest.php
 test/Model/ProductTest.php
 test/Model/ProductUpdateEntryTest.php
+test/Model/ProductUpdateIngestAckTest.php
+test/Model/ProductUpdateIngestBodyTest.php
 test/Model/ProductUpdateTypeTest.php
 test/Model/ProfileStatusesTest.php
 test/Model/PromoCodeTest.php
