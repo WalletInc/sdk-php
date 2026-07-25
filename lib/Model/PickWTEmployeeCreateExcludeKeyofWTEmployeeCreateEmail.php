@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:57:05.776Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T21:35:51.140Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -62,10 +62,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
+        'job_title' => 'string',
         'phone_number' => 'string',
         'is_public_representative' => 'bool',
         'wallet_sequence_number' => 'int',
-        'job_title' => 'string',
         'department' => 'string',
         'schedule_start_day' => '\OpenAPI\Client\Model\PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay',
         'schedule_start_hour' => '\OpenAPI\Client\Model\PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour',
@@ -88,10 +88,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => null,
         'first_name' => null,
         'last_name' => null,
+        'job_title' => null,
         'phone_number' => null,
         'is_public_representative' => null,
         'wallet_sequence_number' => 'int32',
-        'job_title' => null,
         'department' => null,
         'schedule_start_day' => null,
         'schedule_start_hour' => null,
@@ -112,10 +112,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => false,
         'first_name' => false,
         'last_name' => false,
+        'job_title' => false,
         'phone_number' => false,
         'is_public_representative' => false,
         'wallet_sequence_number' => false,
-        'job_title' => false,
         'department' => false,
         'schedule_start_day' => false,
         'schedule_start_hour' => false,
@@ -216,10 +216,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => 'employeeID',
         'first_name' => 'firstName',
         'last_name' => 'lastName',
+        'job_title' => 'jobTitle',
         'phone_number' => 'phoneNumber',
         'is_public_representative' => 'isPublicRepresentative',
         'wallet_sequence_number' => 'walletSequenceNumber',
-        'job_title' => 'jobTitle',
         'department' => 'department',
         'schedule_start_day' => 'scheduleStartDay',
         'schedule_start_hour' => 'scheduleStartHour',
@@ -240,10 +240,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => 'setEmployeeId',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
+        'job_title' => 'setJobTitle',
         'phone_number' => 'setPhoneNumber',
         'is_public_representative' => 'setIsPublicRepresentative',
         'wallet_sequence_number' => 'setWalletSequenceNumber',
-        'job_title' => 'setJobTitle',
         'department' => 'setDepartment',
         'schedule_start_day' => 'setScheduleStartDay',
         'schedule_start_hour' => 'setScheduleStartHour',
@@ -264,10 +264,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         'employee_id' => 'getEmployeeId',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
+        'job_title' => 'getJobTitle',
         'phone_number' => 'getPhoneNumber',
         'is_public_representative' => 'getIsPublicRepresentative',
         'wallet_sequence_number' => 'getWalletSequenceNumber',
-        'job_title' => 'getJobTitle',
         'department' => 'getDepartment',
         'schedule_start_day' => 'getScheduleStartDay',
         'schedule_start_hour' => 'getScheduleStartHour',
@@ -339,10 +339,10 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         $this->setIfExists('employee_id', $data ?? [], null);
         $this->setIfExists('first_name', $data ?? [], null);
         $this->setIfExists('last_name', $data ?? [], null);
+        $this->setIfExists('job_title', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
         $this->setIfExists('is_public_representative', $data ?? [], null);
         $this->setIfExists('wallet_sequence_number', $data ?? [], null);
-        $this->setIfExists('job_title', $data ?? [], null);
         $this->setIfExists('department', $data ?? [], null);
         $this->setIfExists('schedule_start_day', $data ?? [], null);
         $this->setIfExists('schedule_start_hour', $data ?? [], null);
@@ -402,6 +402,13 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
             $invalidProperties[] = "invalid value for 'last_name', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['job_title'] === null) {
+            $invalidProperties[] = "'job_title' can't be null";
+        }
+        if ((mb_strlen($this->container['job_title']) < 0)) {
+            $invalidProperties[] = "invalid value for 'job_title', the character length must be bigger than or equal to 0.";
+        }
+
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
@@ -411,13 +418,6 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
         if ($this->container['wallet_sequence_number'] === null) {
             $invalidProperties[] = "'wallet_sequence_number' can't be null";
         }
-        if ($this->container['job_title'] === null) {
-            $invalidProperties[] = "'job_title' can't be null";
-        }
-        if ((mb_strlen($this->container['job_title']) < 0)) {
-            $invalidProperties[] = "invalid value for 'job_title', the character length must be bigger than or equal to 0.";
-        }
-
         if ($this->container['department'] === null) {
             $invalidProperties[] = "'department' can't be null";
         }
@@ -537,6 +537,38 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
     }
 
     /**
+     * Gets job_title
+     *
+     * @return string
+     */
+    public function getJobTitle()
+    {
+        return $this->container['job_title'];
+    }
+
+    /**
+     * Sets job_title
+     *
+     * @param string $job_title job_title
+     *
+     * @return self
+     */
+    public function setJobTitle($job_title)
+    {
+        if (is_null($job_title)) {
+            throw new \InvalidArgumentException('non-nullable job_title cannot be null');
+        }
+
+        if ((mb_strlen($job_title) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $job_title when calling PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail., must be bigger than or equal to 0.');
+        }
+
+        $this->container['job_title'] = $job_title;
+
+        return $this;
+    }
+
+    /**
      * Gets phone_number
      *
      * @return string
@@ -613,38 +645,6 @@ class PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail implements ModelInte
             throw new \InvalidArgumentException('non-nullable wallet_sequence_number cannot be null');
         }
         $this->container['wallet_sequence_number'] = $wallet_sequence_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets job_title
-     *
-     * @return string
-     */
-    public function getJobTitle()
-    {
-        return $this->container['job_title'];
-    }
-
-    /**
-     * Sets job_title
-     *
-     * @param string $job_title job_title
-     *
-     * @return self
-     */
-    public function setJobTitle($job_title)
-    {
-        if (is_null($job_title)) {
-            throw new \InvalidArgumentException('non-nullable job_title cannot be null');
-        }
-
-        if ((mb_strlen($job_title) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $job_title when calling PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmail., must be bigger than or equal to 0.');
-        }
-
-        $this->container['job_title'] = $job_title;
 
         return $this;
     }
