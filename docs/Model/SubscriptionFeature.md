@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sort_num** | **float** |  |
-**name** | **string** |  |
-**max_volume** | **string** |  | [optional]
-**measurement** | **string** |  |
-**description** | **string** |  |
-**current_volume** | **string** |  | [optional]
-**is_exceeded** | **bool** |  | [optional]
-**is_in_use** | **bool** |  | [optional]
-**is_enabled** | **bool** |  | [optional]
+**sort_num** | **mixed** |  |
+**name** | **mixed** |  |
+**slug** | **mixed** |  | [optional]
+**max_volume** | **mixed** |  | [optional]
+**measurement** | **mixed** |  |
+**description** | **mixed** |  |
+**current_volume** | **mixed** |  | [optional]
+**is_exceeded** | **mixed** |  | [optional]
+**is_in_use** | **mixed** |  | [optional]
+**is_enabled** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
