@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-24T22:45:38.898Z
+**Spec version 2.4.1**, built 2026-07-25T12:24:24.069Z
 
 
 ## Installation & Usage
@@ -240,7 +240,6 @@ Class | Method | HTTP request | Description
 *ImportedListsApi* | [**restoreRecipient**](docs/Api/ImportedListsApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
 *ImportedListsApi* | [**saveImportedList**](docs/Api/ImportedListsApi.md#saveimportedlist) | **PUT** /v2/sms/importedList/{listID} | Save imported list
 *IndustriesApi* | [**fetchAllIndustries**](docs/Api/IndustriesApi.md#fetchallindustries) | **GET** /system/industries/all | Get all Industries &amp; Pricing Plans
-*IndustriesApi* | [**fetchDomainsByIndustry**](docs/Api/IndustriesApi.md#fetchdomainsbyindustry) | **GET** /system/industries/domains | Get all white-labeled custom domains by industry
 *IndustriesApi* | [**fetchIndustriesIDs**](docs/Api/IndustriesApi.md#fetchindustriesids) | **GET** /system/industries/trimmed | Get all Industries &amp; Pricing Plans with trimmed metadata
 *InfoGenesisReportsApi* | [**countAdCreditsRedemptions**](docs/Api/InfoGenesisReportsApi.md#countadcreditsredemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
 *InfoGenesisReportsApi* | [**countAdCreditsRefunds**](docs/Api/InfoGenesisReportsApi.md#countadcreditsrefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
@@ -601,7 +600,6 @@ Class | Method | HTTP request | Description
 - [FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner](docs/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInner.md)
 - [FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInnerValueType](docs/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseInnerValueType.md)
 - [FetchCustomerTicketsWithTokenRequest](docs/Model/FetchCustomerTicketsWithTokenRequest.md)
-- [FetchDomainsByIndustry200Response](docs/Model/FetchDomainsByIndustry200Response.md)
 - [FetchImportedListRecipientsByPage200Response](docs/Model/FetchImportedListRecipientsByPage200Response.md)
 - [FetchInboundSMSByPage200Response](docs/Model/FetchInboundSMSByPage200Response.md)
 - [FetchIndustry200Response](docs/Model/FetchIndustry200Response.md)
