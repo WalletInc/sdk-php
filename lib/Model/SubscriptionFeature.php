@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T12:24:24.069Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -58,15 +58,16 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sort_num' => 'float',
-        'name' => 'string',
-        'max_volume' => 'string',
-        'measurement' => 'string',
-        'description' => 'string',
-        'current_volume' => 'string',
-        'is_exceeded' => 'bool',
-        'is_in_use' => 'bool',
-        'is_enabled' => 'bool'
+        'sort_num' => 'mixed',
+        'name' => 'mixed',
+        'slug' => 'mixed',
+        'max_volume' => 'mixed',
+        'measurement' => 'mixed',
+        'description' => 'mixed',
+        'current_volume' => 'mixed',
+        'is_exceeded' => 'mixed',
+        'is_in_use' => 'mixed',
+        'is_enabled' => 'mixed'
     ];
 
     /**
@@ -79,6 +80,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'sort_num' => 'double',
         'name' => null,
+        'slug' => null,
         'max_volume' => null,
         'measurement' => null,
         'description' => null,
@@ -94,15 +96,16 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sort_num' => false,
-        'name' => false,
-        'max_volume' => false,
-        'measurement' => false,
-        'description' => false,
-        'current_volume' => false,
-        'is_exceeded' => false,
-        'is_in_use' => false,
-        'is_enabled' => false
+        'sort_num' => true,
+        'name' => true,
+        'slug' => true,
+        'max_volume' => true,
+        'measurement' => true,
+        'description' => true,
+        'current_volume' => true,
+        'is_exceeded' => true,
+        'is_in_use' => true,
+        'is_enabled' => true
     ];
 
     /**
@@ -193,6 +196,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'sort_num' => 'sortNum',
         'name' => 'name',
+        'slug' => 'slug',
         'max_volume' => 'maxVolume',
         'measurement' => 'measurement',
         'description' => 'description',
@@ -210,6 +214,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'sort_num' => 'setSortNum',
         'name' => 'setName',
+        'slug' => 'setSlug',
         'max_volume' => 'setMaxVolume',
         'measurement' => 'setMeasurement',
         'description' => 'setDescription',
@@ -227,6 +232,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'sort_num' => 'getSortNum',
         'name' => 'getName',
+        'slug' => 'getSlug',
         'max_volume' => 'getMaxVolume',
         'measurement' => 'getMeasurement',
         'description' => 'getDescription',
@@ -295,6 +301,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('sort_num', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('slug', $data ?? [], null);
         $this->setIfExists('max_volume', $data ?? [], null);
         $this->setIfExists('measurement', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -361,7 +368,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sort_num
      *
-     * @return float
+     * @return mixed
      */
     public function getSortNum()
     {
@@ -371,14 +378,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sort_num
      *
-     * @param float $sort_num sort_num
+     * @param mixed $sort_num sort_num
      *
      * @return self
      */
     public function setSortNum($sort_num)
     {
         if (is_null($sort_num)) {
-            throw new \InvalidArgumentException('non-nullable sort_num cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sort_num');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sort_num', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sort_num'] = $sort_num;
 
@@ -388,7 +402,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets name
      *
-     * @return string
+     * @return mixed
      */
     public function getName()
     {
@@ -398,14 +412,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param mixed $name name
      *
      * @return self
      */
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -413,9 +434,43 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets slug
+     *
+     * @return mixed|null
+     */
+    public function getSlug()
+    {
+        return $this->container['slug'];
+    }
+
+    /**
+     * Sets slug
+     *
+     * @param mixed|null $slug slug
+     *
+     * @return self
+     */
+    public function setSlug($slug)
+    {
+        if (is_null($slug)) {
+            array_push($this->openAPINullablesSetToNull, 'slug');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('slug', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['slug'] = $slug;
+
+        return $this;
+    }
+
+    /**
      * Gets max_volume
      *
-     * @return string|null
+     * @return mixed|null
      */
     public function getMaxVolume()
     {
@@ -425,14 +480,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets max_volume
      *
-     * @param string|null $max_volume max_volume
+     * @param mixed|null $max_volume max_volume
      *
      * @return self
      */
     public function setMaxVolume($max_volume)
     {
         if (is_null($max_volume)) {
-            throw new \InvalidArgumentException('non-nullable max_volume cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'max_volume');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('max_volume', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['max_volume'] = $max_volume;
 
@@ -442,7 +504,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets measurement
      *
-     * @return string
+     * @return mixed
      */
     public function getMeasurement()
     {
@@ -452,14 +514,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets measurement
      *
-     * @param string $measurement measurement
+     * @param mixed $measurement measurement
      *
      * @return self
      */
     public function setMeasurement($measurement)
     {
         if (is_null($measurement)) {
-            throw new \InvalidArgumentException('non-nullable measurement cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'measurement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('measurement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['measurement'] = $measurement;
 
@@ -469,7 +538,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets description
      *
-     * @return string
+     * @return mixed
      */
     public function getDescription()
     {
@@ -479,14 +548,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param mixed $description description
      *
      * @return self
      */
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -496,7 +572,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets current_volume
      *
-     * @return string|null
+     * @return mixed|null
      */
     public function getCurrentVolume()
     {
@@ -506,14 +582,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets current_volume
      *
-     * @param string|null $current_volume current_volume
+     * @param mixed|null $current_volume current_volume
      *
      * @return self
      */
     public function setCurrentVolume($current_volume)
     {
         if (is_null($current_volume)) {
-            throw new \InvalidArgumentException('non-nullable current_volume cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'current_volume');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('current_volume', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['current_volume'] = $current_volume;
 
@@ -523,7 +606,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets is_exceeded
      *
-     * @return bool|null
+     * @return mixed|null
      */
     public function getIsExceeded()
     {
@@ -533,14 +616,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets is_exceeded
      *
-     * @param bool|null $is_exceeded is_exceeded
+     * @param mixed|null $is_exceeded is_exceeded
      *
      * @return self
      */
     public function setIsExceeded($is_exceeded)
     {
         if (is_null($is_exceeded)) {
-            throw new \InvalidArgumentException('non-nullable is_exceeded cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_exceeded');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_exceeded', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_exceeded'] = $is_exceeded;
 
@@ -550,7 +640,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets is_in_use
      *
-     * @return bool|null
+     * @return mixed|null
      */
     public function getIsInUse()
     {
@@ -560,14 +650,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets is_in_use
      *
-     * @param bool|null $is_in_use is_in_use
+     * @param mixed|null $is_in_use is_in_use
      *
      * @return self
      */
     public function setIsInUse($is_in_use)
     {
         if (is_null($is_in_use)) {
-            throw new \InvalidArgumentException('non-nullable is_in_use cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_in_use');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_in_use', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_in_use'] = $is_in_use;
 
@@ -577,7 +674,7 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets is_enabled
      *
-     * @return bool|null
+     * @return mixed|null
      */
     public function getIsEnabled()
     {
@@ -587,14 +684,21 @@ class SubscriptionFeature implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets is_enabled
      *
-     * @param bool|null $is_enabled is_enabled
+     * @param mixed|null $is_enabled is_enabled
      *
      * @return self
      */
     public function setIsEnabled($is_enabled)
     {
         if (is_null($is_enabled)) {
-            throw new \InvalidArgumentException('non-nullable is_enabled cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_enabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_enabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_enabled'] = $is_enabled;
 
