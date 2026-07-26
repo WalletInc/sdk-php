@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
+**Spec version 2.4.1**, built 2026-07-26T17:04:14.279Z
 
 
 ## Installation & Usage
@@ -882,9 +882,11 @@ Class | Method | HTTP request | Description
 - [WTGiftClaimRequest](docs/Model/WTGiftClaimRequest.md)
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
 - [WTImageGridUpdateParams](docs/Model/WTImageGridUpdateParams.md)
+- [WTImportConsentBasis](docs/Model/WTImportConsentBasis.md)
 - [WTImportedList](docs/Model/WTImportedList.md)
 - [WTImportedListRecipientFromMembershipTierImport](docs/Model/WTImportedListRecipientFromMembershipTierImport.md)
 - [WTImportedListRecipientFromMembershipTierImportTierID](docs/Model/WTImportedListRecipientFromMembershipTierImportTierID.md)
+- [WTImportedListRecipientImport](docs/Model/WTImportedListRecipientImport.md)
 - [WTInfoGenesisLookupRequestErrors](docs/Model/WTInfoGenesisLookupRequestErrors.md)
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)

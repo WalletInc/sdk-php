@@ -400,9 +400,11 @@ docs/Model/WTGiftCardPurchaseRequest.md
 docs/Model/WTGiftClaimRequest.md
 docs/Model/WTImageGridCreateParams.md
 docs/Model/WTImageGridUpdateParams.md
+docs/Model/WTImportConsentBasis.md
 docs/Model/WTImportedList.md
 docs/Model/WTImportedListRecipientFromMembershipTierImport.md
 docs/Model/WTImportedListRecipientFromMembershipTierImportTierID.md
+docs/Model/WTImportedListRecipientImport.md
 docs/Model/WTInfoGenesisLookupRequestErrors.md
 docs/Model/WTInfoGenesisRecordFilterParameters.md
 docs/Model/WTInfoGenesisRoutingIDs.md
@@ -920,9 +922,11 @@ lib/Model/WTGiftCardPurchaseRequest.php
 lib/Model/WTGiftClaimRequest.php
 lib/Model/WTImageGridCreateParams.php
 lib/Model/WTImageGridUpdateParams.php
+lib/Model/WTImportConsentBasis.php
 lib/Model/WTImportedList.php
 lib/Model/WTImportedListRecipientFromMembershipTierImport.php
 lib/Model/WTImportedListRecipientFromMembershipTierImportTierID.php
+lib/Model/WTImportedListRecipientImport.php
 lib/Model/WTInfoGenesisLookupRequestErrors.php
 lib/Model/WTInfoGenesisRecordFilterParameters.php
 lib/Model/WTInfoGenesisRoutingIDs.php
@@ -1437,8 +1441,10 @@ test/Model/WTGiftCardPurchaseRequestTest.php
 test/Model/WTGiftClaimRequestTest.php
 test/Model/WTImageGridCreateParamsTest.php
 test/Model/WTImageGridUpdateParamsTest.php
+test/Model/WTImportConsentBasisTest.php
 test/Model/WTImportedListRecipientFromMembershipTierImportTest.php
 test/Model/WTImportedListRecipientFromMembershipTierImportTierIDTest.php
+test/Model/WTImportedListRecipientImportTest.php
 test/Model/WTImportedListTest.php
 test/Model/WTInfoGenesisLookupRequestErrorsTest.php
 test/Model/WTInfoGenesisRecordFilterParametersTest.php

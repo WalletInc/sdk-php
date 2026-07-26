@@ -520,7 +520,7 @@ No authorization required
 ## `importImportedListRecipients()`
 
 ```php
-importImportedListRecipients($imported_list_id, $wt_employee_import_records): string
+importImportedListRecipients($imported_list_id, $wt_imported_list_recipient_import): string
 ```
 
 Import imported list recipients
@@ -539,10 +539,10 @@ $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     new GuzzleHttp\Client()
 );
 $imported_list_id = 'imported_list_id_example'; // string
-$wt_employee_import_records = new \OpenAPI\Client\Model\WTEmployeeImportRecords(); // \OpenAPI\Client\Model\WTEmployeeImportRecords
+$wt_imported_list_recipient_import = new \OpenAPI\Client\Model\WTImportedListRecipientImport(); // \OpenAPI\Client\Model\WTImportedListRecipientImport
 
 try {
-    $result = $apiInstance->importImportedListRecipients($imported_list_id, $wt_employee_import_records);
+    $result = $apiInstance->importImportedListRecipients($imported_list_id, $wt_imported_list_recipient_import);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ImportedListsApi->importImportedListRecipients: ', $e->getMessage(), PHP_EOL;
@@ -554,7 +554,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **imported_list_id** | **string**|  | |
-| **wt_employee_import_records** | [**\OpenAPI\Client\Model\WTEmployeeImportRecords**](../Model/WTEmployeeImportRecords.md)|  | |
+| **wt_imported_list_recipient_import** | [**\OpenAPI\Client\Model\WTImportedListRecipientImport**](../Model/WTImportedListRecipientImport.md)|  | |
 
 ### Return type
 
