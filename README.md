@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-26T10:38:40.665Z
+**Spec version 2.4.1**, built 2026-07-26T16:25:34.213Z
 
 
 ## Installation & Usage
@@ -913,6 +913,7 @@ Class | Method | HTTP request | Description
 - [WTMerchantUpdatePOSIntegration](docs/Model/WTMerchantUpdatePOSIntegration.md)
 - [WTMerchantUpdatePointsOfContact](docs/Model/WTMerchantUpdatePointsOfContact.md)
 - [WTMessageInstance](docs/Model/WTMessageInstance.md)
+- [WTMessageType](docs/Model/WTMessageType.md)
 - [WTNewsArticleCreateParams](docs/Model/WTNewsArticleCreateParams.md)
 - [WTNewsArticleUpdateParams](docs/Model/WTNewsArticleUpdateParams.md)
 - [WTOptInList](docs/Model/WTOptInList.md)

@@ -431,6 +431,7 @@ docs/Model/WTMerchantUpdate.md
 docs/Model/WTMerchantUpdatePOSIntegration.md
 docs/Model/WTMerchantUpdatePointsOfContact.md
 docs/Model/WTMessageInstance.md
+docs/Model/WTMessageType.md
 docs/Model/WTNewsArticleCreateParams.md
 docs/Model/WTNewsArticleUpdateParams.md
 docs/Model/WTOptInList.md
@@ -950,6 +951,7 @@ lib/Model/WTMerchantUpdate.php
 lib/Model/WTMerchantUpdatePOSIntegration.php
 lib/Model/WTMerchantUpdatePointsOfContact.php
 lib/Model/WTMessageInstance.php
+lib/Model/WTMessageType.php
 lib/Model/WTNewsArticleCreateParams.php
 lib/Model/WTNewsArticleUpdateParams.php
 lib/Model/WTOptInList.php
@@ -1466,6 +1468,7 @@ test/Model/WTMerchantUpdatePOSIntegrationTest.php
 test/Model/WTMerchantUpdatePointsOfContactTest.php
 test/Model/WTMerchantUpdateTest.php
 test/Model/WTMessageInstanceTest.php
+test/Model/WTMessageTypeTest.php
 test/Model/WTNewsArticleCreateParamsTest.php
 test/Model/WTNewsArticleUpdateParamsTest.php
 test/Model/WTOptInListCreationParamsTest.php
