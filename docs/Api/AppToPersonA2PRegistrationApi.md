@@ -5,6 +5,11 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**beginA2PApplication()**](AppToPersonA2PRegistrationApi.md#beginA2PApplication) | **POST** /v2/a2p/application | Create A2P Application |
+| [**beginA2PApplicationGovernment()**](AppToPersonA2PRegistrationApi.md#beginA2PApplicationGovernment) | **POST** /a2p/application/government | Begin A2P Application (Government) |
+| [**beginA2PApplicationNonProfit()**](AppToPersonA2PRegistrationApi.md#beginA2PApplicationNonProfit) | **POST** /a2p/application/nonprofit | Begin A2P Application (Non-profit) |
+| [**beginA2PApplicationPublic()**](AppToPersonA2PRegistrationApi.md#beginA2PApplicationPublic) | **POST** /a2p/application/public | Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email) |
+| [**beginA2PApplicationSoleProprietor()**](AppToPersonA2PRegistrationApi.md#beginA2PApplicationSoleProprietor) | **POST** /a2p/application/sole-proprietor | Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification) |
+| [**beginA2PApplicationStandard()**](AppToPersonA2PRegistrationApi.md#beginA2PApplicationStandard) | **POST** /a2p/application/standard | Begin A2P Application (Standard: a private, for-profit business with an EIN) |
 | [**fetchA2PApplication()**](AppToPersonA2PRegistrationApi.md#fetchA2PApplication) | **GET** /v2/a2p/application | Get A2P Application |
 | [**fetchA2PRegistration()**](AppToPersonA2PRegistrationApi.md#fetchA2PRegistration) | **GET** /v2/a2p/registration | Get A2P Registration |
 | [**updateA2PApplication()**](AppToPersonA2PRegistrationApi.md#updateA2PApplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application |
@@ -46,6 +51,276 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **a2_p_application_submission** | [**\OpenAPI\Client\Model\A2PApplicationSubmission**](../Model/A2PApplicationSubmission.md)|  | |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `beginA2PApplicationGovernment()`
+
+```php
+beginA2PApplicationGovernment($a2_p_government_submission): bool
+```
+
+Begin A2P Application (Government)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AppToPersonA2PRegistrationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$a2_p_government_submission = new \OpenAPI\Client\Model\A2PGovernmentSubmission(); // \OpenAPI\Client\Model\A2PGovernmentSubmission
+
+try {
+    $result = $apiInstance->beginA2PApplicationGovernment($a2_p_government_submission);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AppToPersonA2PRegistrationApi->beginA2PApplicationGovernment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_government_submission** | [**\OpenAPI\Client\Model\A2PGovernmentSubmission**](../Model/A2PGovernmentSubmission.md)|  | |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `beginA2PApplicationNonProfit()`
+
+```php
+beginA2PApplicationNonProfit($a2_p_non_profit_submission): bool
+```
+
+Begin A2P Application (Non-profit)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AppToPersonA2PRegistrationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$a2_p_non_profit_submission = new \OpenAPI\Client\Model\A2PNonProfitSubmission(); // \OpenAPI\Client\Model\A2PNonProfitSubmission
+
+try {
+    $result = $apiInstance->beginA2PApplicationNonProfit($a2_p_non_profit_submission);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AppToPersonA2PRegistrationApi->beginA2PApplicationNonProfit: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_non_profit_submission** | [**\OpenAPI\Client\Model\A2PNonProfitSubmission**](../Model/A2PNonProfitSubmission.md)|  | |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `beginA2PApplicationPublic()`
+
+```php
+beginA2PApplicationPublic($a2_p_public_submission): bool
+```
+
+Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AppToPersonA2PRegistrationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$a2_p_public_submission = new \OpenAPI\Client\Model\A2PPublicSubmission(); // \OpenAPI\Client\Model\A2PPublicSubmission
+
+try {
+    $result = $apiInstance->beginA2PApplicationPublic($a2_p_public_submission);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AppToPersonA2PRegistrationApi->beginA2PApplicationPublic: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_public_submission** | [**\OpenAPI\Client\Model\A2PPublicSubmission**](../Model/A2PPublicSubmission.md)|  | |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `beginA2PApplicationSoleProprietor()`
+
+```php
+beginA2PApplicationSoleProprietor($a2_p_sole_proprietor_submission): bool
+```
+
+Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AppToPersonA2PRegistrationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$a2_p_sole_proprietor_submission = new \OpenAPI\Client\Model\A2PSoleProprietorSubmission(); // \OpenAPI\Client\Model\A2PSoleProprietorSubmission
+
+try {
+    $result = $apiInstance->beginA2PApplicationSoleProprietor($a2_p_sole_proprietor_submission);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AppToPersonA2PRegistrationApi->beginA2PApplicationSoleProprietor: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_sole_proprietor_submission** | [**\OpenAPI\Client\Model\A2PSoleProprietorSubmission**](../Model/A2PSoleProprietorSubmission.md)|  | |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `beginA2PApplicationStandard()`
+
+```php
+beginA2PApplicationStandard($a2_p_standard_submission): bool
+```
+
+Begin A2P Application (Standard: a private, for-profit business with an EIN)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AppToPersonA2PRegistrationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$a2_p_standard_submission = new \OpenAPI\Client\Model\A2PStandardSubmission(); // \OpenAPI\Client\Model\A2PStandardSubmission
+
+try {
+    $result = $apiInstance->beginA2PApplicationStandard($a2_p_standard_submission);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AppToPersonA2PRegistrationApi->beginA2PApplicationStandard: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **a2_p_standard_submission** | [**\OpenAPI\Client\Model\A2PStandardSubmission**](../Model/A2PStandardSubmission.md)|  | |
 
 ### Return type
 
