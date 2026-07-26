@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **employee_id** | **string** |  |
 **first_name** | **string** |  |
 **last_name** | **string** |  |
+**job_title** | **string** |  |
 **phone_number** | **string** |  |
 **is_public_representative** | **bool** |  |
 **wallet_sequence_number** | **int** |  |
-**job_title** | **string** |  |
 **department** | **string** |  |
 **schedule_start_day** | [**\OpenAPI\Client\Model\PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartDay.md) |  | [optional]
 **schedule_start_hour** | [**\OpenAPI\Client\Model\PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour**](PickWTEmployeeCreateExcludeKeyofWTEmployeeCreateEmailScheduleStartHour.md) |  | [optional]

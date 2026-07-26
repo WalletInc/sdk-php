@@ -40,5 +40,7 @@ Name | Type | Description | Notes
 **job_title** | **mixed** |  |
 **job_position** | [**\OpenAPI\Client\Model\JobPosition**](JobPosition.md) |  |
 **phone_number** | **mixed** |  |
+**brand_contact_email** | **mixed** |  | [optional]
+**verification_mobile** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+**Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
 
 
 ## Installation & Usage
@@ -96,6 +96,11 @@ Class | Method | HTTP request | Description
 *AmenitiesApi* | [**restoreAmenity**](docs/Api/AmenitiesApi.md#restoreamenity) | **PATCH** /v2/amenities/{id} | Restore Amenity
 *AmenitiesApi* | [**updateAmenity**](docs/Api/AmenitiesApi.md#updateamenity) | **PUT** /v2/amenities/{id} | Update Amenity
 *AppToPersonA2PRegistrationApi* | [**beginA2PApplication**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplication) | **POST** /v2/a2p/application | Create A2P Application
+*AppToPersonA2PRegistrationApi* | [**beginA2PApplicationGovernment**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplicationgovernment) | **POST** /a2p/application/government | Begin A2P Application (Government)
+*AppToPersonA2PRegistrationApi* | [**beginA2PApplicationNonProfit**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplicationnonprofit) | **POST** /a2p/application/nonprofit | Begin A2P Application (Non-profit)
+*AppToPersonA2PRegistrationApi* | [**beginA2PApplicationPublic**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplicationpublic) | **POST** /a2p/application/public | Begin A2P Application (Public: a publicly-traded company; requires stock exchange, ticker, and brand contact email)
+*AppToPersonA2PRegistrationApi* | [**beginA2PApplicationSoleProprietor**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplicationsoleproprietor) | **POST** /a2p/application/sole-proprietor | Begin A2P Application (Sole Proprietor: no EIN; requires a mobile number for OTP verification)
+*AppToPersonA2PRegistrationApi* | [**beginA2PApplicationStandard**](docs/Api/AppToPersonA2PRegistrationApi.md#begina2papplicationstandard) | **POST** /a2p/application/standard | Begin A2P Application (Standard: a private, for-profit business with an EIN)
 *AppToPersonA2PRegistrationApi* | [**fetchA2PApplication**](docs/Api/AppToPersonA2PRegistrationApi.md#fetcha2papplication) | **GET** /v2/a2p/application | Get A2P Application
 *AppToPersonA2PRegistrationApi* | [**fetchA2PRegistration**](docs/Api/AppToPersonA2PRegistrationApi.md#fetcha2pregistration) | **GET** /v2/a2p/registration | Get A2P Registration
 *AppToPersonA2PRegistrationApi* | [**updateA2PApplication**](docs/Api/AppToPersonA2PRegistrationApi.md#updatea2papplication) | **PUT** /v2/a2p/application/{applicationID} | Update A2P Application
@@ -543,6 +548,11 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [A2PApplicationSubmission](docs/Model/A2PApplicationSubmission.md)
+- [A2PGovernmentSubmission](docs/Model/A2PGovernmentSubmission.md)
+- [A2PNonProfitSubmission](docs/Model/A2PNonProfitSubmission.md)
+- [A2PPublicSubmission](docs/Model/A2PPublicSubmission.md)
+- [A2PSoleProprietorSubmission](docs/Model/A2PSoleProprietorSubmission.md)
+- [A2PStandardSubmission](docs/Model/A2PStandardSubmission.md)
 - [AdvertisementCredit](docs/Model/AdvertisementCredit.md)
 - [AdvertisementCreditBroadcast](docs/Model/AdvertisementCreditBroadcast.md)
 - [AdvertisementCreditScan](docs/Model/AdvertisementCreditScan.md)
@@ -555,11 +565,19 @@ Class | Method | HTTP request | Description
 - [AvailablePhoneNumbersRequest](docs/Model/AvailablePhoneNumbersRequest.md)
 - [BrowserDetails](docs/Model/BrowserDetails.md)
 - [BusinessClassification](docs/Model/BusinessClassification.md)
+- [BusinessClassificationGovernment](docs/Model/BusinessClassificationGovernment.md)
+- [BusinessClassificationNonProfit](docs/Model/BusinessClassificationNonProfit.md)
+- [BusinessClassificationPrivate](docs/Model/BusinessClassificationPrivate.md)
+- [BusinessClassificationPublic](docs/Model/BusinessClassificationPublic.md)
 - [BusinessIndustry](docs/Model/BusinessIndustry.md)
+- [BusinessIndustryGOVERNMENT](docs/Model/BusinessIndustryGOVERNMENT.md)
+- [BusinessIndustryNOTFORPROFIT](docs/Model/BusinessIndustryNOTFORPROFIT.md)
 - [BusinessRegionsOfOperation](docs/Model/BusinessRegionsOfOperation.md)
 - [BusinessRegistrationIdentifier](docs/Model/BusinessRegistrationIdentifier.md)
 - [BusinessStockExchanges](docs/Model/BusinessStockExchanges.md)
 - [BusinessType](docs/Model/BusinessType.md)
+- [BusinessTypeNonProfit](docs/Model/BusinessTypeNonProfit.md)
+- [BusinessTypeSoleProprietorship](docs/Model/BusinessTypeSoleProprietorship.md)
 - [ChatCompletionAudio](docs/Model/ChatCompletionAudio.md)
 - [ChatCompletionMessage](docs/Model/ChatCompletionMessage.md)
 - [ChatCompletionMessageAudio](docs/Model/ChatCompletionMessageAudio.md)
@@ -677,6 +695,8 @@ Class | Method | HTTP request | Description
 - [Performance](docs/Model/Performance.md)
 - [PhoneNumber](docs/Model/PhoneNumber.md)
 - [PhoneNumberCapabilities](docs/Model/PhoneNumberCapabilities.md)
+- [PickA2PApplicationSubmissionExcludeKeyofA2PApplicationSubmissionStockExchangeOrStockTickerOrBrandContactEmailOrVerificationMobile](docs/Model/PickA2PApplicationSubmissionExcludeKeyofA2PApplicationSubmissionStockExchangeOrStockTickerOrBrandContactEmailOrVerificationMobile.md)
+- [PickA2PBaseIntakeExcludeKeyofA2PBaseIntakeBusinessClassificationOrBusinessIndustryOrTaxIDTypeOrTaxIDOrWebsiteURLOrSocialMediaURLOrRegionsOfOperationOrMessagingVolumeHighOrJobTitleOrJobPosition](docs/Model/PickA2PBaseIntakeExcludeKeyofA2PBaseIntakeBusinessClassificationOrBusinessIndustryOrTaxIDTypeOrTaxIDOrWebsiteURLOrSocialMediaURLOrRegionsOfOperationOrMessagingVolumeHighOrJobTitleOrJobPosition.md)
 - [PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive](docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherIsActive.md)
 - [PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID](docs/Model/PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherCampaignWithVoucherSourceID.md)
 - [PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID](docs/Model/PickMSEmployeeAPIKeyCreateParamsExcludeKeyofMSEmployeeAPIKeyCreateParamsEmployeeID.md)
@@ -862,9 +882,11 @@ Class | Method | HTTP request | Description
 - [WTGiftClaimRequest](docs/Model/WTGiftClaimRequest.md)
 - [WTImageGridCreateParams](docs/Model/WTImageGridCreateParams.md)
 - [WTImageGridUpdateParams](docs/Model/WTImageGridUpdateParams.md)
+- [WTImportConsentBasis](docs/Model/WTImportConsentBasis.md)
 - [WTImportedList](docs/Model/WTImportedList.md)
 - [WTImportedListRecipientFromMembershipTierImport](docs/Model/WTImportedListRecipientFromMembershipTierImport.md)
 - [WTImportedListRecipientFromMembershipTierImportTierID](docs/Model/WTImportedListRecipientFromMembershipTierImportTierID.md)
+- [WTImportedListRecipientImport](docs/Model/WTImportedListRecipientImport.md)
 - [WTInfoGenesisLookupRequestErrors](docs/Model/WTInfoGenesisLookupRequestErrors.md)
 - [WTInfoGenesisRecordFilterParameters](docs/Model/WTInfoGenesisRecordFilterParameters.md)
 - [WTInfoGenesisRoutingIDs](docs/Model/WTInfoGenesisRoutingIDs.md)
@@ -893,6 +915,7 @@ Class | Method | HTTP request | Description
 - [WTMerchantUpdatePOSIntegration](docs/Model/WTMerchantUpdatePOSIntegration.md)
 - [WTMerchantUpdatePointsOfContact](docs/Model/WTMerchantUpdatePointsOfContact.md)
 - [WTMessageInstance](docs/Model/WTMessageInstance.md)
+- [WTMessageType](docs/Model/WTMessageType.md)
 - [WTNewsArticleCreateParams](docs/Model/WTNewsArticleCreateParams.md)
 - [WTNewsArticleUpdateParams](docs/Model/WTNewsArticleUpdateParams.md)
 - [WTOptInList](docs/Model/WTOptInList.md)

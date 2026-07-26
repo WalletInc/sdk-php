@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -81,7 +81,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => 'mixed',
         'job_title' => 'mixed',
         'job_position' => '\OpenAPI\Client\Model\JobPosition',
-        'phone_number' => 'mixed'
+        'phone_number' => 'mixed',
+        'brand_contact_email' => 'mixed',
+        'verification_mobile' => 'mixed'
     ];
 
     /**
@@ -115,7 +117,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => null,
         'job_title' => null,
         'job_position' => null,
-        'phone_number' => null
+        'phone_number' => null,
+        'brand_contact_email' => null,
+        'verification_mobile' => null
     ];
 
     /**
@@ -147,7 +151,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => true,
         'job_title' => true,
         'job_position' => false,
-        'phone_number' => true
+        'phone_number' => true,
+        'brand_contact_email' => true,
+        'verification_mobile' => true
     ];
 
     /**
@@ -259,7 +265,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => 'email',
         'job_title' => 'jobTitle',
         'job_position' => 'jobPosition',
-        'phone_number' => 'phoneNumber'
+        'phone_number' => 'phoneNumber',
+        'brand_contact_email' => 'brandContactEmail',
+        'verification_mobile' => 'verificationMobile'
     ];
 
     /**
@@ -291,7 +299,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => 'setEmail',
         'job_title' => 'setJobTitle',
         'job_position' => 'setJobPosition',
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'brand_contact_email' => 'setBrandContactEmail',
+        'verification_mobile' => 'setVerificationMobile'
     ];
 
     /**
@@ -323,7 +333,9 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         'email' => 'getEmail',
         'job_title' => 'getJobTitle',
         'job_position' => 'getJobPosition',
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'brand_contact_email' => 'getBrandContactEmail',
+        'verification_mobile' => 'getVerificationMobile'
     ];
 
     /**
@@ -407,6 +419,8 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('job_title', $data ?? [], null);
         $this->setIfExists('job_position', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
+        $this->setIfExists('brand_contact_email', $data ?? [], null);
+        $this->setIfExists('verification_mobile', $data ?? [], null);
     }
 
     /**
@@ -569,6 +583,14 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         }
         if ((mb_strlen($this->container['phone_number']) < 7)) {
             $invalidProperties[] = "invalid value for 'phone_number', the character length must be bigger than or equal to 7.";
+        }
+
+        if (!is_null($this->container['brand_contact_email']) && (mb_strlen($this->container['brand_contact_email']) < 6)) {
+            $invalidProperties[] = "invalid value for 'brand_contact_email', the character length must be bigger than or equal to 6.";
+        }
+
+        if (!is_null($this->container['verification_mobile']) && (mb_strlen($this->container['verification_mobile']) < 7)) {
+            $invalidProperties[] = "invalid value for 'verification_mobile', the character length must be bigger than or equal to 7.";
         }
 
         return $invalidProperties;
@@ -1446,6 +1468,84 @@ class WTA2PApplicationUpdateParams implements ModelInterface, ArrayAccess, \Json
         }
 
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_contact_email
+     *
+     * @return mixed|null
+     */
+    public function getBrandContactEmail()
+    {
+        return $this->container['brand_contact_email'];
+    }
+
+    /**
+     * Sets brand_contact_email
+     *
+     * @param mixed|null $brand_contact_email brand_contact_email
+     *
+     * @return self
+     */
+    public function setBrandContactEmail($brand_contact_email)
+    {
+        if (is_null($brand_contact_email)) {
+            array_push($this->openAPINullablesSetToNull, 'brand_contact_email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('brand_contact_email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($brand_contact_email) && (mb_strlen($brand_contact_email) < 6)) {
+            throw new \InvalidArgumentException('invalid length for $brand_contact_email when calling WTA2PApplicationUpdateParams., must be bigger than or equal to 6.');
+        }
+
+        $this->container['brand_contact_email'] = $brand_contact_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets verification_mobile
+     *
+     * @return mixed|null
+     */
+    public function getVerificationMobile()
+    {
+        return $this->container['verification_mobile'];
+    }
+
+    /**
+     * Sets verification_mobile
+     *
+     * @param mixed|null $verification_mobile verification_mobile
+     *
+     * @return self
+     */
+    public function setVerificationMobile($verification_mobile)
+    {
+        if (is_null($verification_mobile)) {
+            array_push($this->openAPINullablesSetToNull, 'verification_mobile');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('verification_mobile', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($verification_mobile) && (mb_strlen($verification_mobile) < 7)) {
+            throw new \InvalidArgumentException('invalid length for $verification_mobile when calling WTA2PApplicationUpdateParams., must be bigger than or equal to 7.');
+        }
+
+        $this->container['verification_mobile'] = $verification_mobile;
 
         return $this;
     }

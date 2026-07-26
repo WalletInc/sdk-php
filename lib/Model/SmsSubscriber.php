@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-25T13:59:52.989Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -59,6 +59,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'mobile_number' => 'mixed',
+        'opt_in_source' => 'mixed',
+        'disclosure_version' => 'mixed',
         'id' => '\OpenAPI\Client\Model\AmenityId',
         'created_at' => 'mixed',
         'updated_at' => 'mixed',
@@ -75,6 +77,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'mobile_number' => null,
+        'opt_in_source' => null,
+        'disclosure_version' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -89,6 +93,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'mobile_number' => true,
+        'opt_in_source' => true,
+        'disclosure_version' => true,
         'id' => false,
         'created_at' => true,
         'updated_at' => true,
@@ -183,6 +189,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'mobile_number' => 'mobileNumber',
+        'opt_in_source' => 'optInSource',
+        'disclosure_version' => 'disclosureVersion',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -197,6 +205,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'mobile_number' => 'setMobileNumber',
+        'opt_in_source' => 'setOptInSource',
+        'disclosure_version' => 'setDisclosureVersion',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -211,6 +221,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'mobile_number' => 'getMobileNumber',
+        'opt_in_source' => 'getOptInSource',
+        'disclosure_version' => 'getDisclosureVersion',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -276,6 +288,8 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('mobile_number', $data ?? [], null);
+        $this->setIfExists('opt_in_source', $data ?? [], null);
+        $this->setIfExists('disclosure_version', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
@@ -385,6 +399,74 @@ class SmsSubscriber implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['mobile_number'] = $mobile_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets opt_in_source
+     *
+     * @return mixed|null
+     */
+    public function getOptInSource()
+    {
+        return $this->container['opt_in_source'];
+    }
+
+    /**
+     * Sets opt_in_source
+     *
+     * @param mixed|null $opt_in_source opt_in_source
+     *
+     * @return self
+     */
+    public function setOptInSource($opt_in_source)
+    {
+        if (is_null($opt_in_source)) {
+            array_push($this->openAPINullablesSetToNull, 'opt_in_source');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('opt_in_source', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['opt_in_source'] = $opt_in_source;
+
+        return $this;
+    }
+
+    /**
+     * Gets disclosure_version
+     *
+     * @return mixed|null
+     */
+    public function getDisclosureVersion()
+    {
+        return $this->container['disclosure_version'];
+    }
+
+    /**
+     * Sets disclosure_version
+     *
+     * @param mixed|null $disclosure_version disclosure_version
+     *
+     * @return self
+     */
+    public function setDisclosureVersion($disclosure_version)
+    {
+        if (is_null($disclosure_version)) {
+            array_push($this->openAPINullablesSetToNull, 'disclosure_version');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('disclosure_version', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['disclosure_version'] = $disclosure_version;
 
         return $this;
     }
