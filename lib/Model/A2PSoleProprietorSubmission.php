@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T17:38:33.688Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T18:06:38.053Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -71,17 +71,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => 'mixed',
         'phone_number' => 'mixed',
         'is_twilio_terms_read' => 'mixed',
-        'is_privacy_policy_on_website' => 'mixed',
-        'is_tos_on_website' => 'mixed',
-        'is_stop_understood' => 'mixed',
-        'is_manual_read' => 'mixed',
-        'is_ctia_short_code_read' => 'mixed',
-        'is_standards_understood' => 'mixed',
-        'is_short_code_understood' => 'mixed',
-        'is_opt_in_out_understood' => 'mixed',
-        'is_short_code_transfer_understood' => 'mixed',
+        'is_wallet_sms_terms_read' => 'mixed',
         'is_pricing_understood' => 'mixed',
-        'is_short_code_timeline_understood' => 'mixed',
+        'is_privacy_and_tos_present' => 'mixed',
+        'privacy_policy_url' => 'mixed',
+        'will_obtain_consent' => 'mixed',
+        'will_honor_opt_out' => 'mixed',
+        'will_follow_content_rules' => 'mixed',
+        'will_comply_law_and_hours' => 'mixed',
+        'info_is_accurate' => 'mixed',
         'verification_mobile' => 'string'
     ];
 
@@ -106,17 +104,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => null,
         'phone_number' => null,
         'is_twilio_terms_read' => null,
-        'is_privacy_policy_on_website' => null,
-        'is_tos_on_website' => null,
-        'is_stop_understood' => null,
-        'is_manual_read' => null,
-        'is_ctia_short_code_read' => null,
-        'is_standards_understood' => null,
-        'is_short_code_understood' => null,
-        'is_opt_in_out_understood' => null,
-        'is_short_code_transfer_understood' => null,
+        'is_wallet_sms_terms_read' => null,
         'is_pricing_understood' => null,
-        'is_short_code_timeline_understood' => null,
+        'is_privacy_and_tos_present' => null,
+        'privacy_policy_url' => null,
+        'will_obtain_consent' => null,
+        'will_honor_opt_out' => null,
+        'will_follow_content_rules' => null,
+        'will_comply_law_and_hours' => null,
+        'info_is_accurate' => null,
         'verification_mobile' => null
     ];
 
@@ -139,17 +135,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => true,
         'phone_number' => true,
         'is_twilio_terms_read' => true,
-        'is_privacy_policy_on_website' => true,
-        'is_tos_on_website' => true,
-        'is_stop_understood' => true,
-        'is_manual_read' => true,
-        'is_ctia_short_code_read' => true,
-        'is_standards_understood' => true,
-        'is_short_code_understood' => true,
-        'is_opt_in_out_understood' => true,
-        'is_short_code_transfer_understood' => true,
+        'is_wallet_sms_terms_read' => true,
         'is_pricing_understood' => true,
-        'is_short_code_timeline_understood' => true,
+        'is_privacy_and_tos_present' => true,
+        'privacy_policy_url' => true,
+        'will_obtain_consent' => true,
+        'will_honor_opt_out' => true,
+        'will_follow_content_rules' => true,
+        'will_comply_law_and_hours' => true,
+        'info_is_accurate' => true,
         'verification_mobile' => false
     ];
 
@@ -252,17 +246,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => 'country',
         'phone_number' => 'phoneNumber',
         'is_twilio_terms_read' => 'isTwilioTermsRead',
-        'is_privacy_policy_on_website' => 'isPrivacyPolicyOnWebsite',
-        'is_tos_on_website' => 'isTosOnWebsite',
-        'is_stop_understood' => 'isStopUnderstood',
-        'is_manual_read' => 'isManualRead',
-        'is_ctia_short_code_read' => 'isCtiaShortCodeRead',
-        'is_standards_understood' => 'isStandardsUnderstood',
-        'is_short_code_understood' => 'isShortCodeUnderstood',
-        'is_opt_in_out_understood' => 'isOptInOutUnderstood',
-        'is_short_code_transfer_understood' => 'isShortCodeTransferUnderstood',
+        'is_wallet_sms_terms_read' => 'isWalletSmsTermsRead',
         'is_pricing_understood' => 'isPricingUnderstood',
-        'is_short_code_timeline_understood' => 'isShortCodeTimelineUnderstood',
+        'is_privacy_and_tos_present' => 'isPrivacyAndTosPresent',
+        'privacy_policy_url' => 'privacyPolicyUrl',
+        'will_obtain_consent' => 'willObtainConsent',
+        'will_honor_opt_out' => 'willHonorOptOut',
+        'will_follow_content_rules' => 'willFollowContentRules',
+        'will_comply_law_and_hours' => 'willComplyLawAndHours',
+        'info_is_accurate' => 'infoIsAccurate',
         'verification_mobile' => 'verificationMobile'
     ];
 
@@ -285,17 +277,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => 'setCountry',
         'phone_number' => 'setPhoneNumber',
         'is_twilio_terms_read' => 'setIsTwilioTermsRead',
-        'is_privacy_policy_on_website' => 'setIsPrivacyPolicyOnWebsite',
-        'is_tos_on_website' => 'setIsTosOnWebsite',
-        'is_stop_understood' => 'setIsStopUnderstood',
-        'is_manual_read' => 'setIsManualRead',
-        'is_ctia_short_code_read' => 'setIsCtiaShortCodeRead',
-        'is_standards_understood' => 'setIsStandardsUnderstood',
-        'is_short_code_understood' => 'setIsShortCodeUnderstood',
-        'is_opt_in_out_understood' => 'setIsOptInOutUnderstood',
-        'is_short_code_transfer_understood' => 'setIsShortCodeTransferUnderstood',
+        'is_wallet_sms_terms_read' => 'setIsWalletSmsTermsRead',
         'is_pricing_understood' => 'setIsPricingUnderstood',
-        'is_short_code_timeline_understood' => 'setIsShortCodeTimelineUnderstood',
+        'is_privacy_and_tos_present' => 'setIsPrivacyAndTosPresent',
+        'privacy_policy_url' => 'setPrivacyPolicyUrl',
+        'will_obtain_consent' => 'setWillObtainConsent',
+        'will_honor_opt_out' => 'setWillHonorOptOut',
+        'will_follow_content_rules' => 'setWillFollowContentRules',
+        'will_comply_law_and_hours' => 'setWillComplyLawAndHours',
+        'info_is_accurate' => 'setInfoIsAccurate',
         'verification_mobile' => 'setVerificationMobile'
     ];
 
@@ -318,17 +308,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         'country' => 'getCountry',
         'phone_number' => 'getPhoneNumber',
         'is_twilio_terms_read' => 'getIsTwilioTermsRead',
-        'is_privacy_policy_on_website' => 'getIsPrivacyPolicyOnWebsite',
-        'is_tos_on_website' => 'getIsTosOnWebsite',
-        'is_stop_understood' => 'getIsStopUnderstood',
-        'is_manual_read' => 'getIsManualRead',
-        'is_ctia_short_code_read' => 'getIsCtiaShortCodeRead',
-        'is_standards_understood' => 'getIsStandardsUnderstood',
-        'is_short_code_understood' => 'getIsShortCodeUnderstood',
-        'is_opt_in_out_understood' => 'getIsOptInOutUnderstood',
-        'is_short_code_transfer_understood' => 'getIsShortCodeTransferUnderstood',
+        'is_wallet_sms_terms_read' => 'getIsWalletSmsTermsRead',
         'is_pricing_understood' => 'getIsPricingUnderstood',
-        'is_short_code_timeline_understood' => 'getIsShortCodeTimelineUnderstood',
+        'is_privacy_and_tos_present' => 'getIsPrivacyAndTosPresent',
+        'privacy_policy_url' => 'getPrivacyPolicyUrl',
+        'will_obtain_consent' => 'getWillObtainConsent',
+        'will_honor_opt_out' => 'getWillHonorOptOut',
+        'will_follow_content_rules' => 'getWillFollowContentRules',
+        'will_comply_law_and_hours' => 'getWillComplyLawAndHours',
+        'info_is_accurate' => 'getInfoIsAccurate',
         'verification_mobile' => 'getVerificationMobile'
     ];
 
@@ -402,17 +390,15 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
         $this->setIfExists('is_twilio_terms_read', $data ?? [], null);
-        $this->setIfExists('is_privacy_policy_on_website', $data ?? [], null);
-        $this->setIfExists('is_tos_on_website', $data ?? [], null);
-        $this->setIfExists('is_stop_understood', $data ?? [], null);
-        $this->setIfExists('is_manual_read', $data ?? [], null);
-        $this->setIfExists('is_ctia_short_code_read', $data ?? [], null);
-        $this->setIfExists('is_standards_understood', $data ?? [], null);
-        $this->setIfExists('is_short_code_understood', $data ?? [], null);
-        $this->setIfExists('is_opt_in_out_understood', $data ?? [], null);
-        $this->setIfExists('is_short_code_transfer_understood', $data ?? [], null);
+        $this->setIfExists('is_wallet_sms_terms_read', $data ?? [], null);
         $this->setIfExists('is_pricing_understood', $data ?? [], null);
-        $this->setIfExists('is_short_code_timeline_understood', $data ?? [], null);
+        $this->setIfExists('is_privacy_and_tos_present', $data ?? [], null);
+        $this->setIfExists('privacy_policy_url', $data ?? [], null);
+        $this->setIfExists('will_obtain_consent', $data ?? [], null);
+        $this->setIfExists('will_honor_opt_out', $data ?? [], null);
+        $this->setIfExists('will_follow_content_rules', $data ?? [], null);
+        $this->setIfExists('will_comply_law_and_hours', $data ?? [], null);
+        $this->setIfExists('info_is_accurate', $data ?? [], null);
         $this->setIfExists('verification_mobile', $data ?? [], null);
     }
 
@@ -523,38 +509,29 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['is_twilio_terms_read'] === null) {
             $invalidProperties[] = "'is_twilio_terms_read' can't be null";
         }
-        if ($this->container['is_privacy_policy_on_website'] === null) {
-            $invalidProperties[] = "'is_privacy_policy_on_website' can't be null";
-        }
-        if ($this->container['is_tos_on_website'] === null) {
-            $invalidProperties[] = "'is_tos_on_website' can't be null";
-        }
-        if ($this->container['is_stop_understood'] === null) {
-            $invalidProperties[] = "'is_stop_understood' can't be null";
-        }
-        if ($this->container['is_manual_read'] === null) {
-            $invalidProperties[] = "'is_manual_read' can't be null";
-        }
-        if ($this->container['is_ctia_short_code_read'] === null) {
-            $invalidProperties[] = "'is_ctia_short_code_read' can't be null";
-        }
-        if ($this->container['is_standards_understood'] === null) {
-            $invalidProperties[] = "'is_standards_understood' can't be null";
-        }
-        if ($this->container['is_short_code_understood'] === null) {
-            $invalidProperties[] = "'is_short_code_understood' can't be null";
-        }
-        if ($this->container['is_opt_in_out_understood'] === null) {
-            $invalidProperties[] = "'is_opt_in_out_understood' can't be null";
-        }
-        if ($this->container['is_short_code_transfer_understood'] === null) {
-            $invalidProperties[] = "'is_short_code_transfer_understood' can't be null";
+        if ($this->container['is_wallet_sms_terms_read'] === null) {
+            $invalidProperties[] = "'is_wallet_sms_terms_read' can't be null";
         }
         if ($this->container['is_pricing_understood'] === null) {
             $invalidProperties[] = "'is_pricing_understood' can't be null";
         }
-        if ($this->container['is_short_code_timeline_understood'] === null) {
-            $invalidProperties[] = "'is_short_code_timeline_understood' can't be null";
+        if ($this->container['is_privacy_and_tos_present'] === null) {
+            $invalidProperties[] = "'is_privacy_and_tos_present' can't be null";
+        }
+        if ($this->container['will_obtain_consent'] === null) {
+            $invalidProperties[] = "'will_obtain_consent' can't be null";
+        }
+        if ($this->container['will_honor_opt_out'] === null) {
+            $invalidProperties[] = "'will_honor_opt_out' can't be null";
+        }
+        if ($this->container['will_follow_content_rules'] === null) {
+            $invalidProperties[] = "'will_follow_content_rules' can't be null";
+        }
+        if ($this->container['will_comply_law_and_hours'] === null) {
+            $invalidProperties[] = "'will_comply_law_and_hours' can't be null";
+        }
+        if ($this->container['info_is_accurate'] === null) {
+            $invalidProperties[] = "'info_is_accurate' can't be null";
         }
         if ($this->container['verification_mobile'] === null) {
             $invalidProperties[] = "'verification_mobile' can't be null";
@@ -1065,307 +1042,35 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets is_privacy_policy_on_website
+     * Gets is_wallet_sms_terms_read
      *
      * @return mixed
      */
-    public function getIsPrivacyPolicyOnWebsite()
+    public function getIsWalletSmsTermsRead()
     {
-        return $this->container['is_privacy_policy_on_website'];
+        return $this->container['is_wallet_sms_terms_read'];
     }
 
     /**
-     * Sets is_privacy_policy_on_website
+     * Sets is_wallet_sms_terms_read
      *
-     * @param mixed $is_privacy_policy_on_website is_privacy_policy_on_website
+     * @param mixed $is_wallet_sms_terms_read is_wallet_sms_terms_read
      *
      * @return self
      */
-    public function setIsPrivacyPolicyOnWebsite($is_privacy_policy_on_website)
+    public function setIsWalletSmsTermsRead($is_wallet_sms_terms_read)
     {
-        if (is_null($is_privacy_policy_on_website)) {
-            array_push($this->openAPINullablesSetToNull, 'is_privacy_policy_on_website');
+        if (is_null($is_wallet_sms_terms_read)) {
+            array_push($this->openAPINullablesSetToNull, 'is_wallet_sms_terms_read');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_privacy_policy_on_website', $nullablesSetToNull);
+            $index = array_search('is_wallet_sms_terms_read', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_privacy_policy_on_website'] = $is_privacy_policy_on_website;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_tos_on_website
-     *
-     * @return mixed
-     */
-    public function getIsTosOnWebsite()
-    {
-        return $this->container['is_tos_on_website'];
-    }
-
-    /**
-     * Sets is_tos_on_website
-     *
-     * @param mixed $is_tos_on_website is_tos_on_website
-     *
-     * @return self
-     */
-    public function setIsTosOnWebsite($is_tos_on_website)
-    {
-        if (is_null($is_tos_on_website)) {
-            array_push($this->openAPINullablesSetToNull, 'is_tos_on_website');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_tos_on_website', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_tos_on_website'] = $is_tos_on_website;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_stop_understood
-     *
-     * @return mixed
-     */
-    public function getIsStopUnderstood()
-    {
-        return $this->container['is_stop_understood'];
-    }
-
-    /**
-     * Sets is_stop_understood
-     *
-     * @param mixed $is_stop_understood is_stop_understood
-     *
-     * @return self
-     */
-    public function setIsStopUnderstood($is_stop_understood)
-    {
-        if (is_null($is_stop_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_stop_understood');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_stop_understood', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_stop_understood'] = $is_stop_understood;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_manual_read
-     *
-     * @return mixed
-     */
-    public function getIsManualRead()
-    {
-        return $this->container['is_manual_read'];
-    }
-
-    /**
-     * Sets is_manual_read
-     *
-     * @param mixed $is_manual_read is_manual_read
-     *
-     * @return self
-     */
-    public function setIsManualRead($is_manual_read)
-    {
-        if (is_null($is_manual_read)) {
-            array_push($this->openAPINullablesSetToNull, 'is_manual_read');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_manual_read', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_manual_read'] = $is_manual_read;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_ctia_short_code_read
-     *
-     * @return mixed
-     */
-    public function getIsCtiaShortCodeRead()
-    {
-        return $this->container['is_ctia_short_code_read'];
-    }
-
-    /**
-     * Sets is_ctia_short_code_read
-     *
-     * @param mixed $is_ctia_short_code_read is_ctia_short_code_read
-     *
-     * @return self
-     */
-    public function setIsCtiaShortCodeRead($is_ctia_short_code_read)
-    {
-        if (is_null($is_ctia_short_code_read)) {
-            array_push($this->openAPINullablesSetToNull, 'is_ctia_short_code_read');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_ctia_short_code_read', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_ctia_short_code_read'] = $is_ctia_short_code_read;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_standards_understood
-     *
-     * @return mixed
-     */
-    public function getIsStandardsUnderstood()
-    {
-        return $this->container['is_standards_understood'];
-    }
-
-    /**
-     * Sets is_standards_understood
-     *
-     * @param mixed $is_standards_understood is_standards_understood
-     *
-     * @return self
-     */
-    public function setIsStandardsUnderstood($is_standards_understood)
-    {
-        if (is_null($is_standards_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_standards_understood');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_standards_understood', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_standards_understood'] = $is_standards_understood;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_short_code_understood
-     *
-     * @return mixed
-     */
-    public function getIsShortCodeUnderstood()
-    {
-        return $this->container['is_short_code_understood'];
-    }
-
-    /**
-     * Sets is_short_code_understood
-     *
-     * @param mixed $is_short_code_understood is_short_code_understood
-     *
-     * @return self
-     */
-    public function setIsShortCodeUnderstood($is_short_code_understood)
-    {
-        if (is_null($is_short_code_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_short_code_understood');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_short_code_understood', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_short_code_understood'] = $is_short_code_understood;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_opt_in_out_understood
-     *
-     * @return mixed
-     */
-    public function getIsOptInOutUnderstood()
-    {
-        return $this->container['is_opt_in_out_understood'];
-    }
-
-    /**
-     * Sets is_opt_in_out_understood
-     *
-     * @param mixed $is_opt_in_out_understood is_opt_in_out_understood
-     *
-     * @return self
-     */
-    public function setIsOptInOutUnderstood($is_opt_in_out_understood)
-    {
-        if (is_null($is_opt_in_out_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_opt_in_out_understood');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_opt_in_out_understood', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_opt_in_out_understood'] = $is_opt_in_out_understood;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_short_code_transfer_understood
-     *
-     * @return mixed
-     */
-    public function getIsShortCodeTransferUnderstood()
-    {
-        return $this->container['is_short_code_transfer_understood'];
-    }
-
-    /**
-     * Sets is_short_code_transfer_understood
-     *
-     * @param mixed $is_short_code_transfer_understood is_short_code_transfer_understood
-     *
-     * @return self
-     */
-    public function setIsShortCodeTransferUnderstood($is_short_code_transfer_understood)
-    {
-        if (is_null($is_short_code_transfer_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_short_code_transfer_understood');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_short_code_transfer_understood', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_short_code_transfer_understood'] = $is_short_code_transfer_understood;
+        $this->container['is_wallet_sms_terms_read'] = $is_wallet_sms_terms_read;
 
         return $this;
     }
@@ -1405,35 +1110,239 @@ class A2PSoleProprietorSubmission implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets is_short_code_timeline_understood
+     * Gets is_privacy_and_tos_present
      *
      * @return mixed
      */
-    public function getIsShortCodeTimelineUnderstood()
+    public function getIsPrivacyAndTosPresent()
     {
-        return $this->container['is_short_code_timeline_understood'];
+        return $this->container['is_privacy_and_tos_present'];
     }
 
     /**
-     * Sets is_short_code_timeline_understood
+     * Sets is_privacy_and_tos_present
      *
-     * @param mixed $is_short_code_timeline_understood is_short_code_timeline_understood
+     * @param mixed $is_privacy_and_tos_present is_privacy_and_tos_present
      *
      * @return self
      */
-    public function setIsShortCodeTimelineUnderstood($is_short_code_timeline_understood)
+    public function setIsPrivacyAndTosPresent($is_privacy_and_tos_present)
     {
-        if (is_null($is_short_code_timeline_understood)) {
-            array_push($this->openAPINullablesSetToNull, 'is_short_code_timeline_understood');
+        if (is_null($is_privacy_and_tos_present)) {
+            array_push($this->openAPINullablesSetToNull, 'is_privacy_and_tos_present');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_short_code_timeline_understood', $nullablesSetToNull);
+            $index = array_search('is_privacy_and_tos_present', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_short_code_timeline_understood'] = $is_short_code_timeline_understood;
+        $this->container['is_privacy_and_tos_present'] = $is_privacy_and_tos_present;
+
+        return $this;
+    }
+
+    /**
+     * Gets privacy_policy_url
+     *
+     * @return mixed|null
+     */
+    public function getPrivacyPolicyUrl()
+    {
+        return $this->container['privacy_policy_url'];
+    }
+
+    /**
+     * Sets privacy_policy_url
+     *
+     * @param mixed|null $privacy_policy_url privacy_policy_url
+     *
+     * @return self
+     */
+    public function setPrivacyPolicyUrl($privacy_policy_url)
+    {
+        if (is_null($privacy_policy_url)) {
+            array_push($this->openAPINullablesSetToNull, 'privacy_policy_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('privacy_policy_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['privacy_policy_url'] = $privacy_policy_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_obtain_consent
+     *
+     * @return mixed
+     */
+    public function getWillObtainConsent()
+    {
+        return $this->container['will_obtain_consent'];
+    }
+
+    /**
+     * Sets will_obtain_consent
+     *
+     * @param mixed $will_obtain_consent will_obtain_consent
+     *
+     * @return self
+     */
+    public function setWillObtainConsent($will_obtain_consent)
+    {
+        if (is_null($will_obtain_consent)) {
+            array_push($this->openAPINullablesSetToNull, 'will_obtain_consent');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('will_obtain_consent', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['will_obtain_consent'] = $will_obtain_consent;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_honor_opt_out
+     *
+     * @return mixed
+     */
+    public function getWillHonorOptOut()
+    {
+        return $this->container['will_honor_opt_out'];
+    }
+
+    /**
+     * Sets will_honor_opt_out
+     *
+     * @param mixed $will_honor_opt_out will_honor_opt_out
+     *
+     * @return self
+     */
+    public function setWillHonorOptOut($will_honor_opt_out)
+    {
+        if (is_null($will_honor_opt_out)) {
+            array_push($this->openAPINullablesSetToNull, 'will_honor_opt_out');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('will_honor_opt_out', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['will_honor_opt_out'] = $will_honor_opt_out;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_follow_content_rules
+     *
+     * @return mixed
+     */
+    public function getWillFollowContentRules()
+    {
+        return $this->container['will_follow_content_rules'];
+    }
+
+    /**
+     * Sets will_follow_content_rules
+     *
+     * @param mixed $will_follow_content_rules will_follow_content_rules
+     *
+     * @return self
+     */
+    public function setWillFollowContentRules($will_follow_content_rules)
+    {
+        if (is_null($will_follow_content_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'will_follow_content_rules');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('will_follow_content_rules', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['will_follow_content_rules'] = $will_follow_content_rules;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_comply_law_and_hours
+     *
+     * @return mixed
+     */
+    public function getWillComplyLawAndHours()
+    {
+        return $this->container['will_comply_law_and_hours'];
+    }
+
+    /**
+     * Sets will_comply_law_and_hours
+     *
+     * @param mixed $will_comply_law_and_hours will_comply_law_and_hours
+     *
+     * @return self
+     */
+    public function setWillComplyLawAndHours($will_comply_law_and_hours)
+    {
+        if (is_null($will_comply_law_and_hours)) {
+            array_push($this->openAPINullablesSetToNull, 'will_comply_law_and_hours');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('will_comply_law_and_hours', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['will_comply_law_and_hours'] = $will_comply_law_and_hours;
+
+        return $this;
+    }
+
+    /**
+     * Gets info_is_accurate
+     *
+     * @return mixed
+     */
+    public function getInfoIsAccurate()
+    {
+        return $this->container['info_is_accurate'];
+    }
+
+    /**
+     * Sets info_is_accurate
+     *
+     * @param mixed $info_is_accurate info_is_accurate
+     *
+     * @return self
+     */
+    public function setInfoIsAccurate($info_is_accurate)
+    {
+        if (is_null($info_is_accurate)) {
+            array_push($this->openAPINullablesSetToNull, 'info_is_accurate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('info_is_accurate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['info_is_accurate'] = $info_is_accurate;
 
         return $this;
     }

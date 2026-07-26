@@ -5,17 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_twilio_terms_read** | **mixed** |  |
-**is_privacy_policy_on_website** | **mixed** |  |
-**is_tos_on_website** | **mixed** |  |
-**is_stop_understood** | **mixed** |  |
-**is_manual_read** | **mixed** |  |
-**is_ctia_short_code_read** | **mixed** |  |
-**is_standards_understood** | **mixed** |  |
-**is_short_code_understood** | **mixed** |  |
-**is_opt_in_out_understood** | **mixed** |  |
-**is_short_code_transfer_understood** | **mixed** |  |
+**is_wallet_sms_terms_read** | **mixed** |  |
 **is_pricing_understood** | **mixed** |  |
-**is_short_code_timeline_understood** | **mixed** |  |
+**is_privacy_and_tos_present** | **mixed** |  |
+**privacy_policy_url** | **mixed** |  | [optional]
+**will_obtain_consent** | **mixed** |  |
+**will_honor_opt_out** | **mixed** |  |
+**will_follow_content_rules** | **mixed** |  |
+**will_comply_law_and_hours** | **mixed** |  |
+**info_is_accurate** | **mixed** |  |
 **business_name** | **mixed** |  |
 **business_type** | [**\OpenAPI\Client\Model\BusinessType**](BusinessType.md) |  |
 **business_classification** | [**\OpenAPI\Client\Model\BusinessClassification**](BusinessClassification.md) |  |
