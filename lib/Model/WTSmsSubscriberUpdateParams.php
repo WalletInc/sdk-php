@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:25:34.213Z
+ * Wallet Inc. API reference.  **Spec version 2.4.1**, built 2026-07-26T16:49:54.662Z
  *
  * The version of the OpenAPI document: 2.4.1
  * Contact: development@wallet.inc
@@ -58,7 +58,7 @@ class WTSmsSubscriberUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mobile_number' => 'string'
+        'mobile_number' => 'mixed'
     ];
 
     /**
@@ -78,7 +78,7 @@ class WTSmsSubscriberUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'mobile_number' => false
+        'mobile_number' => true
     ];
 
     /**
@@ -296,7 +296,7 @@ class WTSmsSubscriberUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets mobile_number
      *
-     * @return string
+     * @return mixed
      */
     public function getMobileNumber()
     {
@@ -306,14 +306,21 @@ class WTSmsSubscriberUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets mobile_number
      *
-     * @param string $mobile_number mobile_number
+     * @param mixed $mobile_number mobile_number
      *
      * @return self
      */
     public function setMobileNumber($mobile_number)
     {
         if (is_null($mobile_number)) {
-            throw new \InvalidArgumentException('non-nullable mobile_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'mobile_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mobile_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['mobile_number'] = $mobile_number;
 
