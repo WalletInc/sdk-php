@@ -102,6 +102,7 @@ docs/Model/ChatCompletionMessageFunctionCall.md
 docs/Model/ChatCompletionMessageToolCall.md
 docs/Model/ChatCompletionMessageToolCallFunction.md
 docs/Model/ClaimTicketRequest.md
+docs/Model/ContentStatus.md
 docs/Model/CountClaimedComps200Response.md
 docs/Model/CreateFile200Response.md
 docs/Model/CreateRunOnThreadRequest.md
@@ -623,6 +624,7 @@ lib/Model/ChatCompletionMessageFunctionCall.php
 lib/Model/ChatCompletionMessageToolCall.php
 lib/Model/ChatCompletionMessageToolCallFunction.php
 lib/Model/ClaimTicketRequest.php
+lib/Model/ContentStatus.php
 lib/Model/CountClaimedComps200Response.php
 lib/Model/CreateFile200Response.php
 lib/Model/CreateRunOnThreadRequest.php
@@ -1143,6 +1145,7 @@ test/Model/ChatCompletionMessageTest.php
 test/Model/ChatCompletionMessageToolCallFunctionTest.php
 test/Model/ChatCompletionMessageToolCallTest.php
 test/Model/ClaimTicketRequestTest.php
+test/Model/ContentStatusTest.php
 test/Model/CountClaimedComps200ResponseTest.php
 test/Model/CreateFile200ResponseTest.php
 test/Model/CreateRunOnThreadRequestTest.php
