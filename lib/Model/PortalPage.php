@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:01:30.750Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:35:41.764Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -163,6 +163,8 @@ class PortalPage
 
     public const QRCODE_DESIGNS = 'qrcode-designs';
 
+    public const BRANDING_WALLET_PAGES = 'branding-wallet-pages';
+
     public const PRODUCTS = 'products';
 
     public const SERVICES = 'services';
@@ -254,6 +256,7 @@ class PortalPage
             self::NEWS,
             self::VIRTUAL_BUSINESS_CARDS,
             self::QRCODE_DESIGNS,
+            self::BRANDING_WALLET_PAGES,
             self::PRODUCTS,
             self::SERVICES,
             self::ROOM_RATES,
