@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.20.2**, built 2026-07-28T16:20:40.617Z
+**Spec version 2.20.2**, built 2026-07-30T15:18:55.586Z
 
 
 ## Installation & Usage
@@ -826,6 +826,7 @@ Class | Method | HTTP request | Description
 - [WTBillingSavePaymentMethod](docs/Model/WTBillingSavePaymentMethod.md)
 - [WTBillingVerifyPaymentMethodResponse](docs/Model/WTBillingVerifyPaymentMethodResponse.md)
 - [WTBillingVerifyPaymentMethodResponseBillingCadence](docs/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.md)
+- [WTBrandingFooterLink](docs/Model/WTBrandingFooterLink.md)
 - [WTCertificateDealCreateRequest](docs/Model/WTCertificateDealCreateRequest.md)
 - [WTCertificateDealCreateRequestEntitlementType](docs/Model/WTCertificateDealCreateRequestEntitlementType.md)
 - [WTCertificateEntitlementSnapshot](docs/Model/WTCertificateEntitlementSnapshot.md)
@@ -936,6 +937,7 @@ Class | Method | HTTP request | Description
 - [WTProductUpdateParams](docs/Model/WTProductUpdateParams.md)
 - [WTPromoCodeCreateParams](docs/Model/WTPromoCodeCreateParams.md)
 - [WTPromoCodeUpdateParams](docs/Model/WTPromoCodeUpdateParams.md)
+- [WTPublicBranding](docs/Model/WTPublicBranding.md)
 - [WTQRCodeDesign](docs/Model/WTQRCodeDesign.md)
 - [WTQRCodeDesignCreateParams](docs/Model/WTQRCodeDesignCreateParams.md)
 - [WTQRCodeDesignUpdateParams](docs/Model/WTQRCodeDesignUpdateParams.md)

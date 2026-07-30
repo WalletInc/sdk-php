@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-28T16:20:40.617Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T15:18:55.586Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -134,6 +134,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => 'mixed',
         'google_play_store_url' => 'mixed',
         'pass_brand_kit' => '\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordPassBrandKit',
+        'login_logo_url' => 'mixed',
+        'login_panel_image_url' => 'mixed',
+        'login_headline' => 'mixed',
+        'login_subcopy' => 'mixed',
+        'login_background_color' => 'mixed',
+        'login_background_image_url' => 'mixed',
+        'register_url' => 'mixed',
+        'login_footer_links' => 'mixed',
+        'desktop_frame_logo_url' => 'mixed',
+        'desktop_frame_background_color' => 'mixed',
+        'desktop_frame_background_image_url' => 'mixed',
+        'desktop_frame_byline' => 'mixed',
         'id' => 'string',
         'created_at' => 'mixed',
         'updated_at' => 'mixed',
@@ -225,6 +237,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => null,
         'google_play_store_url' => null,
         'pass_brand_kit' => null,
+        'login_logo_url' => null,
+        'login_panel_image_url' => null,
+        'login_headline' => null,
+        'login_subcopy' => null,
+        'login_background_color' => null,
+        'login_background_image_url' => null,
+        'register_url' => null,
+        'login_footer_links' => null,
+        'desktop_frame_logo_url' => null,
+        'desktop_frame_background_color' => null,
+        'desktop_frame_background_image_url' => null,
+        'desktop_frame_byline' => null,
         'id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
@@ -314,6 +338,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => true,
         'google_play_store_url' => true,
         'pass_brand_kit' => false,
+        'login_logo_url' => true,
+        'login_panel_image_url' => true,
+        'login_headline' => true,
+        'login_subcopy' => true,
+        'login_background_color' => true,
+        'login_background_image_url' => true,
+        'register_url' => true,
+        'login_footer_links' => true,
+        'desktop_frame_logo_url' => true,
+        'desktop_frame_background_color' => true,
+        'desktop_frame_background_image_url' => true,
+        'desktop_frame_byline' => true,
         'id' => false,
         'created_at' => true,
         'updated_at' => true,
@@ -483,6 +519,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => 'appleAppStoreURL',
         'google_play_store_url' => 'googlePlayStoreURL',
         'pass_brand_kit' => 'passBrandKit',
+        'login_logo_url' => 'loginLogoURL',
+        'login_panel_image_url' => 'loginPanelImageURL',
+        'login_headline' => 'loginHeadline',
+        'login_subcopy' => 'loginSubcopy',
+        'login_background_color' => 'loginBackgroundColor',
+        'login_background_image_url' => 'loginBackgroundImageURL',
+        'register_url' => 'registerURL',
+        'login_footer_links' => 'loginFooterLinks',
+        'desktop_frame_logo_url' => 'desktopFrameLogoURL',
+        'desktop_frame_background_color' => 'desktopFrameBackgroundColor',
+        'desktop_frame_background_image_url' => 'desktopFrameBackgroundImageURL',
+        'desktop_frame_byline' => 'desktopFrameByline',
         'id' => 'id',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
@@ -572,6 +620,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => 'setAppleAppStoreUrl',
         'google_play_store_url' => 'setGooglePlayStoreUrl',
         'pass_brand_kit' => 'setPassBrandKit',
+        'login_logo_url' => 'setLoginLogoUrl',
+        'login_panel_image_url' => 'setLoginPanelImageUrl',
+        'login_headline' => 'setLoginHeadline',
+        'login_subcopy' => 'setLoginSubcopy',
+        'login_background_color' => 'setLoginBackgroundColor',
+        'login_background_image_url' => 'setLoginBackgroundImageUrl',
+        'register_url' => 'setRegisterUrl',
+        'login_footer_links' => 'setLoginFooterLinks',
+        'desktop_frame_logo_url' => 'setDesktopFrameLogoUrl',
+        'desktop_frame_background_color' => 'setDesktopFrameBackgroundColor',
+        'desktop_frame_background_image_url' => 'setDesktopFrameBackgroundImageUrl',
+        'desktop_frame_byline' => 'setDesktopFrameByline',
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
@@ -661,6 +721,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         'apple_app_store_url' => 'getAppleAppStoreUrl',
         'google_play_store_url' => 'getGooglePlayStoreUrl',
         'pass_brand_kit' => 'getPassBrandKit',
+        'login_logo_url' => 'getLoginLogoUrl',
+        'login_panel_image_url' => 'getLoginPanelImageUrl',
+        'login_headline' => 'getLoginHeadline',
+        'login_subcopy' => 'getLoginSubcopy',
+        'login_background_color' => 'getLoginBackgroundColor',
+        'login_background_image_url' => 'getLoginBackgroundImageUrl',
+        'register_url' => 'getRegisterUrl',
+        'login_footer_links' => 'getLoginFooterLinks',
+        'desktop_frame_logo_url' => 'getDesktopFrameLogoUrl',
+        'desktop_frame_background_color' => 'getDesktopFrameBackgroundColor',
+        'desktop_frame_background_image_url' => 'getDesktopFrameBackgroundImageUrl',
+        'desktop_frame_byline' => 'getDesktopFrameByline',
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
@@ -801,6 +873,18 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('apple_app_store_url', $data ?? [], null);
         $this->setIfExists('google_play_store_url', $data ?? [], null);
         $this->setIfExists('pass_brand_kit', $data ?? [], null);
+        $this->setIfExists('login_logo_url', $data ?? [], null);
+        $this->setIfExists('login_panel_image_url', $data ?? [], null);
+        $this->setIfExists('login_headline', $data ?? [], null);
+        $this->setIfExists('login_subcopy', $data ?? [], null);
+        $this->setIfExists('login_background_color', $data ?? [], null);
+        $this->setIfExists('login_background_image_url', $data ?? [], null);
+        $this->setIfExists('register_url', $data ?? [], null);
+        $this->setIfExists('login_footer_links', $data ?? [], null);
+        $this->setIfExists('desktop_frame_logo_url', $data ?? [], null);
+        $this->setIfExists('desktop_frame_background_color', $data ?? [], null);
+        $this->setIfExists('desktop_frame_background_image_url', $data ?? [], null);
+        $this->setIfExists('desktop_frame_byline', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
@@ -3581,6 +3665,414 @@ class WalletConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable pass_brand_kit cannot be null');
         }
         $this->container['pass_brand_kit'] = $pass_brand_kit;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_logo_url
+     *
+     * @return mixed|null
+     */
+    public function getLoginLogoUrl()
+    {
+        return $this->container['login_logo_url'];
+    }
+
+    /**
+     * Sets login_logo_url
+     *
+     * @param mixed|null $login_logo_url login_logo_url
+     *
+     * @return self
+     */
+    public function setLoginLogoUrl($login_logo_url)
+    {
+        if (is_null($login_logo_url)) {
+            array_push($this->openAPINullablesSetToNull, 'login_logo_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_logo_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_logo_url'] = $login_logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_panel_image_url
+     *
+     * @return mixed|null
+     */
+    public function getLoginPanelImageUrl()
+    {
+        return $this->container['login_panel_image_url'];
+    }
+
+    /**
+     * Sets login_panel_image_url
+     *
+     * @param mixed|null $login_panel_image_url login_panel_image_url
+     *
+     * @return self
+     */
+    public function setLoginPanelImageUrl($login_panel_image_url)
+    {
+        if (is_null($login_panel_image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'login_panel_image_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_panel_image_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_panel_image_url'] = $login_panel_image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_headline
+     *
+     * @return mixed|null
+     */
+    public function getLoginHeadline()
+    {
+        return $this->container['login_headline'];
+    }
+
+    /**
+     * Sets login_headline
+     *
+     * @param mixed|null $login_headline login_headline
+     *
+     * @return self
+     */
+    public function setLoginHeadline($login_headline)
+    {
+        if (is_null($login_headline)) {
+            array_push($this->openAPINullablesSetToNull, 'login_headline');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_headline', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_headline'] = $login_headline;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_subcopy
+     *
+     * @return mixed|null
+     */
+    public function getLoginSubcopy()
+    {
+        return $this->container['login_subcopy'];
+    }
+
+    /**
+     * Sets login_subcopy
+     *
+     * @param mixed|null $login_subcopy login_subcopy
+     *
+     * @return self
+     */
+    public function setLoginSubcopy($login_subcopy)
+    {
+        if (is_null($login_subcopy)) {
+            array_push($this->openAPINullablesSetToNull, 'login_subcopy');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_subcopy', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_subcopy'] = $login_subcopy;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_background_color
+     *
+     * @return mixed|null
+     */
+    public function getLoginBackgroundColor()
+    {
+        return $this->container['login_background_color'];
+    }
+
+    /**
+     * Sets login_background_color
+     *
+     * @param mixed|null $login_background_color login_background_color
+     *
+     * @return self
+     */
+    public function setLoginBackgroundColor($login_background_color)
+    {
+        if (is_null($login_background_color)) {
+            array_push($this->openAPINullablesSetToNull, 'login_background_color');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_background_color', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_background_color'] = $login_background_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_background_image_url
+     *
+     * @return mixed|null
+     */
+    public function getLoginBackgroundImageUrl()
+    {
+        return $this->container['login_background_image_url'];
+    }
+
+    /**
+     * Sets login_background_image_url
+     *
+     * @param mixed|null $login_background_image_url login_background_image_url
+     *
+     * @return self
+     */
+    public function setLoginBackgroundImageUrl($login_background_image_url)
+    {
+        if (is_null($login_background_image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'login_background_image_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_background_image_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_background_image_url'] = $login_background_image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets register_url
+     *
+     * @return mixed|null
+     */
+    public function getRegisterUrl()
+    {
+        return $this->container['register_url'];
+    }
+
+    /**
+     * Sets register_url
+     *
+     * @param mixed|null $register_url register_url
+     *
+     * @return self
+     */
+    public function setRegisterUrl($register_url)
+    {
+        if (is_null($register_url)) {
+            array_push($this->openAPINullablesSetToNull, 'register_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('register_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['register_url'] = $register_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets login_footer_links
+     *
+     * @return mixed|null
+     */
+    public function getLoginFooterLinks()
+    {
+        return $this->container['login_footer_links'];
+    }
+
+    /**
+     * Sets login_footer_links
+     *
+     * @param mixed|null $login_footer_links login_footer_links
+     *
+     * @return self
+     */
+    public function setLoginFooterLinks($login_footer_links)
+    {
+        if (is_null($login_footer_links)) {
+            array_push($this->openAPINullablesSetToNull, 'login_footer_links');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('login_footer_links', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['login_footer_links'] = $login_footer_links;
+
+        return $this;
+    }
+
+    /**
+     * Gets desktop_frame_logo_url
+     *
+     * @return mixed|null
+     */
+    public function getDesktopFrameLogoUrl()
+    {
+        return $this->container['desktop_frame_logo_url'];
+    }
+
+    /**
+     * Sets desktop_frame_logo_url
+     *
+     * @param mixed|null $desktop_frame_logo_url desktop_frame_logo_url
+     *
+     * @return self
+     */
+    public function setDesktopFrameLogoUrl($desktop_frame_logo_url)
+    {
+        if (is_null($desktop_frame_logo_url)) {
+            array_push($this->openAPINullablesSetToNull, 'desktop_frame_logo_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('desktop_frame_logo_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['desktop_frame_logo_url'] = $desktop_frame_logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets desktop_frame_background_color
+     *
+     * @return mixed|null
+     */
+    public function getDesktopFrameBackgroundColor()
+    {
+        return $this->container['desktop_frame_background_color'];
+    }
+
+    /**
+     * Sets desktop_frame_background_color
+     *
+     * @param mixed|null $desktop_frame_background_color desktop_frame_background_color
+     *
+     * @return self
+     */
+    public function setDesktopFrameBackgroundColor($desktop_frame_background_color)
+    {
+        if (is_null($desktop_frame_background_color)) {
+            array_push($this->openAPINullablesSetToNull, 'desktop_frame_background_color');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('desktop_frame_background_color', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['desktop_frame_background_color'] = $desktop_frame_background_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets desktop_frame_background_image_url
+     *
+     * @return mixed|null
+     */
+    public function getDesktopFrameBackgroundImageUrl()
+    {
+        return $this->container['desktop_frame_background_image_url'];
+    }
+
+    /**
+     * Sets desktop_frame_background_image_url
+     *
+     * @param mixed|null $desktop_frame_background_image_url desktop_frame_background_image_url
+     *
+     * @return self
+     */
+    public function setDesktopFrameBackgroundImageUrl($desktop_frame_background_image_url)
+    {
+        if (is_null($desktop_frame_background_image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'desktop_frame_background_image_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('desktop_frame_background_image_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['desktop_frame_background_image_url'] = $desktop_frame_background_image_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets desktop_frame_byline
+     *
+     * @return mixed|null
+     */
+    public function getDesktopFrameByline()
+    {
+        return $this->container['desktop_frame_byline'];
+    }
+
+    /**
+     * Sets desktop_frame_byline
+     *
+     * @param mixed|null $desktop_frame_byline desktop_frame_byline
+     *
+     * @return self
+     */
+    public function setDesktopFrameByline($desktop_frame_byline)
+    {
+        if (is_null($desktop_frame_byline)) {
+            array_push($this->openAPINullablesSetToNull, 'desktop_frame_byline');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('desktop_frame_byline', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['desktop_frame_byline'] = $desktop_frame_byline;
 
         return $this;
     }
