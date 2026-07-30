@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T12:47:27.912Z
+ * Wallet Inc. API reference.  **Spec version 2.20.2**, built 2026-07-30T13:08:16.291Z
  *
  * The version of the OpenAPI document: 2.20.2
  * Contact: development@wallet.inc
@@ -61,6 +61,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => 'string',
         'header_background_color' => 'string',
         'mobile_app_icon_url' => 'string',
+        'show_wallet_credit' => 'bool',
         'login_logo_url' => 'string',
         'login_panel_image_url' => 'string',
         'login_headline' => 'string',
@@ -86,6 +87,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => null,
         'header_background_color' => null,
         'mobile_app_icon_url' => null,
+        'show_wallet_credit' => null,
         'login_logo_url' => null,
         'login_panel_image_url' => null,
         'login_headline' => null,
@@ -109,6 +111,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => false,
         'header_background_color' => false,
         'mobile_app_icon_url' => false,
+        'show_wallet_credit' => false,
         'login_logo_url' => false,
         'login_panel_image_url' => false,
         'login_headline' => false,
@@ -212,6 +215,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => 'companyName',
         'header_background_color' => 'headerBackgroundColor',
         'mobile_app_icon_url' => 'mobileAppIconURL',
+        'show_wallet_credit' => 'showWalletCredit',
         'login_logo_url' => 'loginLogoURL',
         'login_panel_image_url' => 'loginPanelImageURL',
         'login_headline' => 'loginHeadline',
@@ -235,6 +239,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => 'setCompanyName',
         'header_background_color' => 'setHeaderBackgroundColor',
         'mobile_app_icon_url' => 'setMobileAppIconUrl',
+        'show_wallet_credit' => 'setShowWalletCredit',
         'login_logo_url' => 'setLoginLogoUrl',
         'login_panel_image_url' => 'setLoginPanelImageUrl',
         'login_headline' => 'setLoginHeadline',
@@ -258,6 +263,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         'company_name' => 'getCompanyName',
         'header_background_color' => 'getHeaderBackgroundColor',
         'mobile_app_icon_url' => 'getMobileAppIconUrl',
+        'show_wallet_credit' => 'getShowWalletCredit',
         'login_logo_url' => 'getLoginLogoUrl',
         'login_panel_image_url' => 'getLoginPanelImageUrl',
         'login_headline' => 'getLoginHeadline',
@@ -332,6 +338,7 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('company_name', $data ?? [], null);
         $this->setIfExists('header_background_color', $data ?? [], null);
         $this->setIfExists('mobile_app_icon_url', $data ?? [], null);
+        $this->setIfExists('show_wallet_credit', $data ?? [], null);
         $this->setIfExists('login_logo_url', $data ?? [], null);
         $this->setIfExists('login_panel_image_url', $data ?? [], null);
         $this->setIfExists('login_headline', $data ?? [], null);
@@ -465,6 +472,33 @@ class WTPublicBranding implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable mobile_app_icon_url cannot be null');
         }
         $this->container['mobile_app_icon_url'] = $mobile_app_icon_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_wallet_credit
+     *
+     * @return bool|null
+     */
+    public function getShowWalletCredit()
+    {
+        return $this->container['show_wallet_credit'];
+    }
+
+    /**
+     * Sets show_wallet_credit
+     *
+     * @param bool|null $show_wallet_credit show_wallet_credit
+     *
+     * @return self
+     */
+    public function setShowWalletCredit($show_wallet_credit)
+    {
+        if (is_null($show_wallet_credit)) {
+            throw new \InvalidArgumentException('non-nullable show_wallet_credit cannot be null');
+        }
+        $this->container['show_wallet_credit'] = $show_wallet_credit;
 
         return $this;
     }
