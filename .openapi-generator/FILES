@@ -21,6 +21,7 @@ docs/Api/FilesDocumentsApi.md
 docs/Api/GalleryApi.md
 docs/Api/GamingApi.md
 docs/Api/GiftCardsApi.md
+docs/Api/GoogleWalletSubscribersApi.md
 docs/Api/HelpDeskApi.md
 docs/Api/ImportExportApi.md
 docs/Api/ImportedListsApi.md
@@ -542,6 +543,7 @@ lib/Api/FilesDocumentsApi.php
 lib/Api/GalleryApi.php
 lib/Api/GamingApi.php
 lib/Api/GiftCardsApi.php
+lib/Api/GoogleWalletSubscribersApi.php
 lib/Api/HelpDeskApi.php
 lib/Api/ImportExportApi.php
 lib/Api/ImportedListsApi.php
@@ -1068,6 +1070,7 @@ test/Api/FilesDocumentsApiTest.php
 test/Api/GalleryApiTest.php
 test/Api/GamingApiTest.php
 test/Api/GiftCardsApiTest.php
+test/Api/GoogleWalletSubscribersApiTest.php
 test/Api/HelpDeskApiTest.php
 test/Api/ImportExportApiTest.php
 test/Api/ImportedListsApiTest.php
