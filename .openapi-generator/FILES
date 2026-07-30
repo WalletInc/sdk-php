@@ -343,6 +343,7 @@ docs/Model/WTBillingChangePlanBillingCadence.md
 docs/Model/WTBillingSavePaymentMethod.md
 docs/Model/WTBillingVerifyPaymentMethodResponse.md
 docs/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.md
+docs/Model/WTBrandingFooterLink.md
 docs/Model/WTCertificateDealCreateRequest.md
 docs/Model/WTCertificateDealCreateRequestEntitlementType.md
 docs/Model/WTCertificateEntitlementSnapshot.md
@@ -453,6 +454,7 @@ docs/Model/WTProductCreateParams.md
 docs/Model/WTProductUpdateParams.md
 docs/Model/WTPromoCodeCreateParams.md
 docs/Model/WTPromoCodeUpdateParams.md
+docs/Model/WTPublicBranding.md
 docs/Model/WTQRCodeDesign.md
 docs/Model/WTQRCodeDesignCreateParams.md
 docs/Model/WTQRCodeDesignUpdateParams.md
@@ -866,6 +868,7 @@ lib/Model/WTBillingChangePlanBillingCadence.php
 lib/Model/WTBillingSavePaymentMethod.php
 lib/Model/WTBillingVerifyPaymentMethodResponse.php
 lib/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.php
+lib/Model/WTBrandingFooterLink.php
 lib/Model/WTCertificateDealCreateRequest.php
 lib/Model/WTCertificateDealCreateRequestEntitlementType.php
 lib/Model/WTCertificateEntitlementSnapshot.php
@@ -976,6 +979,7 @@ lib/Model/WTProductCreateParams.php
 lib/Model/WTProductUpdateParams.php
 lib/Model/WTPromoCodeCreateParams.php
 lib/Model/WTPromoCodeUpdateParams.php
+lib/Model/WTPublicBranding.php
 lib/Model/WTQRCodeDesign.php
 lib/Model/WTQRCodeDesignCreateParams.php
 lib/Model/WTQRCodeDesignUpdateParams.php
@@ -1386,6 +1390,7 @@ test/Model/WTBillingChangePlanTest.php
 test/Model/WTBillingSavePaymentMethodTest.php
 test/Model/WTBillingVerifyPaymentMethodResponseBillingCadenceTest.php
 test/Model/WTBillingVerifyPaymentMethodResponseTest.php
+test/Model/WTBrandingFooterLinkTest.php
 test/Model/WTCertificateDealCreateRequestEntitlementTypeTest.php
 test/Model/WTCertificateDealCreateRequestTest.php
 test/Model/WTCertificateEntitlementSnapshotTest.php
@@ -1496,6 +1501,7 @@ test/Model/WTProductCreateParamsTest.php
 test/Model/WTProductUpdateParamsTest.php
 test/Model/WTPromoCodeCreateParamsTest.php
 test/Model/WTPromoCodeUpdateParamsTest.php
+test/Model/WTPublicBrandingTest.php
 test/Model/WTQRCodeDesignCreateParamsTest.php
 test/Model/WTQRCodeDesignTest.php
 test/Model/WTQRCodeDesignUpdateParamsTest.php

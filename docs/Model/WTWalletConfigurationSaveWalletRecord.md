@@ -80,5 +80,17 @@ Name | Type | Description | Notes
 **apple_app_store_url** | **mixed** |  | [optional]
 **google_play_store_url** | **mixed** |  | [optional]
 **pass_brand_kit** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordPassBrandKit**](WTWalletConfigurationSaveWalletRecordPassBrandKit.md) |  | [optional]
+**login_logo_url** | **mixed** |  | [optional]
+**login_panel_image_url** | **mixed** |  | [optional]
+**login_headline** | **mixed** |  | [optional]
+**login_subcopy** | **mixed** |  | [optional]
+**login_background_color** | **mixed** |  | [optional]
+**login_background_image_url** | **mixed** |  | [optional]
+**register_url** | **mixed** |  | [optional]
+**login_footer_links** | **mixed** |  | [optional]
+**desktop_frame_logo_url** | **mixed** |  | [optional]
+**desktop_frame_background_color** | **mixed** |  | [optional]
+**desktop_frame_background_image_url** | **mixed** |  | [optional]
+**desktop_frame_byline** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
