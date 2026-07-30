@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.22.2**, built 2026-07-30T18:50:45.466Z
+**Spec version 2.22.2**, built 2026-07-30T22:49:21.391Z
 
 
 ## Installation & Usage
@@ -221,6 +221,8 @@ Class | Method | HTTP request | Description
 *GiftCardsApi* | [**publishCertificateDeal**](docs/Api/GiftCardsApi.md#publishcertificatedeal) | **POST** /giftcards/deals/{dealID}/publish | Publish a certificate deal (put it on sale) Flips a draft deal live so guests can buy certificates from it. Requires the merchant&#39;s Stripe Connect account to be active (charges enabled), since a purchase is a direct charge to that account.
 *GiftCardsApi* | [**purchaseCertificateFromDeal**](docs/Api/GiftCardsApi.md#purchasecertificatefromdeal) | **POST** /giftcards/deals/{dealID}/purchase | Purchase a certificate from a deal Runs the (mock) Connect direct charge of the deal&#39;s discounted sale price to the merchant, then mints a single-use certificate from the deal. Optionally gifts it to a recipient.
 *GiftCardsApi* | [**purchaseGiftCard**](docs/Api/GiftCardsApi.md#purchasegiftcard) | **POST** /giftcards/purchase | Purchase a gift card Runs the (mock) Connect direct charge to the merchant, then issues a funded, reloadable gift card. Optionally gifts it to a recipient. Requires the merchant&#39;s Stripe Connect account to be active (charges enabled).
+*GoogleWalletSubscribersApi* | [**fetchGoogleWalletSubscriberActivity**](docs/Api/GoogleWalletSubscribersApi.md#fetchgooglewalletsubscriberactivity) | **GET** /google/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity Scoped to the caller&#39;s merchant: the subscription must belong to them (tightening the Apple sibling, which does not re-check ownership on this route).
+*GoogleWalletSubscribersApi* | [**fetchGoogleWalletSubscribers**](docs/Api/GoogleWalletSubscribersApi.md#fetchgooglewalletsubscribers) | **GET** /google/wallet/pass/subscribers/all | Get all subscribers
 *HelpDeskApi* | [**fetchHelpDeskRequests**](docs/Api/HelpDeskApi.md#fetchhelpdeskrequests) | **GET** /v2/merchant/helpDeskRequests/{phoneNumberID} | Get help desk requests
 *HelpDeskApi* | [**sendHelpDeskResponse**](docs/Api/HelpDeskApi.md#sendhelpdeskresponse) | **POST** /v2/employee/helpDesk/response | Send help desk response
 *HelpDeskApi* | [**setHelpDeskRequestResolved**](docs/Api/HelpDeskApi.md#sethelpdeskrequestresolved) | **PATCH** /v2/employee/helpDesk/request/{helpDeskRequestID} | Resolve help desk request
