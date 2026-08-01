@@ -13,7 +13,7 @@ and no login, unlocked by one SMS code. This is the official PHP SDK for the Wal
 
 Wallet Inc. API reference.
 
-**Spec version 2.20.2**, built 2026-07-30T23:23:58.408Z
+**Spec version 2.20.2**, built 2026-08-01T08:24:35.176Z
 
 
 ## Installation & Usage
@@ -247,6 +247,7 @@ Class | Method | HTTP request | Description
 *ImportedListsApi* | [**restoreRecipient**](docs/Api/ImportedListsApi.md#restorerecipient) | **PATCH** /v2/sms/importedList/recipients/{id} | Restore recipient
 *ImportedListsApi* | [**saveImportedList**](docs/Api/ImportedListsApi.md#saveimportedlist) | **PUT** /v2/sms/importedList/{listID} | Save imported list
 *IndustriesApi* | [**fetchAllIndustries**](docs/Api/IndustriesApi.md#fetchallindustries) | **GET** /system/industries/all | Get all Industries &amp; Pricing Plans
+*IndustriesApi* | [**fetchFreePlan**](docs/Api/IndustriesApi.md#fetchfreeplan) | **GET** /system/industries/free | Get the free-by-default (Visitor tier) plan
 *IndustriesApi* | [**fetchIndustriesIDs**](docs/Api/IndustriesApi.md#fetchindustriesids) | **GET** /system/industries/trimmed | Get all Industries &amp; Pricing Plans with trimmed metadata
 *InfoGenesisReportsApi* | [**countAdCreditsRedemptions**](docs/Api/InfoGenesisReportsApi.md#countadcreditsredemptions) | **POST** /v2/pos/infogenesis/count/adCredits/redemptions | Count redeemed ad credits
 *InfoGenesisReportsApi* | [**countAdCreditsRefunds**](docs/Api/InfoGenesisReportsApi.md#countadcreditsrefunds) | **POST** /v2/pos/infogenesis/count/adCredits/refunds | Count refunded ad credits
