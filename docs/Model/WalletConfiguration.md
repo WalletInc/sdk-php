@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **header_image_url** | **mixed** |  | [optional]
 **header_custom_icon** | **mixed** |  | [optional]
 **welcome_message** | **mixed** |  |
+**home_template** | **mixed** |  | [optional]
 **is_apple_enabled** | **mixed** |  |
 **is_google_enabled** | **mixed** |  |
 **is_samsung_enabled** | **mixed** |  |
