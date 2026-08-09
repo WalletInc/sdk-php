@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **subscription** | [**\OpenAPI\Client\Model\SubscriptionPlan**](SubscriptionPlan.md) |  |
 **billing_cadence** | [**\OpenAPI\Client\Model\WTBillingVerifyPaymentMethodResponseBillingCadence**](WTBillingVerifyPaymentMethodResponseBillingCadence.md) |  |
 **is_trial_eligible** | **mixed** |  |
+**subscription_status** | **mixed** |  | [optional]
+**trial_end** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
