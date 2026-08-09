@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **messaging_volume_high** | **mixed** |  |
 **job_title** | **mixed** |  |
 **job_position** | [**\OpenAPI\Client\Model\JobPosition**](JobPosition.md) |  |
+**billing_consent** | [**\OpenAPI\Client\Model\A2PBillingConsent**](A2PBillingConsent.md) |  | [optional]
 **business_name** | **mixed** |  |
 **business_type** | [**\OpenAPI\Client\Model\BusinessType**](BusinessType.md) |  |
 **address1** | **mixed** |  |

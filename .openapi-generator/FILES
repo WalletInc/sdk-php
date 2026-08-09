@@ -66,6 +66,7 @@ docs/Api/WalletWebTerminalApi.md
 docs/Api/WixTerminalApi.md
 docs/Api/WooCommerceTerminalApi.md
 docs/Model/A2PApplicationSubmission.md
+docs/Model/A2PBillingConsent.md
 docs/Model/A2PGovernmentSubmission.md
 docs/Model/A2PNonProfitSubmission.md
 docs/Model/A2PPublicSubmission.md
@@ -591,6 +592,7 @@ lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/A2PApplicationSubmission.php
+lib/Model/A2PBillingConsent.php
 lib/Model/A2PGovernmentSubmission.php
 lib/Model/A2PNonProfitSubmission.php
 lib/Model/A2PPublicSubmission.php
@@ -1115,6 +1117,7 @@ test/Api/WalletWebTerminalApiTest.php
 test/Api/WixTerminalApiTest.php
 test/Api/WooCommerceTerminalApiTest.php
 test/Model/A2PApplicationSubmissionTest.php
+test/Model/A2PBillingConsentTest.php
 test/Model/A2PGovernmentSubmissionTest.php
 test/Model/A2PNonProfitSubmissionTest.php
 test/Model/A2PPublicSubmissionTest.php

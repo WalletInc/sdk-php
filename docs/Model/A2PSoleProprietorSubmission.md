@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **first_name** | **mixed** |  |
 **last_name** | **mixed** |  |
 **email** | **mixed** |  |
+**billing_consent** | [**\OpenAPI\Client\Model\A2PBillingConsent**](A2PBillingConsent.md) |  | [optional]
 **business_name** | **mixed** |  |
 **business_type** | [**\OpenAPI\Client\Model\BusinessTypeSoleProprietorship**](BusinessTypeSoleProprietorship.md) |  |
 **address1** | **mixed** |  |

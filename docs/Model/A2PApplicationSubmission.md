@@ -40,5 +40,6 @@ Name | Type | Description | Notes
 **phone_number** | **mixed** |  |
 **brand_contact_email** | **mixed** |  | [optional]
 **verification_mobile** | **mixed** |  | [optional]
+**billing_consent** | [**\OpenAPI\Client\Model\A2PBillingConsent**](A2PBillingConsent.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
