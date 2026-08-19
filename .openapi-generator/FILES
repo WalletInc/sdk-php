@@ -479,6 +479,8 @@ docs/Model/WTSegmentAdvisoryRecommend.md
 docs/Model/WTSegmentEstimate.md
 docs/Model/WTSegmentEstimateEncoding.md
 docs/Model/WTSegmentEstimateRequest.md
+docs/Model/WTSendFreeze.md
+docs/Model/WTSendFreezeStatus.md
 docs/Model/WTServiceCreateParams.md
 docs/Model/WTServiceUpdateParams.md
 docs/Model/WTSettingsSetPassword.md
@@ -1006,6 +1008,8 @@ lib/Model/WTSegmentAdvisoryRecommend.php
 lib/Model/WTSegmentEstimate.php
 lib/Model/WTSegmentEstimateEncoding.php
 lib/Model/WTSegmentEstimateRequest.php
+lib/Model/WTSendFreeze.php
+lib/Model/WTSendFreezeStatus.php
 lib/Model/WTServiceCreateParams.php
 lib/Model/WTServiceUpdateParams.php
 lib/Model/WTSettingsSetPassword.php
@@ -1530,6 +1534,8 @@ test/Model/WTSegmentAdvisoryTest.php
 test/Model/WTSegmentEstimateEncodingTest.php
 test/Model/WTSegmentEstimateRequestTest.php
 test/Model/WTSegmentEstimateTest.php
+test/Model/WTSendFreezeStatusTest.php
+test/Model/WTSendFreezeTest.php
 test/Model/WTServiceCreateParamsTest.php
 test/Model/WTServiceUpdateParamsTest.php
 test/Model/WTSettingsSetPasswordTest.php

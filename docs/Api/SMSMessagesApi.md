@@ -14,6 +14,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchMerchantOutboundSMS()**](SMSMessagesApi.md#fetchMerchantOutboundSMS) | **GET** /v2/merchant/sms/outbound/{phoneNumberID} | Get outbound SMSes |
 | [**fetchOutboundSMS()**](SMSMessagesApi.md#fetchOutboundSMS) | **GET** /v2/sms/outbound/{phoneNumberID} | Get outbound SMS |
 | [**fetchOutboundSMSByPage()**](SMSMessagesApi.md#fetchOutboundSMSByPage) | **GET** /v2/sms/outbound/page/{phoneNumberID} | Get outbound SMSes by page |
+| [**fetchSendFreezeStatus()**](SMSMessagesApi.md#fetchSendFreezeStatus) | **GET** /v2/sms/sendfreeze/status | Get the merchant&#39;s outbound-SMS send-freeze status (KAN-440). |
 | [**retrieveSentAndMaxCountOfMessages()**](SMSMessagesApi.md#retrieveSentAndMaxCountOfMessages) | **GET** /v2/sms/sent | Retrieve the message segments used by the merchant within the current billing cycle |
 
 
@@ -601,6 +602,57 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\FetchOutboundSMSByPage200Response**](../Model/FetchOutboundSMSByPage200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchSendFreezeStatus()`
+
+```php
+fetchSendFreezeStatus(): \OpenAPI\Client\Model\WTSendFreezeStatus
+```
+
+Get the merchant's outbound-SMS send-freeze status (KAN-440).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSMessagesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchSendFreezeStatus();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSMessagesApi->fetchSendFreezeStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTSendFreezeStatus**](../Model/WTSendFreezeStatus.md)
 
 ### Authorization
 
