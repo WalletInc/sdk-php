@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **category** | **mixed** |  |
 **volume** | **mixed** |  | [optional]
 **value** | **mixed** |  | [optional]
+**value_basis** | [**\OpenAPI\Client\Model\SubscriptionProductValueBasis**](SubscriptionProductValueBasis.md) |  | [optional]
 **features** | **mixed** |  |
 **pages** | **mixed** |  |
 **icon_name** | **mixed** |  |

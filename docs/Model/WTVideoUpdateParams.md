@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **description** | **mixed** |  |
 **order_number** | **mixed** |  |
 **additional_info_url** | **mixed** |  | [optional]
+**asset_id** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

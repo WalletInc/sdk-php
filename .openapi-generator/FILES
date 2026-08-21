@@ -310,6 +310,7 @@ docs/Model/SubscriptionFeature.md
 docs/Model/SubscriptionPlan.md
 docs/Model/SubscriptionPlanAnnual.md
 docs/Model/SubscriptionProduct.md
+docs/Model/SubscriptionProductValueBasis.md
 docs/Model/Tcpa.md
 docs/Model/Thread.md
 docs/Model/Ticket.md
@@ -839,6 +840,7 @@ lib/Model/SubscriptionFeature.php
 lib/Model/SubscriptionPlan.php
 lib/Model/SubscriptionPlanAnnual.php
 lib/Model/SubscriptionProduct.php
+lib/Model/SubscriptionProductValueBasis.php
 lib/Model/Tcpa.php
 lib/Model/Thread.php
 lib/Model/Ticket.php
@@ -1365,6 +1367,7 @@ test/Model/SubscriptionFeatureTest.php
 test/Model/SubscriptionPlanAnnualTest.php
 test/Model/SubscriptionPlanTest.php
 test/Model/SubscriptionProductTest.php
+test/Model/SubscriptionProductValueBasisTest.php
 test/Model/TcpaTest.php
 test/Model/ThreadTest.php
 test/Model/TicketSortKeysTest.php
