@@ -485,6 +485,8 @@ docs/Model/WTSendFreezeStatus.md
 docs/Model/WTServiceCreateParams.md
 docs/Model/WTServiceUpdateParams.md
 docs/Model/WTSettingsSetPassword.md
+docs/Model/WTShareActivityReport.md
+docs/Model/WTShareActivityRow.md
 docs/Model/WTSmsSubscriberCreateParams.md
 docs/Model/WTSmsSubscriberCreateParamsWalletUI.md
 docs/Model/WTSmsSubscriberUpdateParams.md
@@ -1015,6 +1017,8 @@ lib/Model/WTSendFreezeStatus.php
 lib/Model/WTServiceCreateParams.php
 lib/Model/WTServiceUpdateParams.php
 lib/Model/WTSettingsSetPassword.php
+lib/Model/WTShareActivityReport.php
+lib/Model/WTShareActivityRow.php
 lib/Model/WTSmsSubscriberCreateParams.php
 lib/Model/WTSmsSubscriberCreateParamsWalletUI.php
 lib/Model/WTSmsSubscriberUpdateParams.php
@@ -1542,6 +1546,8 @@ test/Model/WTSendFreezeTest.php
 test/Model/WTServiceCreateParamsTest.php
 test/Model/WTServiceUpdateParamsTest.php
 test/Model/WTSettingsSetPasswordTest.php
+test/Model/WTShareActivityReportTest.php
+test/Model/WTShareActivityRowTest.php
 test/Model/WTSmsSubscriberCreateParamsTest.php
 test/Model/WTSmsSubscriberCreateParamsWalletUITest.php
 test/Model/WTSmsSubscriberUpdateParamsTest.php
