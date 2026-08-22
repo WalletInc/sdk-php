@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **hear_about_us** | **mixed** |  | [optional]
 **hear_about_us_details** | **mixed** |  | [optional]
 **company_name** | **mixed** |  |
-**merchant_type** | **mixed** |  |
-**street_address1** | **mixed** |  |
-**street_address2** | **mixed** |  |
-**city** | **mixed** |  |
-**state** | **mixed** |  |
-**zip** | **mixed** |  |
-**country** | **mixed** |  |
-**phone_number** | **mixed** |  |
+**merchant_type** | **mixed** |  | [optional]
+**street_address1** | **mixed** |  | [optional]
+**street_address2** | **mixed** |  | [optional]
+**city** | **mixed** |  | [optional]
+**state** | **mixed** |  | [optional]
+**zip** | **mixed** |  | [optional]
+**country** | **mixed** |  | [optional]
+**phone_number** | **mixed** |  | [optional]
 **ein** | **mixed** |  | [optional]
 **ga_client_id** | **mixed** |  | [optional]
 **ga_measurement_id** | **mixed** |  | [optional]
