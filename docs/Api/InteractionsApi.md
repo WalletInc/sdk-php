@@ -7,6 +7,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**claimTicket()**](InteractionsApi.md#claimTicket) | **PUT** /wallet/ticket/claim/{id} | Claim a ticket by ID |
 | [**createAdvertisementCreditScan()**](InteractionsApi.md#createAdvertisementCreditScan) | **POST** /wallet/advertisementCredit/scan/{adCreditID} | Create ad credit scan |
 | [**createEmployeeVCard()**](InteractionsApi.md#createEmployeeVCard) | **GET** /wallet/employee/vcard/{id} | Download a representative&#39;s Virtual Business Card |
+| [**createGuestPaymentIntent()**](InteractionsApi.md#createGuestPaymentIntent) | **POST** /wallet/payments/createIntent | Create a guest checkout PaymentIntent (KAN-802) |
 | [**createIcsFile()**](InteractionsApi.md#createIcsFile) | **GET** /wallet/liveevent/ics/{id} | Get ICS for live event |
 | [**createVirtualBusinessCardVCard()**](InteractionsApi.md#createVirtualBusinessCardVCard) | **GET** /wallet/virtualBusinessCard/vCard/{id} | Download a non-representative&#39;s Virtual Business Card |
 | [**fetchActiveDynamicVouchers()**](InteractionsApi.md#fetchActiveDynamicVouchers) | **GET** /wallet/dyanmicVoucher/fetchActive | Get a merchant&#39;s active dynamic vouchers |
@@ -14,6 +15,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID()**](InteractionsApi.md#fetchAllStaticVouchersAssociatedWithCustomerWithVoucherID) | **GET** /wallet/staticVoucher/all | Get a customer&#39;s static vouchers on the basis of a given voucher ID |
 | [**fetchCustomerTicketsWithToken()**](InteractionsApi.md#fetchCustomerTicketsWithToken) | **POST** /wallet/tickets/fetchCustomerTicketsWithToken | Get a customer&#39;s upcoming tickets via phone verification token |
 | [**fetchDynamicVoucherWithVoucherID()**](InteractionsApi.md#fetchDynamicVoucherWithVoucherID) | **GET** /wallet/dynamicVoucher/{voucherID} | Get dynamic voucher |
+| [**fetchGuestOrder()**](InteractionsApi.md#fetchGuestOrder) | **GET** /wallet/payments/order/{id} | Fetch a guest order receipt (KAN-802) |
 | [**fetchMemberInformation()**](InteractionsApi.md#fetchMemberInformation) | **GET** /wallet/member | Get member information |
 | [**fetchStaticVoucherWithVoucherID()**](InteractionsApi.md#fetchStaticVoucherWithVoucherID) | **GET** /wallet/staticVoucher/{voucherID} | Get static voucher |
 | [**fetchWalletPageWithToken()**](InteractionsApi.md#fetchWalletPageWithToken) | **POST** /wallet/page/token | Get page (token-scoped) |
@@ -183,6 +185,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createGuestPaymentIntent()`
+
+```php
+createGuestPaymentIntent($wt_guest_create_payment_intent_request): \OpenAPI\Client\Model\WTGuestCreatePaymentIntentResponse
+```
+
+Create a guest checkout PaymentIntent (KAN-802)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_guest_create_payment_intent_request = new \OpenAPI\Client\Model\WTGuestCreatePaymentIntentRequest(); // \OpenAPI\Client\Model\WTGuestCreatePaymentIntentRequest
+
+try {
+    $result = $apiInstance->createGuestPaymentIntent($wt_guest_create_payment_intent_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->createGuestPaymentIntent: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_guest_create_payment_intent_request** | [**\OpenAPI\Client\Model\WTGuestCreatePaymentIntentRequest**](../Model/WTGuestCreatePaymentIntentRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTGuestCreatePaymentIntentResponse**](../Model/WTGuestCreatePaymentIntentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -555,6 +611,62 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\DynamicVoucher**](../Model/DynamicVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchGuestOrder()`
+
+```php
+fetchGuestOrder($id, $phone_verification_token): \OpenAPI\Client\Model\WTGuestOrderReceipt
+```
+
+Fetch a guest order receipt (KAN-802)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string
+$phone_verification_token = 'phone_verification_token_example'; // string
+
+try {
+    $result = $apiInstance->fetchGuestOrder($id, $phone_verification_token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->fetchGuestOrder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **phone_verification_token** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTGuestOrderReceipt**](../Model/WTGuestOrderReceipt.md)
 
 ### Authorization
 

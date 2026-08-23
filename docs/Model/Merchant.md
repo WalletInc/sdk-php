@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **industry_name** | **mixed** |  |
 **info_genesis_property_id** | **mixed** |  |
 **is_frozen** | **mixed** |  |
+**is_closed** | **mixed** |  |
 **billing_contact_employee_id** | **mixed** |  |
 **marketing_contact_employee_id** | **mixed** |  |
 **technical_contact_employee_id** | **mixed** |  |

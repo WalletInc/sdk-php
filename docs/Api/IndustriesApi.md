@@ -12,7 +12,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 ## `fetchAllIndustries()`
 
 ```php
-fetchAllIndustries(): \OpenAPI\Client\Model\FetchIndustry200Response[]
+fetchAllIndustries(): \OpenAPI\Client\Model\FetchIndustry200ResponseAnyOf[]
 ```
 
 Get all Industries & Pricing Plans
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\FetchIndustry200Response[]**](../Model/FetchIndustry200Response.md)
+[**\OpenAPI\Client\Model\FetchIndustry200ResponseAnyOf[]**](../Model/FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**runFinancingSoftPull()**](BillingPaymentsApi.md#runFinancingSoftPull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off). |
 | [**savePaymentMethod()**](BillingPaymentsApi.md#savePaymentMethod) | **PUT** /v2/billing/paymentMethod | Save payment method |
 | [**setDefaultPaymentMethod()**](BillingPaymentsApi.md#setDefaultPaymentMethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default |
+| [**setIndustry()**](BillingPaymentsApi.md#setIndustry) | **PUT** /v2/billing/industry | Set merchant&#39;s industry |
 | [**upcomingInvoices()**](BillingPaymentsApi.md#upcomingInvoices) | **GET** /v2/billing/invoices/upcoming | Get upcoming invoices |
 | [**verifyPaymentMethod()**](BillingPaymentsApi.md#verifyPaymentMethod) | **GET** /v2/billing/paymentMethod | Verify payment method |
 
@@ -797,6 +798,60 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\Merchant**](../Model/Merchant.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `setIndustry()`
+
+```php
+setIndustry($wt_billing_set_industry): \OpenAPI\Client\Model\FetchIndustry200ResponseAnyOf
+```
+
+Set merchant's industry
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingPaymentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_billing_set_industry = new \OpenAPI\Client\Model\WTBillingSetIndustry(); // \OpenAPI\Client\Model\WTBillingSetIndustry
+
+try {
+    $result = $apiInstance->setIndustry($wt_billing_set_industry);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingPaymentsApi->setIndustry: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_billing_set_industry** | [**\OpenAPI\Client\Model\WTBillingSetIndustry**](../Model/WTBillingSetIndustry.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\FetchIndustry200ResponseAnyOf**](../Model/FetchIndustry200ResponseAnyOf.md)
 
 ### Authorization
 

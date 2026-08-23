@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**archiveMerchantProfile()**](MerchantApi.md#archiveMerchantProfile) | **DELETE** /v2/merchant/delete | Archive Merchant |
+| [**archiveMerchantProfile()**](MerchantApi.md#archiveMerchantProfile) | **DELETE** /v2/merchant/delete | Terminate (close) the merchant account |
 | [**fetchCustomRoles()**](MerchantApi.md#fetchCustomRoles) | **GET** /v2/merchant/roles/custom | Get custom roles |
 | [**fetchEmployees()**](MerchantApi.md#fetchEmployees) | **GET** /v2/merchant/employees/all | Get all employees |
 | [**fetchPublicEmployees()**](MerchantApi.md#fetchPublicEmployees) | **GET** /v2/merchant/employees/public | Get public representative employees of the merchant |
@@ -20,7 +20,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 archiveMerchantProfile(): mixed
 ```
 
-Archive Merchant
+Terminate (close) the merchant account
 
 ### Example
 

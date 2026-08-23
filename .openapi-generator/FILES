@@ -141,6 +141,8 @@ docs/Model/FetchCustomerTicketsWithTokenRequest.md
 docs/Model/FetchImportedListRecipientsByPage200Response.md
 docs/Model/FetchInboundSMSByPage200Response.md
 docs/Model/FetchIndustry200Response.md
+docs/Model/FetchIndustry200ResponseAnyOf.md
+docs/Model/FetchIndustry200ResponseAnyOf1.md
 docs/Model/FetchMembersCount200Response.md
 docs/Model/FetchOptInListSubscribersByPage200Response.md
 docs/Model/FetchOutboundSMSByPage200Response.md
@@ -344,6 +346,7 @@ docs/Model/WTAuthenticationSSOLoginForDiscourse.md
 docs/Model/WTBillingChangePlan.md
 docs/Model/WTBillingChangePlanBillingCadence.md
 docs/Model/WTBillingSavePaymentMethod.md
+docs/Model/WTBillingSetIndustry.md
 docs/Model/WTBillingVerifyPaymentMethodResponse.md
 docs/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.md
 docs/Model/WTBrandingFooterLink.md
@@ -402,6 +405,10 @@ docs/Model/WTGamingCreateParams.md
 docs/Model/WTGamingUpdateParams.md
 docs/Model/WTGiftCardPurchaseRequest.md
 docs/Model/WTGiftClaimRequest.md
+docs/Model/WTGuestAmountBreakdown.md
+docs/Model/WTGuestCreatePaymentIntentRequest.md
+docs/Model/WTGuestCreatePaymentIntentResponse.md
+docs/Model/WTGuestOrderReceipt.md
 docs/Model/WTImageGridCreateParams.md
 docs/Model/WTImageGridUpdateParams.md
 docs/Model/WTImportConsentBasis.md
@@ -672,6 +679,8 @@ lib/Model/FetchCustomerTicketsWithTokenRequest.php
 lib/Model/FetchImportedListRecipientsByPage200Response.php
 lib/Model/FetchInboundSMSByPage200Response.php
 lib/Model/FetchIndustry200Response.php
+lib/Model/FetchIndustry200ResponseAnyOf.php
+lib/Model/FetchIndustry200ResponseAnyOf1.php
 lib/Model/FetchMembersCount200Response.php
 lib/Model/FetchOptInListSubscribersByPage200Response.php
 lib/Model/FetchOutboundSMSByPage200Response.php
@@ -876,6 +885,7 @@ lib/Model/WTAuthenticationSSOLoginForDiscourse.php
 lib/Model/WTBillingChangePlan.php
 lib/Model/WTBillingChangePlanBillingCadence.php
 lib/Model/WTBillingSavePaymentMethod.php
+lib/Model/WTBillingSetIndustry.php
 lib/Model/WTBillingVerifyPaymentMethodResponse.php
 lib/Model/WTBillingVerifyPaymentMethodResponseBillingCadence.php
 lib/Model/WTBrandingFooterLink.php
@@ -934,6 +944,10 @@ lib/Model/WTGamingCreateParams.php
 lib/Model/WTGamingUpdateParams.php
 lib/Model/WTGiftCardPurchaseRequest.php
 lib/Model/WTGiftClaimRequest.php
+lib/Model/WTGuestAmountBreakdown.php
+lib/Model/WTGuestCreatePaymentIntentRequest.php
+lib/Model/WTGuestCreatePaymentIntentResponse.php
+lib/Model/WTGuestOrderReceipt.php
 lib/Model/WTImageGridCreateParams.php
 lib/Model/WTImageGridUpdateParams.php
 lib/Model/WTImportConsentBasis.php
@@ -1201,6 +1215,8 @@ test/Model/FetchAllStaticVouchersAssociatedWithCustomerWithVoucherID200ResponseI
 test/Model/FetchCustomerTicketsWithTokenRequestTest.php
 test/Model/FetchImportedListRecipientsByPage200ResponseTest.php
 test/Model/FetchInboundSMSByPage200ResponseTest.php
+test/Model/FetchIndustry200ResponseAnyOf1Test.php
+test/Model/FetchIndustry200ResponseAnyOfTest.php
 test/Model/FetchIndustry200ResponseTest.php
 test/Model/FetchMembersCount200ResponseTest.php
 test/Model/FetchOptInListSubscribersByPage200ResponseTest.php
@@ -1405,6 +1421,7 @@ test/Model/WTAuthenticationSSOLoginForDiscourseTest.php
 test/Model/WTBillingChangePlanBillingCadenceTest.php
 test/Model/WTBillingChangePlanTest.php
 test/Model/WTBillingSavePaymentMethodTest.php
+test/Model/WTBillingSetIndustryTest.php
 test/Model/WTBillingVerifyPaymentMethodResponseBillingCadenceTest.php
 test/Model/WTBillingVerifyPaymentMethodResponseTest.php
 test/Model/WTBrandingFooterLinkTest.php
@@ -1463,6 +1480,10 @@ test/Model/WTGamingCreateParamsTest.php
 test/Model/WTGamingUpdateParamsTest.php
 test/Model/WTGiftCardPurchaseRequestTest.php
 test/Model/WTGiftClaimRequestTest.php
+test/Model/WTGuestAmountBreakdownTest.php
+test/Model/WTGuestCreatePaymentIntentRequestTest.php
+test/Model/WTGuestCreatePaymentIntentResponseTest.php
+test/Model/WTGuestOrderReceiptTest.php
 test/Model/WTImageGridCreateParamsTest.php
 test/Model/WTImageGridUpdateParamsTest.php
 test/Model/WTImportConsentBasisTest.php
