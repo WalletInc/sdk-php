@@ -34,5 +34,6 @@ Name | Type | Description | Notes
 **cfuvid** | **mixed** |  | [optional]
 **schedule** | **object** | Construct a type with a set of properties K of type T | [optional]
 **is_email_notification_disabled** | **mixed** |  | [optional]
+**chrome_theme** | [**\OpenAPI\Client\Model\EmployeeChromeTheme**](EmployeeChromeTheme.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -123,6 +123,7 @@ docs/Model/Employee.md
 docs/Model/EmployeeAPIKey.md
 docs/Model/EmployeeActivityLog.md
 docs/Model/EmployeeAlert.md
+docs/Model/EmployeeChromeTheme.md
 docs/Model/EmployeeScheduleStartDay.md
 docs/Model/EmployeeScheduleStartHour.md
 docs/Model/EmployeeScheduleStartMeridiem.md
@@ -318,6 +319,8 @@ docs/Model/Thread.md
 docs/Model/Ticket.md
 docs/Model/TicketSortKeys.md
 docs/Model/TrustBundleStatuses.md
+docs/Model/UpdateChromeThemePreferenceRequest.md
+docs/Model/UpdateChromeThemePreferenceRequestChromeTheme.md
 docs/Model/UpdateEmailNotificationPreferenceRequest.md
 docs/Model/UpdateStaticVoucherCampaignWithVoucher.md
 docs/Model/VSCampaignGeneratedMessage.md
@@ -661,6 +664,7 @@ lib/Model/Employee.php
 lib/Model/EmployeeAPIKey.php
 lib/Model/EmployeeActivityLog.php
 lib/Model/EmployeeAlert.php
+lib/Model/EmployeeChromeTheme.php
 lib/Model/EmployeeScheduleStartDay.php
 lib/Model/EmployeeScheduleStartHour.php
 lib/Model/EmployeeScheduleStartMeridiem.php
@@ -857,6 +861,8 @@ lib/Model/Thread.php
 lib/Model/Ticket.php
 lib/Model/TicketSortKeys.php
 lib/Model/TrustBundleStatuses.php
+lib/Model/UpdateChromeThemePreferenceRequest.php
+lib/Model/UpdateChromeThemePreferenceRequestChromeTheme.php
 lib/Model/UpdateEmailNotificationPreferenceRequest.php
 lib/Model/UpdateStaticVoucherCampaignWithVoucher.php
 lib/Model/VSCampaignGeneratedMessage.php
@@ -1197,6 +1203,7 @@ test/Model/EmailSubscriberTest.php
 test/Model/EmployeeAPIKeyTest.php
 test/Model/EmployeeActivityLogTest.php
 test/Model/EmployeeAlertTest.php
+test/Model/EmployeeChromeThemeTest.php
 test/Model/EmployeeScheduleStartDayTest.php
 test/Model/EmployeeScheduleStartHourTest.php
 test/Model/EmployeeScheduleStartMeridiemTest.php
@@ -1393,6 +1400,8 @@ test/Model/ThreadTest.php
 test/Model/TicketSortKeysTest.php
 test/Model/TicketTest.php
 test/Model/TrustBundleStatusesTest.php
+test/Model/UpdateChromeThemePreferenceRequestChromeThemeTest.php
+test/Model/UpdateChromeThemePreferenceRequestTest.php
 test/Model/UpdateEmailNotificationPreferenceRequestTest.php
 test/Model/UpdateStaticVoucherCampaignWithVoucherTest.php
 test/Model/VSCampaignGeneratedMessagePaginationTest.php

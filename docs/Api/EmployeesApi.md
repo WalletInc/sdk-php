@@ -17,6 +17,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**setAlertsRead()**](EmployeesApi.md#setAlertsRead) | **PATCH** /v2/employee/alerts | Mark alerts as read |
 | [**setMessagesRead()**](EmployeesApi.md#setMessagesRead) | **PATCH** /v2/employee/messages | Mark messages as read |
 | [**setProfilePicture()**](EmployeesApi.md#setProfilePicture) | **PUT** /v2/employee/profile/picture | Set profile picture |
+| [**updateChromeThemePreference()**](EmployeesApi.md#updateChromeThemePreference) | **PUT** /v2/employee/chromeThemePreference | Sets the employee&#39;s admin-portal chrome theme (light/dark), synced across devices (KAN-846) |
 | [**updateEmailNotificationPreference()**](EmployeesApi.md#updateEmailNotificationPreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled |
 | [**updateEmployeePeer()**](EmployeesApi.md#updateEmployeePeer) | **PUT** /v2/employee/peer/{userID} | Update peer |
 
@@ -695,6 +696,60 @@ try {
 ### Return type
 
 **string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateChromeThemePreference()`
+
+```php
+updateChromeThemePreference($update_chrome_theme_preference_request): \OpenAPI\Client\Model\Employee
+```
+
+Sets the employee's admin-portal chrome theme (light/dark), synced across devices (KAN-846)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$update_chrome_theme_preference_request = new \OpenAPI\Client\Model\UpdateChromeThemePreferenceRequest(); // \OpenAPI\Client\Model\UpdateChromeThemePreferenceRequest
+
+try {
+    $result = $apiInstance->updateChromeThemePreference($update_chrome_theme_preference_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployeesApi->updateChromeThemePreference: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **update_chrome_theme_preference_request** | [**\OpenAPI\Client\Model\UpdateChromeThemePreferenceRequest**](../Model/UpdateChromeThemePreferenceRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Employee**](../Model/Employee.md)
 
 ### Authorization
 
