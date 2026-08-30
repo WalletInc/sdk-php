@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **you_tube** | **mixed** |  | [optional]
 **twitter** | **mixed** |  | [optional]
 **linked_in** | **mixed** |  | [optional]
+**tik_tok** | **mixed** |  | [optional]
 **whats_app** | **mixed** |  | [optional]
 **avatar_url** | **mixed** |  | [optional]
 **id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |

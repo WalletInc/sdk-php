@@ -6,7 +6,6 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**login()**](AuthenticationApi.md#login) | **POST** /authentication/login | Login |
 | [**loginStatus()**](AuthenticationApi.md#loginStatus) | **GET** /authentication/status/{token} | Retrieve session token status |
-| [**logout()**](AuthenticationApi.md#logout) | **DELETE** /authentication/logout | Logout |
 | [**register()**](AuthenticationApi.md#register) | **POST** /authentication/register | Register |
 
 
@@ -104,57 +103,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\LoginStatus200Response**](../Model/LoginStatus200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `logout()`
-
-```php
-logout(): string
-```
-
-Logout
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\AuthenticationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->logout();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AuthenticationApi->logout: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**string**
 
 ### Authorization
 

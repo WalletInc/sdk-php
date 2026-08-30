@@ -6,6 +6,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**fetchOrder()**](OrdersApi.md#fetchOrder) | **GET** /orders/{orderId} | Fetch one of the authenticated merchant&#39;s orders by id Returns the order with its line items. 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
 | [**listOrders()**](OrdersApi.md#listOrders) | **GET** /orders | List the authenticated merchant&#39;s orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B. |
+| [**redactOrderDonorNote()**](OrdersApi.md#redactOrderDonorNote) | **POST** /orders/{orderId}/donor-note/redact | Redact (soft-delete) the donor note on one of the authenticated merchant&#39;s orders KAN-862 takedown path: hides a guest-supplied tip / donation note from every surface. The original text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no \&quot;[redacted]\&quot; placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op). 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
 
 
 ## `fetchOrder()`
@@ -99,6 +100,60 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\OpenAPI\Client\Model\WTOrder[]**](../Model/WTOrder.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `redactOrderDonorNote()`
+
+```php
+redactOrderDonorNote($order_id): \OpenAPI\Client\Model\WTOrder
+```
+
+Redact (soft-delete) the donor note on one of the authenticated merchant's orders KAN-862 takedown path: hides a guest-supplied tip / donation note from every surface. The original text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no \"[redacted]\" placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op). 403-family error if the order belongs to another merchant (ownership is asserted server-side).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\OrdersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$order_id = 'order_id_example'; // string
+
+try {
+    $result = $apiInstance->redactOrderDonorNote($order_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->redactOrderDonorNote: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_id** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTOrder**](../Model/WTOrder.md)
 
 ### Authorization
 

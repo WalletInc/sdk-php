@@ -9,6 +9,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllMerchantURLs()**](ShortLinksApi.md#fetchAllMerchantURLs) | **GET** /v2/business/merchantUrl/all | Get all Short Links |
 | [**fetchMerchantURL()**](ShortLinksApi.md#fetchMerchantURL) | **GET** /v2/business/merchantUrl/{id} | Get Short Link |
 | [**fetchMerchantURLRequests()**](ShortLinksApi.md#fetchMerchantURLRequests) | **GET** /v2/business/merchantUrl/requests/{id} | Get Short Link traffic |
+| [**fetchMerchantURLRequestsPaged()**](ShortLinksApi.md#fetchMerchantURLRequestsPaged) | **GET** /business/merchantUrl/requests/{id}/paged | Get Short Link traffic (paginated) |
 | [**restoreMerchantURL()**](ShortLinksApi.md#restoreMerchantURL) | **PATCH** /v2/business/merchantUrl/{id} | Restore Short Link |
 | [**updateMerchantURL()**](ShortLinksApi.md#updateMerchantURL) | **PUT** /v2/business/merchantUrl/{id} | Update Short Link |
 
@@ -269,6 +270,64 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WalletPageView[]**](../Model/WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchMerchantURLRequestsPaged()`
+
+```php
+fetchMerchantURLRequestsPaged($id, $page, $limit): \OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response
+```
+
+Get Short Link traffic (paginated)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\ShortLinksApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string
+$page = 3.4; // float
+$limit = 3.4; // float
+
+try {
+    $result = $apiInstance->fetchMerchantURLRequestsPaged($id, $page, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ShortLinksApi->fetchMerchantURLRequestsPaged: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **page** | **float**|  | [optional] |
+| **limit** | **float**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response**](../Model/FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

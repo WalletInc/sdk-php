@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_archive_included** | **mixed** | Denotes if archived records should be included in the response payload | [optional]
-**page_size** | **mixed** | Denotes the number of records per page | [optional]
 **page_num** | **mixed** | Denotes the page number | [optional]
+**page_size** | **mixed** | Denotes the number of records per page | [optional]
 **sort_order** | [**\OpenAPI\Client\Model\PaginationRequestWithSortOptionsSortOrder**](PaginationRequestWithSortOptionsSortOrder.md) |  | [optional]
 **sort_key** | [**\OpenAPI\Client\Model\MemberSearchSortKey**](MemberSearchSortKey.md) |  | [optional]
 **search_key** | [**\OpenAPI\Client\Model\MemberSearchSearchKey**](MemberSearchSearchKey.md) |  |

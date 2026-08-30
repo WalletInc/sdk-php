@@ -6,6 +6,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | ------------- | ------------- | ------------- |
 | [**fetchActiveVouchers()**](CustomerApi.md#fetchActiveVouchers) | **GET** /v2/customer/vouchers/active | Get active static vouchers |
 | [**fetchAllVouchers()**](CustomerApi.md#fetchAllVouchers) | **GET** /v2/customer/vouchers/all | Get all static vouchers |
+| [**fetchCustomerByChatIdentity()**](CustomerApi.md#fetchCustomerByChatIdentity) | **GET** /customer/chatIdentity/{chatUserID} | Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator&#39;s own merchant. The guest phone number is resolved server-side and never travels to the chat processor. |
 | [**fetchExpiredVouchers()**](CustomerApi.md#fetchExpiredVouchers) | **GET** /v2/customer/vouchers/expired | Get expired static vouchers |
 | [**fetchRedeemedVouchers()**](CustomerApi.md#fetchRedeemedVouchers) | **GET** /v2/customer/vouchers/redeemed | Get redeemed static vouchers |
 | [**fetchRefundedVouchers()**](CustomerApi.md#fetchRefundedVouchers) | **GET** /v2/customer/vouchers/refunded | Get refunded static vouchers |
@@ -113,6 +114,60 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\StaticVoucher[]**](../Model/StaticVoucher.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchCustomerByChatIdentity()`
+
+```php
+fetchCustomerByChatIdentity($chat_user_id): mixed
+```
+
+Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$chat_user_id = 'chat_user_id_example'; // string
+
+try {
+    $result = $apiInstance->fetchCustomerByChatIdentity($chat_user_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->fetchCustomerByChatIdentity: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chat_user_id** | **string**|  | |
+
+### Return type
+
+**mixed**
 
 ### Authorization
 

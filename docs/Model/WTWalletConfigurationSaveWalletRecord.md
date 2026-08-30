@@ -42,6 +42,8 @@ Name | Type | Description | Notes
 **is_dining** | **mixed** |  |
 **is_lounges** | **mixed** |  |
 **is_map_directions** | **mixed** |  |
+**is_donation_enabled** | **mixed** |  |
+**donation_label** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordDonationLabel**](WTWalletConfigurationSaveWalletRecordDonationLabel.md) |  | [optional]
 **is_link_book** | **mixed** |  |
 **is_image_grid** | **mixed** |  |
 **is_videos** | **mixed** |  |
@@ -70,6 +72,7 @@ Name | Type | Description | Notes
 **social_you_tube_url** | **mixed** |  | [optional]
 **social_twitter_url** | **mixed** |  | [optional]
 **social_linked_in_url** | **mixed** |  | [optional]
+**social_tik_tok_url** | **mixed** |  | [optional]
 **social_background_color** | **mixed** |  | [optional]
 **social_font_color** | **mixed** |  | [optional]
 **primary_phone_number** | **mixed** |  | [optional]

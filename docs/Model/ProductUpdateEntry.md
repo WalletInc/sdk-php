@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **items** | **mixed** |  |
 **published_at** | **string** |  |
 **content_status** | [**\OpenAPI\Client\Model\ContentStatus**](ContentStatus.md) |  | [optional]
+**story** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

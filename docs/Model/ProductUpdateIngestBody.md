@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **title** | **mixed** | Merchant-facing headline for the release. |
 **items** | **mixed** | The release-note bullets, already split by the caller. |
 **published_at** | **mixed** | ISO 8601. Optional; defaults to the ingest time. | [optional]
+**story** | **mixed** | KAN-874: optional merchant-facing story/narrative for this release (\&quot;what this means for you\&quot;), so What&#39;s New can arrive curated at write time. Optional and content-only: it does NOT affect the hold/ready publish gate (entries still default to hold until Marketing curates them). | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
