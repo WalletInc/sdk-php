@@ -131,7 +131,7 @@ No authorization required
 ## `fetchCustomerByChatIdentity()`
 
 ```php
-fetchCustomerByChatIdentity($chat_user_id): mixed
+fetchCustomerByChatIdentity($chat_user_id, $identity_only): mixed
 ```
 
 Resolve a chat identity to its customer Resolves an opaque chatUserID (a CustomerChatIdentity id) to the same customer payload that POST /v2/customer/search/phoneNumber returns, scoped to the operator's own merchant. The guest phone number is resolved server-side and never travels to the chat processor.
@@ -150,9 +150,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomerApi(
     new GuzzleHttp\Client()
 );
 $chat_user_id = 'chat_user_id_example'; // string
+$identity_only = True; // bool
 
 try {
-    $result = $apiInstance->fetchCustomerByChatIdentity($chat_user_id);
+    $result = $apiInstance->fetchCustomerByChatIdentity($chat_user_id, $identity_only);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->fetchCustomerByChatIdentity: ', $e->getMessage(), PHP_EOL;
@@ -164,6 +165,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **chat_user_id** | **string**|  | |
+| **identity_only** | **bool**|  | [optional] |
 
 ### Return type
 
