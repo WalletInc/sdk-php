@@ -20,6 +20,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**updateChromeThemePreference()**](EmployeesApi.md#updateChromeThemePreference) | **PUT** /v2/employee/chromeThemePreference | Sets the employee&#39;s admin-portal chrome theme (light/dark), synced across devices (KAN-846) |
 | [**updateEmailNotificationPreference()**](EmployeesApi.md#updateEmailNotificationPreference) | **PUT** /v2/employee/emailNotificationPreference | Changes the employee&#39;s email notification preference to enabled or disabled |
 | [**updateEmployeePeer()**](EmployeesApi.md#updateEmployeePeer) | **PUT** /v2/employee/peer/{userID} | Update peer |
+| [**updatePageTipsPreference()**](EmployeesApi.md#updatePageTipsPreference) | **PUT** /v2/employee/pageTipsPreference | Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963) |
 
 
 ## `addPeerToRoles()`
@@ -856,6 +857,60 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **user_id** | **string**|  | |
 | **wt_employee_update** | [**\OpenAPI\Client\Model\WTEmployeeUpdate**](../Model/WTEmployeeUpdate.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Employee**](../Model/Employee.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updatePageTipsPreference()`
+
+```php
+updatePageTipsPreference($update_page_tips_preference_request): \OpenAPI\Client\Model\Employee
+```
+
+Turns the admin-portal page tips bar on or off for this employee, synced across devices (KAN-963)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\EmployeesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$update_page_tips_preference_request = new \OpenAPI\Client\Model\UpdatePageTipsPreferenceRequest(); // \OpenAPI\Client\Model\UpdatePageTipsPreferenceRequest
+
+try {
+    $result = $apiInstance->updatePageTipsPreference($update_page_tips_preference_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployeesApi->updatePageTipsPreference: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **update_page_tips_preference_request** | [**\OpenAPI\Client\Model\UpdatePageTipsPreferenceRequest**](../Model/UpdatePageTipsPreferenceRequest.md)|  | |
 
 ### Return type
 

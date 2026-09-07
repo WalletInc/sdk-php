@@ -324,6 +324,7 @@ docs/Model/TrustBundleStatuses.md
 docs/Model/UpdateChromeThemePreferenceRequest.md
 docs/Model/UpdateChromeThemePreferenceRequestChromeTheme.md
 docs/Model/UpdateEmailNotificationPreferenceRequest.md
+docs/Model/UpdatePageTipsPreferenceRequest.md
 docs/Model/UpdateStaticVoucherCampaignWithVoucher.md
 docs/Model/VSCampaignGeneratedMessage.md
 docs/Model/VSCampaignGeneratedMessagePagination.md
@@ -885,6 +886,7 @@ lib/Model/TrustBundleStatuses.php
 lib/Model/UpdateChromeThemePreferenceRequest.php
 lib/Model/UpdateChromeThemePreferenceRequestChromeTheme.php
 lib/Model/UpdateEmailNotificationPreferenceRequest.php
+lib/Model/UpdatePageTipsPreferenceRequest.php
 lib/Model/UpdateStaticVoucherCampaignWithVoucher.php
 lib/Model/VSCampaignGeneratedMessage.php
 lib/Model/VSCampaignGeneratedMessagePagination.php
@@ -1443,6 +1445,7 @@ test/Model/TrustBundleStatusesTest.php
 test/Model/UpdateChromeThemePreferenceRequestChromeThemeTest.php
 test/Model/UpdateChromeThemePreferenceRequestTest.php
 test/Model/UpdateEmailNotificationPreferenceRequestTest.php
+test/Model/UpdatePageTipsPreferenceRequestTest.php
 test/Model/UpdateStaticVoucherCampaignWithVoucherTest.php
 test/Model/VSCampaignGeneratedMessagePaginationTest.php
 test/Model/VSCampaignGeneratedMessageTest.php
