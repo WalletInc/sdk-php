@@ -22,7 +22,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**subscribersEmailOptIn()**](DefaultApi.md#subscribersEmailOptIn) | **POST** /Subscribers.Email.opt_in |  |
 | [**subscribersSMSDefaultOptIn()**](DefaultApi.md#subscribersSMSDefaultOptIn) | **POST** /Subscribers.SMS.default_opt_in |  |
 | [**subscribersSMSKeywordOptIn()**](DefaultApi.md#subscribersSMSKeywordOptIn) | **POST** /Subscribers.SMS.keyword_opt_in |  |
-| [**visitorsAuthentiationSuccess()**](DefaultApi.md#visitorsAuthentiationSuccess) | **POST** /Visitors.Authentiation.success |  |
+| [**visitorsAuthenticationSuccess()**](DefaultApi.md#visitorsAuthenticationSuccess) | **POST** /Visitors.Authentication.success |  |
 | [**visitorsBusinessCardDownloaded()**](DefaultApi.md#visitorsBusinessCardDownloaded) | **POST** /Visitors.BusinessCard.downloaded |  |
 | [**visitorsCalendarEventDownloaded()**](DefaultApi.md#visitorsCalendarEventDownloaded) | **POST** /Visitors.CalendarEvent.downloaded |  |
 | [**walletPlatformAddOnPurchased()**](DefaultApi.md#walletPlatformAddOnPurchased) | **POST** /WalletPlatform.AddOn.purchased |  |
@@ -1023,10 +1023,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `visitorsAuthentiationSuccess()`
+## `visitorsAuthenticationSuccess()`
 
 ```php
-visitorsAuthentiationSuccess()
+visitorsAuthenticationSuccess()
 ```
 
 
@@ -1048,9 +1048,9 @@ $apiInstance = new OpenAPI\Client\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->visitorsAuthentiationSuccess();
+    $apiInstance->visitorsAuthenticationSuccess();
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->visitorsAuthentiationSuccess: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->visitorsAuthenticationSuccess: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
