@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **country** | **mixed** |  | [optional]
 **phone_number** | **mixed** |  | [optional]
 **ein** | **mixed** |  | [optional]
+**accepted_terms_version** | **mixed** |  | [optional]
+**accepted_privacy_version** | **mixed** |  | [optional]
 **utm_source** | **mixed** |  | [optional]
 **utm_medium** | **mixed** |  | [optional]
 **utm_term** | **mixed** |  | [optional]
