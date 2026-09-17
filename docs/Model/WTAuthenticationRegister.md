@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **landing_page** | **mixed** |  | [optional]
 **ga_client_id** | **mixed** |  | [optional]
 **ga_measurement_id** | **mixed** |  | [optional]
+**ads_consent_declined** | **mixed** |  | [optional]
 **recaptcha_token** | **mixed** |  | [optional]
 **affiliate_id** | **mixed** |  | [optional]
 **first_promoter_tracking_id** | **mixed** |  | [optional]
