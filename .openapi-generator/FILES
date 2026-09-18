@@ -341,6 +341,7 @@ docs/Model/WTAdvertisementCreditUpdateParams.md
 docs/Model/WTAmenityCreateParams.md
 docs/Model/WTAmenityUpdateParams.md
 docs/Model/WTAndroidKeystoreResponse.md
+docs/Model/WTApplePassStyle.md
 docs/Model/WTAuthenticationCheckSessionTokenStatusResponse.md
 docs/Model/WTAuthenticationForgotPassword.md
 docs/Model/WTAuthenticationLoginRequest.md
@@ -411,6 +412,7 @@ docs/Model/WTGamingCreateParams.md
 docs/Model/WTGamingUpdateParams.md
 docs/Model/WTGiftCardPurchaseRequest.md
 docs/Model/WTGiftClaimRequest.md
+docs/Model/WTGooglePassStyle.md
 docs/Model/WTGuestAmountBreakdown.md
 docs/Model/WTGuestCreatePaymentIntentRequest.md
 docs/Model/WTGuestCreatePaymentIntentResponse.md
@@ -460,6 +462,11 @@ docs/Model/WTOptInListCreationParams.md
 docs/Model/WTOrder.md
 docs/Model/WTOrderLineItem.md
 docs/Model/WTPassBrandKit.md
+docs/Model/WTPassStyleResponse.md
+docs/Model/WTPassStyleResponseApple.md
+docs/Model/WTPassStyleResponseGoogle.md
+docs/Model/WTPassStyleResponseProviders.md
+docs/Model/WTPassStyleResponseProvidersApple.md
 docs/Model/WTPaymentDesign.md
 docs/Model/WTPaymentDesignCreateParams.md
 docs/Model/WTPaymentDesignUpdateParams.md
@@ -546,7 +553,9 @@ docs/Model/WTVideoUploadProvisionProvider.md
 docs/Model/WTVirtualBusinessCardCreateParams.md
 docs/Model/WTVirtualBusinessCardUpdateParams.md
 docs/Model/WTWalletConfigurationSaveWalletRecord.md
+docs/Model/WTWalletConfigurationSaveWalletRecordApplePassStyle.md
 docs/Model/WTWalletConfigurationSaveWalletRecordDonationLabel.md
+docs/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyle.md
 docs/Model/WTWalletConfigurationSaveWalletRecordPassBrandKit.md
 docs/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md
 docs/Model/WTWalletItemRedemption.md
@@ -554,6 +563,7 @@ docs/Model/WTWalletObjectPrefixCounts.md
 docs/Model/WTWalletPageView.md
 docs/Model/WTWalletPageViewCount.md
 docs/Model/WTWalletPageViewGeoPoint.md
+docs/Model/WTWalletPassProvider.md
 docs/Model/WTWhatsAppInboundWebhook.md
 docs/Model/WTWhatsAppStatusCallback.md
 docs/Model/WalletConfiguration.md
@@ -903,6 +913,7 @@ lib/Model/WTAdvertisementCreditUpdateParams.php
 lib/Model/WTAmenityCreateParams.php
 lib/Model/WTAmenityUpdateParams.php
 lib/Model/WTAndroidKeystoreResponse.php
+lib/Model/WTApplePassStyle.php
 lib/Model/WTAuthenticationCheckSessionTokenStatusResponse.php
 lib/Model/WTAuthenticationForgotPassword.php
 lib/Model/WTAuthenticationLoginRequest.php
@@ -973,6 +984,7 @@ lib/Model/WTGamingCreateParams.php
 lib/Model/WTGamingUpdateParams.php
 lib/Model/WTGiftCardPurchaseRequest.php
 lib/Model/WTGiftClaimRequest.php
+lib/Model/WTGooglePassStyle.php
 lib/Model/WTGuestAmountBreakdown.php
 lib/Model/WTGuestCreatePaymentIntentRequest.php
 lib/Model/WTGuestCreatePaymentIntentResponse.php
@@ -1022,6 +1034,11 @@ lib/Model/WTOptInListCreationParams.php
 lib/Model/WTOrder.php
 lib/Model/WTOrderLineItem.php
 lib/Model/WTPassBrandKit.php
+lib/Model/WTPassStyleResponse.php
+lib/Model/WTPassStyleResponseApple.php
+lib/Model/WTPassStyleResponseGoogle.php
+lib/Model/WTPassStyleResponseProviders.php
+lib/Model/WTPassStyleResponseProvidersApple.php
 lib/Model/WTPaymentDesign.php
 lib/Model/WTPaymentDesignCreateParams.php
 lib/Model/WTPaymentDesignUpdateParams.php
@@ -1108,7 +1125,9 @@ lib/Model/WTVideoUploadProvisionProvider.php
 lib/Model/WTVirtualBusinessCardCreateParams.php
 lib/Model/WTVirtualBusinessCardUpdateParams.php
 lib/Model/WTWalletConfigurationSaveWalletRecord.php
+lib/Model/WTWalletConfigurationSaveWalletRecordApplePassStyle.php
 lib/Model/WTWalletConfigurationSaveWalletRecordDonationLabel.php
+lib/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyle.php
 lib/Model/WTWalletConfigurationSaveWalletRecordPassBrandKit.php
 lib/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.php
 lib/Model/WTWalletItemRedemption.php
@@ -1116,6 +1135,7 @@ lib/Model/WTWalletObjectPrefixCounts.php
 lib/Model/WTWalletPageView.php
 lib/Model/WTWalletPageViewCount.php
 lib/Model/WTWalletPageViewGeoPoint.php
+lib/Model/WTWalletPassProvider.php
 lib/Model/WTWhatsAppInboundWebhook.php
 lib/Model/WTWhatsAppStatusCallback.php
 lib/Model/WalletConfiguration.php
@@ -1462,6 +1482,7 @@ test/Model/WTAdvertisementCreditUpdateParamsTest.php
 test/Model/WTAmenityCreateParamsTest.php
 test/Model/WTAmenityUpdateParamsTest.php
 test/Model/WTAndroidKeystoreResponseTest.php
+test/Model/WTApplePassStyleTest.php
 test/Model/WTAuthenticationCheckSessionTokenStatusResponseTest.php
 test/Model/WTAuthenticationForgotPasswordTest.php
 test/Model/WTAuthenticationLoginRequestTest.php
@@ -1532,6 +1553,7 @@ test/Model/WTGamingCreateParamsTest.php
 test/Model/WTGamingUpdateParamsTest.php
 test/Model/WTGiftCardPurchaseRequestTest.php
 test/Model/WTGiftClaimRequestTest.php
+test/Model/WTGooglePassStyleTest.php
 test/Model/WTGuestAmountBreakdownTest.php
 test/Model/WTGuestCreatePaymentIntentRequestTest.php
 test/Model/WTGuestCreatePaymentIntentResponseTest.php
@@ -1581,6 +1603,11 @@ test/Model/WTOptInListTest.php
 test/Model/WTOrderLineItemTest.php
 test/Model/WTOrderTest.php
 test/Model/WTPassBrandKitTest.php
+test/Model/WTPassStyleResponseAppleTest.php
+test/Model/WTPassStyleResponseGoogleTest.php
+test/Model/WTPassStyleResponseProvidersAppleTest.php
+test/Model/WTPassStyleResponseProvidersTest.php
+test/Model/WTPassStyleResponseTest.php
 test/Model/WTPaymentDesignCreateParamsTest.php
 test/Model/WTPaymentDesignTest.php
 test/Model/WTPaymentDesignUpdateParamsTest.php
@@ -1666,7 +1693,9 @@ test/Model/WTVideoUploadProvisionProviderTest.php
 test/Model/WTVideoUploadProvisionTest.php
 test/Model/WTVirtualBusinessCardCreateParamsTest.php
 test/Model/WTVirtualBusinessCardUpdateParamsTest.php
+test/Model/WTWalletConfigurationSaveWalletRecordApplePassStyleTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordDonationLabelTest.php
+test/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyleTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordPassBrandKitTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceIDTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordTest.php
@@ -1675,6 +1704,7 @@ test/Model/WTWalletObjectPrefixCountsTest.php
 test/Model/WTWalletPageViewCountTest.php
 test/Model/WTWalletPageViewGeoPointTest.php
 test/Model/WTWalletPageViewTest.php
+test/Model/WTWalletPassProviderTest.php
 test/Model/WTWhatsAppInboundWebhookTest.php
 test/Model/WTWhatsAppStatusCallbackTest.php
 test/Model/WalletConfigurationTest.php
