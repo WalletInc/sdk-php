@@ -196,6 +196,7 @@ docs/Model/MemberSearchSortKey.md
 docs/Model/Merchant.md
 docs/Model/MerchantCreditSearch.md
 docs/Model/MerchantNotInitialized.md
+docs/Model/MerchantTermsDocumentType.md
 docs/Model/MerchantURL.md
 docs/Model/Message.md
 docs/Model/ModuleError.md
@@ -370,6 +371,7 @@ docs/Model/WTConnectPaymentsSummary.md
 docs/Model/WTConnectPaymentsSummaryBalance.md
 docs/Model/WTConnectRequirements.md
 docs/Model/WTCountResult.md
+docs/Model/WTCurrentMerchantTermsVersion.md
 docs/Model/WTCustomerSearchByMemberID.md
 docs/Model/WTCustomerSearchByPhoneNumber.md
 docs/Model/WTDiningCreateParams.md
@@ -767,6 +769,7 @@ lib/Model/MemberSearchSortKey.php
 lib/Model/Merchant.php
 lib/Model/MerchantCreditSearch.php
 lib/Model/MerchantNotInitialized.php
+lib/Model/MerchantTermsDocumentType.php
 lib/Model/MerchantURL.php
 lib/Model/Message.php
 lib/Model/ModelInterface.php
@@ -942,6 +945,7 @@ lib/Model/WTConnectPaymentsSummary.php
 lib/Model/WTConnectPaymentsSummaryBalance.php
 lib/Model/WTConnectRequirements.php
 lib/Model/WTCountResult.php
+lib/Model/WTCurrentMerchantTermsVersion.php
 lib/Model/WTCustomerSearchByMemberID.php
 lib/Model/WTCustomerSearchByPhoneNumber.php
 lib/Model/WTDiningCreateParams.php
@@ -1336,6 +1340,7 @@ test/Model/MemberSearchTest.php
 test/Model/MemberTest.php
 test/Model/MerchantCreditSearchTest.php
 test/Model/MerchantNotInitializedTest.php
+test/Model/MerchantTermsDocumentTypeTest.php
 test/Model/MerchantTest.php
 test/Model/MerchantURLTest.php
 test/Model/MessageTest.php
@@ -1511,6 +1516,7 @@ test/Model/WTConnectPaymentsSummaryBalanceTest.php
 test/Model/WTConnectPaymentsSummaryTest.php
 test/Model/WTConnectRequirementsTest.php
 test/Model/WTCountResultTest.php
+test/Model/WTCurrentMerchantTermsVersionTest.php
 test/Model/WTCustomerSearchByMemberIDTest.php
 test/Model/WTCustomerSearchByPhoneNumberTest.php
 test/Model/WTDiningCreateParamsTest.php
