@@ -4,56 +4,56 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**header_background_color** | **mixed** |  |
-**header_button_color** | **mixed** |  |
-**left_menu_header_background_color** | **mixed** |  |
-**left_menu_header_font_color** | **mixed** |  |
-**left_menu_section_background_color** | **mixed** |  |
-**left_menu_section_font_color** | **mixed** |  |
-**company_logo_url** | **mixed** |  |
+**header_background_color** | **mixed** |  | [optional]
+**header_button_color** | **mixed** |  | [optional]
+**left_menu_header_background_color** | **mixed** |  | [optional]
+**left_menu_header_font_color** | **mixed** |  | [optional]
+**left_menu_section_background_color** | **mixed** |  | [optional]
+**left_menu_section_font_color** | **mixed** |  | [optional]
+**company_logo_url** | **mixed** |  | [optional]
 **header_image_url** | **mixed** |  | [optional]
 **header_custom_icon** | **mixed** |  | [optional]
-**welcome_message** | **mixed** |  |
+**welcome_message** | **mixed** |  | [optional]
 **home_template** | **mixed** |  | [optional]
-**is_apple_enabled** | **mixed** |  |
-**is_google_enabled** | **mixed** |  |
-**is_samsung_enabled** | **mixed** |  |
-**is_ad_credits** | **mixed** |  |
-**is_static_vouchers** | **mixed** |  |
-**is_dynamic_vouchers** | **mixed** |  |
-**is_membership_tier** | **mixed** |  |
-**is_membership_points** | **mixed** |  |
-**is_membership_level** | **mixed** |  |
-**is_gift_cards** | **mixed** |  |
-**is_gift_certificates** | **mixed** |  |
-**is_promotions** | **mixed** |  |
-**is_merchant_credit** | **mixed** |  |
+**is_apple_enabled** | **mixed** |  | [optional]
+**is_google_enabled** | **mixed** |  | [optional]
+**is_samsung_enabled** | **mixed** |  | [optional]
+**is_ad_credits** | **mixed** |  | [optional]
+**is_static_vouchers** | **mixed** |  | [optional]
+**is_dynamic_vouchers** | **mixed** |  | [optional]
+**is_membership_tier** | **mixed** |  | [optional]
+**is_membership_points** | **mixed** |  | [optional]
+**is_membership_level** | **mixed** |  | [optional]
+**is_gift_cards** | **mixed** |  | [optional]
+**is_gift_certificates** | **mixed** |  | [optional]
+**is_promotions** | **mixed** |  | [optional]
+**is_merchant_credit** | **mixed** |  | [optional]
 **is_tickets** | **mixed** |  | [optional]
-**is_news_articles** | **mixed** |  |
-**is_performances** | **mixed** |  |
-**is_messages** | **mixed** |  |
-**is_call** | **mixed** |  |
-**is_representatives** | **mixed** |  |
-**is_products** | **mixed** |  |
-**is_services** | **mixed** |  |
-**is_room_rates** | **mixed** |  |
-**is_amenities** | **mixed** |  |
-**is_gaming** | **mixed** |  |
-**is_dining** | **mixed** |  |
-**is_lounges** | **mixed** |  |
-**is_map_directions** | **mixed** |  |
-**is_donation_enabled** | **mixed** |  |
+**is_news_articles** | **mixed** |  | [optional]
+**is_performances** | **mixed** |  | [optional]
+**is_messages** | **mixed** |  | [optional]
+**is_call** | **mixed** |  | [optional]
+**is_representatives** | **mixed** |  | [optional]
+**is_products** | **mixed** |  | [optional]
+**is_services** | **mixed** |  | [optional]
+**is_room_rates** | **mixed** |  | [optional]
+**is_amenities** | **mixed** |  | [optional]
+**is_gaming** | **mixed** |  | [optional]
+**is_dining** | **mixed** |  | [optional]
+**is_lounges** | **mixed** |  | [optional]
+**is_map_directions** | **mixed** |  | [optional]
+**is_donation_enabled** | **mixed** |  | [optional]
 **donation_label** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordDonationLabel**](WTWalletConfigurationSaveWalletRecordDonationLabel.md) |  | [optional]
-**is_link_book** | **mixed** |  |
-**is_image_grid** | **mixed** |  |
-**is_videos** | **mixed** |  |
-**is_transaction_history** | **mixed** |  |
-**is_profile** | **mixed** |  |
-**is_settings** | **mixed** |  |
-**is_chat_room** | **mixed** |  |
-**is_sms_opt_in** | **mixed** |  |
+**is_link_book** | **mixed** |  | [optional]
+**is_image_grid** | **mixed** |  | [optional]
+**is_videos** | **mixed** |  | [optional]
+**is_transaction_history** | **mixed** |  | [optional]
+**is_profile** | **mixed** |  | [optional]
+**is_settings** | **mixed** |  | [optional]
+**is_chat_room** | **mixed** |  | [optional]
+**is_sms_opt_in** | **mixed** |  | [optional]
 **sms_opt_in_source_id** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional]
-**is_email_subscriber** | **mixed** |  |
+**is_email_subscriber** | **mixed** |  | [optional]
 **google_analytics_id** | **mixed** |  | [optional]
 **facebook_pixel_id** | **mixed** |  | [optional]
 **public_chat_room_channel_id** | **mixed** |  | [optional]

@@ -28,6 +28,7 @@ docs/Api/ImportedListsApi.md
 docs/Api/IndustriesApi.md
 docs/Api/InfoGenesisReportsApi.md
 docs/Api/InteractionsApi.md
+docs/Api/KeywordAutoRespondersApi.md
 docs/Api/LoungeApi.md
 docs/Api/MembershipTiersApi.md
 docs/Api/MerchantApi.md
@@ -351,6 +352,11 @@ docs/Model/WTAuthenticationRegister.md
 docs/Model/WTAuthenticationRequestResetPassword.md
 docs/Model/WTAuthenticationResetPassword.md
 docs/Model/WTAuthenticationSSOLoginForDiscourse.md
+docs/Model/WTAutoResponder.md
+docs/Model/WTAutoResponderCreateParams.md
+docs/Model/WTAutoResponderHit.md
+docs/Model/WTAutoResponderHitOutcome.md
+docs/Model/WTAutoResponderUpdateParams.md
 docs/Model/WTBillingChangePlan.md
 docs/Model/WTBillingChangePlanBillingCadence.md
 docs/Model/WTBillingSavePaymentMethod.md
@@ -598,6 +604,7 @@ lib/Api/ImportedListsApi.php
 lib/Api/IndustriesApi.php
 lib/Api/InfoGenesisReportsApi.php
 lib/Api/InteractionsApi.php
+lib/Api/KeywordAutoRespondersApi.php
 lib/Api/LoungeApi.php
 lib/Api/MembershipTiersApi.php
 lib/Api/MerchantApi.php
@@ -925,6 +932,11 @@ lib/Model/WTAuthenticationRegister.php
 lib/Model/WTAuthenticationRequestResetPassword.php
 lib/Model/WTAuthenticationResetPassword.php
 lib/Model/WTAuthenticationSSOLoginForDiscourse.php
+lib/Model/WTAutoResponder.php
+lib/Model/WTAutoResponderCreateParams.php
+lib/Model/WTAutoResponderHit.php
+lib/Model/WTAutoResponderHitOutcome.php
+lib/Model/WTAutoResponderUpdateParams.php
 lib/Model/WTBillingChangePlan.php
 lib/Model/WTBillingChangePlanBillingCadence.php
 lib/Model/WTBillingSavePaymentMethod.php
@@ -1173,6 +1185,7 @@ test/Api/ImportedListsApiTest.php
 test/Api/IndustriesApiTest.php
 test/Api/InfoGenesisReportsApiTest.php
 test/Api/InteractionsApiTest.php
+test/Api/KeywordAutoRespondersApiTest.php
 test/Api/LoungeApiTest.php
 test/Api/MembershipTiersApiTest.php
 test/Api/MerchantApiTest.php
@@ -1496,6 +1509,11 @@ test/Model/WTAuthenticationRegisterTest.php
 test/Model/WTAuthenticationRequestResetPasswordTest.php
 test/Model/WTAuthenticationResetPasswordTest.php
 test/Model/WTAuthenticationSSOLoginForDiscourseTest.php
+test/Model/WTAutoResponderCreateParamsTest.php
+test/Model/WTAutoResponderHitOutcomeTest.php
+test/Model/WTAutoResponderHitTest.php
+test/Model/WTAutoResponderTest.php
+test/Model/WTAutoResponderUpdateParamsTest.php
 test/Model/WTBillingChangePlanBillingCadenceTest.php
 test/Model/WTBillingChangePlanTest.php
 test/Model/WTBillingSavePaymentMethodTest.php
