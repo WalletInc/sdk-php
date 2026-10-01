@@ -577,6 +577,8 @@ docs/Model/WTWhatsAppStatusCallback.md
 docs/Model/WalletConfiguration.md
 docs/Model/WalletPageView.md
 docs/Model/Webpage.md
+docs/Model/WhatsNewArticle.md
+docs/Model/WhatsNewStage.md
 git_push.sh
 lib/Api/APIKeysApi.php
 lib/Api/AmenitiesApi.php
@@ -1157,6 +1159,8 @@ lib/Model/WTWhatsAppStatusCallback.php
 lib/Model/WalletConfiguration.php
 lib/Model/WalletPageView.php
 lib/Model/Webpage.php
+lib/Model/WhatsNewArticle.php
+lib/Model/WhatsNewStage.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/APIKeysApiTest.php
@@ -1734,3 +1738,5 @@ test/Model/WTWhatsAppStatusCallbackTest.php
 test/Model/WalletConfigurationTest.php
 test/Model/WalletPageViewTest.php
 test/Model/WebpageTest.php
+test/Model/WhatsNewArticleTest.php
+test/Model/WhatsNewStageTest.php
