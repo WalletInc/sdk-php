@@ -17,5 +17,9 @@ Name | Type | Description | Notes
 **company_logo_url** | **string** |  | [optional]
 **abbreviation** | **string** |  | [optional]
 **acronym** | **string** |  | [optional]
+**text_plate** | **bool** |  | [optional]
+**text_plate_opacity** | **mixed** |  | [optional]
+**text_plate_color** | **mixed** |  | [optional]
+**guest_instructions** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

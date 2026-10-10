@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **list_name** | **mixed** |  |
 **phone_number_id** | **string** |  |
 **tier_id** | [**\OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImportTierID**](WTImportedListRecipientFromMembershipTierImportTierID.md) |  |
+**is_over21_required** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

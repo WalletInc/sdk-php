@@ -9,6 +9,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchAllVirtualBusinessCards()**](VirtualBusinessCardApi.md#fetchAllVirtualBusinessCards) | **GET** /v2/virtualBusinessCard/all | Get all Virtual Business Cards |
 | [**fetchVirtualBusinessCard()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCard) | **GET** /v2/virtualBusinessCard/{id} | Get Virtual Business Card |
 | [**fetchVirtualBusinessCardRequests()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequests) | **GET** /v2/virtualBusinessCard/requests/{id} | Get Virtual Business Card traffic |
+| [**fetchVirtualBusinessCardRequestsPaged()**](VirtualBusinessCardApi.md#fetchVirtualBusinessCardRequestsPaged) | **GET** /v2/virtualBusinessCard/requests/{id}/paged | Get Virtual Business Card traffic (paginated) |
 | [**restoreVirtualBusinessCard()**](VirtualBusinessCardApi.md#restoreVirtualBusinessCard) | **PATCH** /v2/virtualBusinessCard/{id} | Restore Virtual Business Card |
 | [**updateVirtualBusinessCard()**](VirtualBusinessCardApi.md#updateVirtualBusinessCard) | **PUT** /v2/virtualBusinessCard/{id} | Update Virtual Business Card |
 
@@ -269,6 +270,64 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WalletPageView[]**](../Model/WalletPageView.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchVirtualBusinessCardRequestsPaged()`
+
+```php
+fetchVirtualBusinessCardRequestsPaged($id, $page, $limit): \OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response
+```
+
+Get Virtual Business Card traffic (paginated)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 'id_example'; // string
+$page = 3.4; // float
+$limit = 3.4; // float
+
+try {
+    $result = $apiInstance->fetchVirtualBusinessCardRequestsPaged($id, $page, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VirtualBusinessCardApi->fetchVirtualBusinessCardRequestsPaged: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **page** | **float**|  | [optional] |
+| **limit** | **float**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response**](../Model/FetchMerchantURLRequestsPaged200Response.md)
 
 ### Authorization
 

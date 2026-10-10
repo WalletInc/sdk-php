@@ -202,6 +202,7 @@ docs/Model/MerchantURL.md
 docs/Model/Message.md
 docs/Model/ModuleError.md
 docs/Model/NewsArticle.md
+docs/Model/NotFound.md
 docs/Model/OAIAssistantUpdateParams.md
 docs/Model/OAIAssistantUpdateParamsCreateParams.md
 docs/Model/OptInList.md
@@ -784,6 +785,7 @@ lib/Model/Message.php
 lib/Model/ModelInterface.php
 lib/Model/ModuleError.php
 lib/Model/NewsArticle.php
+lib/Model/NotFound.php
 lib/Model/OAIAssistantUpdateParams.php
 lib/Model/OAIAssistantUpdateParamsCreateParams.php
 lib/Model/OptInList.php
@@ -1363,6 +1365,7 @@ test/Model/MerchantURLTest.php
 test/Model/MessageTest.php
 test/Model/ModuleErrorTest.php
 test/Model/NewsArticleTest.php
+test/Model/NotFoundTest.php
 test/Model/OAIAssistantUpdateParamsCreateParamsTest.php
 test/Model/OAIAssistantUpdateParamsTest.php
 test/Model/OptInListSourceTest.php

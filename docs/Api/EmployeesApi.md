@@ -238,7 +238,7 @@ No authorization required
 ## `fetchPeerActivity()`
 
 ```php
-fetchPeerActivity($employee_id): \OpenAPI\Client\Model\EmployeeActivityLog[]
+fetchPeerActivity($employee_id, $start_date_time, $end_date_time, $page_size, $page_num): \OpenAPI\Client\Model\EmployeeActivityLog[]
 ```
 
 Get peer activity
@@ -257,9 +257,13 @@ $apiInstance = new OpenAPI\Client\Api\EmployeesApi(
     new GuzzleHttp\Client()
 );
 $employee_id = 'employee_id_example'; // string
+$start_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only entries at or after this time
+$end_date_time = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Only entries at or before this time
+$page_size = 3.4; // float | Entries per page, 1 to 1000 (default 1000)
+$page_num = 3.4; // float | 1-based page number (default 1). A page shorter than pageSize is the last one.
 
 try {
-    $result = $apiInstance->fetchPeerActivity($employee_id);
+    $result = $apiInstance->fetchPeerActivity($employee_id, $start_date_time, $end_date_time, $page_size, $page_num);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployeesApi->fetchPeerActivity: ', $e->getMessage(), PHP_EOL;
@@ -271,6 +275,10 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **employee_id** | **string**|  | |
+| **start_date_time** | **\DateTime**| Only entries at or after this time | [optional] |
+| **end_date_time** | **\DateTime**| Only entries at or before this time | [optional] |
+| **page_size** | **float**| Entries per page, 1 to 1000 (default 1000) | [optional] |
+| **page_num** | **float**| 1-based page number (default 1). A page shorter than pageSize is the last one. | [optional] |
 
 ### Return type
 
