@@ -287,7 +287,7 @@ No authorization required
 ## `fetchVirtualBusinessCardRequestsPaged()`
 
 ```php
-fetchVirtualBusinessCardRequestsPaged($id, $page, $limit): \OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response
+fetchVirtualBusinessCardRequestsPaged($id, $page, $limit, $traffic_class): \OpenAPI\Client\Model\FetchMerchantURLRequestsPaged200Response
 ```
 
 Get Virtual Business Card traffic (paginated)
@@ -308,9 +308,10 @@ $apiInstance = new OpenAPI\Client\Api\VirtualBusinessCardApi(
 $id = 'id_example'; // string
 $page = 3.4; // float
 $limit = 3.4; // float
+$traffic_class = new \OpenAPI\Client\Model\WTTrafficClass(); // WTTrafficClass
 
 try {
-    $result = $apiInstance->fetchVirtualBusinessCardRequestsPaged($id, $page, $limit);
+    $result = $apiInstance->fetchVirtualBusinessCardRequestsPaged($id, $page, $limit, $traffic_class);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualBusinessCardApi->fetchVirtualBusinessCardRequestsPaged: ', $e->getMessage(), PHP_EOL;
@@ -324,6 +325,7 @@ try {
 | **id** | **string**|  | |
 | **page** | **float**|  | [optional] |
 | **limit** | **float**|  | [optional] |
+| **traffic_class** | [**WTTrafficClass**](../Model/.md)|  | [optional] |
 
 ### Return type
 
