@@ -379,6 +379,11 @@ docs/Model/WTConnectPaymentsSummaryBalance.md
 docs/Model/WTConnectRequirements.md
 docs/Model/WTCountResult.md
 docs/Model/WTCurrentMerchantTermsVersion.md
+docs/Model/WTCustomDomain.md
+docs/Model/WTCustomDomainError.md
+docs/Model/WTCustomDomainRequest.md
+docs/Model/WTCustomDomainState.md
+docs/Model/WTCustomDomainTXT.md
 docs/Model/WTCustomerSearchByMemberID.md
 docs/Model/WTCustomerSearchByPhoneNumber.md
 docs/Model/WTDiningCreateParams.md
@@ -970,6 +975,11 @@ lib/Model/WTConnectPaymentsSummaryBalance.php
 lib/Model/WTConnectRequirements.php
 lib/Model/WTCountResult.php
 lib/Model/WTCurrentMerchantTermsVersion.php
+lib/Model/WTCustomDomain.php
+lib/Model/WTCustomDomainError.php
+lib/Model/WTCustomDomainRequest.php
+lib/Model/WTCustomDomainState.php
+lib/Model/WTCustomDomainTXT.php
 lib/Model/WTCustomerSearchByMemberID.php
 lib/Model/WTCustomerSearchByPhoneNumber.php
 lib/Model/WTDiningCreateParams.php
@@ -1558,6 +1568,11 @@ test/Model/WTConnectPaymentsSummaryTest.php
 test/Model/WTConnectRequirementsTest.php
 test/Model/WTCountResultTest.php
 test/Model/WTCurrentMerchantTermsVersionTest.php
+test/Model/WTCustomDomainErrorTest.php
+test/Model/WTCustomDomainRequestTest.php
+test/Model/WTCustomDomainStateTest.php
+test/Model/WTCustomDomainTXTTest.php
+test/Model/WTCustomDomainTest.php
 test/Model/WTCustomerSearchByMemberIDTest.php
 test/Model/WTCustomerSearchByPhoneNumberTest.php
 test/Model/WTDiningCreateParamsTest.php

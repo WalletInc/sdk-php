@@ -4,12 +4,117 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**deleteCustomDomain()**](WalletConfigurationApi.md#deleteCustomDomain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain |
+| [**fetchCustomDomain()**](WalletConfigurationApi.md#fetchCustomDomain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain |
 | [**fetchPassStyle()**](WalletConfigurationApi.md#fetchPassStyle) | **GET** /wallet/passStyle | Get pass styling |
 | [**generateAndroidKeystore()**](WalletConfigurationApi.md#generateAndroidKeystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore |
 | [**resetPassStyle()**](WalletConfigurationApi.md#resetPassStyle) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling |
+| [**saveCustomDomain()**](WalletConfigurationApi.md#saveCustomDomain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain |
 | [**saveMerchantCreditPaymentDesign()**](WalletConfigurationApi.md#saveMerchantCreditPaymentDesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits |
 | [**saveWalletRecord()**](WalletConfigurationApi.md#saveWalletRecord) | **PUT** /v2/wallet | Update wallet record |
 
+
+## `deleteCustomDomain()`
+
+```php
+deleteCustomDomain(): \OpenAPI\Client\Model\WTCustomDomain
+```
+
+Remove the custom domain
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\WalletConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->deleteCustomDomain();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletConfigurationApi->deleteCustomDomain: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCustomDomain**](../Model/WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchCustomDomain()`
+
+```php
+fetchCustomDomain(): \OpenAPI\Client\Model\WTCustomDomain
+```
+
+Get the custom domain
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\WalletConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchCustomDomain();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletConfigurationApi->fetchCustomDomain: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCustomDomain**](../Model/WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `fetchPassStyle()`
 
@@ -164,6 +269,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `saveCustomDomain()`
+
+```php
+saveCustomDomain($wt_custom_domain_request): \OpenAPI\Client\Model\WTCustomDomain
+```
+
+Set up a custom domain
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\WalletConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_custom_domain_request = new \OpenAPI\Client\Model\WTCustomDomainRequest(); // \OpenAPI\Client\Model\WTCustomDomainRequest
+
+try {
+    $result = $apiInstance->saveCustomDomain($wt_custom_domain_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletConfigurationApi->saveCustomDomain: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_custom_domain_request** | [**\OpenAPI\Client\Model\WTCustomDomainRequest**](../Model/WTCustomDomainRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCustomDomain**](../Model/WTCustomDomain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
