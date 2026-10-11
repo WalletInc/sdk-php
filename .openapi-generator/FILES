@@ -448,6 +448,12 @@ docs/Model/WTLeadFiInquiryResult.md
 docs/Model/WTLocalInstance.md
 docs/Model/WTLoungeCreateParams.md
 docs/Model/WTLoungeUpdateParams.md
+docs/Model/WTMediaFile.md
+docs/Model/WTMediaFileStatus.md
+docs/Model/WTMediaProcessedReport.md
+docs/Model/WTMediaProcessedReportStatus.md
+docs/Model/WTMediaUploadRequest.md
+docs/Model/WTMediaUploadTicket.md
 docs/Model/WTMember.md
 docs/Model/WTMemberCreationParams.md
 docs/Model/WTMembershipTier.md
@@ -512,6 +518,7 @@ docs/Model/WTQuickLinkLinkBookSectionID.md
 docs/Model/WTQuickLinkSectionCreateParams.md
 docs/Model/WTQuickLinkSectionUpdateParams.md
 docs/Model/WTQuickLinkUpdateParams.md
+docs/Model/WTQuietHoursStatus.md
 docs/Model/WTRole.md
 docs/Model/WTRoomRateCreateParams.md
 docs/Model/WTRoomRateUpdateParams.md
@@ -1031,6 +1038,12 @@ lib/Model/WTLeadFiInquiryResult.php
 lib/Model/WTLocalInstance.php
 lib/Model/WTLoungeCreateParams.php
 lib/Model/WTLoungeUpdateParams.php
+lib/Model/WTMediaFile.php
+lib/Model/WTMediaFileStatus.php
+lib/Model/WTMediaProcessedReport.php
+lib/Model/WTMediaProcessedReportStatus.php
+lib/Model/WTMediaUploadRequest.php
+lib/Model/WTMediaUploadTicket.php
 lib/Model/WTMember.php
 lib/Model/WTMemberCreationParams.php
 lib/Model/WTMembershipTier.php
@@ -1095,6 +1108,7 @@ lib/Model/WTQuickLinkLinkBookSectionID.php
 lib/Model/WTQuickLinkSectionCreateParams.php
 lib/Model/WTQuickLinkSectionUpdateParams.php
 lib/Model/WTQuickLinkUpdateParams.php
+lib/Model/WTQuietHoursStatus.php
 lib/Model/WTRole.php
 lib/Model/WTRoomRateCreateParams.php
 lib/Model/WTRoomRateUpdateParams.php
@@ -1611,6 +1625,12 @@ test/Model/WTLeadFiInquiryResultTest.php
 test/Model/WTLocalInstanceTest.php
 test/Model/WTLoungeCreateParamsTest.php
 test/Model/WTLoungeUpdateParamsTest.php
+test/Model/WTMediaFileStatusTest.php
+test/Model/WTMediaFileTest.php
+test/Model/WTMediaProcessedReportStatusTest.php
+test/Model/WTMediaProcessedReportTest.php
+test/Model/WTMediaUploadRequestTest.php
+test/Model/WTMediaUploadTicketTest.php
 test/Model/WTMemberCreationParamsTest.php
 test/Model/WTMemberTest.php
 test/Model/WTMembershipTierCreationParamsTest.php
@@ -1675,6 +1695,7 @@ test/Model/WTQuickLinkSectionCreateParamsTest.php
 test/Model/WTQuickLinkSectionUpdateParamsTest.php
 test/Model/WTQuickLinkTest.php
 test/Model/WTQuickLinkUpdateParamsTest.php
+test/Model/WTQuietHoursStatusTest.php
 test/Model/WTRoleTest.php
 test/Model/WTRoomRateCreateParamsTest.php
 test/Model/WTRoomRateUpdateParamsTest.php
