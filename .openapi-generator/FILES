@@ -512,6 +512,7 @@ docs/Model/WTProductUpdateParams.md
 docs/Model/WTPromoCodeCreateParams.md
 docs/Model/WTPromoCodeUpdateParams.md
 docs/Model/WTPublicBranding.md
+docs/Model/WTPublicItemBranding.md
 docs/Model/WTPublicVanityPage.md
 docs/Model/WTPublicVanityPageMerchant.md
 docs/Model/WTQRCodeDesign.md
@@ -1108,6 +1109,7 @@ lib/Model/WTProductUpdateParams.php
 lib/Model/WTPromoCodeCreateParams.php
 lib/Model/WTPromoCodeUpdateParams.php
 lib/Model/WTPublicBranding.php
+lib/Model/WTPublicItemBranding.php
 lib/Model/WTPublicVanityPage.php
 lib/Model/WTPublicVanityPageMerchant.php
 lib/Model/WTQRCodeDesign.php
@@ -1701,6 +1703,7 @@ test/Model/WTProductUpdateParamsTest.php
 test/Model/WTPromoCodeCreateParamsTest.php
 test/Model/WTPromoCodeUpdateParamsTest.php
 test/Model/WTPublicBrandingTest.php
+test/Model/WTPublicItemBrandingTest.php
 test/Model/WTPublicVanityPageMerchantTest.php
 test/Model/WTPublicVanityPageTest.php
 test/Model/WTQRCodeDesignCreateParamsTest.php
