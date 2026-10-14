@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **vanity_page_wallet_prefix** | **string** |  | [optional]
 **company_logo_url** | **string** |  | [optional]
 **header_background_color** | **string** |  | [optional]
+**header_style** | [**\OpenAPI\Client\Model\WTWalletHeaderStyle**](WTWalletHeaderStyle.md) |  | [optional]
 **mobile_app_icon_url** | **string** |  | [optional]
 **android_sha256_fingerprint** | **mixed** |  | [optional]
 **is_call** | **bool** |  | [optional]

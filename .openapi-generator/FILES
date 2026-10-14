@@ -582,6 +582,7 @@ docs/Model/WTWalletConfigurationSaveWalletRecordDonationLabel.md
 docs/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyle.md
 docs/Model/WTWalletConfigurationSaveWalletRecordPassBrandKit.md
 docs/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md
+docs/Model/WTWalletHeaderStyle.md
 docs/Model/WTWalletItemRedemption.md
 docs/Model/WTWalletObjectPrefixCounts.md
 docs/Model/WTWalletPageView.md
@@ -1180,6 +1181,7 @@ lib/Model/WTWalletConfigurationSaveWalletRecordDonationLabel.php
 lib/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyle.php
 lib/Model/WTWalletConfigurationSaveWalletRecordPassBrandKit.php
 lib/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.php
+lib/Model/WTWalletHeaderStyle.php
 lib/Model/WTWalletItemRedemption.php
 lib/Model/WTWalletObjectPrefixCounts.php
 lib/Model/WTWalletPageView.php
@@ -1775,6 +1777,7 @@ test/Model/WTWalletConfigurationSaveWalletRecordGooglePassStyleTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordPassBrandKitTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordSmsOptInSourceIDTest.php
 test/Model/WTWalletConfigurationSaveWalletRecordTest.php
+test/Model/WTWalletHeaderStyleTest.php
 test/Model/WTWalletItemRedemptionTest.php
 test/Model/WTWalletObjectPrefixCountsTest.php
 test/Model/WTWalletPageViewCountTest.php

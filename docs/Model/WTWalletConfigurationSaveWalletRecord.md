@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header_background_color** | **mixed** |  | [optional]
 **header_button_color** | **mixed** |  | [optional]
+**header_style** | [**\OpenAPI\Client\Model\WTWalletHeaderStyle**](WTWalletHeaderStyle.md) |  | [optional]
 **left_menu_header_background_color** | **mixed** |  | [optional]
 **left_menu_header_font_color** | **mixed** |  | [optional]
 **left_menu_section_background_color** | **mixed** |  | [optional]
