@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **desktop_frame_background_color** | **string** |  | [optional]
 **desktop_frame_background_image_url** | **string** |  | [optional]
 **desktop_frame_byline** | **string** |  | [optional]
+**custom_domain_paused** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
