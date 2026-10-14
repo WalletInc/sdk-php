@@ -380,6 +380,7 @@ docs/Model/WTConnectRequirements.md
 docs/Model/WTCountResult.md
 docs/Model/WTCurrentMerchantTermsVersion.md
 docs/Model/WTCustomDomain.md
+docs/Model/WTCustomDomainAdoption.md
 docs/Model/WTCustomDomainError.md
 docs/Model/WTCustomDomainRequest.md
 docs/Model/WTCustomDomainState.md
@@ -977,6 +978,7 @@ lib/Model/WTConnectRequirements.php
 lib/Model/WTCountResult.php
 lib/Model/WTCurrentMerchantTermsVersion.php
 lib/Model/WTCustomDomain.php
+lib/Model/WTCustomDomainAdoption.php
 lib/Model/WTCustomDomainError.php
 lib/Model/WTCustomDomainRequest.php
 lib/Model/WTCustomDomainState.php
@@ -1570,6 +1572,7 @@ test/Model/WTConnectPaymentsSummaryTest.php
 test/Model/WTConnectRequirementsTest.php
 test/Model/WTCountResultTest.php
 test/Model/WTCurrentMerchantTermsVersionTest.php
+test/Model/WTCustomDomainAdoptionTest.php
 test/Model/WTCustomDomainErrorTest.php
 test/Model/WTCustomDomainRequestTest.php
 test/Model/WTCustomDomainStateTest.php
