@@ -568,8 +568,10 @@ docs/Model/WTTwilioRequestAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCode.md
 docs/Model/WTTwilioVerifyAuthyCodeResponse.md
 docs/Model/WTVideoCreateParams.md
+docs/Model/WTVideoOrientation.md
 docs/Model/WTVideoPlaybackSource.md
 docs/Model/WTVideoPlaybackSourceType.md
+docs/Model/WTVideoStatus.md
 docs/Model/WTVideoUpdateParams.md
 docs/Model/WTVideoUploadProvision.md
 docs/Model/WTVideoUploadProvisionParams.md
@@ -1167,8 +1169,10 @@ lib/Model/WTTwilioRequestAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCode.php
 lib/Model/WTTwilioVerifyAuthyCodeResponse.php
 lib/Model/WTVideoCreateParams.php
+lib/Model/WTVideoOrientation.php
 lib/Model/WTVideoPlaybackSource.php
 lib/Model/WTVideoPlaybackSourceType.php
+lib/Model/WTVideoStatus.php
 lib/Model/WTVideoUpdateParams.php
 lib/Model/WTVideoUploadProvision.php
 lib/Model/WTVideoUploadProvisionParams.php
@@ -1763,8 +1767,10 @@ test/Model/WTTwilioRequestAuthyCodeTest.php
 test/Model/WTTwilioVerifyAuthyCodeResponseTest.php
 test/Model/WTTwilioVerifyAuthyCodeTest.php
 test/Model/WTVideoCreateParamsTest.php
+test/Model/WTVideoOrientationTest.php
 test/Model/WTVideoPlaybackSourceTest.php
 test/Model/WTVideoPlaybackSourceTypeTest.php
+test/Model/WTVideoStatusTest.php
 test/Model/WTVideoUpdateParamsTest.php
 test/Model/WTVideoUploadProvisionParamsTest.php
 test/Model/WTVideoUploadProvisionProviderTest.php
