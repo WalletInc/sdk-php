@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**age_restriction** | [**\OpenAPI\Client\Model\WTAgeRestriction**](WTAgeRestriction.md) |  | [optional]
+**id_check_on_handoff** | **bool** |  | [optional]
+**is_sold_out** | **bool** |  | [optional]
+**sold_out_until** | **\DateTime** |  | [optional]
+**fulfillment_modes** | **mixed** |  | [optional]
 **title** | **mixed** |  |
 **description** | **mixed** |  |
 **displayed_price** | **mixed** |  | [optional]

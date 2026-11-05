@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ticket_expiration_date_time** | **mixed** |  | [optional]
 **redemption_instructions** | **mixed** |  | [optional]
 **id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
+**page_id** | **mixed** |  | [optional]
 **created_at** | **mixed** |  |
 **updated_at** | **mixed** |  |
 **is_active** | **mixed** |  |

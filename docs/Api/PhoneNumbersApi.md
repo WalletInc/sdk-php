@@ -11,6 +11,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchPhoneNumber()**](PhoneNumbersApi.md#fetchPhoneNumber) | **GET** /v2/merchant/phoneNumber/{phoneNumberID} | Get phone number |
 | [**fetchSMSAgreement()**](PhoneNumbersApi.md#fetchSMSAgreement) | **GET** /v2/sms/agreement | Get SMS Agreement |
 | [**fetchTCPAFilter()**](PhoneNumbersApi.md#fetchTCPAFilter) | **GET** /v2/merchant/tcpa/filter/all | Get all TCPA Filters |
+| [**recordSMSPrivacyRequest()**](PhoneNumbersApi.md#recordSMSPrivacyRequest) | **POST** /sms/privacyRequest | Record a request to stop texts |
 | [**restorePhoneNumber()**](PhoneNumbersApi.md#restorePhoneNumber) | **PATCH** /v2/sms/phoneNumber/{phoneNumberID} | Restore phone number |
 | [**sendPhoneNumberForVerification()**](PhoneNumbersApi.md#sendPhoneNumberForVerification) | **PUT** /v2/sms/phoneNumber/verification/{phoneNumberID} | Request phone number verification |
 | [**updatePhoneNumber()**](PhoneNumbersApi.md#updatePhoneNumber) | **PUT** /v2/sms/phoneNumber/{phoneNumberID} | Update phone number |
@@ -384,6 +385,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `recordSMSPrivacyRequest()`
+
+```php
+recordSMSPrivacyRequest($wttcpa_privacy_request): \OpenAPI\Client\Model\WTTCPAPrivacyRequestResult
+```
+
+Record a request to stop texts
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\PhoneNumbersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wttcpa_privacy_request = new \OpenAPI\Client\Model\WTTCPAPrivacyRequest(); // \OpenAPI\Client\Model\WTTCPAPrivacyRequest
+
+try {
+    $result = $apiInstance->recordSMSPrivacyRequest($wttcpa_privacy_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PhoneNumbersApi->recordSMSPrivacyRequest: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wttcpa_privacy_request** | [**\OpenAPI\Client\Model\WTTCPAPrivacyRequest**](../Model/WTTCPAPrivacyRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTTCPAPrivacyRequestResult**](../Model/WTTCPAPrivacyRequestResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

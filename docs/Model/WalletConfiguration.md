@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **is_representatives** | **mixed** |  |
 **is_products** | **mixed** |  |
 **is_services** | **mixed** |  |
+**is_menu** | **mixed** |  |
 **is_room_rates** | **mixed** |  |
 **is_amenities** | **mixed** |  |
 **is_gaming** | **mixed** |  |

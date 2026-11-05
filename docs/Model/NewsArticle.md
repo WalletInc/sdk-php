@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **media_url** | **mixed** |  | [optional]
 **published_date** | **mixed** |  | [optional]
 **id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
+**page_id** | **mixed** |  | [optional]
 **created_at** | **mixed** |  |
 **updated_at** | **mixed** |  |
 **is_active** | **mixed** |  |

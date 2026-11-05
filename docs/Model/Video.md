@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**\OpenAPI\Client\Model\AmenityId**](AmenityId.md) |  |
+**page_id** | **mixed** |  | [optional]
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  |
 **title** | **string** |  |
@@ -22,5 +23,6 @@ Name | Type | Description | Notes
 **duration_seconds** | **mixed** |  | [optional]
 **poster_url** | **mixed** |  | [optional]
 **status** | [**\OpenAPI\Client\Model\WTVideoStatus**](WTVideoStatus.md) |  | [optional]
+**paused** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

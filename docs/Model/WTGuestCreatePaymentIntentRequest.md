@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_verification_token** | **mixed** |  |
-**object_id** | **mixed** |  |
+**object_id** | **mixed** |  | [optional]
+**lines** | **mixed** |  | [optional]
+**age_confirmed** | **mixed** |  | [optional]
 **credit_id** | **mixed** |  | [optional]
 **tip_cents** | **mixed** |  | [optional]
 

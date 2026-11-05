@@ -25,6 +25,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**findByVanityHandle()**](InteractionsApi.md#findByVanityHandle) | **GET** /wallet/vanityHandle/{handle} | Get vanity handle |
 | [**identifyItem()**](InteractionsApi.md#identifyItem) | **GET** /wallet/item/identify/{itemID} | Identify item |
 | [**playPrizeGame()**](InteractionsApi.md#playPrizeGame) | **POST** /wallet/prizeGame/play | Play a prize game Server-authoritative instant-win play (KAN-307): the server decides win/lose and the prize with a crypto-grade RNG, enforces the per-guest play limit and prize inventory, records the audited play with its odds snapshot, and on a win issues the prize into the guest&#39;s My Prizes via the existing Prize (Advertisement Credit) scan path. Requires the OTP-verified phone token; carries NO payment surface of any kind (plays are always free). |
+| [**priceGuestCart()**](InteractionsApi.md#priceGuestCart) | **POST** /wallet/cart/price | Price a guest&#39;s cart |
 | [**requestMerchantURLRedirect()**](InteractionsApi.md#requestMerchantURLRedirect) | **POST** /wallet/merchantURL/{itemID} | Request Merchant URL |
 | [**subscribeEmail()**](InteractionsApi.md#subscribeEmail) | **POST** /wallet/subscribeEmail | Create email subscriber |
 | [**subscribeSms()**](InteractionsApi.md#subscribeSms) | **POST** /wallet/subscribeSms | Create sms subscriber |
@@ -1166,6 +1167,60 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\WTPrizeGamePlayResult**](../Model/WTPrizeGamePlayResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `priceGuestCart()`
+
+```php
+priceGuestCart($wt_cart_price_request): \OpenAPI\Client\Model\WTCartQuote
+```
+
+Price a guest's cart
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\InteractionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_cart_price_request = new \OpenAPI\Client\Model\WTCartPriceRequest(); // \OpenAPI\Client\Model\WTCartPriceRequest
+
+try {
+    $result = $apiInstance->priceGuestCart($wt_cart_price_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InteractionsApi->priceGuestCart: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_cart_price_request** | [**\OpenAPI\Client\Model\WTCartPriceRequest**](../Model/WTCartPriceRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTCartQuote**](../Model/WTCartQuote.md)
 
 ### Authorization
 

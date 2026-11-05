@@ -5,8 +5,12 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**archiveSmsSubscriber()**](SMSSubscribersApi.md#archiveSmsSubscriber) | **DELETE** /v2/SmsSubscriber/{id} | Archive SMS Subscriber |
+| [**countEarlySmsOptIns()**](SMSSubscribersApi.md#countEarlySmsOptIns) | **GET** /sms/earlyOptIns/count | Count early SMS opt-ins |
 | [**createSmsSubscriber()**](SMSSubscribersApi.md#createSmsSubscriber) | **POST** /v2/SmsSubscriber | Create SMS Subscriber |
 | [**fetchAllSmsSubscribers()**](SMSSubscribersApi.md#fetchAllSmsSubscribers) | **GET** /v2/SmsSubscriber/all | Get all SMS Subscribers |
+| [**fetchEarlySmsOptIns()**](SMSSubscribersApi.md#fetchEarlySmsOptIns) | **GET** /sms/earlyOptIns | List early SMS opt-ins |
+| [**importEarlySmsOptIns()**](SMSSubscribersApi.md#importEarlySmsOptIns) | **POST** /sms/earlyOptIns/import | Bring early SMS opt-ins over |
+| [**previewEarlySmsOptInImport()**](SMSSubscribersApi.md#previewEarlySmsOptInImport) | **GET** /sms/earlyOptIns/importPreview | Preview bringing early SMS opt-ins over |
 | [**restoreSmsSubscriber()**](SMSSubscribersApi.md#restoreSmsSubscriber) | **PATCH** /v2/SmsSubscriber/{id} | Restore SMS Subscriber |
 | [**updateSmsSubscriber()**](SMSSubscribersApi.md#updateSmsSubscriber) | **PUT** /v2/SmsSubscriber/{id} | Update SMS Subscriber |
 
@@ -51,6 +55,57 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\SmsSubscriber**](../Model/SmsSubscriber.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `countEarlySmsOptIns()`
+
+```php
+countEarlySmsOptIns(): \OpenAPI\Client\Model\WTEarlyOptInCount
+```
+
+Count early SMS opt-ins
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSSubscribersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->countEarlySmsOptIns();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSSubscribersApi->countEarlySmsOptIns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTEarlyOptInCount**](../Model/WTEarlyOptInCount.md)
 
 ### Authorization
 
@@ -163,6 +218,167 @@ try {
 ### Return type
 
 **mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchEarlySmsOptIns()`
+
+```php
+fetchEarlySmsOptIns($page, $page_size): \OpenAPI\Client\Model\WTEarlyOptInPage
+```
+
+List early SMS opt-ins
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSSubscribersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$page = 3.4; // float
+$page_size = 3.4; // float
+
+try {
+    $result = $apiInstance->fetchEarlySmsOptIns($page, $page_size);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSSubscribersApi->fetchEarlySmsOptIns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **float**|  | [optional] |
+| **page_size** | **float**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTEarlyOptInPage**](../Model/WTEarlyOptInPage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `importEarlySmsOptIns()`
+
+```php
+importEarlySmsOptIns($wt_early_opt_in_import_request): \OpenAPI\Client\Model\WTEarlyOptInImportResult
+```
+
+Bring early SMS opt-ins over
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSSubscribersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_early_opt_in_import_request = new \OpenAPI\Client\Model\WTEarlyOptInImportRequest(); // \OpenAPI\Client\Model\WTEarlyOptInImportRequest
+
+try {
+    $result = $apiInstance->importEarlySmsOptIns($wt_early_opt_in_import_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSSubscribersApi->importEarlySmsOptIns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_early_opt_in_import_request** | [**\OpenAPI\Client\Model\WTEarlyOptInImportRequest**](../Model/WTEarlyOptInImportRequest.md)|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTEarlyOptInImportResult**](../Model/WTEarlyOptInImportResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `previewEarlySmsOptInImport()`
+
+```php
+previewEarlySmsOptInImport(): \OpenAPI\Client\Model\WTEarlyOptInImportResult
+```
+
+Preview bringing early SMS opt-ins over
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\SMSSubscribersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->previewEarlySmsOptInImport();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMSSubscribersApi->previewEarlySmsOptInImport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTEarlyOptInImportResult**](../Model/WTEarlyOptInImportResult.md)
 
 ### Authorization
 

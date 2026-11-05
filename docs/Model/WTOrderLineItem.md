@@ -10,5 +10,8 @@ Name | Type | Description | Notes
 **title_snapshot** | **mixed** |  |
 **unit_amount** | **mixed** |  |
 **quantity** | **mixed** |  |
+**note** | **mixed** |  | [optional]
+**menu_item_id** | **mixed** |  | [optional]
+**options** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

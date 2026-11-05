@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **mixed** |  | [optional]
 **valid_only_at_pos_register_ids** | **mixed** |  | [optional]
 **payment_design_id** | **string** |  |
+**guest_instructions** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

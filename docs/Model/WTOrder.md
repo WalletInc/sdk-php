@@ -20,6 +20,11 @@ Name | Type | Description | Notes
 **acquisition_source** | **mixed** |  | [optional]
 **share_id** | **mixed** |  | [optional]
 **donor_note** | **mixed** |  | [optional]
+**age_requirement** | [**\OpenAPI\Client\Model\WTAgeRestriction**](WTAgeRestriction.md) |  | [optional]
+**id_check_required** | **mixed** |  | [optional]
+**venue_type** | [**\OpenAPI\Client\Model\WTMenuVenueType**](WTMenuVenueType.md) |  | [optional]
+**venue_id** | **mixed** |  | [optional]
+**venue_title** | **mixed** |  | [optional]
 **line_items** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

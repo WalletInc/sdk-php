@@ -5,8 +5,10 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**fetchOrder()**](OrdersApi.md#fetchOrder) | **GET** /orders/{orderId} | Fetch one of the authenticated merchant&#39;s orders by id Returns the order with its line items. 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
+| [**fetchOrderingSettings()**](OrdersApi.md#fetchOrderingSettings) | **GET** /ordering/settings | Get ordering settings |
 | [**listOrders()**](OrdersApi.md#listOrders) | **GET** /orders | List the authenticated merchant&#39;s orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B. |
 | [**redactOrderDonorNote()**](OrdersApi.md#redactOrderDonorNote) | **POST** /orders/{orderId}/donor-note/redact | Redact (soft-delete) the donor note on one of the authenticated merchant&#39;s orders KAN-862 takedown path: hides a guest-supplied tip / donation note from every surface. The original text is RETAINED server-side (soft-delete) for a possible exposure / legal review; no \&quot;[redacted]\&quot; placeholder is shown. Idempotent (an order with no note, or an already-redacted note, is a no-op). 403-family error if the order belongs to another merchant (ownership is asserted server-side). |
+| [**updateOrderingSettings()**](OrdersApi.md#updateOrderingSettings) | **PUT** /ordering/settings | Update ordering settings |
 
 
 ## `fetchOrder()`
@@ -63,10 +65,61 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fetchOrderingSettings()`
+
+```php
+fetchOrderingSettings(): \OpenAPI\Client\Model\WTOrderingSettings
+```
+
+Get ordering settings
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\OrdersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchOrderingSettings();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->fetchOrderingSettings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTOrderingSettings**](../Model/WTOrderingSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listOrders()`
 
 ```php
-listOrders(): \OpenAPI\Client\Model\WTOrder[]
+listOrders($venue_id): \OpenAPI\Client\Model\WTOrder[]
 ```
 
 List the authenticated merchant's orders Newest first, each hydrated with its line items. Read-only receipts/status for Flow B.
@@ -84,9 +137,10 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$venue_id = 'venue_id_example'; // string | Only the orders of this Dining outlet (DI...) or Lounge (LO...), so each kitchen sees its own.
 
 try {
-    $result = $apiInstance->listOrders();
+    $result = $apiInstance->listOrders($venue_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->listOrders: ', $e->getMessage(), PHP_EOL;
@@ -95,7 +149,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **venue_id** | **string**| Only the orders of this Dining outlet (DI...) or Lounge (LO...), so each kitchen sees its own. | [optional] |
 
 ### Return type
 
@@ -162,6 +218,60 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateOrderingSettings()`
+
+```php
+updateOrderingSettings($wt_ordering_settings_update_params): \OpenAPI\Client\Model\WTOrderingSettings
+```
+
+Update ordering settings
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\OrdersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_ordering_settings_update_params = new \OpenAPI\Client\Model\WTOrderingSettingsUpdateParams(); // \OpenAPI\Client\Model\WTOrderingSettingsUpdateParams
+
+try {
+    $result = $apiInstance->updateOrderingSettings($wt_ordering_settings_update_params);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->updateOrderingSettings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_ordering_settings_update_params** | [**\OpenAPI\Client\Model\WTOrderingSettingsUpdateParams**](../Model/WTOrderingSettingsUpdateParams.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTOrderingSettings**](../Model/WTOrderingSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

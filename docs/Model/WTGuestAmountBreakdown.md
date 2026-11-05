@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **list_amount_cents** | **mixed** |  |
 **credit_applied_cents** | **mixed** |  |
+**tax_cents** | **mixed** |  | [optional]
 **tip_cents** | **mixed** |  |
 **amount_due_cents** | **mixed** |  |
 

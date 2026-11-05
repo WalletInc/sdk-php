@@ -29,5 +29,6 @@ Name | Type | Description | Notes
 **reinvestment_sum_string** | **mixed** |  |
 **start_date** | **mixed** |  |
 **expiration_date** | **mixed** |  |
+**guest_instructions** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

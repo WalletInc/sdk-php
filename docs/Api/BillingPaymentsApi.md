@@ -16,6 +16,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**fetchSpecialOffers()**](BillingPaymentsApi.md#fetchSpecialOffers) | **GET** /v2/billing/products/specialOffers | Get special offers |
 | [**fetchSubscription()**](BillingPaymentsApi.md#fetchSubscription) | **GET** /v2/billing/subscription | Get subscription |
 | [**fetchUsageSummary()**](BillingPaymentsApi.md#fetchUsageSummary) | **GET** /v2/billing/summary | Get usage summary |
+| [**keepPlan()**](BillingPaymentsApi.md#keepPlan) | **POST** /billing/plan/keep | Keep the current plan |
 | [**runFinancingSoftPull()**](BillingPaymentsApi.md#runFinancingSoftPull) | **POST** /v2/billing/financing/soft-pull | Run a consumer-authorized financing soft credit inquiry (LeadFi, tri-bureau) Consumer-initiated FCRA permissible purpose: the authenticated user explicitly authorizes the check (disclosure text is submitted verbatim and persisted as evidence). The consent IP is captured server-side from the request; the inquiry is refused when it cannot be captured. Fails fast until LeadFi credentials are provisioned (go-live gated on counsel sign-off). |
 | [**savePaymentMethod()**](BillingPaymentsApi.md#savePaymentMethod) | **PUT** /v2/billing/paymentMethod | Save payment method |
 | [**setDefaultPaymentMethod()**](BillingPaymentsApi.md#setDefaultPaymentMethod) | **POST** /v2/billing/paymentMethod/default | Set payment method as default |
@@ -636,6 +637,57 @@ try {
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `keepPlan()`
+
+```php
+keepPlan(): \OpenAPI\Client\Model\WTBillingKeepPlanResponse
+```
+
+Keep the current plan
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\BillingPaymentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->keepPlan();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BillingPaymentsApi->keepPlan: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTBillingKeepPlanResponse**](../Model/WTBillingKeepPlanResponse.md)
 
 ### Authorization
 

@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **postal_code** | **mixed** |  |
 **country** | **mixed** |  |
 **phone_number** | **mixed** |  |
+**privacy_policy_url** | **mixed** |  | [optional]
 **is_twilio_terms_read** | **mixed** |  |
 **is_wallet_sms_terms_read** | **mixed** |  |
 **is_pricing_understood** | **mixed** |  |
 **is_privacy_and_tos_present** | **mixed** |  |
-**privacy_policy_url** | **mixed** |  | [optional]
 **will_obtain_consent** | **mixed** |  |
 **will_honor_opt_out** | **mixed** |  |
 **will_follow_content_rules** | **mixed** |  |
