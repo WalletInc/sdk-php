@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -58,6 +58,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'guest_instructions' => 'string',
         'border_color' => 'string',
         'border_style_type' => '\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType',
         'border_size' => 'string',
@@ -71,16 +72,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => 'string',
         'background_image_url' => 'string',
         'company_logo_url' => 'string',
+        'text_plate' => 'bool',
+        'text_plate_opacity' => 'float',
+        'text_plate_color' => 'string',
         'employee_id' => 'string',
         'id' => '\OpenAPI\Client\Model\StaticVoucherId',
         'merchant_id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
-        'is_active' => 'bool',
-        'text_plate' => 'bool',
-        'text_plate_opacity' => 'float',
-        'text_plate_color' => 'string',
-        'guest_instructions' => 'string'
+        'is_active' => 'bool'
     ];
 
     /**
@@ -91,6 +91,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'guest_instructions' => null,
         'border_color' => null,
         'border_style_type' => null,
         'border_size' => null,
@@ -104,16 +105,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => null,
         'background_image_url' => null,
         'company_logo_url' => null,
+        'text_plate' => null,
+        'text_plate_opacity' => 'double',
+        'text_plate_color' => null,
         'employee_id' => null,
         'id' => null,
         'merchant_id' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
-        'is_active' => null,
-        'text_plate' => null,
-        'text_plate_opacity' => 'double',
-        'text_plate_color' => null,
-        'guest_instructions' => null
+        'is_active' => null
     ];
 
     /**
@@ -122,6 +122,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'guest_instructions' => false,
         'border_color' => false,
         'border_style_type' => false,
         'border_size' => false,
@@ -135,16 +136,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => false,
         'background_image_url' => false,
         'company_logo_url' => false,
+        'text_plate' => false,
+        'text_plate_opacity' => false,
+        'text_plate_color' => false,
         'employee_id' => false,
         'id' => false,
         'merchant_id' => false,
         'created_at' => false,
         'updated_at' => false,
-        'is_active' => false,
-        'text_plate' => false,
-        'text_plate_opacity' => false,
-        'text_plate_color' => false,
-        'guest_instructions' => false
+        'is_active' => false
     ];
 
     /**
@@ -233,6 +233,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'guest_instructions' => 'guestInstructions',
         'border_color' => 'borderColor',
         'border_style_type' => 'borderStyleType',
         'border_size' => 'borderSize',
@@ -246,16 +247,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => 'displayName',
         'background_image_url' => 'backgroundImageURL',
         'company_logo_url' => 'companyLogoURL',
+        'text_plate' => 'textPlate',
+        'text_plate_opacity' => 'textPlateOpacity',
+        'text_plate_color' => 'textPlateColor',
         'employee_id' => 'employeeID',
         'id' => 'id',
         'merchant_id' => 'merchantID',
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
-        'is_active' => 'isActive',
-        'text_plate' => 'textPlate',
-        'text_plate_opacity' => 'textPlateOpacity',
-        'text_plate_color' => 'textPlateColor',
-        'guest_instructions' => 'guestInstructions'
+        'is_active' => 'isActive'
     ];
 
     /**
@@ -264,6 +264,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'guest_instructions' => 'setGuestInstructions',
         'border_color' => 'setBorderColor',
         'border_style_type' => 'setBorderStyleType',
         'border_size' => 'setBorderSize',
@@ -277,16 +278,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => 'setDisplayName',
         'background_image_url' => 'setBackgroundImageUrl',
         'company_logo_url' => 'setCompanyLogoUrl',
+        'text_plate' => 'setTextPlate',
+        'text_plate_opacity' => 'setTextPlateOpacity',
+        'text_plate_color' => 'setTextPlateColor',
         'employee_id' => 'setEmployeeId',
         'id' => 'setId',
         'merchant_id' => 'setMerchantId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
-        'is_active' => 'setIsActive',
-        'text_plate' => 'setTextPlate',
-        'text_plate_opacity' => 'setTextPlateOpacity',
-        'text_plate_color' => 'setTextPlateColor',
-        'guest_instructions' => 'setGuestInstructions'
+        'is_active' => 'setIsActive'
     ];
 
     /**
@@ -295,6 +295,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'guest_instructions' => 'getGuestInstructions',
         'border_color' => 'getBorderColor',
         'border_style_type' => 'getBorderStyleType',
         'border_size' => 'getBorderSize',
@@ -308,16 +309,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         'display_name' => 'getDisplayName',
         'background_image_url' => 'getBackgroundImageUrl',
         'company_logo_url' => 'getCompanyLogoUrl',
+        'text_plate' => 'getTextPlate',
+        'text_plate_opacity' => 'getTextPlateOpacity',
+        'text_plate_color' => 'getTextPlateColor',
         'employee_id' => 'getEmployeeId',
         'id' => 'getId',
         'merchant_id' => 'getMerchantId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
-        'is_active' => 'getIsActive',
-        'text_plate' => 'getTextPlate',
-        'text_plate_opacity' => 'getTextPlateOpacity',
-        'text_plate_color' => 'getTextPlateColor',
-        'guest_instructions' => 'getGuestInstructions'
+        'is_active' => 'getIsActive'
     ];
 
     /**
@@ -377,6 +377,7 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('border_color', $data ?? [], null);
         $this->setIfExists('border_style_type', $data ?? [], null);
         $this->setIfExists('border_size', $data ?? [], null);
@@ -390,16 +391,15 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('display_name', $data ?? [], null);
         $this->setIfExists('background_image_url', $data ?? [], null);
         $this->setIfExists('company_logo_url', $data ?? [], null);
+        $this->setIfExists('text_plate', $data ?? [], null);
+        $this->setIfExists('text_plate_opacity', $data ?? [], null);
+        $this->setIfExists('text_plate_color', $data ?? [], null);
         $this->setIfExists('employee_id', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('merchant_id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('is_active', $data ?? [], null);
-        $this->setIfExists('text_plate', $data ?? [], null);
-        $this->setIfExists('text_plate_opacity', $data ?? [], null);
-        $this->setIfExists('text_plate_color', $data ?? [], null);
-        $this->setIfExists('guest_instructions', $data ?? [], null);
     }
 
     /**
@@ -429,6 +429,9 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['guest_instructions'] === null) {
+            $invalidProperties[] = "'guest_instructions' can't be null";
+        }
         if ($this->container['border_color'] === null) {
             $invalidProperties[] = "'border_color' can't be null";
         }
@@ -506,6 +509,12 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'display_name', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['text_plate'] === null) {
+            $invalidProperties[] = "'text_plate' can't be null";
+        }
+        if ($this->container['text_plate_opacity'] === null) {
+            $invalidProperties[] = "'text_plate_opacity' can't be null";
+        }
         if ($this->container['employee_id'] === null) {
             $invalidProperties[] = "'employee_id' can't be null";
         }
@@ -548,15 +557,6 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['is_active'] === null) {
             $invalidProperties[] = "'is_active' can't be null";
         }
-        if ($this->container['text_plate'] === null) {
-            $invalidProperties[] = "'text_plate' can't be null";
-        }
-        if ($this->container['text_plate_opacity'] === null) {
-            $invalidProperties[] = "'text_plate_opacity' can't be null";
-        }
-        if ($this->container['guest_instructions'] === null) {
-            $invalidProperties[] = "'guest_instructions' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -571,6 +571,33 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets guest_instructions
+     *
+     * @return string
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param string $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
 
     /**
      * Gets border_color
@@ -977,6 +1004,87 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets text_plate
+     *
+     * @return bool
+     */
+    public function getTextPlate()
+    {
+        return $this->container['text_plate'];
+    }
+
+    /**
+     * Sets text_plate
+     *
+     * @param bool $text_plate text_plate
+     *
+     * @return self
+     */
+    public function setTextPlate($text_plate)
+    {
+        if (is_null($text_plate)) {
+            throw new \InvalidArgumentException('non-nullable text_plate cannot be null');
+        }
+        $this->container['text_plate'] = $text_plate;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_plate_opacity
+     *
+     * @return float
+     */
+    public function getTextPlateOpacity()
+    {
+        return $this->container['text_plate_opacity'];
+    }
+
+    /**
+     * Sets text_plate_opacity
+     *
+     * @param float $text_plate_opacity text_plate_opacity
+     *
+     * @return self
+     */
+    public function setTextPlateOpacity($text_plate_opacity)
+    {
+        if (is_null($text_plate_opacity)) {
+            throw new \InvalidArgumentException('non-nullable text_plate_opacity cannot be null');
+        }
+        $this->container['text_plate_opacity'] = $text_plate_opacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_plate_color
+     *
+     * @return string|null
+     */
+    public function getTextPlateColor()
+    {
+        return $this->container['text_plate_color'];
+    }
+
+    /**
+     * Sets text_plate_color
+     *
+     * @param string|null $text_plate_color text_plate_color
+     *
+     * @return self
+     */
+    public function setTextPlateColor($text_plate_color)
+    {
+        if (is_null($text_plate_color)) {
+            throw new \InvalidArgumentException('non-nullable text_plate_color cannot be null');
+        }
+        $this->container['text_plate_color'] = $text_plate_color;
+
+        return $this;
+    }
+
+    /**
      * Gets employee_id
      *
      * @return string
@@ -1154,114 +1262,6 @@ class WTPaymentDesign implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable is_active cannot be null');
         }
         $this->container['is_active'] = $is_active;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_plate
-     *
-     * @return bool
-     */
-    public function getTextPlate()
-    {
-        return $this->container['text_plate'];
-    }
-
-    /**
-     * Sets text_plate
-     *
-     * @param bool $text_plate text_plate
-     *
-     * @return self
-     */
-    public function setTextPlate($text_plate)
-    {
-        if (is_null($text_plate)) {
-            throw new \InvalidArgumentException('non-nullable text_plate cannot be null');
-        }
-        $this->container['text_plate'] = $text_plate;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_plate_opacity
-     *
-     * @return float
-     */
-    public function getTextPlateOpacity()
-    {
-        return $this->container['text_plate_opacity'];
-    }
-
-    /**
-     * Sets text_plate_opacity
-     *
-     * @param float $text_plate_opacity text_plate_opacity
-     *
-     * @return self
-     */
-    public function setTextPlateOpacity($text_plate_opacity)
-    {
-        if (is_null($text_plate_opacity)) {
-            throw new \InvalidArgumentException('non-nullable text_plate_opacity cannot be null');
-        }
-        $this->container['text_plate_opacity'] = $text_plate_opacity;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_plate_color
-     *
-     * @return string|null
-     */
-    public function getTextPlateColor()
-    {
-        return $this->container['text_plate_color'];
-    }
-
-    /**
-     * Sets text_plate_color
-     *
-     * @param string|null $text_plate_color text_plate_color
-     *
-     * @return self
-     */
-    public function setTextPlateColor($text_plate_color)
-    {
-        if (is_null($text_plate_color)) {
-            throw new \InvalidArgumentException('non-nullable text_plate_color cannot be null');
-        }
-        $this->container['text_plate_color'] = $text_plate_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets guest_instructions
-     *
-     * @return string
-     */
-    public function getGuestInstructions()
-    {
-        return $this->container['guest_instructions'];
-    }
-
-    /**
-     * Sets guest_instructions
-     *
-     * @param string $guest_instructions guest_instructions
-     *
-     * @return self
-     */
-    public function setGuestInstructions($guest_instructions)
-    {
-        if (is_null($guest_instructions)) {
-            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
-        }
-        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

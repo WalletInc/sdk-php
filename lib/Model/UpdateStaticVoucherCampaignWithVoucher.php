@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -65,12 +65,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => 'mixed',
         'valid_only_at_pos_register_ids' => 'mixed',
         'payment_design_id' => 'string',
+        'guest_instructions' => 'mixed',
         'start_date_time' => 'mixed',
         'expiration_date_time' => 'mixed',
         'member_id' => 'mixed',
         'offer_amount_cents' => 'mixed',
         'cell_phone' => 'mixed',
-        'guest_instructions' => 'mixed',
         'voucher_id' => 'string'
     ];
 
@@ -89,12 +89,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => null,
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
+        'guest_instructions' => null,
         'start_date_time' => 'date-time',
         'expiration_date_time' => 'date-time',
         'member_id' => null,
         'offer_amount_cents' => 'int32',
         'cell_phone' => null,
-        'guest_instructions' => null,
         'voucher_id' => null
     ];
 
@@ -111,12 +111,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => true,
         'valid_only_at_pos_register_ids' => true,
         'payment_design_id' => false,
+        'guest_instructions' => true,
         'start_date_time' => true,
         'expiration_date_time' => true,
         'member_id' => true,
         'offer_amount_cents' => true,
         'cell_phone' => true,
-        'guest_instructions' => true,
         'voucher_id' => false
     ];
 
@@ -213,12 +213,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => 'merchantsReferenceID',
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
+        'guest_instructions' => 'guestInstructions',
         'start_date_time' => 'startDateTime',
         'expiration_date_time' => 'expirationDateTime',
         'member_id' => 'memberID',
         'offer_amount_cents' => 'offerAmountCents',
         'cell_phone' => 'cellPhone',
-        'guest_instructions' => 'guestInstructions',
         'voucher_id' => 'voucherID'
     ];
 
@@ -235,12 +235,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => 'setMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
+        'guest_instructions' => 'setGuestInstructions',
         'start_date_time' => 'setStartDateTime',
         'expiration_date_time' => 'setExpirationDateTime',
         'member_id' => 'setMemberId',
         'offer_amount_cents' => 'setOfferAmountCents',
         'cell_phone' => 'setCellPhone',
-        'guest_instructions' => 'setGuestInstructions',
         'voucher_id' => 'setVoucherId'
     ];
 
@@ -257,12 +257,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         'merchants_reference_id' => 'getMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
+        'guest_instructions' => 'getGuestInstructions',
         'start_date_time' => 'getStartDateTime',
         'expiration_date_time' => 'getExpirationDateTime',
         'member_id' => 'getMemberId',
         'offer_amount_cents' => 'getOfferAmountCents',
         'cell_phone' => 'getCellPhone',
-        'guest_instructions' => 'getGuestInstructions',
         'voucher_id' => 'getVoucherId'
     ];
 
@@ -330,12 +330,12 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
         $this->setIfExists('merchants_reference_id', $data ?? [], null);
         $this->setIfExists('valid_only_at_pos_register_ids', $data ?? [], null);
         $this->setIfExists('payment_design_id', $data ?? [], null);
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('start_date_time', $data ?? [], null);
         $this->setIfExists('expiration_date_time', $data ?? [], null);
         $this->setIfExists('member_id', $data ?? [], null);
         $this->setIfExists('offer_amount_cents', $data ?? [], null);
         $this->setIfExists('cell_phone', $data ?? [], null);
-        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('voucher_id', $data ?? [], null);
     }
 
@@ -681,6 +681,40 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets guest_instructions
+     *
+     * @return mixed|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param mixed|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guest_instructions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
+
+    /**
      * Gets start_date_time
      *
      * @return mixed
@@ -856,40 +890,6 @@ class UpdateStaticVoucherCampaignWithVoucher implements ModelInterface, ArrayAcc
             }
         }
         $this->container['cell_phone'] = $cell_phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets guest_instructions
-     *
-     * @return mixed|null
-     */
-    public function getGuestInstructions()
-    {
-        return $this->container['guest_instructions'];
-    }
-
-    /**
-     * Sets guest_instructions
-     *
-     * @param mixed|null $guest_instructions guest_instructions
-     *
-     * @return self
-     */
-    public function setGuestInstructions($guest_instructions)
-    {
-        if (is_null($guest_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('guest_instructions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

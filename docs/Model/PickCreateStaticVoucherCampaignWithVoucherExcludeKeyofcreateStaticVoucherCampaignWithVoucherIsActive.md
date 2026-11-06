@@ -11,12 +11,12 @@ Name | Type | Description | Notes
 **merchants_reference_id** | **string** |  | [optional]
 **valid_only_at_pos_register_ids** | **string[]** |  | [optional]
 **payment_design_id** | **string** |  |
+**guest_instructions** | **string** |  | [optional]
 **start_date_time** | **\DateTime** |  |
 **expiration_date_time** | **\DateTime** |  |
 **source_id** | **int** |  |
 **member_id** | **string** |  | [optional]
 **offer_amount_cents** | **int** |  |
 **cell_phone** | **string** |  | [optional]
-**guest_instructions** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

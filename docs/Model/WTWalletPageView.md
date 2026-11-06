@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **phone_verification_token** | **mixed** |  |
 **referring_domain** | **mixed** |  | [optional]
 **referrer** | **mixed** |  | [optional]
+**traffic_class** | [**\OpenAPI\Client\Model\TrafficClass**](TrafficClass.md) |  | [optional]
 **id** | **string** |  |
 **status** | **mixed** |  |
 **country** | **mixed** |  |

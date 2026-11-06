@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **valid_only_at_pos_register_ids** | **string[]** |  | [optional]
 **payment_design_id** | **string** |  |
 **employee_id** | **string** |  |
+**guest_instructions** | **string** |  | [optional]
 **campaign_group_id** | **string** |  | [optional]
 **bucket** | **string** |  | [optional]
 **created_by_source_id** | **int** |  |

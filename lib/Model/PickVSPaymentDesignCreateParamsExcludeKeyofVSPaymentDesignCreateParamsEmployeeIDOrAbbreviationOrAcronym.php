@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -59,6 +59,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
       * @var string[]
       */
     protected static $openAPITypes = [
+        'guest_instructions' => 'string',
         'border_color' => 'string',
         'border_style_type' => '\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType',
         'border_size' => 'string',
@@ -69,7 +70,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => 'string',
         'display_name' => 'string',
         'background_image_url' => 'string',
-        'company_logo_url' => 'string'
+        'company_logo_url' => 'string',
+        'text_plate' => 'bool',
+        'text_plate_opacity' => 'float',
+        'text_plate_color' => 'string'
     ];
 
     /**
@@ -80,6 +84,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'guest_instructions' => null,
         'border_color' => null,
         'border_style_type' => null,
         'border_size' => null,
@@ -90,7 +95,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => null,
         'display_name' => null,
         'background_image_url' => null,
-        'company_logo_url' => null
+        'company_logo_url' => null,
+        'text_plate' => null,
+        'text_plate_opacity' => 'double',
+        'text_plate_color' => null
     ];
 
     /**
@@ -99,6 +107,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'guest_instructions' => false,
         'border_color' => false,
         'border_style_type' => false,
         'border_size' => false,
@@ -109,7 +118,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => false,
         'display_name' => false,
         'background_image_url' => false,
-        'company_logo_url' => false
+        'company_logo_url' => false,
+        'text_plate' => false,
+        'text_plate_opacity' => false,
+        'text_plate_color' => false
     ];
 
     /**
@@ -198,6 +210,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
      * @var string[]
      */
     protected static $attributeMap = [
+        'guest_instructions' => 'guestInstructions',
         'border_color' => 'borderColor',
         'border_style_type' => 'borderStyleType',
         'border_size' => 'borderSize',
@@ -208,7 +221,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => 'designName',
         'display_name' => 'displayName',
         'background_image_url' => 'backgroundImageURL',
-        'company_logo_url' => 'companyLogoURL'
+        'company_logo_url' => 'companyLogoURL',
+        'text_plate' => 'textPlate',
+        'text_plate_opacity' => 'textPlateOpacity',
+        'text_plate_color' => 'textPlateColor'
     ];
 
     /**
@@ -217,6 +233,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
      * @var string[]
      */
     protected static $setters = [
+        'guest_instructions' => 'setGuestInstructions',
         'border_color' => 'setBorderColor',
         'border_style_type' => 'setBorderStyleType',
         'border_size' => 'setBorderSize',
@@ -227,7 +244,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => 'setDesignName',
         'display_name' => 'setDisplayName',
         'background_image_url' => 'setBackgroundImageUrl',
-        'company_logo_url' => 'setCompanyLogoUrl'
+        'company_logo_url' => 'setCompanyLogoUrl',
+        'text_plate' => 'setTextPlate',
+        'text_plate_opacity' => 'setTextPlateOpacity',
+        'text_plate_color' => 'setTextPlateColor'
     ];
 
     /**
@@ -236,6 +256,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
      * @var string[]
      */
     protected static $getters = [
+        'guest_instructions' => 'getGuestInstructions',
         'border_color' => 'getBorderColor',
         'border_style_type' => 'getBorderStyleType',
         'border_size' => 'getBorderSize',
@@ -246,7 +267,10 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         'design_name' => 'getDesignName',
         'display_name' => 'getDisplayName',
         'background_image_url' => 'getBackgroundImageUrl',
-        'company_logo_url' => 'getCompanyLogoUrl'
+        'company_logo_url' => 'getCompanyLogoUrl',
+        'text_plate' => 'getTextPlate',
+        'text_plate_opacity' => 'getTextPlateOpacity',
+        'text_plate_color' => 'getTextPlateColor'
     ];
 
     /**
@@ -306,6 +330,7 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('border_color', $data ?? [], null);
         $this->setIfExists('border_style_type', $data ?? [], null);
         $this->setIfExists('border_size', $data ?? [], null);
@@ -317,6 +342,9 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         $this->setIfExists('display_name', $data ?? [], null);
         $this->setIfExists('background_image_url', $data ?? [], null);
         $this->setIfExists('company_logo_url', $data ?? [], null);
+        $this->setIfExists('text_plate', $data ?? [], null);
+        $this->setIfExists('text_plate_opacity', $data ?? [], null);
+        $this->setIfExists('text_plate_color', $data ?? [], null);
     }
 
     /**
@@ -409,6 +437,18 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
             $invalidProperties[] = "invalid value for 'display_name', the character length must be bigger than or equal to 1.";
         }
 
+        if (!is_null($this->container['text_plate_opacity']) && ($this->container['text_plate_opacity'] > 0.8)) {
+            $invalidProperties[] = "invalid value for 'text_plate_opacity', must be smaller than or equal to 0.8.";
+        }
+
+        if (!is_null($this->container['text_plate_opacity']) && ($this->container['text_plate_opacity'] < 0.2)) {
+            $invalidProperties[] = "invalid value for 'text_plate_opacity', must be bigger than or equal to 0.2.";
+        }
+
+        if (!is_null($this->container['text_plate_color']) && !preg_match("/^(#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}))?$/", $this->container['text_plate_color'])) {
+            $invalidProperties[] = "invalid value for 'text_plate_color', must be conform to the pattern /^(#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}))?$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -423,6 +463,33 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets guest_instructions
+     *
+     * @return string|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param string|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
 
     /**
      * Gets border_color
@@ -760,6 +827,100 @@ class PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmpl
             throw new \InvalidArgumentException('non-nullable company_logo_url cannot be null');
         }
         $this->container['company_logo_url'] = $company_logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_plate
+     *
+     * @return bool|null
+     */
+    public function getTextPlate()
+    {
+        return $this->container['text_plate'];
+    }
+
+    /**
+     * Sets text_plate
+     *
+     * @param bool|null $text_plate text_plate
+     *
+     * @return self
+     */
+    public function setTextPlate($text_plate)
+    {
+        if (is_null($text_plate)) {
+            throw new \InvalidArgumentException('non-nullable text_plate cannot be null');
+        }
+        $this->container['text_plate'] = $text_plate;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_plate_opacity
+     *
+     * @return float|null
+     */
+    public function getTextPlateOpacity()
+    {
+        return $this->container['text_plate_opacity'];
+    }
+
+    /**
+     * Sets text_plate_opacity
+     *
+     * @param float|null $text_plate_opacity text_plate_opacity
+     *
+     * @return self
+     */
+    public function setTextPlateOpacity($text_plate_opacity)
+    {
+        if (is_null($text_plate_opacity)) {
+            throw new \InvalidArgumentException('non-nullable text_plate_opacity cannot be null');
+        }
+
+        if (($text_plate_opacity > 0.8)) {
+            throw new \InvalidArgumentException('invalid value for $text_plate_opacity when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym., must be smaller than or equal to 0.8.');
+        }
+        if (($text_plate_opacity < 0.2)) {
+            throw new \InvalidArgumentException('invalid value for $text_plate_opacity when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym., must be bigger than or equal to 0.2.');
+        }
+
+        $this->container['text_plate_opacity'] = $text_plate_opacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_plate_color
+     *
+     * @return string|null
+     */
+    public function getTextPlateColor()
+    {
+        return $this->container['text_plate_color'];
+    }
+
+    /**
+     * Sets text_plate_color
+     *
+     * @param string|null $text_plate_color text_plate_color
+     *
+     * @return self
+     */
+    public function setTextPlateColor($text_plate_color)
+    {
+        if (is_null($text_plate_color)) {
+            throw new \InvalidArgumentException('non-nullable text_plate_color cannot be null');
+        }
+
+        if ((!preg_match("/^(#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}))?$/", ObjectSerializer::toString($text_plate_color)))) {
+            throw new \InvalidArgumentException("invalid value for \$text_plate_color when calling PickVSPaymentDesignCreateParamsExcludeKeyofVSPaymentDesignCreateParamsEmployeeIDOrAbbreviationOrAcronym., must conform to the pattern /^(#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}))?$/.");
+        }
+
+        $this->container['text_plate_color'] = $text_plate_color;
 
         return $this;
     }

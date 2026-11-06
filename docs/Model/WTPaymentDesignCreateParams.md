@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**guest_instructions** | **mixed** |  | [optional]
 **border_color** | **string** |  |
 **border_style_type** | [**\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType**](PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType.md) |  |
 **border_size** | **string** |  |
@@ -15,11 +16,10 @@ Name | Type | Description | Notes
 **display_name** | **string** |  |
 **background_image_url** | **string** |  | [optional]
 **company_logo_url** | **string** |  | [optional]
-**abbreviation** | **string** |  | [optional]
-**acronym** | **string** |  | [optional]
 **text_plate** | **bool** |  | [optional]
 **text_plate_opacity** | **mixed** |  | [optional]
 **text_plate_color** | **mixed** |  | [optional]
-**guest_instructions** | **mixed** |  | [optional]
+**abbreviation** | **string** |  | [optional]
+**acronym** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

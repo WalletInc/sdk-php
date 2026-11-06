@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -70,7 +70,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => 'string',
         'employee_id' => 'string',
         'reinvestment_sum' => 'int',
-        'number_of_vouchers_in_file' => 'int'
+        'number_of_vouchers_in_file' => 'int',
+        'guest_instructions' => 'string'
     ];
 
     /**
@@ -92,7 +93,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => null,
         'employee_id' => null,
         'reinvestment_sum' => 'int32',
-        'number_of_vouchers_in_file' => 'int32'
+        'number_of_vouchers_in_file' => 'int32',
+        'guest_instructions' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => false,
         'employee_id' => false,
         'reinvestment_sum' => false,
-        'number_of_vouchers_in_file' => false
+        'number_of_vouchers_in_file' => false,
+        'guest_instructions' => false
     ];
 
     /**
@@ -212,7 +215,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => 'paymentDesignID',
         'employee_id' => 'employeeID',
         'reinvestment_sum' => 'reinvestmentSum',
-        'number_of_vouchers_in_file' => 'numberOfVouchersInFile'
+        'number_of_vouchers_in_file' => 'numberOfVouchersInFile',
+        'guest_instructions' => 'guestInstructions'
     ];
 
     /**
@@ -232,7 +236,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => 'setPaymentDesignId',
         'employee_id' => 'setEmployeeId',
         'reinvestment_sum' => 'setReinvestmentSum',
-        'number_of_vouchers_in_file' => 'setNumberOfVouchersInFile'
+        'number_of_vouchers_in_file' => 'setNumberOfVouchersInFile',
+        'guest_instructions' => 'setGuestInstructions'
     ];
 
     /**
@@ -252,7 +257,8 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         'payment_design_id' => 'getPaymentDesignId',
         'employee_id' => 'getEmployeeId',
         'reinvestment_sum' => 'getReinvestmentSum',
-        'number_of_vouchers_in_file' => 'getNumberOfVouchersInFile'
+        'number_of_vouchers_in_file' => 'getNumberOfVouchersInFile',
+        'guest_instructions' => 'getGuestInstructions'
     ];
 
     /**
@@ -324,6 +330,7 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         $this->setIfExists('employee_id', $data ?? [], null);
         $this->setIfExists('reinvestment_sum', $data ?? [], null);
         $this->setIfExists('number_of_vouchers_in_file', $data ?? [], null);
+        $this->setIfExists('guest_instructions', $data ?? [], null);
     }
 
     /**
@@ -801,6 +808,33 @@ class PickVSCampaignUpdateParamsExcludeKeyofVSCampaignUpdateParamsStartDateOrExp
         }
 
         $this->container['number_of_vouchers_in_file'] = $number_of_vouchers_in_file;
+
+        return $this;
+    }
+
+    /**
+     * Gets guest_instructions
+     *
+     * @return string|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param string|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

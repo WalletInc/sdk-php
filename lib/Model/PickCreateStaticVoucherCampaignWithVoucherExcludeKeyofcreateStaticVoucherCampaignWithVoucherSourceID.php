@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -66,12 +66,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'string',
         'valid_only_at_pos_register_ids' => 'string[]',
         'payment_design_id' => 'string',
+        'guest_instructions' => 'string',
         'start_date_time' => '\DateTime',
         'expiration_date_time' => '\DateTime',
         'member_id' => 'string',
         'offer_amount_cents' => 'int',
-        'cell_phone' => 'string',
-        'guest_instructions' => 'string'
+        'cell_phone' => 'string'
     ];
 
     /**
@@ -89,12 +89,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => null,
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
+        'guest_instructions' => null,
         'start_date_time' => 'date-time',
         'expiration_date_time' => 'date-time',
         'member_id' => null,
         'offer_amount_cents' => 'int32',
-        'cell_phone' => null,
-        'guest_instructions' => null
+        'cell_phone' => null
     ];
 
     /**
@@ -110,12 +110,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => false,
         'valid_only_at_pos_register_ids' => false,
         'payment_design_id' => false,
+        'guest_instructions' => false,
         'start_date_time' => false,
         'expiration_date_time' => false,
         'member_id' => false,
         'offer_amount_cents' => false,
-        'cell_phone' => false,
-        'guest_instructions' => false
+        'cell_phone' => false
     ];
 
     /**
@@ -211,12 +211,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'merchantsReferenceID',
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
+        'guest_instructions' => 'guestInstructions',
         'start_date_time' => 'startDateTime',
         'expiration_date_time' => 'expirationDateTime',
         'member_id' => 'memberID',
         'offer_amount_cents' => 'offerAmountCents',
-        'cell_phone' => 'cellPhone',
-        'guest_instructions' => 'guestInstructions'
+        'cell_phone' => 'cellPhone'
     ];
 
     /**
@@ -232,12 +232,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'setMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
+        'guest_instructions' => 'setGuestInstructions',
         'start_date_time' => 'setStartDateTime',
         'expiration_date_time' => 'setExpirationDateTime',
         'member_id' => 'setMemberId',
         'offer_amount_cents' => 'setOfferAmountCents',
-        'cell_phone' => 'setCellPhone',
-        'guest_instructions' => 'setGuestInstructions'
+        'cell_phone' => 'setCellPhone'
     ];
 
     /**
@@ -253,12 +253,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         'merchants_reference_id' => 'getMerchantsReferenceId',
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
+        'guest_instructions' => 'getGuestInstructions',
         'start_date_time' => 'getStartDateTime',
         'expiration_date_time' => 'getExpirationDateTime',
         'member_id' => 'getMemberId',
         'offer_amount_cents' => 'getOfferAmountCents',
-        'cell_phone' => 'getCellPhone',
-        'guest_instructions' => 'getGuestInstructions'
+        'cell_phone' => 'getCellPhone'
     ];
 
     /**
@@ -325,12 +325,12 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
         $this->setIfExists('merchants_reference_id', $data ?? [], null);
         $this->setIfExists('valid_only_at_pos_register_ids', $data ?? [], null);
         $this->setIfExists('payment_design_id', $data ?? [], null);
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('start_date_time', $data ?? [], null);
         $this->setIfExists('expiration_date_time', $data ?? [], null);
         $this->setIfExists('member_id', $data ?? [], null);
         $this->setIfExists('offer_amount_cents', $data ?? [], null);
         $this->setIfExists('cell_phone', $data ?? [], null);
-        $this->setIfExists('guest_instructions', $data ?? [], null);
     }
 
     /**
@@ -625,6 +625,33 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
     }
 
     /**
+     * Gets guest_instructions
+     *
+     * @return string|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param string|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
+
+    /**
      * Gets start_date_time
      *
      * @return \DateTime
@@ -765,33 +792,6 @@ class PickCreateStaticVoucherCampaignWithVoucherExcludeKeyofcreateStaticVoucherC
             throw new \InvalidArgumentException('non-nullable cell_phone cannot be null');
         }
         $this->container['cell_phone'] = $cell_phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets guest_instructions
-     *
-     * @return string|null
-     */
-    public function getGuestInstructions()
-    {
-        return $this->container['guest_instructions'];
-    }
-
-    /**
-     * Sets guest_instructions
-     *
-     * @param string|null $guest_instructions guest_instructions
-     *
-     * @return self
-     */
-    public function setGuestInstructions($guest_instructions)
-    {
-        if (is_null($guest_instructions)) {
-            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
-        }
-        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

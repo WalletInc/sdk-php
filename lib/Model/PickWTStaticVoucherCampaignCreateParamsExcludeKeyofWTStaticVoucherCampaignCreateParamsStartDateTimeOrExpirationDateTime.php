@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -68,6 +68,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'string[]',
         'payment_design_id' => 'string',
         'employee_id' => 'string',
+        'guest_instructions' => 'string',
         'campaign_group_id' => 'string',
         'bucket' => 'string',
         'created_by_source_id' => 'int',
@@ -91,6 +92,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => null,
         'payment_design_id' => null,
         'employee_id' => null,
+        'guest_instructions' => null,
         'campaign_group_id' => null,
         'bucket' => null,
         'created_by_source_id' => 'int32',
@@ -112,6 +114,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => false,
         'payment_design_id' => false,
         'employee_id' => false,
+        'guest_instructions' => false,
         'campaign_group_id' => false,
         'bucket' => false,
         'created_by_source_id' => false,
@@ -213,6 +216,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'validOnlyAtPOSRegisterIDs',
         'payment_design_id' => 'paymentDesignID',
         'employee_id' => 'employeeID',
+        'guest_instructions' => 'guestInstructions',
         'campaign_group_id' => 'campaignGroupID',
         'bucket' => 'bucket',
         'created_by_source_id' => 'createdBySourceID',
@@ -234,6 +238,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'setValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'setPaymentDesignId',
         'employee_id' => 'setEmployeeId',
+        'guest_instructions' => 'setGuestInstructions',
         'campaign_group_id' => 'setCampaignGroupId',
         'bucket' => 'setBucket',
         'created_by_source_id' => 'setCreatedBySourceId',
@@ -255,6 +260,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         'valid_only_at_pos_register_ids' => 'getValidOnlyAtPosRegisterIds',
         'payment_design_id' => 'getPaymentDesignId',
         'employee_id' => 'getEmployeeId',
+        'guest_instructions' => 'getGuestInstructions',
         'campaign_group_id' => 'getCampaignGroupId',
         'bucket' => 'getBucket',
         'created_by_source_id' => 'getCreatedBySourceId',
@@ -327,6 +333,7 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         $this->setIfExists('valid_only_at_pos_register_ids', $data ?? [], null);
         $this->setIfExists('payment_design_id', $data ?? [], null);
         $this->setIfExists('employee_id', $data ?? [], null);
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('campaign_group_id', $data ?? [], null);
         $this->setIfExists('bucket', $data ?? [], null);
         $this->setIfExists('created_by_source_id', $data ?? [], null);
@@ -700,6 +707,33 @@ class PickWTStaticVoucherCampaignCreateParamsExcludeKeyofWTStaticVoucherCampaign
         }
 
         $this->container['employee_id'] = $employee_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets guest_instructions
+     *
+     * @return string|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param string|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            throw new \InvalidArgumentException('non-nullable guest_instructions cannot be null');
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

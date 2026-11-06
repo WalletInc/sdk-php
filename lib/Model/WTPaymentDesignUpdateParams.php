@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -58,6 +58,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
+        'guest_instructions' => 'mixed',
         'border_color' => 'string',
         'border_style_type' => '\OpenAPI\Client\Model\PickVSPaymentDesignUpdateParamsExcludeKeyofVSPaymentDesignUpdateParamsIdBorderStyleType',
         'border_size' => 'string',
@@ -69,12 +70,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => 'string',
         'background_image_url' => 'string',
         'company_logo_url' => 'string',
-        'abbreviation' => 'string',
-        'acronym' => 'string',
         'text_plate' => 'bool',
         'text_plate_opacity' => 'mixed',
         'text_plate_color' => 'mixed',
-        'guest_instructions' => 'mixed'
+        'abbreviation' => 'string',
+        'acronym' => 'string'
     ];
 
     /**
@@ -85,6 +85,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'guest_instructions' => null,
         'border_color' => null,
         'border_style_type' => null,
         'border_size' => null,
@@ -96,12 +97,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => null,
         'background_image_url' => null,
         'company_logo_url' => null,
-        'abbreviation' => null,
-        'acronym' => null,
         'text_plate' => null,
         'text_plate_opacity' => 'double',
         'text_plate_color' => null,
-        'guest_instructions' => null
+        'abbreviation' => null,
+        'acronym' => null
     ];
 
     /**
@@ -110,6 +110,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'guest_instructions' => true,
         'border_color' => false,
         'border_style_type' => false,
         'border_size' => false,
@@ -121,12 +122,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => false,
         'background_image_url' => false,
         'company_logo_url' => false,
-        'abbreviation' => false,
-        'acronym' => false,
         'text_plate' => false,
         'text_plate_opacity' => true,
         'text_plate_color' => true,
-        'guest_instructions' => true
+        'abbreviation' => false,
+        'acronym' => false
     ];
 
     /**
@@ -215,6 +215,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
+        'guest_instructions' => 'guestInstructions',
         'border_color' => 'borderColor',
         'border_style_type' => 'borderStyleType',
         'border_size' => 'borderSize',
@@ -226,12 +227,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => 'displayName',
         'background_image_url' => 'backgroundImageURL',
         'company_logo_url' => 'companyLogoURL',
-        'abbreviation' => 'abbreviation',
-        'acronym' => 'acronym',
         'text_plate' => 'textPlate',
         'text_plate_opacity' => 'textPlateOpacity',
         'text_plate_color' => 'textPlateColor',
-        'guest_instructions' => 'guestInstructions'
+        'abbreviation' => 'abbreviation',
+        'acronym' => 'acronym'
     ];
 
     /**
@@ -240,6 +240,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
+        'guest_instructions' => 'setGuestInstructions',
         'border_color' => 'setBorderColor',
         'border_style_type' => 'setBorderStyleType',
         'border_size' => 'setBorderSize',
@@ -251,12 +252,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => 'setDisplayName',
         'background_image_url' => 'setBackgroundImageUrl',
         'company_logo_url' => 'setCompanyLogoUrl',
-        'abbreviation' => 'setAbbreviation',
-        'acronym' => 'setAcronym',
         'text_plate' => 'setTextPlate',
         'text_plate_opacity' => 'setTextPlateOpacity',
         'text_plate_color' => 'setTextPlateColor',
-        'guest_instructions' => 'setGuestInstructions'
+        'abbreviation' => 'setAbbreviation',
+        'acronym' => 'setAcronym'
     ];
 
     /**
@@ -265,6 +265,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
+        'guest_instructions' => 'getGuestInstructions',
         'border_color' => 'getBorderColor',
         'border_style_type' => 'getBorderStyleType',
         'border_size' => 'getBorderSize',
@@ -276,12 +277,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         'display_name' => 'getDisplayName',
         'background_image_url' => 'getBackgroundImageUrl',
         'company_logo_url' => 'getCompanyLogoUrl',
-        'abbreviation' => 'getAbbreviation',
-        'acronym' => 'getAcronym',
         'text_plate' => 'getTextPlate',
         'text_plate_opacity' => 'getTextPlateOpacity',
         'text_plate_color' => 'getTextPlateColor',
-        'guest_instructions' => 'getGuestInstructions'
+        'abbreviation' => 'getAbbreviation',
+        'acronym' => 'getAcronym'
     ];
 
     /**
@@ -341,6 +341,7 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('border_color', $data ?? [], null);
         $this->setIfExists('border_style_type', $data ?? [], null);
         $this->setIfExists('border_size', $data ?? [], null);
@@ -352,12 +353,11 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('display_name', $data ?? [], null);
         $this->setIfExists('background_image_url', $data ?? [], null);
         $this->setIfExists('company_logo_url', $data ?? [], null);
-        $this->setIfExists('abbreviation', $data ?? [], null);
-        $this->setIfExists('acronym', $data ?? [], null);
         $this->setIfExists('text_plate', $data ?? [], null);
         $this->setIfExists('text_plate_opacity', $data ?? [], null);
         $this->setIfExists('text_plate_color', $data ?? [], null);
-        $this->setIfExists('guest_instructions', $data ?? [], null);
+        $this->setIfExists('abbreviation', $data ?? [], null);
+        $this->setIfExists('acronym', $data ?? [], null);
     }
 
     /**
@@ -386,6 +386,10 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['guest_instructions']) && (mb_strlen($this->container['guest_instructions']) > 5000)) {
+            $invalidProperties[] = "invalid value for 'guest_instructions', the character length must be smaller than or equal to 5000.";
+        }
 
         if ($this->container['border_color'] === null) {
             $invalidProperties[] = "'border_color' can't be null";
@@ -462,10 +466,6 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'text_plate_color', must be conform to the pattern ^(#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}))?$.";
         }
 
-        if (!is_null($this->container['guest_instructions']) && (mb_strlen($this->container['guest_instructions']) > 5000)) {
-            $invalidProperties[] = "invalid value for 'guest_instructions', the character length must be smaller than or equal to 5000.";
-        }
-
         return $invalidProperties;
     }
 
@@ -480,6 +480,44 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets guest_instructions
+     *
+     * @return mixed|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param mixed|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guest_instructions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($guest_instructions) && (mb_strlen($guest_instructions) > 5000)) {
+            throw new \InvalidArgumentException('invalid length for $guest_instructions when calling WTPaymentDesignUpdateParams., must be smaller than or equal to 5000.');
+        }
+
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
 
     /**
      * Gets border_color
@@ -822,60 +860,6 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets abbreviation
-     *
-     * @return string|null
-     */
-    public function getAbbreviation()
-    {
-        return $this->container['abbreviation'];
-    }
-
-    /**
-     * Sets abbreviation
-     *
-     * @param string|null $abbreviation abbreviation
-     *
-     * @return self
-     */
-    public function setAbbreviation($abbreviation)
-    {
-        if (is_null($abbreviation)) {
-            throw new \InvalidArgumentException('non-nullable abbreviation cannot be null');
-        }
-        $this->container['abbreviation'] = $abbreviation;
-
-        return $this;
-    }
-
-    /**
-     * Gets acronym
-     *
-     * @return string|null
-     */
-    public function getAcronym()
-    {
-        return $this->container['acronym'];
-    }
-
-    /**
-     * Sets acronym
-     *
-     * @param string|null $acronym acronym
-     *
-     * @return self
-     */
-    public function setAcronym($acronym)
-    {
-        if (is_null($acronym)) {
-            throw new \InvalidArgumentException('non-nullable acronym cannot be null');
-        }
-        $this->container['acronym'] = $acronym;
-
-        return $this;
-    }
-
-    /**
      * Gets text_plate
      *
      * @return bool|null
@@ -984,39 +968,55 @@ class WTPaymentDesignUpdateParams implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets guest_instructions
+     * Gets abbreviation
      *
-     * @return mixed|null
+     * @return string|null
      */
-    public function getGuestInstructions()
+    public function getAbbreviation()
     {
-        return $this->container['guest_instructions'];
+        return $this->container['abbreviation'];
     }
 
     /**
-     * Sets guest_instructions
+     * Sets abbreviation
      *
-     * @param mixed|null $guest_instructions guest_instructions
+     * @param string|null $abbreviation abbreviation
      *
      * @return self
      */
-    public function setGuestInstructions($guest_instructions)
+    public function setAbbreviation($abbreviation)
     {
-        if (is_null($guest_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('guest_instructions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($abbreviation)) {
+            throw new \InvalidArgumentException('non-nullable abbreviation cannot be null');
         }
-        if (!is_null($guest_instructions) && (mb_strlen($guest_instructions) > 5000)) {
-            throw new \InvalidArgumentException('invalid length for $guest_instructions when calling WTPaymentDesignUpdateParams., must be smaller than or equal to 5000.');
-        }
+        $this->container['abbreviation'] = $abbreviation;
 
-        $this->container['guest_instructions'] = $guest_instructions;
+        return $this;
+    }
+
+    /**
+     * Gets acronym
+     *
+     * @return string|null
+     */
+    public function getAcronym()
+    {
+        return $this->container['acronym'];
+    }
+
+    /**
+     * Sets acronym
+     *
+     * @param string|null $acronym acronym
+     *
+     * @return self
+     */
+    public function setAcronym($acronym)
+    {
+        if (is_null($acronym)) {
+            throw new \InvalidArgumentException('non-nullable acronym cannot be null');
+        }
+        $this->container['acronym'] = $acronym;
 
         return $this;
     }

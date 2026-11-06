@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -70,6 +70,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'string',
         'reinvestment_sum' => 'mixed',
         'number_of_vouchers_in_file' => 'mixed',
+        'guest_instructions' => 'mixed',
         'campaign_group_id' => 'string',
         'bucket' => 'mixed',
         'created_by_source_id' => 'mixed',
@@ -82,8 +83,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => 'mixed',
         'reinvestment_sum_string' => 'mixed',
         'start_date' => 'mixed',
-        'expiration_date' => 'mixed',
-        'guest_instructions' => 'mixed'
+        'expiration_date' => 'mixed'
     ];
 
     /**
@@ -106,6 +106,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => null,
         'reinvestment_sum' => 'int32',
         'number_of_vouchers_in_file' => 'int32',
+        'guest_instructions' => null,
         'campaign_group_id' => null,
         'bucket' => null,
         'created_by_source_id' => 'int32',
@@ -118,8 +119,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => null,
         'reinvestment_sum_string' => null,
         'start_date' => 'date-time',
-        'expiration_date' => 'date-time',
-        'guest_instructions' => null
+        'expiration_date' => 'date-time'
     ];
 
     /**
@@ -140,6 +140,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => false,
         'reinvestment_sum' => true,
         'number_of_vouchers_in_file' => true,
+        'guest_instructions' => true,
         'campaign_group_id' => false,
         'bucket' => true,
         'created_by_source_id' => true,
@@ -152,8 +153,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => true,
         'reinvestment_sum_string' => true,
         'start_date' => true,
-        'expiration_date' => true,
-        'guest_instructions' => true
+        'expiration_date' => true
     ];
 
     /**
@@ -254,6 +254,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'employeeID',
         'reinvestment_sum' => 'reinvestmentSum',
         'number_of_vouchers_in_file' => 'numberOfVouchersInFile',
+        'guest_instructions' => 'guestInstructions',
         'campaign_group_id' => 'campaignGroupID',
         'bucket' => 'bucket',
         'created_by_source_id' => 'createdBySourceID',
@@ -266,8 +267,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => 'reinvestmentSum_decimal',
         'reinvestment_sum_string' => 'reinvestmentSum_string',
         'start_date' => 'startDate',
-        'expiration_date' => 'expirationDate',
-        'guest_instructions' => 'guestInstructions'
+        'expiration_date' => 'expirationDate'
     ];
 
     /**
@@ -288,6 +288,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'setEmployeeId',
         'reinvestment_sum' => 'setReinvestmentSum',
         'number_of_vouchers_in_file' => 'setNumberOfVouchersInFile',
+        'guest_instructions' => 'setGuestInstructions',
         'campaign_group_id' => 'setCampaignGroupId',
         'bucket' => 'setBucket',
         'created_by_source_id' => 'setCreatedBySourceId',
@@ -300,8 +301,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => 'setReinvestmentSumDecimal',
         'reinvestment_sum_string' => 'setReinvestmentSumString',
         'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate',
-        'guest_instructions' => 'setGuestInstructions'
+        'expiration_date' => 'setExpirationDate'
     ];
 
     /**
@@ -322,6 +322,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'employee_id' => 'getEmployeeId',
         'reinvestment_sum' => 'getReinvestmentSum',
         'number_of_vouchers_in_file' => 'getNumberOfVouchersInFile',
+        'guest_instructions' => 'getGuestInstructions',
         'campaign_group_id' => 'getCampaignGroupId',
         'bucket' => 'getBucket',
         'created_by_source_id' => 'getCreatedBySourceId',
@@ -334,8 +335,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         'reinvestment_sum_decimal' => 'getReinvestmentSumDecimal',
         'reinvestment_sum_string' => 'getReinvestmentSumString',
         'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate',
-        'guest_instructions' => 'getGuestInstructions'
+        'expiration_date' => 'getExpirationDate'
     ];
 
     /**
@@ -407,6 +407,7 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('employee_id', $data ?? [], null);
         $this->setIfExists('reinvestment_sum', $data ?? [], null);
         $this->setIfExists('number_of_vouchers_in_file', $data ?? [], null);
+        $this->setIfExists('guest_instructions', $data ?? [], null);
         $this->setIfExists('campaign_group_id', $data ?? [], null);
         $this->setIfExists('bucket', $data ?? [], null);
         $this->setIfExists('created_by_source_id', $data ?? [], null);
@@ -420,7 +421,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('reinvestment_sum_string', $data ?? [], null);
         $this->setIfExists('start_date', $data ?? [], null);
         $this->setIfExists('expiration_date', $data ?? [], null);
-        $this->setIfExists('guest_instructions', $data ?? [], null);
     }
 
     /**
@@ -998,6 +998,40 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets guest_instructions
+     *
+     * @return mixed|null
+     */
+    public function getGuestInstructions()
+    {
+        return $this->container['guest_instructions'];
+    }
+
+    /**
+     * Sets guest_instructions
+     *
+     * @param mixed|null $guest_instructions guest_instructions
+     *
+     * @return self
+     */
+    public function setGuestInstructions($guest_instructions)
+    {
+        if (is_null($guest_instructions)) {
+            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guest_instructions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['guest_instructions'] = $guest_instructions;
+
+        return $this;
+    }
+
+    /**
      * Gets campaign_group_id
      *
      * @return string|null
@@ -1441,40 +1475,6 @@ class WTStaticVoucherCampaign implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['expiration_date'] = $expiration_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets guest_instructions
-     *
-     * @return mixed|null
-     */
-    public function getGuestInstructions()
-    {
-        return $this->container['guest_instructions'];
-    }
-
-    /**
-     * Sets guest_instructions
-     *
-     * @param mixed|null $guest_instructions guest_instructions
-     *
-     * @return self
-     */
-    public function setGuestInstructions($guest_instructions)
-    {
-        if (is_null($guest_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'guest_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('guest_instructions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['guest_instructions'] = $guest_instructions;
 
         return $this;
     }

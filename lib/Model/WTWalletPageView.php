@@ -13,7 +13,7 @@
 /**
  * wallet-api
  *
- * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-05T12:09:27.528Z
+ * Wallet Inc. API reference.  **Spec version 2.61.0**, built 2026-11-06T16:23:55.690Z
  *
  * The version of the OpenAPI document: 2.61.0
  * Contact: development@wallet.inc
@@ -78,6 +78,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => 'mixed',
         'referring_domain' => 'mixed',
         'referrer' => 'mixed',
+        'traffic_class' => '\OpenAPI\Client\Model\TrafficClass',
         'id' => 'string',
         'status' => 'mixed',
         'country' => 'mixed',
@@ -127,6 +128,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => null,
         'referring_domain' => null,
         'referrer' => null,
+        'traffic_class' => null,
         'id' => null,
         'status' => null,
         'country' => null,
@@ -174,6 +176,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => true,
         'referring_domain' => true,
         'referrer' => true,
+        'traffic_class' => false,
         'id' => false,
         'status' => true,
         'country' => true,
@@ -301,6 +304,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => 'phoneVerificationToken',
         'referring_domain' => 'referringDomain',
         'referrer' => 'referrer',
+        'traffic_class' => 'trafficClass',
         'id' => 'id',
         'status' => 'status',
         'country' => 'country',
@@ -348,6 +352,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => 'setPhoneVerificationToken',
         'referring_domain' => 'setReferringDomain',
         'referrer' => 'setReferrer',
+        'traffic_class' => 'setTrafficClass',
         'id' => 'setId',
         'status' => 'setStatus',
         'country' => 'setCountry',
@@ -395,6 +400,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_verification_token' => 'getPhoneVerificationToken',
         'referring_domain' => 'getReferringDomain',
         'referrer' => 'getReferrer',
+        'traffic_class' => 'getTrafficClass',
         'id' => 'getId',
         'status' => 'getStatus',
         'country' => 'getCountry',
@@ -493,6 +499,7 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('phone_verification_token', $data ?? [], null);
         $this->setIfExists('referring_domain', $data ?? [], null);
         $this->setIfExists('referrer', $data ?? [], null);
+        $this->setIfExists('traffic_class', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
@@ -1367,6 +1374,33 @@ class WTWalletPageView implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['referrer'] = $referrer;
+
+        return $this;
+    }
+
+    /**
+     * Gets traffic_class
+     *
+     * @return \OpenAPI\Client\Model\TrafficClass|null
+     */
+    public function getTrafficClass()
+    {
+        return $this->container['traffic_class'];
+    }
+
+    /**
+     * Sets traffic_class
+     *
+     * @param \OpenAPI\Client\Model\TrafficClass|null $traffic_class traffic_class
+     *
+     * @return self
+     */
+    public function setTrafficClass($traffic_class)
+    {
+        if (is_null($traffic_class)) {
+            throw new \InvalidArgumentException('non-nullable traffic_class cannot be null');
+        }
+        $this->container['traffic_class'] = $traffic_class;
 
         return $this;
     }

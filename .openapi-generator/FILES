@@ -325,6 +325,7 @@ docs/Model/Tcpa.md
 docs/Model/Thread.md
 docs/Model/Ticket.md
 docs/Model/TicketSortKeys.md
+docs/Model/TrafficClass.md
 docs/Model/TrustBundleStatuses.md
 docs/Model/UpdateChromeThemePreferenceRequest.md
 docs/Model/UpdateChromeThemePreferenceRequestChromeTheme.md
@@ -994,6 +995,7 @@ lib/Model/Tcpa.php
 lib/Model/Thread.php
 lib/Model/Ticket.php
 lib/Model/TicketSortKeys.php
+lib/Model/TrafficClass.php
 lib/Model/TrustBundleStatuses.php
 lib/Model/UpdateChromeThemePreferenceRequest.php
 lib/Model/UpdateChromeThemePreferenceRequestChromeTheme.php
@@ -1660,6 +1662,7 @@ test/Model/TcpaTest.php
 test/Model/ThreadTest.php
 test/Model/TicketSortKeysTest.php
 test/Model/TicketTest.php
+test/Model/TrafficClassTest.php
 test/Model/TrustBundleStatusesTest.php
 test/Model/UpdateChromeThemePreferenceRequestChromeThemeTest.php
 test/Model/UpdateChromeThemePreferenceRequestTest.php

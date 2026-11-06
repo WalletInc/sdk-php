@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **employee_id** | **string** |  |
 **reinvestment_sum** | **mixed** |  |
 **number_of_vouchers_in_file** | **mixed** |  |
+**guest_instructions** | **mixed** |  | [optional]
 **campaign_group_id** | **string** |  | [optional]
 **bucket** | **mixed** |  | [optional]
 **created_by_source_id** | **mixed** |  |
@@ -29,6 +30,5 @@ Name | Type | Description | Notes
 **reinvestment_sum_string** | **mixed** |  |
 **start_date** | **mixed** |  |
 **expiration_date** | **mixed** |  |
-**guest_instructions** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
