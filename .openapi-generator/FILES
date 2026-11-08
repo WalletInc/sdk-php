@@ -202,7 +202,6 @@ docs/Model/MerchantNotInitialized.md
 docs/Model/MerchantTermsDocumentType.md
 docs/Model/MerchantURL.md
 docs/Model/Message.md
-docs/Model/ModuleError.md
 docs/Model/NewsArticle.md
 docs/Model/NotFound.md
 docs/Model/OAIAssistantUpdateParams.md
@@ -211,7 +210,6 @@ docs/Model/OptInList.md
 docs/Model/OptInListSource.md
 docs/Model/OptInListSubscriber.md
 docs/Model/OptInListSubscriberOptInSourceID.md
-docs/Model/Order.md
 docs/Model/OrderStatus.md
 docs/Model/OutboundSMS.md
 docs/Model/OutboundSMSPaymentObjectBroadcastID.md
@@ -660,6 +658,9 @@ docs/Model/WTWalletPassProvider.md
 docs/Model/WTWalletSectionAccess.md
 docs/Model/WTWalletSectionTopItem.md
 docs/Model/WTWalletSectionViews.md
+docs/Model/WTWebsiteWidget.md
+docs/Model/WTWebsiteWidgetEmbedders.md
+docs/Model/WTWebsiteWidgetOriginsUpdate.md
 docs/Model/WTWhatsAppInboundWebhook.md
 docs/Model/WTWhatsAppStatusCallback.md
 docs/Model/WalletConfiguration.md
@@ -872,7 +873,6 @@ lib/Model/MerchantTermsDocumentType.php
 lib/Model/MerchantURL.php
 lib/Model/Message.php
 lib/Model/ModelInterface.php
-lib/Model/ModuleError.php
 lib/Model/NewsArticle.php
 lib/Model/NotFound.php
 lib/Model/OAIAssistantUpdateParams.php
@@ -881,7 +881,6 @@ lib/Model/OptInList.php
 lib/Model/OptInListSource.php
 lib/Model/OptInListSubscriber.php
 lib/Model/OptInListSubscriberOptInSourceID.php
-lib/Model/Order.php
 lib/Model/OrderStatus.php
 lib/Model/OutboundSMS.php
 lib/Model/OutboundSMSPaymentObjectBroadcastID.php
@@ -1330,6 +1329,9 @@ lib/Model/WTWalletPassProvider.php
 lib/Model/WTWalletSectionAccess.php
 lib/Model/WTWalletSectionTopItem.php
 lib/Model/WTWalletSectionViews.php
+lib/Model/WTWebsiteWidget.php
+lib/Model/WTWebsiteWidgetEmbedders.php
+lib/Model/WTWebsiteWidgetOriginsUpdate.php
 lib/Model/WTWhatsAppInboundWebhook.php
 lib/Model/WTWhatsAppStatusCallback.php
 lib/Model/WalletConfiguration.php
@@ -1539,7 +1541,6 @@ test/Model/MerchantTermsDocumentTypeTest.php
 test/Model/MerchantTest.php
 test/Model/MerchantURLTest.php
 test/Model/MessageTest.php
-test/Model/ModuleErrorTest.php
 test/Model/NewsArticleTest.php
 test/Model/NotFoundTest.php
 test/Model/OAIAssistantUpdateParamsCreateParamsTest.php
@@ -1549,7 +1550,6 @@ test/Model/OptInListSubscriberOptInSourceIDTest.php
 test/Model/OptInListSubscriberTest.php
 test/Model/OptInListTest.php
 test/Model/OrderStatusTest.php
-test/Model/OrderTest.php
 test/Model/OutboundSMSPaymentObjectBroadcastIDTest.php
 test/Model/OutboundSMSStatusTest.php
 test/Model/OutboundSMSTest.php
@@ -1997,6 +1997,9 @@ test/Model/WTWalletPassProviderTest.php
 test/Model/WTWalletSectionAccessTest.php
 test/Model/WTWalletSectionTopItemTest.php
 test/Model/WTWalletSectionViewsTest.php
+test/Model/WTWebsiteWidgetEmbeddersTest.php
+test/Model/WTWebsiteWidgetOriginsUpdateTest.php
+test/Model/WTWebsiteWidgetTest.php
 test/Model/WTWhatsAppInboundWebhookTest.php
 test/Model/WTWhatsAppStatusCallbackTest.php
 test/Model/WalletConfigurationTest.php

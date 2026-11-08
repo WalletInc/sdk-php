@@ -7,11 +7,13 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 | [**deleteCustomDomain()**](WalletConfigurationApi.md#deleteCustomDomain) | **DELETE** /employee/walletConfiguration/customDomain | Remove the custom domain |
 | [**fetchCustomDomain()**](WalletConfigurationApi.md#fetchCustomDomain) | **GET** /employee/walletConfiguration/customDomain | Get the custom domain |
 | [**fetchPassStyle()**](WalletConfigurationApi.md#fetchPassStyle) | **GET** /wallet/passStyle | Get pass styling |
+| [**fetchWebsiteWidget()**](WalletConfigurationApi.md#fetchWebsiteWidget) | **GET** /merchant/wallet/widget | Get website widget settings |
 | [**generateAndroidKeystore()**](WalletConfigurationApi.md#generateAndroidKeystore) | **POST** /v2/wallet/android/keystore | Generate Android TWA signing keystore |
 | [**resetPassStyle()**](WalletConfigurationApi.md#resetPassStyle) | **DELETE** /wallet/passStyle/{provider} | Reset one provider&#39;s pass styling |
 | [**saveCustomDomain()**](WalletConfigurationApi.md#saveCustomDomain) | **PUT** /employee/walletConfiguration/customDomain | Set up a custom domain |
 | [**saveMerchantCreditPaymentDesign()**](WalletConfigurationApi.md#saveMerchantCreditPaymentDesign) | **PUT** /v2/wallet/merchantCredit/paymentDesign | Update payment design for merchant credits |
 | [**saveWalletRecord()**](WalletConfigurationApi.md#saveWalletRecord) | **PUT** /v2/wallet | Update wallet record |
+| [**saveWebsiteWidgetOrigins()**](WalletConfigurationApi.md#saveWebsiteWidgetOrigins) | **PUT** /merchant/wallet/widget/origins | Set the websites allowed to show the wallet |
 
 
 ## `deleteCustomDomain()`
@@ -153,6 +155,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\OpenAPI\Client\Model\WTPassStyleResponse**](../Model/WTPassStyleResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `fetchWebsiteWidget()`
+
+```php
+fetchWebsiteWidget(): \OpenAPI\Client\Model\WTWebsiteWidget
+```
+
+Get website widget settings
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\WalletConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->fetchWebsiteWidget();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletConfigurationApi->fetchWebsiteWidget: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTWebsiteWidget**](../Model/WTWebsiteWidget.md)
 
 ### Authorization
 
@@ -423,6 +476,60 @@ try {
 ### Return type
 
 **mixed**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `saveWebsiteWidgetOrigins()`
+
+```php
+saveWebsiteWidgetOrigins($wt_website_widget_origins_update): \OpenAPI\Client\Model\WTWebsiteWidget
+```
+
+Set the websites allowed to show the wallet
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\WalletConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$wt_website_widget_origins_update = new \OpenAPI\Client\Model\WTWebsiteWidgetOriginsUpdate(); // \OpenAPI\Client\Model\WTWebsiteWidgetOriginsUpdate
+
+try {
+    $result = $apiInstance->saveWebsiteWidgetOrigins($wt_website_widget_origins_update);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WalletConfigurationApi->saveWebsiteWidgetOrigins: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **wt_website_widget_origins_update** | [**\OpenAPI\Client\Model\WTWebsiteWidgetOriginsUpdate**](../Model/WTWebsiteWidgetOriginsUpdate.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\WTWebsiteWidget**](../Model/WTWebsiteWidget.md)
 
 ### Authorization
 
