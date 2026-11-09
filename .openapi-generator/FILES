@@ -606,6 +606,10 @@ docs/Model/WTServiceUpdateParams.md
 docs/Model/WTSettingsSetPassword.md
 docs/Model/WTShareActivityReport.md
 docs/Model/WTShareActivityRow.md
+docs/Model/WTSmsCreditGrant.md
+docs/Model/WTSmsCreditGrantCreate.md
+docs/Model/WTSmsCreditOverdraftUpdate.md
+docs/Model/WTSmsCreditSummary.md
 docs/Model/WTSmsSubscriberCreateParams.md
 docs/Model/WTSmsSubscriberCreateParamsWalletUI.md
 docs/Model/WTSmsSubscriberUpdateParams.md
@@ -1279,6 +1283,10 @@ lib/Model/WTServiceUpdateParams.php
 lib/Model/WTSettingsSetPassword.php
 lib/Model/WTShareActivityReport.php
 lib/Model/WTShareActivityRow.php
+lib/Model/WTSmsCreditGrant.php
+lib/Model/WTSmsCreditGrantCreate.php
+lib/Model/WTSmsCreditOverdraftUpdate.php
+lib/Model/WTSmsCreditSummary.php
 lib/Model/WTSmsSubscriberCreateParams.php
 lib/Model/WTSmsSubscriberCreateParamsWalletUI.php
 lib/Model/WTSmsSubscriberUpdateParams.php
@@ -1949,6 +1957,10 @@ test/Model/WTServiceUpdateParamsTest.php
 test/Model/WTSettingsSetPasswordTest.php
 test/Model/WTShareActivityReportTest.php
 test/Model/WTShareActivityRowTest.php
+test/Model/WTSmsCreditGrantCreateTest.php
+test/Model/WTSmsCreditGrantTest.php
+test/Model/WTSmsCreditOverdraftUpdateTest.php
+test/Model/WTSmsCreditSummaryTest.php
 test/Model/WTSmsSubscriberCreateParamsTest.php
 test/Model/WTSmsSubscriberCreateParamsWalletUITest.php
 test/Model/WTSmsSubscriberUpdateParamsTest.php
