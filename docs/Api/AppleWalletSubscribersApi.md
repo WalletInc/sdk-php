@@ -4,7 +4,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity |
+| [**fetchAppleWalletSubscriberActivity()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscriberActivity) | **GET** /v2/apple/wallet/pass/subscriber/activity/{subscriptionID} | Get subscriber activity Scoped to the caller&#39;s merchant: the subscription must belong to them. |
 | [**fetchAppleWalletSubscribers()**](AppleWalletSubscribersApi.md#fetchAppleWalletSubscribers) | **GET** /v2/apple/wallet/pass/subscribers/all | Get all subscribers |
 
 
@@ -14,7 +14,7 @@ All URIs are relative to https://api.wall.et, except if the operation defines an
 fetchAppleWalletSubscriberActivity($subscription_id): mixed[]
 ```
 
-Get subscriber activity
+Get subscriber activity Scoped to the caller's merchant: the subscription must belong to them.
 
 ### Example
 

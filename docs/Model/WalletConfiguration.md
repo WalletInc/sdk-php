@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **is_sms_opt_in** | **mixed** |  |
 **sms_opt_in_source_id** | [**\OpenAPI\Client\Model\WTWalletConfigurationSaveWalletRecordSmsOptInSourceID**](WTWalletConfigurationSaveWalletRecordSmsOptInSourceID.md) |  | [optional]
 **is_email_subscriber** | **mixed** |  |
+**is_social_hub** | **mixed** |  | [optional]
 **google_analytics_id** | **mixed** |  | [optional]
 **facebook_pixel_id** | **mixed** |  | [optional]
 **public_chat_room_channel_id** | **mixed** |  | [optional]
