@@ -27,11 +27,17 @@ Archive Video
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -55,7 +61,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -81,11 +87,17 @@ Create Video
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_video_create_params = new \OpenAPI\Client\Model\WTVideoCreateParams(); // \OpenAPI\Client\Model\WTVideoCreateParams
 
@@ -109,7 +121,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -135,11 +147,17 @@ Get all Videos
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $is_archive_included = True; // bool
 
@@ -163,7 +181,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -189,11 +207,17 @@ Provision a direct video upload
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_video_upload_provision_params = new \OpenAPI\Client\Model\WTVideoUploadProvisionParams(); // \OpenAPI\Client\Model\WTVideoUploadProvisionParams
 
@@ -217,7 +241,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -243,11 +267,17 @@ Restore Video
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -271,7 +301,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -297,11 +327,17 @@ Update Video
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\VideosApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $wt_video_update_params = new \OpenAPI\Client\Model\WTVideoUpdateParams(); // \OpenAPI\Client\Model\WTVideoUpdateParams
@@ -327,7 +363,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 

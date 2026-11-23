@@ -28,11 +28,17 @@ Export club members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -53,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -79,11 +85,17 @@ Export merchant credits
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -104,7 +116,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -130,11 +142,17 @@ Export static voucher campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $campaign_id = 'campaign_id_example'; // string
 
@@ -158,7 +176,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -184,11 +202,17 @@ Import club members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_employee_import_records = new \OpenAPI\Client\Model\WTEmployeeImportRecords(); // \OpenAPI\Client\Model\WTEmployeeImportRecords
 
@@ -212,7 +236,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -238,11 +262,17 @@ Import merchant credits
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_employee_import_records = new \OpenAPI\Client\Model\WTEmployeeImportRecords(); // \OpenAPI\Client\Model\WTEmployeeImportRecords
 
@@ -266,7 +296,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -292,11 +322,17 @@ Mark export data files as read
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -317,7 +353,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -343,11 +379,17 @@ Update club members
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportExportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_employee_update_records = new \OpenAPI\Client\Model\WTEmployeeUpdateRecords(); // \OpenAPI\Client\Model\WTEmployeeUpdateRecords
 
@@ -371,7 +413,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 

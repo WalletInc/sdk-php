@@ -36,11 +36,17 @@ Archive Performance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -64,7 +70,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -90,11 +96,17 @@ Count Performance's claimed Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -118,7 +130,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -144,11 +156,17 @@ Count Performance's redeemed Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -172,7 +190,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -198,11 +216,17 @@ Create performance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_performance_create_params = new \OpenAPI\Client\Model\WTPerformanceCreateParams(); // \OpenAPI\Client\Model\WTPerformanceCreateParams
 
@@ -226,7 +250,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -252,11 +276,17 @@ Export Performance's Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -280,7 +310,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -306,11 +336,17 @@ Get Performance's Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $is_archive_included = True; // bool
@@ -336,7 +372,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -362,11 +398,17 @@ Get all Performances
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $is_archive_included = True; // bool
 
@@ -390,7 +432,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -416,11 +458,17 @@ Get Performance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -444,7 +492,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -470,11 +518,17 @@ Get Performance's Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $performance_id = 'performance_id_example'; // string
 $page_num = 3.4; // float
@@ -512,7 +566,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -538,11 +592,17 @@ Ticket reach funnel across all of the merchant's performances Merchant-wide tick
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
@@ -568,7 +628,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -594,11 +654,17 @@ Ticket reach funnel for a single performance Per-performance ticket lifecycle fu
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
@@ -626,7 +692,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -652,11 +718,17 @@ Import Performance's Tickets
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $import_tickets_request = new \OpenAPI\Client\Model\ImportTicketsRequest(); // \OpenAPI\Client\Model\ImportTicketsRequest
@@ -682,7 +754,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -708,11 +780,17 @@ Restore Performance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -736,7 +814,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -762,11 +840,17 @@ Update performance's Ticket Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $save_ticket_settings_request = new \OpenAPI\Client\Model\SaveTicketSettingsRequest(); // \OpenAPI\Client\Model\SaveTicketSettingsRequest
@@ -792,7 +876,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -818,11 +902,17 @@ Update Performance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\PerformancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 $wt_performance_update_params = new \OpenAPI\Client\Model\WTPerformanceUpdateParams(); // \OpenAPI\Client\Model\WTPerformanceUpdateParams
@@ -848,7 +938,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 

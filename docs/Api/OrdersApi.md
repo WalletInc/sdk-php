@@ -26,11 +26,17 @@ Fetch one of the authenticated merchant's orders by id Returns the order with it
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $order_id = 'order_id_example'; // string
 
@@ -54,7 +60,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -80,11 +86,17 @@ Get ordering settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -105,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -131,11 +143,17 @@ List the authenticated merchant's orders Newest first, each hydrated with its li
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $venue_id = 'venue_id_example'; // string | Only the orders of this Dining outlet (DI...) or Lounge (LO...), so each kitchen sees its own.
 
@@ -159,7 +177,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -185,11 +203,17 @@ Redact (soft-delete) the donor note on one of the authenticated merchant's order
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $order_id = 'order_id_example'; // string
 
@@ -213,7 +237,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -239,11 +263,17 @@ Update ordering settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_ordering_settings_update_params = new \OpenAPI\Client\Model\WTOrderingSettingsUpdateParams(); // \OpenAPI\Client\Model\WTOrderingSettingsUpdateParams
 
@@ -267,7 +297,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 

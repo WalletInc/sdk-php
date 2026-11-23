@@ -34,11 +34,17 @@ Archive recipient
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -62,7 +68,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -88,11 +94,17 @@ Count imported list recipients
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $list_id = 'list_id_example'; // string
 $is_archive_included = True; // bool
@@ -122,7 +134,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -148,11 +160,17 @@ Create imported list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wtsms_imported_list_create = new \OpenAPI\Client\Model\WTSMSImportedListCreate(); // \OpenAPI\Client\Model\WTSMSImportedListCreate
 
@@ -176,7 +194,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -202,11 +220,17 @@ Add new recipient in an imported list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $ss_imported_list_recipient_create_params = new \OpenAPI\Client\Model\SSImportedListRecipientCreateParams(); // \OpenAPI\Client\Model\SSImportedListRecipientCreateParams
 
@@ -230,7 +254,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -256,11 +280,17 @@ Export imported list recipients
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $imported_list_id = 'imported_list_id_example'; // string
 
@@ -284,7 +314,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -310,11 +340,17 @@ Get imported list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $list_id = 'list_id_example'; // string
 
@@ -338,7 +374,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -364,11 +400,17 @@ Get imported list recipients
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $list_id = 'list_id_example'; // string
 
@@ -392,7 +434,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -418,11 +460,17 @@ Get imported list recipients by page
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $list_id = 'list_id_example'; // string
 $page_size = 3.4; // float
@@ -452,7 +500,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -478,11 +526,17 @@ Get all imported lists
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $is_archive_included = True; // bool
 
@@ -506,7 +560,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -532,11 +586,17 @@ Import imported list recipients
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $imported_list_id = 'imported_list_id_example'; // string
 $wt_imported_list_recipient_import = new \OpenAPI\Client\Model\WTImportedListRecipientImport(); // \OpenAPI\Client\Model\WTImportedListRecipientImport
@@ -562,7 +622,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -588,11 +648,17 @@ Import imported list recipients from a given membership tier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $wt_imported_list_recipient_from_membership_tier_import = new \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport(); // \OpenAPI\Client\Model\WTImportedListRecipientFromMembershipTierImport
 
@@ -616,7 +682,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -642,11 +708,17 @@ Restore recipient
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string
 
@@ -670,7 +742,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
@@ -696,11 +768,17 @@ Save imported list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('access-token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access-token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ImportedListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $list_id = 'list_id_example'; // string
 $wtsms_imported_list_create = new \OpenAPI\Client\Model\WTSMSImportedListCreate(); // \OpenAPI\Client\Model\WTSMSImportedListCreate
@@ -726,7 +804,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[api_token](../../README.md#api_token)
 
 ### HTTP request headers
 
