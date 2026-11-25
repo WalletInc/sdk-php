@@ -531,6 +531,7 @@ docs/Model/WTOrderLineItem.md
 docs/Model/WTOrderLineOption.md
 docs/Model/WTOrderingSettings.md
 docs/Model/WTOrderingSettingsUpdateParams.md
+docs/Model/WTOtpChannel.md
 docs/Model/WTPassBrandKit.md
 docs/Model/WTPassStyleResponse.md
 docs/Model/WTPassStyleResponseApple.md
@@ -1230,6 +1231,7 @@ lib/Model/WTOrderLineItem.php
 lib/Model/WTOrderLineOption.php
 lib/Model/WTOrderingSettings.php
 lib/Model/WTOrderingSettingsUpdateParams.php
+lib/Model/WTOtpChannel.php
 lib/Model/WTPassBrandKit.php
 lib/Model/WTPassStyleResponse.php
 lib/Model/WTPassStyleResponseApple.php
@@ -1926,6 +1928,7 @@ test/Model/WTOrderLineOptionTest.php
 test/Model/WTOrderTest.php
 test/Model/WTOrderingSettingsTest.php
 test/Model/WTOrderingSettingsUpdateParamsTest.php
+test/Model/WTOtpChannelTest.php
 test/Model/WTPassBrandKitTest.php
 test/Model/WTPassStyleResponseAppleTest.php
 test/Model/WTPassStyleResponseGoogleTest.php
