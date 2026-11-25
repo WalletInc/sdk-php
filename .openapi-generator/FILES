@@ -515,6 +515,7 @@ docs/Model/WTMenuVenueType.md
 docs/Model/WTMerchantCredit.md
 docs/Model/WTMerchantCreditCreationParams.md
 docs/Model/WTMerchantURLCreate.md
+docs/Model/WTMerchantURLPathRequest.md
 docs/Model/WTMerchantURLUpdate.md
 docs/Model/WTMerchantUpdate.md
 docs/Model/WTMerchantUpdatePOSIntegration.md
@@ -1213,6 +1214,7 @@ lib/Model/WTMenuVenueType.php
 lib/Model/WTMerchantCredit.php
 lib/Model/WTMerchantCreditCreationParams.php
 lib/Model/WTMerchantURLCreate.php
+lib/Model/WTMerchantURLPathRequest.php
 lib/Model/WTMerchantURLUpdate.php
 lib/Model/WTMerchantUpdate.php
 lib/Model/WTMerchantUpdatePOSIntegration.php
@@ -1908,6 +1910,7 @@ test/Model/WTMenuVenueTypeTest.php
 test/Model/WTMerchantCreditCreationParamsTest.php
 test/Model/WTMerchantCreditTest.php
 test/Model/WTMerchantURLCreateTest.php
+test/Model/WTMerchantURLPathRequestTest.php
 test/Model/WTMerchantURLUpdateTest.php
 test/Model/WTMerchantUpdatePOSIntegrationTest.php
 test/Model/WTMerchantUpdatePointsOfContactTest.php
